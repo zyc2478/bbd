@@ -1,0 +1,26 @@
+2017-11-07 13:47:04 - Error!用户无效或令牌已过有效期
+2017-11-07 13:47:06 - token is: null
+2017-11-07 13:47:06 - refresh token is: null
+2017-11-07 13:52:58 - Error!用户无效或令牌已过有效期
+2017-11-07 13:52:59 - token is: null
+2017-11-07 13:52:59 - refresh token is: null
+2017-11-07 13:58:01 - Error!用户无效或令牌已过有效期
+2017-11-07 13:58:02 - token is: f21dc45e-54a6-465b-89de-68cee6d8b5c3
+2017-11-07 13:58:02 - refresh token is: 38e1e787-b81a-4ff8-9c29-6756a4fa022c
+2017-11-07 13:58:02 - 已重置最新令牌
+2017-11-07 14:00:07 - 可用余额为：637.84
+2017-11-07 14:01:23 - 可用余额为：637.84
+2017-11-07 14:01:46 - {"InvestId":393742335,"ListingId":82176855,"Amount":74,"ParticipationAmount":74,"CouponAmount":0,"CouponStatus":2,"Result":0,"ResultMessage":null}
+2017-11-07 14:01:48 - {"InvestId":393742390,"ListingId":82166668,"Amount":66,"ParticipationAmount":66,"CouponAmount":0,"CouponStatus":2,"Result":0,"ResultMessage":null}
+2017-11-07 14:01:50 - {"InvestId":393742423,"ListingId":82197499,"Amount":74,"ParticipationAmount":74,"CouponAmount":0,"CouponStatus":2,"Result":0,"ResultMessage":null}
+2017-11-07 14:01:52 - {"InvestId":393742463,"ListingId":82191206,"Amount":90,"ParticipationAmount":90,"CouponAmount":0,"CouponStatus":2,"Result":0,"ResultMessage":null}
+2017-11-07 14:01:53 - {"InvestId":393742495,"ListingId":82185776,"Amount":74,"ParticipationAmount":74,"CouponAmount":0,"CouponStatus":2,"Result":0,"ResultMessage":null}
+2017-11-07 14:01:55 - {"InvestId":393742531,"ListingId":82194117,"Amount":82,"ParticipationAmount":82,"CouponAmount":0,"CouponStatus":2,"Result":0,"ResultMessage":null}
+2017-11-07 14:01:56 - {"InvestId":393742556,"ListingId":82199241,"Amount":66,"ParticipationAmount":66,"CouponAmount":0,"CouponStatus":2,"Result":0,"ResultMessage":null}
+2017-11-07 14:02:14 - {"InvestId":393742779,"ListingId":82200630,"Amount":90,"ParticipationAmount":90,"CouponAmount":0,"CouponStatus":2,"Result":0,"ResultMessage":null}
+2017-11-07 15:10:30 - 可用余额为：592.63
+2017-11-07 15:10:49 - {"InvestId":393840029,"ListingId":82214250,"Amount":66,"ParticipationAmount":66,"CouponAmount":0,"CouponStatus":2,"Result":0,"ResultMessage":null}
+2017-11-07 15:13:04 - f21dc45e-54a6-465b-89de-68cee6d8b5c3
+2017-11-07 15:13:04 - 58
+2017-11-07 15:13:04 - token is : ""
+2017-11-07 15:13:04 - refresh_token is : 

@@ -1,0 +1,158 @@
+2017-11-01 21:59:42 - Using default implementation for ThreadExecutor
+2017-11-01 21:59:42 - Job execution threads will use class loader of thread: main
+2017-11-01 21:59:42 - Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+2017-11-01 21:59:42 - Quartz Scheduler v.2.2.3 created.
+2017-11-01 21:59:42 - RAMJobStore initialized.
+2017-11-01 21:59:42 - Scheduler meta-data: Quartz Scheduler (v2.2.3) 'DefaultQuartzScheduler' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 1 threads.
+  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
+
+2017-11-01 21:59:42 - Quartz scheduler 'DefaultQuartzScheduler' initialized from default resource file in Quartz package: 'quartz.properties'
+2017-11-01 21:59:42 - Quartz scheduler version: 2.2.3
+2017-11-01 21:59:42 - Scheduler DefaultQuartzScheduler_$_NON_CLUSTERED started.
+2017-11-01 21:59:43 - 可用余额为：177.78
+2017-11-01 22:01:28 - 可用余额为：177.78
+2017-11-01 22:03:26 - 可用余额为：177.78
+2017-11-01 22:04:41 - 可用余额为：177.78
+2017-11-01 22:06:15 - 可用余额为：177.78
+2017-11-01 22:07:39 - 可用余额为：177.78
+2017-11-01 22:09:26 - 可用余额为：177.78
+2017-11-01 22:11:29 - 可用余额为：177.78
+2017-11-01 22:11:53 - 标的获取完毕
+2017-11-01 22:12:35 - 可用余额为：177.78
+2017-11-01 22:13:00 - 标的获取完毕
+2017-11-01 22:14:03 - 可用余额为：177.78
+2017-11-01 22:14:29 - 标的获取完毕
+2017-11-01 22:15:06 - 可用余额为：177.78
+2017-11-01 22:15:30 - 标的获取完毕
+2017-11-01 22:16:25 - Using default implementation for ThreadExecutor
+2017-11-01 22:16:25 - Job execution threads will use class loader of thread: main
+2017-11-01 22:16:25 - Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+2017-11-01 22:16:25 - Quartz Scheduler v.2.2.3 created.
+2017-11-01 22:16:25 - RAMJobStore initialized.
+2017-11-01 22:16:25 - Scheduler meta-data: Quartz Scheduler (v2.2.3) 'DefaultQuartzScheduler' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 1 threads.
+  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
+
+2017-11-01 22:16:25 - Quartz scheduler 'DefaultQuartzScheduler' initialized from default resource file in Quartz package: 'quartz.properties'
+2017-11-01 22:16:25 - Quartz scheduler version: 2.2.3
+2017-11-01 22:16:25 - Scheduler DefaultQuartzScheduler_$_NON_CLUSTERED started.
+2017-11-01 22:16:26 - 可用余额为：177.78
+2017-11-01 22:16:51 - 标的获取完毕
+2017-11-01 22:16:51 - test1
+2017-11-01 22:16:51 - test2
+2017-11-01 22:17:50 - Using default implementation for ThreadExecutor
+2017-11-01 22:17:50 - Job execution threads will use class loader of thread: main
+2017-11-01 22:17:50 - Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+2017-11-01 22:17:50 - Quartz Scheduler v.2.2.3 created.
+2017-11-01 22:17:50 - RAMJobStore initialized.
+2017-11-01 22:17:50 - Scheduler meta-data: Quartz Scheduler (v2.2.3) 'DefaultQuartzScheduler' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 1 threads.
+  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
+
+2017-11-01 22:17:50 - Quartz scheduler 'DefaultQuartzScheduler' initialized from default resource file in Quartz package: 'quartz.properties'
+2017-11-01 22:17:50 - Quartz scheduler version: 2.2.3
+2017-11-01 22:17:51 - Scheduler DefaultQuartzScheduler_$_NON_CLUSTERED started.
+2017-11-01 22:17:51 - 可用余额为：222.21
+2017-11-01 22:18:15 - 标的获取完毕
+2017-11-01 22:18:15 - test1
+2017-11-01 22:18:15 - test2
+2017-11-01 22:19:14 - Using default implementation for ThreadExecutor
+2017-11-01 22:19:14 - Job execution threads will use class loader of thread: main
+2017-11-01 22:19:14 - Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+2017-11-01 22:19:14 - Quartz Scheduler v.2.2.3 created.
+2017-11-01 22:19:14 - RAMJobStore initialized.
+2017-11-01 22:19:14 - Scheduler meta-data: Quartz Scheduler (v2.2.3) 'DefaultQuartzScheduler' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 1 threads.
+  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
+
+2017-11-01 22:19:14 - Quartz scheduler 'DefaultQuartzScheduler' initialized from default resource file in Quartz package: 'quartz.properties'
+2017-11-01 22:19:14 - Quartz scheduler version: 2.2.3
+2017-11-01 22:19:14 - Scheduler DefaultQuartzScheduler_$_NON_CLUSTERED started.
+2017-11-01 22:19:15 - 可用余额为：222.21
+2017-11-01 22:19:39 - 标的获取完毕
+2017-11-01 22:22:12 - 可用余额为：222.21
+2017-11-01 22:22:37 - 标的获取完毕
+2017-11-01 22:23:12 - 可用余额为：222.21
+2017-11-01 22:23:37 - 标的获取完毕
+2017-11-01 22:24:50 - 标的获取完毕
+2017-11-01 22:24:53 - 可用余额为：222.21
+2017-11-01 22:25:19 - 标的获取完毕
+2017-11-01 22:28:41 - 可用余额为：222.21
+2017-11-01 22:29:06 - 标的获取完毕
+2017-11-01 22:30:01 - 标的获取完毕
+2017-11-01 22:30:35 - 可用余额为：222.21
+2017-11-01 22:30:59 - 标的获取完毕
+2017-11-01 22:31:25 - Using default implementation for ThreadExecutor
+2017-11-01 22:31:25 - Job execution threads will use class loader of thread: main
+2017-11-01 22:31:25 - Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+2017-11-01 22:31:25 - Quartz Scheduler v.2.2.3 created.
+2017-11-01 22:31:25 - RAMJobStore initialized.
+2017-11-01 22:31:25 - Scheduler meta-data: Quartz Scheduler (v2.2.3) 'DefaultQuartzScheduler' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 1 threads.
+  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
+
+2017-11-01 22:31:25 - Quartz scheduler 'DefaultQuartzScheduler' initialized from default resource file in Quartz package: 'quartz.properties'
+2017-11-01 22:31:25 - Quartz scheduler version: 2.2.3
+2017-11-01 22:31:25 - Scheduler DefaultQuartzScheduler_$_NON_CLUSTERED started.
+2017-11-01 22:31:26 - 可用余额为：222.21
+2017-11-01 22:31:51 - 标的获取完毕
+2017-11-01 22:33:02 - Using default implementation for ThreadExecutor
+2017-11-01 22:33:02 - Job execution threads will use class loader of thread: main
+2017-11-01 22:33:02 - Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+2017-11-01 22:33:02 - Quartz Scheduler v.2.2.3 created.
+2017-11-01 22:33:02 - RAMJobStore initialized.
+2017-11-01 22:33:02 - Scheduler meta-data: Quartz Scheduler (v2.2.3) 'DefaultQuartzScheduler' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 1 threads.
+  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
+
+2017-11-01 22:33:02 - Quartz scheduler 'DefaultQuartzScheduler' initialized from default resource file in Quartz package: 'quartz.properties'
+2017-11-01 22:33:02 - Quartz scheduler version: 2.2.3
+2017-11-01 22:33:02 - Scheduler DefaultQuartzScheduler_$_NON_CLUSTERED started.
+2017-11-01 22:33:03 - 可用余额为：240.29
+2017-11-01 22:33:27 - 标的获取完毕
+2017-11-01 22:35:02 - 可用余额为：240.29
+2017-11-01 22:35:27 - 标的获取完毕
+2017-11-01 22:36:15 - 标的获取完毕
+2017-11-01 22:39:34 - 可用余额为：240.29
+2017-11-01 22:39:59 - 标的获取完毕
+2017-11-01 22:42:22 - 标的获取完毕
+2017-11-01 22:47:10 - 标的获取完毕
+2017-11-01 22:52:35 - 标的获取完毕
+2017-11-01 22:57:52 - 标的获取完毕
+2017-11-01 23:02:40 - 标的获取完毕
+2017-11-01 23:07:26 - 标的获取完毕
+2017-11-01 23:12:50 - 标的获取完毕
+2017-11-01 23:17:47 - 标的获取完毕
+2017-11-01 23:24:14 - 标的获取完毕
+2017-11-01 23:29:10 - 标的获取完毕
+2017-11-01 23:34:08 - 标的获取完毕
+2017-11-01 23:39:36 - 标的获取完毕
+2017-11-01 23:44:30 - 标的获取完毕
+2017-11-01 23:49:18 - 标的获取完毕
+2017-11-01 23:54:03 - 标的获取完毕
+2017-11-01 23:58:41 - 标的获取完毕

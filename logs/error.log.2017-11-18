@@ -1,0 +1,8 @@
+[ERROR] [2017-11-02 11:20:52][com.autobid.bbd.BidService]xxxxxx Error！81101110不允许重复投标！ xxxxxx
+[ERROR] [2017-11-07 13:47:06][com.autobid.bbd.BidDetermine]余额不足，程序退出
+[ERROR] [2017-11-07 13:49:29][com.autobid.bbd.BidDetermine]余额不足，程序退出
+[ERROR] [2017-11-07 13:50:14][com.autobid.bbd.BidDetermine]余额不足，程序退出
+[ERROR] [2017-11-07 13:52:59][com.autobid.bbd.BidDetermine]余额不足，程序退出
+[ERROR] [2017-11-07 13:58:02][com.autobid.bbd.BidDetermine]余额不足，程序退出
+[ERROR] [2017-11-07 14:02:14][com.autobid.bbd.BidService]Error！账户余额不足，请先充值！
+[ERROR] [2017-11-18 22:51:51][com.autobid.bbd.BidDetermine]余额不足，程序退出
