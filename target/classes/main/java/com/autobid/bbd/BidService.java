@@ -110,9 +110,8 @@ public class BidService {
         		logger.error("���Ĳ���̫Ƶ�������Ⱥȱ���ɣ�Ъһ����~~");
         		Thread.sleep(60000);
         	}
-    		//System.out.println("��"+num+"�� result.context " + result.getContext());
+    		System.out.println("result.context: " + result.getContext());
     		batchListInfosCollector.add(result.getContext());
-    		//num++;
     	}
     	return batchListInfosCollector;
 	}

@@ -114,7 +114,7 @@ public class BidManager implements Constants {
 	    	//��������ȡListingIds
 	    	listingIds = BidDataParser.getListingIds(loanListResult.getLoanList());	
 /*    		listingIds = new ArrayList<Integer>();
-    		listingIds.add(85339778);*/
+    		listingIds.add(70013242);*/
     		//System.out.println(listingIds);
     		
     		//��ListingIds�зֳ�10��һ�飬��ƴ�ӳ�һ��Collector

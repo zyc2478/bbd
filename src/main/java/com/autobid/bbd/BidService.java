@@ -110,9 +110,8 @@ public class BidService {
         		logger.error("您的操作太频繁啦！先喝杯茶吧，歇一分钟~~");
         		Thread.sleep(60000);
         	}
-    		//System.out.println("第"+num+"组 result.context " + result.getContext());
+    		System.out.println("result.context: " + result.getContext());
     		batchListInfosCollector.add(result.getContext());
-    		//num++;
     	}
     	return batchListInfosCollector;
 	}
