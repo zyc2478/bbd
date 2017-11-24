@@ -49,7 +49,7 @@ public class BidManager implements Constants {
     //����
     private volatile static BidManager instance;
     //private BidByDebt(){}
-    //public BidManager(){}
+    public BidManager(){}
     public static BidManager getInstance(){
     	if(instance == null){
     		synchronized (BidManager.class){
@@ -109,12 +109,12 @@ public class BidManager implements Constants {
 		int loanIdCount = 0;
 		List<Integer> listingIds;
 		do{
-/*			LoanListResult loanListResult = BidService.loanListService(indexNum);
+			LoanListResult loanListResult = BidService.loanListService(indexNum);
 			loanIdCount = loanListResult.getLoanIdCount();
 	    	//��������ȡListingIds
-	    	listingIds = BidDataParser.getListingIds(loanListResult.getLoanList());	*/
-    		listingIds = new ArrayList<Integer>();
-    		listingIds.add(85339778);
+	    	listingIds = BidDataParser.getListingIds(loanListResult.getLoanList());	
+/*    		listingIds = new ArrayList<Integer>();
+    		listingIds.add(85339778);*/
     		//System.out.println(listingIds);
     		
     		//��ListingIds�зֳ�10��һ�飬��ƴ�ӳ�һ��Collector
