@@ -1,5 +1,5 @@
 Manifest-Version: 1.0
-Built-By: Administrator
+Built-By: zengyc
 Class-Path: lib/junit-4.10.jar lib/hamcrest-core-1.1.jar lib/maven-jar
  -plugin-3.0.2.jar lib/maven-plugin-api-3.0.jar lib/maven-model-3.0.ja
  r lib/sisu-inject-plexus-1.4.2.jar lib/sisu-inject-bean-1.4.2.jar lib
@@ -17,7 +17,7 @@ Class-Path: lib/junit-4.10.jar lib/hamcrest-core-1.1.jar lib/maven-jar
  ib/log4j-1.2.16.jar lib/quartz-2.2.3.jar lib/c3p0-0.9.1.1.jar lib/qua
  rtz-jobs-2.2.3.jar lib/jedis-2.9.0.jar lib/commons-pool2-2.4.2.jar li
  b/slf4j-log4j12-1.6.4.jar lib/slf4j-api-1.6.4.jar lib/ppd-2.01.jar
-Build-Jdk: 1.8.0_151
+Build-Jdk: 1.8.0_91
 Created-By: Maven Integration for Eclipse
 Main-Class: com.autobid.job.AutoBidRun
 
