@@ -110,7 +110,7 @@ public class BidService {
         		logger.error("ÄúµÄ²Ù×÷Ì«Æµ·±À²£¡ÏÈºÈ±­²è°É£¬ÐªÒ»·ÖÖÓ~~");
         		Thread.sleep(60000);
         	}
-    		System.out.println("result.context: " + result.getContext());
+    		//System.out.println("result.context: " + result.getContext());
     		batchListInfosCollector.add(result.getContext());
     	}
     	return batchListInfosCollector;

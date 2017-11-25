@@ -9,7 +9,10 @@ import com.autobid.util.ConfUtil;
 
 public class LoanAmountProCriteria implements Criteria,Constants {
 
-	private boolean criteriaA,criteriaB,criteriaC,criteriaD,criteriaE;
+	private boolean criteriaAf,criteriaAm,criteriaBm,criteriaBf,
+			criteriaCm,criteriaCf,criteriaD,criteriaEm,criteriaEf;
+	private double amount_mrate,amount_frate,owing_mrate,owing_frate;
+	private int amount_begin,amount_end,owing_mlimit,owing_flimit,total_limit;
 	private int gender;
 
 	public void calc(HashMap<String,Object> loanInfoMap) throws NumberFormatException, IOException {
@@ -19,36 +22,41 @@ public class LoanAmountProCriteria implements Criteria,Constants {
 		Integer highestDebt = (Integer)loanInfoMap.get("HighestDebt");
 		Integer totalPrincipal = (Integer)loanInfoMap.get("TotalPrincipal");
 		gender = Integer.parseInt(loanInfoMap.get("Gender").toString());
+		total_limit = Integer.parseInt(loanInfoMap.get("total_limit").toString());
+		owing_mrate = Double.parseDouble(loanInfoMap.get("owing_mrate").toString());
+		owing_frate = Double.parseDouble(loanInfoMap.get("owing_frate").toString());
+		amount_mrate = Integer.parseInt(ConfUtil.getProperty("amount_mrate"));
+		amount_frate = Integer.parseInt(ConfUtil.getProperty("amount_frate"));
+		owing_mlimit = Integer.parseInt(ConfUtil.getProperty("owing_mlimit"));
+		owing_flimit = Integer.parseInt(ConfUtil.getProperty("owing_flimit"));
+
 		//System.out.println("loanAmount:"+loanAmount);
-		criteriaA = loanAmount >= Integer.parseInt(ConfUtil.getProperty("amount_begin")) && 
-				loanAmount <= Integer.parseInt(ConfUtil.getProperty("amount_end")) && 
-				totalPrincipal >= Integer.parseInt(ConfUtil.getProperty("total_limit"));
-		criteriaB = owingAmount + loanAmount < highestDebt && 
-				owingAmount <= Integer.parseInt(ConfUtil.getProperty("owing_limit"));
-		criteriaC = loanAmount < highestPrincipal;
-		criteriaD = owingAmount==0 ;
-		criteriaE = owingAmount < highestDebt/2 && loanAmount < highestDebt/2;
-		//criteraD = loanAmount > 2000;
+		criteriaAm = loanAmount >= amount_begin /amount_mrate && loanAmount <= amount_end * amount_mrate &&
+					owingAmount >=  owing_mlimit && totalPrincipal >= total_limit && gender == 1;
+		criteriaAf = loanAmount >= amount_begin/amount_frate && loanAmount <= amount_end * amount_frate &&
+					owingAmount >=  owing_flimit && totalPrincipal >= total_limit && gender == 2;
+		criteriaBm = owingAmount + loanAmount < highestDebt * amount_mrate;
+		criteriaBf = owingAmount + loanAmount < highestDebt * amount_frate;
+				Double.parseDouble(ConfUtil.getProperty("amount_frate"));
+		criteriaCm = loanAmount < highestPrincipal * amount_mrate;
+		criteriaCf = loanAmount < highestPrincipal * amount_frate;
+		criteriaD = owingAmount==0;
+		criteriaEm = owingAmount < highestDebt * owing_mrate;
+		criteriaEf = owingAmount < highestDebt * owing_frate;
 		/*
 		 * ���ν���ȵ���1.5W����������5�����ϡ����ڻ����������30�죩���û�С��ۼƽ����5K���ϡ��������5K���¡��������/��ʷ��߸�ծԽСԽ�ã����Ϊ0�ȵȣ�
 		 */
 	}
-
 	public int getLevel(HashMap<String,Object> loanInfoMap) throws NumberFormatException, IOException {
 		calc(loanInfoMap);
-/*		System.out.println("criteriaA:" + criteriaA);
-		System.out.println("criteriaB:" + criteriaB);
-		System.out.println("criteriaC:" + criteriaC);
-		System.out.println("criteriaD:" + criteriaD);*/
-		if(criteriaA && criteriaD && criteriaE || (criteriaD && criteriaE && gender ==2)) {
+		if(criteriaAm && criteriaCm && criteriaD && criteriaEm || (criteriaAf && criteriaCf && criteriaD && criteriaEf)) {
 			return PERFECT;
-		}else if(criteriaA && criteriaC && criteriaD || (criteriaC && criteriaD && gender == 2)){
+		}else if(criteriaAm && criteriaCm && criteriaD || (criteriaAf && criteriaCf && criteriaD)){
 			return GOOD;
-		}else if(criteriaA && criteriaB && criteriaC || (criteriaB && criteriaC && gender ==2) ){
+		}else if(criteriaAm && criteriaBm && criteriaCm || (criteriaAf && criteriaBf && criteriaCf) ){
 			return OK;
-		}else {
-			return NONE;
 		}
+		return NONE;
 	}
 
 	public String getCriteriaName(){
