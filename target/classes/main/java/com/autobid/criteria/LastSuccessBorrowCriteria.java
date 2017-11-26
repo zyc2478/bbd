@@ -12,7 +12,7 @@ import com.autobid.util.ConfUtil;
 public class LastSuccessBorrowCriteria implements Criteria, Constants {
 
 	private int successCount;
-	boolean criteriaLastBorrowShort,criteriaLastBorrowLong;
+	boolean criteriaMShort,criteriaMLong,criteriaFShort,criteriaFLong;
 	public void calc(HashMap<String, Object> loanInfoMap) throws Exception {		
     	long diffDay = 0;
     	successCount = (int)loanInfoMap.get("SuccessCount");
@@ -24,16 +24,18 @@ public class LastSuccessBorrowCriteria implements Criteria, Constants {
 			diffDay = diffTime/(1000*60*60*24);
     	}
     	
-    	criteriaLastBorrowShort = diffDay > Integer.parseInt(ConfUtil.getProperty("short_days"));
-    	criteriaLastBorrowLong = diffDay > Integer.parseInt(ConfUtil.getProperty("long_days"));
+    	criteriaMShort = diffDay > Integer.parseInt(ConfUtil.getProperty("short_mdays"));
+    	criteriaMLong = diffDay > Integer.parseInt(ConfUtil.getProperty("long_mdays"));
+    	criteriaFShort = diffDay > Integer.parseInt(ConfUtil.getProperty("short_fdays"));
+    	criteriaFLong = diffDay > Integer.parseInt(ConfUtil.getProperty("long_fdays"));
 	}
 	
 
 	public int getLevel(HashMap<String,Object> loanInfoMap) throws Exception {
 		calc(loanInfoMap);
-		if(criteriaLastBorrowLong){
+		if(criteriaMLong || criteriaFLong){
 			return GOOD;
-		}else if(criteriaLastBorrowShort){
+		}else if(criteriaMShort || criteriaFShort){
 			return OK;
 		}else{
 			return NONE;

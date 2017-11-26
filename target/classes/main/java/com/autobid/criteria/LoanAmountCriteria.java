@@ -33,7 +33,7 @@ public class LoanAmountCriteria implements Criteria,Constants {
 		//System.out.println("loanAmount:"+loanAmount);
 		criteriaAm = loanAmount >= amount_begin /amount_mrate && loanAmount <= amount_end * amount_mrate &&
 					owingAmount >=  owing_mlimit && totalPrincipal >= total_limit && gender == 1;
-		criteriaAf = loanAmount >= amount_begin/amount_frate && loanAmount <= amount_end * amount_frate &&
+		criteriaAf = loanAmount >= amount_begin /amount_frate && loanAmount <= amount_end * amount_frate &&
 					owingAmount >=  owing_flimit && totalPrincipal >= total_limit && gender == 2;
 		criteriaBm = owingAmount + loanAmount < highestDebt * amount_mrate;
 		criteriaBf = owingAmount + loanAmount < highestDebt * amount_frate;

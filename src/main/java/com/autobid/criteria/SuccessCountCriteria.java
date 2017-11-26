@@ -9,23 +9,31 @@ import com.autobid.util.ConfUtil;
 
 public class SuccessCountCriteria implements Criteria,Constants {
 
-	static int successCount,normalCount,beginCount;
-	boolean criteriaSuccessCount,criteriaNormalCount,criteriaBeginCount;
+	static int successCount,normalCount,beginCount,gender;
+	private double ns_rate,nscount_mrate,nscount_frate;
+	boolean criteriaSuccessCount,criteriaNormalCount,criteriaBeginCount,criteriaNsRate;
 	public void calc(HashMap<String, Object> loanInfoMap) throws NumberFormatException, IOException {
 		successCount = (int)loanInfoMap.get("SuccessCount");
 		normalCount = (int)loanInfoMap.get("NormalCount");
+		gender = Integer.parseInt(loanInfoMap.get("Gender").toString());
+		nscount_mrate = Double.parseDouble(ConfUtil.getProperty("nscount_mrate"));
+		nscount_frate = Double.parseDouble(ConfUtil.getProperty("nscount_frate"));	
+		ns_rate = normalCount/successCount;
+		criteriaNsRate = ns_rate >= nscount_mrate && gender == 1 ||
+						ns_rate >= nscount_frate && gender == 2;
 		criteriaSuccessCount = successCount >= Integer.parseInt(ConfUtil.getProperty("success_limit"));
 		criteriaNormalCount = normalCount >= Integer.parseInt(ConfUtil.getProperty("normal_limit"));
 		criteriaBeginCount = successCount >= Integer.parseInt(ConfUtil.getProperty("begin_limit"));
+		
 	}
 
 	public int getLevel(HashMap<String,Object> loanInfoMap) throws NumberFormatException, IOException {
 		calc(loanInfoMap);
-		if(criteriaSuccessCount && criteriaNormalCount){
+		if(criteriaSuccessCount && criteriaNormalCount && criteriaNsRate){
 			return GOOD;
-		}else if(criteriaSuccessCount){
+		}else if(criteriaSuccessCount && criteriaNsRate){
 			return OK;
-		}else if(criteriaBeginCount) {
+		}else if(criteriaBeginCount && criteriaNsRate ) {
 			return SOSO;
 		}else{
 			return NONE;
