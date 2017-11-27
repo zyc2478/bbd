@@ -61,7 +61,7 @@ public class BasicCriteria implements Criteria,Constants {
 	
 	public int getLevel(HashMap<String, Object> loanInfoMap) throws Exception {
 		calc(loanInfoMap);
-		printCriteria(loanInfoMap);
+		//printCriteria(loanInfoMap);
 		if(eduBasicCriteria && debtBasicCriteria){
 			//System.out.println("PERFECT");
 			return PERFECT;

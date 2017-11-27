@@ -17,8 +17,14 @@ public class SuccessCountCriteria implements Criteria,Constants {
 		normalCount = (int)loanInfoMap.get("NormalCount");
 		gender = Integer.parseInt(loanInfoMap.get("Gender").toString());
 		nscount_mrate = Double.parseDouble(ConfUtil.getProperty("nscount_mrate"));
+
 		nscount_frate = Double.parseDouble(ConfUtil.getProperty("nscount_frate"));	
-		ns_rate = normalCount/successCount;
+		if(successCount!=0) {
+			ns_rate = (double)normalCount/(double)successCount;
+		}else {
+			ns_rate = 0;
+		}
+		//System.out.println("ns_rate="+ns_rate+",nscount_mrate="+nscount_mrate);
 		criteriaNsRate = ns_rate >= nscount_mrate && gender == 1 ||
 						ns_rate >= nscount_frate && gender == 2;
 		criteriaSuccessCount = successCount >= Integer.parseInt(ConfUtil.getProperty("success_limit"));
