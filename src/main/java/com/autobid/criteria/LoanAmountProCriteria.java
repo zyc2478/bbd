@@ -45,7 +45,6 @@ public class LoanAmountProCriteria implements Criteria,Constants {
 		criteriaD = owingAmount <=  owing_limit;
 		criteriaE = owingAmount==0 ;
 		
-		
 		/*
 		 * 本次借款额度低于1.5W、正常还款5次以上、逾期还清次数（＞30天）最好没有、累计借款金额5K以上、待还金额5K以下、待还金额/历史最高负债越小越好，最好为0等等，
 		 */
@@ -56,9 +55,9 @@ public class LoanAmountProCriteria implements Criteria,Constants {
 				",criteriaD:"+criteriaD+",criteriaE:"+criteriaE);*/
 /*		System.out.println("criteriaAf:"+criteriaAf+",criteriaBf:"+criteriaBf + ",criteriaCf:"+criteriaCf+
 				",criteriaD:"+criteriaD+",criteriaE:"+criteriaE);*/
-		if(criteriaAm && criteriaCm && criteriaE || (criteriaAf && criteriaCf && criteriaE)) {
+		if(criteriaAm && criteriaBm && criteriaCm && criteriaE || (criteriaAf && criteriaBf && criteriaCf && criteriaE)) {
 			return PERFECT;
-		}else if(criteriaAm && criteriaCm && criteriaD || (criteriaAf && criteriaCf && criteriaD)){
+		}else if(criteriaAm && criteriaBm && criteriaCm && criteriaD || (criteriaAf && criteriaBf && criteriaCf && criteriaD)){
 			return GOOD;
 		}else if(criteriaAm && criteriaBm && criteriaCm || (criteriaAf && criteriaBf && criteriaCf) ){
 			return OK;
