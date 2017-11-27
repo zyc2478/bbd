@@ -114,7 +114,7 @@ public class BidManager implements Constants {
 	    	//请求服务获取ListingIds
 	    	listingIds = BidDataParser.getListingIds(loanListResult.getLoanList());	
 /*    		listingIds = new ArrayList<Integer>();
-    		listingIds.add(86117674);*/
+    		listingIds.add(86084296);*/
     		//System.out.println(listingIds);
     		
     		//将ListingIds切分成10个一组，再拼接成一个Collector

@@ -56,9 +56,9 @@ public class LoanAmountCriteria implements Criteria,Constants {
 				",criteriaD:"+criteriaD+",criteriaE:"+criteriaE);*/
 /*		System.out.println("criteriaAf:"+criteriaAf+",criteriaBf:"+criteriaBf + ",criteriaCf:"+criteriaCf+
 				",criteriaD:"+criteriaD+",criteriaE:"+criteriaE);*/
-		if(criteriaAm && criteriaCm && criteriaE || (criteriaAf && criteriaCf && criteriaE)) {
+		if(criteriaAm && criteriaBm && criteriaCm && criteriaE || (criteriaAf && criteriaBf &&  criteriaCf && criteriaE)) {
 			return PERFECT;
-		}else if(criteriaAm && criteriaCm && criteriaD || (criteriaAf && criteriaCf && criteriaD)){
+		}else if(criteriaAm && criteriaBm && criteriaCm && criteriaD || (criteriaAf && criteriaBf && criteriaCf && criteriaD)){
 			return GOOD;
 		}else if(criteriaAm && criteriaBm && criteriaCm || (criteriaAf && criteriaBf && criteriaCf) ){
 			return OK;
