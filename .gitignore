@@ -18,8 +18,7 @@
 *.7z  
 *.dmg  
 *.gz  
-*.iso  
-*.jar  
+*.iso 
 *.rar  
 *.tar  
 *.zip  
