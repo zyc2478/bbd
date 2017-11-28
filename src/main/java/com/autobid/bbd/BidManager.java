@@ -119,12 +119,7 @@ public class BidManager implements Constants {
     		
     		//将ListingIds切分成10个一组，再拼接成一个Collector
     		Integer[][] listingIdsParted = BidDataParser.getListingIdsParted(listingIds);
-/*    		for(int i=0;i<listingIdsParted.length;i++) {
-    			for(int j=0;j<listingIdsParted[0].length;j++) {
-    	    		System.out.println(listingIdsParted[i][j]);
-    			}
-    		}
-*/
+
     		ArrayList<List<Integer>> listingIdsCollector = BidDataParser.getLisiingIdsCollector(listingIdsParted);
     		
     		//System.out.println(listingIdsCollector);
