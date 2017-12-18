@@ -17,6 +17,7 @@ import com.autobid.criteria.BeginCriteriaGroup;
 import com.autobid.criteria.DebtRateCriteriaGroup;
 import com.autobid.criteria.EduCriteriaGroup;
 import com.autobid.criteria.EduDebtCriteriaGroup;
+import com.autobid.dbd.DebtManager;
 import com.autobid.entity.CriteriaGroup;
 import com.autobid.entity.BidResult;
 import com.autobid.entity.LoanListResult;
@@ -207,6 +208,11 @@ public class BidManager implements Constants {
 		}while(loanIdCount == 200);
 		System.out.println("*~~~~~~~~~~~~~~~~~~~~标的执行完毕，投标结果如下：~~~~~~~~~~~~~~~~~~~*");
     	bidResultsPrint(successBidList,listingIds.size());
+    	if(listingIds.size()<10) {
+    		System.out.println("没有普通标的，投债转标");
+    		DebtManager debt = DebtManager.getInstance();
+    		debt.debtExcecute();
+    	}
 		logger = null;
 		instance = null;
 
