@@ -41,7 +41,7 @@ public class TokenInit {
 	public static void initToken() throws Exception {
 		AuthInit.init();
 		initFlag = true;
-		//System.out.println("code is:" + code);
+		System.out.println("code is:" + code);
 		//authInfo = OpenApiClient.authorize("9ca3fb6357b04c5385fd51d1e6db9922");
 		authInfo = OpenApiClient.authorize(code);
 		token = authInfo.getAccessToken();  //7dcf80d8-e74b-42ad-a439-6dfe567741ec
