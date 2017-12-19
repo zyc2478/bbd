@@ -52,7 +52,7 @@ public class DebtService {
     		//logger.info(balanceJson);
 
     		JSONArray debtListArray = debtListJson.getJSONArray("DebtInfos");
-
+    		logger.info(debtListArray);
         	int size = debtListArray.length();
         	debtIds = new int[size];
         	int j=0;

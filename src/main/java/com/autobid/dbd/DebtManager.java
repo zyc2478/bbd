@@ -121,6 +121,13 @@ public class DebtManager implements Constants {
 
 			DebtListResult debtListResult = DebtService.debtListService(indexNum);	
 			debtIdCount = debtListResult.getDebtIdCount();
+			//请求服务获取ListingIds
+	    	listingIds = BidDataParser.getListingIds(debtListResult.getDebtList());	
+	    	
+    		//将ListingIds切分成10个一组，再拼接成一个Collector
+    		Integer[][] listingIdsParted = BidDataParser.getListingIdsParted(listingIds);
+    		ArrayList<List<Integer>> listingIdsCollector = BidDataParser.getLisiingIdsCollector(listingIdsParted);
+    		
 			indexNum ++;
 		}while(debtIdCount != 50);
 		/*do{

@@ -53,7 +53,7 @@ public class BidService {
 	
 	public static LoanListResult loanListService(int indexNum) throws Exception{
 	    int[] loanIds = null;
-	    ArrayList<String> loanListJsonList = new ArrayList<String>();
+	    ArrayList<String> loanInfosList = new ArrayList<String>();
 		String  url = "http://gw.open.ppdai.com/invest/LLoanInfoService/LoanList";
     	Result result = null;
     	String creditCode;
@@ -64,15 +64,17 @@ public class BidService {
     		Thread.sleep(60000);
     	}
     	if(result.isSucess()){
-    		String loanAllList = result.getContext();
-        	String loanListJson = loanAllList.substring(13);
-        	//logger.info("loanListJson is :" + loanListJson);
-        	JSONArray loanListArray = new JSONArray(loanListJson);
-        	int size = loanListArray.length();
+    		String loanListResult = result.getContext();
+    		logger.info("loanListResult is :" + loanListResult);
+    		JSONObject loanListJson = new JSONObject(loanListResult);
+        	JSONArray loanInfosArray = loanListJson.getJSONArray("LoanInfos");
+        	//String loanListJson = loanAllList.substring(13);
+        	logger.info("loanListArray is :" + loanInfosArray);   //Modified
+        	int size = loanInfosArray.length();
         	loanIds = new int[size];
         	int j=0;
         	for(int i=0;i<size;i++){
-        		JSONObject loanInfoObj = loanListArray.getJSONObject(i);
+        		JSONObject loanInfoObj = loanInfosArray.getJSONObject(i);
         		int listingId = loanInfoObj.getInt("ListingId");
         		creditCode = loanInfoObj.getString("CreditCode");
         		if(!creditCode.equals("AA")){
@@ -82,13 +84,14 @@ public class BidService {
         		}
         	}
         	System.out.println("第"+indexNum+"组标的总数为："+ loanIds.length + "，中风险标的数为："+ j);
-	    	loanListJsonList.add(loanListJson);
+	    	loanInfosList.add(loanInfosArray.toString());
+	    	//logger.info(loanInfosList);
     	}else{
     		logger.error(result.getErrorMessage());
     	}
 		LoanListResult llr = new LoanListResult();
 		llr.setIndexNum(indexNum);
-		llr.setLoanList(loanListJsonList);
+		llr.setLoanList(loanInfosList);
 		llr.setLoanIdCount(loanIds.length);
 		return llr;
 	}
