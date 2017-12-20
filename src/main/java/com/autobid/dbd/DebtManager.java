@@ -22,9 +22,11 @@ import com.autobid.criteria.DebtRateCriteriaGroup;
 import com.autobid.criteria.EduCriteriaGroup;
 import com.autobid.criteria.EduDebtCriteriaGroup;
 import com.autobid.entity.CriteriaGroup;
+import com.autobid.entity.DebtInfo;
 import com.autobid.entity.DebtListResult;
 import com.autobid.entity.BidResult;
 import com.autobid.entity.LoanListResult;
+import com.autobid.filter.DebtListFilter;
 import com.autobid.entity.Constants;
 import com.autobid.util.ConfUtil;
 import com.autobid.util.TokenInit;
@@ -113,20 +115,14 @@ public class DebtManager implements Constants {
     	ArrayList<BidResult> successBidList = new ArrayList<BidResult>();    
 		int indexNum = 1;
 		int debtIdCount = 0;
-		List<Integer> listingIds;
+		List<Integer> debtIds,listingIds;
 		int listingId = 44408199;
-		//DebtListResult debtListResult = DebtService.debtListService(1);	
-		//DebtService.debtService(token, openId, listingId);
 		do {
 
-			DebtListResult debtListResult = DebtService.debtListService(indexNum);	
-			debtIdCount = debtListResult.getDebtIdCount();
-			//请求服务获取ListingIds
-	    	listingIds = BidDataParser.getListingIds(debtListResult.getDebtList());	
-	    	
-    		//将ListingIds切分成10个一组，再拼接成一个Collector
-    		Integer[][] listingIdsParted = BidDataParser.getListingIdsParted(listingIds);
-    		ArrayList<List<Integer>> listingIdsCollector = BidDataParser.getLisiingIdsCollector(listingIdsParted);
+			ArrayList<DebtInfo> debtList = DebtListFilter.debtListFilter(DebtService.debtListService(indexNum));
+			
+			//将debtList切分为10个一组,再拼接成一个Collector
+			ArrayList<List<DebtInfo>> debtListCollector = DebtDataParser.getDebtsCollector(debtList);
     		
 			indexNum ++;
 		}while(debtIdCount != 50);

@@ -33,49 +33,54 @@ public class DebtService {
 	private static Logger logger = Logger.getLogger(DebtService.class); 
 
 	
-	public static DebtListResult debtListService(int indexNum) throws Exception{
-	    int[] debtIds = null;
+	public static JSONArray debtListService(int indexNum) throws Exception{
 	    ArrayList<String> debtListJsonList = new ArrayList<String>();
 		String  url = "http://gw.open.ppdai.com/invest/LLoanInfoService/DebtListNew";
-    	Result result = null;
-    	String creditCode;
-    	result = OpenApiClient.send(url, new PropertyObject("PageIndex",indexNum,ValueTypeEnum.Int32));
+    	Result result = OpenApiClient.send(url, new PropertyObject("PageIndex",indexNum,ValueTypeEnum.Int32));
 		if(JsonUtil.decodeUnicode(result.getContext()).contains("您的操作太频繁啦")) {
     		logger.info("您的操作太频繁啦！先喝杯茶吧，歇一分钟~~");
 			logger.error("您的操作太频繁啦！先喝杯茶吧，歇一分钟~~");
     		Thread.sleep(60000);
     	}
+		JSONArray debtListArray = null;
     	if(result.isSucess()){
     		String debtListResult = result.getContext();
     		
     		JSONObject debtListJson = new JSONObject(debtListResult);
     		//logger.info(balanceJson);
 
-    		JSONArray debtListArray = debtListJson.getJSONArray("DebtInfos");
-    		logger.info(debtListArray);
-        	int size = debtListArray.length();
-        	debtIds = new int[size];
-        	int j=0;
-        	for(int i=0;i<size;i++){
-        		JSONObject debtInfoObj = debtListArray.getJSONObject(i);
-        		int debtId = debtInfoObj.getInt("DebtdealId");
-        		int listingId = debtInfoObj.getInt("ListingId");
-        		creditCode = debtInfoObj.getString("CreditCode");
-        		if(!creditCode.equals("AA")){
-        			debtIds[i]=debtId;
-        			j++;
-        		}
-        	}
-        	System.out.println("第"+indexNum+"组债权标的的总数为："+ debtIds.length + ",中风险债权标的数为："+ j);
-	    	debtListJsonList.add(debtListResult);
+    		debtListArray = debtListJson.getJSONArray("DebtInfos");
+
     	}else{
     		logger.error(result.getErrorMessage());
     	}
-		DebtListResult dlr = new DebtListResult();
-		dlr.setIndexNum(indexNum);
-		dlr.setDebtList(debtListJsonList);
-		dlr.setDebtIdCount(debtIds.length);
-		return dlr;
+
+		return debtListArray;
+	}
+	
+	public static JSONArray BatchDebtInfosService(List<Integer> debtIds) throws Exception{
+	    ArrayList<String> debtListJsonList = new ArrayList<String>();
+		String  url = "https://openapi.ppdai.com/invest/LLoanInfoService/BatchDebtInfos";
+    	String creditCode;
+    	Result result = OpenApiClient.send(url,new PropertyObject("DebtIds", debtIds, ValueTypeEnum.Other));
+    	JSONArray debtInfosArray = null;
+    	if(JsonUtil.decodeUnicode(result.getContext()).contains("您的操作太频繁啦")) {
+    		logger.info("您的操作太频繁啦！先喝杯茶吧，歇一分钟~~");
+			logger.error("您的操作太频繁啦！先喝杯茶吧，歇一分钟~~");
+    		Thread.sleep(60000);
+    	}
+    	if(result.isSucess()){
+    		String batchDebtInfosResult = result.getContext();
+    		
+    		JSONObject batchDebtInfosJson = new JSONObject(batchDebtInfosResult);
+    		//logger.info(balanceJson);
+
+    		debtInfosArray = batchDebtInfosJson.getJSONArray("DebtInfos");
+    		logger.info(debtInfosArray);
+    	}else{
+    		logger.error(result.getErrorMessage());
+    	}
+    	return debtInfosArray;
 	}
 	
 	public static LoanListResult loanListService(int indexNum) throws Exception{

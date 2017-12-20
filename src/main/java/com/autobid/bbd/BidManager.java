@@ -119,9 +119,10 @@ public class BidManager implements Constants {
     		//System.out.println(listingIds);
     		
     		//将ListingIds切分成10个一组，再拼接成一个Collector
-    		Integer[][] listingIdsParted = BidDataParser.getListingIdsParted(listingIds);
-
-    		ArrayList<List<Integer>> listingIdsCollector = BidDataParser.getLisiingIdsCollector(listingIdsParted);
+    		//Integer[][] listingIdsParted = BidDataParser.getListingIdsParted(listingIds);
+    		//ArrayList<List<Integer>> listingIdsCollector = BidDataParser.getLisiingIdsCollector(listingIdsParted);
+    		
+    		ArrayList<List<Integer>> listingIdsCollector = BidDataParser.getListingIdsCollector(listingIds);
     		
     		//System.out.println(listingIdsCollector);
     		
@@ -208,7 +209,7 @@ public class BidManager implements Constants {
 		}while(loanIdCount == 200);
 		System.out.println("*~~~~~~~~~~~~~~~~~~~~标的执行完毕，投标结果如下：~~~~~~~~~~~~~~~~~~~*");
     	bidResultsPrint(successBidList,listingIds.size());
-    	if(listingIds.size()<10) {
+    	if(Integer.parseInt(ConfUtil.getProperty("debt_swith"))==1) {
     		System.out.println("没有普通标的，投债转标");
     		DebtManager debt = DebtManager.getInstance();
     		debt.debtExcecute();

@@ -10,6 +10,8 @@ import org.apache.log4j.Logger;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
+import com.autobid.dbd.DebtDataParser;
+import com.autobid.entity.DebtInfo;
 import com.autobid.util.JsonUtil;
 
 
@@ -97,6 +99,12 @@ public class BidDataParser {
     	}
 		return listingIds;
 	}		
+	
+	
+	
+	
+
+	
 	public static Integer[][] getListingIdsParted(List<Integer> listingIds){
 		//System.out.println("-------------------getListingIdsParted----------------------------");
 		int size = listingIds.size();
@@ -197,5 +205,34 @@ public class BidDataParser {
 		loanInfoMap.put("EducateValidate",loanInfoObj.getInt("EducateValidate"));		//学籍认证0 未认证 1已认证
 		return loanInfoMap;
     }
-    
+
+	public static ArrayList<List<Integer>> getListingIdsCollector(List<Integer> listingIds) {
+		ArrayList<List<Integer>> dll = new ArrayList<List<Integer>>();
+		int size = listingIds.size();
+		int partSize = 10;
+		int m = size % partSize;
+		int partCount;
+		
+		if(m > 0) {
+			partCount = size / partSize + 1;
+		}else {
+			partCount = size / partSize;
+		}
+		
+		for(int i=0;i<partCount;i++) {
+			/*
+			 * 情况1：比如对于35个元素最后一轮，partCount = 4,m!=0,i=3时，fromIndex为30,toindex为size-1即34
+			 * 情况2：比如对于30个元素（m==0)最后一轮，m==0,partCount=3,fromIndex为20，toindex为30
+			 * 情况3：比如对于35个元素第二轮，i=1,fromIndex=10,toindex=20
+			 */
+			if(m!=0 && i==partCount-1) {
+				List<Integer> subDebtList =  listingIds.subList(i*partSize, size-1);
+				dll.add(subDebtList);
+			}else {
+				List<Integer> subDebtList = listingIds.subList(i*partSize, (i+1)*partSize);
+				dll.add(subDebtList);
+			}
+		}
+		return dll;
+	}
 }

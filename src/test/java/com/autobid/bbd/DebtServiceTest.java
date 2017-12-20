@@ -1,7 +1,11 @@
 package com.autobid.bbd;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.junit.Test;
 
+import com.autobid.dbd.DebtService;
 import com.autobid.util.ConfUtil;
 import com.autobid.util.TokenInit;
 import com.autobid.util.TokenUtil;
@@ -46,8 +50,17 @@ public class DebtServiceTest {
 	}
     
 	@Test
-	public void testLoanList() throws Exception {
+	public void testDebtList() throws Exception {
 		int indexNum = 1;
-		BidService.loanListService(indexNum);
+		DebtService.debtListService(indexNum);
+	}
+
+	@Test
+	public void testBatchDebtInfos() throws Exception {
+		int indexNum = 1;
+		ArrayList<Integer> debtInfos = new ArrayList<Integer>();
+		debtInfos.add(45393752);
+		DebtService.BatchDebtInfosService(debtInfos);
 	}
 }
+
