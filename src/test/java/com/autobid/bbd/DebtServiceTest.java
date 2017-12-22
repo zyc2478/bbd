@@ -60,7 +60,7 @@ public class DebtServiceTest {
 		int indexNum = 1;
 		ArrayList<Integer> debtInfos = new ArrayList<Integer>();
 		debtInfos.add(45393752);
-		DebtService.BatchDebtInfosService(debtInfos);
+		//DebtService.BatchDebtInfosService(debtInfos);
 	}
 }
 

@@ -10,8 +10,6 @@ import org.apache.log4j.Logger;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
-import com.autobid.dbd.DebtDataParser;
-import com.autobid.entity.DebtInfo;
 import com.autobid.util.JsonUtil;
 
 

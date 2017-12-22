@@ -49,6 +49,6 @@ public class BidServiceTest {
 	@Test
 	public void testLoanList() throws Exception {
 		int indexNum = 1;
-		DebtService.loanListService(indexNum);
+		BidService.loanListService(indexNum);
 	}
 }

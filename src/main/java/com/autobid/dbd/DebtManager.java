@@ -1,13 +1,8 @@
 package com.autobid.dbd;
 
 import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.List;
 
 import org.apache.log4j.Logger;
-import org.json.JSONArray;
-import org.json.JSONObject;
 import org.junit.Test;
 
 import redis.clients.jedis.Jedis;
@@ -16,21 +11,20 @@ import com.autobid.bbd.AuthInit;
 import com.autobid.bbd.BidDataParser;
 import com.autobid.bbd.BidDetermine;
 import com.autobid.bbd.BidService;
-import com.autobid.criteria.BasicCriteria;
-import com.autobid.criteria.BeginCriteriaGroup;
-import com.autobid.criteria.DebtRateCriteriaGroup;
-import com.autobid.criteria.EduCriteriaGroup;
-import com.autobid.criteria.EduDebtCriteriaGroup;
-import com.autobid.entity.CriteriaGroup;
-import com.autobid.entity.DebtInfo;
-import com.autobid.entity.DebtListResult;
-import com.autobid.entity.BidResult;
-import com.autobid.entity.LoanListResult;
+
+import com.autobid.entity.DebtResult;
+
+import com.autobid.filter.DebtInfosListFilter;
+import com.autobid.filter.BidInfosFilter;
 import com.autobid.filter.DebtListFilter;
 import com.autobid.entity.Constants;
 import com.autobid.util.ConfUtil;
 import com.autobid.util.TokenInit;
 import com.autobid.util.TokenUtil;
+
+import net.sf.json.JSONArray;
+import net.sf.json.JSONObject;
+
 
 
 /** 
@@ -106,145 +100,83 @@ public class DebtManager implements Constants {
 	@Test
     public void debtExcecute() throws Exception {  	
 		System.out.println("debtExcecute");
-		String balanceJson = BidService.queryBalanceService(token); 
-	    double balance = BidDataParser.getBalance(balanceJson);
-	    
-    	if(!BidDetermine.determineBalance(balance)) {
-    		return;
-    	}
-    	ArrayList<BidResult> successBidList = new ArrayList<BidResult>();    
-		int indexNum = 1;
+    	ArrayList<DebtResult> successDebtList = new ArrayList<DebtResult>();
 		int debtIdCount = 0;
-		List<Integer> debtIds,listingIds;
-		int listingId = 44408199;
-		do {
-
-			ArrayList<DebtInfo> debtList = DebtListFilter.debtListFilter(DebtService.debtListService(indexNum));
-			
-			//将debtList切分为10个一组,再拼接成一个Collector
-			ArrayList<List<DebtInfo>> debtListCollector = DebtDataParser.getDebtsCollector(debtList);
-    		
-			indexNum ++;
-		}while(debtIdCount != 50);
-		/*do{
-			
-			LoanListResult loanListResult = DebtService.debtListService(indexNum);
-			System.out.println(loanListResult.getLoanIdCount());
-			System.out.println(loanListResult.getLoanList());
-			loanIdCount = loanListResult.getLoanIdCount();
-	    	//请求服务获取ListingIds
-	    	listingIds = BidDataParser.getListingIds(loanListResult.getLoanList());	
-    		listingIds = new ArrayList<Integer>();
-    		listingIds.add(86084296);
-    		//System.out.println(listingIds);
-    		
-    		//将ListingIds切分成10个一组，再拼接成一个Collector
-    		Integer[][] listingIdsParted = BidDataParser.getListingIdsParted(listingIds);
-
-    		ArrayList<List<Integer>> listingIdsCollector = BidDataParser.getLisiingIdsCollector(listingIdsParted);
-    		
-    		//System.out.println(listingIdsCollector);
-    		
-    		//循环遍历，每组传入接口 BatchListingInfos,并将结果合并到Collector
-    		ArrayList<String> batchListInfosCollector = BidService.batchListInfosCollectorService(
-    				token, listingIdsCollector);
-    		//System.out.println(batchListInfosCollector);
-    		
-    		
-    		//将合并后的Collector处理成JSONArray数组，并再合并为新的Collector
-    		ArrayList<JSONArray> loanInfosCollector = BidDataParser.getLoanInfosCollector(batchListInfosCollector);
-    		
-    		//System.out.println(loanInfosCollector);
-    		
-    		//循环遍历得出JSONArray，将每个JSONArray再分拆为多个标的JSONObject
-    		Iterator<JSONArray> loanInfosIt = loanInfosCollector.iterator();
-    		
-    		while(loanInfosIt.hasNext()){
-    			JSONArray loanInfosArray = loanInfosIt.next();
-    			for(int i=0;i<loanInfosArray.length();i++){
-    				JSONObject loanInfoObj = loanInfosArray.getJSONObject(i);
-       			    
-    				//System.out.println(loanInfoObj);
-    				
-    				//将得到的每个标的loanInfo解析为每个字段，将结果合并为HashMap
-    				HashMap<String,Object> loanInfoMap = BidDataParser.getLoanInfoMap(loanInfoObj);
-    				
-    				int listingId = loanInfoObj.getInt("ListingId");
-    				//运行初始策略判断
-    				int basicCriteriaLevel = new BasicCriteria().getLevel(loanInfoMap);
-    				//new BasicCriteria().printCriteria(loanInfoMap);
-    				//System.out.println("basicCriteriaLevel is :" + basicCriteriaLevel);
-
-    				//根据初始策略返回不同，选择不同的策略组
-    				CriteriaGroup criteriaGroup = new CriteriaGroup();    				
-					switch(basicCriteriaLevel){
-						case PERFECT: 	criteriaGroup = new EduDebtCriteriaGroup(); break;
-						case GOOD:		criteriaGroup = new EduCriteriaGroup(); break;
-						case OK:		criteriaGroup = new DebtRateCriteriaGroup(); break;
-						case SOSO:		criteriaGroup = new BeginCriteriaGroup(); break;
-						default:		criteriaGroup = null;break;
-					}
-
-    				BidResult successBidResult = null;
-    				int bidAmount = 0;
-    				//如果基础策略不匹配，则将判定策略组应投金额
-    				if( basicCriteriaLevel > 0){
-    					
-    					//先判定是否在Redis中重复，即已投过该标的
-    					//bidAmount = new BidDetermine().determineCriteriaGroup(criteriaGroup, loanInfoMap);
-    					if(!BidDetermine.determineDuplicateId(listingId,jedis)){
-    						System.out.println("====== listingId: "+listingId + ", Start bidding ====== ");
-    						//logger.info("listingId: " + listingId + ", JSON is: " + loanInfoMap);
-    						bidAmount = new BidDetermine().determineCriteriaGroup(criteriaGroup, loanInfoMap);
-    						System.out.println("****** listingId: "+listingId + ", total Amount is: " + bidAmount + " ******" );
-    					}else{
-    						//logger.error("xxxxxx " + listingId + "在Redis中重复！ xxxxxx");
-    						
-    					}
-    				}				
-					if(bidAmount!=0){
-						if(balance > bidAmount) {
-							//logger.info("该标的可投");
-							successBidResult = BidService.biddingService(token, openId, listingId,bidAmount);
-						}else if(balance > MIN_BID_AMOUNT){
-							logger.info("该标只能投" + MIN_BID_AMOUNT);
-							successBidResult = BidService.biddingService(token, openId, listingId,MIN_BID_AMOUNT);
-						}else{
-							logger.error("余额不足,请等待5分钟后再试");
-							Thread.sleep(300000);
-						}
-					}
-			    	if(successBidResult != null) {
-						//logger.info(listingId+" will be bidden~~~~~~~~~~bidAmount is："+bidAmount);
-						if(!successBidList.contains(successBidResult)) {
-				    		successBidList.add(successBidResult);
-						}
-						jedis.setex(String.valueOf(listingId), 172800, String.valueOf(bidAmount));
-					}
-    			}
-    		}
-			//System.out.println(indexNum);
-	    	indexNum++;
-		}while(loanIdCount == 50);*/
-		//System.out.println("*~~~~~~~~~~~~~~~~~~~~标的执行完毕，投标结果如下：~~~~~~~~~~~~~~~~~~~*");
-    	//bidResultsPrint(successBidList,listingIds.size());
+		
+		debtNoOverdueExecute(successDebtList,debtIdCount);
+		
+		if(Integer.parseInt(ConfUtil.getProperty("debt_overdue_swith"))==1) {
+			debtOverdueExecute(successDebtList, debtIdCount);
+		}		
 		logger = null;
 		instance = null;
-
     }
-	private void bidResultsPrint(ArrayList<BidResult> successBidList,int listingIdsSize) {
-    	if(listingIdsSize==0){
-    		System.out.println("*~~~~~~~~~~~~~~~~~~~~~很抱歉，没有可投标的~~~~~~~~~~~~~~~~~~~~~~~~~*");
-    	}else if(successBidList.isEmpty()){
-    		System.out.println("*~~~~~~~~~~~~~~~~~~~很抱歉，没有找到合适标的~~~~~~~~~~~~~~~~~~~~~~~*");
-    	}else{
+
+	private void debtNoOverdueExecute(ArrayList<DebtResult> successDebtList,int debtIdCount) throws Exception {
+		System.out.println("debtNoOverdueExecute");
+		execute(successDebtList,debtIdCount);
+	}
+	
+	private void debtOverdueExecute(ArrayList<DebtResult> successDebtList,int debtIdCount) throws Exception {
+		System.out.println("debtOverdueExcecute");
+		execute(successDebtList,debtIdCount);
+	}
+	
+	private void execute(ArrayList<DebtResult> successDebtList,int debtIdCount) throws Exception {
+		String balanceJson = BidService.queryBalanceService(token); 
+	    double balance = BidDataParser.getBalance(balanceJson);	    
+    	if(!BidDetermine.determineBalance(balance)) {
+    		return;
+    	}    
+		int indexNum = 1;
+
+		do {
+			JSONArray debtListArray = DebtService.debtListService(indexNum);			
+			
+			//将获取的debtList按照DebtListFilter中定义的规则过滤
+			JSONArray dlFiltered = DebtListFilter.filter(debtListArray);
+			debtIdCount = dlFiltered.size();
+			
+			//将debtList切分为10个一组,再拼接成一个Collector
+			ArrayList<JSONArray> daList = DebtDataParser.getDebtsCollector(dlFiltered);
     		
-           	Iterator<BidResult> successBidIt = successBidList.iterator();
-        	while(successBidIt.hasNext()){
-        		BidResult successResult = (BidResult)successBidIt.next();
-        		System.out.println("*~~~~~~~~~~~ BidId:"+successResult.getBidId()+",BidAmount:"+
-        				successResult.getBidAmount() + "~~~~~~~~~~~*");
-        	}
+			for(int i=0;i<daList.size();i++) {
+							
+				//获取债权标的明细
+				JSONArray debtInfosList = DebtService.batchDebtInfosService((JSONArray)daList.get(i));
+				
+				//通过对债权明细数据分析，选择出可投的债权标
+				JSONArray dFiltered = DebtInfosListFilter.filter(debtInfosList);
+				
+				//通过对债权对应标的数据分析，选择出最终可投的债权标
+				JSONArray dbFiltered = BidInfosFilter.filter(dFiltered);
+				
+				//遍历数组，对每个可投债权标尝试投标
+				for(int j=0;j<dbFiltered.size();j++) {
+					JSONObject di = dbFiltered.getJSONObject(i);
+					DebtResult debtResult = DebtService.buyDebtService(token,openId,di);
+					if(debtResult != null) {
+						successDebtList.add(debtResult);
+					}
+				}
+			}
+			indexNum ++;
+		}while(debtIdCount == 50); //每页50个元素
+		debtResultsPrint(successDebtList,debtIdCount);		
+	}
+	
+
+	private void debtResultsPrint(ArrayList<DebtResult> successDebtList,int debtListSize) {
+    	if(debtListSize==0){
+    		System.out.println("*~~~~~~~~~~~~~~~~~~~~~很抱歉，没有可投债权~~~~~~~~~~~~~~~~~~~~~~~~~*");
+    	}else if(successDebtList.isEmpty()){
+    		System.out.println("*~~~~~~~~~~~~~~~~~~~很抱歉，没有找到合适债权~~~~~~~~~~~~~~~~~~~~~~~*");
+    	}else{
+    		for(int i=0;i<successDebtList.size();i++) {
+    			DebtResult dr = successDebtList.get(i);
+        		System.out.println("*~~~~~~~~~~~ DebtId:"+dr.getDebtId() + "ListingId:"+
+        				dr.getListingId() + "Price:" + dr.getPrice()+"~~~~~~~~~~~*");
+    		}
     	}		
 	}
  }

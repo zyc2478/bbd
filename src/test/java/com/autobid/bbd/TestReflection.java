@@ -9,7 +9,7 @@ import org.junit.Test;
 public class TestReflection {
 	
 	@Test
-	public void testRefelect() throws ClassNotFoundException, InstantiationException, IllegalAccessException, 
+	public void testReflect() throws ClassNotFoundException, InstantiationException, IllegalAccessException, 
 			NoSuchMethodException, SecurityException, IllegalArgumentException, InvocationTargetException {
 		String className = "com.autobid.bbd.FunClass";
 		String methodName = "sayHello";
@@ -37,21 +37,47 @@ public class TestReflection {
 			System.out.println(strBuffer);
 		}
 	}
+	
+	@Test
+	public void testFuncReflect() {
+		FunProc.proc();
+		FunClass.callProc();
+	}
 }
+
 
 
 class FunClass{
 	
-	static String staticStr = "I'm a static string!";
+	String staticStr = "I'm a static string!";
 	String globalStr = "I'm a global string!";
 	
 	public void setStaticStr(String str) {
 		staticStr = str;
 		this.globalStr = str + ":global";
 	}
+	
+	public static void callProc() {
+		System.out.println("~~~~~ in callProc() ~~~~~~ ");
+		FunProc.proc();
+	}
 	public String sayHello(String s){
 		String localStr = s;
 		System.out.println(localStr);
 		return "hello!";
+	}
+}
+
+class FunProc{
+	public static void proc() {
+		System.out.println("~~~~~ this is the proc in fun! ~~~~~");
+		StackTraceElement stack[] = Thread.currentThread().getStackTrace();
+		for(int i=0;i<stack.length;i++) {
+			System.out.println(stack[i].getClassName()+"."+stack[i].getMethodName());
+		}
+		System.out.println("第2个元素是："+stack[1].getClassName()+"."+stack[1].getMethodName());
+/*		String callName=stack[2].getClassName();
+		if (!callName.endsWith("SelectDefBindingContainer")){	}
+		System.out.println("called by "+ste.getClassName()+"."+ste.getMethodName()+"/"+ste.getFileName());*/
 	}
 }
