@@ -14,8 +14,13 @@ public class DebtInfosListFilter extends ListFilter{
 	public static JSONArray filter(JSONArray debtList) throws Exception {
 		JSONArray dlFiltered = new JSONArray();
 		StackTraceElement stack[] = Thread.currentThread().getStackTrace();
-		String callParentMethod=stack[2].getMethodName();
+		String callParentMethod=stack[3].getMethodName();
+/*		System.out.println("stack[1]:"+stack[1]);
+		System.out.println("stack[2]:"+stack[2]);
+		System.out.println("stack[3]:"+stack[3]);
+		System.out.println("callParentMethod:"+callParentMethod);*/
 		boolean ifOverdue = !callParentMethod.contains("No");
+		//System.out.print("ifOverdue:"+ifOverdue);
 		for(int i=0;i<debtList.size();i++) {
 			JSONObject debtInfos = debtList.getJSONObject(i);
 			if(ifOverdue==false) {

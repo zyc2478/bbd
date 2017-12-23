@@ -1,4 +1,4 @@
-package com.autobid.bbd;
+package com.autobid.util;
 
 import redis.clients.jedis.Jedis;
 import redis.clients.jedis.JedisPool;

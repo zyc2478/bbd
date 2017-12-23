@@ -12,12 +12,14 @@ import com.autobid.entity.Constants;
 * @date 2017年10月13日 下午5:16:24 
 *  
 */
-public class BasicCriteria implements Criteria,Constants {
+public class BasicCriteria extends BidCriteria implements Constants {
 	
-	boolean eduBasicCriteria,debtBasicCriteria,beginBasicCriteria;
+	static boolean eduBasicCriteria;
+	static boolean debtBasicCriteria;
+	static boolean beginBasicCriteria;
 	
 	
-	public void calc(HashMap<String, Object> loanInfoMap) throws Exception {
+	public static void calc(HashMap<String, Object> loanInfoMap) throws Exception {
 		int creditCodeLevel = new CreditCodeCriteria().getLevel(loanInfoMap);
 		int debtRateLevel = new DebtRateCriteria().getLevel(loanInfoMap);
 		int educationLevel = new EducationCriteria().getLevel(loanInfoMap);
@@ -59,7 +61,7 @@ public class BasicCriteria implements Criteria,Constants {
 		//System.out.println("eduBasicCriteria:"+eduBasicCriteria);
 	}
 	
-	public int getLevel(HashMap<String, Object> loanInfoMap) throws Exception {
+	public static int getLevel(HashMap<String, Object> loanInfoMap) throws Exception {
 		calc(loanInfoMap);
 		//printCriteria(loanInfoMap);
 		if(eduBasicCriteria && debtBasicCriteria){

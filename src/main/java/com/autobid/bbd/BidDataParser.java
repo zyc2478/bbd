@@ -25,6 +25,7 @@ public class BidDataParser {
 	private static Logger logger = Logger.getLogger(BidDataParser.class);  
 	
 	public static double getBalance(String queryBalanceJson) throws ParseException{
+		
 		JSONObject balanceJson = new JSONObject(queryBalanceJson);
 		//logger.info(balanceJson);
 

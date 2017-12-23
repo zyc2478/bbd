@@ -1,4 +1,4 @@
-package com.autobid.bbd;
+package com.autobid.util;
 
 import org.apache.log4j.BasicConfigurator;
 import org.apache.log4j.Logger;

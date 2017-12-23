@@ -1,4 +1,4 @@
-package com.autobid.bbd;
+package com.autobid.util;
 
 //import java.io.IOException;
 
@@ -21,7 +21,7 @@ public class ConfUtilTest {
 	
 	Logger logger = Logger.getLogger("ConfUtilTest.class");
 	
-	@Before
+/*	@Before
 	public void testSetProperty() throws IOException, ParseException {
 		//ConfUtil.setProperty("ttkey", "ttvv2");
 		logger.info(ConfUtil.getProperty("token_init"));
@@ -35,6 +35,18 @@ public class ConfUtilTest {
     	logger.info(ConfUtil.getProperty("min_bid_amount"));
     	logger.info("token is : \"" + ConfUtil.getProperty("token") +"\"");
     	logger.info("refresh_token is : " + ConfUtil.getProperty("refresh_token"));
+    }*/
+    
+    @Test
+    public void testGetAllFromBean() throws Exception {
+    	ConfUtil.readAllToBean();
+    }
+    
+    @Test
+    public void testGetFuncValueFromBean() throws Exception{
+    	ConfBean cb = ConfUtil.readAllToBean();
+    	System.out.println("cb.getAmountBegin():" + cb.getAmountBegin());
+    	System.out.println("cb.getAmountMrate():" + cb.getAmountMrate());
     }
     
 /*    @Test

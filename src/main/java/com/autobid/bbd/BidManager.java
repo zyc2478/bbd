@@ -22,6 +22,7 @@ import com.autobid.entity.CriteriaGroup;
 import com.autobid.entity.BidResult;
 import com.autobid.entity.LoanListResult;
 import com.autobid.entity.Constants;
+import com.autobid.util.ConfBean;
 import com.autobid.util.ConfUtil;
 import com.autobid.util.TokenInit;
 import com.autobid.util.TokenUtil;
@@ -49,6 +50,7 @@ public class BidManager implements Constants {
 
     //单例
     private volatile static BidManager instance;
+    
     //private BidByDebt(){}
     public BidManager(){}
     public static BidManager getInstance(){
@@ -72,10 +74,11 @@ public class BidManager implements Constants {
 	static{
 		try{
 			AuthInit.init();
-			MIN_BID_AMOUNT = Integer.parseInt(ConfUtil.getProperty("min_bid_amount"));
-			openId = ConfUtil.getProperty("open_id");
-    		redisHost = ConfUtil.getProperty("redis_host");
-    		redisPort = Integer.parseInt(ConfUtil.getProperty("redis_port"));
+		    ConfBean cb = ConfUtil.readAllToBean();
+			MIN_BID_AMOUNT = Integer.parseInt(cb.getMinBidAmount());
+			openId = cb.getOpenId();
+    		redisHost = cb.getRedisHost();
+    		redisPort = Integer.parseInt(cb.getRedisPort());
     		
     		jedis = new Jedis(redisHost,redisPort);
 			
@@ -152,7 +155,7 @@ public class BidManager implements Constants {
     				
     				int listingId = loanInfoObj.getInt("ListingId");
     				//运行初始策略判断
-    				int basicCriteriaLevel = new BasicCriteria().getLevel(loanInfoMap);
+    				int basicCriteriaLevel = BasicCriteria.getLevel(loanInfoMap);
     				//new BasicCriteria().printCriteria(loanInfoMap);
     				//System.out.println("basicCriteriaLevel is :" + basicCriteriaLevel);
 
@@ -176,7 +179,8 @@ public class BidManager implements Constants {
     					if(!BidDetermine.determineDuplicateId(listingId,jedis)){
     						System.out.println("====== listingId: "+listingId + ", Start bidding ====== ");
     						//logger.info("listingId: " + listingId + ", JSON is: " + loanInfoMap);
-    						bidAmount = new BidDetermine().determineCriteriaGroup(criteriaGroup, loanInfoMap);
+    						//bidAmount = new BidDetermine().determineCriteriaGroup(criteriaGroup, loanInfoMap);
+    						bidAmount = BidDetermine.determineCriteriaGroup(criteriaGroup,cb,loanInfoMap);
     						System.out.println("****** listingId: "+listingId + ", total Amount is: " + bidAmount + " ******" );
     					}else{
     						//logger.error("xxxxxx " + listingId + "在Redis中重复！ xxxxxx");
@@ -209,7 +213,7 @@ public class BidManager implements Constants {
 		}while(loanIdCount == 200);
 		System.out.println("*~~~~~~~~~~~~~~~~~~~~标的执行完毕，投标结果如下：~~~~~~~~~~~~~~~~~~~*");
     	bidResultsPrint(successBidList,listingIds.size());
-    	if(Integer.parseInt(ConfUtil.getProperty("debt_swith"))==1) {
+    	if(Integer.parseInt(ConfUtil.getProperty("debt_switch"))==1) {
     		System.out.println("没有普通标的，投债转标");
     		DebtManager debt = DebtManager.getInstance();
     		debt.debtExcecute();

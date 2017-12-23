@@ -17,7 +17,10 @@ public class DebtListFilter extends ListFilter{
 			JSONObject dl = debtListArray.getJSONObject(i);
 			String creditCode = dl.getString("CreditCode");
 			Double priceForSale = dl.getDouble("PriceforSale");
-			Double priceForSaleRate = dl.getDouble("PriceForSaleRate");
+			//String priceForSaleRate = dl.getString("PriceforSaleRate");
+
+			Double priceForSaleRate = dl.getDouble("PriceforSaleRate");
+			//System.out.println(priceForSaleRate);
 				
 			if(determineCreditCode(creditCode) && determinePrice(priceForSale) && determinePriceForSaleRate(priceForSaleRate)) {
 				debtListFiltered.add(dl);

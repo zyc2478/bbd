@@ -1,4 +1,4 @@
-package com.autobid.bbd;
+package com.autobid.util;
 
 import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;

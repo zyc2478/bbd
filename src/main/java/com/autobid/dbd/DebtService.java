@@ -50,8 +50,10 @@ public class DebtService {
 	public static JSONArray batchDebtInfosService(JSONArray diArray) throws Exception {
 		String  url = "https://openapi.ppdai.com/invest/LLoanInfoService/BatchDebtInfos";
 		List<Integer> debtIds = new ArrayList<Integer>();
+		//System.out.println(diArray);
 		for(int i=0;i<diArray.size();i++) {
-			debtIds.add(new Integer(((JSONObject) diArray.get(i)).getInt("DebtId")));
+			//debtIds.add(new Integer();
+			debtIds.add(Integer.valueOf(((JSONObject) diArray.get(i)).getString("DebtdealId")));
 		}
     	Result result = OpenApiClient.send(url,new PropertyObject("DebtIds", debtIds, ValueTypeEnum.Other));
     	JSONArray debtInfosArray = null;
@@ -67,7 +69,7 @@ public class DebtService {
     		//logger.info(balanceJson);
 
     		debtInfosArray = batchDebtInfosJson.getJSONArray("DebtInfos");
-    		logger.info(debtInfosArray);
+    		//logger.info(debtInfosArray);
     	}else{
     		logger.error(result.getErrorMessage());
     	}

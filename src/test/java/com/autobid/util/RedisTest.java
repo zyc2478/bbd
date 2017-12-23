@@ -1,4 +1,4 @@
-package com.autobid.bbd;
+package com.autobid.util;
 
 //import java.util.HashMap;
 //import java.util.Iterator;

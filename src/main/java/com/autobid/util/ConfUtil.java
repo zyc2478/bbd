@@ -8,13 +8,15 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream; 
 import java.io.InputStreamReader;
+import java.lang.reflect.Method;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 //import java.io.InputStreamReader;
 //import java.io.Reader;
 import java.util.Iterator;
-import java.util.Properties; 
+import java.util.Properties;
+import java.util.Set; 
 
 //import org.apache.log4j.Logger;
 
@@ -30,6 +32,59 @@ public class ConfUtil {
 	private static String fileName = System.getProperty("user.dir") + "/config.properties";
 	
 	//private static String fileName = "config.properties";
+	
+	public static ConfBean readAllToBean() throws Exception {
+		InputStream in = new FileInputStream(fileName);
+		prop.load(in);
+		Set<String> keySet = prop.stringPropertyNames();
+		ConfBean cb = new ConfBean();
+		//获取方法  
+		for(String propName:keySet) {
+			cb.setAmountBegin(prop.getProperty("amount_begin"));
+			
+			//将下划线字符串改为驼峰字符串，并将首字母大写，前面加上set得到函数名
+			String methodName = "set"+ camelCaseName(captureName(propName));
+			
+			//根据类和函数名得到Method对象
+			Method method = cb.getClass().getDeclaredMethod(methodName, String.class);
+			
+			//调用执行该method的方法，是set赋值方法，赋的值为配置文件属性名
+			method.invoke(cb, prop.getProperty(propName));
+		}
+		
+		//System.out.println(cb.getClass().getDeclaredMethod("getAmountBegin").invoke(cb));
+		in.close();
+		return cb;
+	}
+	
+	
+	
+    public static String camelCaseName(String underscoreName) {  
+        StringBuilder result = new StringBuilder();  
+        if (underscoreName != null && underscoreName.length() > 0) {  
+            boolean flag = false;  
+            for (int i = 0; i < underscoreName.length(); i++) {  
+                char ch = underscoreName.charAt(i);  
+                if ("_".charAt(0) == ch) {  
+                    flag = true;  
+                } else {  
+                    if (flag) {  
+                        result.append(Character.toUpperCase(ch));  
+                        flag = false;  
+                    } else {  
+                        result.append(ch);  
+                    }  
+                }  
+            }  
+        }  
+        return result.toString();  
+    }  
+	
+    public static String captureName(String name) {
+		char[] cs=name.toCharArray();
+		cs[0]-=32;
+		return String.valueOf(cs);        
+    }
 	
 	public void readConf() throws IOException {
         //读取属性文件

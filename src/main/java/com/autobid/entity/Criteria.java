@@ -10,7 +10,7 @@ import java.util.HashMap;
 *  
 */
 public interface Criteria {
-	public void calc(HashMap<String,Object> loanInfoMap) throws Exception;
-	public int getLevel(HashMap<String,Object> loanInfoMap) throws Exception;
+//	public void calc(HashMap<String,Object> loanInfoMap) throws Exception;
+//	public int getLevel(HashMap<String,Object> loanInfoMap) throws Exception;
 	public String getCriteriaName();
 }

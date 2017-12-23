@@ -17,6 +17,7 @@ import com.autobid.entity.Constants;
 import com.autobid.entity.Criteria;
 import com.autobid.entity.CriteriaBid;
 import com.autobid.entity.CriteriaGroup;
+import com.autobid.util.ConfBean;
 import com.autobid.util.ConfUtil;
 
 /** 
@@ -164,7 +165,7 @@ public class BidDetermine implements Constants {
 		}
 	}
 	
-	public int determineCriteriaGroup(CriteriaGroup criteriaGroup,HashMap<String,Object> loanInfoMap) 
+	public static int determineCriteriaGroup(CriteriaGroup criteriaGroup,ConfBean cb,HashMap<String,Object> loanInfoMap) 
 			throws Exception{
 		//System.out.println("eduCriteriaGroup's size " + eduCriteriaGroup.getCriteriaList().size());
 		int totalAmount = 0;
@@ -179,8 +180,13 @@ public class BidDetermine implements Constants {
 
 			//注意，static方法不能使用this.getClass(),getDeclaredMethod(name, parameterTypes)
 			//int本身不是对象，只能用如下方法调用 new Class[]{int.class}
-			Method method = this.getClass().getDeclaredMethod(methodName,new Class[]{int.class});
-			int amount = Integer.parseInt(method.invoke(this.getClass(),criteriaLevel).toString());
+			//Method method = this.getClass().getDeclaredMethod(methodName,new Class[]{int.class});
+			
+			//Class<?> bdo = Class.forName("com.autobid.bbd.BidDetermine");
+			Class<BidDetermine> bdo = BidDetermine.class;
+			Method method = bdo.getDeclaredMethod(methodName,new Class[]{int.class});
+			//int amount = Integer.parseInt(method.invoke(this.getClass(),criteriaLevel).toString());
+			int amount = Integer.parseInt(method.invoke(bdo,criteriaLevel).toString());
 			CriteriaBid criteriaBid = new CriteriaBid();
 			criteriaBid.setAmount(amount);
 			criteriaBid.setCriteriaName(criteriaName);

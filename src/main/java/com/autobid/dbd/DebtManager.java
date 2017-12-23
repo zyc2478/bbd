@@ -101,41 +101,46 @@ public class DebtManager implements Constants {
     public void debtExcecute() throws Exception {  	
 		System.out.println("debtExcecute");
     	ArrayList<DebtResult> successDebtList = new ArrayList<DebtResult>();
-		int debtIdCount = 0;
 		
-		debtNoOverdueExecute(successDebtList,debtIdCount);
+		debtNoOverdueExecute(successDebtList);
 		
-		if(Integer.parseInt(ConfUtil.getProperty("debt_overdue_swith"))==1) {
-			debtOverdueExecute(successDebtList, debtIdCount);
+		if(Integer.parseInt(ConfUtil.getProperty("debt_overdue_switch"))==1) {
+			debtOverdueExecute(successDebtList);
 		}		
 		logger = null;
 		instance = null;
     }
 
-	private void debtNoOverdueExecute(ArrayList<DebtResult> successDebtList,int debtIdCount) throws Exception {
+	private void debtNoOverdueExecute(ArrayList<DebtResult> successDebtList) throws Exception {
 		System.out.println("debtNoOverdueExecute");
-		execute(successDebtList,debtIdCount);
+		execute(successDebtList);
 	}
 	
-	private void debtOverdueExecute(ArrayList<DebtResult> successDebtList,int debtIdCount) throws Exception {
+	private void debtOverdueExecute(ArrayList<DebtResult> successDebtList) throws Exception {
 		System.out.println("debtOverdueExcecute");
-		execute(successDebtList,debtIdCount);
+		execute(successDebtList);
 	}
 	
-	private void execute(ArrayList<DebtResult> successDebtList,int debtIdCount) throws Exception {
+	private void execute(ArrayList<DebtResult> successDebtList) throws Exception {
 		String balanceJson = BidService.queryBalanceService(token); 
 	    double balance = BidDataParser.getBalance(balanceJson);	    
     	if(!BidDetermine.determineBalance(balance)) {
     		return;
     	}    
 		int indexNum = 1;
-
+		int debtCount = 0;
+		int debtFCount = 0;
+		int totalDebtCount = 0;
 		do {
-			JSONArray debtListArray = DebtService.debtListService(indexNum);			
-			
+			JSONArray debtListArray = DebtService.debtListService(indexNum);		
+			debtCount = debtListArray.size();
+			totalDebtCount += debtCount;
 			//将获取的debtList按照DebtListFilter中定义的规则过滤
 			JSONArray dlFiltered = DebtListFilter.filter(debtListArray);
-			debtIdCount = dlFiltered.size();
+			
+			debtFCount += dlFiltered.size();
+			
+			System.out.println("debtFCount "+ indexNum + " is: "+ debtFCount);
 			
 			//将debtList切分为10个一组,再拼接成一个Collector
 			ArrayList<JSONArray> daList = DebtDataParser.getDebtsCollector(dlFiltered);
@@ -148,8 +153,12 @@ public class DebtManager implements Constants {
 				//通过对债权明细数据分析，选择出可投的债权标
 				JSONArray dFiltered = DebtInfosListFilter.filter(debtInfosList);
 				
+				
+				
 				//通过对债权对应标的数据分析，选择出最终可投的债权标
 				JSONArray dbFiltered = BidInfosFilter.filter(dFiltered);
+				
+				//System.out.println("dbFiltered.size() is :" + dbFiltered.size());
 				
 				//遍历数组，对每个可投债权标尝试投标
 				for(int j=0;j<dbFiltered.size();j++) {
@@ -157,17 +166,21 @@ public class DebtManager implements Constants {
 					DebtResult debtResult = DebtService.buyDebtService(token,openId,di);
 					if(debtResult != null) {
 						successDebtList.add(debtResult);
+						;
 					}
 				}
 			}
 			indexNum ++;
-		}while(debtIdCount == 50); //每页50个元素
-		debtResultsPrint(successDebtList,debtIdCount);		
+		}while(debtCount  == 50); //每页50个元素
+		
+		System.out.println("Total Debt Count is :"+totalDebtCount);
+		
+		debtResultsPrint(successDebtList,totalDebtCount);		
 	}
 	
 
-	private void debtResultsPrint(ArrayList<DebtResult> successDebtList,int debtListSize) {
-    	if(debtListSize==0){
+	private void debtResultsPrint(ArrayList<DebtResult> successDebtList,int successDebtCount) {
+    	if(successDebtCount==0){
     		System.out.println("*~~~~~~~~~~~~~~~~~~~~~很抱歉，没有可投债权~~~~~~~~~~~~~~~~~~~~~~~~~*");
     	}else if(successDebtList.isEmpty()){
     		System.out.println("*~~~~~~~~~~~~~~~~~~~很抱歉，没有找到合适债权~~~~~~~~~~~~~~~~~~~~~~~*");

@@ -1,6 +1,7 @@
 package com.autobid.dbd;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import net.sf.json.JSONArray;
 //import org.apache.log4j.Logger;
@@ -37,11 +38,23 @@ public class DebtDataParser {
 			 * 情况3：比如对于35个元素第二轮，i=1,fromIndex=10,toindex=20
 			 */
 			if(m!=0 && i==partCount-1) {
-				JSONArray subDebtList = (JSONArray)debtList.subList(i*partSize, size-1);
-				dll.add(subDebtList);
+				List<?> subDebtList = debtList.subList(i*partSize, size-1);
+				//subDebtList = (JSONArray)debtList.subList(i*partSize, size-1);
+				//subDebtList = debtList.subList(fromIndex, toIndex)
+				JSONArray subDebtArray = new JSONArray();
+				for(Object object:subDebtList) {
+					subDebtArray.add(object);
+				}
+				dll.add(subDebtArray);
 			}else {
-				JSONArray subDebtList = (JSONArray)debtList.subList(i*partSize, (i+1)*partSize);
-				dll.add(subDebtList);
+				List<?> subDebtList = debtList.subList(i*partSize, (i+1)*partSize);
+				//subDebtList = (JSONArray)debtList.subList(i*partSize, size-1);
+				//subDebtList = debtList.subList(fromIndex, toIndex)
+				JSONArray subDebtArray = new JSONArray();
+				for(Object object:subDebtList) {
+					subDebtArray.add(object);
+				}
+				dll.add(subDebtArray);
 			}
 		}
 		return dll;
