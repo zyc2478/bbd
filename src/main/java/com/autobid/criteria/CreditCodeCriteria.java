@@ -2,10 +2,9 @@ package com.autobid.criteria;
 
 import java.io.IOException;
 import java.util.HashMap;
-
 import com.autobid.entity.Criteria;
 import com.autobid.entity.Constants;
-import com.autobid.util.ConfUtil;
+import com.autobid.util.ConfBean;
 
 public class CreditCodeCriteria implements Criteria,Constants {
 
@@ -19,9 +18,9 @@ public class CreditCodeCriteria implements Criteria,Constants {
 	final int creditE = 5;
 	final int creditF = 6;
 	boolean criteriaCredit;
-	public void calc(HashMap<String, Object> loanInfoMap) throws IOException {
+	public void calc(HashMap<String, Object> loanInfoMap,ConfBean cb) throws IOException {
 		creditCode = (String) loanInfoMap.get("CreditCode");
-		creditCodeLimit = ConfUtil.getProperty("credit_limit");
+		creditCodeLimit = cb.getCreditLimit();
 		switch(creditCode) {
 			case "AA":	credit = creditAA; break;
 			case "A" :	credit = creditA; break;
@@ -45,8 +44,8 @@ public class CreditCodeCriteria implements Criteria,Constants {
 		criteriaCredit = credit >= creditLimit;
 		//criteriaCredit = true;
 	}
-	public int getLevel(HashMap<String,Object> loanInfoMap) throws IOException {
-		calc(loanInfoMap);
+	public int getLevel(HashMap<String,Object> loanInfoMap,ConfBean cb) throws IOException {
+		calc(loanInfoMap,cb);
 		if(criteriaCredit) {
 			return OK;
 		}else {

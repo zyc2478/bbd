@@ -4,6 +4,7 @@ import java.util.HashMap;
 
 import com.autobid.entity.Constants;
 import com.autobid.entity.Criteria;
+import com.autobid.util.ConfBean;
 import com.autobid.util.JsonUtil;
 
 public class EducationCriteria implements Criteria,Constants {
@@ -12,7 +13,8 @@ public class EducationCriteria implements Criteria,Constants {
 	String educationDegree,studyStyle;
 	boolean criteriaCertificate,criteriaBachelor,criteriaMaster;
 	//educateValidate = loanInfoObj.getInt("EducateValidate");
-	public void calc(HashMap<String, Object> loanInfoMap) {
+	public void calc(HashMap<String, Object> loanInfoMap,ConfBean cb) {
+		
 		certificateValidate = (int)loanInfoMap.get("CertificateValidate");
 		
 		//educationDegree 包括：本科、专科、硕士、研究生、专升本、专科（高职）
@@ -35,8 +37,8 @@ public class EducationCriteria implements Criteria,Constants {
 				
 	}
 
-	public int getLevel(HashMap<String,Object> loanInfoMap) {
-		calc(loanInfoMap);
+	public int getLevel(HashMap<String,Object> loanInfoMap,ConfBean cb) {
+		calc(loanInfoMap,cb);
 		if(criteriaMaster){
 			return PERFECT;
 		}else if(criteriaBachelor){

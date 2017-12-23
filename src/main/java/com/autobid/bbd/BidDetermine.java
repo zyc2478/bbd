@@ -4,15 +4,8 @@ import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
-
-//import org.apache.log4j.Logger;
-
-
-
 import org.apache.log4j.Logger;
-
 import redis.clients.jedis.Jedis;
-
 import com.autobid.entity.Constants;
 import com.autobid.entity.Criteria;
 import com.autobid.entity.CriteriaBid;
@@ -176,7 +169,7 @@ public class BidDetermine implements Constants {
 			Criteria c = criteriaIt.next();
 			String criteriaName = c.getCriteriaName();
 			String methodName =  "determine" + criteriaName;
-			int criteriaLevel = c.getLevel(loanInfoMap);
+			int criteriaLevel = c.getLevel(loanInfoMap,cb);
 
 			//注意，static方法不能使用this.getClass(),getDeclaredMethod(name, parameterTypes)
 			//int本身不是对象，只能用如下方法调用 new Class[]{int.class}

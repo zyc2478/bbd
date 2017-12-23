@@ -2,6 +2,8 @@ package com.autobid.entity;
 
 import java.util.HashMap;
 
+import com.autobid.util.ConfBean;
+
 /** 
 * @ClassName: Criteria 
 * @Description: 策略接口，所有策略均实现计算以及获取策略等级的方法
@@ -10,7 +12,7 @@ import java.util.HashMap;
 *  
 */
 public interface Criteria {
-//	public void calc(HashMap<String,Object> loanInfoMap) throws Exception;
-//	public int getLevel(HashMap<String,Object> loanInfoMap) throws Exception;
+	public void calc(HashMap<String,Object> loanInfoMap,ConfBean cb) throws Exception;
+	public int getLevel(HashMap<String,Object> loanInfoMap,ConfBean cb) throws Exception;
 	public String getCriteriaName();
 }

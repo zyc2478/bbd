@@ -1,11 +1,9 @@
 package com.autobid.criteria;
 
-import java.io.IOException;
 import java.util.HashMap;
-
 import com.autobid.entity.Constants;
 import com.autobid.entity.Criteria;
-import com.autobid.util.ConfUtil;
+import com.autobid.util.ConfBean;
 
 public class LoanAmountCriteria implements Criteria,Constants {
 
@@ -14,21 +12,22 @@ public class LoanAmountCriteria implements Criteria,Constants {
 	private int amount_begin,amount_end,owing_limit,total_limit;
 	private int gender;
 
-	public void calc(HashMap<String,Object> loanInfoMap) throws NumberFormatException, IOException {
+	public void calc(HashMap<String,Object> loanInfoMap,ConfBean cb) throws Exception {
+		
 		Integer loanAmount = (Integer)loanInfoMap.get("Amount") ;
 		Integer highestPrincipal = (Integer)loanInfoMap.get("HighestPrincipal");
 		Integer owingAmount = (Integer)loanInfoMap.get("OwingAmount");
 		Integer highestDebt = (Integer)loanInfoMap.get("HighestDebt");
 		Integer totalPrincipal = (Integer)loanInfoMap.get("TotalPrincipal");
 		gender = Integer.parseInt(loanInfoMap.get("Gender").toString());
-		total_limit = Integer.parseInt(ConfUtil.getProperty("total_limit"));
-		owing_mrate = Double.parseDouble(ConfUtil.getProperty("owing_mrate"));
-		owing_frate = Double.parseDouble(ConfUtil.getProperty("owing_frate"));
-		amount_begin = Integer.parseInt(ConfUtil.getProperty("amount_begin"));
-		amount_end = Integer.parseInt(ConfUtil.getProperty("amount_end"));
-		amount_mrate = Double.parseDouble(ConfUtil.getProperty("amount_mrate"));
-		amount_frate = Double.parseDouble(ConfUtil.getProperty("amount_frate"));
-		owing_limit = Integer.parseInt(ConfUtil.getProperty("owing_limit"));
+		total_limit = Integer.parseInt(cb.getTotalLimit());
+		owing_mrate = Double.parseDouble(cb.getOwingMrate());
+		owing_frate = Double.parseDouble(cb.getOwingFrate());
+		amount_begin = Integer.parseInt(cb.getAmountBegin());
+		amount_end = Integer.parseInt(cb.getAmountEnd());
+		amount_mrate = Double.parseDouble(cb.getAmountMrate());
+		amount_frate = Double.parseDouble(cb.getAmountFrate());
+		owing_limit = Integer.parseInt(cb.getOwingLimit());
 
 		//System.out.println("loanAmount:"+loanAmount);
 		criteriaAm = loanAmount >= amount_begin /amount_mrate && loanAmount <= amount_end * amount_mrate &&
@@ -49,8 +48,8 @@ public class LoanAmountCriteria implements Criteria,Constants {
 		 * 本次借款额度低于1.5W、正常还款5次以上、逾期还清次数（＞30天）最好没有、累计借款金额5K以上、待还金额5K以下、待还金额/历史最高负债越小越好，最好为0等等，
 		 */
 	}
-	public int getLevel(HashMap<String,Object> loanInfoMap) throws NumberFormatException, IOException {
-		calc(loanInfoMap);
+	public int getLevel(HashMap<String,Object> loanInfoMap,ConfBean cb) throws Exception {
+		calc(loanInfoMap,cb);
 /*		System.out.println("LoanAmount: criteriaAm:"+criteriaAm+",criteriaBm:"+criteriaBm + ",criteriaCm:"+criteriaCm+
 				",criteriaD:"+criteriaD+",criteriaE:"+criteriaE);*/
 /*		System.out.println("criteriaAf:"+criteriaAf+",criteriaBf:"+criteriaBf + ",criteriaCf:"+criteriaCf+

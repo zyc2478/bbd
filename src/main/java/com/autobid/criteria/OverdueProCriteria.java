@@ -1,18 +1,19 @@
 package com.autobid.criteria;
 
-import java.io.IOException;
 import java.util.HashMap;
 
 import com.autobid.entity.Constants;
 import com.autobid.entity.Criteria;
-import com.autobid.util.ConfUtil;
+import com.autobid.util.ConfBean;
 
 public class OverdueProCriteria implements Criteria,Constants {
 
 	int overdueLessCount,overdueMoreCount,normalCount,gender;
 	boolean criteriaMore,criteriaLess,criteriaLessRate,
 		criteriaLessMoreRate,criteriaNormal,criteriaOverdue;
-	public void calc(HashMap<String, Object> loanInfoMap) throws NumberFormatException, IOException {
+	
+	public void calc(HashMap<String, Object> loanInfoMap,ConfBean cb) throws Exception {
+		
 		overdueLessCount = (int) loanInfoMap.get("OverdueLessCount");
 		overdueMoreCount = (int) loanInfoMap.get("OverdueMoreCount");
 		normalCount = (int)loanInfoMap.get("NormalCount");
@@ -21,15 +22,15 @@ public class OverdueProCriteria implements Criteria,Constants {
 		criteriaLess = overdueLessCount==0;
 		criteriaLessRate = normalCount!=0?
 				new Integer(overdueLessCount).doubleValue()/normalCount < 
-				Double.parseDouble(ConfUtil.getProperty("overdue_rate")): false;
+				Double.parseDouble(cb.getOverdueRate()): false;
 		criteriaLessMoreRate = normalCount!=0?
 				new Integer(overdueLessCount).doubleValue()/normalCount < 
-				Double.parseDouble(ConfUtil.getProperty("overdue_rate")) * 1.5: false;		
-		criteriaNormal = normalCount >= Integer.parseInt(ConfUtil.getProperty("normal_limit"));
+				Double.parseDouble(cb.getOverdueRate()) * 1.5: false;		
+		criteriaNormal = normalCount >= Integer.parseInt(cb.getNormalLimit());
 	}
 	
-	public int getLevel(HashMap<String,Object> loanInfoMap) throws NumberFormatException, IOException {
-		calc(loanInfoMap);
+	public int getLevel(HashMap<String,Object> loanInfoMap,ConfBean cb) throws Exception {
+		calc(loanInfoMap,cb);
 		if(criteriaMore && criteriaLess && criteriaNormal){
 			return GOOD;
 		}else if(criteriaMore && criteriaLess && gender == 2){

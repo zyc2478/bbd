@@ -4,6 +4,7 @@ import java.util.HashMap;
 
 import com.autobid.entity.Constants;
 import com.autobid.entity.Criteria;
+import com.autobid.util.ConfBean;
 
 public class DebtRateProCriteria implements Criteria,Constants {
 
@@ -11,7 +12,7 @@ public class DebtRateProCriteria implements Criteria,Constants {
 	boolean criteriaDebtRate;
 	SuccessCountCriteria successCountCriteria = new SuccessCountCriteria();
 	
-	public void calc(HashMap<String, Object> loanInfoMap) {
+	public void calc(HashMap<String, Object> loanInfoMap,ConfBean cb) {
 		totalPrincipal = Double.parseDouble(loanInfoMap.get("TotalPrincipal").toString());
 		owingAmount = Double.parseDouble(loanInfoMap.get("OwingAmount").toString());
 		loanAmount = Double.parseDouble(loanInfoMap.get("Amount").toString());
@@ -19,8 +20,8 @@ public class DebtRateProCriteria implements Criteria,Constants {
 		debtTotalRate = totalPrincipal!=0?(owingAmount + loanAmount)/totalPrincipal:1;
 	}
 
-	public int getLevel(HashMap<String,Object> loanInfoMap) {
-		calc(loanInfoMap);
+	public int getLevel(HashMap<String,Object> loanInfoMap,ConfBean cb) {
+		calc(loanInfoMap,cb);
 		if(debtTotalRate < 0.15 || (gender == 2 && debtTotalRate < 0.25)) {
 			return PERFECT;
 		}else if(debtTotalRate < 0.25 || (gender == 2 && debtTotalRate < 0.33)){

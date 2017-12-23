@@ -4,25 +4,25 @@ import java.util.HashMap;
 
 import com.autobid.entity.Criteria;
 import com.autobid.entity.Constants;
-import com.autobid.util.ConfUtil;
+import com.autobid.util.ConfBean;
 
 public class AgeCriteria implements Criteria,Constants{
 
 	boolean criteriaM,criteriaF;
 
-	public void calc(HashMap<String, Object> loanInfoMap) throws Exception {
+	public void calc(HashMap<String, Object> loanInfoMap,ConfBean confBean) throws Exception {
 		int age = Integer.parseInt(loanInfoMap.get("Age").toString());
 		int gender = Integer.parseInt(loanInfoMap.get("Gender").toString());
-		criteriaM = age >= Integer.parseInt(ConfUtil.getProperty("min_mage"))
-				&& age <= Integer.parseInt(ConfUtil.getProperty("max_mage"))
+		criteriaM = age >= Integer.parseInt(confBean.getMinMage())
+				&& age <= Integer.parseInt(confBean.getMaxMage())
 				&& gender == 1;
-		criteriaF = age >= Integer.parseInt(ConfUtil.getProperty("min_fage"))
-				&& age <= Integer.parseInt(ConfUtil.getProperty("max_fage"))
+		criteriaF = age >= Integer.parseInt(confBean.getMinFage())
+				&& age <= Integer.parseInt(confBean.getMaxFage())
 				&& gender == 2;
 	}
 
-	public int getLevel(HashMap<String, Object> loanInfoMap) throws Exception {
-		calc(loanInfoMap);
+	public int getLevel(HashMap<String, Object> loanInfoMap,ConfBean confBean) throws Exception {
+		calc(loanInfoMap,confBean);
 		if(criteriaM || criteriaF) {
 			return OK;
 		}else {

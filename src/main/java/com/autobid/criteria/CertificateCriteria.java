@@ -4,11 +4,12 @@ import java.util.HashMap;
 
 import com.autobid.entity.Constants;
 import com.autobid.entity.Criteria;
+import com.autobid.util.ConfBean;
 
 public class CertificateCriteria implements Criteria,Constants {
 
 	private int certificateSum;
-	public void calc(HashMap<String, Object> loanInfoMap) {
+	public void calc(HashMap<String, Object> loanInfoMap,ConfBean cb) {
 		int certificateValidate = Integer.parseInt(loanInfoMap.get("CertificateValidate").toString());
 		int nciicIdentityCheck = Integer.parseInt(loanInfoMap.get("NciicIdentityCheck").toString());
 		int creditValidate = Integer.parseInt(loanInfoMap.get("CreditValidate").toString());
@@ -17,8 +18,8 @@ public class CertificateCriteria implements Criteria,Constants {
 		certificateSum = certificateValidate + nciicIdentityCheck + creditValidate + videoValidate;
 	}
 
-	public int getLevel(HashMap<String,Object> loanInfoMap) {
-		calc(loanInfoMap);
+	public int getLevel(HashMap<String,Object> loanInfoMap,ConfBean cb) {
+		calc(loanInfoMap,cb);
 		switch(certificateSum){
 			case 2:	return OK;
 			case 3: return GOOD;

@@ -1,11 +1,10 @@
 package com.autobid.criteria;
 
-import java.io.IOException;
 import java.util.HashMap;
 
 import com.autobid.entity.Criteria;
 import com.autobid.entity.Constants;
-import com.autobid.util.ConfUtil;
+import com.autobid.util.ConfBean;
 import com.autobid.util.JsonUtil;
 
 public class BeginProCriteria implements Criteria,Constants {
@@ -15,7 +14,7 @@ public class BeginProCriteria implements Criteria,Constants {
 	boolean criteriaCertificate,criteriaBachelor,criteriaMaster;
 	private boolean criteriaA,criteriaC,criteriaD;
 	//educateValidate = loanInfoObj.getInt("EducateValidate");
-	public void calc(HashMap<String, Object> loanInfoMap) throws NumberFormatException, IOException {
+	public void calc(HashMap<String, Object> loanInfoMap,ConfBean cb) throws Exception {
 		certificateValidate = (int)loanInfoMap.get("CertificateValidate");
 		
 		//educationDegree 包括：本科、专科、硕士、研究生、专升本、专科（高职）
@@ -41,9 +40,9 @@ public class BeginProCriteria implements Criteria,Constants {
 		Integer highestDebt = (Integer)loanInfoMap.get("HighestDebt");
 		Integer totalPrincipal = (Integer)loanInfoMap.get("TotalPrincipal");
 		//System.out.println("loanAmount:"+loanAmount);
-		criteriaA = loanAmount >= Integer.parseInt(ConfUtil.getProperty("amount_begin")) && 
-				loanAmount <= Integer.parseInt(ConfUtil.getProperty("amount_end")) && 
-				totalPrincipal >= Integer.parseInt(ConfUtil.getProperty("total_limit")) &&
+		criteriaA = loanAmount >= Integer.parseInt(cb.getAmountBegin()) && 
+				loanAmount <= Integer.parseInt(cb.getAmountEnd()) && 
+				totalPrincipal >= Integer.parseInt(cb.getTotalLimit()) &&
 				loanAmount < highestPrincipal;
 /*		criteriaB = owingAmount + loanAmount < highestDebt && 
 				owingAmount < Integer.parseInt(ConfUtil.getProperty("owing_limit")) ;*/
@@ -51,8 +50,8 @@ public class BeginProCriteria implements Criteria,Constants {
 		criteriaD = owingAmount < highestDebt/2 && loanAmount < highestDebt/2;
 	}
 
-	public int getLevel(HashMap<String,Object> loanInfoMap) throws NumberFormatException, IOException {
-		calc(loanInfoMap);
+	public int getLevel(HashMap<String,Object> loanInfoMap,ConfBean cb) throws Exception {
+		calc(loanInfoMap,cb);
 		if(criteriaMaster && criteriaA && criteriaC && criteriaD){
 			return PERFECT;
 		}else if(criteriaBachelor && criteriaA && criteriaC && criteriaD) {

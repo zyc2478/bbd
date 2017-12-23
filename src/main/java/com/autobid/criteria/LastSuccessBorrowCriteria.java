@@ -7,13 +7,15 @@ import java.util.HashMap;
 
 import com.autobid.entity.Constants;
 import com.autobid.entity.Criteria;
+import com.autobid.util.ConfBean;
 import com.autobid.util.ConfUtil;
 
 public class LastSuccessBorrowCriteria implements Criteria, Constants {
 
 	private int successCount;
 	boolean criteriaMShort,criteriaMLong,criteriaFShort,criteriaFLong;
-	public void calc(HashMap<String, Object> loanInfoMap) throws Exception {		
+	
+	public void calc(HashMap<String, Object> loanInfoMap,ConfBean cb) throws Exception {		
     	long diffDay = 0;
     	successCount = (int)loanInfoMap.get("SuccessCount");
     	if(successCount >= 1){
@@ -31,8 +33,8 @@ public class LastSuccessBorrowCriteria implements Criteria, Constants {
 	}
 	
 
-	public int getLevel(HashMap<String,Object> loanInfoMap) throws Exception {
-		calc(loanInfoMap);
+	public int getLevel(HashMap<String,Object> loanInfoMap,ConfBean cb) throws Exception {
+		calc(loanInfoMap,cb);
 		if(criteriaMLong || criteriaFLong){
 			return GOOD;
 		}else if(criteriaMShort || criteriaFShort){

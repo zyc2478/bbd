@@ -18,6 +18,7 @@ import com.autobid.filter.DebtInfosListFilter;
 import com.autobid.filter.BidInfosFilter;
 import com.autobid.filter.DebtListFilter;
 import com.autobid.entity.Constants;
+import com.autobid.util.ConfBean;
 import com.autobid.util.ConfUtil;
 import com.autobid.util.TokenInit;
 import com.autobid.util.TokenUtil;
@@ -36,14 +37,13 @@ import net.sf.json.JSONObject;
 */
 public class DebtManager implements Constants {
 
-	//private static final int NONE = 0;
 	private static int MIN_BID_AMOUNT;
-	
 	private static String token = "";
     private static String openId;
     private static String redisHost;
     private static int redisPort;
 	private static Jedis jedis;
+	private static ConfBean confBean;
     
 	private static Logger logger = Logger.getLogger(DebtManager.class);  
 
@@ -69,13 +69,14 @@ public class DebtManager implements Constants {
 	//int bidAmount = 0;
 
 	//static double balance;
-	static{
+    static{
 		try{
 			AuthInit.init();
-			MIN_BID_AMOUNT = Integer.parseInt(ConfUtil.getProperty("min_bid_amount"));
-			openId = ConfUtil.getProperty("open_id");
-    		redisHost = ConfUtil.getProperty("redis_host");
-    		redisPort = Integer.parseInt(ConfUtil.getProperty("redis_port"));
+		    confBean = ConfUtil.readAllToBean();
+			MIN_BID_AMOUNT = Integer.parseInt(confBean.getMinBidAmount());
+			openId = confBean.getOpenId();
+    		redisHost = confBean.getRedisHost();
+    		redisPort = Integer.parseInt(confBean.getRedisPort());
     		
     		jedis = new Jedis(redisHost,redisPort);
 			

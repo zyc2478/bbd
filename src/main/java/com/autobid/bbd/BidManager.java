@@ -45,6 +45,7 @@ public class BidManager implements Constants {
     private static String redisHost;
     private static int redisPort;
 	private static Jedis jedis;
+	private static ConfBean confBean;
     
 	private static Logger logger = Logger.getLogger(BidManager.class);  
 
@@ -74,11 +75,11 @@ public class BidManager implements Constants {
 	static{
 		try{
 			AuthInit.init();
-		    ConfBean cb = ConfUtil.readAllToBean();
-			MIN_BID_AMOUNT = Integer.parseInt(cb.getMinBidAmount());
-			openId = cb.getOpenId();
-    		redisHost = cb.getRedisHost();
-    		redisPort = Integer.parseInt(cb.getRedisPort());
+		    confBean = ConfUtil.readAllToBean();
+			MIN_BID_AMOUNT = Integer.parseInt(confBean.getMinBidAmount());
+			openId = confBean.getOpenId();
+    		redisHost = confBean.getRedisHost();
+    		redisPort = Integer.parseInt(confBean.getRedisPort());
     		
     		jedis = new Jedis(redisHost,redisPort);
 			
@@ -112,6 +113,7 @@ public class BidManager implements Constants {
 		int indexNum = 1;
 		int loanIdCount = 0;
 		List<Integer> listingIds;
+		BasicCriteria basicCriteria = new BasicCriteria();
 		do{
 			LoanListResult loanListResult = BidService.loanListService(indexNum);
 			loanIdCount = loanListResult.getLoanIdCount();
@@ -155,7 +157,7 @@ public class BidManager implements Constants {
     				
     				int listingId = loanInfoObj.getInt("ListingId");
     				//运行初始策略判断
-    				int basicCriteriaLevel = BasicCriteria.getLevel(loanInfoMap);
+    				int basicCriteriaLevel = basicCriteria.getLevel(loanInfoMap,confBean);
     				//new BasicCriteria().printCriteria(loanInfoMap);
     				//System.out.println("basicCriteriaLevel is :" + basicCriteriaLevel);
 
@@ -180,7 +182,7 @@ public class BidManager implements Constants {
     						System.out.println("====== listingId: "+listingId + ", Start bidding ====== ");
     						//logger.info("listingId: " + listingId + ", JSON is: " + loanInfoMap);
     						//bidAmount = new BidDetermine().determineCriteriaGroup(criteriaGroup, loanInfoMap);
-    						bidAmount = BidDetermine.determineCriteriaGroup(criteriaGroup,cb,loanInfoMap);
+    						bidAmount = BidDetermine.determineCriteriaGroup(criteriaGroup,confBean,loanInfoMap);
     						System.out.println("****** listingId: "+listingId + ", total Amount is: " + bidAmount + " ******" );
     					}else{
     						//logger.error("xxxxxx " + listingId + "在Redis中重复！ xxxxxx");

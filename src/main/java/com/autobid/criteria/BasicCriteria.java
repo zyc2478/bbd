@@ -3,6 +3,7 @@ package com.autobid.criteria;
 import java.util.HashMap;
 
 import com.autobid.entity.Criteria;
+import com.autobid.util.ConfBean;
 import com.autobid.entity.Constants;
 
 /** 
@@ -12,22 +13,30 @@ import com.autobid.entity.Constants;
 * @date 2017年10月13日 下午5:16:24 
 *  
 */
-public class BasicCriteria extends BidCriteria implements Constants {
+public class BasicCriteria implements Criteria,Constants {
 	
-	static boolean eduBasicCriteria;
-	static boolean debtBasicCriteria;
-	static boolean beginBasicCriteria;
+	boolean eduBasicCriteria;
+	boolean debtBasicCriteria;
+	boolean beginBasicCriteria;
+	CreditCodeCriteria creditCodeCriteria = new CreditCodeCriteria();
+	DebtRateCriteria debtRateCriteria = new DebtRateCriteria();
+	EducationCriteria educationCriteria = new EducationCriteria();
+	SuccessCountCriteria successCountCriteria = new SuccessCountCriteria();
+	LoanAmountCriteria loanAmountCriteria = new LoanAmountCriteria();
+	OverdueCriteria overdueCriteria = new OverdueCriteria();
+	AgeCriteria ageCriteria = new AgeCriteria();
+	LastSuccessBorrowCriteria lastSuccessBorrowCriteria = new LastSuccessBorrowCriteria();
 	
-	
-	public static void calc(HashMap<String, Object> loanInfoMap) throws Exception {
-		int creditCodeLevel = new CreditCodeCriteria().getLevel(loanInfoMap);
-		int debtRateLevel = new DebtRateCriteria().getLevel(loanInfoMap);
-		int educationLevel = new EducationCriteria().getLevel(loanInfoMap);
-		int successCountLevel = new SuccessCountCriteria().getLevel(loanInfoMap);
-		int loanAmountLevel = new LoanAmountCriteria().getLevel(loanInfoMap);
-		int overdueLevel = new OverdueCriteria().getLevel(loanInfoMap);
-		int ageLevel = new AgeCriteria().getLevel(loanInfoMap);
-		int lastSuccessBorrowLevel = new LastSuccessBorrowCriteria().getLevel(loanInfoMap);
+	public void calc(HashMap<String, Object> loanInfoMap,ConfBean cb) throws Exception {
+		
+		int creditCodeLevel = creditCodeCriteria.getLevel(loanInfoMap,cb);
+		int debtRateLevel = debtRateCriteria.getLevel(loanInfoMap,cb);
+		int educationLevel = educationCriteria.getLevel(loanInfoMap,cb);
+		int successCountLevel = successCountCriteria.getLevel(loanInfoMap,cb);
+		int loanAmountLevel = loanAmountCriteria.getLevel(loanInfoMap,cb);
+		int overdueLevel = overdueCriteria.getLevel(loanInfoMap,cb);
+		int ageLevel = ageCriteria.getLevel(loanInfoMap,cb);
+		int lastSuccessBorrowLevel = lastSuccessBorrowCriteria.getLevel(loanInfoMap,cb);
 
 		
 		//学历认证优先的策略集合
@@ -55,15 +64,13 @@ public class BasicCriteria extends BidCriteria implements Constants {
 							 overdueLevel > NONE		&&
 							 ageLevel > NONE			&&
 							 lastSuccessBorrowLevel > NONE;
-		//合规的女借款者策略集合
-		
-							
+							 
 		//System.out.println("eduBasicCriteria:"+eduBasicCriteria);
 	}
 	
-	public static int getLevel(HashMap<String, Object> loanInfoMap) throws Exception {
-		calc(loanInfoMap);
-		//printCriteria(loanInfoMap);
+	public int getLevel(HashMap<String, Object> loanInfoMap,ConfBean cb) throws Exception {
+		calc(loanInfoMap,cb);
+		//printCriteria(loanInfoMap,cb);
 		if(eduBasicCriteria && debtBasicCriteria){
 			//System.out.println("PERFECT");
 			return PERFECT;
@@ -84,15 +91,15 @@ public class BasicCriteria extends BidCriteria implements Constants {
 		return "Basic";
 	}
 	
-	public void printCriteria(HashMap<String, Object> loanInfoMap) throws Exception {
-		int creditCodeLevel = new CreditCodeCriteria().getLevel(loanInfoMap);
-		int debtRateLevel = new DebtRateCriteria().getLevel(loanInfoMap);
-		int educationLevel = new EducationCriteria().getLevel(loanInfoMap);
-		int successCountLevel = new SuccessCountCriteria().getLevel(loanInfoMap);
-		int loanAmountLevel = new LoanAmountCriteria().getLevel(loanInfoMap);
-		int overdueLevel = new OverdueCriteria().getLevel(loanInfoMap);
-		int ageLevel = new AgeCriteria().getLevel(loanInfoMap);
-		int lastSuccessBorrowLevel = new LastSuccessBorrowCriteria().getLevel(loanInfoMap);
+	public void printCriteria(HashMap<String, Object> loanInfoMap,ConfBean cb) throws Exception {
+		int creditCodeLevel = creditCodeCriteria.getLevel(loanInfoMap,cb);
+		int debtRateLevel = debtRateCriteria.getLevel(loanInfoMap,cb);
+		int educationLevel = educationCriteria.getLevel(loanInfoMap,cb);
+		int successCountLevel = successCountCriteria.getLevel(loanInfoMap,cb);
+		int loanAmountLevel = loanAmountCriteria.getLevel(loanInfoMap,cb);
+		int overdueLevel = overdueCriteria.getLevel(loanInfoMap,cb);
+		int ageLevel = ageCriteria.getLevel(loanInfoMap,cb);
+		int lastSuccessBorrowLevel = lastSuccessBorrowCriteria.getLevel(loanInfoMap,cb);
 		System.out.println("creditCodeLevel:"+creditCodeLevel+",debtRateLevel:"+debtRateLevel+
 				",educationLevel:"+educationLevel+",successCountLevel:"+successCountLevel+
 				",loanAmountLevel:"+loanAmountLevel+",overdueLevel:"+overdueLevel+

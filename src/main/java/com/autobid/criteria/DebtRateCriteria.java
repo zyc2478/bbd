@@ -1,11 +1,10 @@
 package com.autobid.criteria;
 
-import java.io.IOException;
 import java.util.HashMap;
 
 import com.autobid.entity.Constants;
 import com.autobid.entity.Criteria;
-import com.autobid.util.ConfUtil;
+import com.autobid.util.ConfBean;
 
 public class DebtRateCriteria implements Criteria,Constants {
 
@@ -14,15 +13,16 @@ public class DebtRateCriteria implements Criteria,Constants {
 	boolean criteriaDebtRate;
 	SuccessCountCriteria successCountCriteria = new SuccessCountCriteria();
 	
-	public void calc(HashMap<String, Object> loanInfoMap) throws NumberFormatException, IOException {
+	public void calc(HashMap<String, Object> loanInfoMap,ConfBean cb) throws Exception {
+		
 		totalPrincipal = Double.parseDouble(loanInfoMap.get("TotalPrincipal").toString());
 		owingAmount = Double.parseDouble(loanInfoMap.get("OwingAmount").toString());
 		loanAmount = Double.parseDouble(loanInfoMap.get("Amount").toString());
 		gender = Integer.parseInt(loanInfoMap.get("Gender").toString());
-		debt_mrate = Double.parseDouble(ConfUtil.getProperty("debt_mrate"));
-		debt_frate = Double.parseDouble(ConfUtil.getProperty("debt_frate"));
+		debt_mrate = Double.parseDouble(cb.getDebtMrate());
+		debt_frate = Double.parseDouble(cb.getDebtFrate());
 		debtTotalRate = totalPrincipal!=0?(owingAmount + loanAmount)/totalPrincipal:1;
-		loanAmountLevel = new LoanAmountCriteria().getLevel(loanInfoMap);
+		loanAmountLevel = new LoanAmountCriteria().getLevel(loanInfoMap,cb);
 /*		System.out.println("debtTotalRate:"+debtTotalRate);
 		//System.out.println(debtTotalRate < 0.5 * female_multiple);
 		System.out.println(gender == 2 && debtTotalRate < 0.5 * debt_frate);
@@ -31,8 +31,8 @@ public class DebtRateCriteria implements Criteria,Constants {
 				(gender == 2 && debtTotalRate < 0.5 * debt_frate));*/
 	}
 
-	public int getLevel(HashMap<String,Object> loanInfoMap) throws NumberFormatException, IOException {
-		calc(loanInfoMap);
+	public int getLevel(HashMap<String,Object> loanInfoMap,ConfBean cb) throws Exception {
+		calc(loanInfoMap,cb);
 		if((gender == 1 && debtTotalRate < 0.15 ) || (gender == 2 && debtTotalRate < 0.25)) {
 			return PERFECT;
 		}else if( (gender == 1 && debtTotalRate < 0.25 ) || (gender == 2 && debtTotalRate < 0.33)){
