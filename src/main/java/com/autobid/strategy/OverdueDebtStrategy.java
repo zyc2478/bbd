@@ -4,14 +4,20 @@ import net.sf.json.JSONObject;
 
 public class OverdueDebtStrategy implements DebtStrategy{
 
+	BasicDebtStrategy bds = new BasicDebtStrategy();
+	
 	@Override
-	public boolean ifCanBuy(JSONObject debtInfos) throws Exception {
-		boolean canBuy = new BasicDebtStrategy().ifCanBuy(debtInfos) && determineOverdue(debtInfos);
+	public boolean determineStrategy(JSONObject debtInfos) throws Exception {
+		boolean strategyIsOk = bds.determineStrategy(debtInfos) && determineNoOverdue(debtInfos);
 		//System.out.println("ifCanBuy in OverdueDebtStrategy");
-		return canBuy;
+		return strategyIsOk;
 	}
 	
-	private boolean determineOverdue(JSONObject debtInfos) {
-		return false;
+	private boolean determineNoOverdue(JSONObject debtInfos) {
+		boolean noOverdueOk = false; 
+		int pastDueNumber = debtInfos.getInt("PastDueNumber");
+		int pastDueDay = debtInfos.getInt("PastDueDay");
+		noOverdueOk = pastDueNumber==1 && pastDueDay <15;
+		return noOverdueOk;
 	}
 }

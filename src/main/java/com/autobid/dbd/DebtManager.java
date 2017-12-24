@@ -167,7 +167,6 @@ public class DebtManager implements Constants {
 					DebtResult debtResult = DebtService.buyDebtService(token,openId,di);
 					if(debtResult != null) {
 						successDebtList.add(debtResult);
-						;
 					}
 				}
 			}

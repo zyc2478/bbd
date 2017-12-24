@@ -9,7 +9,7 @@ import net.sf.json.JSONObject;
 public class BasicDebtStrategy implements DebtStrategy {
 	
 	@Override
-	public boolean ifCanBuy(JSONObject debtInfos) throws Exception {
+	public boolean determineStrategy(JSONObject debtInfos) throws Exception {
 		if(determineOwingNumber(debtInfos) 	&& 
 		   determineStatusId(debtInfos)		&&
 		   determinePreferenceDegree(debtInfos) &&
@@ -44,8 +44,9 @@ public class BasicDebtStrategy implements DebtStrategy {
 	}
 	
 	private boolean determinePreferenceDegree(JSONObject debtInfos) {
-		double pd = debtInfos.getDouble("PreferenceDegree");
-		if(pd > 0) {
+		double pd = debtInfos.getDouble("PreferenceDegree");		
+		//优惠度越小越优惠
+		if(pd < 0) {
 			return true;
 		}else {
 			return false;
@@ -82,7 +83,6 @@ public class BasicDebtStrategy implements DebtStrategy {
 			case "E" :  creditLimit = creditE; break;
 			case "F" :	creditLimit = creditF; break;
 		}
-
 		if(currentCredit >= creditLimit) {
 			return true;
 		}else {
