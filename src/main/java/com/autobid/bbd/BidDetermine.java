@@ -28,11 +28,12 @@ public class BidDetermine implements Constants {
 	
 	static {
 		try {
-			MIN_BID_AMOUNT = Integer.parseInt(ConfUtil.getProperty("min_bid_amount"));
-			BID_LEVEL_AMOUNT = Integer.parseInt(ConfUtil.getProperty("bid_level_amount"));
-			MORE_MULTIPLE = Integer.parseInt(ConfUtil.getProperty("more_multiple"));
-			MINI_MULTIPLE = Float.parseFloat(ConfUtil.getProperty("mini_multiple"));
-			MEDIUM_MULTIPLE = Float.parseFloat(ConfUtil.getProperty("medium_multiple"));
+			ConfBean cb = ConfUtil.readAllToBean();
+			MIN_BID_AMOUNT = Integer.parseInt(cb.getMinBidAmount());
+			BID_LEVEL_AMOUNT = Integer.parseInt(cb.getBidLevelAmount());
+			MORE_MULTIPLE = Integer.parseInt(cb.getMoreMultiple());
+			MINI_MULTIPLE = Float.parseFloat(cb.getMiniMultiple());
+			MEDIUM_MULTIPLE = Float.parseFloat(cb.getMediumMultiple());
 		}catch(Exception e) {
 			e.printStackTrace();
 		}

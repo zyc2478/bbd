@@ -1,5 +1,7 @@
 package com.autobid.strategy;
 
+import com.autobid.util.ConfBean;
+
 import net.sf.json.JSONObject;
 
 public class OverdueDebtStrategy implements DebtStrategy{
@@ -7,8 +9,8 @@ public class OverdueDebtStrategy implements DebtStrategy{
 	BasicDebtStrategy bds = new BasicDebtStrategy();
 	
 	@Override
-	public boolean determineStrategy(JSONObject debtInfos) throws Exception {
-		boolean strategyIsOk = bds.determineStrategy(debtInfos) && determineNoOverdue(debtInfos);
+	public boolean determineStrategy(JSONObject debtInfos,ConfBean cb) throws Exception {
+		boolean strategyIsOk = bds.determineStrategy(debtInfos,cb) && determineNoOverdue(debtInfos);
 		//System.out.println("ifCanBuy in OverdueDebtStrategy");
 		return strategyIsOk;
 	}

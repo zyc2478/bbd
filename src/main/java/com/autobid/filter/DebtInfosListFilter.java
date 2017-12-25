@@ -1,18 +1,15 @@
 package com.autobid.filter;
 
-import java.util.ArrayList;
-import java.util.List;
-
-import com.autobid.strategy.BasicDebtStrategy;
 import com.autobid.strategy.NoOverdueDebtStrategy;
 import com.autobid.strategy.OverdueDebtStrategy;
+import com.autobid.util.ConfBean;
 
 import net.sf.json.JSONArray;
 import net.sf.json.JSONObject;
 
 public class DebtInfosListFilter extends ListFilter{
 	
-	public static JSONArray filter(JSONArray debtList) throws Exception {
+	public static JSONArray filter(JSONArray debtList,ConfBean cb) throws Exception {
 		JSONArray dlFiltered = new JSONArray();
 		StackTraceElement stack[] = Thread.currentThread().getStackTrace();
 		String callParentMethod=stack[3].getMethodName();
@@ -30,11 +27,11 @@ public class DebtInfosListFilter extends ListFilter{
 		for(int i=0;i<debtList.size();i++) {
 			JSONObject debtInfos = debtList.getJSONObject(i);
 			if(ifOverdue==false) {
-				if(nos.determineStrategy(debtInfos)) {
+				if(nos.determineStrategy(debtInfos,cb)) {
 					dlFiltered.add(debtInfos);
 				}
 			}else {
-				if(os.determineStrategy(debtInfos)) {
+				if(os.determineStrategy(debtInfos,cb)) {
 					dlFiltered.add(debtInfos);
 				}
 			}

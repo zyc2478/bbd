@@ -7,6 +7,7 @@ public class ConfBean {
 	debtSwitch,
 	debtOverdueSwitch,
 	debtSaleRate,
+	debtMinPrice,
 	debtPriceLimit,
 	debtCreditLimit,
 	minBidAmount,
@@ -52,6 +53,14 @@ public class ConfBean {
 	initDate,
 	tokenInit,
 	refreshTokenInit;
+
+	public String getDebtMinPrice() {
+		return debtMinPrice;
+	}
+
+	public void setDebtMinPrice(String debtMinPrice) {
+		this.debtMinPrice = debtMinPrice;
+	}
 
 	public String getRedisHost() {
 		return redisHost;

@@ -2,6 +2,7 @@ package com.autobid.strategy;
 
 import java.io.IOException;
 
+import com.autobid.util.ConfBean;
 import com.autobid.util.ConfUtil;
 
 import net.sf.json.JSONObject;
@@ -9,7 +10,7 @@ import net.sf.json.JSONObject;
 public class BasicDebtStrategy implements DebtStrategy {
 	
 	@Override
-	public boolean determineStrategy(JSONObject debtInfos) throws Exception {
+	public boolean determineStrategy(JSONObject debtInfos,ConfBean cb) throws Exception {
 		if(determineOwingNumber(debtInfos) 	&& 
 		   determineStatusId(debtInfos)		&&
 		   determinePreferenceDegree(debtInfos) &&

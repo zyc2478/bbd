@@ -1,21 +1,8 @@
 package com.autobid.util;
 
-//import java.io.IOException;
-
-
-import java.io.IOException;
-import java.text.ParseException;
-
 import org.apache.log4j.Logger;
-import org.junit.Before;
-//import org.junit.Test;
-//import org.junit.Test;
-
 import org.junit.Test;
-
 import com.autobid.util.ConfUtil;
-
-//import com.autobid.util.ConfUtil;
 
 public class ConfUtilTest {
 	

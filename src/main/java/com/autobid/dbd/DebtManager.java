@@ -38,7 +38,6 @@ import net.sf.json.JSONObject;
 */
 public class DebtManager implements Constants {
 
-	private static int MIN_BID_AMOUNT;
 	private static String token = "";
     private static String openId;
     private static String redisHost;
@@ -74,7 +73,6 @@ public class DebtManager implements Constants {
 		try{
 			AuthInit.init();
 		    confBean = ConfUtil.readAllToBean();
-			MIN_BID_AMOUNT = Integer.parseInt(confBean.getMinBidAmount());
 			openId = confBean.getOpenId();
     		redisHost = confBean.getRedisHost();
     		redisPort = Integer.parseInt(confBean.getRedisPort());
@@ -160,19 +158,24 @@ public class DebtManager implements Constants {
 				JSONArray batchBidInfos = BidService.batchListingInfosService(token, listingIds);
 				
 				//通过对债权对应标的数据分析，挑选出可投的标
-				JSONArray bidFiltered = BidInfosFilter.filter(batchBidInfos);				
+				JSONArray bidFiltered = BidInfosFilter.filter(batchBidInfos,confBean);				
 				
 				//将之转换为可投的债权标
 				JSONArray dbFiltered = DebtDataParser.parseDebtInfoFromBids(dFiltered,bidFiltered);
 				
-				//System.out.println("dbFiltered.size() is :" + dbFiltered.size());
-				
 				//遍历数组，对每个可投债权标尝试投标
 				for(int j=0;j<dbFiltered.size();j++) {
 					JSONObject di = dbFiltered.getJSONObject(i);
-					DebtResult debtResult = DebtService.buyDebtService(token,openId,di);
+					DebtResult debtResult = null;
+					if(!DebtDetermine.determineDuplicateId(di.getInt("DebtId"),jedis)){
+						debtResult = DebtService.buyDebtService(token,openId,di);
+					}
 					if(debtResult != null) {
-						successDebtList.add(debtResult);
+						if(!successDebtList.contains(debtResult)) {
+				    		successDebtList.add(debtResult);
+						}
+						jedis.setex(String.valueOf(di.getInt("DebtId")), 172800, String.valueOf(di.getInt("ListingId")));
+						logger.info("已投债权标 DebtId:"+ di.getInt("DebtId") + ", ListingId:" + di.getInt("ListingId"));
 					}
 				}
 			}
