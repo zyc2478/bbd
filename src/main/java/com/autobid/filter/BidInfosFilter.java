@@ -1,17 +1,26 @@
 package com.autobid.filter;
 
-import java.util.List;
-
+import com.autobid.strategy.BidDebtStrategy;
 import net.sf.json.JSONArray;
 import net.sf.json.JSONObject;
 
 public class BidInfosFilter {
 
-	public static JSONArray filter(JSONArray ddFiltered) {
+
+	public static JSONArray filter(JSONArray loanInfos) throws Exception {
 		
-		// TODO Auto-generated method stub
-		//System.out.println("After filter,"+ddFiltered.size()+" debt will be buy!,filter in BidInfosFilter");
-		return new JSONArray();
+		JSONArray bidFiltered = new JSONArray();
+		BidDebtStrategy bds = new BidDebtStrategy();
+		
+		for(int i=0;i<loanInfos.size();i++) {
+			JSONObject loanInfo = loanInfos.getJSONObject(i);
+			boolean strategyOk = bds.determineStrategy(loanInfo);
+			if(strategyOk) {
+				bidFiltered.add(loanInfo);
+			}
+		}
+		return bidFiltered;
 	}
+	
 
 }

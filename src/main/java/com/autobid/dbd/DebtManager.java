@@ -1,6 +1,7 @@
 package com.autobid.dbd;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import org.apache.log4j.Logger;
 import org.junit.Test;
@@ -154,10 +155,15 @@ public class DebtManager implements Constants {
 				//通过对债权明细数据分析，选择出可投的债权标
 				JSONArray dFiltered = DebtInfosListFilter.filter(debtInfosList);
 				
+				//将债权标数组筛选出其ListingId的List,再调用服务查询这些标的明细信息
+				List<Integer> listingIds = DebtDataParser.getListingIds(dFiltered);
+				JSONArray batchBidInfos = BidService.batchListingInfosService(token, listingIds);
 				
+				//通过对债权对应标的数据分析，挑选出可投的标
+				JSONArray bidFiltered = BidInfosFilter.filter(batchBidInfos);				
 				
-				//通过对债权对应标的数据分析，选择出最终可投的债权标
-				JSONArray dbFiltered = BidInfosFilter.filter(dFiltered);
+				//将之转换为可投的债权标
+				JSONArray dbFiltered = DebtDataParser.parseDebtInfoFromBids(dFiltered,bidFiltered);
 				
 				//System.out.println("dbFiltered.size() is :" + dbFiltered.size());
 				

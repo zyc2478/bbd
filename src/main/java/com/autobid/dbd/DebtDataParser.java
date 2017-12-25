@@ -59,4 +59,30 @@ public class DebtDataParser {
 		}
 		return dll;
 	}
+
+	public static List<Integer> getListingIds(JSONArray dFiltered) {
+		
+		List<Integer> listingIds = new ArrayList<Integer>();
+		
+		for(int i=0;i<dFiltered.size();i++) {
+			listingIds.add(new Integer(dFiltered.getJSONObject(i).getInt("ListingId")));
+		}
+		
+		return listingIds;
+	}
+
+	public static JSONArray parseDebtInfoFromBids(JSONArray dFiltered, JSONArray bidFiltered) {
+		
+		JSONArray dbFiltered = new JSONArray();
+		for(int i=0;i<bidFiltered.size();i++) {
+			for(int j=0;j<dFiltered.size();j++) {
+				if(bidFiltered.getJSONObject(i).getInt("ListingId")==dFiltered.getJSONObject(j).getInt("ListingId")) {
+					dbFiltered.add(dFiltered.getJSONObject(j));
+				}
+			}
+		}
+		
+		return dbFiltered;
+	}
+	
 }

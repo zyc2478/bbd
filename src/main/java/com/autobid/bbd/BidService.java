@@ -2,13 +2,12 @@ package com.autobid.bbd;
 
 //import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.HashMap;
 //import java.util.Date;
 import java.util.Iterator;
 import java.util.List;
 
 import org.apache.log4j.Logger;
-import org.json.JSONArray;
-import org.json.JSONObject;
 
 import com.autobid.entity.BidResult;
 import com.autobid.entity.LoanListResult;
@@ -19,6 +18,9 @@ import com.ppdai.open.core.OpenApiClient;
 import com.ppdai.open.core.PropertyObject;
 import com.ppdai.open.core.Result;
 import com.ppdai.open.core.ValueTypeEnum;
+
+import net.sf.json.JSONArray;
+import net.sf.json.JSONObject;
 
 /** 
 * @ClassName: BidService 
@@ -66,11 +68,11 @@ public class BidService {
     	if(result.isSucess()){
     		String loanListResult = result.getContext();
     		logger.info("loanListResult is :" + loanListResult);
-    		JSONObject loanListJson = new JSONObject(loanListResult);
+    		JSONObject loanListJson = JSONObject.fromObject(loanListResult);
         	JSONArray loanInfosArray = loanListJson.getJSONArray("LoanInfos");
         	//String loanListJson = loanAllList.substring(13);
         	logger.info("loanListArray is :" + loanInfosArray);   //Modified
-        	int size = loanInfosArray.length();
+        	int size = loanInfosArray.size();
         	loanIds = new int[size];
         	int j=0;
         	for(int i=0;i<size;i++){
@@ -162,8 +164,18 @@ public class BidService {
     		successBidResult = new BidResult(listingId,bidAmount);
     		logger.info(bidResult);
     	} 
-
     	return successBidResult;
     }
-	
+
+	public static JSONArray batchListingInfosService(String token, List<Integer> listingIds) throws Exception {
+		String url = "http://gw.open.ppdai.com/invest/LLoanInfoService/BatchListingInfos";
+		Result result = OpenApiClient.send(url,token,new PropertyObject("ListingIds",listingIds,ValueTypeEnum.Other));
+		
+		JSONArray bidInfos = new JSONArray();
+		if(result.isSucess()) {
+			JSONObject resultObject = JSONObject.fromObject(result.getContext());
+			bidInfos = resultObject.getJSONArray("LoanInfos");
+		}
+		return bidInfos;
+	}	
 }
