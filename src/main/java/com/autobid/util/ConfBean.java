@@ -6,7 +6,6 @@ public class ConfBean {
 	redisHost,
 	redisPort,
 	debtMix,
-	debtSwitch,
 	debtOverdueSwitch,
 	debtSaleRate,
 	debtMinPrice,
@@ -113,15 +112,6 @@ public class ConfBean {
 	public void setRedisPort(String redisPort) {
 		this.redisPort = redisPort;
 	}
-
-	public String getDebtSwitch() {
-		return debtSwitch;
-	}
-
-	public void setDebtSwitch(String debtSwitch) {
-		this.debtSwitch = debtSwitch;
-	}
-
 	public String getDebtOverdueSwitch() {
 		return debtOverdueSwitch;
 	}
