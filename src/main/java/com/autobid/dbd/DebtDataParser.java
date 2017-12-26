@@ -66,7 +66,7 @@ public class DebtDataParser {
 		
 		
 		for(int i=0;i<dFiltered.size();i++) {
-			System.out.println(dFiltered.getJSONObject(i));
+			//System.out.println(dFiltered.getJSONObject(i));
 			listingIds.add(new Integer(dFiltered.getJSONObject(i).getInt("ListingId")));
 		}
 		
@@ -78,6 +78,8 @@ public class DebtDataParser {
 		JSONArray dbFiltered = new JSONArray();
 		for(int i=0;i<bidFiltered.size();i++) {
 			for(int j=0;j<dFiltered.size();j++) {
+/*				System.out.println("bidFiltered.getJSONObject(i).getInt(\"ListingId\"):"+bidFiltered.getJSONObject(i).getInt("ListingId"));
+				System.out.println("dFiltered.getJSONObject(j).getInt(\"ListingId\"):"+dFiltered.getJSONObject(j).getInt("ListingId"));*/
 				if(bidFiltered.getJSONObject(i).getInt("ListingId")==dFiltered.getJSONObject(j).getInt("ListingId")) {
 					dbFiltered.add(dFiltered.getJSONObject(j));
 				}

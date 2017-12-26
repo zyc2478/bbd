@@ -1,18 +1,18 @@
 package com.autobid.strategy;
 
-import java.io.IOException;
-import java.util.HashMap;
-
+//import org.apache.log4j.Logger;
 import com.autobid.util.ConfBean;
-
 import net.sf.json.JSONObject;
 
 public class BidDebtStrategy implements DebtStrategy {
 
+	//private static Logger logger = Logger.getLogger(BidDebtStrategy.class);  
 	@Override
 	public boolean determineStrategy(JSONObject loanInfo,ConfBean cb) throws Exception {
 
 		boolean strategyOk = false;
+		
+		//printStrategy(loanInfo, cb);
 		
 		if(determineDebtRate(loanInfo) &&
 				determineOverdue(loanInfo) &&
@@ -29,8 +29,17 @@ public class BidDebtStrategy implements DebtStrategy {
 		
 		double totalPrincipal = loanInfo.getDouble("TotalPrincipal");
 		double owingAmount = loanInfo.getDouble("OwingAmount");
+		int certificateValidate = loanInfo.getInt("CertificateValidate");
+		//int certificateValidate = loanInfo.getInt("CertificateValidate");
+		
 		double debtRate = owingAmount / totalPrincipal;
-		if(debtRate < 1/3) {
+		
+		//System.out.println("debtRate:"+debtRate+", TotalPrincipal:"+totalPrincipal+", OwingAmount:"+owingAmount);
+		if(debtRate <= 0.333) {
+			debtRateOk = true;
+		}
+		
+		if(debtRate <=0.4 && certificateValidate==1 ) {
 			debtRateOk = true;
 		}
 		return debtRateOk;
@@ -53,7 +62,7 @@ public class BidDebtStrategy implements DebtStrategy {
 		boolean successCountOk = false;
 		int gender = loanInfo.getInt("Gender");
 		double normalCount = loanInfo.getDouble("NormalCount");
-		double successCount = loanInfo.getDouble("successCount");
+		double successCount = loanInfo.getDouble("SuccessCount");
 		double ns_rate = normalCount/successCount;
 		double ns_mrate = Double.parseDouble(cb.getNscountMrate());
 		double ns_frate = Double.parseDouble(cb.getNscountFrate());
@@ -70,6 +79,12 @@ public class BidDebtStrategy implements DebtStrategy {
 		}
 		return successCountOk;
 	}
+	
+/*	private void printStrategy(JSONObject loanInfo,ConfBean cb) throws Exception {
+		logger.info("determineDebtRate(loanInfo):" + determineDebtRate(loanInfo) + 
+				", determineOverdue(loanInfo):"+ determineOverdue(loanInfo) + 
+				", determineSuccessCount(loanInfo, cb):"+ determineSuccessCount(loanInfo, cb));
+	}*/
 	
 
 

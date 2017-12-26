@@ -1,6 +1,7 @@
 package com.autobid.dbd;
 
 import java.util.ArrayList;
+
 import java.util.List;
 
 import org.apache.log4j.Logger;
@@ -10,7 +11,6 @@ import redis.clients.jedis.Jedis;
 
 import com.autobid.bbd.AuthInit;
 import com.autobid.bbd.BidDataParser;
-import com.autobid.bbd.BidDetermine;
 import com.autobid.bbd.BidService;
 
 import com.autobid.entity.DebtResult;
@@ -44,7 +44,8 @@ public class DebtManager implements Constants {
     private static int redisPort;
 	private static Jedis jedis;
 	private static ConfBean confBean;
-    
+	private ArrayList<DebtResult> successDebtList = new ArrayList<DebtResult>();
+	
 	private static Logger logger = Logger.getLogger(DebtManager.class);  
 
     //单例
@@ -99,29 +100,35 @@ public class DebtManager implements Constants {
     
 	@Test
     public void debtExcecute() throws Exception {  	
-		System.out.println("debtExcecute");
-    	ArrayList<DebtResult> successDebtList = new ArrayList<DebtResult>();
-		
-		debtOverdueExecute(successDebtList);
-		
-		if(Integer.parseInt(ConfUtil.getProperty("debt_overdue_switch"))==1) {
-			debtNoOverdueExecute(successDebtList);
-		}		
+		logger.info("debtExcecute");
+		int overdueSwitch = Integer.parseInt(confBean.getDebtOverdueSwitch());
+		int debtMix = Integer.parseInt(confBean.getDebtMix());
+
+		if(overdueSwitch==0) {
+			debtNoOverdueExecute();
+		}else{
+			if(debtMix==1) {
+				debtOverdueExecute();
+			}else {
+				debtNoOverdueExecute();
+				debtOverdueExecute();
+			} 
+		}
 		logger = null;
 		instance = null;
     }
 
-	private void debtNoOverdueExecute(ArrayList<DebtResult> successDebtList) throws Exception {
-		System.out.println("debtNoOverdueExecute");
-		execute(successDebtList);
+	private void debtNoOverdueExecute() throws Exception {
+		logger.info("debtNoOverdueExecute");
+		execute();
 	}
 	
-	private void debtOverdueExecute(ArrayList<DebtResult> successDebtList) throws Exception {
-		System.out.println("debtOverdueExcecute");
-		execute(successDebtList);
+	private void debtOverdueExecute() throws Exception {
+		logger.info("debtOverdueExcecute");
+		execute();
 	}
 	
-	private void execute(ArrayList<DebtResult> successDebtList) throws Exception {
+	private void execute() throws Exception {
 		String balanceJson = BidService.queryBalanceService(token); 
 	    double balance = BidDataParser.getBalance(balanceJson);	    
     	if(!DebtDetermine.determineBalance(balance)) {
@@ -129,7 +136,7 @@ public class DebtManager implements Constants {
     	}    
 		int indexNum = 1;
 		int debtCount = 0;
-		int debtFCount = 0;
+		//int debtFCount = 0;
 		int totalDebtCount = 0;
 		DebtListFilter dlf = new DebtListFilter();
 		DebtInfosListFilter dilf = new DebtInfosListFilter();
@@ -140,43 +147,60 @@ public class DebtManager implements Constants {
 			debtCount = debtListArray.size();
 			totalDebtCount += debtCount;
 			//将获取的debtList按照DebtListFilter中定义的规则过滤
+			//logger.info("第"+indexNum+"轮 有以下标的：");
+/*			for(int i=0;i<debtListArray.size();i++) {
+				JSONObject debtListObject = debtListArray.getJSONObject(i);
+				//logger.info(debtListObject);	
+			}
+			*/
 			JSONArray dlFiltered = dlf.filter(debtListArray,confBean);
 			
-			debtFCount += dlFiltered.size();
+			System.out.println("第"+indexNum+"轮 初步过滤后，dlFiltered数量：" + dlFiltered.size());
+			//debtFCount += dlFiltered.size();
 			
 			//System.out.println("debtFCount "+ indexNum + " is: "+ debtFCount);
 			
 			//将debtList切分为10个一组,再拼接成一个Collector
 			ArrayList<JSONArray> daList = DebtDataParser.getDebtsCollector(dlFiltered);
-    		
+			
 			for(int i=0;i<daList.size();i++) {
 							
 				//获取债权标的明细
-				JSONArray debtInfosList = DebtService.batchDebtInfosService((JSONArray)daList.get(i));
 				
-				//System.out.println(debtInfosList.size());
+				//logger.info(daList.get(i));
 				
+				JSONArray debtInfosList = DebtService.batchDebtInfosService(daList.get(i));
+				
+/*				System.out.println(debtInfosList.size());
+				for(int m=0;m<debtInfosList.size();m++) {
+					logger.info(debtInfosList.getJSONObject(m));
+				}
+				*/
 				//通过对债权明细数据分析，选择出可投的债权标
 				JSONArray dFiltered = dilf.filter(debtInfosList,confBean);
 				
-				System.out.println("可投债权标数量 debtInfos：" + dFiltered.size());
+				System.out.println("第"+indexNum+"轮 第 "+i+"组 dFiltered.size =  ：" + dFiltered.size());
 				
 				//将债权标数组筛选出其ListingId的List,再调用服务查询这些标的明细信息
 				List<Integer> listingIds = DebtDataParser.getListingIds(dFiltered);
+				
+/*				listingIds = new ArrayList<Integer>();
+				listingIds.add(55476937);*/
+				
 				JSONArray batchBidInfos = BidService.batchListingInfosService(token, listingIds);
 				
 				//通过对债权对应标的数据分析，挑选出可投的标
 				JSONArray bidFiltered = bif.filter(batchBidInfos,confBean);				
-				System.out.println("可投债权标数量：" + bidFiltered.size());
+				System.out.println("第"+indexNum+"轮 第 "+i+"组 bidFiltered.size = ：" + bidFiltered.size());
 				
 				//将之转换为可投的债权标
 				JSONArray dbFiltered = DebtDataParser.parseDebtInfoFromBids(dFiltered,bidFiltered);
 				
-				//System.out.println("可投债权标数量：" + dbFiltered.size());
+				System.out.println("可投债权标数量：" + dbFiltered.size());
 				
 				//遍历数组，对每个可投债权标尝试投标
 				for(int j=0;j<dbFiltered.size();j++) {
-					JSONObject di = dbFiltered.getJSONObject(i);
+					JSONObject di = dbFiltered.getJSONObject(j);
 					DebtResult debtResult = null;
 					if(!DebtDetermine.determineDuplicateId(di.getInt("DebtId"),jedis)){
 						debtResult = DebtService.buyDebtService(token,openId,di);
@@ -186,11 +210,14 @@ public class DebtManager implements Constants {
 				    		successDebtList.add(debtResult);
 						}
 						jedis.setex(String.valueOf(di.getInt("DebtId")), 172800, String.valueOf(di.getInt("ListingId")));
-						logger.info("已投债权标 DebtId:"+ di.getInt("DebtId") + ", ListingId:" + di.getInt("ListingId"));
+						logger.info(di);
+						System.out.println("已投债权标 DebtId:"+ di.getInt("DebtId") + ", ListingId:" + di.getInt("ListingId") + ", Price:" + di.getDouble("PriceforSale"));
 					}
 				}
+				Thread.sleep(100);
 			}
 			indexNum ++;
+
 		}while(debtCount  == 50); //每页50个元素
 		
 		System.out.println("Total Debt Count is :"+totalDebtCount);
@@ -207,8 +234,8 @@ public class DebtManager implements Constants {
     	}else{
     		for(int i=0;i<successDebtList.size();i++) {
     			DebtResult dr = successDebtList.get(i);
-        		System.out.println("*~~~~~~~~~~~ DebtId:"+dr.getDebtId() + "ListingId:"+
-        				dr.getListingId() + "Price:" + dr.getPrice()+"~~~~~~~~~~~*");
+        		System.out.println("*~~~~~~~~~~~ DebtId:"+dr.getDebtId() + ", ListingId:"+
+        				dr.getListingId() + ", Price:" + dr.getPrice()+"~~~~~~~~~~~*");
     		}
     	}		
 	}

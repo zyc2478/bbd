@@ -1,10 +1,7 @@
 package com.autobid.filter;
 
 import java.io.IOException;
-
 import com.autobid.util.ConfBean;
-import com.autobid.util.ConfUtil;
-
 import net.sf.json.JSONArray;
 import net.sf.json.JSONObject;
 
@@ -18,30 +15,27 @@ public class DebtListFilter implements ListFilter{
 			JSONObject dl = debtListArray.getJSONObject(i);
 			String creditCode = dl.getString("CreditCode");
 			Double priceForSale = dl.getDouble("PriceforSale");
-			//String priceForSaleRate = dl.getString("PriceforSaleRate");
-
 			Double priceForSaleRate = dl.getDouble("PriceforSaleRate");
-			//System.out.println(priceForSaleRate);
-				
-			if(determineCreditCode(creditCode) && determinePrice(priceForSale) && determinePriceForSaleRate(priceForSaleRate)) {
+
+			if(determineCreditCode(creditCode) && determinePrice(priceForSale,cb) && determinePriceForSaleRate(priceForSaleRate,cb)) {
 				debtListFiltered.add(dl);
 			}
 		}
 		return debtListFiltered;	
 	}
 	
-	private static boolean determinePriceForSaleRate(Double priceForSaleRate) throws NumberFormatException, IOException {
+	private static boolean determinePriceForSaleRate(Double priceForSaleRate,ConfBean cb) throws NumberFormatException, IOException {
 
-		if(priceForSaleRate >= Double.parseDouble(ConfUtil.getProperty("debt_sale_rate"))) {
+		if(priceForSaleRate >= Double.parseDouble(cb.getDebtSaleRate())) {
 			return true;
 		}else {
 			return false;
 		}
 	}
 
-	private static boolean determinePrice(Double price) throws NumberFormatException, IOException {
+	private static boolean determinePrice(Double price,ConfBean cb) throws NumberFormatException, IOException {
 		
-		if(price <= Double.parseDouble(ConfUtil.getProperty("debt_price_limit"))) {
+		if(price>=Double.parseDouble(cb.getDebtMinPrice()) && price <= Double.parseDouble(cb.getDebtPriceLimit())) {
 			return true;
 		}else {
 			return false;

@@ -10,17 +10,17 @@ public class NoOverdueDebtStrategy implements DebtStrategy {
 	
 	@Override
 	public boolean determineStrategy(JSONObject debtInfos,ConfBean cb) throws Exception {
-		boolean strategyIsOk = bds.determineStrategy(debtInfos,cb) && determineOverdue(debtInfos);
+		boolean strategyIsOk = bds.determineStrategy(debtInfos,cb) && determineNoOverdue(debtInfos);
 		//System.out.println("ifCanBuy in NoOverdueDebtStrategy");
 		return strategyIsOk;
 	}		
 
-	private boolean determineOverdue(JSONObject debtInfos) {
-		boolean overdueOk = false; 
+	private boolean determineNoOverdue(JSONObject debtInfos) {
+		boolean noOverdueOk = false; 
 		int pastDueNumber = debtInfos.getInt("PastDueNumber");
 		int pastDueDay = debtInfos.getInt("PastDueDay");
-		overdueOk = pastDueNumber==0 && pastDueDay == 0;
-		return overdueOk;
+		noOverdueOk = pastDueNumber==0 && pastDueDay == 0;
+		return noOverdueOk;
 	}
 	
 }

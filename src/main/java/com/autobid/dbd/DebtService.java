@@ -33,7 +33,8 @@ public class DebtService {
 		String  url = "http://gw.open.ppdai.com/invest/LLoanInfoService/DebtListNew";
     	Result result = OpenApiClient.send(url, new PropertyObject("PageIndex",indexNum,ValueTypeEnum.Int32));
 		if(JsonUtil.decodeUnicode(result.getContext()).contains("ÄúµÄ²Ù×÷Ì«Æµ·±À²")) {
-    		logger.info("ÄúµÄ²Ù×÷Ì«Æµ·±À²£¡ÏÈºÈ±­²è°É£¬ÐªÒ»·ÖÖÓ~~");
+    		//logger.info("ÄúµÄ²Ù×÷Ì«Æµ·±À²£¡ÏÈºÈ±­²è°É£¬ÐªÒ»·ÖÖÓ~~");
+			System.out.println("ÄúµÄ²Ù×÷Ì«Æµ·±À²£¡ÏÈºÈ±­²è°É£¬ÐªÒ»·ÖÖÓ~~");
 			logger.error("ÄúµÄ²Ù×÷Ì«Æµ·±À²£¡ÏÈºÈ±­²è°É£¬ÐªÒ»·ÖÖÓ~~");
     		Thread.sleep(60000);
     	}
@@ -42,7 +43,9 @@ public class DebtService {
     		String debtListResult = result.getContext();
     		JSONObject debtListJson = JSONObject.fromObject(debtListResult);
     		//logger.info(balanceJson);
-    		debtListArray = debtListJson.getJSONArray("DebtInfos");
+    		if(debtListJson.containsKey("DebtInfos")) {
+        		debtListArray = debtListJson.getJSONArray("DebtInfos");
+    		}
     	}else{
     		logger.error(result.getErrorMessage());
     	}
@@ -68,8 +71,9 @@ public class DebtService {
     		String batchDebtInfosResult = result.getContext();
     		
     		JSONObject batchDebtInfosJson = JSONObject.fromObject(batchDebtInfosResult);
-    		//logger.info(balanceJson);
-
+    		
+    		//logger.info(batchDebtInfosJson);
+    		
     		debtInfosArray = batchDebtInfosJson.getJSONArray("DebtInfos");
     		//logger.info(debtInfosArray);
     	}else{
@@ -82,6 +86,7 @@ public class DebtService {
 		System.out.println("-------------------buyDebtService----------------------------");
     	String url = "https://openapi.ppdai.com/invest/BidService/BuyDebt";
     	int debtId = debtInfo.getInt("DebtId");
+    	System.out.println("=====================¿ªÊ¼Í¶±ê " + debtId + "======================");
     	Result result = OpenApiClient.send(url,token,
     					new PropertyObject("debtDealId", debtId, ValueTypeEnum.Int32));
     	String debtResult = result.getContext();

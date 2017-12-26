@@ -2,19 +2,27 @@ package com.autobid.strategy;
 
 import java.io.IOException;
 
+//import org.apache.log4j.Logger;
+
 import com.autobid.util.ConfBean;
-import com.autobid.util.ConfUtil;
+
+
 
 import net.sf.json.JSONObject;
 
 public class BasicDebtStrategy implements DebtStrategy {
 	
+	//private static Logger logger = Logger.getLogger(BasicDebtStrategy.class); 
+	
 	@Override
 	public boolean determineStrategy(JSONObject debtInfos,ConfBean cb) throws Exception {
+		
+		//printStrategy(debtInfos, cb);
+		
 		if(determineOwingNumber(debtInfos) 	&& 
 		   determineStatusId(debtInfos)		&&
-		   determinePreferenceDegree(debtInfos) &&
-		   determineCreditCode(debtInfos)) {
+		   determinePreferenceDegree(debtInfos,cb) &&
+		   determineCreditCode(debtInfos,cb)) {
 			return true;
 		}
 		return false;
@@ -24,14 +32,10 @@ public class BasicDebtStrategy implements DebtStrategy {
 		int lm = debtInfos.getInt("ListingMonths");
 		int on = debtInfos.getInt("OwingNumber");
 		boolean result = false;
-		
-		if(lm <= 12 ) {
-			if(lm==6 && on>=3 && on <=4) result = true;
-			if(lm==12 && on>=4 && on<=9) result = true;
-			if(lm==9 && on>=3 && on <=6) result = true;
-		}else {
-			result = false;
-		}		
+		if(lm==6 && on>=3 && on <=4) result = true;
+		if(lm==12 && on>=4 && on<=9) result = true;
+		if(lm==9 && on>=3 && on <=6) result = true;
+		if(lm==24 && on>=5 && on<=12) result = true;
 		return result;
 	}
 	
@@ -44,17 +48,17 @@ public class BasicDebtStrategy implements DebtStrategy {
 		}
 	}
 	
-	private boolean determinePreferenceDegree(JSONObject debtInfos) {
+	private boolean determinePreferenceDegree(JSONObject debtInfos,ConfBean cb) {
 		double pd = debtInfos.getDouble("PreferenceDegree");		
 		//优惠度越小越优惠
-		if(pd < 0) {
+		if(pd <= Double.parseDouble(cb.getDebtPreferLimit())) {
 			return true;
 		}else {
 			return false;
 		}
 	}
 	
-	private boolean determineCreditCode(JSONObject debtInfos) throws IOException {
+	private boolean determineCreditCode(JSONObject debtInfos,ConfBean cb) throws IOException {
 		int currentCredit = 0;
 		int creditLimit = 0;
 		final int creditAA = 0;
@@ -65,7 +69,7 @@ public class BasicDebtStrategy implements DebtStrategy {
 		final int creditE = 5;
 		final int creditF = 6;
 		String currentCode = debtInfos.getString("CurrentCreditCode");
-		String debtCodeLimit = ConfUtil.getProperty("debt_credit_limit");
+		String debtCodeLimit = cb.getDebtCreditLimit();
 		switch(currentCode) {
 			case "AA":	currentCredit = creditAA; break;
 			case "A" :	currentCredit = creditA; break;
@@ -90,4 +94,10 @@ public class BasicDebtStrategy implements DebtStrategy {
 			return false;
 		}
 	}
+	
+/*	private void printStrategy(JSONObject debtInfos,ConfBean cb) throws IOException {
+		logger.info("determineOwingNumber(debtInfos):"+determineOwingNumber(debtInfos)+", determineStatusId(debtInfos):"+
+				determineStatusId(debtInfos)+", determinePreferenceDegree(debtInfos):"+determinePreferenceDegree(debtInfos,cb)+
+				", determineCreditCode(debtInfos,cb)):"+ determineCreditCode(debtInfos,cb));
+	}*/
 }

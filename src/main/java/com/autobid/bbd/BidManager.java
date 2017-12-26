@@ -1,6 +1,7 @@
 package com.autobid.bbd;
 
 import java.util.ArrayList;
+
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
@@ -17,7 +18,6 @@ import com.autobid.criteria.BeginCriteriaGroup;
 import com.autobid.criteria.DebtRateCriteriaGroup;
 import com.autobid.criteria.EduCriteriaGroup;
 import com.autobid.criteria.EduDebtCriteriaGroup;
-import com.autobid.dbd.DebtManager;
 import com.autobid.entity.CriteriaGroup;
 import com.autobid.entity.BidResult;
 import com.autobid.entity.LoanListResult;
@@ -103,6 +103,7 @@ public class BidManager implements Constants {
     
 	@Test
     public void bidExcecute() throws Exception {  	
+		logger.info("bidExcecute");
 		String balanceJson = BidService.queryBalanceService(token); 
 	    double balance = BidDataParser.getBalance(balanceJson);
 	    
@@ -215,11 +216,6 @@ public class BidManager implements Constants {
 		}while(loanIdCount == 200);
 		System.out.println("*~~~~~~~~~~~~~~~~~~~~标的执行完毕，投标结果如下：~~~~~~~~~~~~~~~~~~~*");
     	bidResultsPrint(successBidList,listingIds.size());
-    	if(Integer.parseInt(ConfUtil.getProperty("debt_switch"))==1) {
-    		System.out.println("没有普通标的，投债转标");
-    		DebtManager debt = DebtManager.getInstance();
-    		debt.debtExcecute();
-    	}
 		logger = null;
 		instance = null;
 

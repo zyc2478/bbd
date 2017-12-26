@@ -2,13 +2,17 @@ package com.autobid.util;
 
 public class ConfBean {
 
-	String redisHost,
+	String bidMode, 
+	redisHost,
 	redisPort,
+	debtMix,
 	debtSwitch,
 	debtOverdueSwitch,
 	debtSaleRate,
 	debtMinPrice,
 	debtPriceLimit,
+	debtPreferLimit,
+	debtOverdueLimit,
 	debtCreditLimit,
 	minBidAmount,
 	bidLevelAmount,
@@ -53,6 +57,38 @@ public class ConfBean {
 	initDate,
 	tokenInit,
 	refreshTokenInit;
+
+	public String getDebtPreferLimit() {
+		return debtPreferLimit;
+	}
+
+	public void setDebtPreferLimit(String debtPreferLimit) {
+		this.debtPreferLimit = debtPreferLimit;
+	}
+
+	public String getDebtOverdueLimit() {
+		return debtOverdueLimit;
+	}
+
+	public void setDebtOverdueLimit(String debtOverdueLimit) {
+		this.debtOverdueLimit = debtOverdueLimit;
+	}
+
+	public String getDebtMix() {
+		return debtMix;
+	}
+
+	public void setDebtMix(String debtMix) {
+		this.debtMix = debtMix;
+	}
+
+	public String getBidMode() {
+		return bidMode;
+	}
+
+	public void setBidMode(String bidMode) {
+		this.bidMode = bidMode;
+	}
 
 	public String getDebtMinPrice() {
 		return debtMinPrice;
