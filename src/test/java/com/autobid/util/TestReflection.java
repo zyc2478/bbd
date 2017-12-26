@@ -11,7 +11,7 @@ public class TestReflection {
 	@Test
 	public void testReflect() throws ClassNotFoundException, InstantiationException, IllegalAccessException, 
 			NoSuchMethodException, SecurityException, IllegalArgumentException, InvocationTargetException {
-		String className = "com.autobid.bbd.FunClass";
+		String className = "com.autobid.util.FunClass";
 		String methodName = "sayHello";
 		Class<?> clz = Class.forName(className);  
 		Object obj = clz.newInstance();

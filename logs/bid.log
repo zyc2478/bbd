@@ -2588,3 +2588,42 @@
 2017-12-26 18:25:25 - 已投债权标 DebtId:46865781, ListingId:72366628, Price:71.71
 2017-12-26 18:25:29 - {"DebtDealId":46865718,"Result":0,"ResultMessage":null}
 2017-12-26 18:25:29 - 已投债权标 DebtId:46865718, ListingId:57282699, Price:67.08
+2017-12-26 18:35:35 - Using default implementation for ThreadExecutor
+2017-12-26 18:35:35 - Job execution threads will use class loader of thread: main
+2017-12-26 18:35:35 - Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+2017-12-26 18:35:35 - Quartz Scheduler v.2.2.3 created.
+2017-12-26 18:35:35 - RAMJobStore initialized.
+2017-12-26 18:35:35 - Scheduler meta-data: Quartz Scheduler (v2.2.3) 'DefaultQuartzScheduler' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 1 threads.
+  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
+
+2017-12-26 18:35:35 - Quartz scheduler 'DefaultQuartzScheduler' initialized from default resource file in Quartz package: 'quartz.properties'
+2017-12-26 18:35:35 - Quartz scheduler version: 2.2.3
+2017-12-26 18:35:35 - Scheduler DefaultQuartzScheduler_$_NON_CLUSTERED started.
+2017-12-26 18:35:35 - bidExcecute
+2017-12-26 18:35:36 - 可用余额为：16068.57
+2017-12-26 18:35:37 - loanListResult is :{"LoanInfos":[],"Result":1,"ResultMessage":"查询成功","ResultCode":null}
+2017-12-26 18:35:37 - loanListArray is :[]
+2017-12-26 18:35:37 - debtExcecute
+2017-12-26 18:35:37 - debtOverdueExcecute
+2017-12-26 18:35:37 - 可用余额为：16068.57
+2017-12-26 18:35:40 - {"DebtDealId":46896512,"Result":0,"ResultMessage":null}
+2017-12-26 18:35:40 - {"DebtId":46896512,"Seller":"pdu4621228118","StatusId":1,"Lender":"pdu4621228118","BidDateTime":"2017-07-26T08:49:38.043","OwingNumber":7,"OwingPrincipal":36.44,"OwingInterest":2.46,"Days":31,"PriceforSaleRate":18,"PriceforSale":36.66,"PreferenceDegree":-13.69,"ListingId":61147261,"CreditCode":"C","CurrentCreditCode":"C","ListingAmount":14437,"ListingTime":"2017-07-26T08:49:25.933","ListingMonths":12,"ListingRate":20,"PastDueNumber":1,"AllowanceRadio":-0.63,"PastDueDay":1}
+2017-12-26 18:35:41 - {"DebtDealId":46896511,"Result":0,"ResultMessage":null}
+2017-12-26 18:35:41 - {"DebtId":46896511,"Seller":"pdu4621228118","StatusId":1,"Lender":"pdu4621228118","BidDateTime":"2017-06-25T21:56:25.903","OwingNumber":6,"OwingPrincipal":30.44,"OwingInterest":1.8,"Days":30,"PriceforSaleRate":18,"PriceforSale":30.62,"PreferenceDegree":5.91,"ListingId":55078426,"CreditCode":"C","CurrentCreditCode":"C","ListingAmount":8918,"ListingTime":"2017-06-25T21:55:47.093","ListingMonths":12,"ListingRate":20,"PastDueNumber":1,"AllowanceRadio":-0.55,"PastDueDay":1}
+2017-12-26 18:35:42 - {"DebtDealId":46896509,"Result":0,"ResultMessage":null}
+2017-12-26 18:35:42 - {"DebtId":46896509,"Seller":"pdu4621228118","StatusId":1,"Lender":"pdu4621228118","BidDateTime":"2017-07-26T06:00:54.92","OwingNumber":7,"OwingPrincipal":133.61,"OwingInterest":9.05,"Days":31,"PriceforSaleRate":18,"PriceforSale":134.47,"PreferenceDegree":-13.3,"ListingId":61136208,"CreditCode":"C","CurrentCreditCode":"C","ListingAmount":12026,"ListingTime":"2017-07-26T06:00:44.323","ListingMonths":12,"ListingRate":20,"PastDueNumber":0,"AllowanceRadio":-0.65,"PastDueDay":0}
+2017-12-26 18:35:44 - {"DebtDealId":46896471,"Result":0,"ResultMessage":null}
+2017-12-26 18:35:44 - {"DebtId":46896471,"Seller":"pdu4621228118","StatusId":1,"Lender":"pdu4621228118","BidDateTime":"2017-07-17T17:38:11.43","OwingNumber":7,"OwingPrincipal":35.83,"OwingInterest":2.43,"Days":22,"PriceforSaleRate":18,"PriceforSale":36.22,"PreferenceDegree":0.88,"ListingId":59440621,"CreditCode":"C","CurrentCreditCode":"C","ListingAmount":15000,"ListingTime":"2017-07-17T17:35:47.31","ListingMonths":12,"ListingRate":20,"PastDueNumber":1,"AllowanceRadio":-0.61,"PastDueDay":1}
+2017-12-26 18:35:46 - {"DebtDealId":46896464,"Result":0,"ResultMessage":null}
+2017-12-26 18:35:46 - {"DebtId":46896464,"Seller":"pdu4621228118","StatusId":1,"Lender":"pdu4621228118","BidDateTime":"2017-07-17T17:36:44.983","OwingNumber":7,"OwingPrincipal":35.83,"OwingInterest":2.43,"Days":22,"PriceforSaleRate":18,"PriceforSale":36.22,"PreferenceDegree":0.88,"ListingId":59405853,"CreditCode":"C","CurrentCreditCode":"C","ListingAmount":21168,"ListingTime":"2017-07-17T17:32:28.06","ListingMonths":12,"ListingRate":20,"PastDueNumber":1,"AllowanceRadio":-0.61,"PastDueDay":2}
+2017-12-26 18:35:52 - {"DebtDealId":46896232,"Result":0,"ResultMessage":null}
+2017-12-26 18:35:52 - {"DebtId":46896232,"Seller":"pdu4621228118","StatusId":1,"Lender":"pdu4621228118","BidDateTime":"2017-07-03T09:07:07.43","OwingNumber":7,"OwingPrincipal":35.23,"OwingInterest":2.38,"Days":8,"PriceforSaleRate":18,"PriceforSale":35.84,"PreferenceDegree":7.24,"ListingId":56539418,"CreditCode":"C","CurrentCreditCode":"C","ListingAmount":8938,"ListingTime":"2017-07-03T09:06:46.92","ListingMonths":12,"ListingRate":20,"PastDueNumber":2,"AllowanceRadio":-0.53,"PastDueDay":2}
+2017-12-26 18:38:58 - loanListResult is :{"LoanInfos":[],"Result":1,"ResultMessage":"查询成功","ResultCode":null}
+2017-12-26 18:38:58 - loanListArray is :[]
+2017-12-26 18:41:39 - loanListResult is :{"LoanInfos":[],"Result":1,"ResultMessage":"查询成功","ResultCode":null}
+2017-12-26 18:41:39 - loanListArray is :[]
