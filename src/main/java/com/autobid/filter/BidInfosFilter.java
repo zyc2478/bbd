@@ -6,10 +6,10 @@ import com.autobid.util.ConfBean;
 import net.sf.json.JSONArray;
 import net.sf.json.JSONObject;
 
-public class BidInfosFilter {
+public class BidInfosFilter implements ListFilter{
 
 
-	public static JSONArray filter(JSONArray loanInfos,ConfBean cb) throws Exception {
+	public JSONArray filter(JSONArray loanInfos,ConfBean cb) throws Exception {
 		
 		JSONArray bidFiltered = new JSONArray();
 		BidDebtStrategy bds = new BidDebtStrategy();

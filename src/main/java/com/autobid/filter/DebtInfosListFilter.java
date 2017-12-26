@@ -7,9 +7,9 @@ import com.autobid.util.ConfBean;
 import net.sf.json.JSONArray;
 import net.sf.json.JSONObject;
 
-public class DebtInfosListFilter extends ListFilter{
+public class DebtInfosListFilter implements ListFilter{
 	
-	public static JSONArray filter(JSONArray debtList,ConfBean cb) throws Exception {
+	public JSONArray filter(JSONArray debtList,ConfBean cb) throws Exception {
 		JSONArray dlFiltered = new JSONArray();
 		StackTraceElement stack[] = Thread.currentThread().getStackTrace();
 		String callParentMethod=stack[3].getMethodName();

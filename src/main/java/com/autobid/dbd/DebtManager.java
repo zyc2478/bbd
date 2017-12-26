@@ -102,10 +102,10 @@ public class DebtManager implements Constants {
 		System.out.println("debtExcecute");
     	ArrayList<DebtResult> successDebtList = new ArrayList<DebtResult>();
 		
-		debtNoOverdueExecute(successDebtList);
+		debtOverdueExecute(successDebtList);
 		
 		if(Integer.parseInt(ConfUtil.getProperty("debt_overdue_switch"))==1) {
-			debtOverdueExecute(successDebtList);
+			debtNoOverdueExecute(successDebtList);
 		}		
 		logger = null;
 		instance = null;
@@ -124,23 +124,27 @@ public class DebtManager implements Constants {
 	private void execute(ArrayList<DebtResult> successDebtList) throws Exception {
 		String balanceJson = BidService.queryBalanceService(token); 
 	    double balance = BidDataParser.getBalance(balanceJson);	    
-    	if(!BidDetermine.determineBalance(balance)) {
+    	if(!DebtDetermine.determineBalance(balance)) {
     		return;
     	}    
 		int indexNum = 1;
 		int debtCount = 0;
 		int debtFCount = 0;
 		int totalDebtCount = 0;
+		DebtListFilter dlf = new DebtListFilter();
+		DebtInfosListFilter dilf = new DebtInfosListFilter();
+		BidInfosFilter bif = new BidInfosFilter();
+		
 		do {
 			JSONArray debtListArray = DebtService.debtListService(indexNum);		
 			debtCount = debtListArray.size();
 			totalDebtCount += debtCount;
 			//将获取的debtList按照DebtListFilter中定义的规则过滤
-			JSONArray dlFiltered = DebtListFilter.filter(debtListArray);
+			JSONArray dlFiltered = dlf.filter(debtListArray,confBean);
 			
 			debtFCount += dlFiltered.size();
 			
-			System.out.println("debtFCount "+ indexNum + " is: "+ debtFCount);
+			//System.out.println("debtFCount "+ indexNum + " is: "+ debtFCount);
 			
 			//将debtList切分为10个一组,再拼接成一个Collector
 			ArrayList<JSONArray> daList = DebtDataParser.getDebtsCollector(dlFiltered);
@@ -150,18 +154,25 @@ public class DebtManager implements Constants {
 				//获取债权标的明细
 				JSONArray debtInfosList = DebtService.batchDebtInfosService((JSONArray)daList.get(i));
 				
+				//System.out.println(debtInfosList.size());
+				
 				//通过对债权明细数据分析，选择出可投的债权标
-				JSONArray dFiltered = DebtInfosListFilter.filter(debtInfosList);
+				JSONArray dFiltered = dilf.filter(debtInfosList,confBean);
+				
+				System.out.println("可投债权标数量 debtInfos：" + dFiltered.size());
 				
 				//将债权标数组筛选出其ListingId的List,再调用服务查询这些标的明细信息
 				List<Integer> listingIds = DebtDataParser.getListingIds(dFiltered);
 				JSONArray batchBidInfos = BidService.batchListingInfosService(token, listingIds);
 				
 				//通过对债权对应标的数据分析，挑选出可投的标
-				JSONArray bidFiltered = BidInfosFilter.filter(batchBidInfos,confBean);				
+				JSONArray bidFiltered = bif.filter(batchBidInfos,confBean);				
+				System.out.println("可投债权标数量：" + bidFiltered.size());
 				
 				//将之转换为可投的债权标
 				JSONArray dbFiltered = DebtDataParser.parseDebtInfoFromBids(dFiltered,bidFiltered);
+				
+				//System.out.println("可投债权标数量：" + dbFiltered.size());
 				
 				//遍历数组，对每个可投债权标尝试投标
 				for(int j=0;j<dbFiltered.size();j++) {

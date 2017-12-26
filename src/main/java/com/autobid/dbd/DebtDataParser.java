@@ -33,12 +33,12 @@ public class DebtDataParser {
 		
 		for(int i=0;i<partCount;i++) {
 			/*
-			 * 情况1：比如对于35个元素最后一轮，partCount = 4,m!=0,i=3时，fromIndex为30,toindex为size-1即34
+			 * 情况1：比如对于35个元素最后一轮，partCount = 4,m!=0,i=3时，fromIndex为30,toindex为size即35
 			 * 情况2：比如对于30个元素（m==0)最后一轮，m==0,partCount=3,fromIndex为20，toindex为30
 			 * 情况3：比如对于35个元素第二轮，i=1,fromIndex=10,toindex=20
 			 */
 			if(m!=0 && i==partCount-1) {
-				List<?> subDebtList = debtList.subList(i*partSize, size-1);
+				List<?> subDebtList = debtList.subList(i*partSize, size);
 				//subDebtList = (JSONArray)debtList.subList(i*partSize, size-1);
 				//subDebtList = debtList.subList(fromIndex, toIndex)
 				JSONArray subDebtArray = new JSONArray();
@@ -64,7 +64,9 @@ public class DebtDataParser {
 		
 		List<Integer> listingIds = new ArrayList<Integer>();
 		
+		
 		for(int i=0;i<dFiltered.size();i++) {
+			System.out.println(dFiltered.getJSONObject(i));
 			listingIds.add(new Integer(dFiltered.getJSONObject(i).getInt("ListingId")));
 		}
 		

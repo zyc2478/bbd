@@ -2,14 +2,15 @@ package com.autobid.filter;
 
 import java.io.IOException;
 
+import com.autobid.util.ConfBean;
 import com.autobid.util.ConfUtil;
 
 import net.sf.json.JSONArray;
 import net.sf.json.JSONObject;
 
-public class DebtListFilter extends ListFilter{
+public class DebtListFilter implements ListFilter{
 
-	public static JSONArray filter(JSONArray debtListArray) throws Exception{
+	public JSONArray filter(JSONArray debtListArray,ConfBean cb) throws Exception{
 		
 		JSONArray debtListFiltered = new JSONArray(); 
 		
