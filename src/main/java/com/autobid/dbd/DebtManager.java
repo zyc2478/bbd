@@ -214,11 +214,11 @@ public class DebtManager implements Constants {
 						System.out.println("已投债权标 DebtId:"+ di.getInt("DebtId") + ", ListingId:" + di.getInt("ListingId") + ", Price:" + di.getDouble("PriceforSale"));
 					}
 				}
-				Thread.sleep(100);
+				Thread.sleep(200);
 			}
 			indexNum ++;
 
-		}while(debtCount  == 50); //每页50个元素
+		}while(debtCount == 50 && indexNum <= 200); //每页50个元素
 		
 		System.out.println("Total Debt Count is :"+totalDebtCount);
 		

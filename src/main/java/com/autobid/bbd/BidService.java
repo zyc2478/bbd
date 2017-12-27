@@ -35,7 +35,7 @@ public class BidService {
 		String url = "http://gw.open.ppdai.com/balance/balanceService/QueryBalance";
 		
 		Result result = OpenApiClient.send(url, token);
-		//System.out.println(result.getContext());
+		System.out.println(result.getContext());
 		if(JsonUtil.decodeUnicode(result.getContext()).contains("ÄúµÄ²Ù×÷Ì«Æµ·±À²")) {
     		System.out.println("ÄúµÄ²Ù×÷Ì«Æµ·±À²£¡ÏÈºÈ±­²è°É£¬ÐªÒ»·ÖÖÓ~~");
     		Thread.sleep(60000);

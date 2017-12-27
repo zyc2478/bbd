@@ -65,6 +65,7 @@ public class DebtService {
     	if(JsonUtil.decodeUnicode(result.getContext()).contains("您的操作太频繁啦")) {
     		logger.info("您的操作太频繁啦！先喝杯茶吧，歇一分钟~~");
 			logger.error("您的操作太频繁啦！先喝杯茶吧，歇一分钟~~");
+			System.out.println("result.getContext()" + result.getContext());
     		Thread.sleep(60000);
     	}
     	if(result.isSucess()){

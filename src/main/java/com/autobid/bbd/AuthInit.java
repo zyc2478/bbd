@@ -40,7 +40,7 @@ public class AuthInit {
      * 跳转到AC的oauth2.0联合登录
      * https://ac.ppdai.com/oauth2/login?AppID=7344c77f9a7f4f249bd9df04115171e6&ReturnUrl=http://bidbydebt.com/auth/gettoken
      * 
-     * 登录成功后 oauth2.0 跳转到http://bidbydebt.com/auth/gettoken?code=6c6efc46793745f6b86a372b5f45dd9b
+     * 登录成功后 oauth2.0 跳转到http://bidbydebt.com/auth/gettoken?code=0c5d092493094b9a9ed7fe8e79730db5
      * 
      */
 	public static void init() throws Exception{
