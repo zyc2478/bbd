@@ -11,6 +11,7 @@ import redis.clients.jedis.Jedis;
 
 import com.autobid.bbd.AuthInit;
 import com.autobid.bbd.BidDataParser;
+import com.autobid.bbd.BidManager;
 import com.autobid.bbd.BidService;
 
 import com.autobid.entity.DebtResult;

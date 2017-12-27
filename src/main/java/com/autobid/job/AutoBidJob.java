@@ -28,7 +28,7 @@ public class AutoBidJob implements Job{
 				bid.bidExcecute();
 			}else if(bidMode==2) {
 				bid.bidExcecute();
-				debt.debtExcecute();
+				//debt.debtExcecute();
 			}else if(bidMode==3) {
 				debt.debtExcecute();
 			}
