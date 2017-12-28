@@ -2,6 +2,7 @@ package com.autobid.dbd;
 
 import java.util.ArrayList;
 
+
 import java.util.List;
 
 import org.apache.log4j.Logger;
@@ -11,7 +12,6 @@ import redis.clients.jedis.Jedis;
 
 import com.autobid.bbd.AuthInit;
 import com.autobid.bbd.BidDataParser;
-import com.autobid.bbd.BidManager;
 import com.autobid.bbd.BidService;
 
 import com.autobid.entity.DebtResult;
@@ -115,8 +115,8 @@ public class DebtManager implements Constants {
 				debtOverdueExecute();
 			} 
 		}
-		logger = null;
-		instance = null;
+/*		logger = null;
+		instance = null;*/
     }
 
 	private void debtNoOverdueExecute() throws Exception {
@@ -157,7 +157,7 @@ public class DebtManager implements Constants {
 			*/
 			JSONArray dlFiltered = dlf.filter(debtListArray,confBean);
 			
-			System.out.println("第"+indexNum+"轮 初步过滤后，dlFiltered数量：" + dlFiltered.size());
+			logger.info("第"+indexNum+"轮 初步过滤后，dlFiltered数量：" + dlFiltered.size());
 			//debtFCount += dlFiltered.size();
 			
 			//System.out.println("debtFCount "+ indexNum + " is: "+ debtFCount);
@@ -198,7 +198,7 @@ public class DebtManager implements Constants {
 				//将之转换为可投的债权标
 				JSONArray dbFiltered = DebtDataParser.parseDebtInfoFromBids(dFiltered,bidFiltered);
 				
-				System.out.println("第"+indexNum+"轮 第 "+i+"组可投债权标数量：" + dbFiltered.size());
+				//System.out.println("第"+indexNum+"轮 第 "+i+"组可投债权标数量：" + dbFiltered.size());
 				
 				//遍历数组，对每个可投债权标尝试投标
 				for(int j=0;j<dbFiltered.size();j++) {
@@ -213,7 +213,7 @@ public class DebtManager implements Constants {
 						}
 						jedis.setex(String.valueOf(di.getInt("DebtId")), 172800, String.valueOf(di.getInt("ListingId")));
 						logger.info(indexNum+": "+di);
-						System.out.println("已投债权标 DebtId:"+ di.getInt("DebtId") + ", ListingId:" + di.getInt("ListingId") + ", Price:" + di.getDouble("PriceforSale"));
+						//System.out.println("已投债权标 DebtId:"+ di.getInt("DebtId") + ", ListingId:" + di.getInt("ListingId") + ", Price:" + di.getDouble("PriceforSale"));
 					}
 				}
 				Thread.sleep(200);

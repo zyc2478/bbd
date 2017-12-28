@@ -2,6 +2,7 @@ package com.autobid.bbd;
 
 import java.util.ArrayList;
 
+
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
@@ -18,7 +19,6 @@ import com.autobid.criteria.BeginCriteriaGroup;
 import com.autobid.criteria.DebtRateCriteriaGroup;
 import com.autobid.criteria.EduCriteriaGroup;
 import com.autobid.criteria.EduDebtCriteriaGroup;
-import com.autobid.dbd.DebtManager;
 import com.autobid.entity.CriteriaGroup;
 import com.autobid.entity.BidResult;
 import com.autobid.entity.LoanListResult;
@@ -223,9 +223,8 @@ public class BidManager implements Constants {
     		DebtManager.getInstance().debtExcecute();
     	}*/
     	
-		//logger = null;
-		//instance = null;
-
+/*		logger = null;
+		instance = null;*/
     }
 	private void bidResultsPrint(ArrayList<BidResult> successBidList,int listingIdsSize) {
     	if(listingIdsSize==0){
