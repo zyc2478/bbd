@@ -121,7 +121,7 @@ public class DebtService {
     		logger.error("xxxxxx Error！" + debtId + "标的不存在！xxxxxx");
     	}else if(debtResult.contains("\"Result\":0,\"ResultMessage\":null")){
     		successBidResult = new DebtResult(debtId,debtInfo.getInt("ListingId"),debtInfo.getDouble("PriceforSale"));
-    		logger.info(debtResult);
+    		//logger.info(debtResult);
     	} 
     	return successBidResult;
 	}

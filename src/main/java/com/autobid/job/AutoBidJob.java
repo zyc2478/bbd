@@ -20,8 +20,29 @@ public class AutoBidJob implements Job{
     public void execute(JobExecutionContext context) throws JobExecutionException {  
 		
     	int bidMode;
+    	
 		BidManager bid = BidManager.getInstance();
 		DebtManager debt = DebtManager.getInstance();
+ 		try {
+ 			bidMode = Integer.parseInt(ConfUtil.getProperty("bid_mode"));
+ 			if(bidMode==1) {
+				bid.bidExcecute();
+			}else if(bidMode==2) {
+				bid.bidExcecute();
+				//debt.debtExcecute();
+			}else if(bidMode==3) {
+				debt.debtExcecute();
+			}
+ 			bid.bidExcecute();
+ 		} catch (Exception e) {
+ 			e.printStackTrace();
+ 		}finally {
+ 			bid = null;
+ 			debt = null;
+ 		}
+    	
+/*    	BidManager bid = new BidManager();
+
 		try {
 			bidMode = Integer.parseInt(ConfUtil.getProperty("bid_mode"));
 			if(bidMode==1) {
@@ -30,13 +51,16 @@ public class AutoBidJob implements Job{
 				bid.bidExcecute();
 				//debt.debtExcecute();
 			}else if(bidMode==3) {
+		    	DebtManager debt = DebtManager.getInstance();
 				debt.debtExcecute();
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
-		}finally {
-			bid = null;
-			debt = null;
-		}
+		}*/
+
+
+    
     }  
+    
+    
 }  

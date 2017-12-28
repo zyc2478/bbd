@@ -101,7 +101,7 @@ public class BidManager implements Constants {
 			e.printStackTrace();
 		}
 	}
-    	
+
 	@Test
     public void bidExcecute() throws Exception {  	
 		logger.info("bidExcecute");
@@ -216,14 +216,15 @@ public class BidManager implements Constants {
 	    	indexNum++;
 		}while(loanIdCount == 200);
 		System.out.println("*~~~~~~~~~~~~~~~~~~~~标的执行完毕，投标结果如下：~~~~~~~~~~~~~~~~~~~*");
-    	bidResultsPrint(successBidList,listingIds.size());
     	
-    	if(Integer.parseInt(confBean.getBidMode())==2) {
+		bidResultsPrint(successBidList,listingIds.size());
+    	
+/*    	if(Integer.parseInt(confBean.getBidMode())==2) {
     		DebtManager.getInstance().debtExcecute();
-    	}
+    	}*/
     	
-		logger = null;
-		instance = null;
+		//logger = null;
+		//instance = null;
 
     }
 	private void bidResultsPrint(ArrayList<BidResult> successBidList,int listingIdsSize) {

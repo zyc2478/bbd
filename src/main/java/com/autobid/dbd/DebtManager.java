@@ -181,7 +181,7 @@ public class DebtManager implements Constants {
 				//通过对债权明细数据分析，选择出可投的债权标
 				JSONArray dFiltered = dilf.filter(debtInfosList,confBean);
 				
-				System.out.println("第"+indexNum+"轮 第 "+i+"组 dFiltered.size =  ：" + dFiltered.size());
+				//System.out.println("第"+indexNum+"轮 第 "+i+"组 dFiltered.size =  ：" + dFiltered.size());
 				
 				//将债权标数组筛选出其ListingId的List,再调用服务查询这些标的明细信息
 				List<Integer> listingIds = DebtDataParser.getListingIds(dFiltered);
@@ -193,12 +193,12 @@ public class DebtManager implements Constants {
 				
 				//通过对债权对应标的数据分析，挑选出可投的标
 				JSONArray bidFiltered = bif.filter(batchBidInfos,confBean);				
-				System.out.println("第"+indexNum+"轮 第 "+i+"组 bidFiltered.size = ：" + bidFiltered.size());
+				//System.out.println("第"+indexNum+"轮 第 "+i+"组 bidFiltered.size = ：" + bidFiltered.size());
 				
 				//将之转换为可投的债权标
 				JSONArray dbFiltered = DebtDataParser.parseDebtInfoFromBids(dFiltered,bidFiltered);
 				
-				System.out.println("可投债权标数量：" + dbFiltered.size());
+				System.out.println("第"+indexNum+"轮 第 "+i+"组可投债权标数量：" + dbFiltered.size());
 				
 				//遍历数组，对每个可投债权标尝试投标
 				for(int j=0;j<dbFiltered.size();j++) {
@@ -212,17 +212,18 @@ public class DebtManager implements Constants {
 				    		successDebtList.add(debtResult);
 						}
 						jedis.setex(String.valueOf(di.getInt("DebtId")), 172800, String.valueOf(di.getInt("ListingId")));
-						logger.info(di);
+						logger.info(indexNum+": "+di);
 						System.out.println("已投债权标 DebtId:"+ di.getInt("DebtId") + ", ListingId:" + di.getInt("ListingId") + ", Price:" + di.getDouble("PriceforSale"));
 					}
 				}
 				Thread.sleep(200);
 			}
 			indexNum ++;
+			//logger.info(indexNum);
 
-		}while(debtCount == 50 && indexNum <= debtGroups); //每页50个元素
+		}while(debtCount == 50 && indexNum <= debtGroups); //每页50个元素		
 		
-		System.out.println("Total Debt Count is :"+totalDebtCount);
+		logger.info("Total Debt Count is :"+totalDebtCount);
 		
 		debtResultsPrint(successDebtList,totalDebtCount);		
 	}
