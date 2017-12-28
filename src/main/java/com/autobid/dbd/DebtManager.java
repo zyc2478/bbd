@@ -142,6 +142,7 @@ public class DebtManager implements Constants {
 		DebtListFilter dlf = new DebtListFilter();
 		DebtInfosListFilter dilf = new DebtInfosListFilter();
 		BidInfosFilter bif = new BidInfosFilter();
+		int debtGroups = Integer.parseInt(confBean.getDebtGroups());
 		
 		do {
 			JSONArray debtListArray = DebtService.debtListService(indexNum);		
@@ -163,7 +164,7 @@ public class DebtManager implements Constants {
 			
 			//将debtList切分为10个一组,再拼接成一个Collector
 			ArrayList<JSONArray> daList = DebtDataParser.getDebtsCollector(dlFiltered);
-			
+						
 			for(int i=0;i<daList.size();i++) {
 							
 				//获取债权标的明细
@@ -219,7 +220,7 @@ public class DebtManager implements Constants {
 			}
 			indexNum ++;
 
-		}while(debtCount == 50 && indexNum <= 200); //每页50个元素
+		}while(debtCount == 50 && indexNum <= debtGroups); //每页50个元素
 		
 		System.out.println("Total Debt Count is :"+totalDebtCount);
 		
