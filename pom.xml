@@ -233,12 +233,24 @@
 	    <version>2.4</version>
 	    <classifier>jdk15</classifier> 
 	</dependency>
+	<!-- https://mvnrepository.com/artifact/org.mybatis/mybatis -->
+	<dependency>
+	    <groupId>org.mybatis</groupId>
+	    <artifactId>mybatis</artifactId>
+	    <version>3.4.5</version>
+	</dependency>
+	<!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
+	<dependency>
+	    <groupId>mysql</groupId>
+	    <artifactId>mysql-connector-java</artifactId>
+	    <version>6.0.6</version>
+	</dependency>
+		
 	<dependency>  
 	    <groupId>com.ppd</groupId>  
 	    <artifactId>ppd</artifactId>  
 	    <version>2.01</version>   
 	</dependency> 	
-	
   </dependencies>
 </project>
 

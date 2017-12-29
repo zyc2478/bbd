@@ -57,10 +57,10 @@ public class TokenUtil {
 		}
 		
 		authInfo = OpenApiClient.refreshToken(openId, refreshToken);
-		String newToken = authInfo.getAccessToken();			//47401bc7-1639-4cb6-a168-01c30a628599
-		String newRefreshToken = authInfo.getRefreshToken();	//fc7d2e81-6191-41b0-84fb-c95c61c1d119
-		setToken(newToken);
-		setRefreshToken(newRefreshToken);
+		//String newToken = authInfo.getAccessToken();			//47401bc7-1639-4cb6-a168-01c30a628599
+		//String newRefreshToken = authInfo.getRefreshToken();	//fc7d2e81-6191-41b0-84fb-c95c61c1d119
+/*		setToken(newToken);
+		setRefreshToken(newRefreshToken);*/
 	}
 	
 	public static boolean determineTokenInitExsits() throws IOException {
