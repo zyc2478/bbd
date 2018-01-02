@@ -62,11 +62,13 @@ public class BidService {
 			logger.error("ÄúµÄ²Ù×÷Ì«Æµ·±À²£¡ÏÈºÈ±­²è°É£¬ÐªÒ»·ÖÖÓ~~");
     		Thread.sleep(60000);
     	}
+    	JSONArray loanInfosResultArray = new JSONArray();
     	if(result.isSucess()){
     		String loanListResult = result.getContext();
     		logger.info("loanListResult is :" + loanListResult);
     		JSONObject loanListJson = JSONObject.fromObject(loanListResult);
         	JSONArray loanInfosArray = loanListJson.getJSONArray("LoanInfos");
+
         	//String loanListJson = loanAllList.substring(13);
         	logger.info("loanListArray is :" + loanInfosArray);   //Modified
         	int size = loanInfosArray.size();
@@ -79,6 +81,7 @@ public class BidService {
         		if(!creditCode.equals("AA")){
         			loanIds[i]=listingId;
         			//System.out.println("loanId" + i + " value:" + loanIds[i]);
+        			loanInfosResultArray.add(loanInfoObj);
         			j++;
         		}
         	}
@@ -90,7 +93,7 @@ public class BidService {
     	}
 		LoanListResult llr = new LoanListResult();
 		llr.setIndexNum(indexNum);
-		llr.setLoanList(loanInfosList);
+		llr.setLoanList(loanInfosResultArray);
 		llr.setLoanIdCount(loanIds.length);
 		return llr;
 	}

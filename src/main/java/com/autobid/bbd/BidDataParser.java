@@ -7,10 +7,11 @@ import java.util.Iterator;
 import java.util.List;
 
 import org.apache.log4j.Logger;
-import org.json.JSONArray;
-import org.json.JSONObject;
 
 import com.autobid.util.JsonUtil;
+
+import net.sf.json.JSONArray;
+import net.sf.json.JSONObject;
 
 
 /** 
@@ -26,13 +27,13 @@ public class BidDataParser {
 	
 	public static double getBalance(String queryBalanceJson) throws ParseException{
 		
-		JSONObject balanceJson = new JSONObject(queryBalanceJson);
+		JSONObject balanceJson = JSONObject.fromObject(queryBalanceJson);
 		//logger.info(balanceJson);
 
 		JSONArray balanceArray = balanceJson.getJSONArray("Balance");
 
 		double canUseBalance = 0;
-		for(int i=0;i<balanceArray.length();i++){
+		for(int i=0;i<balanceArray.size();i++){
 			JSONObject balanceObject = balanceArray.getJSONObject(i);
 			String accountCategory = balanceObject.getString("AccountCategory");
 			if(JsonUtil.decodeUnicode(accountCategory).contains("用户现金余额")){
@@ -43,63 +44,23 @@ public class BidDataParser {
 		return canUseBalance;
 	}
 	
-	public static List<Integer> getListingIds(String loanListJson) throws ParseException{
-    	System.out.println("-------------------getListingIds----------------------------");
-    	String creditCode;
-    	String loanListArrayJson = loanListJson.substring(13);
-    	//logger.info("loanListJson is :" + loanListJson);
-    	JSONArray loanListArray = new JSONArray(loanListArrayJson);
-    	int size = loanListArray.length();
-    	int[] loanIds = new int[size];
-    	int j = 0;
-    	for(int i=0;i<size;i++){
-    		JSONObject loanInfoObj = loanListArray.getJSONObject(i);
-    		int listingId = loanInfoObj.getInt("ListingId");
-    		creditCode = loanInfoObj.getString("CreditCode");
+	public static List<Integer> getListingIds(JSONArray loanListArray) throws ParseException{
+    	//System.out.println("-------------------getListingIds----------------------------");
+
+		List<Integer> listingIds = new ArrayList<Integer>();
+		int j = 0;
+		for(int i=0;i<loanListArray.size();i++) {
+			JSONObject loanInfoObj = loanListArray.getJSONObject(i);
+			int listingId = loanInfoObj.getInt("ListingId");
+			String creditCode = loanInfoObj.getString("CreditCode");
     		if(!creditCode.equals("AA")){
-    			loanIds[i]=listingId;
+    			listingIds.add(new Integer(listingId));
     			j++;
     		}
-    	}
-    	logger.info("标的总数为："+ loanIds.length + "，中风险标的数为："+ j);
-
-        List<Integer> listingIds = new ArrayList<Integer>(loanIds.length);
-    	for(int i=0;i<loanIds.length;i++){
-    		listingIds.add(Integer.valueOf(loanIds[i]));
-    	}	
+		}
+		logger.info("标的总数为："+ loanListArray.size() + "，中风险标的数为："+ j);
 		return listingIds;
-	}
-	
-	public static List<Integer> getListingIds(ArrayList<String> loanListJsonList) throws ParseException{
-    	//System.out.println("-------------------getListingIds----------------------------");
-    	ArrayList<String> loanJsonList = loanListJsonList;
-    	Iterator<String> loanJsonListIt = loanJsonList.iterator();
-        List<Integer> listingIds = new ArrayList<Integer>();
-    	while(loanJsonListIt.hasNext()){
-    		String creditCode;
-    		String loanListJson = loanJsonListIt.next();
-        	JSONArray loanListArray = new JSONArray(loanListJson);
-        	int size = loanListArray.length();
-        	int[] loanIds = new int[size];
-        	for(int i=0;i<size;i++){
-        		JSONObject loanInfoObj = loanListArray.getJSONObject(i);
-        		int listingId = loanInfoObj.getInt("ListingId");
-        		//System.out.println("ListingId is "  + listingId);
-        		creditCode = loanInfoObj.getString("CreditCode");
-        		if(!creditCode.equals("AA")){
-        			loanIds[i]=listingId;
-        		}
-        	}
-        	for(int i=0;i<loanIds.length;i++){
-        		if(loanIds[i]!=0){
-            		listingIds.add(Integer.valueOf(loanIds[i]));
-        		}
-        	}
-    	}
-		return listingIds;
-	}		
-	
-	
+	}	
 	
 	
 
@@ -156,7 +117,7 @@ public class BidDataParser {
     }
     
     public static JSONArray getLoanInfos(String batchListInfos) throws ParseException, InterruptedException{
-    	JSONObject batchListInfosObject = new JSONObject(batchListInfos);
+    	JSONObject batchListInfosObject = JSONObject.fromObject(batchListInfos);
     	//System.out.println(batchListInfosObject);
     	/*if(JsonUtil.decodeUnicode(batchListInfos).contains("您的操作太频繁啦")) {
     		System.out.println("您的操作太频繁啦！先喝杯茶吧，歇一分钟~~");

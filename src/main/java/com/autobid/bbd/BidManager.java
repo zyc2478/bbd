@@ -8,8 +8,6 @@ import java.util.Iterator;
 import java.util.List;
 
 import org.apache.log4j.Logger;
-import org.json.JSONArray;
-import org.json.JSONObject;
 import org.junit.Test;
 
 import redis.clients.jedis.Jedis;
@@ -27,6 +25,9 @@ import com.autobid.util.ConfBean;
 import com.autobid.util.ConfUtil;
 import com.autobid.util.TokenInit;
 import com.autobid.util.TokenUtil;
+
+import net.sf.json.JSONArray;
+import net.sf.json.JSONObject;
 
 
 /** 
@@ -149,7 +150,7 @@ public class BidManager implements Constants {
     		
     		while(loanInfosIt.hasNext()){
     			JSONArray loanInfosArray = loanInfosIt.next();
-    			for(int i=0;i<loanInfosArray.length();i++){
+    			for(int i=0;i<loanInfosArray.size();i++){
     				JSONObject loanInfoObj = loanInfosArray.getJSONObject(i);
        			    
     				//System.out.println(loanInfoObj);

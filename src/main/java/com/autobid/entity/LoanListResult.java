@@ -1,12 +1,12 @@
 package com.autobid.entity;
 
-import java.util.ArrayList;
+import net.sf.json.JSONArray;
 
 public class LoanListResult {
-	private ArrayList<String> loanList;
+	private JSONArray loanList;
 	private int indexNum;
 	private int loanIdCount;
-	public ArrayList<String> getLoanList() {
+	public JSONArray getLoanList() {
 		return loanList;
 	}
 	public int getLoanIdCount() {
@@ -15,7 +15,7 @@ public class LoanListResult {
 	public void setLoanIdCount(int loanIdCount) {
 		this.loanIdCount = loanIdCount;
 	}
-	public void setLoanList(ArrayList<String> loanList) {
+	public void setLoanList(JSONArray loanList) {
 		this.loanList = loanList;
 	}
 	public int getIndexNum() {
