@@ -13,7 +13,8 @@ public class ConfBean {
 	debtPreferLimit,
 	debtOverdueLimit,
 	debtCreditLimit,
-	debtGroups,
+	debtMaxGroups,
+	debtMinGroups,
 	minBidAmount,
 	bidLevelAmount,
 	multiple,
@@ -58,14 +59,21 @@ public class ConfBean {
 	tokenInit,
 	refreshTokenInit;
 
-	public String getDebtGroups() {
-		return debtGroups;
+	public String getDebtMaxGroups() {
+		return debtMaxGroups;
 	}
 
-	public void setDebtGroups(String debtGroups) {
-		this.debtGroups = debtGroups;
+	public void setDebtMaxGroups(String debtMaxGroups) {
+		this.debtMaxGroups = debtMaxGroups;
 	}
 
+	public String getDebtMinGroups() {
+		return debtMinGroups;
+	}
+
+	public void setDebtMinGroups(String debtMinGroups) {
+		this.debtMinGroups = debtMinGroups;
+	}
 	public String getDebtPreferLimit() {
 		return debtPreferLimit;
 	}

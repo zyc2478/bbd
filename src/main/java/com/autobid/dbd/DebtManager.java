@@ -142,7 +142,7 @@ public class DebtManager implements Constants {
 		DebtListFilter dlf = new DebtListFilter();
 		DebtInfosListFilter dilf = new DebtInfosListFilter();
 		BidInfosFilter bif = new BidInfosFilter();
-		int debtGroups = Integer.parseInt(confBean.getDebtGroups());
+		int debtGroups = 0;
 		
 		do {
 			JSONArray debtListArray = DebtService.debtListService(indexNum);		
@@ -218,6 +218,13 @@ public class DebtManager implements Constants {
 				}
 				Thread.sleep(200);
 			}
+			
+			if(indexNum==1) {
+				debtGroups = Integer.parseInt(confBean.getDebtMaxGroups());
+			}else {
+				debtGroups = Integer.parseInt(confBean.getDebtMinGroups());
+			}
+			
 			indexNum ++;
 			//logger.info(indexNum);
 
