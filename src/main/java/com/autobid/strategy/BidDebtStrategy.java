@@ -99,22 +99,6 @@ public class BidDebtStrategy implements DebtStrategy {
 		}
 	}
 	
-	private boolean determineLastSuccessBorrow(JSONObject loanInfo,ConfBean cb){
-		boolean lastSuccessBorrowOk = false;
-		int gender = loanInfo.getInt("Gender");
-		double owingAmount = loanInfo.getDouble("OwingAmount");
-		double highestDebt = loanInfo.getDouble("HighestDebt");
-		double oh_rate = owingAmount/highestDebt;
-		double owing_mrate = Double.parseDouble(cb.getOwingMrate());
-		double owing_frate = Double.parseDouble(cb.getOwingFrate());		
-		if(gender==1 && oh_rate <= owing_mrate ) {
-			return true;
-		}else if(gender==2 && oh_rate <= owing_frate ) {
-			return true;
-		}else {
-			return false;
-		}
-	}
 	
 /*	private void printStrategy(JSONObject loanInfo,ConfBean cb) throws Exception {
 		logger.info("determineDebtRate(loanInfo):" + determineDebtRate(loanInfo) + 
