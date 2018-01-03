@@ -91,6 +91,7 @@ public class DebtService {
     	Result result = OpenApiClient.send(url,token,
     					new PropertyObject("debtDealId", debtId, ValueTypeEnum.Int32));
     	String debtResult = result.getContext();
+    	logger.info(debtResult);
     	
     	if(JsonUtil.decodeUnicode(debtResult).contains("您的操作太频繁啦")) {
     		logger.error("xxxxxx 您的操作太频繁啦！先喝杯茶吧，歇一分钟吧 ~~~xxxxxx");
@@ -101,8 +102,11 @@ public class DebtService {
     	//System.out.println(String.format("返回结果:%s", result.isSucess() ? bidResult : result.getErrorMessage()));
     	if(JsonUtil.decodeUnicode(debtResult).contains("令牌校验失败")){
     		logger.error("xxxxxx Error！令牌校验失败！xxxxxx");
-    	}else if(JsonUtil.decodeUnicode(debtResult).contains("访问令牌不存在")){
-    		logger.error("xxxxxx 访问令牌不存在！xxxxxx");
+    	}else if(debtResult.contains("\"Result\":0,\"ResultMessage\":恭喜您")){
+    		successBidResult = new DebtResult(debtId,debtInfo.getInt("ListingId"),debtInfo.getDouble("PriceforSale"));
+    		logger.info(debtResult);
+    	}else if(JsonUtil.decodeUnicode(debtResult).contains("已访问令牌不存在")){
+    		logger.error("xxxxxx 访问令牌不存在 ！xxxxxx");
     		AuthInfo authInfo = OpenApiClient.refreshToken(openId,token);
     		token = authInfo.getRefreshToken();
     		System.out.println("Refresh token = " + token);
@@ -119,10 +123,8 @@ public class DebtService {
     		logger.error("xxxxxx Error！" + debtId + "已满标！xxxxxx");
     	}else if(JsonUtil.decodeUnicode(debtResult).contains("标的不存在")){
     		logger.error("xxxxxx Error！" + debtId + "标的不存在！xxxxxx");
-    	}else if(debtResult.contains("\"Result\":0,\"ResultMessage\":null")){
-    		successBidResult = new DebtResult(debtId,debtInfo.getInt("ListingId"),debtInfo.getDouble("PriceforSale"));
-    		//logger.info(debtResult);
-    	} 
+    	}
+    	    	
     	return successBidResult;
 	}
 	
@@ -133,7 +135,7 @@ public class DebtService {
     	Result result = OpenApiClient.send(url,token,
     					new PropertyObject("debtDealId", debtId, ValueTypeEnum.Int32));
     	String debtResult = result.getContext();
-    	
+    	logger.info(debtResult);
     	if(JsonUtil.decodeUnicode(debtResult).contains("您的操作太频繁啦")) {
     		logger.error("xxxxxx 您的操作太频繁啦！先喝杯茶吧，歇一分钟吧 ~~~xxxxxx");
     		Thread.sleep(60000);

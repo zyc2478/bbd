@@ -244,7 +244,7 @@ public class DebtManager implements Constants {
     	}else{
     		for(int i=0;i<successDebtList.size();i++) {
     			DebtResult dr = successDebtList.get(i);
-        		System.out.println("*~~~~~~~~~~~ DebtId:"+dr.getDebtId() + ", ListingId:"+
+        		logger.info("*~~~~~~~~~~~ DebtId:"+dr.getDebtId() + ", ListingId:"+
         				dr.getListingId() + ", Price:" + dr.getPrice()+"~~~~~~~~~~~*");
     		}
     	}		

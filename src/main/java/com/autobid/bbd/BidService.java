@@ -65,12 +65,12 @@ public class BidService {
     	JSONArray loanInfosResultArray = new JSONArray();
     	if(result.isSucess()){
     		String loanListResult = result.getContext();
-    		logger.info("loanListResult is :" + loanListResult);
+    		//logger.info("loanListResult is :" + loanListResult);
     		JSONObject loanListJson = JSONObject.fromObject(loanListResult);
         	JSONArray loanInfosArray = loanListJson.getJSONArray("LoanInfos");
 
         	//String loanListJson = loanAllList.substring(13);
-        	logger.info("loanListArray is :" + loanInfosArray);   //Modified
+        	//logger.info("loanListArray is :" + loanInfosArray);   //Modified
         	int size = loanInfosArray.size();
         	loanIds = new int[size];
         	int j=0;
