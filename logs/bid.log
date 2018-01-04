@@ -288,3 +288,131 @@
 2017-12-29 16:39:02 - 3: {"DebtId":47768137,"Seller":"pdu7776260468","StatusId":1,"Lender":"pdu7776260468","BidDateTime":"2017-08-30T08:04:01.987","OwingNumber":6,"OwingPrincipal":40.31,"OwingInterest":2.37,"Days":1,"PriceforSaleRate":18.01,"PriceforSale":41.11,"PreferenceDegree":-0.15,"ListingId":68365635,"CreditCode":"C","CurrentCreditCode":"C","ListingAmount":6000,"ListingTime":"2017-08-30T08:02:41.807","ListingMonths":9,"ListingRate":20,"PastDueNumber":0,"AllowanceRadio":-0.41,"PastDueDay":0}
 2017-12-29 16:39:04 - 3: {"DebtId":47768111,"Seller":"pdu7776260468","StatusId":1,"Lender":"pdu7776260468","BidDateTime":"2017-06-30T07:58:32.543","OwingNumber":7,"OwingPrincipal":35.83,"OwingInterest":2.43,"Days":1,"PriceforSaleRate":19.01,"PriceforSale":36.49,"PreferenceDegree":8.34,"ListingId":55947430,"CreditCode":"C","CurrentCreditCode":"C","ListingAmount":2200,"ListingTime":"2017-06-30T07:57:36.943","ListingMonths":12,"ListingRate":20,"PastDueNumber":1,"AllowanceRadio":-0.24,"PastDueDay":3}
 2017-12-29 16:39:06 - 3: {"DebtId":47768032,"Seller":"pdu7776260468","StatusId":1,"Lender":"pdu7776260468","BidDateTime":"2017-05-30T07:47:34.747","OwingNumber":6,"OwingPrincipal":47.23,"OwingInterest":2.79,"Days":1,"PriceforSaleRate":18.01,"PriceforSale":48.18,"PreferenceDegree":0.11,"ListingId":49969815,"CreditCode":"C","CurrentCreditCode":"C","ListingAmount":2172,"ListingTime":"2017-05-30T07:46:56.653","ListingMonths":12,"ListingRate":20,"PastDueNumber":0,"AllowanceRadio":-0.41,"PastDueDay":0}
+2018-01-04 20:00:59 - bidExcecute
+2018-01-04 20:03:36 - bidExcecute
+2018-01-04 20:04:38 - bidExcecute
+2018-01-04 20:32:25 - bidExcecute
+2018-01-04 20:32:56 - token is: 631feea8-d9f1-4483-9525-5eb28f4ecf04
+2018-01-04 20:32:56 - refresh token is: 59d3e479-19db-4186-bb07-7811af67d336
+2018-01-04 20:33:21 - bidExcecute
+2018-01-04 20:33:26 - 可用余额为：1438.18
+2018-01-04 20:33:26 - 标的总数为：0，中风险标的数为：0
+2018-01-04 20:33:43 - Using default implementation for ThreadExecutor
+2018-01-04 20:33:43 - Job execution threads will use class loader of thread: main
+2018-01-04 20:33:43 - Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+2018-01-04 20:33:43 - Quartz Scheduler v.2.2.3 created.
+2018-01-04 20:33:43 - RAMJobStore initialized.
+2018-01-04 20:33:43 - Scheduler meta-data: Quartz Scheduler (v2.2.3) 'DefaultQuartzScheduler' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 1 threads.
+  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
+
+2018-01-04 20:33:43 - Quartz scheduler 'DefaultQuartzScheduler' initialized from default resource file in Quartz package: 'quartz.properties'
+2018-01-04 20:33:43 - Quartz scheduler version: 2.2.3
+2018-01-04 20:33:43 - Scheduler DefaultQuartzScheduler_$_NON_CLUSTERED started.
+2018-01-04 20:33:45 - bidExcecute
+2018-01-04 20:33:48 - 可用余额为：1438.18
+2018-01-04 20:33:48 - 标的总数为：0，中风险标的数为：0
+2018-01-04 20:33:48 - debtExcecute
+2018-01-04 20:33:48 - debtOverdueExcecute
+2018-01-04 20:33:48 - 可用余额为：1438.18
+2018-01-04 20:33:48 - 第1轮 初步过滤后，dlFiltered数量：24
+2018-01-04 20:33:53 - 第2轮 初步过滤后，dlFiltered数量：42
+2018-01-04 20:33:57 - 第3轮 初步过滤后，dlFiltered数量：26
+2018-01-04 20:34:02 - 第4轮 初步过滤后，dlFiltered数量：16
+2018-01-04 20:34:04 - 第5轮 初步过滤后，dlFiltered数量：26
+2018-01-04 20:34:06 - 第6轮 初步过滤后，dlFiltered数量：29
+2018-01-04 20:34:09 - 第7轮 初步过滤后，dlFiltered数量：20
+2018-01-04 20:34:11 - {"DebtDealId":49226968,"Result":0,"ResultMessage":"恭喜您!成功购买债权1个，金额总计￥36.17"}
+2018-01-04 20:34:12 - 第8轮 初步过滤后，dlFiltered数量：35
+2018-01-04 20:34:15 - 第9轮 初步过滤后，dlFiltered数量：42
+2018-01-04 20:34:18 - 第10轮 初步过滤后，dlFiltered数量：16
+2018-01-04 20:34:20 - 第11轮 初步过滤后，dlFiltered数量：36
+2018-01-04 20:34:22 - {"DebtDealId":49226440,"Result":0,"ResultMessage":"恭喜您!成功购买债权1个，金额总计￥34.16"}
+2018-01-04 20:34:24 - {"DebtDealId":49226366,"Result":0,"ResultMessage":"恭喜您!成功购买债权1个，金额总计￥38.50"}
+2018-01-04 20:34:25 - {"DebtDealId":49226351,"Result":0,"ResultMessage":"恭喜您!成功购买债权1个，金额总计￥38.52"}
+2018-01-04 20:34:26 - 第12轮 初步过滤后，dlFiltered数量：45
+2018-01-04 20:34:30 - 第13轮 初步过滤后，dlFiltered数量：43
+2018-01-04 20:34:34 - 第14轮 初步过滤后，dlFiltered数量：40
+2018-01-04 20:34:36 - {"DebtDealId":49225821,"Result":0,"ResultMessage":"恭喜您!成功购买债权1个，金额总计￥36.11"}
+2018-01-04 20:34:39 - 第15轮 初步过滤后，dlFiltered数量：46
+2018-01-04 20:34:42 - {"DebtDealId":49225563,"Result":0,"ResultMessage":"恭喜您!成功购买债权1个，金额总计￥38.52"}
+2018-01-04 20:34:44 - 第16轮 初步过滤后，dlFiltered数量：49
+2018-01-04 20:34:49 - 第17轮 初步过滤后，dlFiltered数量：36
+2018-01-04 20:34:51 - {"DebtDealId":49225290,"Result":0,"ResultMessage":"恭喜您!成功购买债权1个，金额总计￥53.26"}
+2018-01-04 20:34:52 - {"DebtDealId":49225292,"Result":0,"ResultMessage":"恭喜您!成功购买债权1个，金额总计￥101.32"}
+2018-01-04 20:34:55 - 第18轮 初步过滤后，dlFiltered数量：29
+2018-01-04 20:34:58 - {"DebtDealId":49225044,"Result":0,"ResultMessage":"恭喜您!成功购买债权1个，金额总计￥179.96"}
+2018-01-04 20:34:59 - 第19轮 初步过滤后，dlFiltered数量：27
+2018-01-04 20:35:03 - 第20轮 初步过滤后，dlFiltered数量：11
+2018-01-04 20:35:06 - 第21轮 初步过滤后，dlFiltered数量：12
+2018-01-04 20:35:08 - 第22轮 初步过滤后，dlFiltered数量：47
+2018-01-04 20:35:11 - {"DebtDealId":49224537,"Result":0,"ResultMessage":"恭喜您!成功购买债权1个，金额总计￥68.66"}
+2018-01-04 20:35:13 - {"DebtDealId":49224445,"Result":0,"ResultMessage":"恭喜您!成功购买债权1个，金额总计￥38.66"}
+2018-01-04 20:35:14 - {"DebtDealId":49224448,"Result":0,"ResultMessage":"恭喜您!成功购买债权1个，金额总计￥34.48"}
+2018-01-04 20:35:15 - {"DebtDealId":49224441,"Result":0,"ResultMessage":"恭喜您!成功购买债权1个，金额总计￥34.38"}
+2018-01-04 20:35:16 - 第23轮 初步过滤后，dlFiltered数量：41
+2018-01-04 20:35:20 - {"DebtDealId":49224276,"Result":0,"ResultMessage":"恭喜您!成功购买债权1个，金额总计￥34.51"}
+2018-01-04 20:35:21 - 第24轮 初步过滤后，dlFiltered数量：23
+2018-01-04 20:35:26 - 第25轮 初步过滤后，dlFiltered数量：12
+2018-01-04 20:35:28 - {"DebtDealId":49223976,"Result":0,"ResultMessage":"恭喜您!成功购买债权1个，金额总计￥47.59"}
+2018-01-04 20:35:29 - 第26轮 初步过滤后，dlFiltered数量：21
+2018-01-04 20:35:31 - 第27轮 初步过滤后，dlFiltered数量：35
+2018-01-04 20:35:33 - {"DebtDealId":49223584,"Result":0,"ResultMessage":"恭喜您!成功购买债权1个，金额总计￥34.51"}
+2018-01-04 20:35:35 - 第28轮 初步过滤后，dlFiltered数量：34
+2018-01-04 20:35:38 - 第29轮 初步过滤后，dlFiltered数量：33
+2018-01-04 20:35:41 - 第30轮 初步过滤后，dlFiltered数量：11
+2018-01-04 20:35:42 - 第31轮 初步过滤后，dlFiltered数量：21
+2018-01-04 20:35:44 - 第32轮 初步过滤后，dlFiltered数量：29
+2018-01-04 20:35:46 - {"DebtDealId":49222206,"Result":0,"ResultMessage":"恭喜您!成功购买债权1个，金额总计￥38.57"}
+2018-01-04 20:35:47 - 第33轮 初步过滤后，dlFiltered数量：9
+2018-01-04 20:35:49 - {"DebtDealId":49222015,"Result":0,"ResultMessage":"恭喜您!成功购买债权1个，金额总计￥63.57"}
+2018-01-04 20:35:50 - {"DebtDealId":49222013,"Result":0,"ResultMessage":"恭喜您!成功购买债权1个，金额总计￥63.57"}
+2018-01-04 20:35:51 - 第34轮 初步过滤后，dlFiltered数量：17
+2018-01-04 20:35:52 - {"DebtDealId":49221739,"Result":0,"ResultMessage":"恭喜您!成功购买债权1个，金额总计￥63.60"}
+2018-01-04 20:35:53 - {"DebtDealId":49221846,"Result":0,"ResultMessage":"恭喜您!成功购买债权1个，金额总计￥63.57"}
+2018-01-04 20:35:54 - {"DebtDealId":49221854,"Result":0,"ResultMessage":"恭喜您!成功购买债权1个，金额总计￥33.99"}
+2018-01-04 20:35:56 - 第35轮 初步过滤后，dlFiltered数量：25
+2018-01-04 20:35:58 - 第36轮 初步过滤后，dlFiltered数量：25
+2018-01-04 20:36:00 - 第37轮 初步过滤后，dlFiltered数量：37
+2018-01-04 20:36:04 - 第38轮 初步过滤后，dlFiltered数量：36
+2018-01-04 20:36:07 - 第39轮 初步过滤后，dlFiltered数量：36
+2018-01-04 20:36:09 - {"DebtDealId":49221027,"Result":0,"ResultMessage":"恭喜您!成功购买债权1个，金额总计￥38.50"}
+2018-01-04 20:36:10 - {"DebtDealId":49221028,"Result":0,"ResultMessage":"恭喜您!成功购买债权1个，金额总计￥38.51"}
+2018-01-04 20:36:11 - {"DebtDealId":49221025,"Result":0,"ResultMessage":"恭喜您!成功购买债权1个，金额总计￥38.49"}
+2018-01-04 20:36:14 - 第40轮 初步过滤后，dlFiltered数量：35
+2018-01-04 20:36:18 - {"DebtDealId":49220726,"Result":0,"ResultMessage":"恭喜您!成功购买债权1个，金额总计￥44.80"}
+2018-01-04 20:36:21 - {"DebtDealId":49220722,"Result":0,"ResultMessage":"恭喜您!成功购买债权1个，金额总计￥44.80"}
+2018-01-04 20:36:21 - 第41轮 初步过滤后，dlFiltered数量：34
+2018-01-04 20:36:23 - {"DebtDealId":49220986,"Result":0,"ResultMessage":"恭喜您!成功购买债权1个，金额总计￥35.45"}
+2018-01-04 20:36:23 - {"DebtDealId":49220989,"Result":-1,"ResultMessage":"您的账户余额不足，请充值！"}
+2018-01-04 20:36:23 - {"DebtDealId":49220991,"Result":-1,"ResultMessage":"您的账户余额不足，请充值！"}
+2018-01-04 20:36:26 - 第42轮 初步过滤后，dlFiltered数量：32
+2018-01-04 20:36:28 - 第43轮 初步过滤后，dlFiltered数量：40
+2018-01-04 20:36:29 - {"DebtDealId":49220384,"Result":-1,"ResultMessage":"您的账户余额不足，请充值！"}
+2018-01-04 20:36:29 - {"DebtDealId":49220392,"Result":-1,"ResultMessage":"您的账户余额不足，请充值！"}
+2018-01-04 20:36:30 - {"DebtDealId":49220362,"Result":-1,"ResultMessage":"您的账户余额不足，请充值！"}
+2018-01-04 20:36:32 - 第44轮 初步过滤后，dlFiltered数量：37
+2018-01-04 20:36:34 - {"DebtDealId":49220165,"Result":-1,"ResultMessage":"您的账户余额不足，请充值！"}
+2018-01-04 20:36:35 - {"DebtDealId":49220113,"Result":-1,"ResultMessage":"您的账户余额不足，请充值！"}
+2018-01-04 20:36:37 - 第45轮 初步过滤后，dlFiltered数量：42
+2018-01-04 20:36:38 - {"DebtDealId":49220113,"Result":-1,"ResultMessage":"您的账户余额不足，请充值！"}
+2018-01-04 20:36:40 - 第46轮 初步过滤后，dlFiltered数量：43
+2018-01-04 20:36:42 - {"DebtDealId":49219810,"Result":-1,"ResultMessage":"您的账户余额不足，请充值！"}
+2018-01-04 20:36:44 - 第47轮 初步过滤后，dlFiltered数量：40
+2018-01-04 20:36:46 - 第48轮 初步过滤后，dlFiltered数量：39
+2018-01-04 20:36:49 - 第49轮 初步过滤后，dlFiltered数量：34
+2018-01-04 20:36:51 - {"DebtDealId":49219411,"Result":-1,"ResultMessage":"您的账户余额不足，请充值！"}
+2018-01-04 20:36:52 - 第50轮 初步过滤后，dlFiltered数量：32
+2018-01-04 20:36:54 - {"DebtDealId":49219411,"Result":-1,"ResultMessage":"您的账户余额不足，请充值！"}
+2018-01-04 20:36:55 - 第51轮 初步过滤后，dlFiltered数量：44
+2018-01-04 20:36:57 - {"DebtDealId":49219274,"Result":-1,"ResultMessage":"您的账户余额不足，请充值！"}
+2018-01-04 20:36:58 - {"DebtDealId":49219263,"Result":-1,"ResultMessage":"您的账户余额不足，请充值！"}
+2018-01-04 20:37:00 - 第52轮 初步过滤后，dlFiltered数量：28
+2018-01-04 20:37:02 - 第53轮 初步过滤后，dlFiltered数量：34
+2018-01-04 20:37:05 - 第54轮 初步过滤后，dlFiltered数量：45
+2018-01-04 20:37:08 - 第55轮 初步过滤后，dlFiltered数量：46
+2018-01-04 20:37:11 - 第56轮 初步过滤后，dlFiltered数量：45
