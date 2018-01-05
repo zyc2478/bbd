@@ -5,8 +5,8 @@ import org.junit.Test;
 import com.autobid.util.ConfUtil;
 
 public class ConfUtilTest {
-	
-	Logger logger = Logger.getLogger("ConfUtilTest.class");
+
+    Logger logger = Logger.getLogger("ConfUtilTest.class");
 	
 /*	@Before
 	public void testSetProperty() throws IOException, ParseException {
@@ -23,17 +23,17 @@ public class ConfUtilTest {
     	logger.info("token is : \"" + ConfUtil.getProperty("token") +"\"");
     	logger.info("refresh_token is : " + ConfUtil.getProperty("refresh_token"));
     }*/
-    
+
     @Test
     public void testGetAllFromBean() throws Exception {
-    	ConfUtil.readAllToBean();
+        ConfUtil.readAllToBean();
     }
-    
+
     @Test
-    public void testGetFuncValueFromBean() throws Exception{
-    	ConfBean cb = ConfUtil.readAllToBean();
-    	System.out.println("cb.getAmountBegin():" + cb.getAmountBegin());
-    	System.out.println("cb.getAmountMrate():" + cb.getAmountMrate());
+    public void testGetFuncValueFromBean() throws Exception {
+        ConfBean cb = ConfUtil.readAllToBean();
+        System.out.println("cb.getAmountBegin():" + cb.getAmountBegin());
+        System.out.println("cb.getAmountMrate():" + cb.getAmountMrate());
     }
     
 /*    @Test

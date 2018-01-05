@@ -1,13 +1,6 @@
 package com.autobid.bbd;
 
-import com.ppdai.open.core.AuthInfo;
-import com.ppdai.open.core.ObjectDigitalSignHelper;
-import com.ppdai.open.core.OpenApiClient;
-import com.ppdai.open.core.PropertyObject;
-import com.ppdai.open.core.Result;
-import com.ppdai.open.core.RsaCryptoHelper;
-import com.ppdai.open.core.ValueTypeEnum;
-
+import com.ppdai.open.core.*;
 import org.junit.Test;
 
 import java.io.IOException;
@@ -28,30 +21,27 @@ public class BizTest {
 
     /***************** 客户端私钥 **************/
     private static String clientPrivateKey = "MIICdwIBADANBgkqhkiG9w0BAQEFAASCAmEwggJdAgEAAoGB"
-    		+ "AM7lQkzlTjz0HOt/rMqYJcUb4NmTY+7zOGOVG4fSgWdUI4m5Q1IgU5ZuQoyavS6LtX1oDOdu+ul8t+x"
-    		+ "Z02XL7nPqjNqiM5vMT1xmS/CK7afG42nGmAxSJSnatsVmQTN7OtiBaHOP1yt6Z4t8I/g9vmtOdqbgMq"
-    		+ "tl51H6CmXQzmUfAgMBAAECgYEAxCPP8PpKa7q5WAEYHJCU7gJ57YqvaK6nvLB1AxRrnTvE3SIHUmpXE"
-    		+ "/u/l3By/RdxnUvxP86UjJmx+51ErfLhQMj40e0A3gm5GdXRsHgVhHxyV3cpK5TU366y4opnIyaKm9cH"
-    		+ "bOZIK/t823D5NovXWj1C/6J/GTAVjfo1Dcp1PKECQQD7mEBZSCwegGsPjtjPKx2iHVJ+QydUdnIDQ+H"
-    		+ "nI7yexVb3IyNj3M0sTQiD1EJvPxMangr3W2gRChXA7gOaz585AkEA0oSl3SbSw4KJNnQFPfbh+3nObY"
-    		+ "UIuzGnYvJLWZArbSS6b51mM1t6CWeocyM4XG3MsRWg2yh8SXS1eILf0ajPFwJBANqVWkK3S21skJdBu"
-    		+ "eezQ9mWtBbybPcauM9RaLCSAcvHE1k/c/3M1YyJmL4/6UARgp17dXeWOIGlS2UE5KjZfTECQFuuxYXB"
-    		+ "KL1ZFmUOtlG8OcMJ02tDKwBLqbigCUziSudnvYJqrF3lkwqRiH1Mc3ldoG3nG30W7roXCAmKBewLdtU"
-    		+ "CQHNroh7XYmA80gp3iIFcZ/ucyZLhkg5ThC/VMyoGwOgmuMVRCbO4WlzPAQvnv4GSNx6BSD2ARoaqkb"
-    		+ "KI/Op36RE=";
+            + "AM7lQkzlTjz0HOt/rMqYJcUb4NmTY+7zOGOVG4fSgWdUI4m5Q1IgU5ZuQoyavS6LtX1oDOdu+ul8t+x"
+            + "Z02XL7nPqjNqiM5vMT1xmS/CK7afG42nGmAxSJSnatsVmQTN7OtiBaHOP1yt6Z4t8I/g9vmtOdqbgMq"
+            + "tl51H6CmXQzmUfAgMBAAECgYEAxCPP8PpKa7q5WAEYHJCU7gJ57YqvaK6nvLB1AxRrnTvE3SIHUmpXE"
+            + "/u/l3By/RdxnUvxP86UjJmx+51ErfLhQMj40e0A3gm5GdXRsHgVhHxyV3cpK5TU366y4opnIyaKm9cH"
+            + "bOZIK/t823D5NovXWj1C/6J/GTAVjfo1Dcp1PKECQQD7mEBZSCwegGsPjtjPKx2iHVJ+QydUdnIDQ+H"
+            + "nI7yexVb3IyNj3M0sTQiD1EJvPxMangr3W2gRChXA7gOaz585AkEA0oSl3SbSw4KJNnQFPfbh+3nObY"
+            + "UIuzGnYvJLWZArbSS6b51mM1t6CWeocyM4XG3MsRWg2yh8SXS1eILf0ajPFwJBANqVWkK3S21skJdBu"
+            + "eezQ9mWtBbybPcauM9RaLCSAcvHE1k/c/3M1YyJmL4/6UARgp17dXeWOIGlS2UE5KjZfTECQFuuxYXB"
+            + "KL1ZFmUOtlG8OcMJ02tDKwBLqbigCUziSudnvYJqrF3lkwqRiH1Mc3ldoG3nG30W7roXCAmKBewLdtU"
+            + "CQHNroh7XYmA80gp3iIFcZ/ucyZLhkg5ThC/VMyoGwOgmuMVRCbO4WlzPAQvnv4GSNx6BSD2ARoaqkb"
+            + "KI/Op36RE=";
     /***************** 服务端公钥 ***************/
     private static String serverPublicKey = "MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQC1hTOFi/JjU"
-    		+ "D7gqTP7EqHiLmsgLaI3FsVApbIpDHhXTIhPcC3OVQyysbqvTJUOhbb8JMj4SSninBWkvd0PYJK+e7P6"
-    		+ "+6qJcbo6+pnUJUkRQZ+qE0i6dRwXtmUd3yIPISIM0JP99ALxhl81Uz6Z68GRxnBiySbel84pwYPIJV1"
-    		+ "sCwIDAQAB";
-
+            + "D7gqTP7EqHiLmsgLaI3FsVApbIpDHhXTIhPcC3OVQyysbqvTJUOhbb8JMj4SSninBWkvd0PYJK+e7P6"
+            + "+6qJcbo6+pnUJUkRQZ+qE0i6dRwXtmUd3yIPISIM0JP99ALxhl81Uz6Z68GRxnBiySbel84pwYPIJV1"
+            + "sCwIDAQAB";
+    String token = "";
     /*********** 授权信息 ***************/
     private AuthInfo authInfo = null;
 
-
-    
-    String token = "";
-     @Test
+    @Test
     public void AuthTest() throws Exception {
 
         /**
@@ -65,13 +55,13 @@ public class BizTest {
          * 添加WebApi接口gettoken
          */
 
-    	System.out.println("Get token is :" + gettoken("3084cb609b724c66b4ea97e9180c4262"));
+        System.out.println("Get token is :" + gettoken("3084cb609b724c66b4ea97e9180c4262"));
 
         /**
          * 刷新Token
          * 用于AccessToken失效后刷新一个新的AccessToken，AccessToken有效期七天
          */
-    	System.out.println("After refresh, token is :" + refreshToken());
+        System.out.println("After refresh, token is :" + refreshToken());
     }
 
     /**
@@ -144,12 +134,12 @@ public class BizTest {
         Result result;
 
         OpenApiClient.Init(appid, RsaCryptoHelper.PKCSType.PKCS8, serverPublicKey, clientPrivateKey);
-        result = OpenApiClient.send("http://gw.open.ppdai.com/invest/BidService/BidList",token,
+        result = OpenApiClient.send("http://gw.open.ppdai.com/invest/BidService/BidList", token,
                 new PropertyObject("ListingId", 0, ValueTypeEnum.Int32),
-                new PropertyObject("StartTime","2017-06-15", ValueTypeEnum.String),
-                new PropertyObject("EndTime","2017-06-16", ValueTypeEnum.String),
-                new PropertyObject("PageIndex",1, ValueTypeEnum.Int32),
-                new PropertyObject("PageSize",20, ValueTypeEnum.Int32));
+                new PropertyObject("StartTime", "2017-06-15", ValueTypeEnum.String),
+                new PropertyObject("EndTime", "2017-06-16", ValueTypeEnum.String),
+                new PropertyObject("PageIndex", 1, ValueTypeEnum.Int32),
+                new PropertyObject("PageSize", 20, ValueTypeEnum.Int32));
         System.out.println(String.format("返回结果:%s", result.isSucess() ? result.getContext() : result.getErrorMessage()));
 
 
@@ -240,7 +230,7 @@ public class BizTest {
         /*String pubKey = "MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQC8iMpEG3mnFlMfufO95DfAfor80RL3I/IzF828aoDDw/Xy86jPiihJyGyG2ZmbqsAw+8nj8eGc+U9LmKASgQhS9e0R/MmYDa9R/O2f4tQZUQr3nE3uUTES0tqCLoE3TVSd59lnVExeDL5IW+F/Yc9mz1v+xSDFcSKyfHEo0FDnnwIDAQAB";
         String privKey = "MIICWwIBAAKBgQC8iMpEG3mnFlMfufO95DfAfor80RL3I/IzF828aoDDw/Xy86jPiihJyGyG2ZmbqsAw+8nj8eGc+U9LmKASgQhS9e0R/MmYDa9R/O2f4tQZUQr3nE3uUTES0tqCLoE3TVSd59lnVExeDL5IW+F/Yc9mz1v+xSDFcSKyfHEo0FDnnwIDAQABAoGAJ5wxqrd/CpzFIBBIZmfxUq8DcnRWoLfbpeJlZiWWIgskvEN2/wuOxVmne3lyLWNld6Ue2JY0CW/TuhU55ElZvv91NiTreBqr5WfZ8EYI+/lwEUKC4GzogVwrmpL1PpSaNJymvTujiShmP/+hia2mav9fhMOYm8MaMRwPELwASiECQQD0nW8xWF9IRT90v89y+P/htW+g3E4HZVAYPXyhfAnFJsGC06XAXwO0hDS8Sao7Nktj2sNSacNFjZvndGrQPOePAkEAxU8o7+QHqm/HYsO0XN49xn6zWQRvAOonhl5/+NKm7NfGEVTGwhP5KbNsJPv3TTtCPrS2V6MlIScg1yLXkFF28QJAGoEYdDNMF6uRJZhG5QE/0Hf1QWu9dKWwmP/IikLDWD5Lx14hXoetAhk1EZW1wTav0oD4muxkwRuH4ftGO4vt1wJAKkjdsBOBZRBRfaQNWj2ypYBvtSsTEvIbiFtmN5AFgAp6AyrU8bDQHBS8n2x0QlPpzYBy93MaOPGmwxRPeDlNMQJAKubPrAE9Qe++95xvvfpZgj6wOZoKGa4Yj3dd1PYcO2fU9eVSW1W6IrvJc36NIGz4Egyw2EiqFBBIJL92ZhjQ2Q==";
         */
-    	//String txt = "abc";
+        //String txt = "abc";
 
         //RsaCryptoHelper rsaCryptoHelper = new RsaCryptoHelper(RsaCryptoHelper.PKCSType.PKCS1, pubKey, privKey);
 

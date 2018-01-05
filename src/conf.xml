@@ -2,26 +2,26 @@
 <!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
     <!-- 元素允许在主配置文件之外提供一个properties格式对应文件，从而使得主配置文件更加通用。这样对部署非常有用  -->
-    <properties resource="mysql.properties" />
+    <properties resource="mysql.properties"/>
 
     <!-- 设置别名，一定要放在properties下面  -->
     <typeAliases>
-        <typeAlias alias="Employeer" type="com.mucfc.model.Employeer"  />
+        <typeAlias alias="Employeer" type="com.mucfc.model.Employeer"/>
     </typeAliases>
 
     <environments default="development">
         <environment id="development">
-            <transactionManager type="JDBC" />
+            <transactionManager type="JDBC"/>
             <!-- 配置数据库连接信息 -->
             <dataSource type="POOLED">
-            <!--    <property name="driver" value="com.mysql.cj.jdbc.Driver" />
-                <property name="url" value="jdbc:mysql://192.168.16.242:3306/bbd" />
-                <property name="username" value="root" />
-                <property name="password" value="12345" />  -->
-                <property name="driver" value="${driver}" />
-                <property name="url" value="${url}" />
-                <property name="username" value="${username}" />
-                <property name="password" value="${password}" />
+                <!--    <property name="driver" value="com.mysql.cj.jdbc.Driver" />
+                    <property name="url" value="jdbc:mysql://192.168.16.242:3306/bbd" />
+                    <property name="username" value="root" />
+                    <property name="password" value="12345" />  -->
+                <property name="driver" value="${driver}"/>
+                <property name="url" value="${url}"/>
+                <property name="username" value="${username}"/>
+                <property name="password" value="${password}"/>
             </dataSource>
         </environment>
     </environments>

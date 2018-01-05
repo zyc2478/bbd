@@ -7,18 +7,17 @@ import org.junit.Test;
 import com.autobid.util.Log4JUtil;
 
 
-public class LoggerTest {  
-	private static Logger logger = Logger.getLogger(Logger.class);
-	
-	
-	@Test
-	public void testLogFile(){
-		logger.debug("log to file!");
-	}
-	
-	public static void main(String[] args) { 
-		BasicConfigurator.configure();
-		Log4JUtil.getLogger().debug("Hello World!");  
-		//System.out.println("Hello World!");
-	}  
+public class LoggerTest {
+    private static Logger logger = Logger.getLogger(Logger.class);
+
+    public static void main(String[] args) {
+        BasicConfigurator.configure();
+        Log4JUtil.getLogger().debug("Hello World!");
+        //System.out.println("Hello World!");
+    }
+
+    @Test
+    public void testLogFile() {
+        logger.debug("log to file!");
+    }
 }  

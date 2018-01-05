@@ -15,7 +15,7 @@ public class PoolTest {
             JedisPoolConfig config = new JedisPoolConfig();
             config.setMaxTotal(500);
             config.setMaxIdle(5);
-            config.setMaxWaitMillis(1000*10);
+            config.setMaxWaitMillis(1000 * 10);
             //在borrow一个jedis实例时，是否提前进行validate操作；如果为true，则得到的jedis实例均是可用的；
             config.setTestOnBorrow(true);
             //new JedisPool(config, ADDR, PORT, TIMEOUT, AUTH);
@@ -53,7 +53,7 @@ public class PoolTest {
                 redis.set("k1", "v1");
                 String ret = redis.get("k1");
                 long end = System.currentTimeMillis();
-                System.out.printf("Get " + loop + " ret from redis: %s with %d millis\n", ret, end-start);
+                System.out.printf("Get " + loop + " ret from redis: %s with %d millis\n", ret, end - start);
             } finally {
                 if (redis != null) {
                     redis.close();

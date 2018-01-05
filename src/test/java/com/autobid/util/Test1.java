@@ -2,6 +2,7 @@ package com.autobid.util;
 
 import java.io.IOException;
 import java.io.InputStream;
+
 import com.autobid.entity.User;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;

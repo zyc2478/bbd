@@ -15,8 +15,8 @@ import com.autobid.util.RedisUtil;
 
 public class RedisTest {
     //private Jedis jedis; 
-	private static Logger logger = Logger.getLogger(RedisTest.class);  
-	
+    private static Logger logger = Logger.getLogger(RedisTest.class);
+
     @Before
     public void setup() {
         //连接redis服务器，localhost:6379
@@ -24,10 +24,10 @@ public class RedisTest {
         //权限认证
         //jedis.auth("admin");  
     }
-    
-   /* *//**
+
+    /* *//**
      * redis存储字符串
-     * @throws InterruptedException 
+     * @throws InterruptedException
      *//*
 
     public void testString() throws InterruptedException {
@@ -90,7 +90,7 @@ public class RedisTest {
         }  
     }
     
-    *//** 
+    *//**
      * jedis操作List 
      *//*  
 
@@ -114,8 +114,10 @@ public class RedisTest {
         System.out.println(jedis.lrange("java framework",0,-1));
     }  
     
-    *//** 
-     * jedis操作Set 
+    */
+
+    /**
+     * jedis操作Set
      *//*  
 
     public void testSet(){  
@@ -150,9 +152,8 @@ public class RedisTest {
         System.out.println(jedis.lrange("a",0,-1));  
     }  
     */
-
     public void testRedisPool() {
-    	logger.debug("----testRedisPool----");
+        logger.debug("----testRedisPool----");
         RedisUtil.getJedis().set("newname", "中文测试");
         System.out.println(RedisUtil.getJedis().get("newname"));
     }
