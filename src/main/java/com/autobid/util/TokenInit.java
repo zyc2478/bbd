@@ -11,11 +11,8 @@ import java.util.Date;
 
 public class TokenInit {
 
-    static Logger logger = Logger.getLogger("TokenInit.class");
+    private static Logger logger = Logger.getLogger("TokenInit.class");
     private static String code;
-    private static AuthInfo authInfo = null;
-    private static String token = "";
-    private static String refreshToken = "";
     private static boolean initFlag = false;
 
     static {
@@ -43,9 +40,9 @@ public class TokenInit {
         initFlag = true;
         System.out.println("code is:" + code);
         //authInfo = OpenApiClient.authorize("9ca3fb6357b04c5385fd51d1e6db9922");
-        authInfo = OpenApiClient.authorize(code);
-        token = authInfo.getAccessToken();  //7dcf80d8-e74b-42ad-a439-6dfe567741ec
-        refreshToken = authInfo.getRefreshToken(); //fc7d2e81-6191-41b0-84fb-c95c61c1d119
+        AuthInfo authInfo = OpenApiClient.authorize(code);
+        String token = authInfo.getAccessToken();
+        String refreshToken = authInfo.getRefreshToken();
 
         logger.info("token is: " + token);
         logger.info("refresh token is: " + refreshToken);

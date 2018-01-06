@@ -13,7 +13,7 @@ public class BidServiceTest {
             AuthInit.init();
 
             //如果TokenInit配置项不存在，则初始化Token，存储在Redis中
-            if (!TokenUtil.determineTokenInitExsits()) {
+            if (TokenUtil.determineTokenInitExists()) {
                 TokenInit.initToken();
             }
             //如果Token快到期，则获取一个新Token

@@ -11,9 +11,6 @@ import com.ppdai.open.core.RsaCryptoHelper;
  */
 public class AuthInit {
 
-    /************ 应用ＩＤ **************/
-    private static String appId = "7344c77f9a7f4f249bd9df04115171e6";
-
     //private static Logger logger = Logger.getLogger(AuthInit.class);
 
     /***************** 客户端私钥 **************/
@@ -42,6 +39,7 @@ public class AuthInit {
      * 登录成功后 oauth2.0 跳转到http://bidbydebt.com/auth/gettoken?code=c903ccbbe24549c0b603d1f172b4f149
      */
     public static void init() throws Exception {
+        String appId = "7344c77f9a7f4f249bd9df04115171e6";
         OpenApiClient.Init(appId, RsaCryptoHelper.PKCSType.PKCS8, serverPublicKey, clientPrivateKey);
     }
 }

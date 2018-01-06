@@ -1,9 +1,9 @@
-2017-12-29 00:16:57 - Using default implementation for ThreadExecutor
-2017-12-29 00:16:57 - Job execution threads will use class loader of thread: main
-2017-12-29 00:16:57 - Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
-2017-12-29 00:16:57 - Quartz Scheduler v.2.2.3 created.
-2017-12-29 00:16:57 - RAMJobStore initialized.
-2017-12-29 00:16:57 - Scheduler meta-data: Quartz Scheduler (v2.2.3) 'DefaultQuartzScheduler' with instanceId 'NON_CLUSTERED'
+2018-01-06 10:56:55 - Using default implementation for ThreadExecutor
+2018-01-06 10:56:55 - Job execution threads will use class loader of thread: main
+2018-01-06 10:56:55 - Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+2018-01-06 10:56:55 - Quartz Scheduler v.2.2.3 created.
+2018-01-06 10:56:55 - RAMJobStore initialized.
+2018-01-06 10:56:55 - Scheduler meta-data: Quartz Scheduler (v2.2.3) 'DefaultQuartzScheduler' with instanceId 'NON_CLUSTERED'
   Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
   NOT STARTED.
   Currently in standby mode.
@@ -11,30 +11,18 @@
   Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 1 threads.
   Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
 
-2017-12-29 00:16:57 - Quartz scheduler 'DefaultQuartzScheduler' initialized from default resource file in Quartz package: 'quartz.properties'
-2017-12-29 00:16:57 - Quartz scheduler version: 2.2.3
-2017-12-29 00:16:57 - Scheduler DefaultQuartzScheduler_$_NON_CLUSTERED started.
-2017-12-29 00:17:00 - debtExcecute
-2017-12-29 00:17:00 - debtOverdueExcecute
-2017-12-29 00:17:01 - �������Ϊ��9788.64
-2017-12-29 00:17:09 - 2: {"DebtId":47556755,"Seller":"pdu1486880561","StatusId":1,"Lender":"pdu1486880561","BidDateTime":"2017-10-21T13:54:11.553","OwingNumber":4,"OwingPrincipal":94.87,"OwingInterest":3.98,"Days":23,"PriceforSaleRate":18.6,"PriceforSale":95.51,"PreferenceDegree":6.75,"ListingId":78900126,"CreditCode":"C","CurrentCreditCode":"C","ListingAmount":15000,"ListingTime":"2017-10-21T13:51:42.643","ListingMonths":6,"ListingRate":20,"PastDueNumber":0,"AllowanceRadio":-0.25,"PastDueDay":0}
-2017-12-29 00:17:18 - 4: {"DebtId":47556438,"Seller":"pdu2876356342","StatusId":1,"Lender":"pdu2876356342","BidDateTime":"2017-05-27T19:36:26.7","OwingNumber":5,"OwingPrincipal":44.09,"OwingInterest":2.23,"Days":29,"PriceforSaleRate":18,"PriceforSale":44.34,"PreferenceDegree":5.67,"ListingId":49594281,"CreditCode":"C","CurrentCreditCode":"F","ListingAmount":8821,"ListingTime":"2017-05-27T19:34:58.75","ListingMonths":12,"ListingRate":20,"PastDueNumber":2,"AllowanceRadio":-1.9,"PastDueDay":1}
-2017-12-29 00:17:20 - 4: {"DebtId":47556415,"Seller":"pdu7141041031","StatusId":1,"Lender":"pdu7141041031","BidDateTime":"2017-08-30T14:01:07.907","OwingNumber":3,"OwingPrincipal":79.62,"OwingInterest":2.93,"Days":1,"PriceforSaleRate":19.8,"PriceforSale":81.17,"PreferenceDegree":-0.52,"ListingId":68432205,"CreditCode":"D","CurrentCreditCode":"B","ListingAmount":3000,"ListingTime":"2017-08-30T13:38:27.827","ListingMonths":6,"ListingRate":22,"PastDueNumber":1,"AllowanceRadio":0.14,"PastDueDay":1}
-2017-12-29 00:17:34 - Total Debt Count is :500
-2017-12-29 00:17:34 - debtExcecute
-2017-12-29 00:17:34 - debtOverdueExcecute
-2017-12-29 00:17:34 - �������Ϊ��9567.62
-2017-12-29 00:17:50 - 5: {"DebtId":47556413,"Seller":"pdu7141041031","StatusId":1,"Lender":"pdu7141041031","BidDateTime":"2017-08-30T12:01:19.657","OwingNumber":3,"OwingPrincipal":87.32,"OwingInterest":3.22,"Days":1,"PriceforSaleRate":19.8,"PriceforSale":89.03,"PreferenceDegree":9.49,"ListingId":68409195,"CreditCode":"D","CurrentCreditCode":"C","ListingAmount":1908,"ListingTime":"2017-08-30T11:50:19.31","ListingMonths":6,"ListingRate":22,"PastDueNumber":1,"AllowanceRadio":-0.02,"PastDueDay":1}
-2017-12-29 00:18:02 - Total Debt Count is :500
-2017-12-29 00:18:02 - debtExcecute
-2017-12-29 00:18:02 - debtOverdueExcecute
-2017-12-29 00:18:03 - �������Ϊ��9478.59
-2017-12-29 00:18:57 - Using default implementation for ThreadExecutor
-2017-12-29 00:18:57 - Job execution threads will use class loader of thread: main
-2017-12-29 00:18:57 - Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
-2017-12-29 00:18:57 - Quartz Scheduler v.2.2.3 created.
-2017-12-29 00:18:57 - RAMJobStore initialized.
-2017-12-29 00:18:57 - Scheduler meta-data: Quartz Scheduler (v2.2.3) 'DefaultQuartzScheduler' with instanceId 'NON_CLUSTERED'
+2018-01-06 10:56:55 - Quartz scheduler 'DefaultQuartzScheduler' initialized from default resource file in Quartz package: 'quartz.properties'
+2018-01-06 10:56:55 - Quartz scheduler version: 2.2.3
+2018-01-06 10:56:55 - Scheduler DefaultQuartzScheduler_$_NON_CLUSTERED started.
+2018-01-06 10:56:55 - bidExcecute
+2018-01-06 10:57:00 - bidExcecute
+2018-01-06 10:57:05 - bidExcecute
+2018-01-06 10:57:42 - Using default implementation for ThreadExecutor
+2018-01-06 10:57:42 - Job execution threads will use class loader of thread: main
+2018-01-06 10:57:42 - Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+2018-01-06 10:57:42 - Quartz Scheduler v.2.2.3 created.
+2018-01-06 10:57:42 - RAMJobStore initialized.
+2018-01-06 10:57:42 - Scheduler meta-data: Quartz Scheduler (v2.2.3) 'DefaultQuartzScheduler' with instanceId 'NON_CLUSTERED'
   Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
   NOT STARTED.
   Currently in standby mode.
@@ -42,23 +30,16 @@
   Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 1 threads.
   Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
 
-2017-12-29 00:18:57 - Quartz scheduler 'DefaultQuartzScheduler' initialized from default resource file in Quartz package: 'quartz.properties'
-2017-12-29 00:18:57 - Quartz scheduler version: 2.2.3
-2017-12-29 00:18:57 - Scheduler DefaultQuartzScheduler_$_NON_CLUSTERED started.
-2017-12-29 00:19:00 - bidExcecute
-2017-12-29 00:19:01 - �������Ϊ��9478.59
-2017-12-29 00:19:02 - loanListResult is :{"LoanInfos":[],"Result":1,"ResultMessage":"��ѯ�ɹ�","ResultCode":null}
-2017-12-29 00:19:02 - loanListArray is :[]
-2017-12-29 00:19:02 - debtExcecute
-2017-12-29 00:19:02 - debtOverdueExcecute
-2017-12-29 00:19:02 - �������Ϊ��9478.59
-2017-12-29 00:19:07 - 1: {"DebtId":47557222,"Seller":"pdu6285464471","StatusId":1,"Lender":"pdu6285464471","BidDateTime":"2017-10-03T10:55:57.417","OwingNumber":4,"OwingPrincipal":127.4,"OwingInterest":5.34,"Days":5,"PriceforSaleRate":18.03,"PriceforSale":129.5,"PreferenceDegree":-3.45,"ListingId":75379327,"CreditCode":"C","CurrentCreditCode":"B","ListingAmount":4856,"ListingTime":"2017-10-03T10:54:53.267","ListingMonths":6,"ListingRate":20,"PastDueNumber":0,"AllowanceRadio":0,"PastDueDay":0}
-2017-12-29 00:20:26 - Using default implementation for ThreadExecutor
-2017-12-29 00:20:26 - Job execution threads will use class loader of thread: main
-2017-12-29 00:20:26 - Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
-2017-12-29 00:20:26 - Quartz Scheduler v.2.2.3 created.
-2017-12-29 00:20:26 - RAMJobStore initialized.
-2017-12-29 00:20:26 - Scheduler meta-data: Quartz Scheduler (v2.2.3) 'DefaultQuartzScheduler' with instanceId 'NON_CLUSTERED'
+2018-01-06 10:57:42 - Quartz scheduler 'DefaultQuartzScheduler' initialized from default resource file in Quartz package: 'quartz.properties'
+2018-01-06 10:57:42 - Quartz scheduler version: 2.2.3
+2018-01-06 10:57:42 - Scheduler DefaultQuartzScheduler_$_NON_CLUSTERED started.
+2018-01-06 10:57:45 - bidExcecute
+2018-01-06 10:58:36 - Using default implementation for ThreadExecutor
+2018-01-06 10:58:36 - Job execution threads will use class loader of thread: main
+2018-01-06 10:58:36 - Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+2018-01-06 10:58:36 - Quartz Scheduler v.2.2.3 created.
+2018-01-06 10:58:36 - RAMJobStore initialized.
+2018-01-06 10:58:36 - Scheduler meta-data: Quartz Scheduler (v2.2.3) 'DefaultQuartzScheduler' with instanceId 'NON_CLUSTERED'
   Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
   NOT STARTED.
   Currently in standby mode.
@@ -66,30 +47,19 @@
   Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 1 threads.
   Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
 
-2017-12-29 00:20:26 - Quartz scheduler 'DefaultQuartzScheduler' initialized from default resource file in Quartz package: 'quartz.properties'
-2017-12-29 00:20:26 - Quartz scheduler version: 2.2.3
-2017-12-29 00:20:26 - Scheduler DefaultQuartzScheduler_$_NON_CLUSTERED started.
-2017-12-29 00:20:30 - bidExcecute
-2017-12-29 00:20:32 - �������Ϊ��9349.09
-2017-12-29 00:20:32 - loanListResult is :{"LoanInfos":[],"Result":1,"ResultMessage":"��ѯ�ɹ�","ResultCode":null}
-2017-12-29 00:20:32 - loanListArray is :[]
-2017-12-29 00:20:32 - debtExcecute
-2017-12-29 00:20:32 - debtOverdueExcecute
-2017-12-29 00:20:32 - �������Ϊ��9349.09
-2017-12-29 00:21:04 - Total Debt Count is :500
-2017-12-29 00:21:04 - bidExcecute
-2017-12-29 00:21:04 - �������Ϊ��9349.09
-2017-12-29 00:21:05 - loanListResult is :{"LoanInfos":[],"Result":1,"ResultMessage":"��ѯ�ɹ�","ResultCode":null}
-2017-12-29 00:21:05 - loanListArray is :[]
-2017-12-29 00:21:05 - debtExcecute
-2017-12-29 00:21:05 - debtOverdueExcecute
-2017-12-29 00:21:05 - �������Ϊ��9349.09
-2017-12-29 00:28:17 - Using default implementation for ThreadExecutor
-2017-12-29 00:28:17 - Job execution threads will use class loader of thread: main
-2017-12-29 00:28:17 - Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
-2017-12-29 00:28:17 - Quartz Scheduler v.2.2.3 created.
-2017-12-29 00:28:17 - RAMJobStore initialized.
-2017-12-29 00:28:17 - Scheduler meta-data: Quartz Scheduler (v2.2.3) 'DefaultQuartzScheduler' with instanceId 'NON_CLUSTERED'
+2018-01-06 10:58:36 - Quartz scheduler 'DefaultQuartzScheduler' initialized from default resource file in Quartz package: 'quartz.properties'
+2018-01-06 10:58:36 - Quartz scheduler version: 2.2.3
+2018-01-06 10:58:36 - Scheduler DefaultQuartzScheduler_$_NON_CLUSTERED started.
+2018-01-06 10:58:40 - bidExcecute
+2018-01-06 10:58:45 - bidExcecute
+2018-01-06 10:58:50 - bidExcecute
+2018-01-06 10:58:55 - bidExcecute
+2018-01-06 10:59:33 - Using default implementation for ThreadExecutor
+2018-01-06 10:59:33 - Job execution threads will use class loader of thread: main
+2018-01-06 10:59:33 - Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+2018-01-06 10:59:33 - Quartz Scheduler v.2.2.3 created.
+2018-01-06 10:59:33 - RAMJobStore initialized.
+2018-01-06 10:59:33 - Scheduler meta-data: Quartz Scheduler (v2.2.3) 'DefaultQuartzScheduler' with instanceId 'NON_CLUSTERED'
   Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
   NOT STARTED.
   Currently in standby mode.
@@ -97,49 +67,38 @@
   Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 1 threads.
   Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
 
-2017-12-29 00:28:17 - Quartz scheduler 'DefaultQuartzScheduler' initialized from default resource file in Quartz package: 'quartz.properties'
-2017-12-29 00:28:17 - Quartz scheduler version: 2.2.3
-2017-12-29 00:28:17 - Scheduler DefaultQuartzScheduler_$_NON_CLUSTERED started.
-2017-12-29 00:28:20 - bidExcecute
-2017-12-29 00:28:20 - �������Ϊ��9373.52
-2017-12-29 00:28:21 - loanListResult is :{"LoanInfos":[],"Result":1,"ResultMessage":"��ѯ�ɹ�","ResultCode":null}
-2017-12-29 00:28:21 - loanListArray is :[]
-2017-12-29 00:28:21 - debtExcecute
-2017-12-29 00:28:21 - debtOverdueExcecute
-2017-12-29 00:28:21 - �������Ϊ��9373.52
-2017-12-29 00:28:21 - ��1�� �������˺�dlFiltered������23
-2017-12-29 00:28:25 - ��2�� �������˺�dlFiltered������36
-2017-12-29 00:28:28 - ��3�� �������˺�dlFiltered������35
-2017-12-29 00:28:30 - 3: {"DebtId":47557690,"Seller":"pdu6285464471","StatusId":1,"Lender":"pdu6285464471","BidDateTime":"2017-10-01T08:53:56.59","OwingNumber":4,"OwingPrincipal":127.4,"OwingInterest":5.34,"Days":3,"PriceforSaleRate":18.03,"PriceforSale":129.63,"PreferenceDegree":-2.45,"ListingId":75068721,"CreditCode":"C","CurrentCreditCode":"B","ListingAmount":5592,"ListingTime":"2017-10-01T08:53:52.37","ListingMonths":6,"ListingRate":20,"PastDueNumber":0,"AllowanceRadio":0,"PastDueDay":0}
-2017-12-29 00:28:32 - ��4�� �������˺�dlFiltered������27
-2017-12-29 00:28:34 - ��5�� �������˺�dlFiltered������43
-2017-12-29 00:28:38 - ��6�� �������˺�dlFiltered������37
-2017-12-29 00:28:41 - ��7�� �������˺�dlFiltered������27
-2017-12-29 00:28:43 - ��8�� �������˺�dlFiltered������35
-2017-12-29 00:28:46 - ��9�� �������˺�dlFiltered������31
-2017-12-29 00:28:49 - ��10�� �������˺�dlFiltered������25
-2017-12-29 00:28:51 - Total Debt Count is :500
-2017-12-29 00:28:51 - bidExcecute
-2017-12-29 00:28:51 - �������Ϊ��9243.89
-2017-12-29 00:28:51 - loanListResult is :{"LoanInfos":[],"Result":1,"ResultMessage":"��ѯ�ɹ�","ResultCode":null}
-2017-12-29 00:28:51 - loanListArray is :[]
-2017-12-29 00:28:51 - debtExcecute
-2017-12-29 00:28:51 - debtOverdueExcecute
-2017-12-29 00:28:51 - �������Ϊ��9243.89
-2017-12-29 00:28:51 - ��1�� �������˺�dlFiltered������31
-2017-12-29 00:28:54 - ��2�� �������˺�dlFiltered������35
-2017-12-29 00:28:57 - ��3�� �������˺�dlFiltered������37
-2017-12-29 00:28:59 - ��4�� �������˺�dlFiltered������26
-2017-12-29 00:29:01 - ��5�� �������˺�dlFiltered������42
-2017-12-29 00:29:05 - ��6�� �������˺�dlFiltered������39
-2017-12-29 00:29:35 - loanListResult is :{"LoanInfos":[],"Result":1,"ResultMessage":"��ѯ�ɹ�","ResultCode":null}
-2017-12-29 00:29:36 - loanListArray is :[]
-2017-12-29 16:24:36 - Using default implementation for ThreadExecutor
-2017-12-29 16:24:36 - Job execution threads will use class loader of thread: main
-2017-12-29 16:24:36 - Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
-2017-12-29 16:24:36 - Quartz Scheduler v.2.2.3 created.
-2017-12-29 16:24:36 - RAMJobStore initialized.
-2017-12-29 16:24:36 - Scheduler meta-data: Quartz Scheduler (v2.2.3) 'DefaultQuartzScheduler' with instanceId 'NON_CLUSTERED'
+2018-01-06 10:59:33 - Quartz scheduler 'DefaultQuartzScheduler' initialized from default resource file in Quartz package: 'quartz.properties'
+2018-01-06 10:59:33 - Quartz scheduler version: 2.2.3
+2018-01-06 10:59:33 - Scheduler DefaultQuartzScheduler_$_NON_CLUSTERED started.
+2018-01-06 10:59:35 - bidExcecute
+2018-01-06 10:59:40 - bidExcecute
+2018-01-06 10:59:45 - bidExcecute
+2018-01-06 10:59:50 - bidExcecute
+2018-01-06 10:59:55 - bidExcecute
+2018-01-06 11:00:00 - bidExcecute
+2018-01-06 11:00:05 - bidExcecute
+2018-01-06 11:00:10 - bidExcecute
+2018-01-06 11:00:15 - bidExcecute
+2018-01-06 11:00:20 - bidExcecute
+2018-01-06 11:00:25 - bidExcecute
+2018-01-06 11:00:30 - bidExcecute
+2018-01-06 11:00:35 - bidExcecute
+2018-01-06 11:00:40 - bidExcecute
+2018-01-06 11:00:45 - bidExcecute
+2018-01-06 11:00:50 - bidExcecute
+2018-01-06 11:00:55 - bidExcecute
+2018-01-06 11:01:00 - bidExcecute
+2018-01-06 11:01:00 - token is: 95a34d86-f7e0-4244-9d60-297210eec257
+2018-01-06 11:01:00 - refresh token is: f3c3e2ed-ff46-40d2-80c2-e95d16df269b
+2018-01-06 11:01:05 - bidExcecute
+2018-01-06 11:01:10 - bidExcecute
+2018-01-06 11:01:15 - bidExcecute
+2018-01-06 11:01:19 - Using default implementation for ThreadExecutor
+2018-01-06 11:01:19 - Job execution threads will use class loader of thread: main
+2018-01-06 11:01:20 - Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+2018-01-06 11:01:20 - Quartz Scheduler v.2.2.3 created.
+2018-01-06 11:01:20 - RAMJobStore initialized.
+2018-01-06 11:01:20 - Scheduler meta-data: Quartz Scheduler (v2.2.3) 'DefaultQuartzScheduler' with instanceId 'NON_CLUSTERED'
   Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
   NOT STARTED.
   Currently in standby mode.
@@ -147,41 +106,633 @@
   Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 1 threads.
   Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
 
-2017-12-29 16:24:36 - Quartz scheduler 'DefaultQuartzScheduler' initialized from default resource file in Quartz package: 'quartz.properties'
-2017-12-29 16:24:36 - Quartz scheduler version: 2.2.3
-2017-12-29 16:24:36 - Scheduler DefaultQuartzScheduler_$_NON_CLUSTERED started.
-2017-12-29 16:24:43 - bidExcecute
-2017-12-29 16:24:45 - bidExcecute
-2017-12-29 16:24:50 - bidExcecute
-2017-12-29 16:24:55 - bidExcecute
-2017-12-29 16:25:00 - bidExcecute
-2017-12-29 16:25:05 - bidExcecute
-2017-12-29 16:25:10 - bidExcecute
-2017-12-29 16:25:15 - bidExcecute
-2017-12-29 16:25:20 - bidExcecute
-2017-12-29 16:25:25 - bidExcecute
-2017-12-29 16:25:30 - bidExcecute
-2017-12-29 16:25:35 - bidExcecute
-2017-12-29 16:25:40 - bidExcecute
-2017-12-29 16:25:45 - bidExcecute
-2017-12-29 16:25:50 - bidExcecute
-2017-12-29 16:25:55 - bidExcecute
-2017-12-29 16:26:00 - bidExcecute
-2017-12-29 16:26:05 - bidExcecute
-2017-12-29 16:26:10 - bidExcecute
-2017-12-29 16:26:15 - bidExcecute
-2017-12-29 16:26:20 - bidExcecute
-2017-12-29 16:26:25 - bidExcecute
-2017-12-29 16:26:30 - bidExcecute
-2017-12-29 16:26:35 - bidExcecute
-2017-12-29 16:26:40 - bidExcecute
-2017-12-29 16:26:45 - bidExcecute
-2017-12-29 16:26:46 - Using default implementation for ThreadExecutor
-2017-12-29 16:26:46 - Job execution threads will use class loader of thread: main
-2017-12-29 16:26:46 - Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
-2017-12-29 16:26:46 - Quartz Scheduler v.2.2.3 created.
-2017-12-29 16:26:46 - RAMJobStore initialized.
-2017-12-29 16:26:46 - Scheduler meta-data: Quartz Scheduler (v2.2.3) 'DefaultQuartzScheduler' with instanceId 'NON_CLUSTERED'
+2018-01-06 11:01:20 - Quartz scheduler 'DefaultQuartzScheduler' initialized from default resource file in Quartz package: 'quartz.properties'
+2018-01-06 11:01:20 - Quartz scheduler version: 2.2.3
+2018-01-06 11:01:20 - Scheduler DefaultQuartzScheduler_$_NON_CLUSTERED started.
+2018-01-06 11:01:20 - bidExcecute
+2018-01-06 11:01:20 - bidExcecute
+2018-01-06 11:01:25 - bidExcecute
+2018-01-06 11:01:25 - bidExcecute
+2018-01-06 11:01:30 - bidExcecute
+2018-01-06 11:01:35 - bidExcecute
+2018-01-06 11:01:40 - bidExcecute
+2018-01-06 11:01:45 - bidExcecute
+2018-01-06 11:01:50 - bidExcecute
+2018-01-06 11:01:55 - bidExcecute
+2018-01-06 11:02:00 - bidExcecute
+2018-01-06 11:02:05 - bidExcecute
+2018-01-06 11:02:10 - bidExcecute
+2018-01-06 11:02:15 - bidExcecute
+2018-01-06 11:02:20 - bidExcecute
+2018-01-06 11:02:25 - bidExcecute
+2018-01-06 11:02:30 - bidExcecute
+2018-01-06 11:02:35 - bidExcecute
+2018-01-06 11:02:40 - bidExcecute
+2018-01-06 11:02:45 - bidExcecute
+2018-01-06 11:02:50 - bidExcecute
+2018-01-06 11:02:55 - bidExcecute
+2018-01-06 11:03:00 - bidExcecute
+2018-01-06 11:03:05 - bidExcecute
+2018-01-06 11:03:10 - bidExcecute
+2018-01-06 11:03:15 - bidExcecute
+2018-01-06 11:03:20 - bidExcecute
+2018-01-06 11:03:25 - bidExcecute
+2018-01-06 11:03:30 - bidExcecute
+2018-01-06 11:03:35 - bidExcecute
+2018-01-06 11:03:40 - bidExcecute
+2018-01-06 11:03:45 - bidExcecute
+2018-01-06 11:13:08 - bidExcecute
+2018-01-06 11:13:09 - bidExcecute
+2018-01-06 11:13:10 - bidExcecute
+2018-01-06 11:13:15 - bidExcecute
+2018-01-06 11:13:20 - bidExcecute
+2018-01-06 11:13:25 - bidExcecute
+2018-01-06 11:13:30 - bidExcecute
+2018-01-06 11:13:35 - bidExcecute
+2018-01-06 11:13:40 - bidExcecute
+2018-01-06 11:13:45 - bidExcecute
+2018-01-06 11:13:50 - bidExcecute
+2018-01-06 11:13:55 - bidExcecute
+2018-01-06 11:14:00 - bidExcecute
+2018-01-06 11:14:05 - bidExcecute
+2018-01-06 11:23:25 - bidExcecute
+2018-01-06 11:23:25 - bidExcecute
+2018-01-06 11:23:30 - bidExcecute
+2018-01-06 11:23:35 - bidExcecute
+2018-01-06 11:23:40 - bidExcecute
+2018-01-06 11:23:45 - bidExcecute
+2018-01-06 11:23:50 - bidExcecute
+2018-01-06 11:23:55 - bidExcecute
+2018-01-06 11:24:00 - bidExcecute
+2018-01-06 11:24:05 - bidExcecute
+2018-01-06 11:24:10 - bidExcecute
+2018-01-06 11:24:15 - bidExcecute
+2018-01-06 11:24:20 - bidExcecute
+2018-01-06 11:42:57 - bidExcecute
+2018-01-06 11:42:58 - bidExcecute
+2018-01-06 11:43:00 - bidExcecute
+2018-01-06 11:43:05 - bidExcecute
+2018-01-06 11:43:10 - bidExcecute
+2018-01-06 11:43:15 - bidExcecute
+2018-01-06 11:43:20 - bidExcecute
+2018-01-06 11:43:25 - bidExcecute
+2018-01-06 11:43:30 - bidExcecute
+2018-01-06 11:43:35 - bidExcecute
+2018-01-06 11:43:40 - bidExcecute
+2018-01-06 11:43:45 - bidExcecute
+2018-01-06 11:43:50 - bidExcecute
+2018-01-06 11:43:55 - bidExcecute
+2018-01-06 11:53:15 - bidExcecute
+2018-01-06 11:53:15 - bidExcecute
+2018-01-06 11:53:20 - bidExcecute
+2018-01-06 11:53:25 - bidExcecute
+2018-01-06 11:53:30 - bidExcecute
+2018-01-06 11:53:35 - bidExcecute
+2018-01-06 11:53:40 - bidExcecute
+2018-01-06 11:53:45 - bidExcecute
+2018-01-06 11:53:50 - bidExcecute
+2018-01-06 11:53:55 - bidExcecute
+2018-01-06 11:54:00 - bidExcecute
+2018-01-06 11:54:05 - bidExcecute
+2018-01-06 11:54:10 - bidExcecute
+2018-01-06 12:03:31 - bidExcecute
+2018-01-06 12:03:31 - bidExcecute
+2018-01-06 12:03:35 - bidExcecute
+2018-01-06 12:03:40 - bidExcecute
+2018-01-06 12:03:45 - bidExcecute
+2018-01-06 12:03:50 - bidExcecute
+2018-01-06 12:03:55 - bidExcecute
+2018-01-06 12:04:00 - bidExcecute
+2018-01-06 12:04:05 - bidExcecute
+2018-01-06 12:04:10 - bidExcecute
+2018-01-06 12:04:15 - bidExcecute
+2018-01-06 12:04:20 - bidExcecute
+2018-01-06 12:04:25 - bidExcecute
+2018-01-06 12:13:46 - bidExcecute
+2018-01-06 12:13:46 - bidExcecute
+2018-01-06 12:13:50 - bidExcecute
+2018-01-06 12:13:55 - bidExcecute
+2018-01-06 12:14:00 - bidExcecute
+2018-01-06 12:14:05 - bidExcecute
+2018-01-06 12:14:10 - bidExcecute
+2018-01-06 12:14:15 - bidExcecute
+2018-01-06 12:14:20 - bidExcecute
+2018-01-06 12:14:25 - bidExcecute
+2018-01-06 12:14:30 - bidExcecute
+2018-01-06 12:14:35 - bidExcecute
+2018-01-06 12:14:40 - bidExcecute
+2018-01-06 12:24:00 - bidExcecute
+2018-01-06 12:24:00 - bidExcecute
+2018-01-06 12:24:05 - bidExcecute
+2018-01-06 12:24:10 - bidExcecute
+2018-01-06 12:24:15 - bidExcecute
+2018-01-06 12:24:25 - bidExcecute
+2018-01-06 12:24:26 - bidExcecute
+2018-01-06 12:24:30 - bidExcecute
+2018-01-06 12:24:35 - bidExcecute
+2018-01-06 12:24:40 - bidExcecute
+2018-01-06 12:24:45 - bidExcecute
+2018-01-06 12:24:50 - bidExcecute
+2018-01-06 12:24:55 - bidExcecute
+2018-01-06 12:34:11 - bidExcecute
+2018-01-06 12:34:11 - bidExcecute
+2018-01-06 12:34:15 - bidExcecute
+2018-01-06 12:34:20 - bidExcecute
+2018-01-06 12:34:29 - bidExcecute
+2018-01-06 12:34:30 - bidExcecute
+2018-01-06 12:43:51 - bidExcecute
+2018-01-06 12:43:51 - bidExcecute
+2018-01-06 12:43:55 - bidExcecute
+2018-01-06 12:44:00 - bidExcecute
+2018-01-06 12:44:05 - bidExcecute
+2018-01-06 12:44:10 - bidExcecute
+2018-01-06 12:44:15 - bidExcecute
+2018-01-06 12:44:20 - bidExcecute
+2018-01-06 12:44:25 - bidExcecute
+2018-01-06 12:44:32 - bidExcecute
+2018-01-06 12:44:35 - bidExcecute
+2018-01-06 12:44:40 - bidExcecute
+2018-01-06 12:44:45 - bidExcecute
+2018-01-06 12:44:50 - bidExcecute
+2018-01-06 12:54:12 - bidExcecute
+2018-01-06 12:54:12 - bidExcecute
+2018-01-06 12:54:15 - bidExcecute
+2018-01-06 12:54:20 - bidExcecute
+2018-01-06 12:54:25 - bidExcecute
+2018-01-06 12:54:30 - bidExcecute
+2018-01-06 12:54:35 - bidExcecute
+2018-01-06 12:54:40 - bidExcecute
+2018-01-06 12:54:45 - bidExcecute
+2018-01-06 12:54:50 - bidExcecute
+2018-01-06 12:54:55 - bidExcecute
+2018-01-06 12:55:00 - bidExcecute
+2018-01-06 12:55:05 - bidExcecute
+2018-01-06 12:59:40 - bidExcecute
+2018-01-06 12:59:40 - bidExcecute
+2018-01-06 12:59:45 - bidExcecute
+2018-01-06 12:59:50 - bidExcecute
+2018-01-06 12:59:55 - bidExcecute
+2018-01-06 13:00:00 - bidExcecute
+2018-01-06 13:00:05 - bidExcecute
+2018-01-06 13:00:10 - bidExcecute
+2018-01-06 13:00:15 - bidExcecute
+2018-01-06 13:00:20 - bidExcecute
+2018-01-06 13:00:25 - bidExcecute
+2018-01-06 13:00:30 - bidExcecute
+2018-01-06 13:00:35 - bidExcecute
+2018-01-06 13:09:56 - bidExcecute
+2018-01-06 13:09:56 - bidExcecute
+2018-01-06 13:10:00 - bidExcecute
+2018-01-06 13:10:05 - bidExcecute
+2018-01-06 13:10:10 - bidExcecute
+2018-01-06 13:10:15 - bidExcecute
+2018-01-06 13:10:20 - bidExcecute
+2018-01-06 13:10:25 - bidExcecute
+2018-01-06 13:10:30 - bidExcecute
+2018-01-06 13:10:35 - bidExcecute
+2018-01-06 13:10:40 - bidExcecute
+2018-01-06 13:10:45 - bidExcecute
+2018-01-06 13:10:50 - bidExcecute
+2018-01-06 13:20:16 - bidExcecute
+2018-01-06 13:20:16 - bidExcecute
+2018-01-06 13:20:20 - bidExcecute
+2018-01-06 13:20:25 - bidExcecute
+2018-01-06 13:20:30 - bidExcecute
+2018-01-06 13:20:35 - bidExcecute
+2018-01-06 13:20:40 - bidExcecute
+2018-01-06 13:20:45 - bidExcecute
+2018-01-06 13:20:50 - bidExcecute
+2018-01-06 13:20:55 - bidExcecute
+2018-01-06 13:21:00 - bidExcecute
+2018-01-06 13:21:05 - bidExcecute
+2018-01-06 13:21:10 - bidExcecute
+2018-01-06 13:21:15 - bidExcecute
+2018-01-06 13:39:51 - bidExcecute
+2018-01-06 13:39:51 - bidExcecute
+2018-01-06 13:39:55 - bidExcecute
+2018-01-06 13:40:00 - bidExcecute
+2018-01-06 13:40:05 - bidExcecute
+2018-01-06 13:40:10 - bidExcecute
+2018-01-06 13:40:15 - bidExcecute
+2018-01-06 13:40:20 - bidExcecute
+2018-01-06 13:40:25 - bidExcecute
+2018-01-06 13:40:30 - bidExcecute
+2018-01-06 13:40:35 - bidExcecute
+2018-01-06 13:40:40 - bidExcecute
+2018-01-06 13:40:45 - bidExcecute
+2018-01-06 13:50:06 - bidExcecute
+2018-01-06 13:50:06 - bidExcecute
+2018-01-06 13:50:10 - bidExcecute
+2018-01-06 13:50:15 - bidExcecute
+2018-01-06 13:50:20 - bidExcecute
+2018-01-06 13:50:25 - bidExcecute
+2018-01-06 13:50:30 - bidExcecute
+2018-01-06 13:50:35 - bidExcecute
+2018-01-06 13:50:40 - bidExcecute
+2018-01-06 13:50:45 - bidExcecute
+2018-01-06 13:50:50 - bidExcecute
+2018-01-06 13:50:55 - bidExcecute
+2018-01-06 13:51:00 - bidExcecute
+2018-01-06 14:00:21 - bidExcecute
+2018-01-06 14:00:21 - bidExcecute
+2018-01-06 14:00:25 - bidExcecute
+2018-01-06 14:00:30 - bidExcecute
+2018-01-06 14:00:35 - bidExcecute
+2018-01-06 14:00:40 - bidExcecute
+2018-01-06 14:00:45 - bidExcecute
+2018-01-06 14:00:50 - bidExcecute
+2018-01-06 14:00:55 - bidExcecute
+2018-01-06 14:01:00 - bidExcecute
+2018-01-06 14:01:05 - bidExcecute
+2018-01-06 14:01:10 - bidExcecute
+2018-01-06 14:01:15 - bidExcecute
+2018-01-06 14:01:20 - bidExcecute
+2018-01-06 14:10:40 - bidExcecute
+2018-01-06 14:10:41 - bidExcecute
+2018-01-06 14:10:45 - bidExcecute
+2018-01-06 14:10:50 - bidExcecute
+2018-01-06 14:10:55 - bidExcecute
+2018-01-06 14:11:01 - bidExcecute
+2018-01-06 14:11:05 - bidExcecute
+2018-01-06 14:11:10 - bidExcecute
+2018-01-06 14:11:15 - bidExcecute
+2018-01-06 14:11:20 - bidExcecute
+2018-01-06 14:11:25 - bidExcecute
+2018-01-06 14:11:30 - bidExcecute
+2018-01-06 14:11:35 - bidExcecute
+2018-01-06 14:20:56 - bidExcecute
+2018-01-06 14:20:56 - bidExcecute
+2018-01-06 14:21:00 - bidExcecute
+2018-01-06 14:21:05 - bidExcecute
+2018-01-06 14:21:10 - bidExcecute
+2018-01-06 14:21:15 - bidExcecute
+2018-01-06 14:21:20 - bidExcecute
+2018-01-06 14:21:25 - bidExcecute
+2018-01-06 14:21:30 - bidExcecute
+2018-01-06 14:21:35 - bidExcecute
+2018-01-06 14:21:40 - bidExcecute
+2018-01-06 14:21:45 - bidExcecute
+2018-01-06 14:21:50 - bidExcecute
+2018-01-06 14:31:10 - bidExcecute
+2018-01-06 14:31:13 - bidExcecute
+2018-01-06 14:31:16 - bidExcecute
+2018-01-06 14:31:20 - bidExcecute
+2018-01-06 14:31:25 - bidExcecute
+2018-01-06 14:31:30 - bidExcecute
+2018-01-06 14:31:35 - bidExcecute
+2018-01-06 14:31:40 - bidExcecute
+2018-01-06 14:31:45 - bidExcecute
+2018-01-06 14:31:50 - bidExcecute
+2018-01-06 14:31:55 - bidExcecute
+2018-01-06 14:32:00 - bidExcecute
+2018-01-06 14:32:05 - bidExcecute
+2018-01-06 14:50:41 - bidExcecute
+2018-01-06 14:50:41 - bidExcecute
+2018-01-06 14:50:45 - bidExcecute
+2018-01-06 14:50:50 - bidExcecute
+2018-01-06 14:50:55 - bidExcecute
+2018-01-06 14:51:00 - bidExcecute
+2018-01-06 14:51:05 - bidExcecute
+2018-01-06 14:51:10 - bidExcecute
+2018-01-06 14:51:15 - bidExcecute
+2018-01-06 14:51:20 - bidExcecute
+2018-01-06 14:51:25 - bidExcecute
+2018-01-06 14:51:30 - bidExcecute
+2018-01-06 14:51:35 - bidExcecute
+2018-01-06 15:00:56 - bidExcecute
+2018-01-06 15:00:56 - bidExcecute
+2018-01-06 15:01:00 - bidExcecute
+2018-01-06 15:01:05 - bidExcecute
+2018-01-06 15:01:10 - bidExcecute
+2018-01-06 15:01:15 - bidExcecute
+2018-01-06 15:01:20 - bidExcecute
+2018-01-06 15:01:25 - bidExcecute
+2018-01-06 15:01:30 - bidExcecute
+2018-01-06 15:01:35 - bidExcecute
+2018-01-06 15:01:40 - bidExcecute
+2018-01-06 15:01:45 - bidExcecute
+2018-01-06 15:01:50 - bidExcecute
+2018-01-06 15:01:55 - bidExcecute
+2018-01-06 15:15:33 - bidExcecute
+2018-01-06 15:15:33 - bidExcecute
+2018-01-06 15:15:35 - bidExcecute
+2018-01-06 15:15:40 - bidExcecute
+2018-01-06 15:15:45 - bidExcecute
+2018-01-06 15:15:50 - bidExcecute
+2018-01-06 15:15:55 - bidExcecute
+2018-01-06 15:16:00 - bidExcecute
+2018-01-06 15:16:05 - bidExcecute
+2018-01-06 15:16:10 - bidExcecute
+2018-01-06 15:16:15 - bidExcecute
+2018-01-06 15:16:20 - bidExcecute
+2018-01-06 15:16:25 - bidExcecute
+2018-01-06 15:25:46 - bidExcecute
+2018-01-06 15:25:46 - bidExcecute
+2018-01-06 15:25:50 - bidExcecute
+2018-01-06 15:25:55 - bidExcecute
+2018-01-06 15:26:00 - bidExcecute
+2018-01-06 15:26:05 - bidExcecute
+2018-01-06 15:26:10 - bidExcecute
+2018-01-06 15:26:15 - bidExcecute
+2018-01-06 15:26:20 - bidExcecute
+2018-01-06 15:26:25 - bidExcecute
+2018-01-06 15:26:30 - bidExcecute
+2018-01-06 15:26:35 - bidExcecute
+2018-01-06 15:26:40 - bidExcecute
+2018-01-06 15:26:45 - bidExcecute
+2018-01-06 15:36:06 - bidExcecute
+2018-01-06 15:36:06 - bidExcecute
+2018-01-06 15:36:10 - bidExcecute
+2018-01-06 15:36:15 - bidExcecute
+2018-01-06 15:36:20 - bidExcecute
+2018-01-06 15:36:25 - bidExcecute
+2018-01-06 15:36:30 - bidExcecute
+2018-01-06 15:36:35 - bidExcecute
+2018-01-06 15:36:40 - bidExcecute
+2018-01-06 15:36:45 - bidExcecute
+2018-01-06 15:36:50 - bidExcecute
+2018-01-06 15:36:55 - bidExcecute
+2018-01-06 15:37:00 - bidExcecute
+2018-01-06 15:46:21 - bidExcecute
+2018-01-06 15:46:21 - bidExcecute
+2018-01-06 15:46:25 - bidExcecute
+2018-01-06 15:46:30 - bidExcecute
+2018-01-06 15:46:35 - bidExcecute
+2018-01-06 15:46:43 - bidExcecute
+2018-01-06 15:46:45 - bidExcecute
+2018-01-06 15:46:50 - bidExcecute
+2018-01-06 15:46:55 - bidExcecute
+2018-01-06 15:47:00 - bidExcecute
+2018-01-06 15:47:05 - bidExcecute
+2018-01-06 15:47:10 - bidExcecute
+2018-01-06 15:47:15 - bidExcecute
+2018-01-06 16:00:52 - bidExcecute
+2018-01-06 16:00:52 - bidExcecute
+2018-01-06 16:00:55 - bidExcecute
+2018-01-06 16:01:00 - bidExcecute
+2018-01-06 16:01:05 - bidExcecute
+2018-01-06 16:01:10 - bidExcecute
+2018-01-06 16:01:15 - bidExcecute
+2018-01-06 16:01:20 - bidExcecute
+2018-01-06 16:01:25 - bidExcecute
+2018-01-06 16:01:30 - bidExcecute
+2018-01-06 16:01:35 - bidExcecute
+2018-01-06 16:01:40 - bidExcecute
+2018-01-06 16:11:12 - bidExcecute
+2018-01-06 16:11:15 - bidExcecute
+2018-01-06 16:11:20 - bidExcecute
+2018-01-06 16:11:25 - bidExcecute
+2018-01-06 16:11:30 - bidExcecute
+2018-01-06 16:11:35 - bidExcecute
+2018-01-06 16:11:40 - bidExcecute
+2018-01-06 16:11:45 - bidExcecute
+2018-01-06 16:12:05 - bidExcecute
+2018-01-06 16:12:05 - bidExcecute
+2018-01-06 16:12:05 - bidExcecute
+2018-01-06 16:12:05 - bidExcecute
+2018-01-06 16:21:26 - bidExcecute
+2018-01-06 16:21:26 - bidExcecute
+2018-01-06 16:21:30 - bidExcecute
+2018-01-06 16:21:35 - bidExcecute
+2018-01-06 16:21:40 - bidExcecute
+2018-01-06 16:21:45 - bidExcecute
+2018-01-06 16:21:50 - bidExcecute
+2018-01-06 16:21:55 - bidExcecute
+2018-01-06 16:22:06 - bidExcecute
+2018-01-06 16:22:07 - bidExcecute
+2018-01-06 16:22:10 - bidExcecute
+2018-01-06 16:22:15 - bidExcecute
+2018-01-06 16:22:20 - bidExcecute
+2018-01-06 16:31:42 - bidExcecute
+2018-01-06 16:31:42 - bidExcecute
+2018-01-06 16:31:45 - bidExcecute
+2018-01-06 16:31:50 - bidExcecute
+2018-01-06 16:31:55 - bidExcecute
+2018-01-06 16:32:00 - bidExcecute
+2018-01-06 16:32:05 - bidExcecute
+2018-01-06 16:32:12 - bidExcecute
+2018-01-06 16:32:15 - bidExcecute
+2018-01-06 16:32:20 - bidExcecute
+2018-01-06 16:32:25 - bidExcecute
+2018-01-06 16:32:30 - bidExcecute
+2018-01-06 16:32:35 - bidExcecute
+2018-01-06 16:41:50 - bidExcecute
+2018-01-06 16:41:50 - bidExcecute
+2018-01-06 16:41:55 - bidExcecute
+2018-01-06 16:42:00 - bidExcecute
+2018-01-06 16:42:05 - bidExcecute
+2018-01-06 16:42:14 - bidExcecute
+2018-01-06 16:42:15 - bidExcecute
+2018-01-06 16:42:20 - bidExcecute
+2018-01-06 16:42:25 - bidExcecute
+2018-01-06 16:42:30 - bidExcecute
+2018-01-06 16:42:35 - bidExcecute
+2018-01-06 16:42:40 - bidExcecute
+2018-01-06 16:42:45 - bidExcecute
+2018-01-06 16:42:50 - bidExcecute
+2018-01-06 16:52:10 - bidExcecute
+2018-01-06 16:52:11 - bidExcecute
+2018-01-06 16:52:15 - bidExcecute
+2018-01-06 16:52:20 - bidExcecute
+2018-01-06 16:52:25 - bidExcecute
+2018-01-06 16:52:30 - bidExcecute
+2018-01-06 16:52:35 - bidExcecute
+2018-01-06 16:52:40 - bidExcecute
+2018-01-06 16:52:45 - bidExcecute
+2018-01-06 16:52:50 - bidExcecute
+2018-01-06 16:52:55 - bidExcecute
+2018-01-06 16:53:00 - bidExcecute
+2018-01-06 16:53:05 - bidExcecute
+2018-01-06 17:08:54 - bidExcecute
+2018-01-06 17:08:55 - bidExcecute
+2018-01-06 17:09:00 - bidExcecute
+2018-01-06 17:09:05 - bidExcecute
+2018-01-06 17:09:10 - bidExcecute
+2018-01-06 17:09:15 - bidExcecute
+2018-01-06 17:09:20 - bidExcecute
+2018-01-06 17:09:25 - bidExcecute
+2018-01-06 17:09:30 - bidExcecute
+2018-01-06 17:09:35 - bidExcecute
+2018-01-06 17:09:40 - bidExcecute
+2018-01-06 17:09:45 - bidExcecute
+2018-01-06 17:09:50 - bidExcecute
+2018-01-06 17:19:11 - bidExcecute
+2018-01-06 17:19:11 - bidExcecute
+2018-01-06 17:19:15 - bidExcecute
+2018-01-06 17:19:20 - bidExcecute
+2018-01-06 17:19:25 - bidExcecute
+2018-01-06 17:19:30 - bidExcecute
+2018-01-06 17:19:35 - bidExcecute
+2018-01-06 17:19:40 - bidExcecute
+2018-01-06 17:19:45 - bidExcecute
+2018-01-06 17:19:50 - bidExcecute
+2018-01-06 17:19:55 - bidExcecute
+2018-01-06 17:20:00 - bidExcecute
+2018-01-06 17:20:05 - bidExcecute
+2018-01-06 17:29:25 - bidExcecute
+2018-01-06 17:29:25 - bidExcecute
+2018-01-06 17:29:30 - bidExcecute
+2018-01-06 17:29:35 - bidExcecute
+2018-01-06 17:29:40 - bidExcecute
+2018-01-06 17:29:45 - bidExcecute
+2018-01-06 17:29:50 - bidExcecute
+2018-01-06 17:29:55 - bidExcecute
+2018-01-06 17:30:00 - bidExcecute
+2018-01-06 17:30:05 - bidExcecute
+2018-01-06 17:30:10 - bidExcecute
+2018-01-06 17:30:15 - bidExcecute
+2018-01-06 17:30:20 - bidExcecute
+2018-01-06 17:39:41 - bidExcecute
+2018-01-06 17:39:41 - bidExcecute
+2018-01-06 17:39:45 - bidExcecute
+2018-01-06 17:39:50 - bidExcecute
+2018-01-06 17:39:55 - bidExcecute
+2018-01-06 17:40:00 - bidExcecute
+2018-01-06 17:40:05 - bidExcecute
+2018-01-06 17:40:10 - bidExcecute
+2018-01-06 17:40:15 - bidExcecute
+2018-01-06 17:40:20 - bidExcecute
+2018-01-06 17:40:25 - bidExcecute
+2018-01-06 17:40:30 - bidExcecute
+2018-01-06 17:40:35 - bidExcecute
+2018-01-06 17:40:40 - bidExcecute
+2018-01-06 17:50:07 - bidExcecute
+2018-01-06 17:50:07 - bidExcecute
+2018-01-06 17:50:10 - bidExcecute
+2018-01-06 17:50:15 - bidExcecute
+2018-01-06 17:50:20 - bidExcecute
+2018-01-06 17:50:26 - bidExcecute
+2018-01-06 17:50:30 - bidExcecute
+2018-01-06 17:50:35 - bidExcecute
+2018-01-06 17:50:40 - bidExcecute
+2018-01-06 17:50:45 - bidExcecute
+2018-01-06 17:50:50 - bidExcecute
+2018-01-06 17:50:55 - bidExcecute
+2018-01-06 17:51:00 - bidExcecute
+2018-01-06 18:00:21 - bidExcecute
+2018-01-06 18:00:21 - bidExcecute
+2018-01-06 18:00:25 - bidExcecute
+2018-01-06 18:00:30 - bidExcecute
+2018-01-06 18:00:35 - bidExcecute
+2018-01-06 18:00:40 - bidExcecute
+2018-01-06 18:00:45 - bidExcecute
+2018-01-06 18:00:50 - bidExcecute
+2018-01-06 18:00:55 - bidExcecute
+2018-01-06 18:01:00 - bidExcecute
+2018-01-06 18:01:05 - bidExcecute
+2018-01-06 18:01:10 - bidExcecute
+2018-01-06 18:01:15 - bidExcecute
+2018-01-06 18:10:36 - bidExcecute
+2018-01-06 18:10:36 - bidExcecute
+2018-01-06 18:10:40 - bidExcecute
+2018-01-06 18:10:45 - bidExcecute
+2018-01-06 18:10:50 - bidExcecute
+2018-01-06 18:10:55 - bidExcecute
+2018-01-06 18:11:00 - bidExcecute
+2018-01-06 18:11:05 - bidExcecute
+2018-01-06 18:11:10 - bidExcecute
+2018-01-06 18:11:15 - bidExcecute
+2018-01-06 18:11:20 - bidExcecute
+2018-01-06 18:11:25 - bidExcecute
+2018-01-06 18:11:30 - bidExcecute
+2018-01-06 18:11:35 - bidExcecute
+2018-01-06 18:30:11 - bidExcecute
+2018-01-06 18:30:11 - bidExcecute
+2018-01-06 18:30:15 - bidExcecute
+2018-01-06 18:30:20 - bidExcecute
+2018-01-06 18:30:25 - bidExcecute
+2018-01-06 18:30:30 - bidExcecute
+2018-01-06 18:30:35 - bidExcecute
+2018-01-06 18:30:40 - bidExcecute
+2018-01-06 18:30:45 - bidExcecute
+2018-01-06 18:30:50 - bidExcecute
+2018-01-06 18:30:55 - bidExcecute
+2018-01-06 18:31:00 - bidExcecute
+2018-01-06 18:31:05 - bidExcecute
+2018-01-06 18:40:26 - bidExcecute
+2018-01-06 18:40:26 - bidExcecute
+2018-01-06 18:40:30 - bidExcecute
+2018-01-06 18:40:35 - bidExcecute
+2018-01-06 18:40:40 - bidExcecute
+2018-01-06 18:40:45 - bidExcecute
+2018-01-06 18:40:50 - bidExcecute
+2018-01-06 18:40:55 - bidExcecute
+2018-01-06 18:41:00 - bidExcecute
+2018-01-06 18:41:05 - bidExcecute
+2018-01-06 18:41:10 - bidExcecute
+2018-01-06 18:41:15 - bidExcecute
+2018-01-06 18:41:20 - bidExcecute
+2018-01-06 18:50:41 - bidExcecute
+2018-01-06 18:50:41 - bidExcecute
+2018-01-06 18:50:45 - bidExcecute
+2018-01-06 18:50:50 - bidExcecute
+2018-01-06 18:50:55 - bidExcecute
+2018-01-06 18:51:00 - bidExcecute
+2018-01-06 18:51:05 - bidExcecute
+2018-01-06 18:51:10 - bidExcecute
+2018-01-06 18:51:15 - bidExcecute
+2018-01-06 18:51:20 - bidExcecute
+2018-01-06 18:51:25 - bidExcecute
+2018-01-06 18:51:30 - bidExcecute
+2018-01-06 18:51:35 - bidExcecute
+2018-01-06 19:00:41 - bidExcecute
+2018-01-06 19:00:41 - bidExcecute
+2018-01-06 19:00:45 - bidExcecute
+2018-01-06 19:00:50 - bidExcecute
+2018-01-06 19:00:55 - bidExcecute
+2018-01-06 19:01:00 - bidExcecute
+2018-01-06 19:01:05 - bidExcecute
+2018-01-06 19:01:10 - bidExcecute
+2018-01-06 19:01:15 - bidExcecute
+2018-01-06 19:01:20 - bidExcecute
+2018-01-06 19:01:25 - bidExcecute
+2018-01-06 19:01:30 - bidExcecute
+2018-01-06 19:01:35 - bidExcecute
+2018-01-06 19:01:40 - bidExcecute
+2018-01-06 19:11:00 - bidExcecute
+2018-01-06 19:11:00 - bidExcecute
+2018-01-06 19:11:05 - bidExcecute
+2018-01-06 19:11:10 - bidExcecute
+2018-01-06 19:11:15 - bidExcecute
+2018-01-06 19:11:20 - bidExcecute
+2018-01-06 19:11:25 - bidExcecute
+2018-01-06 19:11:30 - bidExcecute
+2018-01-06 19:11:35 - bidExcecute
+2018-01-06 19:11:40 - bidExcecute
+2018-01-06 19:11:45 - bidExcecute
+2018-01-06 19:11:50 - bidExcecute
+2018-01-06 19:11:55 - bidExcecute
+2018-01-06 19:17:32 - bidExcecute
+2018-01-06 19:17:32 - bidExcecute
+2018-01-06 19:17:35 - bidExcecute
+2018-01-06 19:17:40 - bidExcecute
+2018-01-06 19:17:45 - bidExcecute
+2018-01-06 19:17:50 - bidExcecute
+2018-01-06 19:17:55 - bidExcecute
+2018-01-06 19:18:00 - bidExcecute
+2018-01-06 19:18:05 - bidExcecute
+2018-01-06 19:18:10 - bidExcecute
+2018-01-06 19:18:15 - bidExcecute
+2018-01-06 19:18:20 - bidExcecute
+2018-01-06 19:18:25 - bidExcecute
+2018-01-06 19:18:30 - bidExcecute
+2018-01-06 19:18:35 - bidExcecute
+2018-01-06 19:18:40 - bidExcecute
+2018-01-06 19:18:45 - bidExcecute
+2018-01-06 19:18:50 - bidExcecute
+2018-01-06 19:18:55 - bidExcecute
+2018-01-06 19:19:00 - bidExcecute
+2018-01-06 19:19:05 - bidExcecute
+2018-01-06 19:19:10 - bidExcecute
+2018-01-06 19:19:15 - bidExcecute
+2018-01-06 19:19:20 - bidExcecute
+2018-01-06 19:19:25 - bidExcecute
+2018-01-06 19:19:27 - Using default implementation for ThreadExecutor
+2018-01-06 19:19:27 - Job execution threads will use class loader of thread: main
+2018-01-06 19:19:27 - Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+2018-01-06 19:19:27 - Quartz Scheduler v.2.2.3 created.
+2018-01-06 19:19:27 - RAMJobStore initialized.
+2018-01-06 19:19:27 - Scheduler meta-data: Quartz Scheduler (v2.2.3) 'DefaultQuartzScheduler' with instanceId 'NON_CLUSTERED'
   Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
   NOT STARTED.
   Currently in standby mode.
@@ -189,15 +740,313 @@
   Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 1 threads.
   Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
 
-2017-12-29 16:26:46 - Quartz scheduler 'DefaultQuartzScheduler' initialized from default resource file in Quartz package: 'quartz.properties'
-2017-12-29 16:26:46 - Quartz scheduler version: 2.2.3
-2017-12-29 16:26:46 - Scheduler DefaultQuartzScheduler_$_NON_CLUSTERED started.
-2017-12-29 16:26:47 - Using default implementation for ThreadExecutor
-2017-12-29 16:26:47 - Job execution threads will use class loader of thread: main
-2017-12-29 16:26:47 - Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
-2017-12-29 16:26:47 - Quartz Scheduler v.2.2.3 created.
-2017-12-29 16:26:47 - RAMJobStore initialized.
-2017-12-29 16:26:47 - Scheduler meta-data: Quartz Scheduler (v2.2.3) 'DefaultQuartzScheduler' with instanceId 'NON_CLUSTERED'
+2018-01-06 19:19:27 - Quartz scheduler 'DefaultQuartzScheduler' initialized from default resource file in Quartz package: 'quartz.properties'
+2018-01-06 19:19:27 - Quartz scheduler version: 2.2.3
+2018-01-06 19:19:27 - Scheduler DefaultQuartzScheduler_$_NON_CLUSTERED started.
+2018-01-06 19:19:30 - bidExcecute
+2018-01-06 19:19:30 - bidExcecute
+2018-01-06 19:19:35 - bidExcecute
+2018-01-06 19:19:35 - bidExcecute
+2018-01-06 19:19:40 - bidExcecute
+2018-01-06 19:19:40 - bidExcecute
+2018-01-06 19:19:45 - bidExcecute
+2018-01-06 19:19:45 - bidExcecute
+2018-01-06 19:19:50 - bidExcecute
+2018-01-06 19:19:50 - bidExcecute
+2018-01-06 19:19:55 - bidExcecute
+2018-01-06 19:19:55 - bidExcecute
+2018-01-06 19:20:00 - bidExcecute
+2018-01-06 19:20:00 - bidExcecute
+2018-01-06 19:20:05 - bidExcecute
+2018-01-06 19:20:05 - bidExcecute
+2018-01-06 19:20:10 - bidExcecute
+2018-01-06 19:20:10 - bidExcecute
+2018-01-06 19:20:15 - bidExcecute
+2018-01-06 19:20:15 - bidExcecute
+2018-01-06 19:20:20 - bidExcecute
+2018-01-06 19:20:20 - bidExcecute
+2018-01-06 19:20:25 - bidExcecute
+2018-01-06 19:20:25 - bidExcecute
+2018-01-06 19:20:30 - bidExcecute
+2018-01-06 19:20:30 - bidExcecute
+2018-01-06 19:20:35 - bidExcecute
+2018-01-06 19:20:35 - bidExcecute
+2018-01-06 19:20:40 - bidExcecute
+2018-01-06 19:20:40 - bidExcecute
+2018-01-06 19:20:45 - bidExcecute
+2018-01-06 19:20:45 - bidExcecute
+2018-01-06 19:20:50 - bidExcecute
+2018-01-06 19:20:50 - bidExcecute
+2018-01-06 19:20:55 - bidExcecute
+2018-01-06 19:20:55 - bidExcecute
+2018-01-06 19:21:00 - bidExcecute
+2018-01-06 19:21:00 - bidExcecute
+2018-01-06 19:21:04 - token is: 72f24d9f-5304-4b29-a477-9bbc0e5e6df1
+2018-01-06 19:21:04 - refresh token is: 5591fc83-0f0c-4d1d-9711-0ebf58ff827a
+2018-01-06 19:21:05 - bidExcecute
+2018-01-06 19:21:05 - bidExcecute
+2018-01-06 19:21:10 - bidExcecute
+2018-01-06 19:21:10 - bidExcecute
+2018-01-06 19:21:15 - bidExcecute
+2018-01-06 19:21:15 - bidExcecute
+2018-01-06 19:21:20 - bidExcecute
+2018-01-06 19:21:20 - bidExcecute
+2018-01-06 19:21:25 - bidExcecute
+2018-01-06 19:21:25 - bidExcecute
+2018-01-06 19:21:30 - bidExcecute
+2018-01-06 19:21:30 - bidExcecute
+2018-01-06 19:21:35 - bidExcecute
+2018-01-06 19:21:35 - bidExcecute
+2018-01-06 19:21:40 - bidExcecute
+2018-01-06 19:21:40 - bidExcecute
+2018-01-06 19:21:45 - bidExcecute
+2018-01-06 19:21:45 - bidExcecute
+2018-01-06 19:21:50 - bidExcecute
+2018-01-06 19:21:50 - bidExcecute
+2018-01-06 19:21:55 - bidExcecute
+2018-01-06 19:21:55 - bidExcecute
+2018-01-06 19:22:00 - bidExcecute
+2018-01-06 19:22:00 - bidExcecute
+2018-01-06 19:22:05 - bidExcecute
+2018-01-06 19:22:05 - bidExcecute
+2018-01-06 19:22:10 - bidExcecute
+2018-01-06 19:22:10 - bidExcecute
+2018-01-06 19:22:15 - bidExcecute
+2018-01-06 19:22:15 - bidExcecute
+2018-01-06 19:22:20 - bidExcecute
+2018-01-06 19:22:20 - bidExcecute
+2018-01-06 19:22:25 - bidExcecute
+2018-01-06 19:22:25 - bidExcecute
+2018-01-06 19:22:30 - bidExcecute
+2018-01-06 19:22:30 - bidExcecute
+2018-01-06 19:22:35 - bidExcecute
+2018-01-06 19:22:35 - bidExcecute
+2018-01-06 19:22:40 - bidExcecute
+2018-01-06 19:22:40 - bidExcecute
+2018-01-06 19:22:45 - bidExcecute
+2018-01-06 19:22:45 - bidExcecute
+2018-01-06 19:22:50 - bidExcecute
+2018-01-06 19:22:50 - bidExcecute
+2018-01-06 19:22:55 - bidExcecute
+2018-01-06 19:22:55 - bidExcecute
+2018-01-06 19:23:00 - bidExcecute
+2018-01-06 19:23:00 - bidExcecute
+2018-01-06 19:23:05 - bidExcecute
+2018-01-06 19:23:05 - bidExcecute
+2018-01-06 19:23:10 - bidExcecute
+2018-01-06 19:23:10 - bidExcecute
+2018-01-06 19:23:15 - bidExcecute
+2018-01-06 19:23:15 - bidExcecute
+2018-01-06 19:23:20 - bidExcecute
+2018-01-06 19:23:20 - bidExcecute
+2018-01-06 19:23:25 - bidExcecute
+2018-01-06 19:23:25 - bidExcecute
+2018-01-06 19:23:30 - bidExcecute
+2018-01-06 19:23:30 - bidExcecute
+2018-01-06 19:23:35 - bidExcecute
+2018-01-06 19:23:35 - bidExcecute
+2018-01-06 19:23:40 - bidExcecute
+2018-01-06 19:23:40 - bidExcecute
+2018-01-06 19:23:45 - bidExcecute
+2018-01-06 19:23:45 - bidExcecute
+2018-01-06 19:23:50 - bidExcecute
+2018-01-06 19:23:50 - bidExcecute
+2018-01-06 19:23:55 - bidExcecute
+2018-01-06 19:23:55 - bidExcecute
+2018-01-06 19:24:00 - bidExcecute
+2018-01-06 19:24:00 - bidExcecute
+2018-01-06 19:24:05 - bidExcecute
+2018-01-06 19:24:05 - bidExcecute
+2018-01-06 19:24:10 - bidExcecute
+2018-01-06 19:24:10 - bidExcecute
+2018-01-06 19:24:15 - bidExcecute
+2018-01-06 19:24:15 - bidExcecute
+2018-01-06 19:24:20 - bidExcecute
+2018-01-06 19:24:20 - bidExcecute
+2018-01-06 19:24:25 - bidExcecute
+2018-01-06 19:24:25 - bidExcecute
+2018-01-06 19:24:30 - bidExcecute
+2018-01-06 19:24:30 - bidExcecute
+2018-01-06 19:24:35 - bidExcecute
+2018-01-06 19:24:35 - bidExcecute
+2018-01-06 19:24:40 - bidExcecute
+2018-01-06 19:24:40 - bidExcecute
+2018-01-06 19:24:45 - bidExcecute
+2018-01-06 19:24:45 - bidExcecute
+2018-01-06 19:24:45 - token is: null
+2018-01-06 19:24:45 - refresh token is: null
+2018-01-06 19:24:50 - bidExcecute
+2018-01-06 19:24:50 - bidExcecute
+2018-01-06 19:24:55 - bidExcecute
+2018-01-06 19:24:55 - bidExcecute
+2018-01-06 19:25:00 - bidExcecute
+2018-01-06 19:25:00 - bidExcecute
+2018-01-06 19:25:05 - bidExcecute
+2018-01-06 19:25:05 - bidExcecute
+2018-01-06 19:25:10 - bidExcecute
+2018-01-06 19:25:10 - bidExcecute
+2018-01-06 19:25:15 - bidExcecute
+2018-01-06 19:25:15 - bidExcecute
+2018-01-06 19:25:20 - bidExcecute
+2018-01-06 19:25:20 - bidExcecute
+2018-01-06 19:25:25 - bidExcecute
+2018-01-06 19:25:25 - bidExcecute
+2018-01-06 19:25:30 - bidExcecute
+2018-01-06 19:25:30 - bidExcecute
+2018-01-06 19:25:35 - bidExcecute
+2018-01-06 19:25:35 - bidExcecute
+2018-01-06 19:25:40 - bidExcecute
+2018-01-06 19:25:40 - bidExcecute
+2018-01-06 19:25:45 - bidExcecute
+2018-01-06 19:25:45 - bidExcecute
+2018-01-06 19:25:50 - bidExcecute
+2018-01-06 19:25:50 - bidExcecute
+2018-01-06 19:25:55 - bidExcecute
+2018-01-06 19:25:55 - bidExcecute
+2018-01-06 19:26:00 - bidExcecute
+2018-01-06 19:26:00 - bidExcecute
+2018-01-06 19:26:05 - bidExcecute
+2018-01-06 19:26:05 - bidExcecute
+2018-01-06 19:26:10 - bidExcecute
+2018-01-06 19:26:10 - bidExcecute
+2018-01-06 19:26:15 - bidExcecute
+2018-01-06 19:26:15 - bidExcecute
+2018-01-06 19:26:20 - bidExcecute
+2018-01-06 19:26:20 - bidExcecute
+2018-01-06 19:26:25 - bidExcecute
+2018-01-06 19:26:25 - bidExcecute
+2018-01-06 19:26:28 - token is: a9e60c3d-44d7-4cd0-9348-35ad0913f403
+2018-01-06 19:26:28 - refresh token is: b69a6048-4a3e-4ea0-a2e9-7480e571d170
+2018-01-06 19:26:30 - bidExcecute
+2018-01-06 19:26:30 - bidExcecute
+2018-01-06 19:26:35 - bidExcecute
+2018-01-06 19:26:35 - bidExcecute
+2018-01-06 19:26:40 - bidExcecute
+2018-01-06 19:26:40 - bidExcecute
+2018-01-06 19:26:45 - bidExcecute
+2018-01-06 19:26:45 - bidExcecute
+2018-01-06 19:26:50 - bidExcecute
+2018-01-06 19:26:50 - bidExcecute
+2018-01-06 19:26:55 - bidExcecute
+2018-01-06 19:26:55 - bidExcecute
+2018-01-06 19:27:00 - bidExcecute
+2018-01-06 19:27:00 - bidExcecute
+2018-01-06 19:27:05 - bidExcecute
+2018-01-06 19:27:05 - bidExcecute
+2018-01-06 19:27:10 - bidExcecute
+2018-01-06 19:27:10 - bidExcecute
+2018-01-06 19:27:15 - bidExcecute
+2018-01-06 19:27:15 - bidExcecute
+2018-01-06 19:27:20 - bidExcecute
+2018-01-06 19:27:20 - bidExcecute
+2018-01-06 19:27:25 - bidExcecute
+2018-01-06 19:27:25 - bidExcecute
+2018-01-06 19:27:30 - bidExcecute
+2018-01-06 19:27:30 - bidExcecute
+2018-01-06 19:27:35 - bidExcecute
+2018-01-06 19:27:35 - bidExcecute
+2018-01-06 19:27:40 - bidExcecute
+2018-01-06 19:27:40 - bidExcecute
+2018-01-06 19:27:45 - bidExcecute
+2018-01-06 19:27:45 - bidExcecute
+2018-01-06 19:27:50 - bidExcecute
+2018-01-06 19:27:50 - bidExcecute
+2018-01-06 19:27:55 - bidExcecute
+2018-01-06 19:27:55 - bidExcecute
+2018-01-06 19:28:00 - bidExcecute
+2018-01-06 19:28:00 - bidExcecute
+2018-01-06 19:28:05 - bidExcecute
+2018-01-06 19:28:05 - bidExcecute
+2018-01-06 19:28:10 - bidExcecute
+2018-01-06 19:28:10 - bidExcecute
+2018-01-06 19:28:15 - bidExcecute
+2018-01-06 19:28:15 - bidExcecute
+2018-01-06 19:28:20 - bidExcecute
+2018-01-06 19:28:20 - bidExcecute
+2018-01-06 19:28:25 - bidExcecute
+2018-01-06 19:28:25 - bidExcecute
+2018-01-06 19:28:30 - bidExcecute
+2018-01-06 19:28:30 - bidExcecute
+2018-01-06 19:28:35 - bidExcecute
+2018-01-06 19:28:35 - bidExcecute
+2018-01-06 19:28:40 - bidExcecute
+2018-01-06 19:28:40 - bidExcecute
+2018-01-06 19:28:45 - bidExcecute
+2018-01-06 19:28:45 - bidExcecute
+2018-01-06 19:28:50 - bidExcecute
+2018-01-06 19:28:50 - bidExcecute
+2018-01-06 19:28:55 - bidExcecute
+2018-01-06 19:28:55 - bidExcecute
+2018-01-06 19:29:00 - bidExcecute
+2018-01-06 19:29:00 - bidExcecute
+2018-01-06 19:29:05 - bidExcecute
+2018-01-06 19:29:05 - bidExcecute
+2018-01-06 19:29:10 - bidExcecute
+2018-01-06 19:29:10 - bidExcecute
+2018-01-06 19:29:15 - bidExcecute
+2018-01-06 19:29:15 - bidExcecute
+2018-01-06 19:29:20 - bidExcecute
+2018-01-06 19:29:20 - bidExcecute
+2018-01-06 19:29:25 - bidExcecute
+2018-01-06 19:29:25 - bidExcecute
+2018-01-06 19:29:30 - bidExcecute
+2018-01-06 19:29:30 - bidExcecute
+2018-01-06 19:29:35 - bidExcecute
+2018-01-06 19:29:35 - bidExcecute
+2018-01-06 19:29:40 - bidExcecute
+2018-01-06 19:29:40 - bidExcecute
+2018-01-06 19:29:45 - bidExcecute
+2018-01-06 19:29:45 - bidExcecute
+2018-01-06 19:29:50 - bidExcecute
+2018-01-06 19:29:50 - bidExcecute
+2018-01-06 19:29:55 - bidExcecute
+2018-01-06 19:29:55 - bidExcecute
+2018-01-06 19:30:00 - bidExcecute
+2018-01-06 19:30:00 - bidExcecute
+2018-01-06 19:30:05 - bidExcecute
+2018-01-06 19:30:05 - bidExcecute
+2018-01-06 19:30:10 - bidExcecute
+2018-01-06 19:30:10 - bidExcecute
+2018-01-06 19:30:15 - bidExcecute
+2018-01-06 19:30:15 - bidExcecute
+2018-01-06 19:30:20 - bidExcecute
+2018-01-06 19:30:20 - bidExcecute
+2018-01-06 19:30:25 - bidExcecute
+2018-01-06 19:30:25 - bidExcecute
+2018-01-06 19:30:30 - bidExcecute
+2018-01-06 19:30:30 - bidExcecute
+2018-01-06 19:30:35 - bidExcecute
+2018-01-06 19:30:35 - bidExcecute
+2018-01-06 19:30:40 - bidExcecute
+2018-01-06 19:30:40 - bidExcecute
+2018-01-06 19:30:45 - bidExcecute
+2018-01-06 19:30:45 - bidExcecute
+2018-01-06 19:30:50 - bidExcecute
+2018-01-06 19:30:50 - bidExcecute
+2018-01-06 19:30:55 - bidExcecute
+2018-01-06 19:30:55 - bidExcecute
+2018-01-06 19:31:00 - bidExcecute
+2018-01-06 19:31:00 - bidExcecute
+2018-01-06 19:31:05 - bidExcecute
+2018-01-06 19:31:05 - bidExcecute
+2018-01-06 19:31:10 - bidExcecute
+2018-01-06 19:31:10 - bidExcecute
+2018-01-06 19:31:15 - bidExcecute
+2018-01-06 19:31:15 - bidExcecute
+2018-01-06 19:31:20 - bidExcecute
+2018-01-06 19:31:20 - bidExcecute
+2018-01-06 19:31:25 - bidExcecute
+2018-01-06 19:31:25 - bidExcecute
+2018-01-06 19:31:30 - bidExcecute
+2018-01-06 19:31:30 - bidExcecute
+2018-01-06 19:31:35 - bidExcecute
+2018-01-06 19:31:35 - bidExcecute
+2018-01-06 19:31:38 - Using default implementation for ThreadExecutor
+2018-01-06 19:31:38 - Job execution threads will use class loader of thread: main
+2018-01-06 19:31:38 - Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+2018-01-06 19:31:38 - Quartz Scheduler v.2.2.3 created.
+2018-01-06 19:31:38 - RAMJobStore initialized.
+2018-01-06 19:31:38 - Scheduler meta-data: Quartz Scheduler (v2.2.3) 'DefaultQuartzScheduler' with instanceId 'NON_CLUSTERED'
   Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
   NOT STARTED.
   Currently in standby mode.
@@ -205,17 +1054,36 @@
   Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 1 threads.
   Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
 
-2017-12-29 16:26:47 - Quartz scheduler 'DefaultQuartzScheduler' initialized from default resource file in Quartz package: 'quartz.properties'
-2017-12-29 16:26:47 - Quartz scheduler version: 2.2.3
-2017-12-29 16:26:47 - Scheduler DefaultQuartzScheduler_$_NON_CLUSTERED started.
-2017-12-29 16:26:52 - bidExcecute
-2017-12-29 16:26:52 - bidExcecute
-2017-12-29 16:29:12 - Using default implementation for ThreadExecutor
-2017-12-29 16:29:12 - Job execution threads will use class loader of thread: main
-2017-12-29 16:29:12 - Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
-2017-12-29 16:29:12 - Quartz Scheduler v.2.2.3 created.
-2017-12-29 16:29:12 - RAMJobStore initialized.
-2017-12-29 16:29:12 - Scheduler meta-data: Quartz Scheduler (v2.2.3) 'DefaultQuartzScheduler' with instanceId 'NON_CLUSTERED'
+2018-01-06 19:31:38 - Quartz scheduler 'DefaultQuartzScheduler' initialized from default resource file in Quartz package: 'quartz.properties'
+2018-01-06 19:31:38 - Quartz scheduler version: 2.2.3
+2018-01-06 19:31:38 - Scheduler DefaultQuartzScheduler_$_NON_CLUSTERED started.
+2018-01-06 19:31:40 - bidExcecute
+2018-01-06 19:31:40 - bidExcecute
+2018-01-06 19:31:40 - bidExcecute
+2018-01-06 19:31:45 - bidExcecute
+2018-01-06 19:31:45 - bidExcecute
+2018-01-06 19:31:45 - bidExcecute
+2018-01-06 19:31:50 - bidExcecute
+2018-01-06 19:31:50 - bidExcecute
+2018-01-06 19:31:50 - bidExcecute
+2018-01-06 19:31:55 - bidExcecute
+2018-01-06 19:31:55 - bidExcecute
+2018-01-06 19:31:55 - bidExcecute
+2018-01-06 19:32:00 - bidExcecute
+2018-01-06 19:32:00 - bidExcecute
+2018-01-06 19:32:00 - bidExcecute
+2018-01-06 19:32:05 - bidExcecute
+2018-01-06 19:32:05 - bidExcecute
+2018-01-06 19:32:05 - bidExcecute
+2018-01-06 19:32:10 - bidExcecute
+2018-01-06 19:32:10 - bidExcecute
+2018-01-06 19:32:10 - bidExcecute
+2018-01-06 19:32:14 - Using default implementation for ThreadExecutor
+2018-01-06 19:32:14 - Job execution threads will use class loader of thread: main
+2018-01-06 19:32:14 - Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+2018-01-06 19:32:14 - Quartz Scheduler v.2.2.3 created.
+2018-01-06 19:32:14 - RAMJobStore initialized.
+2018-01-06 19:32:14 - Scheduler meta-data: Quartz Scheduler (v2.2.3) 'DefaultQuartzScheduler' with instanceId 'NON_CLUSTERED'
   Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
   NOT STARTED.
   Currently in standby mode.
@@ -223,18 +1091,43 @@
   Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 1 threads.
   Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
 
-2017-12-29 16:29:12 - Quartz scheduler 'DefaultQuartzScheduler' initialized from default resource file in Quartz package: 'quartz.properties'
-2017-12-29 16:29:12 - Quartz scheduler version: 2.2.3
-2017-12-29 16:29:12 - Scheduler DefaultQuartzScheduler_$_NON_CLUSTERED started.
-2017-12-29 16:29:16 - bidExcecute
-2017-12-29 16:29:20 - bidExcecute
-2017-12-29 16:29:25 - bidExcecute
-2017-12-29 16:31:56 - Using default implementation for ThreadExecutor
-2017-12-29 16:31:56 - Job execution threads will use class loader of thread: main
-2017-12-29 16:31:56 - Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
-2017-12-29 16:31:56 - Quartz Scheduler v.2.2.3 created.
-2017-12-29 16:31:56 - RAMJobStore initialized.
-2017-12-29 16:31:56 - Scheduler meta-data: Quartz Scheduler (v2.2.3) 'DefaultQuartzScheduler' with instanceId 'NON_CLUSTERED'
+2018-01-06 19:32:14 - Quartz scheduler 'DefaultQuartzScheduler' initialized from default resource file in Quartz package: 'quartz.properties'
+2018-01-06 19:32:14 - Quartz scheduler version: 2.2.3
+2018-01-06 19:32:14 - Scheduler DefaultQuartzScheduler_$_NON_CLUSTERED started.
+2018-01-06 19:32:15 - bidExcecute
+2018-01-06 19:32:15 - bidExcecute
+2018-01-06 19:32:15 - bidExcecute
+2018-01-06 19:32:15 - bidExcecute
+2018-01-06 19:32:20 - bidExcecute
+2018-01-06 19:32:20 - bidExcecute
+2018-01-06 19:32:20 - bidExcecute
+2018-01-06 19:32:25 - bidExcecute
+2018-01-06 19:32:25 - bidExcecute
+2018-01-06 19:32:25 - bidExcecute
+2018-01-06 19:32:30 - bidExcecute
+2018-01-06 19:32:30 - bidExcecute
+2018-01-06 19:32:30 - bidExcecute
+2018-01-06 19:32:35 - bidExcecute
+2018-01-06 19:32:35 - bidExcecute
+2018-01-06 19:32:35 - bidExcecute
+2018-01-06 19:32:40 - bidExcecute
+2018-01-06 19:32:40 - bidExcecute
+2018-01-06 19:32:40 - bidExcecute
+2018-01-06 19:32:45 - bidExcecute
+2018-01-06 19:32:45 - bidExcecute
+2018-01-06 19:32:45 - bidExcecute
+2018-01-06 19:32:50 - bidExcecute
+2018-01-06 19:32:50 - bidExcecute
+2018-01-06 19:32:50 - bidExcecute
+2018-01-06 19:32:55 - bidExcecute
+2018-01-06 19:32:55 - bidExcecute
+2018-01-06 19:32:55 - bidExcecute
+2018-01-06 19:32:59 - Using default implementation for ThreadExecutor
+2018-01-06 19:32:59 - Job execution threads will use class loader of thread: main
+2018-01-06 19:32:59 - Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+2018-01-06 19:32:59 - Quartz Scheduler v.2.2.3 created.
+2018-01-06 19:32:59 - RAMJobStore initialized.
+2018-01-06 19:32:59 - Scheduler meta-data: Quartz Scheduler (v2.2.3) 'DefaultQuartzScheduler' with instanceId 'NON_CLUSTERED'
   Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
   NOT STARTED.
   Currently in standby mode.
@@ -242,29 +1135,43 @@
   Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 1 threads.
   Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
 
-2017-12-29 16:31:56 - Quartz scheduler 'DefaultQuartzScheduler' initialized from default resource file in Quartz package: 'quartz.properties'
-2017-12-29 16:31:56 - Quartz scheduler version: 2.2.3
-2017-12-29 16:31:56 - Scheduler DefaultQuartzScheduler_$_NON_CLUSTERED started.
-2017-12-29 16:32:04 - bidExcecute
-2017-12-29 16:32:04 - Error!�û���Ч�������ѹ���Ч��
-2017-12-29 16:32:04 - token is: null
-2017-12-29 16:32:04 - refresh token is: null
-2017-12-29 16:32:05 - bidExcecute
-2017-12-29 16:32:05 - Error!�û���Ч�������ѹ���Ч��
-2017-12-29 16:32:05 - ��������������
-2017-12-29 16:32:10 - bidExcecute
-2017-12-29 16:32:10 - Error!�û���Ч�������ѹ���Ч��
-2017-12-29 16:32:10 - ��������������
-2017-12-29 16:36:50 - token is: null
-2017-12-29 16:36:50 - refresh token is: null
-2017-12-29 16:37:28 - token is: 8bf4b1f1-dcc1-4df2-99d4-3107bbe31d5a
-2017-12-29 16:37:28 - refresh token is: 6c7d77b2-93ba-4472-ae0c-5a81b5355390
-2017-12-29 16:38:50 - Using default implementation for ThreadExecutor
-2017-12-29 16:38:50 - Job execution threads will use class loader of thread: main
-2017-12-29 16:38:50 - Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
-2017-12-29 16:38:50 - Quartz Scheduler v.2.2.3 created.
-2017-12-29 16:38:50 - RAMJobStore initialized.
-2017-12-29 16:38:50 - Scheduler meta-data: Quartz Scheduler (v2.2.3) 'DefaultQuartzScheduler' with instanceId 'NON_CLUSTERED'
+2018-01-06 19:32:59 - Quartz scheduler 'DefaultQuartzScheduler' initialized from default resource file in Quartz package: 'quartz.properties'
+2018-01-06 19:32:59 - Quartz scheduler version: 2.2.3
+2018-01-06 19:32:59 - Scheduler DefaultQuartzScheduler_$_NON_CLUSTERED started.
+2018-01-06 19:33:00 - bidExcecute
+2018-01-06 19:33:00 - bidExcecute
+2018-01-06 19:33:00 - bidExcecute
+2018-01-06 19:33:00 - bidExcecute
+2018-01-06 19:33:05 - bidExcecute
+2018-01-06 19:33:05 - bidExcecute
+2018-01-06 19:33:05 - bidExcecute
+2018-01-06 19:33:05 - bidExcecute
+2018-01-06 19:33:10 - bidExcecute
+2018-01-06 19:33:10 - bidExcecute
+2018-01-06 19:33:10 - bidExcecute
+2018-01-06 19:33:10 - bidExcecute
+2018-01-06 19:33:15 - bidExcecute
+2018-01-06 19:33:15 - bidExcecute
+2018-01-06 19:33:15 - bidExcecute
+2018-01-06 19:33:15 - bidExcecute
+2018-01-06 19:33:20 - bidExcecute
+2018-01-06 19:33:20 - bidExcecute
+2018-01-06 19:33:20 - bidExcecute
+2018-01-06 19:33:20 - bidExcecute
+2018-01-06 19:33:25 - bidExcecute
+2018-01-06 19:33:25 - bidExcecute
+2018-01-06 19:33:25 - bidExcecute
+2018-01-06 19:33:25 - bidExcecute
+2018-01-06 19:33:30 - bidExcecute
+2018-01-06 19:33:30 - bidExcecute
+2018-01-06 19:33:30 - bidExcecute
+2018-01-06 19:33:30 - bidExcecute
+2018-01-06 19:33:31 - Using default implementation for ThreadExecutor
+2018-01-06 19:33:31 - Job execution threads will use class loader of thread: main
+2018-01-06 19:33:31 - Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+2018-01-06 19:33:31 - Quartz Scheduler v.2.2.3 created.
+2018-01-06 19:33:31 - RAMJobStore initialized.
+2018-01-06 19:33:31 - Scheduler meta-data: Quartz Scheduler (v2.2.3) 'DefaultQuartzScheduler' with instanceId 'NON_CLUSTERED'
   Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
   NOT STARTED.
   Currently in standby mode.
@@ -272,37 +1179,737 @@
   Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 1 threads.
   Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
 
-2017-12-29 16:38:50 - Quartz scheduler 'DefaultQuartzScheduler' initialized from default resource file in Quartz package: 'quartz.properties'
-2017-12-29 16:38:50 - Quartz scheduler version: 2.2.3
-2017-12-29 16:38:50 - Scheduler DefaultQuartzScheduler_$_NON_CLUSTERED started.
-2017-12-29 16:38:50 - bidExcecute
-2017-12-29 16:38:51 - �������Ϊ��18225.82
-2017-12-29 16:38:51 - loanListResult is :{"LoanInfos":[],"Result":1,"ResultMessage":"��ѯ�ɹ�","ResultCode":null}
-2017-12-29 16:38:52 - loanListArray is :[]
-2017-12-29 16:38:52 - debtExcecute
-2017-12-29 16:38:52 - debtOverdueExcecute
-2017-12-29 16:38:52 - �������Ϊ��18225.82
-2017-12-29 16:38:52 - ��1�� �������˺�dlFiltered������47
-2017-12-29 16:38:57 - ��2�� �������˺�dlFiltered������45
-2017-12-29 16:39:00 - ��3�� �������˺�dlFiltered������45
-2017-12-29 16:39:02 - 3: {"DebtId":47768137,"Seller":"pdu7776260468","StatusId":1,"Lender":"pdu7776260468","BidDateTime":"2017-08-30T08:04:01.987","OwingNumber":6,"OwingPrincipal":40.31,"OwingInterest":2.37,"Days":1,"PriceforSaleRate":18.01,"PriceforSale":41.11,"PreferenceDegree":-0.15,"ListingId":68365635,"CreditCode":"C","CurrentCreditCode":"C","ListingAmount":6000,"ListingTime":"2017-08-30T08:02:41.807","ListingMonths":9,"ListingRate":20,"PastDueNumber":0,"AllowanceRadio":-0.41,"PastDueDay":0}
-2017-12-29 16:39:04 - 3: {"DebtId":47768111,"Seller":"pdu7776260468","StatusId":1,"Lender":"pdu7776260468","BidDateTime":"2017-06-30T07:58:32.543","OwingNumber":7,"OwingPrincipal":35.83,"OwingInterest":2.43,"Days":1,"PriceforSaleRate":19.01,"PriceforSale":36.49,"PreferenceDegree":8.34,"ListingId":55947430,"CreditCode":"C","CurrentCreditCode":"C","ListingAmount":2200,"ListingTime":"2017-06-30T07:57:36.943","ListingMonths":12,"ListingRate":20,"PastDueNumber":1,"AllowanceRadio":-0.24,"PastDueDay":3}
-2017-12-29 16:39:06 - 3: {"DebtId":47768032,"Seller":"pdu7776260468","StatusId":1,"Lender":"pdu7776260468","BidDateTime":"2017-05-30T07:47:34.747","OwingNumber":6,"OwingPrincipal":47.23,"OwingInterest":2.79,"Days":1,"PriceforSaleRate":18.01,"PriceforSale":48.18,"PreferenceDegree":0.11,"ListingId":49969815,"CreditCode":"C","CurrentCreditCode":"C","ListingAmount":2172,"ListingTime":"2017-05-30T07:46:56.653","ListingMonths":12,"ListingRate":20,"PastDueNumber":0,"AllowanceRadio":-0.41,"PastDueDay":0}
-2018-01-04 20:00:59 - bidExcecute
-2018-01-04 20:03:36 - bidExcecute
-2018-01-04 20:04:38 - bidExcecute
-2018-01-04 20:32:25 - bidExcecute
-2018-01-04 20:32:56 - token is: 631feea8-d9f1-4483-9525-5eb28f4ecf04
-2018-01-04 20:32:56 - refresh token is: 59d3e479-19db-4186-bb07-7811af67d336
-2018-01-04 20:33:21 - bidExcecute
-2018-01-04 20:33:26 - 可用余额为：1438.18
-2018-01-04 20:33:26 - 标的总数为：0，中风险标的数为：0
-2018-01-04 20:33:43 - Using default implementation for ThreadExecutor
-2018-01-04 20:33:43 - Job execution threads will use class loader of thread: main
-2018-01-04 20:33:43 - Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
-2018-01-04 20:33:43 - Quartz Scheduler v.2.2.3 created.
-2018-01-04 20:33:43 - RAMJobStore initialized.
-2018-01-04 20:33:43 - Scheduler meta-data: Quartz Scheduler (v2.2.3) 'DefaultQuartzScheduler' with instanceId 'NON_CLUSTERED'
+2018-01-06 19:33:31 - Quartz scheduler 'DefaultQuartzScheduler' initialized from default resource file in Quartz package: 'quartz.properties'
+2018-01-06 19:33:31 - Quartz scheduler version: 2.2.3
+2018-01-06 19:33:31 - Scheduler DefaultQuartzScheduler_$_NON_CLUSTERED started.
+2018-01-06 19:33:35 - bidExcecute
+2018-01-06 19:33:35 - bidExcecute
+2018-01-06 19:33:35 - bidExcecute
+2018-01-06 19:33:35 - bidExcecute
+2018-01-06 19:33:35 - bidExcecute
+2018-01-06 19:33:40 - bidExcecute
+2018-01-06 19:33:40 - bidExcecute
+2018-01-06 19:33:40 - bidExcecute
+2018-01-06 19:33:40 - bidExcecute
+2018-01-06 19:33:45 - bidExcecute
+2018-01-06 19:33:45 - bidExcecute
+2018-01-06 19:33:45 - bidExcecute
+2018-01-06 19:33:45 - bidExcecute
+2018-01-06 19:33:50 - bidExcecute
+2018-01-06 19:33:50 - bidExcecute
+2018-01-06 19:33:50 - bidExcecute
+2018-01-06 19:33:50 - bidExcecute
+2018-01-06 19:33:55 - bidExcecute
+2018-01-06 19:33:55 - bidExcecute
+2018-01-06 19:33:55 - bidExcecute
+2018-01-06 19:33:55 - bidExcecute
+2018-01-06 19:34:00 - bidExcecute
+2018-01-06 19:34:00 - bidExcecute
+2018-01-06 19:34:00 - bidExcecute
+2018-01-06 19:34:00 - bidExcecute
+2018-01-06 19:34:05 - bidExcecute
+2018-01-06 19:34:05 - bidExcecute
+2018-01-06 19:34:05 - bidExcecute
+2018-01-06 19:34:05 - bidExcecute
+2018-01-06 19:34:10 - bidExcecute
+2018-01-06 19:34:10 - bidExcecute
+2018-01-06 19:34:10 - bidExcecute
+2018-01-06 19:34:10 - bidExcecute
+2018-01-06 19:34:15 - bidExcecute
+2018-01-06 19:34:15 - bidExcecute
+2018-01-06 19:34:15 - bidExcecute
+2018-01-06 19:34:15 - bidExcecute
+2018-01-06 19:34:20 - bidExcecute
+2018-01-06 19:34:20 - bidExcecute
+2018-01-06 19:34:20 - bidExcecute
+2018-01-06 19:34:20 - bidExcecute
+2018-01-06 19:34:25 - bidExcecute
+2018-01-06 19:34:25 - bidExcecute
+2018-01-06 19:34:25 - bidExcecute
+2018-01-06 19:34:25 - bidExcecute
+2018-01-06 19:34:30 - bidExcecute
+2018-01-06 19:34:30 - bidExcecute
+2018-01-06 19:34:30 - bidExcecute
+2018-01-06 19:34:30 - bidExcecute
+2018-01-06 19:34:35 - bidExcecute
+2018-01-06 19:34:35 - bidExcecute
+2018-01-06 19:34:35 - bidExcecute
+2018-01-06 19:34:35 - bidExcecute
+2018-01-06 19:34:40 - bidExcecute
+2018-01-06 19:34:40 - bidExcecute
+2018-01-06 19:34:40 - bidExcecute
+2018-01-06 19:34:40 - bidExcecute
+2018-01-06 19:34:45 - bidExcecute
+2018-01-06 19:34:45 - bidExcecute
+2018-01-06 19:34:45 - bidExcecute
+2018-01-06 19:34:45 - bidExcecute
+2018-01-06 19:34:50 - bidExcecute
+2018-01-06 19:34:50 - bidExcecute
+2018-01-06 19:34:50 - bidExcecute
+2018-01-06 19:34:50 - bidExcecute
+2018-01-06 19:34:55 - bidExcecute
+2018-01-06 19:34:55 - bidExcecute
+2018-01-06 19:34:55 - bidExcecute
+2018-01-06 19:34:55 - bidExcecute
+2018-01-06 19:35:00 - bidExcecute
+2018-01-06 19:35:00 - bidExcecute
+2018-01-06 19:35:00 - bidExcecute
+2018-01-06 19:35:00 - bidExcecute
+2018-01-06 19:35:05 - bidExcecute
+2018-01-06 19:35:05 - bidExcecute
+2018-01-06 19:35:05 - bidExcecute
+2018-01-06 19:35:05 - bidExcecute
+2018-01-06 19:35:10 - bidExcecute
+2018-01-06 19:35:10 - bidExcecute
+2018-01-06 19:35:10 - bidExcecute
+2018-01-06 19:35:10 - bidExcecute
+2018-01-06 19:35:15 - bidExcecute
+2018-01-06 19:35:15 - bidExcecute
+2018-01-06 19:35:15 - bidExcecute
+2018-01-06 19:35:15 - bidExcecute
+2018-01-06 19:35:20 - bidExcecute
+2018-01-06 19:35:20 - bidExcecute
+2018-01-06 19:35:20 - bidExcecute
+2018-01-06 19:35:20 - bidExcecute
+2018-01-06 19:35:25 - bidExcecute
+2018-01-06 19:35:25 - bidExcecute
+2018-01-06 19:35:25 - bidExcecute
+2018-01-06 19:35:25 - bidExcecute
+2018-01-06 19:35:30 - bidExcecute
+2018-01-06 19:35:30 - bidExcecute
+2018-01-06 19:35:30 - bidExcecute
+2018-01-06 19:35:30 - bidExcecute
+2018-01-06 19:35:35 - bidExcecute
+2018-01-06 19:35:35 - bidExcecute
+2018-01-06 19:35:35 - bidExcecute
+2018-01-06 19:35:35 - bidExcecute
+2018-01-06 19:35:40 - bidExcecute
+2018-01-06 19:35:40 - bidExcecute
+2018-01-06 19:35:40 - bidExcecute
+2018-01-06 19:35:40 - bidExcecute
+2018-01-06 19:35:45 - bidExcecute
+2018-01-06 19:35:45 - bidExcecute
+2018-01-06 19:35:45 - bidExcecute
+2018-01-06 19:35:45 - bidExcecute
+2018-01-06 19:35:50 - bidExcecute
+2018-01-06 19:35:50 - bidExcecute
+2018-01-06 19:35:50 - bidExcecute
+2018-01-06 19:35:50 - bidExcecute
+2018-01-06 19:35:55 - bidExcecute
+2018-01-06 19:35:55 - bidExcecute
+2018-01-06 19:35:55 - bidExcecute
+2018-01-06 19:35:55 - bidExcecute
+2018-01-06 19:36:00 - bidExcecute
+2018-01-06 19:36:00 - bidExcecute
+2018-01-06 19:36:00 - bidExcecute
+2018-01-06 19:36:00 - bidExcecute
+2018-01-06 19:36:05 - bidExcecute
+2018-01-06 19:36:05 - bidExcecute
+2018-01-06 19:36:05 - bidExcecute
+2018-01-06 19:36:05 - bidExcecute
+2018-01-06 19:36:10 - bidExcecute
+2018-01-06 19:36:10 - bidExcecute
+2018-01-06 19:36:10 - bidExcecute
+2018-01-06 19:36:10 - bidExcecute
+2018-01-06 19:36:15 - bidExcecute
+2018-01-06 19:36:15 - bidExcecute
+2018-01-06 19:36:15 - bidExcecute
+2018-01-06 19:36:15 - bidExcecute
+2018-01-06 19:36:20 - bidExcecute
+2018-01-06 19:36:20 - bidExcecute
+2018-01-06 19:36:20 - bidExcecute
+2018-01-06 19:36:20 - bidExcecute
+2018-01-06 19:36:25 - bidExcecute
+2018-01-06 19:36:25 - bidExcecute
+2018-01-06 19:36:25 - bidExcecute
+2018-01-06 19:36:25 - bidExcecute
+2018-01-06 19:36:30 - bidExcecute
+2018-01-06 19:36:30 - bidExcecute
+2018-01-06 19:36:30 - bidExcecute
+2018-01-06 19:36:30 - bidExcecute
+2018-01-06 19:36:35 - bidExcecute
+2018-01-06 19:36:35 - bidExcecute
+2018-01-06 19:36:35 - bidExcecute
+2018-01-06 19:36:35 - bidExcecute
+2018-01-06 19:36:40 - bidExcecute
+2018-01-06 19:36:40 - bidExcecute
+2018-01-06 19:36:40 - bidExcecute
+2018-01-06 19:36:40 - bidExcecute
+2018-01-06 19:36:45 - bidExcecute
+2018-01-06 19:36:45 - bidExcecute
+2018-01-06 19:36:45 - bidExcecute
+2018-01-06 19:36:45 - bidExcecute
+2018-01-06 19:36:50 - bidExcecute
+2018-01-06 19:36:50 - bidExcecute
+2018-01-06 19:36:50 - bidExcecute
+2018-01-06 19:36:50 - bidExcecute
+2018-01-06 19:36:55 - bidExcecute
+2018-01-06 19:36:55 - bidExcecute
+2018-01-06 19:36:55 - bidExcecute
+2018-01-06 19:36:55 - bidExcecute
+2018-01-06 19:37:00 - bidExcecute
+2018-01-06 19:37:00 - bidExcecute
+2018-01-06 19:37:00 - bidExcecute
+2018-01-06 19:37:00 - bidExcecute
+2018-01-06 19:37:05 - bidExcecute
+2018-01-06 19:37:05 - bidExcecute
+2018-01-06 19:37:05 - bidExcecute
+2018-01-06 19:37:05 - bidExcecute
+2018-01-06 19:37:10 - bidExcecute
+2018-01-06 19:37:10 - bidExcecute
+2018-01-06 19:37:10 - bidExcecute
+2018-01-06 19:37:10 - bidExcecute
+2018-01-06 19:37:15 - bidExcecute
+2018-01-06 19:37:15 - bidExcecute
+2018-01-06 19:37:15 - bidExcecute
+2018-01-06 19:37:15 - bidExcecute
+2018-01-06 19:37:20 - bidExcecute
+2018-01-06 19:37:20 - bidExcecute
+2018-01-06 19:37:20 - bidExcecute
+2018-01-06 19:37:20 - bidExcecute
+2018-01-06 19:37:25 - bidExcecute
+2018-01-06 19:37:25 - bidExcecute
+2018-01-06 19:37:25 - bidExcecute
+2018-01-06 19:37:25 - bidExcecute
+2018-01-06 19:37:30 - bidExcecute
+2018-01-06 19:37:30 - bidExcecute
+2018-01-06 19:37:30 - bidExcecute
+2018-01-06 19:37:30 - bidExcecute
+2018-01-06 19:37:35 - bidExcecute
+2018-01-06 19:37:35 - bidExcecute
+2018-01-06 19:37:35 - bidExcecute
+2018-01-06 19:37:35 - bidExcecute
+2018-01-06 19:37:40 - bidExcecute
+2018-01-06 19:37:40 - bidExcecute
+2018-01-06 19:37:40 - bidExcecute
+2018-01-06 19:37:40 - bidExcecute
+2018-01-06 19:37:45 - bidExcecute
+2018-01-06 19:37:45 - bidExcecute
+2018-01-06 19:37:45 - bidExcecute
+2018-01-06 19:37:45 - bidExcecute
+2018-01-06 19:37:50 - bidExcecute
+2018-01-06 19:37:50 - bidExcecute
+2018-01-06 19:37:50 - bidExcecute
+2018-01-06 19:37:50 - bidExcecute
+2018-01-06 19:37:55 - bidExcecute
+2018-01-06 19:37:55 - bidExcecute
+2018-01-06 19:37:55 - bidExcecute
+2018-01-06 19:37:55 - bidExcecute
+2018-01-06 19:38:00 - bidExcecute
+2018-01-06 19:38:00 - bidExcecute
+2018-01-06 19:38:00 - bidExcecute
+2018-01-06 19:38:00 - bidExcecute
+2018-01-06 19:38:05 - bidExcecute
+2018-01-06 19:38:05 - bidExcecute
+2018-01-06 19:38:05 - bidExcecute
+2018-01-06 19:38:05 - bidExcecute
+2018-01-06 19:38:10 - bidExcecute
+2018-01-06 19:38:10 - bidExcecute
+2018-01-06 19:38:10 - bidExcecute
+2018-01-06 19:38:10 - bidExcecute
+2018-01-06 19:38:15 - bidExcecute
+2018-01-06 19:38:15 - bidExcecute
+2018-01-06 19:38:15 - bidExcecute
+2018-01-06 19:38:15 - bidExcecute
+2018-01-06 19:38:20 - bidExcecute
+2018-01-06 19:38:20 - bidExcecute
+2018-01-06 19:38:20 - bidExcecute
+2018-01-06 19:38:20 - bidExcecute
+2018-01-06 19:38:25 - bidExcecute
+2018-01-06 19:38:25 - bidExcecute
+2018-01-06 19:38:25 - bidExcecute
+2018-01-06 19:38:25 - bidExcecute
+2018-01-06 19:38:30 - bidExcecute
+2018-01-06 19:38:30 - bidExcecute
+2018-01-06 19:38:30 - bidExcecute
+2018-01-06 19:38:30 - bidExcecute
+2018-01-06 19:38:35 - bidExcecute
+2018-01-06 19:38:35 - bidExcecute
+2018-01-06 19:38:35 - bidExcecute
+2018-01-06 19:38:35 - bidExcecute
+2018-01-06 19:38:40 - bidExcecute
+2018-01-06 19:38:40 - bidExcecute
+2018-01-06 19:38:40 - bidExcecute
+2018-01-06 19:38:40 - bidExcecute
+2018-01-06 19:38:45 - bidExcecute
+2018-01-06 19:38:45 - bidExcecute
+2018-01-06 19:38:45 - bidExcecute
+2018-01-06 19:38:45 - bidExcecute
+2018-01-06 19:38:50 - bidExcecute
+2018-01-06 19:38:50 - bidExcecute
+2018-01-06 19:38:50 - bidExcecute
+2018-01-06 19:38:50 - bidExcecute
+2018-01-06 19:38:55 - bidExcecute
+2018-01-06 19:38:55 - bidExcecute
+2018-01-06 19:38:55 - bidExcecute
+2018-01-06 19:38:55 - bidExcecute
+2018-01-06 19:39:00 - bidExcecute
+2018-01-06 19:39:00 - bidExcecute
+2018-01-06 19:39:00 - bidExcecute
+2018-01-06 19:39:00 - bidExcecute
+2018-01-06 19:39:05 - bidExcecute
+2018-01-06 19:39:05 - bidExcecute
+2018-01-06 19:39:05 - bidExcecute
+2018-01-06 19:39:05 - bidExcecute
+2018-01-06 19:39:10 - bidExcecute
+2018-01-06 19:39:10 - bidExcecute
+2018-01-06 19:39:10 - bidExcecute
+2018-01-06 19:39:10 - bidExcecute
+2018-01-06 19:39:15 - bidExcecute
+2018-01-06 19:39:15 - bidExcecute
+2018-01-06 19:39:15 - bidExcecute
+2018-01-06 19:39:15 - bidExcecute
+2018-01-06 19:39:20 - bidExcecute
+2018-01-06 19:39:20 - bidExcecute
+2018-01-06 19:39:20 - bidExcecute
+2018-01-06 19:39:20 - bidExcecute
+2018-01-06 19:39:25 - bidExcecute
+2018-01-06 19:39:25 - bidExcecute
+2018-01-06 19:39:25 - bidExcecute
+2018-01-06 19:39:25 - bidExcecute
+2018-01-06 19:39:30 - bidExcecute
+2018-01-06 19:39:30 - bidExcecute
+2018-01-06 19:39:30 - bidExcecute
+2018-01-06 19:39:30 - bidExcecute
+2018-01-06 19:39:35 - bidExcecute
+2018-01-06 19:39:35 - bidExcecute
+2018-01-06 19:39:35 - bidExcecute
+2018-01-06 19:39:35 - bidExcecute
+2018-01-06 19:39:40 - bidExcecute
+2018-01-06 19:39:40 - bidExcecute
+2018-01-06 19:39:40 - bidExcecute
+2018-01-06 19:39:40 - bidExcecute
+2018-01-06 19:39:45 - bidExcecute
+2018-01-06 19:39:45 - bidExcecute
+2018-01-06 19:39:45 - bidExcecute
+2018-01-06 19:39:45 - bidExcecute
+2018-01-06 19:39:50 - bidExcecute
+2018-01-06 19:39:50 - bidExcecute
+2018-01-06 19:39:50 - bidExcecute
+2018-01-06 19:39:50 - bidExcecute
+2018-01-06 19:39:55 - bidExcecute
+2018-01-06 19:39:55 - bidExcecute
+2018-01-06 19:39:55 - bidExcecute
+2018-01-06 19:39:55 - bidExcecute
+2018-01-06 19:40:00 - bidExcecute
+2018-01-06 19:40:00 - bidExcecute
+2018-01-06 19:40:00 - bidExcecute
+2018-01-06 19:40:00 - bidExcecute
+2018-01-06 19:40:05 - bidExcecute
+2018-01-06 19:40:05 - bidExcecute
+2018-01-06 19:40:05 - bidExcecute
+2018-01-06 19:40:05 - bidExcecute
+2018-01-06 19:40:10 - bidExcecute
+2018-01-06 19:40:10 - bidExcecute
+2018-01-06 19:40:10 - bidExcecute
+2018-01-06 19:40:10 - bidExcecute
+2018-01-06 19:40:15 - bidExcecute
+2018-01-06 19:40:15 - bidExcecute
+2018-01-06 19:40:15 - bidExcecute
+2018-01-06 19:40:15 - bidExcecute
+2018-01-06 19:40:20 - bidExcecute
+2018-01-06 19:40:20 - bidExcecute
+2018-01-06 19:40:20 - bidExcecute
+2018-01-06 19:40:20 - bidExcecute
+2018-01-06 19:40:25 - bidExcecute
+2018-01-06 19:40:25 - bidExcecute
+2018-01-06 19:40:25 - bidExcecute
+2018-01-06 19:40:25 - bidExcecute
+2018-01-06 19:40:30 - bidExcecute
+2018-01-06 19:40:30 - bidExcecute
+2018-01-06 19:40:30 - bidExcecute
+2018-01-06 19:40:30 - bidExcecute
+2018-01-06 19:40:35 - bidExcecute
+2018-01-06 19:40:35 - bidExcecute
+2018-01-06 19:40:35 - bidExcecute
+2018-01-06 19:40:35 - bidExcecute
+2018-01-06 19:40:40 - bidExcecute
+2018-01-06 19:40:40 - bidExcecute
+2018-01-06 19:40:40 - bidExcecute
+2018-01-06 19:40:40 - bidExcecute
+2018-01-06 19:40:45 - bidExcecute
+2018-01-06 19:40:45 - bidExcecute
+2018-01-06 19:40:45 - bidExcecute
+2018-01-06 19:40:45 - bidExcecute
+2018-01-06 19:40:50 - bidExcecute
+2018-01-06 19:40:50 - bidExcecute
+2018-01-06 19:40:50 - bidExcecute
+2018-01-06 19:40:50 - bidExcecute
+2018-01-06 19:40:55 - bidExcecute
+2018-01-06 19:40:55 - bidExcecute
+2018-01-06 19:40:55 - bidExcecute
+2018-01-06 19:40:55 - bidExcecute
+2018-01-06 19:41:00 - bidExcecute
+2018-01-06 19:41:00 - bidExcecute
+2018-01-06 19:41:00 - bidExcecute
+2018-01-06 19:41:00 - bidExcecute
+2018-01-06 19:41:05 - bidExcecute
+2018-01-06 19:41:05 - bidExcecute
+2018-01-06 19:41:05 - bidExcecute
+2018-01-06 19:41:05 - bidExcecute
+2018-01-06 19:41:10 - bidExcecute
+2018-01-06 19:41:10 - bidExcecute
+2018-01-06 19:41:10 - bidExcecute
+2018-01-06 19:41:10 - bidExcecute
+2018-01-06 19:41:15 - bidExcecute
+2018-01-06 19:41:15 - bidExcecute
+2018-01-06 19:41:15 - bidExcecute
+2018-01-06 19:41:15 - bidExcecute
+2018-01-06 19:41:20 - bidExcecute
+2018-01-06 19:41:20 - bidExcecute
+2018-01-06 19:41:20 - bidExcecute
+2018-01-06 19:41:20 - bidExcecute
+2018-01-06 19:41:25 - bidExcecute
+2018-01-06 19:41:25 - bidExcecute
+2018-01-06 19:41:25 - bidExcecute
+2018-01-06 19:41:25 - bidExcecute
+2018-01-06 19:41:30 - bidExcecute
+2018-01-06 19:41:30 - bidExcecute
+2018-01-06 19:41:30 - bidExcecute
+2018-01-06 19:41:30 - bidExcecute
+2018-01-06 19:41:35 - bidExcecute
+2018-01-06 19:41:35 - bidExcecute
+2018-01-06 19:41:35 - bidExcecute
+2018-01-06 19:41:35 - bidExcecute
+2018-01-06 19:41:40 - bidExcecute
+2018-01-06 19:41:40 - bidExcecute
+2018-01-06 19:41:40 - bidExcecute
+2018-01-06 19:41:40 - bidExcecute
+2018-01-06 19:41:45 - bidExcecute
+2018-01-06 19:41:45 - bidExcecute
+2018-01-06 19:41:45 - bidExcecute
+2018-01-06 19:41:45 - bidExcecute
+2018-01-06 19:41:50 - bidExcecute
+2018-01-06 19:41:50 - bidExcecute
+2018-01-06 19:41:50 - bidExcecute
+2018-01-06 19:41:50 - bidExcecute
+2018-01-06 19:41:55 - bidExcecute
+2018-01-06 19:41:55 - bidExcecute
+2018-01-06 19:41:55 - bidExcecute
+2018-01-06 19:41:55 - bidExcecute
+2018-01-06 19:42:00 - bidExcecute
+2018-01-06 19:42:00 - bidExcecute
+2018-01-06 19:42:00 - bidExcecute
+2018-01-06 19:42:00 - bidExcecute
+2018-01-06 19:42:05 - bidExcecute
+2018-01-06 19:42:05 - bidExcecute
+2018-01-06 19:42:05 - bidExcecute
+2018-01-06 19:42:05 - bidExcecute
+2018-01-06 19:42:10 - bidExcecute
+2018-01-06 19:42:10 - bidExcecute
+2018-01-06 19:42:10 - bidExcecute
+2018-01-06 19:42:10 - bidExcecute
+2018-01-06 19:42:15 - bidExcecute
+2018-01-06 19:42:15 - bidExcecute
+2018-01-06 19:42:15 - bidExcecute
+2018-01-06 19:42:15 - bidExcecute
+2018-01-06 19:42:20 - bidExcecute
+2018-01-06 19:42:20 - bidExcecute
+2018-01-06 19:42:20 - bidExcecute
+2018-01-06 19:42:20 - bidExcecute
+2018-01-06 19:42:25 - bidExcecute
+2018-01-06 19:42:25 - bidExcecute
+2018-01-06 19:42:25 - bidExcecute
+2018-01-06 19:42:25 - bidExcecute
+2018-01-06 19:42:30 - bidExcecute
+2018-01-06 19:42:30 - bidExcecute
+2018-01-06 19:42:30 - bidExcecute
+2018-01-06 19:42:30 - bidExcecute
+2018-01-06 19:42:35 - bidExcecute
+2018-01-06 19:42:35 - bidExcecute
+2018-01-06 19:42:35 - bidExcecute
+2018-01-06 19:42:35 - bidExcecute
+2018-01-06 19:42:40 - bidExcecute
+2018-01-06 19:42:40 - bidExcecute
+2018-01-06 19:42:40 - bidExcecute
+2018-01-06 19:42:40 - bidExcecute
+2018-01-06 19:42:45 - bidExcecute
+2018-01-06 19:42:45 - bidExcecute
+2018-01-06 19:42:45 - bidExcecute
+2018-01-06 19:42:45 - bidExcecute
+2018-01-06 19:42:50 - bidExcecute
+2018-01-06 19:42:50 - bidExcecute
+2018-01-06 19:42:50 - bidExcecute
+2018-01-06 19:42:50 - bidExcecute
+2018-01-06 19:42:55 - bidExcecute
+2018-01-06 19:42:55 - bidExcecute
+2018-01-06 19:42:55 - bidExcecute
+2018-01-06 19:42:55 - bidExcecute
+2018-01-06 19:43:00 - bidExcecute
+2018-01-06 19:43:00 - bidExcecute
+2018-01-06 19:43:00 - bidExcecute
+2018-01-06 19:43:00 - bidExcecute
+2018-01-06 19:43:05 - bidExcecute
+2018-01-06 19:43:05 - bidExcecute
+2018-01-06 19:43:05 - bidExcecute
+2018-01-06 19:43:05 - bidExcecute
+2018-01-06 19:43:10 - bidExcecute
+2018-01-06 19:43:10 - bidExcecute
+2018-01-06 19:43:10 - bidExcecute
+2018-01-06 19:43:10 - bidExcecute
+2018-01-06 19:43:15 - bidExcecute
+2018-01-06 19:43:15 - bidExcecute
+2018-01-06 19:43:15 - bidExcecute
+2018-01-06 19:43:15 - bidExcecute
+2018-01-06 19:43:20 - bidExcecute
+2018-01-06 19:43:20 - bidExcecute
+2018-01-06 19:43:20 - bidExcecute
+2018-01-06 19:43:20 - bidExcecute
+2018-01-06 19:43:25 - bidExcecute
+2018-01-06 19:43:25 - bidExcecute
+2018-01-06 19:43:25 - bidExcecute
+2018-01-06 19:43:25 - bidExcecute
+2018-01-06 19:43:30 - bidExcecute
+2018-01-06 19:43:30 - bidExcecute
+2018-01-06 19:43:30 - bidExcecute
+2018-01-06 19:43:30 - bidExcecute
+2018-01-06 19:43:35 - bidExcecute
+2018-01-06 19:43:35 - bidExcecute
+2018-01-06 19:43:35 - bidExcecute
+2018-01-06 19:43:35 - bidExcecute
+2018-01-06 19:43:40 - bidExcecute
+2018-01-06 19:43:40 - bidExcecute
+2018-01-06 19:43:40 - bidExcecute
+2018-01-06 19:43:40 - bidExcecute
+2018-01-06 19:43:45 - bidExcecute
+2018-01-06 19:43:45 - bidExcecute
+2018-01-06 19:43:45 - bidExcecute
+2018-01-06 19:43:45 - bidExcecute
+2018-01-06 19:43:50 - bidExcecute
+2018-01-06 19:43:50 - bidExcecute
+2018-01-06 19:43:50 - bidExcecute
+2018-01-06 19:43:50 - bidExcecute
+2018-01-06 19:43:55 - bidExcecute
+2018-01-06 19:43:55 - bidExcecute
+2018-01-06 19:43:55 - bidExcecute
+2018-01-06 19:43:55 - bidExcecute
+2018-01-06 19:44:00 - bidExcecute
+2018-01-06 19:44:00 - bidExcecute
+2018-01-06 19:44:00 - bidExcecute
+2018-01-06 19:44:00 - bidExcecute
+2018-01-06 19:44:05 - bidExcecute
+2018-01-06 19:44:05 - bidExcecute
+2018-01-06 19:44:05 - bidExcecute
+2018-01-06 19:44:05 - bidExcecute
+2018-01-06 19:44:10 - bidExcecute
+2018-01-06 19:44:10 - bidExcecute
+2018-01-06 19:44:10 - bidExcecute
+2018-01-06 19:44:10 - bidExcecute
+2018-01-06 19:44:15 - bidExcecute
+2018-01-06 19:44:15 - bidExcecute
+2018-01-06 19:44:15 - bidExcecute
+2018-01-06 19:44:15 - bidExcecute
+2018-01-06 19:44:20 - bidExcecute
+2018-01-06 19:44:20 - bidExcecute
+2018-01-06 19:44:20 - bidExcecute
+2018-01-06 19:44:20 - bidExcecute
+2018-01-06 19:44:25 - bidExcecute
+2018-01-06 19:44:25 - bidExcecute
+2018-01-06 19:44:25 - bidExcecute
+2018-01-06 19:44:25 - bidExcecute
+2018-01-06 19:44:30 - bidExcecute
+2018-01-06 19:44:30 - bidExcecute
+2018-01-06 19:44:30 - bidExcecute
+2018-01-06 19:44:30 - bidExcecute
+2018-01-06 19:44:35 - bidExcecute
+2018-01-06 19:44:35 - bidExcecute
+2018-01-06 19:44:35 - bidExcecute
+2018-01-06 19:44:35 - bidExcecute
+2018-01-06 19:44:40 - bidExcecute
+2018-01-06 19:44:40 - bidExcecute
+2018-01-06 19:44:40 - bidExcecute
+2018-01-06 19:44:40 - bidExcecute
+2018-01-06 19:44:45 - bidExcecute
+2018-01-06 19:44:45 - bidExcecute
+2018-01-06 19:44:45 - bidExcecute
+2018-01-06 19:44:45 - bidExcecute
+2018-01-06 19:44:50 - bidExcecute
+2018-01-06 19:44:50 - bidExcecute
+2018-01-06 19:44:50 - bidExcecute
+2018-01-06 19:44:50 - bidExcecute
+2018-01-06 19:44:55 - bidExcecute
+2018-01-06 19:44:55 - bidExcecute
+2018-01-06 19:44:55 - bidExcecute
+2018-01-06 19:44:55 - bidExcecute
+2018-01-06 19:45:00 - bidExcecute
+2018-01-06 19:45:00 - bidExcecute
+2018-01-06 19:45:00 - bidExcecute
+2018-01-06 19:45:00 - bidExcecute
+2018-01-06 19:45:05 - bidExcecute
+2018-01-06 19:45:05 - bidExcecute
+2018-01-06 19:45:05 - bidExcecute
+2018-01-06 19:45:05 - bidExcecute
+2018-01-06 19:45:10 - bidExcecute
+2018-01-06 19:45:10 - bidExcecute
+2018-01-06 19:45:10 - bidExcecute
+2018-01-06 19:45:10 - bidExcecute
+2018-01-06 19:45:15 - bidExcecute
+2018-01-06 19:45:15 - bidExcecute
+2018-01-06 19:45:15 - bidExcecute
+2018-01-06 19:45:15 - bidExcecute
+2018-01-06 19:45:20 - bidExcecute
+2018-01-06 19:45:20 - bidExcecute
+2018-01-06 19:45:20 - bidExcecute
+2018-01-06 19:45:20 - bidExcecute
+2018-01-06 19:45:25 - bidExcecute
+2018-01-06 19:45:25 - bidExcecute
+2018-01-06 19:45:25 - bidExcecute
+2018-01-06 19:45:25 - bidExcecute
+2018-01-06 19:45:30 - bidExcecute
+2018-01-06 19:45:30 - bidExcecute
+2018-01-06 19:45:30 - bidExcecute
+2018-01-06 19:45:30 - bidExcecute
+2018-01-06 19:45:35 - bidExcecute
+2018-01-06 19:45:35 - bidExcecute
+2018-01-06 19:45:35 - bidExcecute
+2018-01-06 19:45:35 - bidExcecute
+2018-01-06 19:45:40 - bidExcecute
+2018-01-06 19:45:40 - bidExcecute
+2018-01-06 19:45:40 - bidExcecute
+2018-01-06 19:45:40 - bidExcecute
+2018-01-06 19:45:45 - bidExcecute
+2018-01-06 19:45:45 - bidExcecute
+2018-01-06 19:45:45 - bidExcecute
+2018-01-06 19:45:45 - bidExcecute
+2018-01-06 19:45:50 - bidExcecute
+2018-01-06 19:45:50 - bidExcecute
+2018-01-06 19:45:50 - bidExcecute
+2018-01-06 19:45:50 - bidExcecute
+2018-01-06 19:45:55 - bidExcecute
+2018-01-06 19:45:55 - bidExcecute
+2018-01-06 19:45:55 - bidExcecute
+2018-01-06 19:45:55 - bidExcecute
+2018-01-06 19:46:00 - bidExcecute
+2018-01-06 19:46:00 - bidExcecute
+2018-01-06 19:46:00 - bidExcecute
+2018-01-06 19:46:00 - bidExcecute
+2018-01-06 19:46:05 - bidExcecute
+2018-01-06 19:46:05 - bidExcecute
+2018-01-06 19:46:05 - bidExcecute
+2018-01-06 19:46:05 - bidExcecute
+2018-01-06 19:46:10 - bidExcecute
+2018-01-06 19:46:10 - bidExcecute
+2018-01-06 19:46:10 - bidExcecute
+2018-01-06 19:46:10 - bidExcecute
+2018-01-06 19:46:15 - bidExcecute
+2018-01-06 19:46:15 - bidExcecute
+2018-01-06 19:46:15 - bidExcecute
+2018-01-06 19:46:15 - bidExcecute
+2018-01-06 19:46:20 - bidExcecute
+2018-01-06 19:46:20 - bidExcecute
+2018-01-06 19:46:20 - bidExcecute
+2018-01-06 19:46:20 - bidExcecute
+2018-01-06 19:46:25 - bidExcecute
+2018-01-06 19:46:25 - bidExcecute
+2018-01-06 19:46:25 - bidExcecute
+2018-01-06 19:46:25 - bidExcecute
+2018-01-06 19:46:30 - bidExcecute
+2018-01-06 19:46:30 - bidExcecute
+2018-01-06 19:46:30 - bidExcecute
+2018-01-06 19:46:30 - bidExcecute
+2018-01-06 19:46:35 - bidExcecute
+2018-01-06 19:46:35 - bidExcecute
+2018-01-06 19:46:35 - bidExcecute
+2018-01-06 19:46:35 - bidExcecute
+2018-01-06 19:46:40 - bidExcecute
+2018-01-06 19:46:40 - bidExcecute
+2018-01-06 19:46:40 - bidExcecute
+2018-01-06 19:46:40 - bidExcecute
+2018-01-06 19:46:45 - bidExcecute
+2018-01-06 19:46:45 - bidExcecute
+2018-01-06 19:46:45 - bidExcecute
+2018-01-06 19:46:45 - bidExcecute
+2018-01-06 19:46:50 - bidExcecute
+2018-01-06 19:46:50 - bidExcecute
+2018-01-06 19:46:50 - bidExcecute
+2018-01-06 19:46:50 - bidExcecute
+2018-01-06 19:46:55 - bidExcecute
+2018-01-06 19:46:55 - bidExcecute
+2018-01-06 19:46:55 - bidExcecute
+2018-01-06 19:46:55 - bidExcecute
+2018-01-06 19:47:00 - bidExcecute
+2018-01-06 19:47:00 - bidExcecute
+2018-01-06 19:47:00 - bidExcecute
+2018-01-06 19:47:00 - bidExcecute
+2018-01-06 19:47:05 - bidExcecute
+2018-01-06 19:47:05 - bidExcecute
+2018-01-06 19:47:05 - bidExcecute
+2018-01-06 19:47:05 - bidExcecute
+2018-01-06 19:47:10 - bidExcecute
+2018-01-06 19:47:10 - bidExcecute
+2018-01-06 19:47:10 - bidExcecute
+2018-01-06 19:47:10 - bidExcecute
+2018-01-06 19:47:15 - bidExcecute
+2018-01-06 19:47:15 - bidExcecute
+2018-01-06 19:47:15 - bidExcecute
+2018-01-06 19:47:15 - bidExcecute
+2018-01-06 19:47:20 - bidExcecute
+2018-01-06 19:47:20 - bidExcecute
+2018-01-06 19:47:20 - bidExcecute
+2018-01-06 19:47:20 - bidExcecute
+2018-01-06 19:47:25 - bidExcecute
+2018-01-06 19:47:25 - bidExcecute
+2018-01-06 19:47:25 - bidExcecute
+2018-01-06 19:47:25 - bidExcecute
+2018-01-06 19:47:30 - bidExcecute
+2018-01-06 19:47:30 - bidExcecute
+2018-01-06 19:47:30 - bidExcecute
+2018-01-06 19:47:30 - bidExcecute
+2018-01-06 19:47:35 - bidExcecute
+2018-01-06 19:47:35 - bidExcecute
+2018-01-06 19:47:35 - bidExcecute
+2018-01-06 19:47:35 - bidExcecute
+2018-01-06 19:47:40 - bidExcecute
+2018-01-06 19:47:40 - bidExcecute
+2018-01-06 19:47:40 - bidExcecute
+2018-01-06 19:47:40 - bidExcecute
+2018-01-06 19:47:45 - bidExcecute
+2018-01-06 19:47:45 - bidExcecute
+2018-01-06 19:47:45 - bidExcecute
+2018-01-06 19:47:45 - bidExcecute
+2018-01-06 19:47:50 - bidExcecute
+2018-01-06 19:47:50 - bidExcecute
+2018-01-06 19:47:50 - bidExcecute
+2018-01-06 19:47:50 - bidExcecute
+2018-01-06 19:47:55 - bidExcecute
+2018-01-06 19:47:55 - bidExcecute
+2018-01-06 19:47:55 - bidExcecute
+2018-01-06 19:47:55 - bidExcecute
+2018-01-06 19:48:00 - bidExcecute
+2018-01-06 19:48:00 - bidExcecute
+2018-01-06 19:48:00 - bidExcecute
+2018-01-06 19:48:00 - bidExcecute
+2018-01-06 19:48:05 - bidExcecute
+2018-01-06 19:48:05 - bidExcecute
+2018-01-06 19:48:05 - bidExcecute
+2018-01-06 19:48:05 - bidExcecute
+2018-01-06 19:48:10 - bidExcecute
+2018-01-06 19:48:10 - bidExcecute
+2018-01-06 19:48:10 - bidExcecute
+2018-01-06 19:48:10 - bidExcecute
+2018-01-06 19:48:15 - bidExcecute
+2018-01-06 19:48:15 - bidExcecute
+2018-01-06 19:48:15 - bidExcecute
+2018-01-06 19:48:15 - bidExcecute
+2018-01-06 19:48:20 - bidExcecute
+2018-01-06 19:48:20 - bidExcecute
+2018-01-06 19:48:20 - bidExcecute
+2018-01-06 19:48:20 - bidExcecute
+2018-01-06 19:48:25 - bidExcecute
+2018-01-06 19:48:25 - bidExcecute
+2018-01-06 19:48:25 - bidExcecute
+2018-01-06 19:48:25 - bidExcecute
+2018-01-06 19:48:30 - bidExcecute
+2018-01-06 19:48:30 - bidExcecute
+2018-01-06 19:48:30 - bidExcecute
+2018-01-06 19:48:35 - bidExcecute
+2018-01-06 19:48:40 - bidExcecute
+2018-01-06 19:51:09 - Using default implementation for ThreadExecutor
+2018-01-06 19:51:09 - Job execution threads will use class loader of thread: main
+2018-01-06 19:51:09 - Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+2018-01-06 19:51:09 - Quartz Scheduler v.2.2.3 created.
+2018-01-06 19:51:09 - RAMJobStore initialized.
+2018-01-06 19:51:09 - Scheduler meta-data: Quartz Scheduler (v2.2.3) 'DefaultQuartzScheduler' with instanceId 'NON_CLUSTERED'
   Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
   NOT STARTED.
   Currently in standby mode.
@@ -310,109 +1917,1926 @@
   Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 1 threads.
   Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
 
-2018-01-04 20:33:43 - Quartz scheduler 'DefaultQuartzScheduler' initialized from default resource file in Quartz package: 'quartz.properties'
-2018-01-04 20:33:43 - Quartz scheduler version: 2.2.3
-2018-01-04 20:33:43 - Scheduler DefaultQuartzScheduler_$_NON_CLUSTERED started.
-2018-01-04 20:33:45 - bidExcecute
-2018-01-04 20:33:48 - 可用余额为：1438.18
-2018-01-04 20:33:48 - 标的总数为：0，中风险标的数为：0
-2018-01-04 20:33:48 - debtExcecute
-2018-01-04 20:33:48 - debtOverdueExcecute
-2018-01-04 20:33:48 - 可用余额为：1438.18
-2018-01-04 20:33:48 - 第1轮 初步过滤后，dlFiltered数量：24
-2018-01-04 20:33:53 - 第2轮 初步过滤后，dlFiltered数量：42
-2018-01-04 20:33:57 - 第3轮 初步过滤后，dlFiltered数量：26
-2018-01-04 20:34:02 - 第4轮 初步过滤后，dlFiltered数量：16
-2018-01-04 20:34:04 - 第5轮 初步过滤后，dlFiltered数量：26
-2018-01-04 20:34:06 - 第6轮 初步过滤后，dlFiltered数量：29
-2018-01-04 20:34:09 - 第7轮 初步过滤后，dlFiltered数量：20
-2018-01-04 20:34:11 - {"DebtDealId":49226968,"Result":0,"ResultMessage":"恭喜您!成功购买债权1个，金额总计￥36.17"}
-2018-01-04 20:34:12 - 第8轮 初步过滤后，dlFiltered数量：35
-2018-01-04 20:34:15 - 第9轮 初步过滤后，dlFiltered数量：42
-2018-01-04 20:34:18 - 第10轮 初步过滤后，dlFiltered数量：16
-2018-01-04 20:34:20 - 第11轮 初步过滤后，dlFiltered数量：36
-2018-01-04 20:34:22 - {"DebtDealId":49226440,"Result":0,"ResultMessage":"恭喜您!成功购买债权1个，金额总计￥34.16"}
-2018-01-04 20:34:24 - {"DebtDealId":49226366,"Result":0,"ResultMessage":"恭喜您!成功购买债权1个，金额总计￥38.50"}
-2018-01-04 20:34:25 - {"DebtDealId":49226351,"Result":0,"ResultMessage":"恭喜您!成功购买债权1个，金额总计￥38.52"}
-2018-01-04 20:34:26 - 第12轮 初步过滤后，dlFiltered数量：45
-2018-01-04 20:34:30 - 第13轮 初步过滤后，dlFiltered数量：43
-2018-01-04 20:34:34 - 第14轮 初步过滤后，dlFiltered数量：40
-2018-01-04 20:34:36 - {"DebtDealId":49225821,"Result":0,"ResultMessage":"恭喜您!成功购买债权1个，金额总计￥36.11"}
-2018-01-04 20:34:39 - 第15轮 初步过滤后，dlFiltered数量：46
-2018-01-04 20:34:42 - {"DebtDealId":49225563,"Result":0,"ResultMessage":"恭喜您!成功购买债权1个，金额总计￥38.52"}
-2018-01-04 20:34:44 - 第16轮 初步过滤后，dlFiltered数量：49
-2018-01-04 20:34:49 - 第17轮 初步过滤后，dlFiltered数量：36
-2018-01-04 20:34:51 - {"DebtDealId":49225290,"Result":0,"ResultMessage":"恭喜您!成功购买债权1个，金额总计￥53.26"}
-2018-01-04 20:34:52 - {"DebtDealId":49225292,"Result":0,"ResultMessage":"恭喜您!成功购买债权1个，金额总计￥101.32"}
-2018-01-04 20:34:55 - 第18轮 初步过滤后，dlFiltered数量：29
-2018-01-04 20:34:58 - {"DebtDealId":49225044,"Result":0,"ResultMessage":"恭喜您!成功购买债权1个，金额总计￥179.96"}
-2018-01-04 20:34:59 - 第19轮 初步过滤后，dlFiltered数量：27
-2018-01-04 20:35:03 - 第20轮 初步过滤后，dlFiltered数量：11
-2018-01-04 20:35:06 - 第21轮 初步过滤后，dlFiltered数量：12
-2018-01-04 20:35:08 - 第22轮 初步过滤后，dlFiltered数量：47
-2018-01-04 20:35:11 - {"DebtDealId":49224537,"Result":0,"ResultMessage":"恭喜您!成功购买债权1个，金额总计￥68.66"}
-2018-01-04 20:35:13 - {"DebtDealId":49224445,"Result":0,"ResultMessage":"恭喜您!成功购买债权1个，金额总计￥38.66"}
-2018-01-04 20:35:14 - {"DebtDealId":49224448,"Result":0,"ResultMessage":"恭喜您!成功购买债权1个，金额总计￥34.48"}
-2018-01-04 20:35:15 - {"DebtDealId":49224441,"Result":0,"ResultMessage":"恭喜您!成功购买债权1个，金额总计￥34.38"}
-2018-01-04 20:35:16 - 第23轮 初步过滤后，dlFiltered数量：41
-2018-01-04 20:35:20 - {"DebtDealId":49224276,"Result":0,"ResultMessage":"恭喜您!成功购买债权1个，金额总计￥34.51"}
-2018-01-04 20:35:21 - 第24轮 初步过滤后，dlFiltered数量：23
-2018-01-04 20:35:26 - 第25轮 初步过滤后，dlFiltered数量：12
-2018-01-04 20:35:28 - {"DebtDealId":49223976,"Result":0,"ResultMessage":"恭喜您!成功购买债权1个，金额总计￥47.59"}
-2018-01-04 20:35:29 - 第26轮 初步过滤后，dlFiltered数量：21
-2018-01-04 20:35:31 - 第27轮 初步过滤后，dlFiltered数量：35
-2018-01-04 20:35:33 - {"DebtDealId":49223584,"Result":0,"ResultMessage":"恭喜您!成功购买债权1个，金额总计￥34.51"}
-2018-01-04 20:35:35 - 第28轮 初步过滤后，dlFiltered数量：34
-2018-01-04 20:35:38 - 第29轮 初步过滤后，dlFiltered数量：33
-2018-01-04 20:35:41 - 第30轮 初步过滤后，dlFiltered数量：11
-2018-01-04 20:35:42 - 第31轮 初步过滤后，dlFiltered数量：21
-2018-01-04 20:35:44 - 第32轮 初步过滤后，dlFiltered数量：29
-2018-01-04 20:35:46 - {"DebtDealId":49222206,"Result":0,"ResultMessage":"恭喜您!成功购买债权1个，金额总计￥38.57"}
-2018-01-04 20:35:47 - 第33轮 初步过滤后，dlFiltered数量：9
-2018-01-04 20:35:49 - {"DebtDealId":49222015,"Result":0,"ResultMessage":"恭喜您!成功购买债权1个，金额总计￥63.57"}
-2018-01-04 20:35:50 - {"DebtDealId":49222013,"Result":0,"ResultMessage":"恭喜您!成功购买债权1个，金额总计￥63.57"}
-2018-01-04 20:35:51 - 第34轮 初步过滤后，dlFiltered数量：17
-2018-01-04 20:35:52 - {"DebtDealId":49221739,"Result":0,"ResultMessage":"恭喜您!成功购买债权1个，金额总计￥63.60"}
-2018-01-04 20:35:53 - {"DebtDealId":49221846,"Result":0,"ResultMessage":"恭喜您!成功购买债权1个，金额总计￥63.57"}
-2018-01-04 20:35:54 - {"DebtDealId":49221854,"Result":0,"ResultMessage":"恭喜您!成功购买债权1个，金额总计￥33.99"}
-2018-01-04 20:35:56 - 第35轮 初步过滤后，dlFiltered数量：25
-2018-01-04 20:35:58 - 第36轮 初步过滤后，dlFiltered数量：25
-2018-01-04 20:36:00 - 第37轮 初步过滤后，dlFiltered数量：37
-2018-01-04 20:36:04 - 第38轮 初步过滤后，dlFiltered数量：36
-2018-01-04 20:36:07 - 第39轮 初步过滤后，dlFiltered数量：36
-2018-01-04 20:36:09 - {"DebtDealId":49221027,"Result":0,"ResultMessage":"恭喜您!成功购买债权1个，金额总计￥38.50"}
-2018-01-04 20:36:10 - {"DebtDealId":49221028,"Result":0,"ResultMessage":"恭喜您!成功购买债权1个，金额总计￥38.51"}
-2018-01-04 20:36:11 - {"DebtDealId":49221025,"Result":0,"ResultMessage":"恭喜您!成功购买债权1个，金额总计￥38.49"}
-2018-01-04 20:36:14 - 第40轮 初步过滤后，dlFiltered数量：35
-2018-01-04 20:36:18 - {"DebtDealId":49220726,"Result":0,"ResultMessage":"恭喜您!成功购买债权1个，金额总计￥44.80"}
-2018-01-04 20:36:21 - {"DebtDealId":49220722,"Result":0,"ResultMessage":"恭喜您!成功购买债权1个，金额总计￥44.80"}
-2018-01-04 20:36:21 - 第41轮 初步过滤后，dlFiltered数量：34
-2018-01-04 20:36:23 - {"DebtDealId":49220986,"Result":0,"ResultMessage":"恭喜您!成功购买债权1个，金额总计￥35.45"}
-2018-01-04 20:36:23 - {"DebtDealId":49220989,"Result":-1,"ResultMessage":"您的账户余额不足，请充值！"}
-2018-01-04 20:36:23 - {"DebtDealId":49220991,"Result":-1,"ResultMessage":"您的账户余额不足，请充值！"}
-2018-01-04 20:36:26 - 第42轮 初步过滤后，dlFiltered数量：32
-2018-01-04 20:36:28 - 第43轮 初步过滤后，dlFiltered数量：40
-2018-01-04 20:36:29 - {"DebtDealId":49220384,"Result":-1,"ResultMessage":"您的账户余额不足，请充值！"}
-2018-01-04 20:36:29 - {"DebtDealId":49220392,"Result":-1,"ResultMessage":"您的账户余额不足，请充值！"}
-2018-01-04 20:36:30 - {"DebtDealId":49220362,"Result":-1,"ResultMessage":"您的账户余额不足，请充值！"}
-2018-01-04 20:36:32 - 第44轮 初步过滤后，dlFiltered数量：37
-2018-01-04 20:36:34 - {"DebtDealId":49220165,"Result":-1,"ResultMessage":"您的账户余额不足，请充值！"}
-2018-01-04 20:36:35 - {"DebtDealId":49220113,"Result":-1,"ResultMessage":"您的账户余额不足，请充值！"}
-2018-01-04 20:36:37 - 第45轮 初步过滤后，dlFiltered数量：42
-2018-01-04 20:36:38 - {"DebtDealId":49220113,"Result":-1,"ResultMessage":"您的账户余额不足，请充值！"}
-2018-01-04 20:36:40 - 第46轮 初步过滤后，dlFiltered数量：43
-2018-01-04 20:36:42 - {"DebtDealId":49219810,"Result":-1,"ResultMessage":"您的账户余额不足，请充值！"}
-2018-01-04 20:36:44 - 第47轮 初步过滤后，dlFiltered数量：40
-2018-01-04 20:36:46 - 第48轮 初步过滤后，dlFiltered数量：39
-2018-01-04 20:36:49 - 第49轮 初步过滤后，dlFiltered数量：34
-2018-01-04 20:36:51 - {"DebtDealId":49219411,"Result":-1,"ResultMessage":"您的账户余额不足，请充值！"}
-2018-01-04 20:36:52 - 第50轮 初步过滤后，dlFiltered数量：32
-2018-01-04 20:36:54 - {"DebtDealId":49219411,"Result":-1,"ResultMessage":"您的账户余额不足，请充值！"}
-2018-01-04 20:36:55 - 第51轮 初步过滤后，dlFiltered数量：44
-2018-01-04 20:36:57 - {"DebtDealId":49219274,"Result":-1,"ResultMessage":"您的账户余额不足，请充值！"}
-2018-01-04 20:36:58 - {"DebtDealId":49219263,"Result":-1,"ResultMessage":"您的账户余额不足，请充值！"}
-2018-01-04 20:37:00 - 第52轮 初步过滤后，dlFiltered数量：28
-2018-01-04 20:37:02 - 第53轮 初步过滤后，dlFiltered数量：34
-2018-01-04 20:37:05 - 第54轮 初步过滤后，dlFiltered数量：45
-2018-01-04 20:37:08 - 第55轮 初步过滤后，dlFiltered数量：46
-2018-01-04 20:37:11 - 第56轮 初步过滤后，dlFiltered数量：45
+2018-01-06 19:51:09 - Quartz scheduler 'DefaultQuartzScheduler' initialized from default resource file in Quartz package: 'quartz.properties'
+2018-01-06 19:51:09 - Quartz scheduler version: 2.2.3
+2018-01-06 19:51:09 - Scheduler DefaultQuartzScheduler_$_NON_CLUSTERED started.
+2018-01-06 19:51:10 - bidExcecute
+2018-01-06 19:51:15 - bidExcecute
+2018-01-06 19:51:20 - bidExcecute
+2018-01-06 19:51:25 - bidExcecute
+2018-01-06 19:51:30 - bidExcecute
+2018-01-06 19:51:35 - bidExcecute
+2018-01-06 19:51:40 - bidExcecute
+2018-01-06 19:51:45 - bidExcecute
+2018-01-06 19:51:50 - bidExcecute
+2018-01-06 19:51:55 - bidExcecute
+2018-01-06 19:52:00 - bidExcecute
+2018-01-06 19:52:05 - bidExcecute
+2018-01-06 19:52:10 - bidExcecute
+2018-01-06 19:52:15 - bidExcecute
+2018-01-06 19:52:20 - bidExcecute
+2018-01-06 19:52:25 - bidExcecute
+2018-01-06 19:52:30 - bidExcecute
+2018-01-06 19:52:35 - bidExcecute
+2018-01-06 19:52:40 - bidExcecute
+2018-01-06 19:52:45 - bidExcecute
+2018-01-06 19:52:50 - bidExcecute
+2018-01-06 19:52:55 - bidExcecute
+2018-01-06 19:53:00 - bidExcecute
+2018-01-06 19:53:05 - bidExcecute
+2018-01-06 19:53:10 - bidExcecute
+2018-01-06 19:53:15 - bidExcecute
+2018-01-06 19:53:20 - bidExcecute
+2018-01-06 19:53:25 - bidExcecute
+2018-01-06 19:53:30 - bidExcecute
+2018-01-06 19:53:35 - bidExcecute
+2018-01-06 19:53:40 - bidExcecute
+2018-01-06 19:53:45 - bidExcecute
+2018-01-06 19:53:50 - bidExcecute
+2018-01-06 19:53:55 - bidExcecute
+2018-01-06 19:54:00 - bidExcecute
+2018-01-06 19:54:05 - bidExcecute
+2018-01-06 19:54:10 - bidExcecute
+2018-01-06 19:54:15 - bidExcecute
+2018-01-06 19:54:20 - bidExcecute
+2018-01-06 19:54:25 - bidExcecute
+2018-01-06 19:54:30 - bidExcecute
+2018-01-06 19:54:35 - bidExcecute
+2018-01-06 19:54:40 - bidExcecute
+2018-01-06 19:54:45 - bidExcecute
+2018-01-06 19:54:50 - bidExcecute
+2018-01-06 19:54:55 - bidExcecute
+2018-01-06 19:55:00 - bidExcecute
+2018-01-06 19:55:05 - bidExcecute
+2018-01-06 19:55:10 - bidExcecute
+2018-01-06 19:55:15 - bidExcecute
+2018-01-06 19:55:20 - bidExcecute
+2018-01-06 19:55:25 - bidExcecute
+2018-01-06 19:55:30 - bidExcecute
+2018-01-06 19:55:35 - bidExcecute
+2018-01-06 19:55:40 - bidExcecute
+2018-01-06 19:55:45 - bidExcecute
+2018-01-06 19:55:50 - bidExcecute
+2018-01-06 19:55:55 - bidExcecute
+2018-01-06 19:56:00 - bidExcecute
+2018-01-06 19:56:05 - bidExcecute
+2018-01-06 19:56:10 - bidExcecute
+2018-01-06 19:56:15 - bidExcecute
+2018-01-06 19:56:20 - bidExcecute
+2018-01-06 19:56:25 - bidExcecute
+2018-01-06 19:56:30 - bidExcecute
+2018-01-06 19:56:35 - bidExcecute
+2018-01-06 19:56:40 - bidExcecute
+2018-01-06 19:56:45 - bidExcecute
+2018-01-06 19:56:50 - bidExcecute
+2018-01-06 19:56:55 - bidExcecute
+2018-01-06 19:57:00 - bidExcecute
+2018-01-06 19:57:05 - bidExcecute
+2018-01-06 19:57:10 - bidExcecute
+2018-01-06 19:57:15 - bidExcecute
+2018-01-06 19:57:20 - bidExcecute
+2018-01-06 19:57:25 - bidExcecute
+2018-01-06 19:57:30 - bidExcecute
+2018-01-06 19:57:35 - bidExcecute
+2018-01-06 19:57:40 - bidExcecute
+2018-01-06 19:57:45 - bidExcecute
+2018-01-06 19:57:50 - bidExcecute
+2018-01-06 19:57:55 - bidExcecute
+2018-01-06 19:57:57 - bidExcecute
+2018-01-06 19:58:00 - bidExcecute
+2018-01-06 19:58:05 - bidExcecute
+2018-01-06 19:58:10 - bidExcecute
+2018-01-06 19:58:15 - bidExcecute
+2018-01-06 19:58:20 - bidExcecute
+2018-01-06 19:58:25 - bidExcecute
+2018-01-06 19:58:30 - bidExcecute
+2018-01-06 19:58:35 - bidExcecute
+2018-01-06 19:58:40 - bidExcecute
+2018-01-06 19:58:45 - bidExcecute
+2018-01-06 19:58:50 - bidExcecute
+2018-01-06 19:58:55 - bidExcecute
+2018-01-06 19:59:00 - bidExcecute
+2018-01-06 19:59:05 - bidExcecute
+2018-01-06 19:59:10 - bidExcecute
+2018-01-06 19:59:15 - bidExcecute
+2018-01-06 19:59:20 - bidExcecute
+2018-01-06 19:59:25 - bidExcecute
+2018-01-06 19:59:30 - bidExcecute
+2018-01-06 19:59:35 - bidExcecute
+2018-01-06 19:59:40 - bidExcecute
+2018-01-06 19:59:45 - bidExcecute
+2018-01-06 19:59:50 - bidExcecute
+2018-01-06 19:59:55 - bidExcecute
+2018-01-06 20:00:00 - bidExcecute
+2018-01-06 20:00:05 - bidExcecute
+2018-01-06 20:00:10 - bidExcecute
+2018-01-06 20:00:15 - bidExcecute
+2018-01-06 20:00:20 - bidExcecute
+2018-01-06 20:00:25 - bidExcecute
+2018-01-06 20:00:30 - bidExcecute
+2018-01-06 20:00:35 - bidExcecute
+2018-01-06 20:00:40 - bidExcecute
+2018-01-06 20:00:45 - bidExcecute
+2018-01-06 20:00:50 - bidExcecute
+2018-01-06 20:00:55 - bidExcecute
+2018-01-06 20:01:00 - bidExcecute
+2018-01-06 20:01:05 - bidExcecute
+2018-01-06 20:01:10 - bidExcecute
+2018-01-06 20:01:15 - bidExcecute
+2018-01-06 20:01:20 - bidExcecute
+2018-01-06 20:01:25 - bidExcecute
+2018-01-06 20:01:30 - bidExcecute
+2018-01-06 20:01:35 - bidExcecute
+2018-01-06 20:01:40 - bidExcecute
+2018-01-06 20:01:45 - bidExcecute
+2018-01-06 20:01:50 - bidExcecute
+2018-01-06 20:01:55 - bidExcecute
+2018-01-06 20:02:00 - bidExcecute
+2018-01-06 20:02:05 - bidExcecute
+2018-01-06 20:02:10 - bidExcecute
+2018-01-06 20:02:15 - bidExcecute
+2018-01-06 20:02:20 - bidExcecute
+2018-01-06 20:02:25 - bidExcecute
+2018-01-06 20:02:30 - bidExcecute
+2018-01-06 20:02:35 - bidExcecute
+2018-01-06 20:02:40 - bidExcecute
+2018-01-06 20:02:45 - bidExcecute
+2018-01-06 20:02:50 - bidExcecute
+2018-01-06 20:02:55 - bidExcecute
+2018-01-06 20:03:00 - bidExcecute
+2018-01-06 20:03:05 - bidExcecute
+2018-01-06 20:03:10 - bidExcecute
+2018-01-06 20:03:15 - bidExcecute
+2018-01-06 20:03:20 - bidExcecute
+2018-01-06 20:03:25 - bidExcecute
+2018-01-06 20:03:30 - bidExcecute
+2018-01-06 20:03:35 - bidExcecute
+2018-01-06 20:03:40 - bidExcecute
+2018-01-06 20:03:45 - bidExcecute
+2018-01-06 20:03:50 - bidExcecute
+2018-01-06 20:03:55 - bidExcecute
+2018-01-06 20:04:00 - bidExcecute
+2018-01-06 20:04:05 - bidExcecute
+2018-01-06 20:04:10 - bidExcecute
+2018-01-06 20:04:15 - bidExcecute
+2018-01-06 20:04:20 - bidExcecute
+2018-01-06 20:04:25 - bidExcecute
+2018-01-06 20:04:30 - bidExcecute
+2018-01-06 20:04:35 - bidExcecute
+2018-01-06 20:04:40 - bidExcecute
+2018-01-06 20:04:45 - bidExcecute
+2018-01-06 20:04:50 - bidExcecute
+2018-01-06 20:04:55 - bidExcecute
+2018-01-06 20:05:00 - bidExcecute
+2018-01-06 20:05:05 - bidExcecute
+2018-01-06 20:05:10 - bidExcecute
+2018-01-06 20:05:15 - bidExcecute
+2018-01-06 20:05:20 - bidExcecute
+2018-01-06 20:05:25 - bidExcecute
+2018-01-06 20:05:30 - bidExcecute
+2018-01-06 20:05:35 - bidExcecute
+2018-01-06 20:05:40 - bidExcecute
+2018-01-06 20:05:45 - bidExcecute
+2018-01-06 20:05:50 - bidExcecute
+2018-01-06 20:05:55 - bidExcecute
+2018-01-06 20:06:00 - bidExcecute
+2018-01-06 20:06:05 - bidExcecute
+2018-01-06 20:06:10 - bidExcecute
+2018-01-06 20:06:15 - bidExcecute
+2018-01-06 20:06:20 - bidExcecute
+2018-01-06 20:06:25 - bidExcecute
+2018-01-06 20:06:30 - bidExcecute
+2018-01-06 20:06:35 - bidExcecute
+2018-01-06 20:06:39 - Using default implementation for ThreadExecutor
+2018-01-06 20:06:39 - Job execution threads will use class loader of thread: main
+2018-01-06 20:06:39 - Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+2018-01-06 20:06:39 - Quartz Scheduler v.2.2.3 created.
+2018-01-06 20:06:39 - RAMJobStore initialized.
+2018-01-06 20:06:39 - Scheduler meta-data: Quartz Scheduler (v2.2.3) 'DefaultQuartzScheduler' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 1 threads.
+  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
+
+2018-01-06 20:06:39 - Quartz scheduler 'DefaultQuartzScheduler' initialized from default resource file in Quartz package: 'quartz.properties'
+2018-01-06 20:06:39 - Quartz scheduler version: 2.2.3
+2018-01-06 20:06:39 - Scheduler DefaultQuartzScheduler_$_NON_CLUSTERED started.
+2018-01-06 20:06:40 - bidExcecute
+2018-01-06 20:06:40 - bidExcecute
+2018-01-06 20:06:45 - bidExcecute
+2018-01-06 20:06:45 - bidExcecute
+2018-01-06 20:06:50 - bidExcecute
+2018-01-06 20:06:50 - bidExcecute
+2018-01-06 20:06:55 - bidExcecute
+2018-01-06 20:06:55 - bidExcecute
+2018-01-06 20:07:00 - bidExcecute
+2018-01-06 20:07:00 - bidExcecute
+2018-01-06 20:07:05 - bidExcecute
+2018-01-06 20:07:05 - bidExcecute
+2018-01-06 20:07:10 - bidExcecute
+2018-01-06 20:07:10 - bidExcecute
+2018-01-06 20:07:15 - bidExcecute
+2018-01-06 20:07:15 - bidExcecute
+2018-01-06 20:07:20 - bidExcecute
+2018-01-06 20:07:20 - bidExcecute
+2018-01-06 20:07:25 - bidExcecute
+2018-01-06 20:07:25 - bidExcecute
+2018-01-06 20:07:30 - bidExcecute
+2018-01-06 20:07:30 - bidExcecute
+2018-01-06 20:07:35 - bidExcecute
+2018-01-06 20:07:35 - bidExcecute
+2018-01-06 20:07:40 - bidExcecute
+2018-01-06 20:07:40 - bidExcecute
+2018-01-06 20:07:45 - bidExcecute
+2018-01-06 20:07:45 - bidExcecute
+2018-01-06 20:07:50 - bidExcecute
+2018-01-06 20:07:50 - bidExcecute
+2018-01-06 20:07:55 - bidExcecute
+2018-01-06 20:07:55 - bidExcecute
+2018-01-06 20:08:00 - bidExcecute
+2018-01-06 20:08:00 - bidExcecute
+2018-01-06 20:08:05 - bidExcecute
+2018-01-06 20:08:05 - bidExcecute
+2018-01-06 20:08:10 - bidExcecute
+2018-01-06 20:08:10 - bidExcecute
+2018-01-06 20:08:15 - bidExcecute
+2018-01-06 20:08:15 - bidExcecute
+2018-01-06 20:08:20 - bidExcecute
+2018-01-06 20:08:20 - bidExcecute
+2018-01-06 20:08:25 - bidExcecute
+2018-01-06 20:08:25 - bidExcecute
+2018-01-06 20:08:30 - bidExcecute
+2018-01-06 20:08:30 - bidExcecute
+2018-01-06 20:08:35 - bidExcecute
+2018-01-06 20:08:35 - bidExcecute
+2018-01-06 20:08:37 - token is: 8d827e54-8eed-4232-9d18-fe95b98ed4db
+2018-01-06 20:08:37 - refresh token is: 70a35acc-6313-401e-a3ab-2c4b47fdd8d6
+2018-01-06 20:08:40 - bidExcecute
+2018-01-06 20:08:40 - bidExcecute
+2018-01-06 20:08:45 - bidExcecute
+2018-01-06 20:08:45 - bidExcecute
+2018-01-06 20:08:50 - bidExcecute
+2018-01-06 20:08:50 - bidExcecute
+2018-01-06 20:08:55 - bidExcecute
+2018-01-06 20:08:55 - bidExcecute
+2018-01-06 20:09:00 - bidExcecute
+2018-01-06 20:09:00 - bidExcecute
+2018-01-06 20:09:05 - bidExcecute
+2018-01-06 20:09:05 - bidExcecute
+2018-01-06 20:09:10 - bidExcecute
+2018-01-06 20:09:10 - bidExcecute
+2018-01-06 20:09:15 - bidExcecute
+2018-01-06 20:09:15 - bidExcecute
+2018-01-06 20:09:20 - bidExcecute
+2018-01-06 20:09:20 - bidExcecute
+2018-01-06 20:09:25 - bidExcecute
+2018-01-06 20:09:25 - bidExcecute
+2018-01-06 20:09:30 - bidExcecute
+2018-01-06 20:09:30 - bidExcecute
+2018-01-06 20:09:35 - bidExcecute
+2018-01-06 20:09:35 - bidExcecute
+2018-01-06 20:09:40 - bidExcecute
+2018-01-06 20:09:40 - bidExcecute
+2018-01-06 20:09:41 - Using default implementation for ThreadExecutor
+2018-01-06 20:09:41 - Job execution threads will use class loader of thread: main
+2018-01-06 20:09:41 - Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+2018-01-06 20:09:41 - Quartz Scheduler v.2.2.3 created.
+2018-01-06 20:09:41 - RAMJobStore initialized.
+2018-01-06 20:09:41 - Scheduler meta-data: Quartz Scheduler (v2.2.3) 'DefaultQuartzScheduler' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 1 threads.
+  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
+
+2018-01-06 20:09:41 - Quartz scheduler 'DefaultQuartzScheduler' initialized from default resource file in Quartz package: 'quartz.properties'
+2018-01-06 20:09:41 - Quartz scheduler version: 2.2.3
+2018-01-06 20:09:41 - Scheduler DefaultQuartzScheduler_$_NON_CLUSTERED started.
+2018-01-06 20:09:45 - bidExcecute
+2018-01-06 20:09:45 - bidExcecute
+2018-01-06 20:09:45 - bidExcecute
+2018-01-06 20:09:50 - bidExcecute
+2018-01-06 20:09:50 - bidExcecute
+2018-01-06 20:09:50 - bidExcecute
+2018-01-06 20:09:55 - bidExcecute
+2018-01-06 20:09:55 - bidExcecute
+2018-01-06 20:09:55 - bidExcecute
+2018-01-06 20:10:00 - bidExcecute
+2018-01-06 20:10:00 - bidExcecute
+2018-01-06 20:10:00 - bidExcecute
+2018-01-06 20:10:05 - bidExcecute
+2018-01-06 20:10:05 - bidExcecute
+2018-01-06 20:10:05 - bidExcecute
+2018-01-06 20:10:10 - bidExcecute
+2018-01-06 20:10:10 - bidExcecute
+2018-01-06 20:10:10 - bidExcecute
+2018-01-06 20:10:15 - bidExcecute
+2018-01-06 20:10:15 - bidExcecute
+2018-01-06 20:10:15 - bidExcecute
+2018-01-06 20:10:20 - bidExcecute
+2018-01-06 20:10:20 - bidExcecute
+2018-01-06 20:10:25 - bidExcecute
+2018-01-06 20:10:25 - bidExcecute
+2018-01-06 20:10:26 - Using default implementation for ThreadExecutor
+2018-01-06 20:10:26 - Job execution threads will use class loader of thread: main
+2018-01-06 20:10:26 - Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+2018-01-06 20:10:26 - Quartz Scheduler v.2.2.3 created.
+2018-01-06 20:10:26 - RAMJobStore initialized.
+2018-01-06 20:10:26 - Scheduler meta-data: Quartz Scheduler (v2.2.3) 'DefaultQuartzScheduler' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 1 threads.
+  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
+
+2018-01-06 20:10:26 - Quartz scheduler 'DefaultQuartzScheduler' initialized from default resource file in Quartz package: 'quartz.properties'
+2018-01-06 20:10:26 - Quartz scheduler version: 2.2.3
+2018-01-06 20:10:26 - Scheduler DefaultQuartzScheduler_$_NON_CLUSTERED started.
+2018-01-06 20:10:30 - bidExcecute
+2018-01-06 20:10:30 - bidExcecute
+2018-01-06 20:10:30 - bidExcecute
+2018-01-06 20:10:35 - bidExcecute
+2018-01-06 20:10:35 - bidExcecute
+2018-01-06 20:10:35 - bidExcecute
+2018-01-06 20:10:40 - bidExcecute
+2018-01-06 20:10:40 - bidExcecute
+2018-01-06 20:10:40 - bidExcecute
+2018-01-06 20:10:45 - bidExcecute
+2018-01-06 20:10:45 - bidExcecute
+2018-01-06 20:10:45 - bidExcecute
+2018-01-06 20:10:50 - bidExcecute
+2018-01-06 20:10:50 - bidExcecute
+2018-01-06 20:10:50 - bidExcecute
+2018-01-06 20:10:55 - bidExcecute
+2018-01-06 20:10:55 - bidExcecute
+2018-01-06 20:11:00 - bidExcecute
+2018-01-06 20:11:00 - bidExcecute
+2018-01-06 20:11:05 - bidExcecute
+2018-01-06 20:11:05 - bidExcecute
+2018-01-06 20:11:10 - bidExcecute
+2018-01-06 20:11:10 - bidExcecute
+2018-01-06 20:11:15 - bidExcecute
+2018-01-06 20:11:15 - bidExcecute
+2018-01-06 20:11:20 - bidExcecute
+2018-01-06 20:11:20 - bidExcecute
+2018-01-06 20:11:25 - bidExcecute
+2018-01-06 20:11:25 - bidExcecute
+2018-01-06 20:11:30 - bidExcecute
+2018-01-06 20:11:30 - bidExcecute
+2018-01-06 20:11:35 - bidExcecute
+2018-01-06 20:11:35 - bidExcecute
+2018-01-06 20:11:40 - bidExcecute
+2018-01-06 20:11:40 - bidExcecute
+2018-01-06 20:11:45 - bidExcecute
+2018-01-06 20:11:45 - bidExcecute
+2018-01-06 20:11:50 - bidExcecute
+2018-01-06 20:11:50 - bidExcecute
+2018-01-06 20:11:55 - bidExcecute
+2018-01-06 20:11:55 - bidExcecute
+2018-01-06 20:12:00 - bidExcecute
+2018-01-06 20:12:00 - bidExcecute
+2018-01-06 20:12:05 - bidExcecute
+2018-01-06 20:12:05 - bidExcecute
+2018-01-06 20:12:10 - bidExcecute
+2018-01-06 20:12:10 - bidExcecute
+2018-01-06 20:12:15 - bidExcecute
+2018-01-06 20:12:15 - bidExcecute
+2018-01-06 20:12:20 - bidExcecute
+2018-01-06 20:12:20 - bidExcecute
+2018-01-06 20:12:25 - bidExcecute
+2018-01-06 20:12:25 - bidExcecute
+2018-01-06 20:12:30 - bidExcecute
+2018-01-06 20:12:30 - bidExcecute
+2018-01-06 20:12:35 - bidExcecute
+2018-01-06 20:12:35 - bidExcecute
+2018-01-06 20:12:40 - bidExcecute
+2018-01-06 20:12:40 - bidExcecute
+2018-01-06 20:12:45 - bidExcecute
+2018-01-06 20:12:45 - bidExcecute
+2018-01-06 20:12:50 - bidExcecute
+2018-01-06 20:12:50 - bidExcecute
+2018-01-06 20:12:55 - bidExcecute
+2018-01-06 20:12:55 - bidExcecute
+2018-01-06 20:13:00 - bidExcecute
+2018-01-06 20:13:00 - bidExcecute
+2018-01-06 20:13:05 - bidExcecute
+2018-01-06 20:13:05 - bidExcecute
+2018-01-06 20:13:10 - bidExcecute
+2018-01-06 20:13:10 - bidExcecute
+2018-01-06 20:13:15 - bidExcecute
+2018-01-06 20:13:15 - bidExcecute
+2018-01-06 20:13:20 - bidExcecute
+2018-01-06 20:13:20 - bidExcecute
+2018-01-06 20:13:25 - bidExcecute
+2018-01-06 20:13:25 - bidExcecute
+2018-01-06 20:13:29 - Using default implementation for ThreadExecutor
+2018-01-06 20:13:29 - Job execution threads will use class loader of thread: main
+2018-01-06 20:13:29 - Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+2018-01-06 20:13:29 - Quartz Scheduler v.2.2.3 created.
+2018-01-06 20:13:29 - RAMJobStore initialized.
+2018-01-06 20:13:29 - Scheduler meta-data: Quartz Scheduler (v2.2.3) 'DefaultQuartzScheduler' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 1 threads.
+  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
+
+2018-01-06 20:13:29 - Quartz scheduler 'DefaultQuartzScheduler' initialized from default resource file in Quartz package: 'quartz.properties'
+2018-01-06 20:13:29 - Quartz scheduler version: 2.2.3
+2018-01-06 20:13:29 - Scheduler DefaultQuartzScheduler_$_NON_CLUSTERED started.
+2018-01-06 20:13:30 - bidExcecute
+2018-01-06 20:13:30 - bidExcecute
+2018-01-06 20:13:30 - bidExcecute
+2018-01-06 20:13:31 - 可用余额为：7150.27
+2018-01-06 20:13:32 - 标的总数为：0，中风险标的数为：0
+2018-01-06 20:13:32 - debtExcecute
+2018-01-06 20:13:32 - debtOverdueExcecute
+2018-01-06 20:13:32 - 可用余额为：7150.27
+2018-01-06 20:13:32 - 第1轮 初步过滤后，dlFiltered数量：45
+2018-01-06 20:13:35 - bidExcecute
+2018-01-06 20:13:35 - bidExcecute
+2018-01-06 20:13:37 - 第2轮 初步过滤后，dlFiltered数量：37
+2018-01-06 20:13:38 - {"DebtDealId":49821739,"Result":0,"ResultMessage":"恭喜您!成功购买债权1个，金额总计￥52.00"}
+2018-01-06 20:13:40 - bidExcecute
+2018-01-06 20:13:40 - bidExcecute
+2018-01-06 20:13:41 - {"DebtDealId":49821660,"Result":0,"ResultMessage":"恭喜您!成功购买债权1个，金额总计￥104.42"}
+2018-01-06 20:13:42 - 第3轮 初步过滤后，dlFiltered数量：45
+2018-01-06 20:13:45 - bidExcecute
+2018-01-06 20:13:45 - bidExcecute
+2018-01-06 20:13:45 - {"DebtDealId":49821623,"Result":0,"ResultMessage":"恭喜您!成功购买债权1个，金额总计￥104.48"}
+2018-01-06 20:13:48 - {"DebtDealId":49821529,"Result":0,"ResultMessage":"恭喜您!成功购买债权1个，金额总计￥104.54"}
+2018-01-06 20:13:50 - bidExcecute
+2018-01-06 20:13:50 - bidExcecute
+2018-01-06 20:13:50 - 第4轮 初步过滤后，dlFiltered数量：38
+2018-01-06 20:13:54 - 第5轮 初步过滤后，dlFiltered数量：48
+2018-01-06 20:13:55 - bidExcecute
+2018-01-06 20:13:55 - bidExcecute
+2018-01-06 20:13:56 - {"DebtDealId":49821221,"Result":0,"ResultMessage":"恭喜您!成功购买债权1个，金额总计￥83.45"}
+2018-01-06 20:14:00 - bidExcecute
+2018-01-06 20:14:00 - bidExcecute
+2018-01-06 20:14:01 - 第6轮 初步过滤后，dlFiltered数量：40
+2018-01-06 20:14:05 - bidExcecute
+2018-01-06 20:14:05 - bidExcecute
+2018-01-06 20:14:05 - {"DebtDealId":49820883,"Result":0,"ResultMessage":"恭喜您!成功购买债权1个，金额总计￥34.84"}
+2018-01-06 20:14:07 - 第7轮 初步过滤后，dlFiltered数量：39
+2018-01-06 20:14:10 - bidExcecute
+2018-01-06 20:14:10 - bidExcecute
+2018-01-06 20:14:12 - {"DebtDealId":49820654,"Result":0,"ResultMessage":"恭喜您!成功购买债权1个，金额总计￥79.10"}
+2018-01-06 20:14:13 - 第8轮 初步过滤后，dlFiltered数量：24
+2018-01-06 20:14:15 - bidExcecute
+2018-01-06 20:14:15 - bidExcecute
+2018-01-06 20:14:16 - {"DebtDealId":49820479,"Result":0,"ResultMessage":"恭喜您!成功购买债权1个，金额总计￥54.45"}
+2018-01-06 20:14:17 - 第9轮 初步过滤后，dlFiltered数量：16
+2018-01-06 20:14:19 - 第10轮 初步过滤后，dlFiltered数量：12
+2018-01-06 20:14:20 - bidExcecute
+2018-01-06 20:14:20 - bidExcecute
+2018-01-06 20:14:22 - 第11轮 初步过滤后，dlFiltered数量：13
+2018-01-06 20:14:24 - 第12轮 初步过滤后，dlFiltered数量：22
+2018-01-06 20:14:25 - bidExcecute
+2018-01-06 20:14:25 - bidExcecute
+2018-01-06 20:14:27 - 第13轮 初步过滤后，dlFiltered数量：18
+2018-01-06 20:14:28 - 第14轮 初步过滤后，dlFiltered数量：18
+2018-01-06 20:14:30 - bidExcecute
+2018-01-06 20:14:30 - bidExcecute
+2018-01-06 20:14:30 - {"DebtDealId":49819253,"Result":0,"ResultMessage":"恭喜您!成功购买债权1个，金额总计￥35.40"}
+2018-01-06 20:14:31 - 第15轮 初步过滤后，dlFiltered数量：38
+2018-01-06 20:14:34 - 第16轮 初步过滤后，dlFiltered数量：4
+2018-01-06 20:14:35 - bidExcecute
+2018-01-06 20:14:35 - bidExcecute
+2018-01-06 20:14:36 - 第17轮 初步过滤后，dlFiltered数量：10
+2018-01-06 20:14:38 - 第18轮 初步过滤后，dlFiltered数量：15
+2018-01-06 20:14:40 - bidExcecute
+2018-01-06 20:14:40 - bidExcecute
+2018-01-06 20:14:40 - 第19轮 初步过滤后，dlFiltered数量：39
+2018-01-06 20:14:44 - 第20轮 初步过滤后，dlFiltered数量：29
+2018-01-06 20:14:45 - bidExcecute
+2018-01-06 20:14:45 - bidExcecute
+2018-01-06 20:14:46 - {"DebtDealId":49818324,"Result":0,"ResultMessage":"恭喜您!成功购买债权1个，金额总计￥30.81"}
+2018-01-06 20:14:48 - 第21轮 初步过滤后，dlFiltered数量：20
+2018-01-06 20:14:50 - bidExcecute
+2018-01-06 20:14:50 - bidExcecute
+2018-01-06 20:14:50 - {"DebtDealId":49818213,"Result":0,"ResultMessage":"恭喜您!成功购买债权1个，金额总计￥53.56"}
+2018-01-06 20:14:51 - 第22轮 初步过滤后，dlFiltered数量：16
+2018-01-06 20:14:53 - {"DebtDealId":49818089,"Result":0,"ResultMessage":"恭喜您!成功购买债权1个，金额总计￥106.51"}
+2018-01-06 20:14:54 - {"DebtDealId":49818091,"Result":0,"ResultMessage":"恭喜您!成功购买债权1个，金额总计￥53.00"}
+2018-01-06 20:14:55 - bidExcecute
+2018-01-06 20:14:55 - bidExcecute
+2018-01-06 20:14:55 - 第23轮 初步过滤后，dlFiltered数量：28
+2018-01-06 20:14:59 - 第24轮 初步过滤后，dlFiltered数量：40
+2018-01-06 20:15:00 - bidExcecute
+2018-01-06 20:15:00 - bidExcecute
+2018-01-06 20:15:01 - {"DebtDealId":49817722,"Result":0,"ResultMessage":"恭喜您!成功购买债权1个，金额总计￥103.66"}
+2018-01-06 20:15:02 - {"DebtDealId":49817773,"Result":0,"ResultMessage":"恭喜您!成功购买债权1个，金额总计￥30.81"}
+2018-01-06 20:15:04 - {"DebtDealId":49817708,"Result":0,"ResultMessage":"恭喜您!成功购买债权1个，金额总计￥103.71"}
+2018-01-06 20:15:05 - bidExcecute
+2018-01-06 20:15:05 - bidExcecute
+2018-01-06 20:15:08 - {"DebtDealId":49817600,"Result":0,"ResultMessage":"恭喜您!成功购买债权1个，金额总计￥103.71"}
+2018-01-06 20:15:09 - 第25轮 初步过滤后，dlFiltered数量：38
+2018-01-06 20:15:10 - bidExcecute
+2018-01-06 20:15:10 - bidExcecute
+2018-01-06 20:15:12 - {"DebtDealId":49817805,"Result":0,"ResultMessage":"恭喜您!成功购买债权1个，金额总计￥103.49"}
+2018-01-06 20:15:15 - bidExcecute
+2018-01-06 20:15:15 - bidExcecute
+2018-01-06 20:15:16 - 第26轮 初步过滤后，dlFiltered数量：34
+2018-01-06 20:15:17 - {"DebtDealId":49817297,"Result":0,"ResultMessage":"恭喜您!成功购买债权1个，金额总计￥103.88"}
+2018-01-06 20:15:19 - {"DebtDealId":49817302,"Result":0,"ResultMessage":"恭喜您!成功购买债权1个，金额总计￥104.60"}
+2018-01-06 20:15:20 - bidExcecute
+2018-01-06 20:15:20 - bidExcecute
+2018-01-06 20:15:21 - {"DebtDealId":49817085,"Result":0,"ResultMessage":"恭喜您!成功购买债权1个，金额总计￥104.59"}
+2018-01-06 20:15:23 - {"DebtDealId":49817178,"Result":0,"ResultMessage":"恭喜您!成功购买债权1个，金额总计￥30.93"}
+2018-01-06 20:15:24 - 第27轮 初步过滤后，dlFiltered数量：30
+2018-01-06 20:15:25 - bidExcecute
+2018-01-06 20:15:25 - bidExcecute
+2018-01-06 20:15:27 - 第28轮 初步过滤后，dlFiltered数量：29
+2018-01-06 20:15:30 - bidExcecute
+2018-01-06 20:15:30 - bidExcecute
+2018-01-06 20:15:30 - 第29轮 初步过滤后，dlFiltered数量：21
+2018-01-06 20:15:32 - 第30轮 初步过滤后，dlFiltered数量：31
+2018-01-06 20:15:35 - bidExcecute
+2018-01-06 20:15:35 - bidExcecute
+2018-01-06 20:15:35 - 第31轮 初步过滤后，dlFiltered数量：29
+2018-01-06 20:15:38 - {"DebtDealId":49815917,"Result":0,"ResultMessage":"恭喜您!成功购买债权1个，金额总计￥41.46"}
+2018-01-06 20:15:39 - 第32轮 初步过滤后，dlFiltered数量：29
+2018-01-06 20:15:40 - bidExcecute
+2018-01-06 20:15:40 - bidExcecute
+2018-01-06 20:15:43 - {"DebtDealId":49815795,"Result":0,"ResultMessage":"恭喜您!成功购买债权1个，金额总计￥41.48"}
+2018-01-06 20:15:44 - {"DebtDealId":49815780,"Result":0,"ResultMessage":"恭喜您!成功购买债权1个，金额总计￥62.23"}
+2018-01-06 20:15:45 - bidExcecute
+2018-01-06 20:15:45 - bidExcecute
+2018-01-06 20:15:46 - 第33轮 初步过滤后，dlFiltered数量：28
+2018-01-06 20:15:48 - {"DebtDealId":49815626,"Result":0,"ResultMessage":"恭喜您!成功购买债权1个，金额总计￥41.51"}
+2018-01-06 20:15:49 - {"DebtDealId":49815621,"Result":0,"ResultMessage":"恭喜您!成功购买债权1个，金额总计￥41.51"}
+2018-01-06 20:15:50 - bidExcecute
+2018-01-06 20:15:50 - bidExcecute
+2018-01-06 20:15:51 - 第34轮 初步过滤后，dlFiltered数量：31
+2018-01-06 20:15:54 - {"DebtDealId":49815402,"Result":0,"ResultMessage":"恭喜您!成功购买债权1个，金额总计￥31.11"}
+2018-01-06 20:15:55 - bidExcecute
+2018-01-06 20:15:55 - bidExcecute
+2018-01-06 20:15:55 - 第35轮 初步过滤后，dlFiltered数量：31
+2018-01-06 20:15:58 - {"DebtDealId":49815295,"Result":0,"ResultMessage":"恭喜您!成功购买债权1个，金额总计￥41.66"}
+2018-01-06 20:16:00 - bidExcecute
+2018-01-06 20:16:00 - bidExcecute
+2018-01-06 20:16:00 - {"DebtDealId":49815221,"Result":0,"ResultMessage":"恭喜您!成功购买债权1个，金额总计￥30.89"}
+2018-01-06 20:16:01 - 第36轮 初步过滤后，dlFiltered数量：42
+2018-01-06 20:16:03 - {"DebtDealId":49815198,"Result":0,"ResultMessage":"恭喜您!成功购买债权1个，金额总计￥30.89"}
+2018-01-06 20:16:04 - {"DebtDealId":49815148,"Result":0,"ResultMessage":"恭喜您!成功购买债权1个，金额总计￥41.75"}
+2018-01-06 20:16:05 - bidExcecute
+2018-01-06 20:16:05 - bidExcecute
+2018-01-06 20:16:07 - {"DebtDealId":49815022,"Result":0,"ResultMessage":"恭喜您!成功购买债权1个，金额总计￥30.89"}
+2018-01-06 20:16:08 - 第37轮 初步过滤后，dlFiltered数量：41
+2018-01-06 20:16:10 - bidExcecute
+2018-01-06 20:16:10 - bidExcecute
+2018-01-06 20:16:12 - {"DebtDealId":49814974,"Result":0,"ResultMessage":"恭喜您!成功购买债权1个，金额总计￥34.31"}
+2018-01-06 20:16:13 - 第38轮 初步过滤后，dlFiltered数量：41
+2018-01-06 20:16:15 - bidExcecute
+2018-01-06 20:16:15 - bidExcecute
+2018-01-06 20:16:16 - {"DebtDealId":49814841,"Result":0,"ResultMessage":"恭喜您!成功购买债权1个，金额总计￥30.87"}
+2018-01-06 20:16:18 - 第39轮 初步过滤后，dlFiltered数量：34
+2018-01-06 20:16:20 - bidExcecute
+2018-01-06 20:16:20 - bidExcecute
+2018-01-06 20:16:23 - {"DebtDealId":49814726,"Result":0,"ResultMessage":"恭喜您!成功购买债权1个，金额总计￥30.86"}
+2018-01-06 20:16:25 - bidExcecute
+2018-01-06 20:16:25 - bidExcecute
+2018-01-06 20:16:26 - 第40轮 初步过滤后，dlFiltered数量：39
+2018-01-06 20:16:30 - bidExcecute
+2018-01-06 20:16:30 - bidExcecute
+2018-01-06 20:16:30 - 第41轮 初步过滤后，dlFiltered数量：35
+2018-01-06 20:16:34 - {"DebtDealId":49813973,"Result":0,"ResultMessage":"恭喜您!成功购买债权1个，金额总计￥30.95"}
+2018-01-06 20:16:35 - bidExcecute
+2018-01-06 20:16:35 - bidExcecute
+2018-01-06 20:16:36 - 第42轮 初步过滤后，dlFiltered数量：31
+2018-01-06 20:16:39 - 第43轮 初步过滤后，dlFiltered数量：25
+2018-01-06 20:16:40 - bidExcecute
+2018-01-06 20:16:40 - bidExcecute
+2018-01-06 20:16:42 - 第44轮 初步过滤后，dlFiltered数量：29
+2018-01-06 20:16:44 - 第45轮 初步过滤后，dlFiltered数量：27
+2018-01-06 20:16:45 - bidExcecute
+2018-01-06 20:16:45 - bidExcecute
+2018-01-06 20:16:47 - 第46轮 初步过滤后，dlFiltered数量：14
+2018-01-06 20:16:49 - 第47轮 初步过滤后，dlFiltered数量：9
+2018-01-06 20:16:50 - bidExcecute
+2018-01-06 20:16:50 - bidExcecute
+2018-01-06 20:16:50 - 第48轮 初步过滤后，dlFiltered数量：44
+2018-01-06 20:16:55 - bidExcecute
+2018-01-06 20:16:55 - bidExcecute
+2018-01-06 20:16:55 - 第49轮 初步过滤后，dlFiltered数量：42
+2018-01-06 20:16:59 - 第50轮 初步过滤后，dlFiltered数量：25
+2018-01-06 20:17:00 - bidExcecute
+2018-01-06 20:17:00 - bidExcecute
+2018-01-06 20:17:02 - 第51轮 初步过滤后，dlFiltered数量：22
+2018-01-06 20:17:05 - bidExcecute
+2018-01-06 20:17:05 - bidExcecute
+2018-01-06 20:17:05 - 第52轮 初步过滤后，dlFiltered数量：44
+2018-01-06 20:17:09 - 第53轮 初步过滤后，dlFiltered数量：34
+2018-01-06 20:17:10 - bidExcecute
+2018-01-06 20:17:10 - bidExcecute
+2018-01-06 20:17:12 - 第54轮 初步过滤后，dlFiltered数量：35
+2018-01-06 20:17:14 - {"DebtDealId":49811746,"Result":0,"ResultMessage":"恭喜您!成功购买债权1个，金额总计￥34.47"}
+2018-01-06 20:17:15 - bidExcecute
+2018-01-06 20:17:15 - bidExcecute
+2018-01-06 20:17:16 - 第55轮 初步过滤后，dlFiltered数量：21
+2018-01-06 20:17:18 - {"DebtDealId":49811644,"Result":0,"ResultMessage":"恭喜您!成功购买债权1个，金额总计￥63.00"}
+2018-01-06 20:17:19 - {"DebtDealId":49811667,"Result":0,"ResultMessage":"恭喜您!成功购买债权1个，金额总计￥33.98"}
+2018-01-06 20:17:20 - bidExcecute
+2018-01-06 20:17:20 - bidExcecute
+2018-01-06 20:17:21 - 第56轮 初步过滤后，dlFiltered数量：35
+2018-01-06 20:17:24 - {"DebtDealId":49811476,"Result":0,"ResultMessage":"恭喜您!成功购买债权1个，金额总计￥41.28"}
+2018-01-06 20:17:25 - bidExcecute
+2018-01-06 20:17:25 - bidExcecute
+2018-01-06 20:17:26 - 第57轮 初步过滤后，dlFiltered数量：34
+2018-01-06 20:17:30 - bidExcecute
+2018-01-06 20:17:30 - bidExcecute
+2018-01-06 20:17:30 - {"DebtDealId":49811428,"Result":0,"ResultMessage":"恭喜您!成功购买债权1个，金额总计￥34.16"}
+2018-01-06 20:17:34 - 第58轮 初步过滤后，dlFiltered数量：21
+2018-01-06 20:17:35 - bidExcecute
+2018-01-06 20:17:35 - bidExcecute
+2018-01-06 20:17:40 - bidExcecute
+2018-01-06 20:17:40 - bidExcecute
+2018-01-06 20:17:41 - 第59轮 初步过滤后，dlFiltered数量：16
+2018-01-06 20:17:44 - 第60轮 初步过滤后，dlFiltered数量：18
+2018-01-06 20:17:45 - bidExcecute
+2018-01-06 20:17:45 - bidExcecute
+2018-01-06 20:17:46 - 第61轮 初步过滤后，dlFiltered数量：9
+2018-01-06 20:17:48 - 第62轮 初步过滤后，dlFiltered数量：1
+2018-01-06 20:17:49 - 第63轮 初步过滤后，dlFiltered数量：1
+2018-01-06 20:17:50 - bidExcecute
+2018-01-06 20:17:50 - bidExcecute
+2018-01-06 20:17:51 - 第64轮 初步过滤后，dlFiltered数量：17
+2018-01-06 20:17:52 - 第65轮 初步过滤后，dlFiltered数量：21
+2018-01-06 20:17:55 - bidExcecute
+2018-01-06 20:17:55 - bidExcecute
+2018-01-06 20:17:55 - 第66轮 初步过滤后，dlFiltered数量：35
+2018-01-06 20:17:58 - {"DebtDealId":49810527,"Result":0,"ResultMessage":"恭喜您!成功购买债权1个，金额总计￥32.10"}
+2018-01-06 20:17:59 - 第67轮 初步过滤后，dlFiltered数量：12
+2018-01-06 20:18:00 - bidExcecute
+2018-01-06 20:18:00 - bidExcecute
+2018-01-06 20:18:01 - 第68轮 初步过滤后，dlFiltered数量：39
+2018-01-06 20:18:05 - bidExcecute
+2018-01-06 20:18:05 - bidExcecute
+2018-01-06 20:18:05 - 第69轮 初步过滤后，dlFiltered数量：38
+2018-01-06 20:18:09 - 第70轮 初步过滤后，dlFiltered数量：49
+2018-01-06 20:18:10 - bidExcecute
+2018-01-06 20:18:10 - bidExcecute
+2018-01-06 20:18:13 - 第71轮 初步过滤后，dlFiltered数量：33
+2018-01-06 20:18:15 - bidExcecute
+2018-01-06 20:18:15 - bidExcecute
+2018-01-06 20:18:15 - 第72轮 初步过滤后，dlFiltered数量：36
+2018-01-06 20:18:18 - 第73轮 初步过滤后，dlFiltered数量：48
+2018-01-06 20:18:20 - bidExcecute
+2018-01-06 20:18:20 - bidExcecute
+2018-01-06 20:18:21 - 第74轮 初步过滤后，dlFiltered数量：19
+2018-01-06 20:18:23 - {"DebtDealId":49809959,"Result":0,"ResultMessage":"恭喜您!成功购买债权1个，金额总计￥34.20"}
+2018-01-06 20:18:24 - 第75轮 初步过滤后，dlFiltered数量：37
+2018-01-06 20:18:25 - bidExcecute
+2018-01-06 20:18:25 - bidExcecute
+2018-01-06 20:18:28 - 第76轮 初步过滤后，dlFiltered数量：40
+2018-01-06 20:18:30 - bidExcecute
+2018-01-06 20:18:30 - bidExcecute
+2018-01-06 20:18:32 - {"DebtDealId":49809684,"Result":0,"ResultMessage":"恭喜您!成功购买债权1个，金额总计￥36.08"}
+2018-01-06 20:18:34 - 第77轮 初步过滤后，dlFiltered数量：31
+2018-01-06 20:18:35 - bidExcecute
+2018-01-06 20:18:35 - bidExcecute
+2018-01-06 20:18:39 - 第78轮 初步过滤后，dlFiltered数量：17
+2018-01-06 20:18:40 - bidExcecute
+2018-01-06 20:18:40 - bidExcecute
+2018-01-06 20:18:41 - 第79轮 初步过滤后，dlFiltered数量：7
+2018-01-06 20:18:42 - 第80轮 初步过滤后，dlFiltered数量：20
+2018-01-06 20:18:45 - bidExcecute
+2018-01-06 20:18:45 - bidExcecute
+2018-01-06 20:18:45 - 第81轮 初步过滤后，dlFiltered数量：8
+2018-01-06 20:18:47 - 第82轮 初步过滤后，dlFiltered数量：10
+2018-01-06 20:18:49 - 第83轮 初步过滤后，dlFiltered数量：24
+2018-01-06 20:18:50 - bidExcecute
+2018-01-06 20:18:50 - bidExcecute
+2018-01-06 20:18:53 - 第84轮 初步过滤后，dlFiltered数量：10
+2018-01-06 20:18:55 - bidExcecute
+2018-01-06 20:18:55 - bidExcecute
+2018-01-06 20:18:56 - 第85轮 初步过滤后，dlFiltered数量：19
+2018-01-06 20:18:58 - 第86轮 初步过滤后，dlFiltered数量：44
+2018-01-06 20:19:00 - bidExcecute
+2018-01-06 20:19:00 - bidExcecute
+2018-01-06 20:19:02 - 第87轮 初步过滤后，dlFiltered数量：43
+2018-01-06 20:19:05 - bidExcecute
+2018-01-06 20:19:05 - bidExcecute
+2018-01-06 20:19:07 - {"DebtDealId":49808165,"Result":0,"ResultMessage":"恭喜您!成功购买债权1个，金额总计￥35.62"}
+2018-01-06 20:19:10 - bidExcecute
+2018-01-06 20:19:10 - bidExcecute
+2018-01-06 20:19:11 - {"DebtDealId":49808074,"Result":0,"ResultMessage":"恭喜您!成功购买债权1个，金额总计￥35.62"}
+2018-01-06 20:19:14 - 第88轮 初步过滤后，dlFiltered数量：31
+2018-01-06 20:19:15 - bidExcecute
+2018-01-06 20:19:15 - bidExcecute
+2018-01-06 20:19:20 - bidExcecute
+2018-01-06 20:19:20 - bidExcecute
+2018-01-06 20:19:20 - 第89轮 初步过滤后，dlFiltered数量：38
+2018-01-06 20:19:23 - {"DebtDealId":49807639,"Result":0,"ResultMessage":"恭喜您!成功购买债权1个，金额总计￥40.42"}
+2018-01-06 20:19:25 - bidExcecute
+2018-01-06 20:19:25 - bidExcecute
+2018-01-06 20:19:27 - {"DebtDealId":49807494,"Result":0,"ResultMessage":"恭喜您!成功购买债权1个，金额总计￥38.37"}
+2018-01-06 20:19:28 - {"DebtDealId":49807493,"Result":0,"ResultMessage":"恭喜您!成功购买债权1个，金额总计￥38.36"}
+2018-01-06 20:19:30 - bidExcecute
+2018-01-06 20:19:30 - bidExcecute
+2018-01-06 20:19:30 - 第90轮 初步过滤后，dlFiltered数量：48
+2018-01-06 20:19:34 - {"DebtDealId":49807428,"Result":0,"ResultMessage":"恭喜您!成功购买债权1个，金额总计￥41.11"}
+2018-01-06 20:19:35 - bidExcecute
+2018-01-06 20:19:35 - bidExcecute
+2018-01-06 20:19:37 - {"DebtDealId":49807398,"Result":0,"ResultMessage":"恭喜您!成功购买债权1个，金额总计￥128.33"}
+2018-01-06 20:19:38 - {"DebtDealId":49807387,"Result":0,"ResultMessage":"恭喜您!成功购买债权1个，金额总计￥131.22"}
+2018-01-06 20:19:39 - {"DebtDealId":49807384,"Result":0,"ResultMessage":"恭喜您!成功购买债权1个，金额总计￥180.24"}
+2018-01-06 20:19:40 - bidExcecute
+2018-01-06 20:19:40 - bidExcecute
+2018-01-06 20:19:40 - {"DebtDealId":49807395,"Result":0,"ResultMessage":"恭喜您!成功购买债权1个，金额总计￥128.33"}
+2018-01-06 20:19:42 - 第91轮 初步过滤后，dlFiltered数量：34
+2018-01-06 20:19:45 - bidExcecute
+2018-01-06 20:19:45 - bidExcecute
+2018-01-06 20:19:50 - bidExcecute
+2018-01-06 20:19:50 - bidExcecute
+2018-01-06 20:19:50 - 第92轮 初步过滤后，dlFiltered数量：28
+2018-01-06 20:19:52 - {"DebtDealId":49807129,"Result":0,"ResultMessage":"恭喜您!成功购买债权1个，金额总计￥36.10"}
+2018-01-06 20:19:54 - 第93轮 初步过滤后，dlFiltered数量：20
+2018-01-06 20:19:55 - bidExcecute
+2018-01-06 20:19:55 - bidExcecute
+2018-01-06 20:19:56 - 第94轮 初步过滤后，dlFiltered数量：40
+2018-01-06 20:20:00 - bidExcecute
+2018-01-06 20:20:00 - bidExcecute
+2018-01-06 20:20:03 - 第95轮 初步过滤后，dlFiltered数量：35
+2018-01-06 20:20:05 - bidExcecute
+2018-01-06 20:20:05 - bidExcecute
+2018-01-06 20:20:06 - {"DebtDealId":49806586,"Result":0,"ResultMessage":"恭喜您!成功购买债权1个，金额总计￥34.01"}
+2018-01-06 20:20:08 - 第96轮 初步过滤后，dlFiltered数量：36
+2018-01-06 20:20:10 - bidExcecute
+2018-01-06 20:20:10 - bidExcecute
+2018-01-06 20:20:12 - {"DebtDealId":49806484,"Result":0,"ResultMessage":"恭喜您!成功购买债权1个，金额总计￥36.45"}
+2018-01-06 20:20:13 - {"DebtDealId":49806487,"Result":0,"ResultMessage":"恭喜您!成功购买债权1个，金额总计￥36.13"}
+2018-01-06 20:20:14 - 第97轮 初步过滤后，dlFiltered数量：15
+2018-01-06 20:20:15 - bidExcecute
+2018-01-06 20:20:15 - bidExcecute
+2018-01-06 20:20:18 - {"DebtDealId":49806345,"Result":0,"ResultMessage":"恭喜您!成功购买债权1个，金额总计￥52.00"}
+2018-01-06 20:20:18 - 第98轮 初步过滤后，dlFiltered数量：8
+2018-01-06 20:20:20 - bidExcecute
+2018-01-06 20:20:20 - bidExcecute
+2018-01-06 20:20:20 - 第99轮 初步过滤后，dlFiltered数量：25
+2018-01-06 20:20:22 - 第100轮 初步过滤后，dlFiltered数量：13
+2018-01-06 20:20:24 - 第101轮 初步过滤后，dlFiltered数量：38
+2018-01-06 20:20:25 - bidExcecute
+2018-01-06 20:20:25 - bidExcecute
+2018-01-06 20:20:28 - 第102轮 初步过滤后，dlFiltered数量：45
+2018-01-06 20:20:30 - bidExcecute
+2018-01-06 20:20:30 - bidExcecute
+2018-01-06 20:20:33 - 第103轮 初步过滤后，dlFiltered数量：38
+2018-01-06 20:20:35 - bidExcecute
+2018-01-06 20:20:35 - bidExcecute
+2018-01-06 20:20:36 - 第104轮 初步过滤后，dlFiltered数量：47
+2018-01-06 20:20:40 - bidExcecute
+2018-01-06 20:20:40 - bidExcecute
+2018-01-06 20:20:41 - {"DebtDealId":49805668,"Result":0,"ResultMessage":"恭喜您!成功购买债权1个，金额总计￥44.18"}
+2018-01-06 20:20:42 - 第105轮 初步过滤后，dlFiltered数量：35
+2018-01-06 20:20:45 - bidExcecute
+2018-01-06 20:20:45 - bidExcecute
+2018-01-06 20:20:45 - {"DebtDealId":49805464,"Result":0,"ResultMessage":"恭喜您!成功购买债权1个，金额总计￥48.40"}
+2018-01-06 20:20:48 - 第106轮 初步过滤后，dlFiltered数量：38
+2018-01-06 20:20:50 - bidExcecute
+2018-01-06 20:20:50 - bidExcecute
+2018-01-06 20:20:55 - bidExcecute
+2018-01-06 20:20:55 - bidExcecute
+2018-01-06 20:20:57 - 第107轮 初步过滤后，dlFiltered数量：45
+2018-01-06 20:21:00 - bidExcecute
+2018-01-06 20:21:00 - bidExcecute
+2018-01-06 20:21:00 - {"DebtDealId":49805201,"Result":0,"ResultMessage":"恭喜您!成功购买债权1个，金额总计￥51.50"}
+2018-01-06 20:21:03 - {"DebtDealId":49805057,"Result":0,"ResultMessage":"恭喜您!成功购买债权1个，金额总计￥33.96"}
+2018-01-06 20:21:05 - bidExcecute
+2018-01-06 20:21:05 - bidExcecute
+2018-01-06 20:21:06 - 第108轮 初步过滤后，dlFiltered数量：44
+2018-01-06 20:21:10 - bidExcecute
+2018-01-06 20:21:10 - bidExcecute
+2018-01-06 20:21:10 - 第109轮 初步过滤后，dlFiltered数量：34
+2018-01-06 20:21:13 - {"DebtDealId":49804711,"Result":0,"ResultMessage":"恭喜您!成功购买债权1个，金额总计￥54.43"}
+2018-01-06 20:21:15 - bidExcecute
+2018-01-06 20:21:15 - bidExcecute
+2018-01-06 20:21:15 - 第110轮 初步过滤后，dlFiltered数量：22
+2018-01-06 20:21:19 - 第111轮 初步过滤后，dlFiltered数量：29
+2018-01-06 20:21:20 - bidExcecute
+2018-01-06 20:21:20 - bidExcecute
+2018-01-06 20:21:22 - 第112轮 初步过滤后，dlFiltered数量：40
+2018-01-06 20:21:24 - {"DebtDealId":49804185,"Result":0,"ResultMessage":"恭喜您!成功购买债权1个，金额总计￥35.72"}
+2018-01-06 20:21:25 - bidExcecute
+2018-01-06 20:21:25 - bidExcecute
+2018-01-06 20:21:27 - {"DebtDealId":49804178,"Result":0,"ResultMessage":"恭喜您!成功购买债权1个，金额总计￥68.67"}
+2018-01-06 20:21:29 - 第113轮 初步过滤后，dlFiltered数量：43
+2018-01-06 20:21:30 - bidExcecute
+2018-01-06 20:21:30 - bidExcecute
+2018-01-06 20:21:34 - 第114轮 初步过滤后，dlFiltered数量：27
+2018-01-06 20:21:35 - bidExcecute
+2018-01-06 20:21:35 - bidExcecute
+2018-01-06 20:21:38 - {"DebtDealId":49803487,"Result":0,"ResultMessage":"恭喜您!成功购买债权1个，金额总计￥38.09"}
+2018-01-06 20:21:39 - {"DebtDealId":49803512,"Result":0,"ResultMessage":"恭喜您!成功购买债权1个，金额总计￥42.02"}
+2018-01-06 20:21:40 - bidExcecute
+2018-01-06 20:21:40 - bidExcecute
+2018-01-06 20:21:40 - 第115轮 初步过滤后，dlFiltered数量：36
+2018-01-06 20:21:42 - {"DebtDealId":49803452,"Result":0,"ResultMessage":"恭喜您!成功购买债权1个，金额总计￥35.70"}
+2018-01-06 20:21:44 - 第116轮 初步过滤后，dlFiltered数量：47
+2018-01-06 20:21:45 - bidExcecute
+2018-01-06 20:21:45 - bidExcecute
+2018-01-06 20:21:48 - 第117轮 初步过滤后，dlFiltered数量：36
+2018-01-06 20:21:50 - bidExcecute
+2018-01-06 20:21:50 - bidExcecute
+2018-01-06 20:21:51 - 第118轮 初步过滤后，dlFiltered数量：37
+2018-01-06 20:21:55 - bidExcecute
+2018-01-06 20:21:55 - bidExcecute
+2018-01-06 20:21:55 - {"DebtDealId":49802665,"Result":0,"ResultMessage":"恭喜您!成功购买债权1个，金额总计￥76.59"}
+2018-01-06 20:21:56 - 第119轮 初步过滤后，dlFiltered数量：21
+2018-01-06 20:22:00 - bidExcecute
+2018-01-06 20:22:00 - bidExcecute
+2018-01-06 20:22:00 - 第120轮 初步过滤后，dlFiltered数量：32
+2018-01-06 20:22:05 - bidExcecute
+2018-01-06 20:22:05 - bidExcecute
+2018-01-06 20:22:06 - 第121轮 初步过滤后，dlFiltered数量：32
+2018-01-06 20:22:09 - 第122轮 初步过滤后，dlFiltered数量：30
+2018-01-06 20:22:10 - bidExcecute
+2018-01-06 20:22:10 - bidExcecute
+2018-01-06 20:22:13 - 第123轮 初步过滤后，dlFiltered数量：34
+2018-01-06 20:22:15 - bidExcecute
+2018-01-06 20:22:15 - bidExcecute
+2018-01-06 20:22:19 - {"DebtDealId":49801954,"Result":0,"ResultMessage":"恭喜您!成功购买债权1个，金额总计￥35.73"}
+2018-01-06 20:22:20 - bidExcecute
+2018-01-06 20:22:20 - bidExcecute
+2018-01-06 20:22:20 - {"DebtDealId":49801933,"Result":0,"ResultMessage":"恭喜您!成功购买债权1个，金额总计￥35.73"}
+2018-01-06 20:22:22 - 第124轮 初步过滤后，dlFiltered数量：30
+2018-01-06 20:22:24 - {"DebtDealId":49801906,"Result":0,"ResultMessage":"恭喜您!成功购买债权1个，金额总计￥33.99"}
+2018-01-06 20:22:25 - bidExcecute
+2018-01-06 20:22:25 - bidExcecute
+2018-01-06 20:22:28 - 第125轮 初步过滤后，dlFiltered数量：19
+2018-01-06 20:22:30 - bidExcecute
+2018-01-06 20:22:30 - bidExcecute
+2018-01-06 20:22:30 - 第126轮 初步过滤后，dlFiltered数量：30
+2018-01-06 20:22:34 - 第127轮 初步过滤后，dlFiltered数量：30
+2018-01-06 20:22:35 - bidExcecute
+2018-01-06 20:22:35 - bidExcecute
+2018-01-06 20:23:03 - Using default implementation for ThreadExecutor
+2018-01-06 20:23:03 - Job execution threads will use class loader of thread: main
+2018-01-06 20:23:03 - Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+2018-01-06 20:23:03 - Quartz Scheduler v.2.2.3 created.
+2018-01-06 20:23:03 - RAMJobStore initialized.
+2018-01-06 20:23:03 - Scheduler meta-data: Quartz Scheduler (v2.2.3) 'DefaultQuartzScheduler' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 1 threads.
+  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
+
+2018-01-06 20:23:03 - Quartz scheduler 'DefaultQuartzScheduler' initialized from default resource file in Quartz package: 'quartz.properties'
+2018-01-06 20:23:03 - Quartz scheduler version: 2.2.3
+2018-01-06 20:23:03 - Scheduler DefaultQuartzScheduler_$_NON_CLUSTERED started.
+2018-01-06 20:23:05 - bidExcecute
+2018-01-06 20:23:06 - 可用余额为：3069.38
+2018-01-06 20:23:06 - 标的总数为：0，中风险标的数为：0
+2018-01-06 20:23:06 - debtExcecute
+2018-01-06 20:23:06 - debtOverdueExcecute
+2018-01-06 20:23:07 - 可用余额为：3069.38
+2018-01-06 20:23:08 - 第1轮 初步过滤后，dlFiltered数量：29
+2018-01-06 20:23:11 - 第2轮 初步过滤后，dlFiltered数量：18
+2018-01-06 20:23:13 - 第3轮 初步过滤后，dlFiltered数量：9
+2018-01-06 20:23:15 - 第4轮 初步过滤后，dlFiltered数量：14
+2018-01-06 20:23:17 - 第5轮 初步过滤后，dlFiltered数量：11
+2018-01-06 20:23:19 - 第6轮 初步过滤后，dlFiltered数量：22
+2018-01-06 20:23:21 - 第7轮 初步过滤后，dlFiltered数量：10
+2018-01-06 21:34:19 - Using default implementation for ThreadExecutor
+2018-01-06 21:34:19 - Job execution threads will use class loader of thread: main
+2018-01-06 21:34:19 - Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+2018-01-06 21:34:19 - Quartz Scheduler v.2.2.3 created.
+2018-01-06 21:34:19 - RAMJobStore initialized.
+2018-01-06 21:34:19 - Scheduler meta-data: Quartz Scheduler (v2.2.3) 'DefaultQuartzScheduler' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 1 threads.
+  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
+
+2018-01-06 21:34:19 - Quartz scheduler 'DefaultQuartzScheduler' initialized from default resource file in Quartz package: 'quartz.properties'
+2018-01-06 21:34:19 - Quartz scheduler version: 2.2.3
+2018-01-06 21:34:19 - Scheduler DefaultQuartzScheduler_$_NON_CLUSTERED started.
+2018-01-06 21:34:20 - bidExcecute
+2018-01-06 21:34:21 - 可用余额为：3663.43
+2018-01-06 21:34:21 - 标的总数为：0，中风险标的数为：0
+2018-01-06 21:34:21 - debtExcecute
+2018-01-06 21:34:21 - debtOverdueExcecute
+2018-01-06 21:34:22 - 可用余额为：3663.43
+2018-01-06 21:34:22 - 第1轮 初步过滤后，dlFiltered数量：16
+2018-01-06 21:34:25 - 第2轮 初步过滤后，dlFiltered数量：27
+2018-01-06 21:34:28 - 第3轮 初步过滤后，dlFiltered数量：22
+2018-01-06 21:34:30 - 第4轮 初步过滤后，dlFiltered数量：14
+2018-01-06 21:34:31 - {"DebtDealId":49833392,"Result":0,"ResultMessage":"恭喜您!成功购买债权1个，金额总计￥34.54"}
+2018-01-06 21:34:33 - {"DebtDealId":49833384,"Result":0,"ResultMessage":"恭喜您!成功购买债权1个，金额总计￥34.54"}
+2018-01-06 21:34:34 - 第5轮 初步过滤后，dlFiltered数量：20
+2018-01-06 21:34:36 - 第6轮 初步过滤后，dlFiltered数量：18
+2018-01-06 21:34:38 - 第7轮 初步过滤后，dlFiltered数量：25
+2018-01-06 21:34:41 - {"DebtDealId":49833117,"Result":0,"ResultMessage":"恭喜您!成功购买债权1个，金额总计￥35.82"}
+2018-01-06 21:34:42 - 第8轮 初步过滤后，dlFiltered数量：31
+2018-01-06 21:34:45 - 第9轮 初步过滤后，dlFiltered数量：33
+2018-01-06 21:34:47 - {"DebtDealId":49833014,"Result":0,"ResultMessage":"恭喜您!成功购买债权1个，金额总计￥36.69"}
+2018-01-06 21:34:48 - {"DebtDealId":49832934,"Result":0,"ResultMessage":"恭喜您!成功购买债权1个，金额总计￥91.44"}
+2018-01-06 21:34:50 - 第10轮 初步过滤后，dlFiltered数量：27
+2018-01-06 21:34:55 - 第11轮 初步过滤后，dlFiltered数量：32
+2018-01-06 21:34:59 - 第12轮 初步过滤后，dlFiltered数量：41
+2018-01-06 21:35:02 - {"DebtDealId":49832729,"Result":0,"ResultMessage":"恭喜您!成功购买债权1个，金额总计￥35.40"}
+2018-01-06 21:35:03 - 第13轮 初步过滤后，dlFiltered数量：25
+2018-01-06 21:35:06 - 第14轮 初步过滤后，dlFiltered数量：7
+2018-01-06 21:35:08 - 第15轮 初步过滤后，dlFiltered数量：37
+2018-01-06 21:35:11 - 第16轮 初步过滤后，dlFiltered数量：20
+2018-01-06 21:35:13 - 第17轮 初步过滤后，dlFiltered数量：12
+2018-01-06 21:35:15 - 第18轮 初步过滤后，dlFiltered数量：47
+2018-01-06 21:35:19 - 第19轮 初步过滤后，dlFiltered数量：21
+2018-01-06 21:35:22 - {"DebtDealId":49832157,"Result":0,"ResultMessage":"恭喜您!成功购买债权1个，金额总计￥37.11"}
+2018-01-06 21:35:23 - 第20轮 初步过滤后，dlFiltered数量：12
+2018-01-06 21:35:26 - 第21轮 初步过滤后，dlFiltered数量：39
+2018-01-06 21:35:29 - 第22轮 初步过滤后，dlFiltered数量：39
+2018-01-06 21:35:33 - 第23轮 初步过滤后，dlFiltered数量：42
+2018-01-06 21:35:37 - 第24轮 初步过滤后，dlFiltered数量：38
+2018-01-06 21:35:40 - 第25轮 初步过滤后，dlFiltered数量：38
+2018-01-06 21:35:43 - {"DebtDealId":49831381,"Result":0,"ResultMessage":"恭喜您!成功购买债权1个，金额总计￥104.40"}
+2018-01-06 21:35:44 - 第26轮 初步过滤后，dlFiltered数量：20
+2018-01-06 21:35:46 - 第27轮 初步过滤后，dlFiltered数量：13
+2018-01-06 21:35:49 - 第28轮 初步过滤后，dlFiltered数量：23
+2018-01-06 21:35:51 - 第29轮 初步过滤后，dlFiltered数量：29
+2018-01-06 21:35:54 - {"DebtDealId":49830851,"Result":0,"ResultMessage":"恭喜您!成功购买债权1个，金额总计￥100.95"}
+2018-01-06 21:35:55 - 第30轮 初步过滤后，dlFiltered数量：35
+2018-01-06 21:36:01 - 第31轮 初步过滤后，dlFiltered数量：31
+2018-01-06 21:36:03 - 第32轮 初步过滤后，dlFiltered数量：30
+2018-01-06 21:36:06 - 第33轮 初步过滤后，dlFiltered数量：20
+2018-01-06 21:36:08 - 第34轮 初步过滤后，dlFiltered数量：23
+2018-01-06 21:36:11 - 第35轮 初步过滤后，dlFiltered数量：18
+2018-01-06 21:36:13 - 第36轮 初步过滤后，dlFiltered数量：44
+2018-01-06 21:36:17 - 第37轮 初步过滤后，dlFiltered数量：15
+2018-01-06 21:36:19 - 第38轮 初步过滤后，dlFiltered数量：18
+2018-01-06 21:36:20 - 第39轮 初步过滤后，dlFiltered数量：14
+2018-01-06 21:36:22 - 第40轮 初步过滤后，dlFiltered数量：16
+2018-01-06 21:36:24 - 第41轮 初步过滤后，dlFiltered数量：9
+2018-01-06 21:36:25 - 第42轮 初步过滤后，dlFiltered数量：20
+2018-01-06 21:36:27 - 第43轮 初步过滤后，dlFiltered数量：41
+2018-01-06 21:36:28 - {"DebtDealId":49829674,"Result":0,"ResultMessage":"恭喜您!成功购买债权1个，金额总计￥103.44"}
+2018-01-06 21:36:31 - 第44轮 初步过滤后，dlFiltered数量：30
+2018-01-06 21:36:33 - 第45轮 初步过滤后，dlFiltered数量：30
+2018-01-06 21:36:36 - 第46轮 初步过滤后，dlFiltered数量：34
+2018-01-06 21:36:38 - {"DebtDealId":49829060,"Result":0,"ResultMessage":"恭喜您!成功购买债权1个，金额总计￥31.26"}
+2018-01-06 21:36:39 - {"DebtDealId":49829051,"Result":0,"ResultMessage":"恭喜您!成功购买债权1个，金额总计￥31.25"}
+2018-01-06 21:36:40 - 第47轮 初步过滤后，dlFiltered数量：23
+2018-01-06 21:36:42 - 第48轮 初步过滤后，dlFiltered数量：22
+2018-01-06 21:36:45 - 第49轮 初步过滤后，dlFiltered数量：30
+2018-01-06 21:36:48 - {"DebtDealId":49828441,"Result":0,"ResultMessage":"恭喜您!成功购买债权1个，金额总计￥38.69"}
+2018-01-06 21:36:49 - {"DebtDealId":49828334,"Result":0,"ResultMessage":"恭喜您!成功购买债权1个，金额总计￥40.40"}
+2018-01-06 21:36:50 - 第50轮 初步过滤后，dlFiltered数量：12
+2018-01-06 21:36:51 - 第51轮 初步过滤后，dlFiltered数量：30
+2018-01-06 21:36:54 - 第52轮 初步过滤后，dlFiltered数量：33
+2018-01-06 21:36:56 - {"DebtDealId":49827985,"Result":0,"ResultMessage":"恭喜您!成功购买债权1个，金额总计￥34.52"}
+2018-01-06 21:36:58 - {"DebtDealId":49827880,"Result":0,"ResultMessage":"恭喜您!成功购买债权1个，金额总计￥34.70"}
+2018-01-06 21:36:59 - 第53轮 初步过滤后，dlFiltered数量：16
+2018-01-06 21:37:01 - 第54轮 初步过滤后，dlFiltered数量：11
+2018-01-06 21:37:04 - 第55轮 初步过滤后，dlFiltered数量：10
+2018-01-06 21:37:06 - 第56轮 初步过滤后，dlFiltered数量：41
+2018-01-06 21:37:08 - {"DebtDealId":49827195,"Result":0,"ResultMessage":"恭喜您!成功购买债权1个，金额总计￥33.91"}
+2018-01-06 21:37:11 - 第57轮 初步过滤后，dlFiltered数量：38
+2018-01-06 21:37:13 - 第58轮 初步过滤后，dlFiltered数量：28
+2018-01-06 21:37:16 - 第59轮 初步过滤后，dlFiltered数量：35
+2018-01-06 21:37:19 - 第60轮 初步过滤后，dlFiltered数量：35
+2018-01-06 21:37:22 - 第61轮 初步过滤后，dlFiltered数量：40
+2018-01-06 21:37:25 - 第62轮 初步过滤后，dlFiltered数量：44
+2018-01-06 21:37:28 - {"DebtDealId":49826214,"Result":0,"ResultMessage":"恭喜您!成功购买债权1个，金额总计￥67.90"}
+2018-01-06 21:37:31 - 第63轮 初步过滤后，dlFiltered数量：46
+2018-01-06 21:37:34 - {"DebtDealId":49825982,"Result":0,"ResultMessage":"恭喜您!成功购买债权1个，金额总计￥39.32"}
+2018-01-06 21:37:35 - 第64轮 初步过滤后，dlFiltered数量：46
+2018-01-06 21:37:39 - 第65轮 初步过滤后，dlFiltered数量：31
+2018-01-06 21:37:43 - 第66轮 初步过滤后，dlFiltered数量：36
+2018-01-06 21:37:46 - 第67轮 初步过滤后，dlFiltered数量：23
+2018-01-06 21:37:49 - 第68轮 初步过滤后，dlFiltered数量：27
+2018-01-06 21:37:51 - 第69轮 初步过滤后，dlFiltered数量：21
+2018-01-06 21:37:54 - 第70轮 初步过滤后，dlFiltered数量：9
+2018-01-06 21:37:55 - 第71轮 初步过滤后，dlFiltered数量：14
+2018-01-06 21:37:57 - 第72轮 初步过滤后，dlFiltered数量：23
+2018-01-06 21:38:00 - 第73轮 初步过滤后，dlFiltered数量：4
+2018-01-06 21:38:01 - 第74轮 初步过滤后，dlFiltered数量：27
+2018-01-06 21:38:03 - 第75轮 初步过滤后，dlFiltered数量：27
+2018-01-06 21:38:07 - 第76轮 初步过滤后，dlFiltered数量：9
+2018-01-06 21:38:09 - 第77轮 初步过滤后，dlFiltered数量：11
+2018-01-06 21:38:13 - 第78轮 初步过滤后，dlFiltered数量：23
+2018-01-06 21:38:17 - 第79轮 初步过滤后，dlFiltered数量：12
+2018-01-06 21:38:20 - 第80轮 初步过滤后，dlFiltered数量：33
+2018-01-06 21:38:23 - {"DebtDealId":49824586,"Result":0,"ResultMessage":"恭喜您!成功购买债权1个，金额总计￥50.72"}
+2018-01-06 21:38:27 - {"DebtDealId":49824571,"Result":0,"ResultMessage":"恭喜您!成功购买债权1个，金额总计￥68.06"}
+2018-01-06 21:38:29 - 第81轮 初步过滤后，dlFiltered数量：16
+2018-01-06 21:38:31 - 第82轮 初步过滤后，dlFiltered数量：30
+2018-01-06 21:38:34 - 第83轮 初步过滤后，dlFiltered数量：10
+2018-01-06 21:38:35 - 第84轮 初步过滤后，dlFiltered数量：22
+2018-01-06 21:38:40 - {"DebtDealId":49824242,"Result":0,"ResultMessage":"恭喜您!成功购买债权1个，金额总计￥139.03"}
+2018-01-06 21:38:43 - 第85轮 初步过滤后，dlFiltered数量：42
+2018-01-06 21:38:48 - {"DebtDealId":49824123,"Result":0,"ResultMessage":"恭喜您!成功购买债权1个，金额总计￥34.09"}
+2018-01-06 21:38:49 - 第86轮 初步过滤后，dlFiltered数量：21
+2018-01-06 21:38:52 - 第87轮 初步过滤后，dlFiltered数量：44
+2018-01-06 21:38:56 - {"DebtDealId":49823956,"Result":0,"ResultMessage":"恭喜您!成功购买债权1个，金额总计￥34.74"}
+2018-01-06 21:38:57 - 第88轮 初步过滤后，dlFiltered数量：18
+2018-01-06 21:38:59 - {"DebtDealId":49823879,"Result":0,"ResultMessage":"恭喜您!成功购买债权1个，金额总计￥68.01"}
+2018-01-06 21:39:01 - 第89轮 初步过滤后，dlFiltered数量：19
+2018-01-06 21:39:04 - 第90轮 初步过滤后，dlFiltered数量：24
+2018-01-06 21:39:08 - 第91轮 初步过滤后，dlFiltered数量：22
+2018-01-06 21:39:11 - 第92轮 初步过滤后，dlFiltered数量：35
+2018-01-06 21:39:15 - 第93轮 初步过滤后，dlFiltered数量：38
+2018-01-06 21:39:19 - {"DebtDealId":49823116,"Result":0,"ResultMessage":"恭喜您!成功购买债权1个，金额总计￥53.27"}
+2018-01-06 21:39:24 - 第94轮 初步过滤后，dlFiltered数量：19
+2018-01-06 21:39:26 - 第95轮 初步过滤后，dlFiltered数量：15
+2018-01-06 21:39:29 - 第96轮 初步过滤后，dlFiltered数量：8
+2018-01-06 21:39:30 - 第97轮 初步过滤后，dlFiltered数量：17
+2018-01-06 21:39:32 - 第98轮 初步过滤后，dlFiltered数量：11
+2018-01-06 21:39:34 - 第99轮 初步过滤后，dlFiltered数量：25
+2018-01-06 21:39:38 - 第100轮 初步过滤后，dlFiltered数量：16
+2018-01-06 21:39:40 - 第101轮 初步过滤后，dlFiltered数量：13
+2018-01-06 21:39:42 - {"DebtDealId":49822270,"Result":0,"ResultMessage":"恭喜您!成功购买债权1个，金额总计￥104.30"}
+2018-01-06 21:39:44 - {"DebtDealId":49822261,"Result":0,"ResultMessage":"恭喜您!成功购买债权1个，金额总计￥33.99"}
+2018-01-06 21:39:45 - 第102轮 初步过滤后，dlFiltered数量：14
+2018-01-06 21:39:49 - {"DebtDealId":49822169,"Result":0,"ResultMessage":"恭喜您!成功购买债权1个，金额总计￥33.99"}
+2018-01-06 21:39:50 - {"DebtDealId":49822171,"Result":0,"ResultMessage":"恭喜您!成功购买债权1个，金额总计￥33.99"}
+2018-01-06 21:39:51 - 第103轮 初步过滤后，dlFiltered数量：37
+2018-01-06 21:39:55 - 第104轮 初步过滤后，dlFiltered数量：26
+2018-01-06 21:39:59 - {"DebtDealId":49821949,"Result":0,"ResultMessage":"恭喜您!成功购买债权1个，金额总计￥34.01"}
+2018-01-06 21:40:01 - {"DebtDealId":49821944,"Result":0,"ResultMessage":"恭喜您!成功购买债权1个，金额总计￥34.01"}
+2018-01-06 21:40:02 - 第105轮 初步过滤后，dlFiltered数量：46
+2018-01-06 21:40:07 - 第106轮 初步过滤后，dlFiltered数量：42
+2018-01-06 21:40:12 - 第107轮 初步过滤后，dlFiltered数量：42
+2018-01-06 21:40:16 - 第108轮 初步过滤后，dlFiltered数量：47
+2018-01-06 21:40:24 - 第109轮 初步过滤后，dlFiltered数量：40
+2018-01-06 21:40:30 - 第110轮 初步过滤后，dlFiltered数量：43
+2018-01-06 21:40:34 - {"DebtDealId":49820634,"Result":0,"ResultMessage":"恭喜您!成功购买债权1个，金额总计￥79.18"}
+2018-01-06 21:40:36 - 第111轮 初步过滤后，dlFiltered数量：12
+2018-01-06 21:40:40 - 第112轮 初步过滤后，dlFiltered数量：14
+2018-01-06 21:40:42 - 第113轮 初步过滤后，dlFiltered数量：19
+2018-01-06 21:40:46 - 第114轮 初步过滤后，dlFiltered数量：22
+2018-01-06 21:40:49 - 第115轮 初步过滤后，dlFiltered数量：13
+2018-01-06 21:40:51 - 第116轮 初步过滤后，dlFiltered数量：19
+2018-01-06 21:40:52 - 第117轮 初步过滤后，dlFiltered数量：31
+2018-01-06 21:40:55 - 第118轮 初步过滤后，dlFiltered数量：7
+2018-01-06 21:40:57 - 第119轮 初步过滤后，dlFiltered数量：16
+2018-01-06 21:41:00 - 第120轮 初步过滤后，dlFiltered数量：37
+2018-01-06 21:41:03 - 第121轮 初步过滤后，dlFiltered数量：30
+2018-01-06 21:41:08 - 第122轮 初步过滤后，dlFiltered数量：15
+2018-01-06 21:41:10 - 第123轮 初步过滤后，dlFiltered数量：23
+2018-01-06 21:41:15 - 第124轮 初步过滤后，dlFiltered数量：37
+2018-01-06 21:41:22 - 第125轮 初步过滤后，dlFiltered数量：37
+2018-01-06 21:41:25 - {"DebtDealId":49817441,"Result":0,"ResultMessage":"恭喜您!成功购买债权1个，金额总计￥103.82"}
+2018-01-06 21:41:26 - {"DebtDealId":49817410,"Result":0,"ResultMessage":"恭喜您!成功购买债权1个，金额总计￥103.77"}
+2018-01-06 21:41:29 - 第126轮 初步过滤后，dlFiltered数量：30
+2018-01-06 21:41:32 - 第127轮 初步过滤后，dlFiltered数量：27
+2018-01-06 21:41:36 - 第128轮 初步过滤后，dlFiltered数量：25
+2018-01-06 21:41:40 - 第129轮 初步过滤后，dlFiltered数量：30
+2018-01-06 21:41:45 - 第130轮 初步过滤后，dlFiltered数量：30
+2018-01-06 21:41:49 - 第131轮 初步过滤后，dlFiltered数量：31
+2018-01-06 21:41:56 - 第132轮 初步过滤后，dlFiltered数量：25
+2018-01-06 21:41:59 - 第133轮 初步过滤后，dlFiltered数量：32
+2018-01-06 21:42:03 - 第134轮 初步过滤后，dlFiltered数量：31
+2018-01-06 21:42:07 - 第135轮 初步过滤后，dlFiltered数量：42
+2018-01-06 21:42:13 - 第136轮 初步过滤后，dlFiltered数量：42
+2018-01-06 21:42:17 - 第137轮 初步过滤后，dlFiltered数量：36
+2018-01-06 21:42:20 - 第138轮 初步过滤后，dlFiltered数量：37
+2018-01-06 21:42:24 - 第139轮 初步过滤后，dlFiltered数量：27
+2018-01-06 21:42:28 - 第140轮 初步过滤后，dlFiltered数量：20
+2018-01-06 21:42:30 - 第141轮 初步过滤后，dlFiltered数量：45
+2018-01-06 21:42:41 - 第142轮 初步过滤后，dlFiltered数量：11
+2018-01-06 21:42:45 - 第143轮 初步过滤后，dlFiltered数量：16
+2018-01-06 21:42:47 - 第144轮 初步过滤后，dlFiltered数量：17
+2018-01-06 21:42:50 - 第145轮 初步过滤后，dlFiltered数量：47
+2018-01-06 21:42:56 - 第146轮 初步过滤后，dlFiltered数量：42
+2018-01-06 21:42:59 - 第147轮 初步过滤后，dlFiltered数量：30
+2018-01-06 21:43:03 - 第148轮 初步过滤后，dlFiltered数量：35
+2018-01-06 21:43:07 - 第149轮 初步过滤后，dlFiltered数量：38
+2018-01-06 21:43:13 - 第150轮 初步过滤后，dlFiltered数量：38
+2018-01-06 21:43:15 - {"DebtDealId":49811793,"Result":0,"ResultMessage":"恭喜您!成功购买债权1个，金额总计￥68.60"}
+2018-01-06 21:43:18 - 第151轮 初步过滤后，dlFiltered数量：25
+2018-01-06 21:43:21 - 第152轮 初步过滤后，dlFiltered数量：39
+2018-01-06 21:43:25 - 第153轮 初步过滤后，dlFiltered数量：33
+2018-01-06 21:43:29 - 第154轮 初步过滤后，dlFiltered数量：12
+2018-01-06 21:43:31 - 第155轮 初步过滤后，dlFiltered数量：21
+2018-01-06 21:43:33 - 第156轮 初步过滤后，dlFiltered数量：12
+2018-01-06 21:43:35 - 第157轮 初步过滤后，dlFiltered数量：1
+2018-01-06 21:43:36 - 第158轮 初步过滤后，dlFiltered数量：2
+2018-01-06 21:43:37 - 第159轮 初步过滤后，dlFiltered数量：26
+2018-01-06 21:43:43 - 第160轮 初步过滤后，dlFiltered数量：25
+2018-01-06 21:43:45 - 第161轮 初步过滤后，dlFiltered数量：24
+2018-01-06 21:43:48 - 第162轮 初步过滤后，dlFiltered数量：31
+2018-01-06 21:43:51 - 第163轮 初步过滤后，dlFiltered数量：39
+2018-01-06 21:43:54 - 第164轮 初步过滤后，dlFiltered数量：49
+2018-01-06 21:43:58 - 第165轮 初步过滤后，dlFiltered数量：37
+2018-01-06 21:44:02 - 第166轮 初步过滤后，dlFiltered数量：37
+2018-01-06 21:44:06 - 第167轮 初步过滤后，dlFiltered数量：37
+2018-01-06 21:44:11 - 第168轮 初步过滤后，dlFiltered数量：40
+2018-01-06 21:44:14 - 第169轮 初步过滤后，dlFiltered数量：21
+2018-01-06 21:44:17 - 第170轮 初步过滤后，dlFiltered数量：40
+2018-01-06 21:44:22 - 第171轮 初步过滤后，dlFiltered数量：35
+2018-01-06 21:44:25 - {"DebtDealId":49809577,"Result":0,"ResultMessage":"恭喜您!成功购买债权1个，金额总计￥34.84"}
+2018-01-06 21:44:27 - 第172轮 初步过滤后，dlFiltered数量：24
+2018-01-06 21:44:31 - 第173轮 初步过滤后，dlFiltered数量：7
+2018-01-06 21:44:32 - 第174轮 初步过滤后，dlFiltered数量：11
+2018-01-06 21:44:34 - 第175轮 初步过滤后，dlFiltered数量：9
+2018-01-06 21:44:36 - 第176轮 初步过滤后，dlFiltered数量：26
+2018-01-06 21:44:38 - 第177轮 初步过滤后，dlFiltered数量：11
+2018-01-06 21:44:40 - 第178轮 初步过滤后，dlFiltered数量：16
+2018-01-06 21:44:41 - 第179轮 初步过滤后，dlFiltered数量：34
+2018-01-06 21:44:46 - 第180轮 初步过滤后，dlFiltered数量：43
+2018-01-06 21:44:57 - 第181轮 初步过滤后，dlFiltered数量：31
+2018-01-06 21:45:03 - 第182轮 初步过滤后，dlFiltered数量：38
+2018-01-06 21:45:07 - 第183轮 初步过滤后，dlFiltered数量：47
+2018-01-06 21:45:12 - 第184轮 初步过滤后，dlFiltered数量：21
+2018-01-06 21:45:15 - 第185轮 初步过滤后，dlFiltered数量：32
+2018-01-06 21:45:18 - 第186轮 初步过滤后，dlFiltered数量：23
+2018-01-06 21:45:22 - 第187轮 初步过滤后，dlFiltered数量：41
+2018-01-06 21:45:27 - 第188轮 初步过滤后，dlFiltered数量：43
+2018-01-06 21:45:30 - 第189轮 初步过滤后，dlFiltered数量：15
+2018-01-06 21:45:33 - 第190轮 初步过滤后，dlFiltered数量：11
+2018-01-06 21:45:35 - 第191轮 初步过滤后，dlFiltered数量：24
+2018-01-06 21:45:37 - 第192轮 初步过滤后，dlFiltered数量：24
+2018-01-06 21:45:39 - 第193轮 初步过滤后，dlFiltered数量：30
+2018-01-06 21:45:42 - 第194轮 初步过滤后，dlFiltered数量：40
+2018-01-06 21:45:46 - 第195轮 初步过滤后，dlFiltered数量：38
+2018-01-06 21:45:50 - 第196轮 初步过滤后，dlFiltered数量：47
+2018-01-06 21:45:56 - 第197轮 初步过滤后，dlFiltered数量：35
+2018-01-06 21:46:01 - 第198轮 初步过滤后，dlFiltered数量：38
+2018-01-06 21:46:04 - 第199轮 初步过滤后，dlFiltered数量：43
+2018-01-06 21:46:09 - 第200轮 初步过滤后，dlFiltered数量：41
+2018-01-06 21:46:13 - 第201轮 初步过滤后，dlFiltered数量：24
+2018-01-06 21:46:16 - 第202轮 初步过滤后，dlFiltered数量：28
+2018-01-06 21:46:19 - 第203轮 初步过滤后，dlFiltered数量：37
+2018-01-06 21:46:23 - 第204轮 初步过滤后，dlFiltered数量：44
+2018-01-06 21:46:26 - 第205轮 初步过滤后，dlFiltered数量：27
+2018-01-06 21:46:29 - 第206轮 初步过滤后，dlFiltered数量：39
+2018-01-06 21:46:32 - 第207轮 初步过滤后，dlFiltered数量：44
+2018-01-06 21:46:35 - 第208轮 初步过滤后，dlFiltered数量：39
+2018-01-06 21:46:38 - 第209轮 初步过滤后，dlFiltered数量：45
+2018-01-06 21:46:41 - 第210轮 初步过滤后，dlFiltered数量：28
+2018-01-06 21:46:44 - 第211轮 初步过滤后，dlFiltered数量：31
+2018-01-06 21:46:49 - 第212轮 初步过滤后，dlFiltered数量：32
+2018-01-06 21:46:53 - 第213轮 初步过滤后，dlFiltered数量：32
+2018-01-06 21:46:57 - 第214轮 初步过滤后，dlFiltered数量：29
+2018-01-06 21:47:02 - 第215轮 初步过滤后，dlFiltered数量：33
+2018-01-06 21:47:06 - 第216轮 初步过滤后，dlFiltered数量：28
+2018-01-06 21:47:08 - 第217轮 初步过滤后，dlFiltered数量：20
+2018-01-06 21:47:10 - 第218轮 初步过滤后，dlFiltered数量：36
+2018-01-06 21:47:15 - 第219轮 初步过滤后，dlFiltered数量：37
+2018-01-06 21:47:19 - 第220轮 初步过滤后，dlFiltered数量：34
+2018-01-06 21:47:22 - 第221轮 初步过滤后，dlFiltered数量：28
+2018-01-06 21:47:24 - 第222轮 初步过滤后，dlFiltered数量：26
+2018-01-06 21:47:27 - 第223轮 初步过滤后，dlFiltered数量：23
+2018-01-06 21:47:30 - 第224轮 初步过滤后，dlFiltered数量：25
+2018-01-06 21:47:33 - {"DebtDealId":49800624,"Result":0,"ResultMessage":"恭喜您!成功购买债权1个，金额总计￥40.20"}
+2018-01-06 21:47:34 - 第225轮 初步过滤后，dlFiltered数量：35
+2018-01-06 21:47:37 - 第226轮 初步过滤后，dlFiltered数量：38
+2018-01-06 21:47:40 - {"DebtDealId":49800096,"Result":0,"ResultMessage":"恭喜您!成功购买债权1个，金额总计￥49.04"}
+2018-01-06 21:47:42 - 第227轮 初步过滤后，dlFiltered数量：41
+2018-01-06 21:47:44 - {"DebtDealId":49799963,"Result":0,"ResultMessage":"恭喜您!成功购买债权1个，金额总计￥178.08"}
+2018-01-06 21:47:45 - {"DebtDealId":49799941,"Result":0,"ResultMessage":"恭喜您!成功购买债权1个，金额总计￥39.34"}
+2018-01-06 21:47:48 - 第228轮 初步过滤后，dlFiltered数量：37
+2018-01-06 21:47:51 - 第229轮 初步过滤后，dlFiltered数量：42
+2018-01-06 21:47:54 - {"DebtDealId":49799593,"Result":0,"ResultMessage":"恭喜您!成功购买债权1个，金额总计￥55.27"}
+2018-01-06 21:47:55 - {"DebtDealId":49799574,"Result":0,"ResultMessage":"恭喜您!成功购买债权1个，金额总计￥178.08"}
+2018-01-06 21:47:57 - 第230轮 初步过滤后，dlFiltered数量：34
+2018-01-06 21:48:00 - 第231轮 初步过滤后，dlFiltered数量：36
+2018-01-06 21:48:04 - 第232轮 初步过滤后，dlFiltered数量：23
+2018-01-06 21:48:07 - 第233轮 初步过滤后，dlFiltered数量：21
+2018-01-06 21:48:11 - 第234轮 初步过滤后，dlFiltered数量：12
+2018-01-06 21:48:13 - 第235轮 初步过滤后，dlFiltered数量：23
+2018-01-06 21:48:14 - {"DebtDealId":49798751,"Result":0,"ResultMessage":"恭喜您!成功购买债权1个，金额总计￥40.26"}
+2018-01-06 21:48:16 - {"DebtDealId":49798718,"Result":0,"ResultMessage":"恭喜您!成功购买债权1个，金额总计￥30.94"}
+2018-01-06 21:48:17 - {"DebtDealId":49798721,"Result":0,"ResultMessage":"恭喜您!成功购买债权1个，金额总计￥53.16"}
+2018-01-06 21:48:18 - 第236轮 初步过滤后，dlFiltered数量：16
+2018-01-06 21:48:20 - 第237轮 初步过滤后，dlFiltered数量：40
+2018-01-06 21:48:22 - {"DebtDealId":49798454,"Result":0,"ResultMessage":"恭喜您!成功购买债权1个，金额总计￥68.91"}
+2018-01-06 21:48:24 - {"DebtDealId":49798425,"Result":0,"ResultMessage":"恭喜您!成功购买债权1个，金额总计￥68.91"}
+2018-01-06 21:48:26 - 第238轮 初步过滤后，dlFiltered数量：40
+2018-01-06 21:48:29 - {"DebtDealId":49798179,"Result":0,"ResultMessage":"恭喜您!成功购买债权1个，金额总计￥41.11"}
+2018-01-06 21:48:31 - 第239轮 初步过滤后，dlFiltered数量：42
+2018-01-06 21:48:33 - {"DebtDealId":49798155,"Result":0,"ResultMessage":"恭喜您!成功购买债权1个，金额总计￥34.27"}
+2018-01-06 21:48:36 - 第240轮 初步过滤后，dlFiltered数量：27
+2018-01-06 21:48:39 - {"DebtDealId":49798002,"Result":0,"ResultMessage":"恭喜您!成功购买债权1个，金额总计￥68.29"}
+2018-01-06 21:48:41 - 第241轮 初步过滤后，dlFiltered数量：26
+2018-01-06 21:48:43 - {"DebtDealId":49797804,"Result":0,"ResultMessage":"恭喜您!成功购买债权1个，金额总计￥40.40"}
+2018-01-06 21:48:44 - {"DebtDealId":49797765,"Result":0,"ResultMessage":"恭喜您!成功购买债权1个，金额总计￥33.91"}
+2018-01-06 21:48:47 - {"DebtDealId":49797708,"Result":0,"ResultMessage":"恭喜您!成功购买债权1个，金额总计￥34.98"}
+2018-01-06 21:48:49 - {"DebtDealId":49797676,"Result":0,"ResultMessage":"恭喜您!成功购买债权1个，金额总计￥68.26"}
+2018-01-06 21:48:50 - 第242轮 初步过滤后，dlFiltered数量：27
+2018-01-06 21:48:53 - 第243轮 初步过滤后，dlFiltered数量：20
+2018-01-06 21:48:55 - {"DebtDealId":49797356,"Result":0,"ResultMessage":"恭喜您!成功购买债权1个，金额总计￥35.01"}
+2018-01-06 21:48:56 - 第244轮 初步过滤后，dlFiltered数量：25
+2018-01-06 21:48:58 - 第245轮 初步过滤后，dlFiltered数量：28
+2018-01-06 21:49:01 - {"DebtDealId":49796996,"Result":0,"ResultMessage":"恭喜您!成功购买债权1个，金额总计￥35.04"}
+2018-01-06 21:49:02 - 第246轮 初步过滤后，dlFiltered数量：20
+2018-01-06 21:49:06 - 第247轮 初步过滤后，dlFiltered数量：39
+2018-01-06 21:49:08 - {"DebtDealId":49796701,"Result":0,"ResultMessage":"恭喜您!成功购买债权1个，金额总计￥34.49"}
+2018-01-06 21:49:10 - {"DebtDealId":49796693,"Result":0,"ResultMessage":"恭喜您!成功购买债权1个，金额总计￥34.51"}
+2018-01-06 21:49:11 - {"DebtDealId":49796688,"Result":0,"ResultMessage":"恭喜您!成功购买债权1个，金额总计￥122.84"}
+2018-01-06 21:49:12 - {"DebtDealId":49796695,"Result":0,"ResultMessage":"恭喜您!成功购买债权1个，金额总计￥34.49"}
+2018-01-06 21:49:13 - {"DebtDealId":49796682,"Result":0,"ResultMessage":"恭喜您!成功购买债权1个，金额总计￥38.63"}
+2018-01-06 21:49:16 - {"DebtDealId":49796638,"Result":0,"ResultMessage":"恭喜您!成功购买债权1个，金额总计￥35.39"}
+2018-01-06 21:49:18 - 第248轮 初步过滤后，dlFiltered数量：37
+2018-01-06 21:49:20 - Using default implementation for ThreadExecutor
+2018-01-06 21:49:20 - Job execution threads will use class loader of thread: main
+2018-01-06 21:49:20 - Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+2018-01-06 21:49:20 - Quartz Scheduler v.2.2.3 created.
+2018-01-06 21:49:20 - RAMJobStore initialized.
+2018-01-06 21:49:20 - Scheduler meta-data: Quartz Scheduler (v2.2.3) 'DefaultQuartzScheduler' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 1 threads.
+  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
+
+2018-01-06 21:49:20 - Quartz scheduler 'DefaultQuartzScheduler' initialized from default resource file in Quartz package: 'quartz.properties'
+2018-01-06 21:49:20 - Quartz scheduler version: 2.2.3
+2018-01-06 21:49:20 - Scheduler DefaultQuartzScheduler_$_NON_CLUSTERED started.
+2018-01-06 21:49:21 - bidExcecute
+2018-01-06 21:49:21 - 第249轮 初步过滤后，dlFiltered数量：21
+2018-01-06 21:49:22 - 可用余额为：191.04
+2018-01-06 21:49:22 - 标的总数为：0，中风险标的数为：0
+2018-01-06 21:49:22 - debtExcecute
+2018-01-06 21:49:22 - debtOverdueExcecute
+2018-01-06 21:49:22 - 可用余额为：191.04
+2018-01-06 21:49:23 - 第1轮 初步过滤后，dlFiltered数量：36
+2018-01-06 21:49:24 - {"DebtDealId":49796512,"Result":0,"ResultMessage":"恭喜您!成功购买债权1个，金额总计￥38.68"}
+2018-01-06 21:49:25 - {"DebtDealId":49796531,"Result":0,"ResultMessage":"恭喜您!成功购买债权1个，金额总计￥38.65"}
+2018-01-06 21:49:26 - {"DebtDealId":49796537,"Result":0,"ResultMessage":"恭喜您!成功购买债权1个，金额总计￥38.46"}
+2018-01-06 21:49:27 - {"DebtDealId":49796540,"Result":0,"ResultMessage":"恭喜您!成功购买债权1个，金额总计￥38.46"}
+2018-01-06 21:49:27 - 第2轮 初步过滤后，dlFiltered数量：34
+2018-01-06 21:49:28 - {"DebtDealId":49796503,"Result":-1,"ResultMessage":"您的账户余额不足，请充值！"}
+2018-01-06 21:49:29 - {"DebtDealId":49835764,"Result":0,"ResultMessage":"恭喜您!成功购买债权1个，金额总计￥34.49"}
+2018-01-06 21:49:29 - 第250轮 初步过滤后，dlFiltered数量：36
+2018-01-06 21:49:31 - 第3轮 初步过滤后，dlFiltered数量：42
+2018-01-06 21:49:31 - {"DebtDealId":49796337,"Result":-1,"ResultMessage":"您的账户余额不足，请充值！"}
+2018-01-06 21:49:32 - {"DebtDealId":49796349,"Result":-1,"ResultMessage":"您的账户余额不足，请充值！"}
+2018-01-06 21:49:32 - {"DebtDealId":49796241,"Result":-1,"ResultMessage":"您的账户余额不足，请充值！"}
+2018-01-06 21:49:33 - {"DebtDealId":49796233,"Result":-1,"ResultMessage":"您的账户余额不足，请充值！"}
+2018-01-06 21:49:35 - 第251轮 初步过滤后，dlFiltered数量：36
+2018-01-06 21:49:35 - 第4轮 初步过滤后，dlFiltered数量：35
+2018-01-06 21:49:36 - {"DebtDealId":49835531,"Result":-1,"ResultMessage":"您的账户余额不足，请充值！"}
+2018-01-06 21:49:37 - {"DebtDealId":49796013,"Result":-1,"ResultMessage":"您的账户余额不足，请充值！"}
+2018-01-06 21:49:38 - 第5轮 初步过滤后，dlFiltered数量：20
+2018-01-06 21:49:40 - 第6轮 初步过滤后，dlFiltered数量：31
+2018-01-06 21:49:40 - 第252轮 初步过滤后，dlFiltered数量：28
+2018-01-06 21:49:43 - 第7轮 初步过滤后，dlFiltered数量：40
+2018-01-06 21:49:44 - 第253轮 初步过滤后，dlFiltered数量：38
+2018-01-06 21:49:46 - 第8轮 初步过滤后，dlFiltered数量：24
+2018-01-06 21:49:48 - {"DebtDealId":49795724,"Result":-1,"ResultMessage":"您的账户余额不足，请充值！"}
+2018-01-06 21:49:49 - 第9轮 初步过滤后，dlFiltered数量：29
+2018-01-06 21:49:49 - 第254轮 初步过滤后，dlFiltered数量：36
+2018-01-06 21:49:50 - {"DebtDealId":49834744,"Result":-1,"ResultMessage":"您的账户余额不足，请充值！"}
+2018-01-06 21:49:51 - 第10轮 初步过滤后，dlFiltered数量：32
+2018-01-06 21:49:53 - {"DebtDealId":49795606,"Result":-1,"ResultMessage":"您的账户余额不足，请充值！"}
+2018-01-06 21:49:55 - 第255轮 初步过滤后，dlFiltered数量：41
+2018-01-06 21:49:56 - 第11轮 初步过滤后，dlFiltered数量：22
+2018-01-06 21:49:58 - {"DebtDealId":49834301,"Result":-1,"ResultMessage":"您的账户余额不足，请充值！"}
+2018-01-06 21:49:59 - {"DebtDealId":49795502,"Result":-1,"ResultMessage":"您的账户余额不足，请充值！"}
+2018-01-06 21:49:59 - 第12轮 初步过滤后，dlFiltered数量：31
+2018-01-06 21:50:00 - 第256轮 初步过滤后，dlFiltered数量：42
+2018-01-06 21:50:02 - 第13轮 初步过滤后，dlFiltered数量：37
+2018-01-06 21:50:02 - {"DebtDealId":49795382,"Result":-1,"ResultMessage":"您的账户余额不足，请充值！"}
+2018-01-06 21:50:03 - {"DebtDealId":49795323,"Result":-1,"ResultMessage":"您的账户余额不足，请充值！"}
+2018-01-06 21:50:03 - {"DebtDealId":49795317,"Result":-1,"ResultMessage":"您的账户余额不足，请充值！"}
+2018-01-06 21:50:05 - 第14轮 初步过滤后，dlFiltered数量：50
+2018-01-06 21:50:05 - 第257轮 初步过滤后，dlFiltered数量：31
+2018-01-06 21:50:06 - {"DebtDealId":49795023,"Result":-1,"ResultMessage":"您的账户余额不足，请充值！"}
+2018-01-06 21:50:08 - {"DebtDealId":49794881,"Result":-1,"ResultMessage":"您的账户余额不足，请充值！"}
+2018-01-06 21:50:09 - 第15轮 初步过滤后，dlFiltered数量：47
+2018-01-06 21:50:10 - 第258轮 初步过滤后，dlFiltered数量：33
+2018-01-06 21:50:11 - {"DebtDealId":49794881,"Result":-1,"ResultMessage":"您的账户余额不足，请充值！"}
+2018-01-06 21:50:12 - {"DebtDealId":49833870,"Result":-1,"ResultMessage":"您的账户余额不足，请充值！"}
+2018-01-06 21:50:13 - 第16轮 初步过滤后，dlFiltered数量：32
+2018-01-06 21:50:15 - 第259轮 初步过滤后，dlFiltered数量：46
+2018-01-06 21:50:17 - {"DebtDealId":49833792,"Result":-1,"ResultMessage":"您的账户余额不足，请充值！"}
+2018-01-06 21:50:18 - 第17轮 初步过滤后，dlFiltered数量：15
+2018-01-06 21:50:20 - 第18轮 初步过滤后，dlFiltered数量：20
+2018-01-06 21:50:20 - 第260轮 初步过滤后，dlFiltered数量：26
+2018-01-06 21:50:22 - 第19轮 初步过滤后，dlFiltered数量：15
+2018-01-06 21:50:22 - {"DebtDealId":49794365,"Result":-1,"ResultMessage":"您的账户余额不足，请充值！"}
+2018-01-06 21:50:24 - 第20轮 初步过滤后，dlFiltered数量：15
+2018-01-06 21:50:24 - 第261轮 初步过滤后，dlFiltered数量：40
+2018-01-06 21:50:26 - 第21轮 初步过滤后，dlFiltered数量：24
+2018-01-06 21:50:28 - 第22轮 初步过滤后，dlFiltered数量：23
+2018-01-06 21:50:30 - 第262轮 初步过滤后，dlFiltered数量：42
+2018-01-06 21:50:30 - 第23轮 初步过滤后，dlFiltered数量：30
+2018-01-06 21:50:33 - 第24轮 初步过滤后，dlFiltered数量：30
+2018-01-06 21:50:34 - 第263轮 初步过滤后，dlFiltered数量：37
+2018-01-06 21:50:35 - 第25轮 初步过滤后，dlFiltered数量：28
+2018-01-06 21:50:38 - 第26轮 初步过滤后，dlFiltered数量：34
+2018-01-06 21:50:38 - {"DebtDealId":49793063,"Result":-1,"ResultMessage":"您的账户余额不足，请充值！"}
+2018-01-06 21:50:40 - 第264轮 初步过滤后，dlFiltered数量：28
+2018-01-06 21:50:41 - 第27轮 初步过滤后，dlFiltered数量：28
+2018-01-06 21:50:42 - {"DebtDealId":49792668,"Result":-1,"ResultMessage":"您的账户余额不足，请充值！"}
+2018-01-06 21:50:43 - 第28轮 初步过滤后，dlFiltered数量：6
+2018-01-06 21:50:44 - {"DebtDealId":49792404,"Result":-1,"ResultMessage":"您的账户余额不足，请充值！"}
+2018-01-06 21:50:45 - 第29轮 初步过滤后，dlFiltered数量：41
+2018-01-06 21:50:45 - 第265轮 初步过滤后，dlFiltered数量：32
+2018-01-06 21:50:48 - 第30轮 初步过滤后，dlFiltered数量：23
+2018-01-06 21:50:48 - 第266轮 初步过滤后，dlFiltered数量：39
+2018-01-06 21:50:50 - 第31轮 初步过滤后，dlFiltered数量：10
+2018-01-06 21:50:51 - {"DebtDealId":49792155,"Result":-1,"ResultMessage":"您的账户余额不足，请充值！"}
+2018-01-06 21:50:52 - 第32轮 初步过滤后，dlFiltered数量：33
+2018-01-06 21:50:53 - {"DebtDealId":49791942,"Result":-1,"ResultMessage":"您的账户余额不足，请充值！"}
+2018-01-06 21:50:53 - {"DebtDealId":49791958,"Result":-1,"ResultMessage":"您的账户余额不足，请充值！"}
+2018-01-06 21:50:53 - {"DebtDealId":49792005,"Result":-1,"ResultMessage":"您的账户余额不足，请充值！"}
+2018-01-06 21:50:55 - 第33轮 初步过滤后，dlFiltered数量：39
+2018-01-06 21:50:56 - {"DebtDealId":49791841,"Result":-1,"ResultMessage":"您的账户余额不足，请充值！"}
+2018-01-06 21:50:56 - 第267轮 初步过滤后，dlFiltered数量：41
+2018-01-06 21:50:58 - {"DebtDealId":49791636,"Result":-1,"ResultMessage":"您的账户余额不足，请充值！"}
+2018-01-06 21:50:59 - 第34轮 初步过滤后，dlFiltered数量：45
+2018-01-06 21:51:02 - {"DebtDealId":49791039,"Result":-1,"ResultMessage":"您的账户余额不足，请充值！"}
+2018-01-06 21:51:03 - 第35轮 初步过滤后，dlFiltered数量：38
+2018-01-06 21:51:03 - 第268轮 初步过滤后，dlFiltered数量：37
+2018-01-06 21:51:06 - 第269轮 初步过滤后，dlFiltered数量：28
+2018-01-06 21:51:06 - 第36轮 初步过滤后，dlFiltered数量：33
+2018-01-06 21:51:09 - 第270轮 初步过滤后，dlFiltered数量：41
+2018-01-06 21:51:09 - 第37轮 初步过滤后，dlFiltered数量：38
+2018-01-06 21:51:14 - 第38轮 初步过滤后，dlFiltered数量：19
+2018-01-06 21:51:15 - 第39轮 初步过滤后，dlFiltered数量：16
+2018-01-06 21:51:16 - 第271轮 初步过滤后，dlFiltered数量：30
+2018-01-06 21:51:17 - 第40轮 初步过滤后，dlFiltered数量：24
+2018-01-06 21:51:19 - 第41轮 初步过滤后，dlFiltered数量：37
+2018-01-06 21:51:20 - 第272轮 初步过滤后，dlFiltered数量：34
+2018-01-06 21:51:20 - {"DebtDealId":49830962,"Result":-1,"ResultMessage":"您的账户余额不足，请充值！"}
+2018-01-06 21:51:23 - 第42轮 初步过滤后，dlFiltered数量：22
+2018-01-06 21:51:25 - 第273轮 初步过滤后，dlFiltered数量：27
+2018-01-06 21:51:26 - 第43轮 初步过滤后，dlFiltered数量：30
+2018-01-06 21:51:28 - 第274轮 初步过滤后，dlFiltered数量：27
+2018-01-06 21:51:28 - 第44轮 初步过滤后，dlFiltered数量：35
+2018-01-06 21:51:31 - 第45轮 初步过滤后，dlFiltered数量：30
+2018-01-06 21:51:31 - 第275轮 初步过滤后，dlFiltered数量：9
+2018-01-06 21:51:32 - 第276轮 初步过滤后，dlFiltered数量：29
+2018-01-06 21:51:33 - 第46轮 初步过滤后，dlFiltered数量：21
+2018-01-06 21:51:36 - 第47轮 初步过滤后，dlFiltered数量：21
+2018-01-06 21:51:36 - 第277轮 初步过滤后，dlFiltered数量：24
+2018-01-06 21:51:38 - 第48轮 初步过滤后，dlFiltered数量：41
+2018-01-06 21:51:40 - 第278轮 初步过滤后，dlFiltered数量：27
+2018-01-06 21:51:41 - 第49轮 初步过滤后，dlFiltered数量：29
+2018-01-06 21:51:42 - 第279轮 初步过滤后，dlFiltered数量：47
+2018-01-06 21:51:44 - 第50轮 初步过滤后，dlFiltered数量：16
+2018-01-06 21:51:46 - 第51轮 初步过滤后，dlFiltered数量：19
+2018-01-06 21:51:46 - 第280轮 初步过滤后，dlFiltered数量：49
+2018-01-06 21:51:47 - 第52轮 初步过滤后，dlFiltered数量：9
+2018-01-06 21:51:49 - 第53轮 初步过滤后，dlFiltered数量：22
+2018-01-06 21:51:50 - 第281轮 初步过滤后，dlFiltered数量：19
+2018-01-06 21:51:51 - 第54轮 初步过滤后，dlFiltered数量：11
+2018-01-06 21:51:52 - 第282轮 初步过滤后，dlFiltered数量：17
+2018-01-06 21:51:53 - 第55轮 初步过滤后，dlFiltered数量：31
+2018-01-06 21:51:55 - 第56轮 初步过滤后，dlFiltered数量：42
+2018-01-06 21:51:56 - 第283轮 初步过滤后，dlFiltered数量：39
+2018-01-06 21:51:59 - 第57轮 初步过滤后，dlFiltered数量：20
+2018-01-06 21:52:00 - {"DebtDealId":49784324,"Result":-1,"ResultMessage":"您的账户余额不足，请充值！"}
+2018-01-06 21:52:01 - 第58轮 初步过滤后，dlFiltered数量：42
+2018-01-06 21:52:03 - {"DebtDealId":49784104,"Result":-1,"ResultMessage":"您的账户余额不足，请充值！"}
+2018-01-06 21:52:03 - {"DebtDealId":49784007,"Result":-1,"ResultMessage":"您的账户余额不足，请充值！"}
+2018-01-06 21:52:04 - 第284轮 初步过滤后，dlFiltered数量：21
+2018-01-06 21:52:05 - {"DebtDealId":49784007,"Result":-1,"ResultMessage":"您的账户余额不足，请充值！"}
+2018-01-06 21:52:05 - {"DebtDealId":49784104,"Result":-1,"ResultMessage":"您的账户余额不足，请充值！"}
+2018-01-06 21:52:05 - 第59轮 初步过滤后，dlFiltered数量：30
+2018-01-06 21:52:08 - 第60轮 初步过滤后，dlFiltered数量：21
+2018-01-06 21:52:10 - 第285轮 初步过滤后，dlFiltered数量：20
+2018-01-06 21:52:10 - 第61轮 初步过滤后，dlFiltered数量：24
+2018-01-06 21:52:13 - 第286轮 初步过滤后，dlFiltered数量：38
+2018-01-06 21:52:13 - 第62轮 初步过滤后，dlFiltered数量：29
+2018-01-06 21:52:13 - {"DebtDealId":49782834,"Result":-1,"ResultMessage":"您的账户余额不足，请充值！"}
+2018-01-06 21:52:16 - 第63轮 初步过滤后，dlFiltered数量：15
+2018-01-06 21:52:18 - 第64轮 初步过滤后，dlFiltered数量：30
+2018-01-06 21:52:18 - 第287轮 初步过滤后，dlFiltered数量：28
+2018-01-06 21:52:20 - 第65轮 初步过滤后，dlFiltered数量：27
+2018-01-06 21:52:22 - 第288轮 初步过滤后，dlFiltered数量：37
+2018-01-06 21:52:22 - 第66轮 初步过滤后，dlFiltered数量：14
+2018-01-06 21:52:26 - 第67轮 初步过滤后，dlFiltered数量：10
+2018-01-06 21:52:27 - 第68轮 初步过滤后，dlFiltered数量：23
+2018-01-06 21:52:28 - 第289轮 初步过滤后，dlFiltered数量：46
+2018-01-06 21:52:30 - {"DebtDealId":49782039,"Result":-1,"ResultMessage":"您的账户余额不足，请充值！"}
+2018-01-06 21:52:32 - 第69轮 初步过滤后，dlFiltered数量：39
+2018-01-06 21:52:34 - 第290轮 初步过滤后，dlFiltered数量：42
+2018-01-06 21:52:35 - 第70轮 初步过滤后，dlFiltered数量：38
+2018-01-06 21:52:39 - 第71轮 初步过滤后，dlFiltered数量：28
+2018-01-06 21:52:40 - {"DebtDealId":49781775,"Result":0,"ResultMessage":"恭喜您!成功购买债权1个，金额总计￥38.72"}
+2018-01-06 21:52:41 - 第72轮 初步过滤后，dlFiltered数量：45
+2018-01-06 21:52:41 - 第291轮 初步过滤后，dlFiltered数量：46
+2018-01-06 21:52:46 - 第292轮 初步过滤后，dlFiltered数量：34
+2018-01-06 21:52:47 - 第73轮 初步过滤后，dlFiltered数量：35
+2018-01-06 21:52:48 - 第293轮 初步过滤后，dlFiltered数量：39
+2018-01-06 21:52:50 - {"DebtDealId":49826390,"Result":-1,"ResultMessage":"您的账户余额不足，请充值！"}
+2018-01-06 21:52:51 - 第294轮 初步过滤后，dlFiltered数量：42
+2018-01-06 21:52:52 - 第74轮 初步过滤后，dlFiltered数量：41
+2018-01-06 21:52:55 - 第295轮 初步过滤后，dlFiltered数量：49
+2018-01-06 21:52:57 - 第75轮 初步过滤后，dlFiltered数量：45
+2018-01-06 21:52:59 - 第296轮 初步过滤后，dlFiltered数量：45
+2018-01-06 21:53:03 - 第76轮 初步过滤后，dlFiltered数量：45
+2018-01-06 21:53:05 - 第297轮 初步过滤后，dlFiltered数量：41
+2018-01-06 21:53:08 - 第77轮 初步过滤后，dlFiltered数量：47
+2018-01-06 21:53:09 - 第298轮 初步过滤后，dlFiltered数量：34
+2018-01-06 21:53:12 - 第299轮 初步过滤后，dlFiltered数量：24
+2018-01-06 21:53:12 - 第78轮 初步过滤后，dlFiltered数量：30
+2018-01-06 21:53:14 - 第300轮 初步过滤后，dlFiltered数量：41
+2018-01-06 21:53:15 - {"DebtDealId":49779792,"Result":-1,"ResultMessage":"您的账户余额不足，请充值！"}
+2018-01-06 21:53:16 - 第79轮 初步过滤后，dlFiltered数量：42
+2018-01-06 21:53:18 - 第301轮 初步过滤后，dlFiltered数量：28
+2018-01-06 21:53:20 - 第302轮 初步过滤后，dlFiltered数量：41
+2018-01-06 21:53:20 - 第80轮 初步过滤后，dlFiltered数量：32
+2018-01-06 21:53:23 - 第81轮 初步过滤后，dlFiltered数量：35
+2018-01-06 21:53:24 - 第303轮 初步过滤后，dlFiltered数量：24
+2018-01-06 21:53:26 - {"DebtDealId":49778810,"Result":-1,"ResultMessage":"您的账户余额不足，请充值！"}
+2018-01-06 21:53:27 - 第304轮 初步过滤后，dlFiltered数量：8
+2018-01-06 21:53:28 - 第82轮 初步过滤后，dlFiltered数量：19
+2018-01-06 21:53:28 - {"DebtDealId":49778623,"Result":-1,"ResultMessage":"您的账户余额不足，请充值！"}
+2018-01-06 21:53:29 - 第305轮 初步过滤后，dlFiltered数量：21
+2018-01-06 21:53:34 - 第83轮 初步过滤后，dlFiltered数量：27
+2018-01-06 21:53:34 - 第306轮 初步过滤后，dlFiltered数量：30
+2018-01-06 21:53:36 - {"DebtDealId":49778093,"Result":-1,"ResultMessage":"您的账户余额不足，请充值！"}
+2018-01-06 21:53:37 - 第84轮 初步过滤后，dlFiltered数量：3
+2018-01-06 21:53:37 - 第307轮 初步过滤后，dlFiltered数量：25
+2018-01-06 21:53:38 - 第85轮 初步过滤后，dlFiltered数量：31
+2018-01-06 21:53:40 - 第308轮 初步过滤后，dlFiltered数量：39
+2018-01-06 21:53:41 - 第86轮 初步过滤后，dlFiltered数量：3
+2018-01-06 21:53:42 - 第87轮 初步过滤后，dlFiltered数量：24
+2018-01-06 21:53:43 - 第309轮 初步过滤后，dlFiltered数量：15
+2018-01-06 21:53:45 - 第88轮 初步过滤后，dlFiltered数量：12
+2018-01-06 21:53:45 - 第310轮 初步过滤后，dlFiltered数量：28
+2018-01-06 21:53:46 - {"DebtDealId":49776545,"Result":-1,"ResultMessage":"您的账户余额不足，请充值！"}
+2018-01-06 21:53:47 - 第89轮 初步过滤后，dlFiltered数量：23
+2018-01-06 21:53:48 - 第311轮 初步过滤后，dlFiltered数量：18
+2018-01-06 21:53:49 - 第90轮 初步过滤后，dlFiltered数量：11
+2018-01-06 21:53:50 - {"DebtDealId":49776072,"Result":-1,"ResultMessage":"您的账户余额不足，请充值！"}
+2018-01-06 21:53:51 - 第312轮 初步过滤后，dlFiltered数量：25
+2018-01-06 21:53:51 - 第91轮 初步过滤后，dlFiltered数量：28
+2018-01-06 21:53:52 - {"DebtDealId":49775913,"Result":-1,"ResultMessage":"您的账户余额不足，请充值！"}
+2018-01-06 21:53:54 - 第313轮 初步过滤后，dlFiltered数量：27
+2018-01-06 21:53:54 - 第92轮 初步过滤后，dlFiltered数量：10
+2018-01-06 21:53:55 - 第93轮 初步过滤后，dlFiltered数量：34
+2018-01-06 21:53:57 - 第314轮 初步过滤后，dlFiltered数量：39
+2018-01-06 21:53:58 - 第94轮 初步过滤后，dlFiltered数量：13
+2018-01-06 21:53:59 - {"DebtDealId":49775560,"Result":-1,"ResultMessage":"您的账户余额不足，请充值！"}
+2018-01-06 21:54:00 - 第95轮 初步过滤后，dlFiltered数量：30
+2018-01-06 21:54:01 - {"DebtDealId":49775509,"Result":-1,"ResultMessage":"您的账户余额不足，请充值！"}
+2018-01-06 21:54:01 - {"DebtDealId":49775516,"Result":-1,"ResultMessage":"您的账户余额不足，请充值！"}
+2018-01-06 21:54:02 - {"DebtDealId":49775512,"Result":-1,"ResultMessage":"您的账户余额不足，请充值！"}
+2018-01-06 21:54:03 - 第96轮 初步过滤后，dlFiltered数量：8
+2018-01-06 21:54:03 - 第315轮 初步过滤后，dlFiltered数量：22
+2018-01-06 21:54:04 - 第97轮 初步过滤后，dlFiltered数量：13
+2018-01-06 21:54:06 - 第316轮 初步过滤后，dlFiltered数量：29
+2018-01-06 21:54:07 - 第98轮 初步过滤后，dlFiltered数量：35
+2018-01-06 21:54:08 - 第317轮 初步过滤后，dlFiltered数量：24
+2018-01-06 21:54:10 - 第99轮 初步过滤后，dlFiltered数量：18
+2018-01-06 21:54:10 - {"DebtDealId":49774645,"Result":0,"ResultMessage":"恭喜您!成功购买债权1个，金额总计￥32.09"}
+2018-01-06 21:54:12 - {"DebtDealId":49774629,"Result":-1,"ResultMessage":"您的账户余额不足，请充值！"}
+2018-01-06 21:54:12 - 第100轮 初步过滤后，dlFiltered数量：36
+2018-01-06 21:54:13 - {"DebtDealId":49774616,"Result":-1,"ResultMessage":"您的账户余额不足，请充值！"}
+2018-01-06 21:54:14 - 第318轮 初步过滤后，dlFiltered数量：39
+2018-01-06 21:54:15 - 第101轮 初步过滤后，dlFiltered数量：22
+2018-01-06 21:54:16 - {"DebtDealId":49774463,"Result":-1,"ResultMessage":"您的账户余额不足，请充值！"}
+2018-01-06 21:54:17 - 第102轮 初步过滤后，dlFiltered数量：16
+2018-01-06 21:54:18 - 第319轮 初步过滤后，dlFiltered数量：44
+2018-01-06 21:54:19 - 第103轮 初步过滤后，dlFiltered数量：16
+2018-01-06 21:54:19 - {"DebtDealId":49774378,"Result":-1,"ResultMessage":"您的账户余额不足，请充值！"}
+2018-01-06 21:54:20 - {"DebtDealId":49823653,"Result":-1,"ResultMessage":"您的账户余额不足，请充值！"}
+2018-01-06 21:54:21 - 第104轮 初步过滤后，dlFiltered数量：25
+2018-01-06 21:54:22 - 第320轮 初步过滤后，dlFiltered数量：43
+2018-01-06 21:54:23 - 第105轮 初步过滤后，dlFiltered数量：40
+2018-01-06 21:54:25 - 第321轮 初步过滤后，dlFiltered数量：29
+2018-01-06 21:54:26 - {"DebtDealId":49774145,"Result":-1,"ResultMessage":"您的账户余额不足，请充值！"}
+2018-01-06 21:54:27 - 第106轮 初步过滤后，dlFiltered数量：27
+2018-01-06 21:54:29 - 第322轮 初步过滤后，dlFiltered数量：28
+2018-01-06 21:54:30 - 第107轮 初步过滤后，dlFiltered数量：19
+2018-01-06 21:54:31 - 第323轮 初步过滤后，dlFiltered数量：31
+2018-01-06 21:54:32 - 第108轮 初步过滤后，dlFiltered数量：8
+2018-01-06 21:54:34 - 第109轮 初步过滤后，dlFiltered数量：17
+2018-01-06 21:54:36 - 第324轮 初步过滤后，dlFiltered数量：16
+2018-01-06 21:54:36 - 第110轮 初步过滤后，dlFiltered数量：12
+2018-01-06 21:54:38 - 第325轮 初步过滤后，dlFiltered数量：24
+2018-01-06 21:54:39 - 第111轮 初步过滤后，dlFiltered数量：23
+2018-01-06 21:54:39 - {"DebtDealId":49773356,"Result":-1,"ResultMessage":"您的账户余额不足，请充值！"}
+2018-01-06 21:54:40 - {"DebtDealId":49773378,"Result":-1,"ResultMessage":"您的账户余额不足，请充值！"}
+2018-01-06 21:54:40 - {"DebtDealId":49773427,"Result":-1,"ResultMessage":"您的账户余额不足，请充值！"}
+2018-01-06 21:54:41 - 第112轮 初步过滤后，dlFiltered数量：14
+2018-01-06 21:54:42 - 第326轮 初步过滤后，dlFiltered数量：40
+2018-01-06 21:54:43 - 第113轮 初步过滤后，dlFiltered数量：12
+2018-01-06 21:54:44 - {"DebtDealId":49773027,"Result":-1,"ResultMessage":"您的账户余额不足，请充值！"}
+2018-01-06 21:54:45 - 第114轮 初步过滤后，dlFiltered数量：16
+2018-01-06 21:54:46 - 第327轮 初步过滤后，dlFiltered数量：35
+2018-01-06 21:54:47 - 第115轮 初步过滤后，dlFiltered数量：36
+2018-01-06 21:54:50 - 第328轮 初步过滤后，dlFiltered数量：48
+2018-01-06 21:54:50 - 第116轮 初步过滤后，dlFiltered数量：25
+2018-01-06 21:54:53 - 第117轮 初步过滤后，dlFiltered数量：45
+2018-01-06 21:54:55 - 第329轮 初步过滤后，dlFiltered数量：44
+2018-01-06 21:54:57 - 第118轮 初步过滤后，dlFiltered数量：40
+2018-01-06 21:55:00 - 第119轮 初步过滤后，dlFiltered数量：40
+2018-01-06 21:55:01 - 第330轮 初步过滤后，dlFiltered数量：41
+2018-01-06 21:55:03 - 第120轮 初步过滤后，dlFiltered数量：36
+2018-01-06 21:55:05 - 第331轮 初步过滤后，dlFiltered数量：33
+2018-01-06 21:55:06 - 第121轮 初步过滤后，dlFiltered数量：41
+2018-01-06 21:55:10 - 第332轮 初步过滤后，dlFiltered数量：49
+2018-01-06 21:55:10 - 第122轮 初步过滤后，dlFiltered数量：12
+2018-01-06 21:55:12 - 第123轮 初步过滤后，dlFiltered数量：13
+2018-01-06 21:55:14 - 第333轮 初步过滤后，dlFiltered数量：36
+2018-01-06 21:55:14 - 第124轮 初步过滤后，dlFiltered数量：18
+2018-01-06 21:55:16 - 第125轮 初步过滤后，dlFiltered数量：21
+2018-01-06 21:55:17 - 第334轮 初步过滤后，dlFiltered数量：19
+2018-01-06 21:55:18 - 第126轮 初步过滤后，dlFiltered数量：17
+2018-01-06 21:55:19 - 第335轮 初步过滤后，dlFiltered数量：33
+2018-01-06 21:55:20 - 第127轮 初步过滤后，dlFiltered数量：19
+2018-01-06 21:55:21 - 第128轮 初步过滤后，dlFiltered数量：31
+2018-01-06 21:55:22 - 第336轮 初步过滤后，dlFiltered数量：40
+2018-01-06 21:55:23 - {"DebtDealId":49771499,"Result":-1,"ResultMessage":"您的账户余额不足，请充值！"}
+2018-01-06 21:55:24 - 第129轮 初步过滤后，dlFiltered数量：8
+2018-01-06 21:55:25 - 第130轮 初步过滤后，dlFiltered数量：23
+2018-01-06 21:55:26 - 第337轮 初步过滤后，dlFiltered数量：47
+2018-01-06 21:55:27 - {"DebtDealId":49771434,"Result":-1,"ResultMessage":"您的账户余额不足，请充值！"}
+2018-01-06 21:55:28 - 第131轮 初步过滤后，dlFiltered数量：36
+2018-01-06 21:55:30 - 第338轮 初步过滤后，dlFiltered数量：49
+2018-01-06 21:55:31 - 第132轮 初步过滤后，dlFiltered数量：21
+2018-01-06 21:55:33 - {"DebtDealId":49771360,"Result":-1,"ResultMessage":"您的账户余额不足，请充值！"}
+2018-01-06 21:55:34 - 第133轮 初步过滤后，dlFiltered数量：14
+2018-01-06 21:55:35 - {"DebtDealId":49771348,"Result":-1,"ResultMessage":"您的账户余额不足，请充值！"}
+2018-01-06 21:55:36 - 第134轮 初步过滤后，dlFiltered数量：35
+2018-01-06 21:55:39 - {"DebtDealId":49771292,"Result":-1,"ResultMessage":"您的账户余额不足，请充值！"}
+2018-01-06 21:55:40 - 第339轮 初步过滤后，dlFiltered数量：48
+2018-01-06 21:55:40 - 第135轮 初步过滤后，dlFiltered数量：40
+2018-01-06 21:55:40 - {"DebtDealId":49771292,"Result":-1,"ResultMessage":"您的账户余额不足，请充值！"}
+2018-01-06 21:55:47 - 第136轮 初步过滤后，dlFiltered数量：33
+2018-01-06 21:55:49 - {"DebtDealId":49771252,"Result":-1,"ResultMessage":"您的账户余额不足，请充值！"}
+2018-01-06 21:55:50 - 第137轮 初步过滤后，dlFiltered数量：30
+2018-01-06 21:55:51 - {"DebtDealId":49771205,"Result":-1,"ResultMessage":"您的账户余额不足，请充值！"}
+2018-01-06 21:55:52 - 第340轮 初步过滤后，dlFiltered数量：29
+2018-01-06 21:55:53 - 第138轮 初步过滤后，dlFiltered数量：24
+2018-01-06 21:55:54 - 第341轮 初步过滤后，dlFiltered数量：43
+2018-01-06 21:55:55 - 第139轮 初步过滤后，dlFiltered数量：29
+2018-01-06 21:55:58 - 第140轮 初步过滤后，dlFiltered数量：28
+2018-01-06 21:56:00 - 第342轮 初步过滤后，dlFiltered数量：35
+2018-01-06 21:56:01 - 第141轮 初步过滤后，dlFiltered数量：26
+2018-01-06 21:56:03 - 第343轮 初步过滤后，dlFiltered数量：45
+2018-01-06 21:56:04 - 第142轮 初步过滤后，dlFiltered数量：32
+2018-01-06 21:56:08 - 第344轮 初步过滤后，dlFiltered数量：30
+2018-01-06 21:56:09 - 第143轮 初步过滤后，dlFiltered数量：27
+2018-01-06 21:56:12 - 第345轮 初步过滤后，dlFiltered数量：40
+2018-01-06 21:56:12 - 第144轮 初步过滤后，dlFiltered数量：34
+2018-01-06 21:56:16 - 第346轮 初步过滤后，dlFiltered数量：37
+2018-01-06 21:56:16 - 第145轮 初步过滤后，dlFiltered数量：40
+2018-01-06 21:56:20 - 第146轮 初步过滤后，dlFiltered数量：42
+2018-01-06 21:56:21 - 第347轮 初步过滤后，dlFiltered数量：36
+2018-01-06 21:56:24 - {"DebtDealId":49770582,"Result":-1,"ResultMessage":"您的账户余额不足，请充值！"}
+2018-01-06 21:56:26 - 第348轮 初步过滤后，dlFiltered数量：21
+2018-01-06 21:56:27 - 第147轮 初步过滤后，dlFiltered数量：34
+2018-01-06 21:56:28 - {"DebtDealId":49770433,"Result":-1,"ResultMessage":"您的账户余额不足，请充值！"}
+2018-01-06 21:56:29 - 第349轮 初步过滤后，dlFiltered数量：50
+2018-01-06 21:56:29 - {"DebtDealId":49770433,"Result":-1,"ResultMessage":"您的账户余额不足，请充值！"}
+2018-01-06 21:56:30 - 第148轮 初步过滤后，dlFiltered数量：39
+2018-01-06 21:56:32 - 第350轮 初步过滤后，dlFiltered数量：25
+2018-01-06 21:56:33 - 第149轮 初步过滤后，dlFiltered数量：29
+2018-01-06 21:56:34 - 第351轮 初步过滤后，dlFiltered数量：47
+2018-01-06 21:56:35 - {"DebtDealId":49770272,"Result":-1,"ResultMessage":"您的账户余额不足，请充值！"}
+2018-01-06 21:56:35 - 第150轮 初步过滤后，dlFiltered数量：17
+2018-01-06 21:56:37 - 第151轮 初步过滤后，dlFiltered数量：46
+2018-01-06 21:56:38 - 第352轮 初步过滤后，dlFiltered数量：28
+2018-01-06 21:56:40 - 第353轮 初步过滤后，dlFiltered数量：47
+2018-01-06 21:56:41 - 第152轮 初步过滤后，dlFiltered数量：10
+2018-01-06 21:56:42 - 第153轮 初步过滤后，dlFiltered数量：18
+2018-01-06 21:56:44 - 第354轮 初步过滤后，dlFiltered数量：14
+2018-01-06 21:56:44 - 第154轮 初步过滤后，dlFiltered数量：22
+2018-01-06 21:56:46 - 第355轮 初步过滤后，dlFiltered数量：42
+2018-01-06 21:56:46 - 第155轮 初步过滤后，dlFiltered数量：46
+2018-01-06 21:56:51 - 第156轮 初步过滤后，dlFiltered数量：43
+2018-01-06 21:56:53 - 第356轮 初步过滤后，dlFiltered数量：47
+2018-01-06 21:56:55 - 第157轮 初步过滤后，dlFiltered数量：33
+2018-01-06 21:56:59 - 第158轮 初步过滤后，dlFiltered数量：32
+2018-01-06 21:56:59 - {"DebtDealId":49769404,"Result":-1,"ResultMessage":"您的账户余额不足，请充值！"}
+2018-01-06 21:57:00 - 第357轮 初步过滤后，dlFiltered数量：45
+2018-01-06 21:57:01 - 第159轮 初步过滤后，dlFiltered数量：42
+2018-01-06 21:57:02 - {"DebtDealId":49769404,"Result":-1,"ResultMessage":"您的账户余额不足，请充值！"}
+2018-01-06 21:57:04 - 第358轮 初步过滤后，dlFiltered数量：50
+2018-01-06 21:57:06 - 第160轮 初步过滤后，dlFiltered数量：36
+2018-01-06 21:57:10 - 第359轮 初步过滤后，dlFiltered数量：42
+2018-01-06 21:57:10 - 第161轮 初步过滤后，dlFiltered数量：22
+2018-01-06 21:57:12 - 第162轮 初步过滤后，dlFiltered数量：38
+2018-01-06 21:57:12 - {"DebtDealId":49769178,"Result":-1,"ResultMessage":"您的账户余额不足，请充值！"}
+2018-01-06 21:57:15 - 第163轮 初步过滤后，dlFiltered数量：40
+2018-01-06 21:57:16 - 第360轮 初步过滤后，dlFiltered数量：42
+2018-01-06 21:57:17 - {"DebtDealId":49769005,"Result":-1,"ResultMessage":"您的账户余额不足，请充值！"}
+2018-01-06 21:57:19 - {"DebtDealId":49768994,"Result":-1,"ResultMessage":"您的账户余额不足，请充值！"}
+2018-01-06 21:57:19 - 第164轮 初步过滤后，dlFiltered数量：14
+2018-01-06 21:57:21 - 第165轮 初步过滤后，dlFiltered数量：16
+2018-01-06 21:57:21 - 第361轮 初步过滤后，dlFiltered数量：33
+2018-01-06 21:57:23 - 第166轮 初步过滤后，dlFiltered数量：17
+2018-01-06 21:57:24 - 第362轮 初步过滤后，dlFiltered数量：40
+2018-01-06 21:57:24 - 第167轮 初步过滤后，dlFiltered数量：1
+2018-01-06 21:57:25 - 第168轮 初步过滤后，dlFiltered数量：1
+2018-01-06 21:57:26 - 第169轮 初步过滤后，dlFiltered数量：16
+2018-01-06 21:57:27 - 第363轮 初步过滤后，dlFiltered数量：39
+2018-01-06 21:57:28 - 第170轮 初步过滤后，dlFiltered数量：22
+2018-01-06 21:57:30 - 第364轮 初步过滤后，dlFiltered数量：28
+2018-01-06 21:57:30 - 第171轮 初步过滤后，dlFiltered数量：37
+2018-01-06 21:57:31 - {"DebtDealId":49768278,"Result":-1,"ResultMessage":"您的账户余额不足，请充值！"}
+2018-01-06 21:57:32 - 第365轮 初步过滤后，dlFiltered数量：8
+2018-01-06 21:57:34 - 第172轮 初步过滤后，dlFiltered数量：16
+2018-01-06 21:57:34 - 第366轮 初步过滤后，dlFiltered数量：33
+2018-01-06 21:57:35 - 第173轮 初步过滤后，dlFiltered数量：39
+2018-01-06 21:57:38 - 第174轮 初步过滤后，dlFiltered数量：46
+2018-01-06 21:57:40 - 第367轮 初步过滤后，dlFiltered数量：37
+2018-01-06 21:57:42 - 第175轮 初步过滤后，dlFiltered数量：43
+2018-01-06 21:57:43 - 第368轮 初步过滤后，dlFiltered数量：42
+2018-01-06 21:57:46 - 第176轮 初步过滤后，dlFiltered数量：45
+2018-01-06 21:57:48 - 第369轮 初步过滤后，dlFiltered数量：45
+2018-01-06 21:57:49 - 第177轮 初步过滤后，dlFiltered数量：36
+2018-01-06 21:57:52 - 第178轮 初步过滤后，dlFiltered数量：24
+2018-01-06 21:57:54 - 第179轮 初步过滤后，dlFiltered数量：38
+2018-01-06 21:57:55 - {"DebtDealId":49766787,"Result":-1,"ResultMessage":"您的账户余额不足，请充值！"}
+2018-01-06 21:57:55 - {"DebtDealId":49766790,"Result":-1,"ResultMessage":"您的账户余额不足，请充值！"}
+2018-01-06 21:57:58 - {"DebtDealId":49766675,"Result":-1,"ResultMessage":"您的账户余额不足，请充值！"}
+2018-01-06 21:57:59 - 第370轮 初步过滤后，dlFiltered数量：42
+2018-01-06 21:57:59 - 第180轮 初步过滤后，dlFiltered数量：33
+2018-01-06 21:58:03 - 第181轮 初步过滤后，dlFiltered数量：31
+2018-01-06 21:58:04 - 第371轮 初步过滤后，dlFiltered数量：43
+2018-01-06 21:58:06 - 第182轮 初步过滤后，dlFiltered数量：18
+2018-01-06 21:58:07 - 第183轮 初步过滤后，dlFiltered数量：7
+2018-01-06 21:58:08 - 第184轮 初步过滤后，dlFiltered数量：19
+2018-01-06 21:58:09 - {"DebtDealId":49766428,"Result":-1,"ResultMessage":"您的账户余额不足，请充值！"}
+2018-01-06 21:58:10 - 第185轮 初步过滤后，dlFiltered数量：7
+2018-01-06 21:58:11 - 第372轮 初步过滤后，dlFiltered数量：46
+2018-01-06 21:58:11 - 第186轮 初步过滤后，dlFiltered数量：29
+2018-01-06 21:58:12 - {"DebtDealId":49766341,"Result":-1,"ResultMessage":"您的账户余额不足，请充值！"}
+2018-01-06 21:58:14 - 第187轮 初步过滤后，dlFiltered数量：8
+2018-01-06 21:58:15 - {"DebtDealId":49766193,"Result":-1,"ResultMessage":"您的账户余额不足，请充值！"}
+2018-01-06 21:58:15 - 第188轮 初步过滤后，dlFiltered数量：17
+2018-01-06 21:58:16 - {"DebtDealId":49766165,"Result":-1,"ResultMessage":"您的账户余额不足，请充值！"}
+2018-01-06 21:58:17 - 第189轮 初步过滤后，dlFiltered数量：38
+2018-01-06 21:58:17 - 第373轮 初步过滤后，dlFiltered数量：45
+2018-01-06 21:58:20 - 第190轮 初步过滤后，dlFiltered数量：43
+2018-01-06 21:58:21 - {"DebtDealId":49765999,"Result":-1,"ResultMessage":"您的账户余额不足，请充值！"}
+2018-01-06 21:58:23 - 第374轮 初步过滤后，dlFiltered数量：38
+2018-01-06 21:58:24 - 第191轮 初步过滤后，dlFiltered数量：31
+2018-01-06 21:58:27 - 第192轮 初步过滤后，dlFiltered数量：38
+2018-01-06 21:58:28 - 第375轮 初步过滤后，dlFiltered数量：40
+2018-01-06 21:58:31 - 第193轮 初步过滤后，dlFiltered数量：46
+2018-01-06 21:58:32 - 第376轮 初步过滤后，dlFiltered数量：47
+2018-01-06 21:58:35 - 第194轮 初步过滤后，dlFiltered数量：25
+2018-01-06 21:58:36 - 第377轮 初步过滤后，dlFiltered数量：46
+2018-01-06 21:58:38 - 第195轮 初步过滤后，dlFiltered数量：32
+2018-01-06 21:58:40 - 第378轮 初步过滤后，dlFiltered数量：49
+2018-01-06 21:58:41 - 第196轮 初步过滤后，dlFiltered数量：23
+2018-01-06 21:58:41 - {"DebtDealId":49764251,"Result":-1,"ResultMessage":"您的账户余额不足，请充值！"}
+2018-01-06 21:58:42 - {"DebtDealId":49764252,"Result":-1,"ResultMessage":"您的账户余额不足，请充值！"}
+2018-01-06 21:58:44 - 第197轮 初步过滤后，dlFiltered数量：41
+2018-01-06 21:58:44 - 第379轮 初步过滤后，dlFiltered数量：37
+2018-01-06 21:58:45 - {"DebtDealId":49763981,"Result":-1,"ResultMessage":"您的账户余额不足，请充值！"}
+2018-01-06 21:58:48 - 第198轮 初步过滤后，dlFiltered数量：39
+2018-01-06 21:58:48 - 第380轮 初步过滤后，dlFiltered数量：43
+2018-01-06 21:58:51 - 第199轮 初步过滤后，dlFiltered数量：18
+2018-01-06 21:58:52 - 第381轮 初步过滤后，dlFiltered数量：46
+2018-01-06 21:58:53 - 第200轮 初步过滤后，dlFiltered数量：11
+2018-01-06 21:58:54 - {"DebtDealId":49763288,"Result":-1,"ResultMessage":"您的账户余额不足，请充值！"}
+2018-01-06 21:58:55 - 第201轮 初步过滤后，dlFiltered数量：21
+2018-01-06 21:58:55 - {"DebtDealId":49763259,"Result":-1,"ResultMessage":"您的账户余额不足，请充值！"}
+2018-01-06 21:58:55 - {"DebtDealId":49763237,"Result":-1,"ResultMessage":"您的账户余额不足，请充值！"}
+2018-01-06 21:58:57 - {"DebtDealId":49763215,"Result":-1,"ResultMessage":"您的账户余额不足，请充值！"}
+2018-01-06 21:58:58 - 第382轮 初步过滤后，dlFiltered数量：49
+2018-01-06 21:59:00 - {"DebtDealId":49763215,"Result":-1,"ResultMessage":"您的账户余额不足，请充值！"}
+2018-01-06 21:59:02 - 第202轮 初步过滤后，dlFiltered数量：24
+2018-01-06 21:59:05 - 第203轮 初步过滤后，dlFiltered数量：14
+2018-01-06 21:59:06 - 第383轮 初步过滤后，dlFiltered数量：44
+2018-01-06 21:59:07 - 第204轮 初步过滤后，dlFiltered数量：38
+2018-01-06 21:59:11 - 第384轮 初步过滤后，dlFiltered数量：48
+2018-01-06 21:59:11 - 第205轮 初步过滤后，dlFiltered数量：44
+2018-01-06 21:59:13 - {"DebtDealId":49762770,"Result":-1,"ResultMessage":"您的账户余额不足，请充值！"}
+2018-01-06 21:59:14 - 第206轮 初步过滤后，dlFiltered数量：39
+2018-01-06 21:59:16 - 第385轮 初步过滤后，dlFiltered数量：42
+2018-01-06 21:59:17 - 第207轮 初步过滤后，dlFiltered数量：46
+2018-01-06 21:59:19 - 第386轮 初步过滤后，dlFiltered数量：39
+2018-01-06 21:59:20 - {"DebtDealId":49762428,"Result":-1,"ResultMessage":"您的账户余额不足，请充值！"}
+2018-01-06 21:59:21 - 第208轮 初步过滤后，dlFiltered数量：36
+2018-01-06 21:59:24 - 第209轮 初步过滤后，dlFiltered数量：39
+2018-01-06 21:59:26 - {"DebtDealId":49762334,"Result":-1,"ResultMessage":"您的账户余额不足，请充值！"}
+2018-01-06 21:59:27 - 第210轮 初步过滤后，dlFiltered数量：44
+2018-01-06 21:59:28 - 第387轮 初步过滤后，dlFiltered数量：43
+2018-01-06 21:59:32 - 第211轮 初步过滤后，dlFiltered数量：38
+2018-01-06 21:59:32 - {"DebtDealId":49762177,"Result":-1,"ResultMessage":"您的账户余额不足，请充值！"}
+2018-01-06 21:59:33 - 第388轮 初步过滤后，dlFiltered数量：35
+2018-01-06 21:59:35 - {"DebtDealId":49762177,"Result":-1,"ResultMessage":"您的账户余额不足，请充值！"}
+2018-01-06 21:59:35 - 第212轮 初步过滤后，dlFiltered数量：22
+2018-01-06 21:59:36 - {"DebtDealId":49761961,"Result":-1,"ResultMessage":"您的账户余额不足，请充值！"}
+2018-01-06 21:59:37 - 第213轮 初步过滤后，dlFiltered数量：29
+2018-01-06 21:59:37 - 第389轮 初步过滤后，dlFiltered数量：36
+2018-01-06 21:59:40 - 第214轮 初步过滤后，dlFiltered数量：42
+2018-01-06 21:59:40 - {"DebtDealId":49761696,"Result":-1,"ResultMessage":"您的账户余额不足，请充值！"}
+2018-01-06 21:59:41 - {"DebtDealId":49761580,"Result":-1,"ResultMessage":"您的账户余额不足，请充值！"}
+2018-01-06 21:59:42 - 第390轮 初步过滤后，dlFiltered数量：38
+2018-01-06 21:59:43 - 第215轮 初步过滤后，dlFiltered数量：44
+2018-01-06 21:59:44 - {"DebtDealId":49761510,"Result":-1,"ResultMessage":"您的账户余额不足，请充值！"}
+2018-01-06 21:59:44 - {"DebtDealId":49761522,"Result":-1,"ResultMessage":"您的账户余额不足，请充值！"}
+2018-01-06 21:59:46 - 第216轮 初步过滤后，dlFiltered数量：27
+2018-01-06 21:59:48 - {"DebtDealId":49761294,"Result":-1,"ResultMessage":"您的账户余额不足，请充值！"}
+2018-01-06 21:59:49 - 第391轮 初步过滤后，dlFiltered数量：45
+2018-01-06 21:59:50 - {"DebtDealId":49761294,"Result":-1,"ResultMessage":"您的账户余额不足，请充值！"}
+2018-01-06 21:59:50 - 第217轮 初步过滤后，dlFiltered数量：31
+2018-01-06 21:59:51 - {"DebtDealId":49761192,"Result":-1,"ResultMessage":"您的账户余额不足，请充值！"}
+2018-01-06 21:59:53 - 第392轮 初步过滤后，dlFiltered数量：47
+2018-01-06 21:59:54 - 第218轮 初步过滤后，dlFiltered数量：40
+2018-01-06 21:59:57 - 第219轮 初步过滤后，dlFiltered数量：48
+2018-01-06 21:59:57 - {"DebtDealId":49761108,"Result":0,"ResultMessage":"恭喜您!成功购买债权1个，金额总计￥35.08"}
+2018-01-06 21:59:59 - 第393轮 初步过滤后，dlFiltered数量：45
+2018-01-06 22:00:01 - {"DebtDealId":49760864,"Result":-1,"ResultMessage":"您的账户余额不足，请充值！"}
+2018-01-06 22:00:02 - 第220轮 初步过滤后，dlFiltered数量：42
+2018-01-06 22:00:06 - 第221轮 初步过滤后，dlFiltered数量：27
+2018-01-06 22:00:10 - 第222轮 初步过滤后，dlFiltered数量：22
+2018-01-06 22:00:12 - 第394轮 初步过滤后，dlFiltered数量：37
+2018-01-06 22:00:13 - 第223轮 初步过滤后，dlFiltered数量：32
+2018-01-06 22:00:16 - 第224轮 初步过滤后，dlFiltered数量：45
+2018-01-06 22:00:16 - 第395轮 初步过滤后，dlFiltered数量：39
+2018-01-06 22:00:19 - 第396轮 初步过滤后，dlFiltered数量：14
+2018-01-06 22:00:20 - bidExcecute
+2018-01-06 22:00:20 - 可用余额为：11.91
+2018-01-06 22:00:22 - 第397轮 初步过滤后，dlFiltered数量：29
+2018-01-06 22:00:25 - 第398轮 初步过滤后，dlFiltered数量：45
+2018-01-06 22:00:27 - {"DebtDealId":49760209,"Result":-1,"ResultMessage":"您的账户余额不足，请充值！"}
+2018-01-06 22:00:28 - {"DebtDealId":49760195,"Result":-1,"ResultMessage":"您的账户余额不足，请充值！"}
+2018-01-06 22:00:30 - 第399轮 初步过滤后，dlFiltered数量：47
+2018-01-06 22:00:31 - {"DebtDealId":49760195,"Result":-1,"ResultMessage":"您的账户余额不足，请充值！"}
+2018-01-06 22:00:33 - {"DebtDealId":49760142,"Result":-1,"ResultMessage":"您的账户余额不足，请充值！"}
+2018-01-06 22:00:35 - 第400轮 初步过滤后，dlFiltered数量：27
+2018-01-06 22:00:39 - 第401轮 初步过滤后，dlFiltered数量：36
+2018-01-06 22:00:42 - 第402轮 初步过滤后，dlFiltered数量：45
+2018-01-06 22:00:44 - {"DebtDealId":49759629,"Result":-1,"ResultMessage":"您的账户余额不足，请充值！"}
+2018-01-06 22:00:47 - 第403轮 初步过滤后，dlFiltered数量：44
+2018-01-06 22:00:51 - {"DebtDealId":49759106,"Result":-1,"ResultMessage":"您的账户余额不足，请充值！"}
+2018-01-06 22:00:53 - 第404轮 初步过滤后，dlFiltered数量：45
+2018-01-06 22:00:54 - {"DebtDealId":49758955,"Result":-1,"ResultMessage":"您的账户余额不足，请充值！"}
+2018-01-06 22:00:54 - {"DebtDealId":49758928,"Result":-1,"ResultMessage":"您的账户余额不足，请充值！"}
+2018-01-06 22:00:58 - {"DebtDealId":49758787,"Result":-1,"ResultMessage":"您的账户余额不足，请充值！"}
+2018-01-06 22:00:58 - {"DebtDealId":49758828,"Result":-1,"ResultMessage":"您的账户余额不足，请充值！"}
+2018-01-06 22:00:59 - {"DebtDealId":49758699,"Result":-1,"ResultMessage":"您的账户余额不足，请充值！"}
+2018-01-06 22:00:59 - {"DebtDealId":49758667,"Result":-1,"ResultMessage":"您的账户余额不足，请充值！"}
+2018-01-06 22:01:01 - {"DebtDealId":49758661,"Result":-1,"ResultMessage":"您的账户余额不足，请充值！"}
+2018-01-06 22:01:02 - 第405轮 初步过滤后，dlFiltered数量：38
+2018-01-06 22:01:06 - 第406轮 初步过滤后，dlFiltered数量：40
+2018-01-06 22:01:12 - 第407轮 初步过滤后，dlFiltered数量：44
+2018-01-06 22:01:14 - {"DebtDealId":49758140,"Result":-1,"ResultMessage":"您的账户余额不足，请充值！"}
+2018-01-06 22:01:18 - {"DebtDealId":49757984,"Result":-1,"ResultMessage":"您的账户余额不足，请充值！"}
+2018-01-06 22:01:19 - 第408轮 初步过滤后，dlFiltered数量：43
+2018-01-06 22:01:20 - {"DebtDealId":49757912,"Result":-1,"ResultMessage":"您的账户余额不足，请充值！"}
+2018-01-06 22:01:20 - {"DebtDealId":49757951,"Result":-1,"ResultMessage":"您的账户余额不足，请充值！"}
+2018-01-06 22:01:24 - {"DebtDealId":49757795,"Result":-1,"ResultMessage":"您的账户余额不足，请充值！"}
+2018-01-06 22:01:24 - {"DebtDealId":49757815,"Result":-1,"ResultMessage":"您的账户余额不足，请充值！"}
+2018-01-06 22:01:24 - {"DebtDealId":49757841,"Result":-1,"ResultMessage":"您的账户余额不足，请充值！"}
+2018-01-06 22:01:25 - {"DebtDealId":49757787,"Result":-1,"ResultMessage":"您的账户余额不足，请充值！"}
+2018-01-06 22:01:26 - 第409轮 初步过滤后，dlFiltered数量：17
+2018-01-06 22:01:28 - {"DebtDealId":49757698,"Result":-1,"ResultMessage":"您的账户余额不足，请充值！"}
+2018-01-06 22:01:30 - 第410轮 初步过滤后，dlFiltered数量：22
+2018-01-06 22:01:32 - 第411轮 初步过滤后，dlFiltered数量：32
+2018-01-06 22:01:37 - 第412轮 初步过滤后，dlFiltered数量：10
+2018-01-06 22:01:39 - 第413轮 初步过滤后，dlFiltered数量：24
+2018-01-06 22:01:41 - {"DebtDealId":49757221,"Result":-1,"ResultMessage":"您的账户余额不足，请充值！"}
+2018-01-06 22:01:42 - 第414轮 初步过滤后，dlFiltered数量：31
+2018-01-06 22:01:44 - {"DebtDealId":49757079,"Result":-1,"ResultMessage":"您的账户余额不足，请充值！"}
+2018-01-06 22:01:46 - 第415轮 初步过滤后，dlFiltered数量：20
+2018-01-06 22:01:47 - {"DebtDealId":49756936,"Result":-1,"ResultMessage":"您的账户余额不足，请充值！"}
+2018-01-06 22:01:49 - {"DebtDealId":49756922,"Result":-1,"ResultMessage":"您的账户余额不足，请充值！"}
+2018-01-06 22:01:49 - 第416轮 初步过滤后，dlFiltered数量：25
+2018-01-06 22:01:53 - 第417轮 初步过滤后，dlFiltered数量：23
+2018-01-06 22:01:54 - {"DebtDealId":49756788,"Result":-1,"ResultMessage":"您的账户余额不足，请充值！"}
+2018-01-06 22:01:57 - 第418轮 初步过滤后，dlFiltered数量：24
+2018-01-06 22:01:58 - {"DebtDealId":49756674,"Result":-1,"ResultMessage":"您的账户余额不足，请充值！"}
+2018-01-06 22:01:58 - {"DebtDealId":49756676,"Result":-1,"ResultMessage":"您的账户余额不足，请充值！"}
+2018-01-06 22:02:01 - 第419轮 初步过滤后，dlFiltered数量：36
+2018-01-06 22:02:02 - {"DebtDealId":49756520,"Result":-1,"ResultMessage":"您的账户余额不足，请充值！"}
+2018-01-06 22:02:04 - 第420轮 初步过滤后，dlFiltered数量：29
+2018-01-06 22:02:06 - {"DebtDealId":49756260,"Result":-1,"ResultMessage":"您的账户余额不足，请充值！"}
+2018-01-06 22:02:08 - 第421轮 初步过滤后，dlFiltered数量：13
+2018-01-06 22:02:09 - 第422轮 初步过滤后，dlFiltered数量：20
+2018-01-06 22:02:11 - {"DebtDealId":49755909,"Result":-1,"ResultMessage":"您的账户余额不足，请充值！"}
+2018-01-06 22:02:12 - {"DebtDealId":49755834,"Result":-1,"ResultMessage":"您的账户余额不足，请充值！"}
+2018-01-06 22:02:13 - 第423轮 初步过滤后，dlFiltered数量：23
+2018-01-06 22:02:15 - {"DebtDealId":49755784,"Result":0,"ResultMessage":"恭喜您!成功购买债权1个，金额总计￥32.59"}
+2018-01-06 22:02:20 - 第424轮 初步过滤后，dlFiltered数量：24
+2018-01-06 22:02:23 - 第425轮 初步过滤后，dlFiltered数量：17
+2018-01-06 22:02:25 - 第426轮 初步过滤后，dlFiltered数量：38
+2018-01-06 22:02:30 - 第427轮 初步过滤后，dlFiltered数量：31
+2018-01-06 22:02:34 - 第428轮 初步过滤后，dlFiltered数量：20
+2018-01-06 22:02:36 - 第429轮 初步过滤后，dlFiltered数量：31
+2018-01-06 22:02:39 - {"DebtDealId":49754694,"Result":-1,"ResultMessage":"您的账户余额不足，请充值！"}
+2018-01-06 22:02:40 - 第430轮 初步过滤后，dlFiltered数量：44
+2018-01-06 22:02:41 - {"DebtDealId":49754590,"Result":-1,"ResultMessage":"您的账户余额不足，请充值！"}
+2018-01-06 22:02:43 - {"DebtDealId":49754445,"Result":-1,"ResultMessage":"您的账户余额不足，请充值！"}
+2018-01-06 22:02:46 - 第431轮 初步过滤后，dlFiltered数量：44
+2018-01-06 22:02:51 - 第432轮 初步过滤后，dlFiltered数量：39
+2018-01-06 22:02:53 - {"DebtDealId":49753367,"Result":-1,"ResultMessage":"您的账户余额不足，请充值！"}
+2018-01-06 22:02:54 - {"DebtDealId":49753285,"Result":-1,"ResultMessage":"您的账户余额不足，请充值！"}
+2018-01-06 22:02:54 - {"DebtDealId":49753333,"Result":-1,"ResultMessage":"您的账户余额不足，请充值！"}
+2018-01-06 22:03:00 - 第433轮 初步过滤后，dlFiltered数量：43
+2018-01-06 22:03:05 - 第434轮 初步过滤后，dlFiltered数量：46
+2018-01-06 22:03:06 - {"DebtDealId":49753065,"Result":-1,"ResultMessage":"您的账户余额不足，请充值！"}
+2018-01-06 22:03:09 - 第435轮 初步过滤后，dlFiltered数量：43
+2018-01-06 22:03:13 - 第436轮 初步过滤后，dlFiltered数量：40
+2018-01-06 22:03:17 - 第437轮 初步过滤后，dlFiltered数量：32
+2018-01-06 22:03:24 - 第438轮 初步过滤后，dlFiltered数量：32
+2018-01-06 22:03:29 - 第439轮 初步过滤后，dlFiltered数量：23
+2018-01-06 22:03:32 - 第440轮 初步过滤后，dlFiltered数量：25
+2018-01-06 22:03:33 - {"DebtDealId":49751900,"Result":-1,"ResultMessage":"您的账户余额不足，请充值！"}
+2018-01-06 22:03:36 - 第441轮 初步过滤后，dlFiltered数量：11
+2018-01-06 22:03:37 - {"DebtDealId":49750348,"Result":-1,"ResultMessage":"您的账户余额不足，请充值！"}
+2018-01-06 22:03:38 - 第442轮 初步过滤后，dlFiltered数量：5
+2018-01-06 22:03:40 - 第443轮 初步过滤后，dlFiltered数量：29
+2018-01-06 22:03:43 - 第444轮 初步过滤后，dlFiltered数量：49
+2018-01-06 22:03:47 - 第445轮 初步过滤后，dlFiltered数量：43
+2018-01-06 22:03:52 - 第446轮 初步过滤后，dlFiltered数量：49
+2018-01-06 22:03:57 - 第447轮 初步过滤后，dlFiltered数量：39
+2018-01-06 22:04:00 - 第448轮 初步过滤后，dlFiltered数量：28
+2018-01-06 22:04:02 - 第449轮 初步过滤后，dlFiltered数量：8
+2018-01-06 22:04:04 - 第450轮 初步过滤后，dlFiltered数量：13
+2018-01-06 22:04:05 - 第451轮 初步过滤后，dlFiltered数量：13
+2018-01-06 22:04:07 - 第452轮 初步过滤后，dlFiltered数量：37
+2018-01-06 22:04:11 - 第453轮 初步过滤后，dlFiltered数量：36
+2018-01-06 22:04:15 - 第454轮 初步过滤后，dlFiltered数量：41
+2018-01-06 22:04:20 - 第455轮 初步过滤后，dlFiltered数量：42
+2018-01-06 22:04:24 - {"DebtDealId":49748780,"Result":-1,"ResultMessage":"您的账户余额不足，请充值！"}
+2018-01-06 22:04:27 - 第456轮 初步过滤后，dlFiltered数量：37
+2018-01-06 22:04:32 - {"DebtDealId":49748448,"Result":-1,"ResultMessage":"您的账户余额不足，请充值！"}
+2018-01-06 22:04:33 - 第457轮 初步过滤后，dlFiltered数量：37
+2018-01-06 22:04:34 - {"DebtDealId":49748448,"Result":-1,"ResultMessage":"您的账户余额不足，请充值！"}
+2018-01-06 22:04:37 - {"DebtDealId":49748344,"Result":-1,"ResultMessage":"您的账户余额不足，请充值！"}
+2018-01-06 22:04:38 - 第458轮 初步过滤后，dlFiltered数量：47
+2018-01-06 22:04:42 - {"DebtDealId":49747973,"Result":-1,"ResultMessage":"您的账户余额不足，请充值！"}
+2018-01-06 22:04:43 - {"DebtDealId":49747971,"Result":-1,"ResultMessage":"您的账户余额不足，请充值！"}
+2018-01-06 22:04:44 - 第459轮 初步过滤后，dlFiltered数量：16
+2018-01-06 22:04:46 - 第460轮 初步过滤后，dlFiltered数量：34
+2018-01-06 22:04:49 - 第461轮 初步过滤后，dlFiltered数量：20
+2018-01-06 22:04:51 - 第462轮 初步过滤后，dlFiltered数量：27
+2018-01-06 22:04:53 - 第463轮 初步过滤后，dlFiltered数量：36
+2018-01-06 22:04:56 - 第464轮 初步过滤后，dlFiltered数量：33
+2018-01-06 22:04:59 - 第465轮 初步过滤后，dlFiltered数量：41
+2018-01-06 22:05:03 - 第466轮 初步过滤后，dlFiltered数量：19
+2018-01-06 22:05:05 - 第467轮 初步过滤后，dlFiltered数量：21
+2018-01-06 22:05:08 - 第468轮 初步过滤后，dlFiltered数量：25
+2018-01-06 22:05:08 - {"DebtDealId":49745384,"Result":-1,"ResultMessage":"您的账户余额不足，请充值！"}
+2018-01-06 22:05:10 - {"DebtDealId":49745363,"Result":-1,"ResultMessage":"您的账户余额不足，请充值！"}
+2018-01-06 22:05:12 - 第469轮 初步过滤后，dlFiltered数量：12
+2018-01-06 22:05:14 - 第470轮 初步过滤后，dlFiltered数量：38
+2018-01-06 22:05:15 - {"DebtDealId":49744483,"Result":-1,"ResultMessage":"您的账户余额不足，请充值！"}
+2018-01-06 22:05:17 - 第471轮 初步过滤后，dlFiltered数量：33
+2018-01-06 22:05:20 - debtExcecute
+2018-01-06 22:05:20 - debtOverdueExcecute
+2018-01-06 22:05:20 - 第472轮 初步过滤后，dlFiltered数量：45
+2018-01-06 22:05:20 - 可用余额为：11.27
+2018-01-06 22:05:23 - 第473轮 初步过滤后，dlFiltered数量：35
+2018-01-06 22:05:25 - {"DebtDealId":49743539,"Result":-1,"ResultMessage":"您的账户余额不足，请充值！"}
+2018-01-06 22:05:27 - 第474轮 初步过滤后，dlFiltered数量：29
+2018-01-06 22:05:30 - 第475轮 初步过滤后，dlFiltered数量：22
+2018-01-06 22:05:33 - {"DebtDealId":49743309,"Result":-1,"ResultMessage":"您的账户余额不足，请充值！"}
+2018-01-06 22:05:35 - 第476轮 初步过滤后，dlFiltered数量：28
+2018-01-06 22:05:40 - {"DebtDealId":49742963,"Result":-1,"ResultMessage":"您的账户余额不足，请充值！"}
+2018-01-06 22:05:41 - 第477轮 初步过滤后，dlFiltered数量：30
+2018-01-06 22:05:42 - {"DebtDealId":49742963,"Result":-1,"ResultMessage":"您的账户余额不足，请充值！"}
+2018-01-06 22:05:44 - 第478轮 初步过滤后，dlFiltered数量：22
+2018-01-06 22:05:45 - {"DebtDealId":49742773,"Result":-1,"ResultMessage":"您的账户余额不足，请充值！"}
+2018-01-06 22:05:48 - 第479轮 初步过滤后，dlFiltered数量：21
+2018-01-06 22:05:51 - 第480轮 初步过滤后，dlFiltered数量：21
+2018-01-06 22:05:53 - 第481轮 初步过滤后，dlFiltered数量：40
+2018-01-06 22:05:56 - 第482轮 初步过滤后，dlFiltered数量：44
+2018-01-06 22:06:01 - 第483轮 初步过滤后，dlFiltered数量：19
+2018-01-06 22:06:02 - {"DebtDealId":49741298,"Result":-1,"ResultMessage":"您的账户余额不足，请充值！"}
+2018-01-06 22:06:03 - 第484轮 初步过滤后，dlFiltered数量：41
+2018-01-06 22:06:07 - {"DebtDealId":49740442,"Result":-1,"ResultMessage":"您的账户余额不足，请充值！"}
+2018-01-06 22:06:08 - 第485轮 初步过滤后，dlFiltered数量：43
+2018-01-06 22:06:09 - {"DebtDealId":49740348,"Result":-1,"ResultMessage":"您的账户余额不足，请充值！"}
+2018-01-06 22:06:13 - {"DebtDealId":49740043,"Result":-1,"ResultMessage":"您的账户余额不足，请充值！"}
+2018-01-06 22:06:14 - 第486轮 初步过滤后，dlFiltered数量：48
+2018-01-06 22:06:16 - {"DebtDealId":49740043,"Result":-1,"ResultMessage":"您的账户余额不足，请充值！"}
+2018-01-06 22:06:18 - 第487轮 初步过滤后，dlFiltered数量：38
+2018-01-06 22:06:19 - {"DebtDealId":49739614,"Result":-1,"ResultMessage":"您的账户余额不足，请充值！"}
+2018-01-06 22:06:22 - 第488轮 初步过滤后，dlFiltered数量：25
+2018-01-06 22:06:25 - 第489轮 初步过滤后，dlFiltered数量：29
+2018-01-06 22:06:26 - {"DebtDealId":49738490,"Result":-1,"ResultMessage":"您的账户余额不足，请充值！"}
+2018-01-06 22:06:27 - 第490轮 初步过滤后，dlFiltered数量：28
+2018-01-06 22:06:30 - 第491轮 初步过滤后，dlFiltered数量：36
+2018-01-06 22:06:33 - 第492轮 初步过滤后，dlFiltered数量：33
+2018-01-06 22:06:34 - {"DebtDealId":49737656,"Result":-1,"ResultMessage":"您的账户余额不足，请充值！"}
+2018-01-06 22:06:38 - 第493轮 初步过滤后，dlFiltered数量：44
+2018-01-06 22:06:39 - {"DebtDealId":49737468,"Result":-1,"ResultMessage":"您的账户余额不足，请充值！"}
+2018-01-06 22:06:44 - 第494轮 初步过滤后，dlFiltered数量：44
+2018-01-06 22:06:48 - 第495轮 初步过滤后，dlFiltered数量：44
+2018-01-06 22:06:52 - 第496轮 初步过滤后，dlFiltered数量：42
+2018-01-06 22:06:54 - {"DebtDealId":49736975,"Result":-1,"ResultMessage":"您的账户余额不足，请充值！"}
+2018-01-06 22:06:56 - 第497轮 初步过滤后，dlFiltered数量：39
+2018-01-06 22:06:58 - {"DebtDealId":49736975,"Result":-1,"ResultMessage":"您的账户余额不足，请充值！"}
+2018-01-06 22:07:01 - 第498轮 初步过滤后，dlFiltered数量：32
+2018-01-06 22:07:05 - 第499轮 初步过滤后，dlFiltered数量：35
+2018-01-06 22:07:10 - 第500轮 初步过滤后，dlFiltered数量：28
+2018-01-06 22:07:13 - 第501轮 初步过滤后，dlFiltered数量：47
+2018-01-06 22:07:18 - 第502轮 初步过滤后，dlFiltered数量：31
+2018-01-06 22:07:23 - 第503轮 初步过滤后，dlFiltered数量：23
+2018-01-06 22:07:26 - 第504轮 初步过滤后，dlFiltered数量：49
+2018-01-06 22:07:29 - {"DebtDealId":49733560,"Result":-1,"ResultMessage":"您的账户余额不足，请充值！"}
+2018-01-06 22:07:33 - 第505轮 初步过滤后，dlFiltered数量：46
+2018-01-06 22:07:39 - 第506轮 初步过滤后，dlFiltered数量：44
+2018-01-06 22:07:41 - {"DebtDealId":49733148,"Result":-1,"ResultMessage":"您的账户余额不足，请充值！"}
+2018-01-06 22:07:44 - 第507轮 初步过滤后，dlFiltered数量：40
+2018-01-06 22:07:51 - 第508轮 初步过滤后，dlFiltered数量：50
+2018-01-06 22:07:59 - bidExcecute
+2018-01-06 22:08:00 - 可用余额为：11.27
+2018-01-06 22:10:20 - bidExcecute
+2018-01-06 22:10:20 - 可用余额为：11.27

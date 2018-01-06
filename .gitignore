@@ -8,8 +8,7 @@
 *.ldb  
 *.sln    
 ##class file##
-*.com  
-*.class  
+*.com
 *.dll  
 *.exe  
 *.o  
@@ -33,4 +32,5 @@
 .Trashes  
 Icon?  
 ehthumbs.db  
-Thumbs.db  
+Thumbs.db
+/src/db.properties

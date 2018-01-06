@@ -5,7 +5,6 @@ import com.autobid.dbd.DebtManager;
 import com.autobid.util.ConfUtil;
 import org.quartz.Job;
 import org.quartz.JobExecutionContext;
-import org.quartz.JobExecutionException;
 
 /**
  * @author Richard Zeng
@@ -15,11 +14,12 @@ import org.quartz.JobExecutionException;
  */
 public class AutoBidJob implements Job {
 
-    public void execute(JobExecutionContext context) throws JobExecutionException {
+    public void execute(JobExecutionContext context) {
 
         int bidMode;
         BidManager bid = BidManager.getInstance();
-        DebtManager debt = DebtManager.getInstance();
+        DebtManager debt;
+        debt = DebtManager.getInstance();
         try {
             bidMode = Integer.parseInt(ConfUtil.getProperty("bid_mode"));
             if (bidMode == 1) {

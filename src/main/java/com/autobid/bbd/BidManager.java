@@ -15,10 +15,7 @@ import org.apache.log4j.Logger;
 import org.junit.Test;
 import redis.clients.jedis.Jedis;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.List;
+import java.util.*;
 
 
 /**
@@ -58,7 +55,7 @@ public class BidManager implements Constants {
             jedis = new Jedis(redisHost, redisPort);
 
             //如果TokenInit配置项不存在，则初始化Token，存储在Redis中
-            if (!TokenUtil.determineTokenInitExsits()) {
+            if (TokenUtil.determineTokenInitExists()) {
                 TokenInit.initToken();
             }
             //如果Token快到期，则获取一个新Token
@@ -107,7 +104,7 @@ public class BidManager implements Constants {
         }
         ArrayList<BidResult> successBidList = new ArrayList<BidResult>();
         int indexNum = 1;
-        int loanIdCount = 0;
+        int loanIdCount;
         List<Integer> listingIds;
         BasicCriteria basicCriteria = new BasicCriteria();
         do {
@@ -139,10 +136,8 @@ public class BidManager implements Constants {
             //System.out.println(loanInfosCollector);
 
             //循环遍历得出JSONArray，将每个JSONArray再分拆为多个标的JSONObject
-            Iterator<JSONArray> loanInfosIt = loanInfosCollector.iterator();
 
-            while (loanInfosIt.hasNext()) {
-                JSONArray loanInfosArray = loanInfosIt.next();
+            for (JSONArray loanInfosArray : loanInfosCollector) {
                 for (int i = 0; i < loanInfosArray.size(); i++) {
                     JSONObject loanInfoObj = loanInfosArray.getJSONObject(i);
 
@@ -158,7 +153,7 @@ public class BidManager implements Constants {
                     //System.out.println("basicCriteriaLevel is :" + basicCriteriaLevel);
 
                     //根据初始策略返回不同，选择不同的策略组
-                    CriteriaGroup criteriaGroup = new CriteriaGroup();
+                    CriteriaGroup criteriaGroup;
                     switch (basicCriteriaLevel) {
                         case PERFECT:
                             criteriaGroup = new EduDebtCriteriaGroup();
@@ -188,7 +183,8 @@ public class BidManager implements Constants {
                             System.out.println("====== listingId: " + listingId + ", Start bidding ====== ");
                             //logger.info("listingId: " + listingId + ", JSON is: " + loanInfoMap);
                             //bidAmount = new BidDetermine().determineCriteriaGroup(criteriaGroup, loanInfoMap);
-                            bidAmount = BidDetermine.determineCriteriaGroup(criteriaGroup, confBean, loanInfoMap);
+                            assert criteriaGroup != null;
+                            bidAmount = BidDetermine.determineCriteriaGroup(Objects.requireNonNull(criteriaGroup), confBean, loanInfoMap);
                             System.out.println("****** listingId: " + listingId + ", total Amount is: " + bidAmount + " ******");
                         } else {
                             //logger.error("xxxxxx " + listingId + "在Redis中重复！ xxxxxx");
@@ -238,9 +234,7 @@ public class BidManager implements Constants {
             System.out.println("*~~~~~~~~~~~~~~~~~~~很抱歉，没有找到合适标的~~~~~~~~~~~~~~~~~~~~~~~*");
         } else {
 
-            Iterator<BidResult> successBidIt = successBidList.iterator();
-            while (successBidIt.hasNext()) {
-                BidResult successResult = (BidResult) successBidIt.next();
+            for (BidResult successResult : successBidList) {
                 System.out.println("*~~~~~~~~~~~ BidId:" + successResult.getBidId() + ",BidAmount:" +
                         successResult.getBidAmount() + "~~~~~~~~~~~*");
             }

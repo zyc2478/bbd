@@ -5,10 +5,8 @@ package com.autobid.util;
 
 import java.io.*;
 import java.lang.reflect.Method;
-import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-import java.util.Iterator;
 import java.util.Properties;
 import java.util.Set;
 
@@ -21,7 +19,7 @@ public class ConfUtil {
 
     //private static Logger logger = Logger.getLogger(ConfUtil.class);
 
-    public static Properties prop = new OrderProperties();
+    private static Properties prop = new OrderProperties();
     //private static Reader in = new InputStreamReader(ConfUtil.class.getResourceAsStream("config.properties"));
 
     //InputStream in = ConfUtil.class.getClassLoader().getResourceAsStream("Config.properties");
@@ -55,7 +53,7 @@ public class ConfUtil {
     }
 
 
-    public static String camelCaseName(String underscoreName) {
+    private static String camelCaseName(String underscoreName) {
         StringBuilder result = new StringBuilder();
         if (underscoreName != null && underscoreName.length() > 0) {
             boolean flag = false;
@@ -76,7 +74,7 @@ public class ConfUtil {
         return result.toString();
     }
 
-    public static String captureName(String name) {
+    private static String captureName(String name) {
         char[] cs = name.toCharArray();
         cs[0] -= 32;
         return String.valueOf(cs);
@@ -88,21 +86,18 @@ public class ConfUtil {
         //InputStream in = new FileInputStream(fileName);
         //prop.load(in);     ///加载属性列表
 
-        InputStreamReader inputStreamReader = null;
+        InputStreamReader inputStreamReader;
         InputStream inputStream = new BufferedInputStream(new FileInputStream(fileName));
         //prop.load(in);//直接这么写，如果properties文件中有汉字，则汉字会乱码。因为未设置编码格式。
         inputStreamReader = new InputStreamReader(inputStream, "utf-8");
         prop.load(inputStreamReader);
-        if (inputStreamReader != null) {
-            inputStreamReader.close();
-        }
-        String value = prop.getProperty(key);
+        inputStreamReader.close();
         //System.out.println(key + ":"+value);
-        return value;
+        return prop.getProperty(key);
     }
 
-    public static void setProperty(String key, String value) throws IOException, ParseException {
-        InputStreamReader inputStreamReader = null;
+    public static void setProperty(String key, String value) throws IOException {
+        InputStreamReader inputStreamReader;
         InputStream inputStream = new BufferedInputStream(new FileInputStream(fileName));
         //prop.load(in);//直接这么写，如果properties文件中有汉字，则汉字会乱码。因为未设置编码格式。
         inputStreamReader = new InputStreamReader(inputStream, "utf-8");
@@ -116,7 +111,7 @@ public class ConfUtil {
         oFile.close();
     }
 
-    public void readConf() throws IOException {
+/*    public void readConf() throws IOException {
         //读取属性文件
         //InputStream in = new BufferedInputStream (new FileInputStream(fileName));
         //InputStream in = ConfUtil.class.getClassLoader().getResourceAsStream(fileName);
@@ -129,5 +124,5 @@ public class ConfUtil {
             System.out.println(key + ":" + prop.getProperty(key));
         }
         in.close();
-    }
+    }*/
 }

@@ -2,7 +2,7 @@ package com.autobid.util;
 
 public class ConfBean {
 
-    String bidMode,
+    private String bidMode,
             redisHost,
             redisPort,
             debtMix,
@@ -59,21 +59,20 @@ public class ConfBean {
             tokenInit,
             refreshTokenInit;
 
+    public ConfBean() {
+    }
+
     public String getDebtMaxGroups() {
         return debtMaxGroups;
     }
 
-    public void setDebtMaxGroups(String debtMaxGroups) {
-        this.debtMaxGroups = debtMaxGroups;
-    }
+    public void setDebtMaxGroups(String debtMaxGroups) { this.debtMaxGroups = debtMaxGroups; }
 
     public String getDebtMinGroups() {
         return debtMinGroups;
     }
 
-    public void setDebtMinGroups(String debtMinGroups) {
-        this.debtMinGroups = debtMinGroups;
-    }
+    public void setDebtMinGroups(String debtMinGroups) { this.debtMinGroups = debtMinGroups; }
 
     public String getDebtPreferLimit() {
         return debtPreferLimit;
@@ -506,6 +505,5 @@ public class ConfBean {
     public void setRefreshTokenInit(String refreshTokenInit) {
         this.refreshTokenInit = refreshTokenInit;
     }
-
 
 }

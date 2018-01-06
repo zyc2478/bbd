@@ -24,7 +24,7 @@ public class AutoBidRun {
         example.run();
     }
 
-    public void run() throws Exception {
+    private void run() throws Exception {
 
         // 调度工厂
         SchedulerFactory sf = new StdSchedulerFactory();

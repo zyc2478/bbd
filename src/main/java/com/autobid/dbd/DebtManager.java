@@ -53,7 +53,7 @@ public class DebtManager implements Constants {
             jedis = new Jedis(redisHost, redisPort);
 
             //如果TokenInit配置项不存在，则初始化Token，存储在Redis中
-            if (!TokenUtil.determineTokenInitExsits()) {
+            if (TokenUtil.determineTokenInitExists()) {
                 TokenInit.initToken();
             }
             //如果Token快到期，则获取一个新Token
@@ -128,13 +128,13 @@ public class DebtManager implements Constants {
             return;
         }
         int indexNum = 1;
-        int debtCount = 0;
+        int debtCount;
         //int debtFCount = 0;
         int totalDebtCount = 0;
         DebtListFilter dlf = new DebtListFilter();
         DebtInfosListFilter dilf = new DebtInfosListFilter();
         BidInfosFilter bif = new BidInfosFilter();
-        int debtGroups = 0;
+        int debtGroups;
 
         do {
             JSONArray debtListArray = DebtService.debtListService(indexNum);
@@ -234,8 +234,7 @@ public class DebtManager implements Constants {
         } else if (successDebtList.isEmpty()) {
             System.out.println("*~~~~~~~~~~~~~~~~~~~很抱歉，没有找到合适债权~~~~~~~~~~~~~~~~~~~~~~~*");
         } else {
-            for (int i = 0; i < successDebtList.size(); i++) {
-                DebtResult dr = successDebtList.get(i);
+            for (DebtResult dr : successDebtList) {
                 logger.info("*~~~~~~~~~~~ DebtId:" + dr.getDebtId() + ", ListingId:" +
                         dr.getListingId() + ", Price:" + dr.getPrice() + "~~~~~~~~~~~*");
             }

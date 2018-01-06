@@ -1,7 +1,6 @@
 package com.autobid.util;
 
 import com.autobid.bbd.AuthInit;
-import com.ppdai.open.core.AuthInfo;
 import com.ppdai.open.core.OpenApiClient;
 import redis.clients.jedis.Jedis;
 
@@ -16,25 +15,20 @@ import java.util.Date;
 
 public class TokenUtil {
 
-    private final static String openId = "0d2283b0fa334d14894180520c26a865";
-    static AuthInfo authInfo;
+    private final static String openId;
     private static String token;
-    private static String refreshToken;
     private static int expireDays;
-    private static int refreshTokenExpired;
     private static String initDate;
-    private static String redisHost;
-    private static int redisPort;
     private static Jedis jedis;
 
     static {
+        openId = "7344c77f9a7f4f249bd9df04115171e6";
         try {
             expireDays = Integer.parseInt(ConfUtil.getProperty("expire_days"));
-            refreshTokenExpired = Integer.parseInt(ConfUtil.getProperty("refresh_token_expired"));
+//            int refreshTokenExpired = Integer.parseInt(ConfUtil.getProperty("refresh_token_expired"));
             initDate = ConfUtil.getProperty("init_date");
-            redisHost = ConfUtil.getProperty("redis_host");
-            System.out.println("redisHost:"+ redisHost);
-            redisPort = Integer.parseInt(ConfUtil.getProperty("redis_port"));
+            String redisHost = ConfUtil.getProperty("redis_host");
+            int redisPort = Integer.parseInt(ConfUtil.getProperty("redis_port"));
             jedis = new Jedis(redisHost, redisPort);
         } catch (Exception e) {
             e.printStackTrace();
@@ -52,38 +46,27 @@ public class TokenUtil {
 
         String tokenFromConf = ConfUtil.getProperty("refresh_token");
 
+        String refreshToken;
         if (tokenFromConf.equals("")) {
             refreshToken = jedis.get("refreshToken");
         } else {
             refreshToken = tokenFromConf;
         }
-
-        authInfo = OpenApiClient.refreshToken(openId, refreshToken);
-        //String newToken = authInfo.getAccessToken();			//47401bc7-1639-4cb6-a168-01c30a628599
-        //String newRefreshToken = authInfo.getRefreshToken();	//fc7d2e81-6191-41b0-84fb-c95c61c1d119
-/*		setToken(newToken);
-		setRefreshToken(newRefreshToken);*/
+        OpenApiClient.refreshToken(openId, refreshToken);
     }
 
-    public static boolean determineTokenInitExsits() throws IOException {
-        if (ConfUtil.getProperty("token_init").equals("")) {
-            return false;
-        } else {
-            return true;
-        }
+    public static boolean determineTokenInitExists() throws IOException {
+        return ConfUtil.getProperty("token_init").equals("");
     }
 
     public static boolean determineRefreshDate() throws ParseException {
 
         int diffDate = getDiffDate();
         int leftDays = expireDays - diffDate % expireDays;
-        if (leftDays <= 1) {
-            return true;
-        }
-        return false;
+        return leftDays <= 1;
     }
 
-    public static int getDiffDate() throws ParseException {
+    private static int getDiffDate() throws ParseException {
         DateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm");
         Date beginDate = df.parse(initDate);
         Date today = new Date();
@@ -94,15 +77,12 @@ public class TokenUtil {
         return (int) diffDate;
     }
 
-    public static boolean determineRefreshTokenExpired() throws ParseException {
+/*    public static boolean determineRefreshTokenExpired() throws ParseException {
 
         int diffDate = getDiffDate();
         int leftDays = refreshTokenExpired - diffDate % refreshTokenExpired;
-        if (leftDays <= 1) {
-            return true;
-        }
-        return false;
-    }
+        return leftDays <= 1;
+    }*/
 
     public static String getToken() {
         token = jedis.get("token");
@@ -114,22 +94,22 @@ public class TokenUtil {
         jedis.setex("token", 691200, token);
     }
 
-    public static String getRefreshToken() {
+/*    public static String getRefreshToken() {
         refreshToken = jedis.get("refreshToken");
         return refreshToken;
-    }
+    }*/
 
-    public static void setRefreshToken(String newRefreshToken) {
+/*    public static void setRefreshToken(String newRefreshToken) {
         TokenUtil.refreshToken = newRefreshToken;
         jedis.setex("refreshToken", 8640000, refreshToken);
-    }
+    }*/
 
-    public static void setRefreshTokenInit(String refreshTokenInit) throws IOException {
+    public static void setRefreshTokenInit(String refreshTokenInit) {
         //String initRefreshToken = ConfUtil.getProperty("refresh_token_init");
         jedis.setex("refreshToken", 8640000, refreshTokenInit); //100天后过期
     }
 
-    public static void setTokenInit(String tokenInit) throws IOException {
+    public static void setTokenInit(String tokenInit) {
         //String initToken =  ConfUtil.getProperty("token_init");
         jedis.setex("token", 691200, tokenInit); //8天后过期
     }
