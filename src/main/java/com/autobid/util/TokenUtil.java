@@ -25,7 +25,7 @@ public class TokenUtil {
     private static String initDate;
     private static String redisHost;
     private static int redisPort;
-    private static Jedis jedis = new Jedis(redisHost, redisPort);
+    private static Jedis jedis;
 
     static {
         try {
@@ -33,11 +33,15 @@ public class TokenUtil {
             refreshTokenExpired = Integer.parseInt(ConfUtil.getProperty("refresh_token_expired"));
             initDate = ConfUtil.getProperty("init_date");
             redisHost = ConfUtil.getProperty("redis_host");
+            System.out.println("redisHost:"+ redisHost);
             redisPort = Integer.parseInt(ConfUtil.getProperty("redis_port"));
+            jedis = new Jedis(redisHost, redisPort);
         } catch (Exception e) {
             e.printStackTrace();
         }
     }
+
+
 
     //private static Logger logger = Logger.getLogger(TokenUtil.class);
 
@@ -129,5 +133,4 @@ public class TokenUtil {
         //String initToken =  ConfUtil.getProperty("token_init");
         jedis.setex("token", 691200, tokenInit); //8天后过期
     }
-
 }

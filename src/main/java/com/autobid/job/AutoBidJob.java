@@ -18,7 +18,6 @@ public class AutoBidJob implements Job {
     public void execute(JobExecutionContext context) throws JobExecutionException {
 
         int bidMode;
-
         BidManager bid = BidManager.getInstance();
         DebtManager debt = DebtManager.getInstance();
         try {
