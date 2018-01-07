@@ -10,7 +10,6 @@ import net.sf.json.JSONObject;
 import org.apache.log4j.Logger;
 
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
 
 /**
@@ -35,7 +34,7 @@ public class BidService {
         } else if (JsonUtil.decodeUnicode(result.getContext()).contains("用户无效或令牌已过有效期")) {
             logger.info("Error!用户无效或令牌已过有效期");
             //System.out.println(TokenInit.getInitFlag());
-            if (TokenInit.getInitFlag() == false) {
+            if (!TokenInit.getInitFlag()) {
                 TokenInit.initToken();
             }
             logger.info("已重置最新令牌");
@@ -45,9 +44,9 @@ public class BidService {
 
     public static LoanListResult loanListService(int indexNum) throws Exception {
         int[] loanIds = null;
-        ArrayList<String> loanInfosList = new ArrayList<String>();
+        ArrayList<String> loanInfosList = new ArrayList<>();
         String url = "http://gw.open.ppdai.com/invest/LLoanInfoService/LoanList";
-        Result result = null;
+        Result result;
         String creditCode;
         result = OpenApiClient.send(url, new PropertyObject("PageIndex", indexNum, ValueTypeEnum.Int32));
         if (JsonUtil.decodeUnicode(result.getContext()).contains("您的操作太频繁啦")) {
@@ -87,6 +86,7 @@ public class BidService {
         LoanListResult llr = new LoanListResult();
         llr.setIndexNum(indexNum);
         llr.setLoanList(loanInfosResultArray);
+        assert loanIds != null;
         llr.setLoanIdCount(loanIds.length);
         return llr;
     }
@@ -94,13 +94,11 @@ public class BidService {
     public static ArrayList<String> batchListInfosCollectorService(String token, ArrayList<List<Integer>> listingIdsCollector) throws Exception {
         //System.out.println("--------batchListInfosCollectorService---------");
         String url = "http://gw.open.ppdai.com/invest/LLoanInfoService/BatchListingInfos";
-        ArrayList<String> batchListInfosCollector = new ArrayList<String>();
-        Iterator<List<Integer>> listingIdsIt = listingIdsCollector.iterator();
+        ArrayList<String> batchListInfosCollector = new ArrayList<>();
         //List<Integer> listingIds = new ArrayList<Integer>();
         //int num=0;
         //System.out.println(listingIdsCollector.size());
-        while (listingIdsIt.hasNext()) {
-            List<Integer> listingIds = listingIdsIt.next();
+        for (List<Integer> listingIds : listingIdsCollector) {
             //System.out.println("listingids size is " + listingIds.size());
             //System.out.println(listingIds);
             Result result = OpenApiClient.send(url, token, new PropertyObject("ListingIds", listingIds, ValueTypeEnum.Other));
@@ -129,8 +127,8 @@ public class BidService {
             Thread.sleep(60000);
         }
         BidResult successBidResult = null;
-        //System.out.println("Success? "+ bidResult.isSucess());
-        //System.out.println(String.format("返回结果:%s", result.isSucess() ? bidResult : result.getErrorMessage()));
+        //System.out.println("Success? "+ bidResult.isSuccess());
+        //System.out.println(String.format("返回结果:%s", result.isSuccess() ? bidResult : result.getErrorMessage()));
         if (JsonUtil.decodeUnicode(bidResult).contains("令牌校验失败")) {
             logger.error("xxxxxx Error！令牌校验失败！xxxxxx");
         } else if (JsonUtil.decodeUnicode(bidResult).contains("访问令牌不存在")) {

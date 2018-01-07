@@ -8,9 +8,9 @@ import java.util.HashMap;
 
 public class AgeCriteria implements Criteria, Constants {
 
-    boolean criteriaM, criteriaF;
+    private boolean criteriaM, criteriaF;
 
-    public void calc(HashMap<String, Object> loanInfoMap, ConfBean confBean) throws Exception {
+    public void calc(HashMap<String, Object> loanInfoMap, ConfBean confBean) {
         int age = Integer.parseInt(loanInfoMap.get("Age").toString());
         int gender = Integer.parseInt(loanInfoMap.get("Gender").toString());
         criteriaM = age >= Integer.parseInt(confBean.getMinMage())
@@ -21,7 +21,7 @@ public class AgeCriteria implements Criteria, Constants {
                 && gender == 2;
     }
 
-    public int getLevel(HashMap<String, Object> loanInfoMap, ConfBean confBean) throws Exception {
+    public int getLevel(HashMap<String, Object> loanInfoMap, ConfBean confBean) {
         calc(loanInfoMap, confBean);
         if (criteriaM || criteriaF) {
             return OK;

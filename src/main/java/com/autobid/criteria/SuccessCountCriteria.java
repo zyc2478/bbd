@@ -4,22 +4,21 @@ import com.autobid.entity.Constants;
 import com.autobid.entity.Criteria;
 import com.autobid.util.ConfBean;
 
-import java.io.IOException;
 import java.util.HashMap;
 
 public class SuccessCountCriteria implements Criteria, Constants {
 
-    static int successCount, normalCount, beginCount, gender;
-    boolean criteriaSuccessCount, criteriaNormalCount, criteriaBeginCount, criteriaNsRate;
-    private double ns_rate, nscount_mrate, nscount_frate;
+    private static int beginCount;
+    private boolean criteriaSuccessCount, criteriaNormalCount, criteriaBeginCount, criteriaNsRate;
 
-    public void calc(HashMap<String, Object> loanInfoMap, ConfBean cb) throws NumberFormatException, IOException {
-        successCount = (int) loanInfoMap.get("SuccessCount");
-        normalCount = (int) loanInfoMap.get("NormalCount");
-        gender = Integer.parseInt(loanInfoMap.get("Gender").toString());
-        nscount_mrate = Double.parseDouble(cb.getNscountMrate());
+    public void calc(HashMap<String, Object> loanInfoMap, ConfBean cb) throws NumberFormatException {
+        int successCount = (int) loanInfoMap.get("SuccessCount");
+        int normalCount = (int) loanInfoMap.get("NormalCount");
+        int gender = Integer.parseInt(loanInfoMap.get("Gender").toString());
+        double nscount_mrate = Double.parseDouble(cb.getNscountMrate());
 
-        nscount_frate = Double.parseDouble(cb.getNscountFrate());
+        double nscount_frate = Double.parseDouble(cb.getNscountFrate());
+        double ns_rate;
         if (successCount != 0) {
             ns_rate = (double) normalCount / (double) successCount;
         } else {
@@ -34,7 +33,7 @@ public class SuccessCountCriteria implements Criteria, Constants {
 
     }
 
-    public int getLevel(HashMap<String, Object> loanInfoMap, ConfBean cb) throws NumberFormatException, IOException {
+    public int getLevel(HashMap<String, Object> loanInfoMap, ConfBean cb) throws NumberFormatException {
         calc(loanInfoMap, cb);
         if (criteriaSuccessCount && criteriaNormalCount && criteriaNsRate) {
             return GOOD;

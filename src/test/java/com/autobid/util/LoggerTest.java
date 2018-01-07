@@ -4,9 +4,6 @@ import org.apache.log4j.BasicConfigurator;
 import org.apache.log4j.Logger;
 import org.junit.Test;
 
-import com.autobid.util.Log4JUtil;
-
-
 public class LoggerTest {
     private static Logger logger = Logger.getLogger(Logger.class);
 

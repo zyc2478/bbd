@@ -10,7 +10,7 @@ import redis.clients.jedis.JedisPoolConfig;
 public class PoolTest {
     private static JedisPool pool = null;
 
-    public static JedisPool getPool() {
+    private static JedisPool getPool() {
         if (pool == null) {
             JedisPoolConfig config = new JedisPoolConfig();
             config.setMaxTotal(500);
@@ -25,7 +25,7 @@ public class PoolTest {
         return pool;
     }
 
-    public synchronized static Jedis getResource() {
+    private synchronized static Jedis getResource() {
         if (pool == null) {
             pool = getPool();
         }

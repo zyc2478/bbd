@@ -18,10 +18,10 @@ public class OrderProperties extends Properties {
 
 
     /**
-     * 在put的时候，只是把key有序的存到{@link OrderedProperties#keys}
+     * 在put的时候，只是把key有序的存到{@link "OrderedProperties#keys"}
      * 取值的时候，根据有序的keys，可以有序的取出所有value
      * 依然调用父类的put方法,也就是key value 键值对还是存在hashTable里.
-     * 只是现在多了个存key的属性{@link OrderedProperties#keys}
+     * 只是现在多了个存key的属性{@link "OrderedProperties#keys"}
      */
     @Override
     public Object put(Object key, Object value) {

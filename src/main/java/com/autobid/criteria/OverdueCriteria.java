@@ -9,29 +9,28 @@ import java.util.HashMap;
 
 public class OverdueCriteria implements Criteria, Constants {
 
-    int overdueLessCount, overdueMoreCount, normalCount, gender;
-    boolean criteriaMore, criteriaLess, criteriaLessRate, criteriaLessMRate,
-            criteriaLessFRate, criteriaNormal, criteriaOverdue;
+    private int gender;
+    private boolean criteriaMore;
+    private boolean criteriaLess;
+    private boolean criteriaLessRate;
+    private boolean criteriaLessFRate;
+    private boolean criteriaNormal;
+    private boolean criteriaOverdue;
 
     public void calc(HashMap<String, Object> loanInfoMap, ConfBean cb) throws Exception {
 
-        overdueLessCount = (int) loanInfoMap.get("OverdueLessCount");
-        overdueMoreCount = (int) loanInfoMap.get("OverdueMoreCount");
-        normalCount = (int) loanInfoMap.get("NormalCount");
+        int overdueLessCount = (int) loanInfoMap.get("OverdueLessCount");
+        int overdueMoreCount = (int) loanInfoMap.get("OverdueMoreCount");
+        int normalCount = (int) loanInfoMap.get("NormalCount");
         gender = Integer.parseInt(loanInfoMap.get("Gender").toString());
         criteriaMore = overdueMoreCount == 0;
         criteriaLess = overdueLessCount == 0;
-        criteriaLessRate = normalCount != 0 ?
-                new Integer(overdueLessCount).doubleValue() / normalCount <
-                        Double.parseDouble(cb.getOverdueRate()) : false;
-        criteriaLessMRate = normalCount != 0 ?
-                new Integer(overdueLessCount).doubleValue() / normalCount <
-                        Double.parseDouble(cb.getOverdueRate()) *
-                                Double.parseDouble(cb.getOverdueMrate()) : false;
-        criteriaLessFRate = normalCount != 0 ?
-                new Integer(overdueLessCount).doubleValue() / normalCount <
-                        Double.parseDouble(cb.getOverdueRate()) *
-                                Double.parseDouble(cb.getOverdueFrate()) : false;
+        criteriaLessRate = (normalCount != 0) && ((new Integer(overdueLessCount).doubleValue() / normalCount) <
+                Double.parseDouble(cb.getOverdueRate()));
+        boolean criteriaLessMRate = normalCount != 0 && new Integer(overdueLessCount).doubleValue() / normalCount <
+                Double.parseDouble(cb.getOverdueRate()) * Double.parseDouble(cb.getOverdueMrate());
+        criteriaLessFRate = normalCount != 0 && new Integer(overdueLessCount).doubleValue() / normalCount <
+                Double.parseDouble(cb.getOverdueRate()) * Double.parseDouble(cb.getOverdueFrate());
 
 /*		System.out.println(new Integer(overdueLessCount).doubleValue()/normalCount);
 		System.out.println(	Double.parseDouble(ConfUtil.getProperty("overdue_rate")) * 

@@ -9,7 +9,7 @@ public class BidDebtStrategy implements DebtStrategy {
 
     //private static Logger logger = Logger.getLogger(BidDebtStrategy.class);
     @Override
-    public boolean determineStrategy(JSONObject loanInfo, ConfBean cb) throws Exception {
+    public boolean determineStrategy(JSONObject loanInfo, ConfBean cb) {
 
         boolean strategyOk = false;
 
@@ -89,13 +89,7 @@ public class BidDebtStrategy implements DebtStrategy {
         double oh_rate = owingAmount / highestDebt;
         double owing_mrate = Double.parseDouble(cb.getOwingMrate());
         double owing_frate = Double.parseDouble(cb.getOwingFrate());
-        if (gender == 1 && oh_rate <= owing_mrate) {
-            return true;
-        } else if (gender == 2 && oh_rate <= owing_frate) {
-            return true;
-        } else {
-            return false;
-        }
+        return gender == 1 && oh_rate <= owing_mrate || gender == 2 && oh_rate <= owing_frate;
     }
 	
 	

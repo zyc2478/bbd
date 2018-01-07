@@ -8,28 +8,28 @@ import java.util.HashMap;
 
 public class OverdueProCriteria implements Criteria, Constants {
 
-    int overdueLessCount, overdueMoreCount, normalCount, gender;
-    boolean criteriaMore, criteriaLess, criteriaLessRate,
-            criteriaLessMoreRate, criteriaNormal, criteriaOverdue;
+    private int gender;
+    private boolean criteriaMore;
+    private boolean criteriaLess;
+    private boolean criteriaNormal;
+    private boolean criteriaOverdue;
 
-    public void calc(HashMap<String, Object> loanInfoMap, ConfBean cb) throws Exception {
+    public void calc(HashMap<String, Object> loanInfoMap, ConfBean cb) {
 
-        overdueLessCount = (int) loanInfoMap.get("OverdueLessCount");
-        overdueMoreCount = (int) loanInfoMap.get("OverdueMoreCount");
-        normalCount = (int) loanInfoMap.get("NormalCount");
+        int overdueLessCount = (int) loanInfoMap.get("OverdueLessCount");
+        int overdueMoreCount = (int) loanInfoMap.get("OverdueMoreCount");
+        int normalCount = (int) loanInfoMap.get("NormalCount");
         gender = Integer.parseInt(loanInfoMap.get("Gender").toString());
         criteriaMore = overdueMoreCount == 0;
         criteriaLess = overdueLessCount == 0;
-        criteriaLessRate = normalCount != 0 ?
-                new Integer(overdueLessCount).doubleValue() / normalCount <
-                        Double.parseDouble(cb.getOverdueRate()) : false;
-        criteriaLessMoreRate = normalCount != 0 ?
-                new Integer(overdueLessCount).doubleValue() / normalCount <
-                        Double.parseDouble(cb.getOverdueRate()) * 1.5 : false;
+        boolean criteriaLessRate = (normalCount != 0) && ((new Integer(overdueLessCount).doubleValue() / normalCount) <
+                Double.parseDouble(cb.getOverdueRate()));
+        boolean criteriaLessMoreRate = normalCount != 0 && new Integer(overdueLessCount).doubleValue() / normalCount <
+                Double.parseDouble(cb.getOverdueRate()) * 1.5;
         criteriaNormal = normalCount >= Integer.parseInt(cb.getNormalLimit());
     }
 
-    public int getLevel(HashMap<String, Object> loanInfoMap, ConfBean cb) throws Exception {
+    public int getLevel(HashMap<String, Object> loanInfoMap, ConfBean cb) {
         calc(loanInfoMap, cb);
         if (criteriaMore && criteriaLess && criteriaNormal) {
             return GOOD;

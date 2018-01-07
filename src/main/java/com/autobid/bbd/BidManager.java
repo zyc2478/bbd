@@ -32,8 +32,6 @@ public class BidManager implements Constants {
 
     private static String token = "";
     private static String openId;
-    private static String redisHost;
-    private static int redisPort;
     private static Jedis jedis;
     private static ConfBean confBean;
 
@@ -49,8 +47,8 @@ public class BidManager implements Constants {
             confBean = ConfUtil.readAllToBean();
             MIN_BID_AMOUNT = Integer.parseInt(confBean.getMinBidAmount());
             openId = confBean.getOpenId();
-            redisHost = confBean.getRedisHost();
-            redisPort = Integer.parseInt(confBean.getRedisPort());
+            String redisHost = confBean.getRedisHost();
+            int redisPort = Integer.parseInt(confBean.getRedisPort());
 
             jedis = new Jedis(redisHost, redisPort);
 
@@ -99,15 +97,18 @@ public class BidManager implements Constants {
         String balanceJson = BidService.queryBalanceService(token);
         double balance = BidDataParser.getBalance(balanceJson);
 
-        if (!BidDetermine.determineBalance(balance)) {
+        if (BidDetermine.determineBalance(balance)) {
             return;
         }
-        ArrayList<BidResult> successBidList = new ArrayList<BidResult>();
+        ArrayList<BidResult> successBidList = new ArrayList<>();
         int indexNum = 1;
         int loanIdCount;
         List<Integer> listingIds;
         BasicCriteria basicCriteria = new BasicCriteria();
         do {
+            if (BidDetermine.determineBalance(balance)) {
+                return;
+            }
             LoanListResult loanListResult = BidService.loanListService(indexNum);
             loanIdCount = loanListResult.getLoanIdCount();
             //请求服务获取ListingIds
@@ -186,10 +187,7 @@ public class BidManager implements Constants {
                             assert criteriaGroup != null;
                             bidAmount = BidDetermine.determineCriteriaGroup(Objects.requireNonNull(criteriaGroup), confBean, loanInfoMap);
                             System.out.println("****** listingId: " + listingId + ", total Amount is: " + bidAmount + " ******");
-                        } else {
-                            //logger.error("xxxxxx " + listingId + "在Redis中重复！ xxxxxx");
-
-                        }
+                        } /*else {//logger.error("xxxxxx " + listingId + "在Redis中重复！ xxxxxx");}*/
                     }
                     if (bidAmount != 0) {
                         if (balance > bidAmount) {

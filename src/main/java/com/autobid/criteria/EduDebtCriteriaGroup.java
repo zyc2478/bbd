@@ -9,7 +9,7 @@ import java.util.ArrayList;
 
 public class EduDebtCriteriaGroup extends CriteriaGroup {
 
-    ArrayList<Criteria> criteriaList = new ArrayList<Criteria>();
+    private ArrayList<Criteria> criteriaList = new ArrayList<>();
 
 
     public EduDebtCriteriaGroup() {

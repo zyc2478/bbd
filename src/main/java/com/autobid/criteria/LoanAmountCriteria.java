@@ -9,26 +9,23 @@ import java.util.HashMap;
 public class LoanAmountCriteria implements Criteria, Constants {
 
     private boolean criteriaAf, criteriaAm, criteriaBm, criteriaBf, criteriaCm, criteriaCf, criteriaD, criteriaE;
-    private double amount_mrate, amount_frate, owing_mrate, owing_frate;
-    private int amount_begin, amount_end, owing_limit, total_limit;
-    private int gender;
 
-    public void calc(HashMap<String, Object> loanInfoMap, ConfBean cb) throws Exception {
+    public void calc(HashMap<String, Object> loanInfoMap, ConfBean cb) {
 
         Integer loanAmount = (Integer) loanInfoMap.get("Amount");
         Integer highestPrincipal = (Integer) loanInfoMap.get("HighestPrincipal");
         Integer owingAmount = (Integer) loanInfoMap.get("OwingAmount");
         Integer highestDebt = (Integer) loanInfoMap.get("HighestDebt");
         Integer totalPrincipal = (Integer) loanInfoMap.get("TotalPrincipal");
-        gender = Integer.parseInt(loanInfoMap.get("Gender").toString());
-        total_limit = Integer.parseInt(cb.getTotalLimit());
-        owing_mrate = Double.parseDouble(cb.getOwingMrate());
-        owing_frate = Double.parseDouble(cb.getOwingFrate());
-        amount_begin = Integer.parseInt(cb.getAmountBegin());
-        amount_end = Integer.parseInt(cb.getAmountEnd());
-        amount_mrate = Double.parseDouble(cb.getAmountMrate());
-        amount_frate = Double.parseDouble(cb.getAmountFrate());
-        owing_limit = Integer.parseInt(cb.getOwingLimit());
+        int gender = Integer.parseInt(loanInfoMap.get("Gender").toString());
+        int total_limit = Integer.parseInt(cb.getTotalLimit());
+        double owing_mrate = Double.parseDouble(cb.getOwingMrate());
+        double owing_frate = Double.parseDouble(cb.getOwingFrate());
+        int amount_begin = Integer.parseInt(cb.getAmountBegin());
+        int amount_end = Integer.parseInt(cb.getAmountEnd());
+        double amount_mrate = Double.parseDouble(cb.getAmountMrate());
+        double amount_frate = Double.parseDouble(cb.getAmountFrate());
+        int owing_limit = Integer.parseInt(cb.getOwingLimit());
 
         //System.out.println("loanAmount:"+loanAmount);
         criteriaAm = loanAmount >= amount_begin / amount_mrate && loanAmount <= amount_end * amount_mrate &&
@@ -50,7 +47,7 @@ public class LoanAmountCriteria implements Criteria, Constants {
          */
     }
 
-    public int getLevel(HashMap<String, Object> loanInfoMap, ConfBean cb) throws Exception {
+    public int getLevel(HashMap<String, Object> loanInfoMap, ConfBean cb) {
         calc(loanInfoMap, cb);
 /*		System.out.println("LoanAmount: criteriaAm:"+criteriaAm+",criteriaBm:"+criteriaBm + ",criteriaCm:"+criteriaCm+
 				",criteriaD:"+criteriaD+",criteriaE:"+criteriaE);*/

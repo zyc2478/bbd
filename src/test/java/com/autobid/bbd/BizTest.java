@@ -3,7 +3,6 @@ package com.autobid.bbd;
 import com.ppdai.open.core.*;
 import org.junit.Test;
 
-import java.io.IOException;
 import java.math.BigDecimal;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -37,42 +36,39 @@ public class BizTest {
             + "D7gqTP7EqHiLmsgLaI3FsVApbIpDHhXTIhPcC3OVQyysbqvTJUOhbb8JMj4SSninBWkvd0PYJK+e7P6"
             + "+6qJcbo6+pnUJUkRQZ+qE0i6dRwXtmUd3yIPISIM0JP99ALxhl81Uz6Z68GRxnBiySbel84pwYPIJV1"
             + "sCwIDAQAB";
-    String token = "";
+    private String token = "";
     /*********** 授权信息 ***************/
     private AuthInfo authInfo = null;
 
     @Test
     public void AuthTest() throws Exception {
 
-        /**
-         * 跳转到AC的oauth2.0联合登录
-         * https://ac.ppdai.com/oauth2/login?AppID=8cf65377538741c2ba8add2615a22299&ReturnUrl=http://mysite.com/auth/gettoken
-         *
+        /*
+          跳转到AC的oauth2.0联合登录
+          https://ac.ppdai.com/oauth2/login?AppID=8cf65377538741c2ba8add2615a22299&ReturnUrl=http://mysite.com/auth/gettoken
+
          */
 
-        /**
-         * 登录成功后 oauth2.0 跳转到http://mysite.com/auth/gettoken?code=XXXXXXXXXXXXXXXXXXXXXXXXXXX
-         * 添加WebApi接口gettoken
+        /*
+          登录成功后 oauth2.0 跳转到http://mysite.com/auth/gettoken?code=XXXXXXXXXXXXXXXXXXXXXXXXXXX
+          添加WebApi接口gettoken
          */
 
-        System.out.println("Get token is :" + gettoken("3084cb609b724c66b4ea97e9180c4262"));
+        System.out.println("Get token is :" + gettoken());
 
-        /**
-         * 刷新Token
-         * 用于AccessToken失效后刷新一个新的AccessToken，AccessToken有效期七天
+        /*
+          刷新Token
+          用于AccessToken失效后刷新一个新的AccessToken，AccessToken有效期七天
          */
         System.out.println("After refresh, token is :" + refreshToken());
     }
 
     /**
      * 根据授权码获取授权信息
-     *
-     * @param code
-     * @throws IOException
      */
-    public String gettoken(String code) throws Exception {
+    private String gettoken() throws Exception {
         OpenApiClient.Init(appid, RsaCryptoHelper.PKCSType.PKCS8, serverPublicKey, clientPrivateKey);
-        authInfo = OpenApiClient.authorize(code);
+        authInfo = OpenApiClient.authorize("3084cb609b724c66b4ea97e9180c4262");
         token = authInfo.getAccessToken();
         System.out.println("OpenID:" + authInfo.getOpenID());
         System.out.println("AccessToken:" + authInfo.getAccessToken());
@@ -84,9 +80,9 @@ public class BizTest {
     /**
      * 刷新令牌
      *
-     * @throws IOException
+     * @Throws IOException
      */
-    public String refreshToken() throws Exception {
+    private String refreshToken() throws Exception {
         OpenApiClient.Init(appid, RsaCryptoHelper.PKCSType.PKCS8, serverPublicKey, clientPrivateKey);
         authInfo = OpenApiClient.refreshToken(authInfo.getOpenID(), authInfo.getRefreshToken());
         token = authInfo.getAccessToken();
@@ -226,7 +222,7 @@ public class BizTest {
     }
 
 
-    public void pkcs1Test() throws Exception {
+    public void pkcs1Test() {
         /*String pubKey = "MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQC8iMpEG3mnFlMfufO95DfAfor80RL3I/IzF828aoDDw/Xy86jPiihJyGyG2ZmbqsAw+8nj8eGc+U9LmKASgQhS9e0R/MmYDa9R/O2f4tQZUQr3nE3uUTES0tqCLoE3TVSd59lnVExeDL5IW+F/Yc9mz1v+xSDFcSKyfHEo0FDnnwIDAQAB";
         String privKey = "MIICWwIBAAKBgQC8iMpEG3mnFlMfufO95DfAfor80RL3I/IzF828aoDDw/Xy86jPiihJyGyG2ZmbqsAw+8nj8eGc+U9LmKASgQhS9e0R/MmYDa9R/O2f4tQZUQr3nE3uUTES0tqCLoE3TVSd59lnVExeDL5IW+F/Yc9mz1v+xSDFcSKyfHEo0FDnnwIDAQABAoGAJ5wxqrd/CpzFIBBIZmfxUq8DcnRWoLfbpeJlZiWWIgskvEN2/wuOxVmne3lyLWNld6Ue2JY0CW/TuhU55ElZvv91NiTreBqr5WfZ8EYI+/lwEUKC4GzogVwrmpL1PpSaNJymvTujiShmP/+hia2mav9fhMOYm8MaMRwPELwASiECQQD0nW8xWF9IRT90v89y+P/htW+g3E4HZVAYPXyhfAnFJsGC06XAXwO0hDS8Sao7Nktj2sNSacNFjZvndGrQPOePAkEAxU8o7+QHqm/HYsO0XN49xn6zWQRvAOonhl5/+NKm7NfGEVTGwhP5KbNsJPv3TTtCPrS2V6MlIScg1yLXkFF28QJAGoEYdDNMF6uRJZhG5QE/0Hf1QWu9dKWwmP/IikLDWD5Lx14hXoetAhk1EZW1wTav0oD4muxkwRuH4ftGO4vt1wJAKkjdsBOBZRBRfaQNWj2ypYBvtSsTEvIbiFtmN5AFgAp6AyrU8bDQHBS8n2x0QlPpzYBy93MaOPGmwxRPeDlNMQJAKubPrAE9Qe++95xvvfpZgj6wOZoKGa4Yj3dd1PYcO2fU9eVSW1W6IrvJc36NIGz4Egyw2EiqFBBIJL92ZhjQ2Q==";
         */
@@ -243,7 +239,7 @@ public class BizTest {
     }
 
     @Test
-    public void pkcs8Test() throws Exception {
+    public void pkcs8Test() {
 
 /*        String pubKey = "-----BEGIN PUBLIC KEY-----\n" +
                 "MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDk/B01fncBoYj83jQnR3kAAftP\n" +

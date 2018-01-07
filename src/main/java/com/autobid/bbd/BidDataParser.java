@@ -5,7 +5,6 @@ import net.sf.json.JSONArray;
 import net.sf.json.JSONObject;
 import org.apache.log4j.Logger;
 
-import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
@@ -18,11 +17,12 @@ import java.util.List;
  * @Description: 标的数据处理程序
  * @date 2017年10月13日 下午5:11:12
  */
+
 public class BidDataParser {
 
     private static Logger logger = Logger.getLogger(BidDataParser.class);
 
-    public static double getBalance(String queryBalanceJson) throws ParseException {
+    public static double getBalance(String queryBalanceJson) {
 
         JSONObject balanceJson = JSONObject.fromObject(queryBalanceJson);
         //logger.info(balanceJson);
@@ -41,17 +41,17 @@ public class BidDataParser {
         return canUseBalance;
     }
 
-    public static List<Integer> getListingIds(JSONArray loanListArray) throws ParseException {
+    public static List<Integer> getListingIds(JSONArray loanListArray) {
         //System.out.println("-------------------getListingIds----------------------------");
 
-        List<Integer> listingIds = new ArrayList<Integer>();
+        List<Integer> listingIds = new ArrayList<>();
         int j = 0;
         for (int i = 0; i < loanListArray.size(); i++) {
             JSONObject loanInfoObj = loanListArray.getJSONObject(i);
             int listingId = loanInfoObj.getInt("ListingId");
             String creditCode = loanInfoObj.getString("CreditCode");
             if (!creditCode.equals("AA")) {
-                listingIds.add(new Integer(listingId));
+                listingIds.add(listingId);
                 j++;
             }
         }
@@ -97,46 +97,43 @@ public class BidDataParser {
         return listingIdsParted;
     }
 
-    public static ArrayList<List<Integer>> getLisiingIdsCollector(Integer[][] listingIdsParted) throws Exception {
+    public static ArrayList<List<Integer>> getLisiingIdsCollector(Integer[][] listingIdsParted) {
         //System.out.println("-------getLisiingIdsCollector------");
 
-        ArrayList<List<Integer>> listingIdsCollector = new ArrayList<List<Integer>>();
-        for (int i = 0; i < listingIdsParted.length; i++) {
-            List<Integer> listingIdsProcessed = new ArrayList<Integer>(listingIdsParted[0].length);
-            for (int j = 0; j < listingIdsParted[0].length && listingIdsParted[i][j] != null; j++) {
-                listingIdsProcessed.add(listingIdsParted[i][j]);
+        ArrayList<List<Integer>> listingIdsCollector = new ArrayList<>();
+        for (Integer[] aListingIdsParted : listingIdsParted) {
+            List<Integer> listingIdsProcessed = new ArrayList<>(listingIdsParted[0].length);
+            for (int i = 0; i < listingIdsParted[0].length && aListingIdsParted[i] != null; i++) {
+                listingIdsProcessed.add(aListingIdsParted[i]);
             }
             listingIdsCollector.add(listingIdsProcessed);
         }
         return listingIdsCollector;
     }
 
-    public static JSONArray getLoanInfos(String batchListInfos) throws ParseException, InterruptedException {
+    private static JSONArray getLoanInfos(String batchListInfos) {
         JSONObject batchListInfosObject = JSONObject.fromObject(batchListInfos);
         //System.out.println(batchListInfosObject);
     	/*if(JsonUtil.decodeUnicode(batchListInfos).contains("您的操作太频繁啦")) {
     		System.out.println("您的操作太频繁啦！先喝杯茶吧，歇一分钟~~");
     		Thread.sleep(60000);
     	}*/
-        JSONArray batchListInfoArray = batchListInfosObject.getJSONArray("LoanInfos");
-        return batchListInfoArray;
+        return batchListInfosObject.getJSONArray("LoanInfos");
     }
 
-    public static ArrayList<JSONArray> getLoanInfosCollector(ArrayList<String> batchListInfosCollector)
-            throws ParseException, InterruptedException {
-        ArrayList<JSONArray> loanInfosCollector = new ArrayList<JSONArray>();
+    public static ArrayList<JSONArray> getLoanInfosCollector(ArrayList<String> batchListInfosCollector) {
+        ArrayList<JSONArray> loanInfosCollector = new ArrayList<>();
         //System.out.println("batchListInfosCollector size :" + batchListInfosCollector);
-        Iterator<String> it = batchListInfosCollector.iterator();
-        while (it.hasNext()) {
-            JSONArray loanInfosArray = getLoanInfos(it.next());
+        for (String aBatchListInfosCollector : batchListInfosCollector) {
+            JSONArray loanInfosArray = getLoanInfos(aBatchListInfosCollector);
             loanInfosCollector.add(loanInfosArray);
         }
         return loanInfosCollector;
     }
 
-    public static HashMap<String, Object> getLoanInfoMap(JSONObject loanInfoObj) throws ParseException {
+    public static HashMap<String, Object> getLoanInfoMap(JSONObject loanInfoObj) {
 
-        HashMap<String, Object> loanInfoMap = new HashMap<String, Object>();
+        HashMap<String, Object> loanInfoMap = new HashMap<>();
         loanInfoMap.put("Amount", loanInfoObj.getInt("Amount"));                            //借款金额
         loanInfoMap.put("CreditCode", loanInfoObj.getString("CreditCode"));                //标的等级
         loanInfoMap.put("RemainFunding", loanInfoObj.getInt("RemainFunding"));            //剩余可投金额
@@ -162,7 +159,7 @@ public class BidDataParser {
     }
 
     public static ArrayList<List<Integer>> getListingIdsCollector(List<Integer> listingIds) {
-        ArrayList<List<Integer>> dll = new ArrayList<List<Integer>>();
+        ArrayList<List<Integer>> dll = new ArrayList<>();
         int size = listingIds.size();
         int partSize = 10;
         int m = size % partSize;

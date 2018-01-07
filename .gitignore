@@ -34,3 +34,4 @@ Icon?
 ehthumbs.db  
 Thumbs.db
 /src/db.properties
+/logs/

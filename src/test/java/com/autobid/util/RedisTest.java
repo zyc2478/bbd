@@ -1,20 +1,16 @@
 package com.autobid.util;
 
-//import java.util.HashMap;
-//import java.util.Iterator;
-//import java.util.List;
-//import java.util.Map;
+import java.util.*;
 
 import org.apache.log4j.Logger;
 import org.junit.Before;
 //import org.junit.Test;
 
-import com.autobid.util.RedisUtil;
 
-//import redis.clients.jedis.Jedis;
+import redis.clients.jedis.Jedis;
 
 public class RedisTest {
-    //private Jedis jedis; 
+    private Jedis jedis;
     private static Logger logger = Logger.getLogger(RedisTest.class);
 
     @Before
@@ -25,10 +21,10 @@ public class RedisTest {
         //jedis.auth("admin");  
     }
 
-    /* *//**
-     * redis存储字符串
-     * @throws InterruptedException
-     *//*
+    /*
+      redis存储字符串
+      @Throws InterruptedException
+     /*
 
     public void testString() throws InterruptedException {
         //-----添加数据----------  
@@ -57,14 +53,14 @@ public class RedisTest {
         
     }
     
-    *//**
+    /*
      * redis操作Map
-     *//*
+     */
 
     public void testMap() {
         //-----添加数据----------  
     	logger.debug("----testMap----");
-        Map<String, String> map = new HashMap<String, String>();
+        Map<String, String> map = new HashMap<>();
         jedis.del("user");
         map.put("name", "xinxin");
         map.put("age", "22");
@@ -82,17 +78,15 @@ public class RedisTest {
         System.out.println(jedis.exists("user"));//是否存在key为user的记录 返回true  
         System.out.println(jedis.hkeys("user"));//返回map对象中的所有key  
         System.out.println(jedis.hvals("user"));//返回map对象中的所有value 
-  
-        Iterator<String> iter=jedis.hkeys("user").iterator();  
-        while (iter.hasNext()){  
-            String key = iter.next();  
-            System.out.println(key+":"+jedis.hmget("user",key));  
+
+        for (String key : jedis.hkeys("user")) {
+            System.out.println(key + ":" + jedis.hmget("user", key));
         }  
     }
     
-    *//**
+    /*
      * jedis操作List 
-     *//*  
+     */
 
     public void testList(){  
     	logger.debug("----testList----");
@@ -113,8 +107,7 @@ public class RedisTest {
         jedis.rpush("java framework","hibernate"); 
         System.out.println(jedis.lrange("java framework",0,-1));
     }  
-    
-    */
+
 
     /**
      * jedis操作Set
@@ -154,7 +147,7 @@ public class RedisTest {
     */
     public void testRedisPool() {
         logger.debug("----testRedisPool----");
-        RedisUtil.getJedis().set("newname", "中文测试");
-        System.out.println(RedisUtil.getJedis().get("newname"));
+        Objects.requireNonNull(RedisUtil.getJedis()).set("newname", "中文测试");
+        System.out.println(Objects.requireNonNull(RedisUtil.getJedis()).get("newname"));
     }
 }

@@ -8,16 +8,19 @@ import java.util.HashMap;
 
 public class DebtRateCriteria implements Criteria, Constants {
 
-    double debtTotalRate, totalPrincipal, owingAmount, loanAmount, debt_mrate, debt_frate;
-    int gender, loanAmountLevel;
+    private double debtTotalRate;
+    private double debt_mrate;
+    private double debt_frate;
+    private int gender;
+    private int loanAmountLevel;
     boolean criteriaDebtRate;
     SuccessCountCriteria successCountCriteria = new SuccessCountCriteria();
 
-    public void calc(HashMap<String, Object> loanInfoMap, ConfBean cb) throws Exception {
+    public void calc(HashMap<String, Object> loanInfoMap, ConfBean cb) {
 
-        totalPrincipal = Double.parseDouble(loanInfoMap.get("TotalPrincipal").toString());
-        owingAmount = Double.parseDouble(loanInfoMap.get("OwingAmount").toString());
-        loanAmount = Double.parseDouble(loanInfoMap.get("Amount").toString());
+        double totalPrincipal = Double.parseDouble(loanInfoMap.get("TotalPrincipal").toString());
+        double owingAmount = Double.parseDouble(loanInfoMap.get("OwingAmount").toString());
+        double loanAmount = Double.parseDouble(loanInfoMap.get("Amount").toString());
         gender = Integer.parseInt(loanInfoMap.get("Gender").toString());
         debt_mrate = Double.parseDouble(cb.getDebtMrate());
         debt_frate = Double.parseDouble(cb.getDebtFrate());
@@ -31,7 +34,7 @@ public class DebtRateCriteria implements Criteria, Constants {
 				(gender == 2 && debtTotalRate < 0.5 * debt_frate));*/
     }
 
-    public int getLevel(HashMap<String, Object> loanInfoMap, ConfBean cb) throws Exception {
+    public int getLevel(HashMap<String, Object> loanInfoMap, ConfBean cb) {
         calc(loanInfoMap, cb);
         if ((gender == 1 && debtTotalRate < 0.15) || (gender == 2 && debtTotalRate < 0.25)) {
             return PERFECT;

@@ -12,7 +12,6 @@ import redis.clients.jedis.Jedis;
 import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.Iterator;
 
 /**
  * @author Richard Zeng
@@ -22,8 +21,11 @@ import java.util.Iterator;
  */
 public class BidDetermine implements Constants {
 
-    static int MIN_BID_AMOUNT, BID_LEVEL_AMOUNT, MULTIPLE, MORE_MULTIPLE;
-    static float MINI_MULTIPLE, MEDIUM_MULTIPLE;
+    private static int MIN_BID_AMOUNT;
+    private static int BID_LEVEL_AMOUNT;
+    private static int MULTIPLE;
+    private static int MORE_MULTIPLE;
+    private static float MINI_MULTIPLE, MEDIUM_MULTIPLE;
     private static Logger logger = Logger.getLogger(BidDetermine.class);
 
     static {
@@ -31,6 +33,7 @@ public class BidDetermine implements Constants {
             ConfBean cb = ConfUtil.readAllToBean();
             MIN_BID_AMOUNT = Integer.parseInt(cb.getMinBidAmount());
             BID_LEVEL_AMOUNT = Integer.parseInt(cb.getBidLevelAmount());
+            MULTIPLE = Integer.parseInt(cb.getMultiple());
             MORE_MULTIPLE = Integer.parseInt(cb.getMoreMultiple());
             MINI_MULTIPLE = Float.parseFloat(cb.getMiniMultiple());
             MEDIUM_MULTIPLE = Float.parseFloat(cb.getMediumMultiple());
@@ -42,23 +45,19 @@ public class BidDetermine implements Constants {
 
     public static boolean determineBalance(double queryBalance) throws Exception {
         if (queryBalance > MIN_BID_AMOUNT) {
-            return true;
+            return false;
         } else {
             logger.error("余额不足，程序退出");
             Thread.sleep(300000);
-            return false;
+            return true;
         }
     }
 
     public static boolean determineDuplicateId(int listingId, Jedis jedis) {
-        if (jedis.exists(String.valueOf(listingId))) {
-            //System.out.println(listingId + " 在Redis中重复!");
-            return true;
-        }
-        return false;
+        return jedis.exists(String.valueOf(listingId));
     }
 
-    public static int determineLoanAmountPro(int loanAmountLevelPro) throws Exception {
+    public static int determineLoanAmountPro(int loanAmountLevelPro) {
         switch (loanAmountLevelPro) {
             case PERFECT:
                 return (int) (BID_LEVEL_AMOUNT * MEDIUM_MULTIPLE);
@@ -71,8 +70,12 @@ public class BidDetermine implements Constants {
         }
     }
 
-    public static int determineCertificate(int certificateLevel) throws Exception {
-        switch (certificateLevel) {
+    public static int determineCertificate(int certificateLevel) {
+        return levelCalcMedium(certificateLevel);
+    }
+
+    private static int levelCalcMedium(int criteriaLevel) {
+        switch (criteriaLevel) {
             case PERFECT:
                 return BID_LEVEL_AMOUNT * MULTIPLE;
             case GOOD:
@@ -84,7 +87,7 @@ public class BidDetermine implements Constants {
         }
     }
 
-    public static int determineSuccessCount(int successCountLevel) throws Exception {
+    public static int determineSuccessCount(int successCountLevel) {
         switch (successCountLevel) {
             case GOOD:
                 return (int) (BID_LEVEL_AMOUNT * MINI_MULTIPLE);
@@ -95,7 +98,7 @@ public class BidDetermine implements Constants {
         }
     }
 
-    public static int determineOverduePro(int overdueLevelPro) throws Exception {
+    public static int determineOverduePro(int overdueLevelPro) {
         switch (overdueLevelPro) {
             case GOOD:
                 return BID_LEVEL_AMOUNT;
@@ -104,20 +107,11 @@ public class BidDetermine implements Constants {
         }
     }
 
-    public static int determineDebtRate(int debtRateLevel) throws Exception {
-        switch (debtRateLevel) {
-            case PERFECT:
-                return BID_LEVEL_AMOUNT * MULTIPLE;
-            case GOOD:
-                return (int) (BID_LEVEL_AMOUNT * MEDIUM_MULTIPLE);
-            case OK:
-                return BID_LEVEL_AMOUNT;
-            default:
-                return NONE;
-        }
+    public static int determineDebtRate(int debtRateLevel) {
+        return levelCalcMedium(debtRateLevel);
     }
 
-    public static int determineDebtRatePro(int debtRateProLevel) throws Exception {
+    public static int determineDebtRatePro(int debtRateProLevel) {
         switch (debtRateProLevel) {
             case PERFECT:
                 return (int) (BID_LEVEL_AMOUNT * MEDIUM_MULTIPLE);
@@ -128,8 +122,12 @@ public class BidDetermine implements Constants {
         }
     }
 
-    public static int determineEducation(int educationLevel) throws Exception {
-        switch (educationLevel) {
+    public static int determineEducation(int educationLevel) {
+        return levelCalcMore(educationLevel);
+    }
+
+    private static int levelCalcMore(int criteriaLevel) {
+        switch (criteriaLevel) {
             case PERFECT:
                 return BID_LEVEL_AMOUNT * MORE_MULTIPLE;
             case GOOD:
@@ -141,7 +139,7 @@ public class BidDetermine implements Constants {
         }
     }
 
-    public static int determineEducationPro(int educationProLevel) throws Exception {
+    public static int determineEducationPro(int educationProLevel) {
         switch (educationProLevel) {
             case PERFECT:
                 return BID_LEVEL_AMOUNT * MULTIPLE;
@@ -152,20 +150,11 @@ public class BidDetermine implements Constants {
         }
     }
 
-    public static int determineBeginPro(int educationProLevel) throws Exception {
-        switch (educationProLevel) {
-            case PERFECT:
-                return BID_LEVEL_AMOUNT * MORE_MULTIPLE;
-            case GOOD:
-                return BID_LEVEL_AMOUNT * MULTIPLE;
-            case OK:
-                return BID_LEVEL_AMOUNT;
-            default:
-                return NONE;
-        }
+    public static int determineBeginPro(int educationProLevel) {
+        return levelCalcMore(educationProLevel);
     }
 
-    public static int determineBasic(int basicLevel) throws Exception {
+    public static int determineBasic(int basicLevel) {
         switch (basicLevel) {
             case PERFECT:
                 return MIN_BID_AMOUNT + BID_LEVEL_AMOUNT * MULTIPLE;
@@ -180,7 +169,7 @@ public class BidDetermine implements Constants {
         }
     }
 
-    public static int determineEduDebtPro(int eduDebtProLevel) throws Exception {
+    public static int determineEduDebtPro(int eduDebtProLevel) {
         switch (eduDebtProLevel) {
             case PERFECT:
                 return BID_LEVEL_AMOUNT * MORE_MULTIPLE;
@@ -193,7 +182,7 @@ public class BidDetermine implements Constants {
         }
     }
 
-    public static int determineLastSuccessBorrow(int lastSuccessBorrowLevel) throws Exception {
+    public static int determineLastSuccessBorrow(int lastSuccessBorrowLevel) {
         switch (lastSuccessBorrowLevel) {
             case GOOD:
                 return BID_LEVEL_AMOUNT;
@@ -210,9 +199,7 @@ public class BidDetermine implements Constants {
         int totalAmount = 0;
         //System.out.println("criteriaGroup is : " + criteriaGroup.getCriteriaList());
         ArrayList<Criteria> criteriaList = criteriaGroup.getCriteriaList();
-        Iterator<Criteria> criteriaIt = criteriaList.iterator();
-        while (criteriaIt.hasNext()) {
-            Criteria c = criteriaIt.next();
+        for (Criteria c : criteriaList) {
             String criteriaName = c.getCriteriaName();
             String methodName = "determine" + criteriaName;
             int criteriaLevel = c.getLevel(loanInfoMap, cb);
@@ -223,7 +210,7 @@ public class BidDetermine implements Constants {
 
             //Class<?> bdo = Class.forName("com.autobid.bbd.BidDetermine");
             Class<BidDetermine> bdo = BidDetermine.class;
-            Method method = bdo.getDeclaredMethod(methodName, new Class[]{int.class});
+            Method method = bdo.getDeclaredMethod(methodName, int.class);
             //int amount = Integer.parseInt(method.invoke(this.getClass(),criteriaLevel).toString());
             int amount = Integer.parseInt(method.invoke(bdo, criteriaLevel).toString());
             CriteriaBid criteriaBid = new CriteriaBid();

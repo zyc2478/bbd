@@ -4,20 +4,16 @@ package com.autobid.util;
 public class JsonUtil {
 
     public static int parseInt(Object o) {
-        int result = 0;
-        if (o.equals(null)) {
-            result = 0;
-        } else {
-            result = ((Double) o).intValue();
+        int result;
+        result = ((Double) o).intValue();
 
-        }
         return result;
     }
 
     public static String decodeUnicode(String theString) {
         char aChar;
         int len = theString.length();
-        StringBuffer outBuffer = new StringBuffer(len);
+        StringBuilder outBuffer = new StringBuilder(len);
         for (int x = 0; x < len; ) {
             aChar = theString.charAt(x++);
             if (aChar == '\\') {

@@ -8,14 +8,15 @@ import java.util.HashMap;
 
 public class DebtRateProCriteria implements Criteria, Constants {
 
-    double debtTotalRate, totalPrincipal, owingAmount, loanAmount, gender;
+    private double debtTotalRate;
+    private double gender;
     boolean criteriaDebtRate;
     SuccessCountCriteria successCountCriteria = new SuccessCountCriteria();
 
     public void calc(HashMap<String, Object> loanInfoMap, ConfBean cb) {
-        totalPrincipal = Double.parseDouble(loanInfoMap.get("TotalPrincipal").toString());
-        owingAmount = Double.parseDouble(loanInfoMap.get("OwingAmount").toString());
-        loanAmount = Double.parseDouble(loanInfoMap.get("Amount").toString());
+        double totalPrincipal = Double.parseDouble(loanInfoMap.get("TotalPrincipal").toString());
+        double owingAmount = Double.parseDouble(loanInfoMap.get("OwingAmount").toString());
+        double loanAmount = Double.parseDouble(loanInfoMap.get("Amount").toString());
         gender = Integer.parseInt(loanInfoMap.get("Gender").toString());
         debtTotalRate = totalPrincipal != 0 ? (owingAmount + loanAmount) / totalPrincipal : 1;
     }

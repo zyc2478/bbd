@@ -10,9 +10,9 @@ import java.util.ArrayList;
  */
 public class CriteriaGroup {
 
-    ArrayList<Criteria> criteriaList = new ArrayList<Criteria>();
+    private ArrayList<Criteria> criteriaList = new ArrayList<>();
 
-    public void addCriteria(Criteria criteria) {
+    protected void addCriteria(Criteria criteria) {
         criteriaList.add(criteria);
     }
 
@@ -20,7 +20,7 @@ public class CriteriaGroup {
         return criteriaList;
     }
 
-    public void setCriteriaList(ArrayList<Criteria> criteriaList) {
+    protected void setCriteriaList(ArrayList<Criteria> criteriaList) {
         this.criteriaList = criteriaList;
     }
 }

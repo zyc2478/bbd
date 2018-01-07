@@ -18,7 +18,7 @@ public class DebtDataParser {
 
     public static ArrayList<JSONArray> getDebtsCollector(JSONArray debtList) {
 
-        ArrayList<JSONArray> dll = new ArrayList<JSONArray>();
+        ArrayList<JSONArray> dll = new ArrayList<>();
         int size = debtList.size();
         int partSize = 10;
         int m = size % partSize;
@@ -41,18 +41,14 @@ public class DebtDataParser {
                 //subDebtList = (JSONArray)debtList.subList(i*partSize, size-1);
                 //subDebtList = debtList.subList(fromIndex, toIndex)
                 JSONArray subDebtArray = new JSONArray();
-                for (Object object : subDebtList) {
-                    subDebtArray.add(object);
-                }
+                subDebtArray.addAll(subDebtList);
                 dll.add(subDebtArray);
             } else {
                 List<?> subDebtList = debtList.subList(i * partSize, (i + 1) * partSize);
                 //subDebtList = (JSONArray)debtList.subList(i*partSize, size-1);
                 //subDebtList = debtList.subList(fromIndex, toIndex)
                 JSONArray subDebtArray = new JSONArray();
-                for (Object object : subDebtList) {
-                    subDebtArray.add(object);
-                }
+                subDebtArray.addAll(subDebtList);
                 dll.add(subDebtArray);
             }
         }
@@ -61,12 +57,12 @@ public class DebtDataParser {
 
     public static List<Integer> getListingIds(JSONArray dFiltered) {
 
-        List<Integer> listingIds = new ArrayList<Integer>();
+        List<Integer> listingIds = new ArrayList<>();
 
 
         for (int i = 0; i < dFiltered.size(); i++) {
             //System.out.println(dFiltered.getJSONObject(i));
-            listingIds.add(new Integer(dFiltered.getJSONObject(i).getInt("ListingId")));
+            listingIds.add(dFiltered.getJSONObject(i).getInt("ListingId"));
         }
 
         return listingIds;

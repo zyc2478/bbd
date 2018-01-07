@@ -13,11 +13,10 @@ public class MyBatisUtil {
      *
      * @return SqlSessionFactory
      */
-    public static SqlSessionFactory getSqlSessionFactory() {
+    private static SqlSessionFactory getSqlSessionFactory() {
         String resource = "conf.xml";
         InputStream is = MyBatisUtil.class.getClassLoader().getResourceAsStream(resource);
-        SqlSessionFactory factory = new SqlSessionFactoryBuilder().build(is);
-        return factory;
+        return new SqlSessionFactoryBuilder().build(is);
     }
 
     /**

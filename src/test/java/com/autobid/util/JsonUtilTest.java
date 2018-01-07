@@ -2,8 +2,6 @@ package com.autobid.util;
 
 import org.junit.Test;
 
-import com.autobid.util.JsonUtil;
-
 public class JsonUtilTest {
 
     @Test

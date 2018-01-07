@@ -15,7 +15,7 @@ public class DebtResult {
         return debtId;
     }
 
-    public void setDebtId(int debtId) {
+    private void setDebtId(int debtId) {
         this.debtId = debtId;
     }
 
@@ -23,7 +23,7 @@ public class DebtResult {
         return listingId;
     }
 
-    public void setListingId(int listingId) {
+    private void setListingId(int listingId) {
         this.listingId = listingId;
     }
 
@@ -31,7 +31,7 @@ public class DebtResult {
         return price;
     }
 
-    public void setPrice(double price) {
+    private void setPrice(double price) {
         this.price = price;
     }
 }

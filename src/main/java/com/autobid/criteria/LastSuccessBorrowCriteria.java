@@ -12,12 +12,11 @@ import java.util.HashMap;
 
 public class LastSuccessBorrowCriteria implements Criteria, Constants {
 
-    boolean criteriaMShort, criteriaMLong, criteriaFShort, criteriaFLong;
-    private int successCount;
+    private boolean criteriaMShort, criteriaMLong, criteriaFShort, criteriaFLong;
 
     public void calc(HashMap<String, Object> loanInfoMap, ConfBean cb) throws Exception {
         long diffDay = 0;
-        successCount = (int) loanInfoMap.get("SuccessCount");
+        int successCount = (int) loanInfoMap.get("SuccessCount");
         if (successCount >= 1) {
             DateFormat df = new SimpleDateFormat("yyyy-MM-dd");
             Date lastDate = df.parse((String) loanInfoMap.get("LastSuccessBorrowTime"));

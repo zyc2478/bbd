@@ -4,7 +4,6 @@ import java.util.List;
 
 import com.autobid.entity.User;
 import com.autobid.mapping.UserMapperI;
-import com.autobid.util.MyBatisUtil;
 import org.apache.ibatis.session.SqlSession;
 import org.junit.Test;
 

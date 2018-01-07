@@ -21,7 +21,7 @@ public class MainOrder {
     /**
      * 输出properties的key和value
      */
-    public static void printProp(Properties properties) {
+    static void printProp(Properties properties) {
         System.out.println("---------（方式一）------------");
         for (String key : properties.stringPropertyNames()) {
             System.out.println(key + "=" + properties.getProperty(key));
@@ -76,7 +76,6 @@ public class MainOrder {
     /**
      * 写Properties文件（有序）
      *
-     * @throws IOException
      */
     private static void writeOrderedPropertiesFile(Properties properties) throws IOException {
         //Properties prop = new Properties();

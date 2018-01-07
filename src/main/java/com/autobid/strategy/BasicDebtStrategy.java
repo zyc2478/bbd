@@ -1,28 +1,21 @@
 package com.autobid.strategy;
 
+import com.autobid.criteria.CreditCodeCriteria;
 import com.autobid.util.ConfBean;
 import net.sf.json.JSONObject;
-
-import java.io.IOException;
-
-//import org.apache.log4j.Logger;
 
 public class BasicDebtStrategy implements DebtStrategy {
 
     //private static Logger logger = Logger.getLogger(BasicDebtStrategy.class);
 
     @Override
-    public boolean determineStrategy(JSONObject debtInfos, ConfBean cb) throws Exception {
+    public boolean determineStrategy(JSONObject debtInfos, ConfBean cb) {
 
         //printStrategy(debtInfos, cb);
-
-        if (determineOwingNumber(debtInfos) &&
+        return determineOwingNumber(debtInfos) &&
                 determineStatusId(debtInfos) &&
                 determinePreferenceDegree(debtInfos, cb) &&
-                determineCreditCode(debtInfos, cb)) {
-            return true;
-        }
-        return false;
+                determineCreditCode(debtInfos, cb);
     }
 
     private boolean determineOwingNumber(JSONObject debtInfos) {
@@ -38,24 +31,17 @@ public class BasicDebtStrategy implements DebtStrategy {
 
     private boolean determineStatusId(JSONObject debtInfos) {
         int status = debtInfos.getInt("StatusId");
-        if (status == 1) {
-            return true;
-        } else {
-            return false;
-        }
+        return status == 1;
     }
 
     private boolean determinePreferenceDegree(JSONObject debtInfos, ConfBean cb) {
         double pd = debtInfos.getDouble("PreferenceDegree");
         //优惠度越小越优惠
-        if (pd <= Double.parseDouble(cb.getDebtPreferLimit())) {
-            return true;
-        } else {
-            return false;
-        }
+        return pd <= Double.parseDouble(cb.getDebtPreferLimit());
     }
 
-    private boolean determineCreditCode(JSONObject debtInfos, ConfBean cb) throws IOException {
+    private boolean determineCreditCode(JSONObject debtInfos, ConfBean cb) {
+        CreditCodeCriteria ccc = new CreditCodeCriteria();
         int currentCredit = 0;
         int creditLimit = 0;
         final int creditAA = 0;
@@ -67,59 +53,11 @@ public class BasicDebtStrategy implements DebtStrategy {
         final int creditF = 6;
         String currentCode = debtInfos.getString("CurrentCreditCode");
         String debtCodeLimit = cb.getDebtCreditLimit();
-        switch (currentCode) {
-            case "AA":
-                currentCredit = creditAA;
-                break;
-            case "A":
-                currentCredit = creditA;
-                break;
-            case "B":
-                currentCredit = creditB;
-                break;
-            case "C":
-                currentCredit = creditC;
-                break;
-            case "D":
-                currentCredit = creditD;
-                break;
-            case "E":
-                currentCredit = creditE;
-                break;
-            case "F":
-                currentCredit = creditF;
-                break;
-        }
-        switch (debtCodeLimit) {
-            case "AA":
-                creditLimit = creditAA;
-                break;
-            case "A":
-                creditLimit = creditA;
-                break;
-            case "B":
-                creditLimit = creditB;
-                break;
-            case "C":
-                creditLimit = creditC;
-                break;
-            case "D":
-                creditLimit = creditD;
-                break;
-            case "E":
-                creditLimit = creditE;
-                break;
-            case "F":
-                creditLimit = creditF;
-                break;
-        }
-        if (currentCredit >= creditLimit) {
-            return true;
-        } else {
-            return false;
-        }
+        currentCredit = ccc.switchCredit(currentCredit,currentCode);
+        creditLimit = ccc.switchCredit(creditLimit,currentCode);
+        return currentCredit >= creditLimit;
     }
-	
+
 /*	private void printStrategy(JSONObject debtInfos,ConfBean cb) throws IOException {
 		logger.info("determineOwingNumber(debtInfos):"+determineOwingNumber(debtInfos)+", determineStatusId(debtInfos):"+
 				determineStatusId(debtInfos)+", determinePreferenceDegree(debtInfos):"+determinePreferenceDegree(debtInfos,cb)+

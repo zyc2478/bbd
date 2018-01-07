@@ -8,7 +8,7 @@ import net.sf.json.JSONObject;
 
 public class DebtInfosListFilter implements ListFilter {
 
-    public JSONArray filter(JSONArray debtList, ConfBean cb) throws Exception {
+    public JSONArray filter(JSONArray debtList, ConfBean cb) {
         JSONArray dlFiltered = new JSONArray();
         StackTraceElement stack[] = Thread.currentThread().getStackTrace();
         String callParentMethod = stack[3].getMethodName();
@@ -25,7 +25,7 @@ public class DebtInfosListFilter implements ListFilter {
 
         for (int i = 0; i < debtList.size(); i++) {
             JSONObject debtInfos = debtList.getJSONObject(i);
-            if (ifOverdue == false) {
+            if (!ifOverdue) {
                 if (nos.determineStrategy(debtInfos, cb)) {
                     dlFiltered.add(debtInfos);
                 }

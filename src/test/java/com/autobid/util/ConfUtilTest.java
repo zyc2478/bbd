@@ -2,7 +2,6 @@ package com.autobid.util;
 
 import org.apache.log4j.Logger;
 import org.junit.Test;
-import com.autobid.util.ConfUtil;
 
 public class ConfUtilTest {
 

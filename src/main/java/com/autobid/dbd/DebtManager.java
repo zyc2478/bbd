@@ -2,6 +2,7 @@ package com.autobid.dbd;
 
 import com.autobid.bbd.AuthInit;
 import com.autobid.bbd.BidDataParser;
+import com.autobid.bbd.BidDetermine;
 import com.autobid.bbd.BidService;
 import com.autobid.entity.Constants;
 import com.autobid.entity.DebtResult;
@@ -25,16 +26,14 @@ import java.util.List;
 /**
  * @author Richard Zeng
  * @version 1.0
- * @ClassName: BidManager
+ * @ClassName: DebtManager
  * @Description: 自动投标的主程序
- * @date 2017年10月13日 下午5:14:02
+ * @date 2017年1月3日 下午5:14:02
  */
 public class DebtManager implements Constants {
 
     private static String token = "";
     private static String openId;
-    private static String redisHost;
-    private static int redisPort;
     private static Jedis jedis;
     private static ConfBean confBean;
     private static Logger logger = Logger.getLogger(DebtManager.class);
@@ -47,8 +46,8 @@ public class DebtManager implements Constants {
             AuthInit.init();
             confBean = ConfUtil.readAllToBean();
             openId = confBean.getOpenId();
-            redisHost = confBean.getRedisHost();
-            redisPort = Integer.parseInt(confBean.getRedisPort());
+            String redisHost = confBean.getRedisHost();
+            int redisPort = Integer.parseInt(confBean.getRedisPort());
 
             jedis = new Jedis(redisHost, redisPort);
 
@@ -74,7 +73,7 @@ public class DebtManager implements Constants {
     String loanList;
     //int listingId;
     int[] loanIds;
-    private ArrayList<DebtResult> successDebtList = new ArrayList<DebtResult>();
+    private ArrayList<DebtResult> successDebtList = new ArrayList<>();
     public DebtManager() {
     }
     //HashMap<Integer,String> bidResultMap = new HashMap<Integer,String>();
@@ -124,7 +123,7 @@ public class DebtManager implements Constants {
     private void execute() throws Exception {
         String balanceJson = BidService.queryBalanceService(token);
         double balance = BidDataParser.getBalance(balanceJson);
-        if (!DebtDetermine.determineBalance(balance)) {
+        if (BidDetermine.determineBalance(balance)) {
             return;
         }
         int indexNum = 1;
@@ -137,6 +136,9 @@ public class DebtManager implements Constants {
         int debtGroups;
 
         do {
+            if(BidDetermine.determineBalance(balance)) {
+                return;
+            }
             JSONArray debtListArray = DebtService.debtListService(indexNum);
             debtCount = debtListArray.size();
             totalDebtCount += debtCount;
@@ -157,13 +159,11 @@ public class DebtManager implements Constants {
             //将debtList切分为10个一组,再拼接成一个Collector
             ArrayList<JSONArray> daList = DebtDataParser.getDebtsCollector(dlFiltered);
 
-            for (int i = 0; i < daList.size(); i++) {
-
+            for (JSONArray aDaList : daList) {
                 //获取债权标的明细
-
                 //logger.info(daList.get(i));
 
-                JSONArray debtInfosList = DebtService.batchDebtInfosService(daList.get(i));
+                JSONArray debtInfosList = DebtService.batchDebtInfosService(aDaList);
 				
 /*				System.out.println(debtInfosList.size());
 				for(int m=0;m<debtInfosList.size();m++) {

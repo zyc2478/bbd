@@ -14,17 +14,17 @@ import java.util.HashMap;
  */
 public class BasicCriteria implements Criteria, Constants {
 
-    boolean eduBasicCriteria;
-    boolean debtBasicCriteria;
-    boolean beginBasicCriteria;
-    CreditCodeCriteria creditCodeCriteria = new CreditCodeCriteria();
-    DebtRateCriteria debtRateCriteria = new DebtRateCriteria();
-    EducationCriteria educationCriteria = new EducationCriteria();
-    SuccessCountCriteria successCountCriteria = new SuccessCountCriteria();
-    LoanAmountCriteria loanAmountCriteria = new LoanAmountCriteria();
-    OverdueCriteria overdueCriteria = new OverdueCriteria();
-    AgeCriteria ageCriteria = new AgeCriteria();
-    LastSuccessBorrowCriteria lastSuccessBorrowCriteria = new LastSuccessBorrowCriteria();
+    private boolean eduBasicCriteria;
+    private boolean debtBasicCriteria;
+    private boolean beginBasicCriteria;
+    private CreditCodeCriteria creditCodeCriteria = new CreditCodeCriteria();
+    private DebtRateCriteria debtRateCriteria = new DebtRateCriteria();
+    private EducationCriteria educationCriteria = new EducationCriteria();
+    private SuccessCountCriteria successCountCriteria = new SuccessCountCriteria();
+    private LoanAmountCriteria loanAmountCriteria = new LoanAmountCriteria();
+    private OverdueCriteria overdueCriteria = new OverdueCriteria();
+    private AgeCriteria ageCriteria = new AgeCriteria();
+    private LastSuccessBorrowCriteria lastSuccessBorrowCriteria = new LastSuccessBorrowCriteria();
 
     public void calc(HashMap<String, Object> loanInfoMap, ConfBean cb) throws Exception {
 

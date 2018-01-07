@@ -4,37 +4,23 @@ import com.autobid.util.ConfBean;
 import net.sf.json.JSONArray;
 import net.sf.json.JSONObject;
 
-import java.io.IOException;
-
 public class DebtListFilter implements ListFilter {
 
-    private static boolean determinePriceForSaleRate(Double priceForSaleRate, ConfBean cb) throws NumberFormatException, IOException {
+    private static boolean determinePriceForSaleRate(Double priceForSaleRate, ConfBean cb) throws NumberFormatException {
 
-        if (priceForSaleRate >= Double.parseDouble(cb.getDebtSaleRate())) {
-            return true;
-        } else {
-            return false;
-        }
+        return priceForSaleRate >= Double.parseDouble(cb.getDebtSaleRate());
     }
 
-    private static boolean determinePrice(Double price, ConfBean cb) throws NumberFormatException, IOException {
+    private static boolean determinePrice(Double price, ConfBean cb) throws NumberFormatException {
 
-        if (price >= Double.parseDouble(cb.getDebtMinPrice()) && price <= Double.parseDouble(cb.getDebtPriceLimit())) {
-            return true;
-        } else {
-            return false;
-        }
+        return price >= Double.parseDouble(cb.getDebtMinPrice()) && price <= Double.parseDouble(cb.getDebtPriceLimit());
     }
 
     private static boolean determineCreditCode(String creditCode) {
-        if (creditCode.equals("AA")) {
-            return false;
-        } else {
-            return true;
-        }
+        return !creditCode.equals("AA");
     }
 
-    public JSONArray filter(JSONArray debtListArray, ConfBean cb) throws Exception {
+    public JSONArray filter(JSONArray debtListArray, ConfBean cb) {
 
         JSONArray debtListFiltered = new JSONArray();
 

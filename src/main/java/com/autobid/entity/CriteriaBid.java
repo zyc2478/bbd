@@ -30,8 +30,7 @@ public class CriteriaBid {
     }
 
     public String print() {
-        String outStr = this.getCriteriaName() + ":" + this.getLevel() + "," + this.getAmount();
         //System.out.println(this.getCriteriaName()+":"+this.getLevel()+","+this.getAmount());
-        return outStr;
+        return this.getCriteriaName() + ":" + this.getLevel() + "," + this.getAmount();
     }
 }

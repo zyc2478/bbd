@@ -9,20 +9,18 @@ import java.util.HashMap;
 
 public class EducationCriteria implements Criteria, Constants {
 
-    int certificateValidate;
-    String educationDegree, studyStyle;
-    boolean criteriaCertificate, criteriaBachelor, criteriaMaster;
+    private boolean criteriaCertificate, criteriaBachelor, criteriaMaster;
 
     //educateValidate = loanInfoObj.getInt("EducateValidate");
     public void calc(HashMap<String, Object> loanInfoMap, ConfBean cb) {
 
-        certificateValidate = (int) loanInfoMap.get("CertificateValidate");
+        int certificateValidate = (int) loanInfoMap.get("CertificateValidate");
 
         //educationDegree 包括：本科、专科、硕士、研究生、专升本、专科（高职）
-        educationDegree = (String) loanInfoMap.get("EducationDegree");
+        String educationDegree = (String) loanInfoMap.get("EducationDegree");
 
         //studyStyle 包括：函授、开放教育、成人、普通、普通全日制、研究生、网络教育、脱产、自学考试、自考
-        studyStyle = (String) loanInfoMap.get("StudyStyle");
+        String studyStyle = (String) loanInfoMap.get("StudyStyle");
 
         criteriaCertificate = certificateValidate > 0;
 

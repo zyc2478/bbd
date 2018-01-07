@@ -11,9 +11,9 @@ import java.util.HashMap;
  * @date 2017年10月13日 下午5:17:00
  */
 public interface Criteria {
-    public void calc(HashMap<String, Object> loanInfoMap, ConfBean cb) throws Exception;
+    void calc(HashMap<String, Object> loanInfoMap, ConfBean cb) throws Exception;
 
-    public int getLevel(HashMap<String, Object> loanInfoMap, ConfBean cb) throws Exception;
+    int getLevel(HashMap<String, Object> loanInfoMap, ConfBean cb) throws Exception;
 
-    public String getCriteriaName();
+    String getCriteriaName();
 }
