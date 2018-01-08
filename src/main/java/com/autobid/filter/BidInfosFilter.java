@@ -11,7 +11,7 @@ public class BidInfosFilter implements ListFilter {
 
     //private static Logger logger = Logger.getLogger(DebtManager.class);
 
-    public JSONArray filter(JSONArray loanInfos, ConfBean cb) throws Exception {
+    public JSONArray filter(JSONArray loanInfos, ConfBean cb) {
 
         JSONArray bidFiltered = new JSONArray();
         BidDebtStrategy bds = new BidDebtStrategy();

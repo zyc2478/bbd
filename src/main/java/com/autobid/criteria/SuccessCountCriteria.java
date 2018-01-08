@@ -8,7 +8,6 @@ import java.util.HashMap;
 
 public class SuccessCountCriteria implements Criteria, Constants {
 
-    private static int beginCount;
     private boolean criteriaSuccessCount, criteriaNormalCount, criteriaBeginCount, criteriaNsRate;
 
     public void calc(HashMap<String, Object> loanInfoMap, ConfBean cb) throws NumberFormatException {

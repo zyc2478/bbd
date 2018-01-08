@@ -9,13 +9,11 @@ import java.util.HashMap;
 public class CreditCodeCriteria implements Criteria, Constants {
 
     private int credit;
-    private String creditCode;
     private int creditLimit;
     private boolean criteriaCredit;
 
     public void calc(HashMap<String, Object> loanInfoMap, ConfBean cb) {
         String creditCode = (String) loanInfoMap.get("CreditCode");
-        String creditCodeLimit = cb.getCreditLimit();
         credit = switchCredit(credit,creditCode);
         creditLimit = switchCredit(creditLimit,creditCode);
         criteriaCredit = credit >= creditLimit;
@@ -23,7 +21,6 @@ public class CreditCodeCriteria implements Criteria, Constants {
    public int switchCredit(int credit, String creditCode){
         switch (creditCode) {
             case "AA":
-                int creditAA = 0;
                 credit = 0;
                 break;
             case "A":

@@ -7,15 +7,14 @@ import org.apache.log4j.Logger;
 
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.Iterator;
 import java.util.List;
 
 
 /**
- * @author Richard Zeng
+ * @Author Richard Zeng
  * @ClassName: BidDataParser
  * @Description: 标的数据处理程序
- * @date 2017年10月13日 下午5:11:12
+ * @Date 2017年10月13日 下午5:11:12
  */
 
 public class BidDataParser {
@@ -59,6 +58,7 @@ public class BidDataParser {
         return listingIds;
     }
 
+/*
 
     public static Integer[][] getListingIdsParted(List<Integer> listingIds) {
         //System.out.println("-------------------getListingIdsParted----------------------------");
@@ -79,13 +79,17 @@ public class BidDataParser {
             s++;
             //System.out.println("listingIdsArray:"+listingIdsArray[s]);
         }
-		/*for(int i=0;i<listingIdsArray.length;i++) {
+		*/
+/*for(int i=0;i<listingIdsArray.length;i++) {
 			System.out.println(listingIdsArray[i]);
-		}*/
+		}*//*
+
 
         int p = 0;
+*/
 /*		System.out.println("listingIdsParted length :"+listingIdsParted.length);
-		System.out.println("listingIdsParted[0] length :"+listingIdsParted[0].length);*/
+		System.out.println("listingIdsParted[0] length :"+listingIdsParted[0].length);*//*
+
 
         for (int i = 0; i < listingIdsParted.length; i++) {
             for (int j = 0; j < listingIdsParted[0].length && i * listingIdsParted[0].length + j < listingIdsArray.length; j++) {
@@ -96,9 +100,10 @@ public class BidDataParser {
         }
         return listingIdsParted;
     }
-
-    public static ArrayList<List<Integer>> getLisiingIdsCollector(Integer[][] listingIdsParted) {
-        //System.out.println("-------getLisiingIdsCollector------");
+*/
+/*
+    public static ArrayList<List<Integer>> getListingIdsCollector(Integer[][] listingIdsParted) {
+        //System.out.println("-------getListingIdsCollector------");
 
         ArrayList<List<Integer>> listingIdsCollector = new ArrayList<>();
         for (Integer[] aListingIdsParted : listingIdsParted) {
@@ -109,7 +114,7 @@ public class BidDataParser {
             listingIdsCollector.add(listingIdsProcessed);
         }
         return listingIdsCollector;
-    }
+    }*/
 
     private static JSONArray getLoanInfos(String batchListInfos) {
         JSONObject batchListInfosObject = JSONObject.fromObject(batchListInfos);

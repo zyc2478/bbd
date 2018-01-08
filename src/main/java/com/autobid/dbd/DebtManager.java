@@ -24,11 +24,11 @@ import java.util.List;
 
 
 /**
- * @author Richard Zeng
- * @version 1.0
+ * @Author Richard Zeng
+ * @Version 1.0
  * @ClassName: DebtManager
  * @Description: 自动投标的主程序
- * @date 2017年1月3日 下午5:14:02
+ * @Date 2017年1月3日 下午5:14:02
  */
 public class DebtManager implements Constants {
 
@@ -69,10 +69,6 @@ public class DebtManager implements Constants {
         }
     }
 
-    //String bidList;
-    String loanList;
-    //int listingId;
-    int[] loanIds;
     private ArrayList<DebtResult> successDebtList = new ArrayList<>();
     public DebtManager() {
     }
@@ -121,8 +117,7 @@ public class DebtManager implements Constants {
     }
 
     private void execute() throws Exception {
-        String balanceJson = BidService.queryBalanceService(token);
-        double balance = BidDataParser.getBalance(balanceJson);
+        double balance = BidDataParser.getBalance(BidService.queryBalanceService(token));
         if (BidDetermine.determineBalance(balance)) {
             return;
         }
@@ -136,7 +131,9 @@ public class DebtManager implements Constants {
         int debtGroups;
 
         do {
+            balance = BidDataParser.getBalance(BidService.queryBalanceService(token));
             if(BidDetermine.determineBalance(balance)) {
+                logger.error("余额不足，程序退出，1分钟后将再次尝试");
                 return;
             }
             JSONArray debtListArray = DebtService.debtListService(indexNum);
@@ -205,7 +202,7 @@ public class DebtManager implements Constants {
                         }
                         jedis.setex(String.valueOf(di.getInt("DebtId")), 172800, String.valueOf(di.getInt("ListingId")));
                         logger.info(indexNum + ": " + di);
-                        //System.out.println("已投债权标 DebtId:"+ di.getInt("DebtId") + ", ListingId:" + di.getInt("ListingId") + ", Price:" + di.getDouble("PriceforSale"));
+                        //System.out.println("已投债权标 DebtId:"+ di.getInt("DebtId") + ", ListingId:" + di.getInt("ListingId") + ", Price:" + di.getDouble("PriceForSale"));
                     }
                 }
                 Thread.sleep(200);

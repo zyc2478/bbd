@@ -12,7 +12,6 @@ public class OverdueProCriteria implements Criteria, Constants {
     private boolean criteriaMore;
     private boolean criteriaLess;
     private boolean criteriaNormal;
-    private boolean criteriaOverdue;
 
     public void calc(HashMap<String, Object> loanInfoMap, ConfBean cb) {
 
@@ -22,10 +21,6 @@ public class OverdueProCriteria implements Criteria, Constants {
         gender = Integer.parseInt(loanInfoMap.get("Gender").toString());
         criteriaMore = overdueMoreCount == 0;
         criteriaLess = overdueLessCount == 0;
-        boolean criteriaLessRate = (normalCount != 0) && ((new Integer(overdueLessCount).doubleValue() / normalCount) <
-                Double.parseDouble(cb.getOverdueRate()));
-        boolean criteriaLessMoreRate = normalCount != 0 && new Integer(overdueLessCount).doubleValue() / normalCount <
-                Double.parseDouble(cb.getOverdueRate()) * 1.5;
         criteriaNormal = normalCount >= Integer.parseInt(cb.getNormalLimit());
     }
 

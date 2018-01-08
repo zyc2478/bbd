@@ -7,10 +7,10 @@ import org.quartz.Job;
 import org.quartz.JobExecutionContext;
 
 /**
- * @author Richard Zeng
- * @version V1.0
- * @description 定时处理的任务，任务需要实现Job接口
- * @time 2017-9-20
+ * @Author Richard Zeng
+ * @Version V1.0
+ * @Description: 定时处理的任务，任务需要实现Job接口
+ * @Date 2017-9-20
  */
 public class AutoBidJob implements Job {
 
@@ -23,9 +23,9 @@ public class AutoBidJob implements Job {
         try {
             bidMode = Integer.parseInt(ConfUtil.getProperty("bid_mode"));
             if (bidMode == 1) {
-                bid.bidExcecute();
+                bid.bidExecute();
             } else if (bidMode == 2) {
-                bid.bidExcecute();
+                bid.bidExecute();
                 debt.debtExcecute();
             } else if (bidMode == 3) {
                 debt.debtExcecute();

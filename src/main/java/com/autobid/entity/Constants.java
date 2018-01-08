@@ -7,8 +7,4 @@ public interface Constants {
     int OK = 2;
     int GOOD = 3;
     int PERFECT = 4;
-    double HALF = 1 / 2;
-    double ONE_THIRD = 1 / 3;
-    double QUARTER = 1 / 4;
-    double ONE_FIFTH = 1 / 5;
 }

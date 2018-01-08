@@ -7,10 +7,10 @@ import com.autobid.util.ConfBean;
 import java.util.HashMap;
 
 /**
- * @author Richard Zeng
+ * @Author Richard Zeng
  * @ClassName: BasicCriteria
  * @Description: 最基础的策略，需要通过该策略才可以投标
- * @date 2017年10月13日 下午5:16:24
+ * @Date 2017年10月13日 下午5:16:24
  */
 public class BasicCriteria implements Criteria, Constants {
 
@@ -90,6 +90,7 @@ public class BasicCriteria implements Criteria, Constants {
         return "Basic";
     }
 
+    @SuppressWarnings("unused")
     public void printCriteria(HashMap<String, Object> loanInfoMap, ConfBean cb) throws Exception {
         int creditCodeLevel = creditCodeCriteria.getLevel(loanInfoMap, cb);
         int debtRateLevel = debtRateCriteria.getLevel(loanInfoMap, cb);

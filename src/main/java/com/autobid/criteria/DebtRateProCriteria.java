@@ -10,8 +10,6 @@ public class DebtRateProCriteria implements Criteria, Constants {
 
     private double debtTotalRate;
     private double gender;
-    boolean criteriaDebtRate;
-    SuccessCountCriteria successCountCriteria = new SuccessCountCriteria();
 
     public void calc(HashMap<String, Object> loanInfoMap, ConfBean cb) {
         double totalPrincipal = Double.parseDouble(loanInfoMap.get("TotalPrincipal").toString());

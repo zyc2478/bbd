@@ -23,6 +23,7 @@ public class LoanListResult {
         this.loanIdCount = loanIdCount;
     }
 
+    @SuppressWarnings("unused")
     public int getIndexNum() {
         return indexNum;
     }

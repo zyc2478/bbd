@@ -13,15 +13,8 @@ public class BidResult {
         return this.bidId;
     }
 
-    public void setBidId(Integer bidId) {
-        this.bidId = bidId;
-    }
-
     public Integer getBidAmount() {
         return this.bidAmount;
     }
 
-    public void setBidAmount(Integer bidAmount) {
-        this.bidAmount = bidAmount;
-    }
 }

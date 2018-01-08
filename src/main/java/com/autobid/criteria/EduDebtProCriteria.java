@@ -10,12 +10,8 @@ import java.util.HashMap;
 public class EduDebtProCriteria implements Criteria, Constants {
 
     private double debtTotalRate;
-    boolean criteriaDebtRate;
-
     private boolean criteriaBachelor;
     private boolean criteriaMaster;
-
-    SuccessCountCriteria successCountCriteria = new SuccessCountCriteria();
 
     public void calc(HashMap<String, Object> loanInfoMap, ConfBean cb) {
         double totalPrincipal = Double.parseDouble(loanInfoMap.get("TotalPrincipal").toString());
@@ -24,15 +20,11 @@ public class EduDebtProCriteria implements Criteria, Constants {
 
         debtTotalRate = totalPrincipal != 0 ? (owingAmount + loanAmount) / totalPrincipal : 1;
 
-        int certificateValidate = (int) loanInfoMap.get("CertificateValidate");
-
         //educationDegree 包括：本科、专科、硕士、研究生、专升本、专科（高职）
         String educationDegree = (String) loanInfoMap.get("EducationDegree");
 
         //studyStyle 包括：函授、开放教育、成人、普通、普通全日制、研究生、网络教育、脱产、自学考试、自考
         String studyStyle = (String) loanInfoMap.get("StudyStyle");
-
-        boolean criteriaCertificate = certificateValidate > 0;
 
         criteriaBachelor = JsonUtil.decodeUnicode(educationDegree).equals("本科") &&
                 (JsonUtil.decodeUnicode(studyStyle).equals("普通") ||

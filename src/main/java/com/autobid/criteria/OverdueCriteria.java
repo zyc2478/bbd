@@ -15,7 +15,6 @@ public class OverdueCriteria implements Criteria, Constants {
     private boolean criteriaLessRate;
     private boolean criteriaLessFRate;
     private boolean criteriaNormal;
-    private boolean criteriaOverdue;
 
     public void calc(HashMap<String, Object> loanInfoMap, ConfBean cb) throws Exception {
 
@@ -27,8 +26,6 @@ public class OverdueCriteria implements Criteria, Constants {
         criteriaLess = overdueLessCount == 0;
         criteriaLessRate = (normalCount != 0) && ((new Integer(overdueLessCount).doubleValue() / normalCount) <
                 Double.parseDouble(cb.getOverdueRate()));
-        boolean criteriaLessMRate = normalCount != 0 && new Integer(overdueLessCount).doubleValue() / normalCount <
-                Double.parseDouble(cb.getOverdueRate()) * Double.parseDouble(cb.getOverdueMrate());
         criteriaLessFRate = normalCount != 0 && new Integer(overdueLessCount).doubleValue() / normalCount <
                 Double.parseDouble(cb.getOverdueRate()) * Double.parseDouble(cb.getOverdueFrate());
 

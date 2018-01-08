@@ -8,10 +8,10 @@ import org.quartz.impl.StdSchedulerFactory;
 
 
 /**
- * @author Richard Zeng
+ * @Author Richard Zeng
  * @ClassName: AutoBidRun
  * @Description: 定时运行服务，在这里配置定时任务
- * @date 2017年10月13日 下午5:04:40
+ * @Date 2017年10月13日 下午5:04:40
  */
 public class AutoBidRun {
 

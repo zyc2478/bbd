@@ -1,5 +1,6 @@
 package com.autobid.entity;
 
+@SuppressWarnings("unused")
 public class DebtInfo {
 
     private int DebtId;

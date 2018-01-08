@@ -29,6 +29,7 @@ public class CriteriaBid {
         this.level = level;
     }
 
+    @SuppressWarnings("unused")
     public String print() {
         //System.out.println(this.getCriteriaName()+":"+this.getLevel()+","+this.getAmount());
         return this.getCriteriaName() + ":" + this.getLevel() + "," + this.getAmount();

@@ -17,7 +17,7 @@ import java.util.HashMap;
  * @author Richard Zeng
  * @ClassName: BidDetermine
  * @Description: 判断标的金额的程序
- * @date 2017年10月13日 下午5:10:43
+ * @Date 2017年10月13日 下午5:10:43
  */
 public class BidDetermine implements Constants {
 
@@ -47,8 +47,6 @@ public class BidDetermine implements Constants {
         if (queryBalance > MIN_BID_AMOUNT) {
             return false;
         } else {
-            logger.error("余额不足，程序退出");
-            Thread.sleep(300000);
             return true;
         }
     }
@@ -57,6 +55,7 @@ public class BidDetermine implements Constants {
         return jedis.exists(String.valueOf(listingId));
     }
 
+    @SuppressWarnings("unused")
     public static int determineLoanAmountPro(int loanAmountLevelPro) {
         switch (loanAmountLevelPro) {
             case PERFECT:
@@ -69,7 +68,7 @@ public class BidDetermine implements Constants {
                 return NONE;
         }
     }
-
+    @SuppressWarnings("unused")
     public static int determineCertificate(int certificateLevel) {
         return levelCalcMedium(certificateLevel);
     }
@@ -86,7 +85,7 @@ public class BidDetermine implements Constants {
                 return NONE;
         }
     }
-
+    @SuppressWarnings("unused")
     public static int determineSuccessCount(int successCountLevel) {
         switch (successCountLevel) {
             case GOOD:
@@ -97,7 +96,7 @@ public class BidDetermine implements Constants {
                 return NONE;
         }
     }
-
+    @SuppressWarnings("unused")
     public static int determineOverduePro(int overdueLevelPro) {
         switch (overdueLevelPro) {
             case GOOD:
@@ -106,11 +105,12 @@ public class BidDetermine implements Constants {
                 return NONE;
         }
     }
-
+    @SuppressWarnings("unused")
     public static int determineDebtRate(int debtRateLevel) {
         return levelCalcMedium(debtRateLevel);
     }
 
+    @SuppressWarnings("unused")
     public static int determineDebtRatePro(int debtRateProLevel) {
         switch (debtRateProLevel) {
             case PERFECT:
@@ -121,7 +121,7 @@ public class BidDetermine implements Constants {
                 return NONE;
         }
     }
-
+    @SuppressWarnings("unused")
     public static int determineEducation(int educationLevel) {
         return levelCalcMore(educationLevel);
     }
@@ -138,7 +138,7 @@ public class BidDetermine implements Constants {
                 return NONE;
         }
     }
-
+    @SuppressWarnings("unused")
     public static int determineEducationPro(int educationProLevel) {
         switch (educationProLevel) {
             case PERFECT:
@@ -149,11 +149,12 @@ public class BidDetermine implements Constants {
                 return NONE;
         }
     }
-
+    @SuppressWarnings("unused")
     public static int determineBeginPro(int educationProLevel) {
         return levelCalcMore(educationProLevel);
     }
 
+    @SuppressWarnings("unused")
     public static int determineBasic(int basicLevel) {
         switch (basicLevel) {
             case PERFECT:
@@ -168,7 +169,7 @@ public class BidDetermine implements Constants {
                 return NONE;
         }
     }
-
+    @SuppressWarnings("unused")
     public static int determineEduDebtPro(int eduDebtProLevel) {
         switch (eduDebtProLevel) {
             case PERFECT:
@@ -181,7 +182,7 @@ public class BidDetermine implements Constants {
                 return NONE;
         }
     }
-
+    @SuppressWarnings("unused")
     public static int determineLastSuccessBorrow(int lastSuccessBorrowLevel) {
         switch (lastSuccessBorrowLevel) {
             case GOOD:

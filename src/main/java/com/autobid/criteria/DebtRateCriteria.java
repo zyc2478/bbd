@@ -13,9 +13,8 @@ public class DebtRateCriteria implements Criteria, Constants {
     private double debt_frate;
     private int gender;
     private int loanAmountLevel;
-    boolean criteriaDebtRate;
-    SuccessCountCriteria successCountCriteria = new SuccessCountCriteria();
 
+    @SuppressWarnings("unknown")
     public void calc(HashMap<String, Object> loanInfoMap, ConfBean cb) {
 
         double totalPrincipal = Double.parseDouble(loanInfoMap.get("TotalPrincipal").toString());

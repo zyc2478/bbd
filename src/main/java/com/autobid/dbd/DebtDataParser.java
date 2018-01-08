@@ -10,7 +10,7 @@ import java.util.List;
  * @author Richard Zeng
  * @ClassName: DebtDataParser
  * @Description: 债权数据处理程序
- * @date 2017年12月22日 下午10:47:12
+ * @Date 2017年12月22日 下午10:47:12
  */
 public class DebtDataParser {
 

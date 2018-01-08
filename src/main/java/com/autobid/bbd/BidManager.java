@@ -23,7 +23,7 @@ import java.util.*;
  * @version 1.0
  * @ClassName: BidManager
  * @Description: 自动投标的主程序
- * @date 2017年10月13日 下午5:14:02
+ * @Date 2017年10月13日 下午5:14:02
  */
 public class BidManager implements Constants {
 
@@ -70,10 +70,6 @@ public class BidManager implements Constants {
         }
     }
 
-    //String bidList;
-    String loanList;
-    //int listingId;
-    int[] loanIds;
     //private BidByDebt(){}
     public BidManager() {
     }
@@ -92,12 +88,13 @@ public class BidManager implements Constants {
     }
 
     @Test
-    public void bidExcecute() throws Exception {
-        logger.info("bidExcecute");
-        String balanceJson = BidService.queryBalanceService(token);
-        double balance = BidDataParser.getBalance(balanceJson);
+    public void bidExecute() throws Exception {
+        logger.info("bidExecute");
+        double balance = BidDataParser.getBalance(BidService.queryBalanceService(token));
 
         if (BidDetermine.determineBalance(balance)) {
+            logger.error("余额不足，程序退出，1分钟后将再次尝试");
+            Thread.sleep(60000);
             return;
         }
         ArrayList<BidResult> successBidList = new ArrayList<>();
@@ -106,7 +103,9 @@ public class BidManager implements Constants {
         List<Integer> listingIds;
         BasicCriteria basicCriteria = new BasicCriteria();
         do {
+            balance = BidDataParser.getBalance(BidService.queryBalanceService(token));
             if (BidDetermine.determineBalance(balance)) {
+                logger.error("余额不足，程序退出，1分钟后将再次尝试");
                 return;
             }
             LoanListResult loanListResult = BidService.loanListService(indexNum);
@@ -119,7 +118,7 @@ public class BidManager implements Constants {
 
             //将ListingIds切分成10个一组，再拼接成一个Collector
             //Integer[][] listingIdsParted = BidDataParser.getListingIdsParted(listingIds);
-            //ArrayList<List<Integer>> listingIdsCollector = BidDataParser.getLisiingIdsCollector(listingIdsParted);
+            //ArrayList<List<Integer>> listingIdsCollector = BidDataParser.getListingIdsCollector(listingIdsParted);
 
             ArrayList<List<Integer>> listingIdsCollector = BidDataParser.getListingIdsCollector(listingIds);
 

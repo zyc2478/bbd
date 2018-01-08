@@ -6,7 +6,7 @@
 <generatorConfiguration>
     <!-- 引入配置文件 -->
     <properties resource="db.properties"/>
-    <context id="MysqlContext" targetRuntime="MyBatis3" defaultModelType="flat">
+    <context id="MysqlContext" targetRuntime="MyBatis3Simple" defaultModelType="flat">
         <property name="beginningDelimiter" value="`"/>
         <property name="endingDelimiter" value="`"/>
 
@@ -24,7 +24,7 @@
             <property name="trimStrings" value="true"/>
         </javaModelGenerator>
 
-        <sqlMapGenerator targetPackage="test.xml" targetProject="src\main\resources"/>
+        <sqlMapGenerator targetPackage="mapper.xml" targetProject="src\main\resources"/>
 
         <javaClientGenerator type="XMLMAPPER" targetPackage="com.autobid.dao" targetProject="src\main\java"/>
 

@@ -7,6 +7,7 @@ import com.autobid.util.JsonUtil;
 
 import java.util.HashMap;
 
+@SuppressWarnings("unused")
 public class BeginProCriteria implements Criteria, Constants {
 
     private boolean criteriaBachelor;

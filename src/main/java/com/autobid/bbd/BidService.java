@@ -13,10 +13,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * @author Richard Zeng
+ * @Author Richard Zeng
  * @ClassName: BidService
  * @Description: 与拍拍贷的各投标API调用服务
- * @date 2017年10月13日 下午5:15:21
+ * @Date 2017年10月13日 下午5:15:21
  */
 public class BidService {
 
@@ -44,7 +44,7 @@ public class BidService {
 
     public static LoanListResult loanListService(int indexNum) throws Exception {
         int[] loanIds = null;
-        ArrayList<String> loanInfosList = new ArrayList<>();
+        //ArrayList<String> loanInfosList = new ArrayList<>();
         String url = "http://gw.open.ppdai.com/invest/LLoanInfoService/LoanList";
         Result result;
         String creditCode;
@@ -78,7 +78,7 @@ public class BidService {
                 }
             }
             System.out.println("第" + indexNum + "组标的总数为：" + loanIds.length + "，中风险标的数为：" + j);
-            loanInfosList.add(loanInfosArray.toString());
+            //loanInfosList.add(loanInfosArray.toString());
             //logger.info(loanInfosList);
         } else {
             logger.error(result.getErrorMessage());
@@ -99,7 +99,7 @@ public class BidService {
         //int num=0;
         //System.out.println(listingIdsCollector.size());
         for (List<Integer> listingIds : listingIdsCollector) {
-            //System.out.println("listingids size is " + listingIds.size());
+            //System.out.println("listingIds size is " + listingIds.size());
             //System.out.println(listingIds);
             Result result = OpenApiClient.send(url, token, new PropertyObject("ListingIds", listingIds, ValueTypeEnum.Other));
             if (JsonUtil.decodeUnicode(result.getContext()).contains("您的操作太频繁啦")) {

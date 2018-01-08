@@ -2,6 +2,7 @@ package com.autobid.entity;
 
 import java.util.ArrayList;
 
+@SuppressWarnings("unused")
 public class DebtListResult {
     private ArrayList<String> debtList;
     private int indexNum;
