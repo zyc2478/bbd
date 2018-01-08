@@ -30,6 +30,8 @@ import java.util.List;
  * @Description: 自动投标的主程序
  * @Date 2017年1月3日 下午5:14:02
  */
+
+@SuppressWarnings("deprecation")
 public class DebtManager implements Constants {
 
     private static String token = "";

@@ -6,6 +6,7 @@ import com.autobid.util.ConfBean;
 
 import java.util.HashMap;
 
+@SuppressWarnings("deprecation")
 public class DebtRateProCriteria implements Criteria, Constants {
 
     private double debtTotalRate;

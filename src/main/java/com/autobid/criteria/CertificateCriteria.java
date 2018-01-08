@@ -5,7 +5,7 @@ import com.autobid.entity.Criteria;
 import com.autobid.util.ConfBean;
 
 import java.util.HashMap;
-
+@SuppressWarnings("deprecation")
 public class CertificateCriteria implements Criteria, Constants {
 
     private int certificateSum;

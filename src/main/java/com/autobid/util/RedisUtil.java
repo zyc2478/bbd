@@ -4,6 +4,7 @@ import redis.clients.jedis.Jedis;
 import redis.clients.jedis.JedisPool;
 import redis.clients.jedis.JedisPoolConfig;
 
+@SuppressWarnings("deprecation,unused")
 public final class RedisUtil {
 
     //Redis的端口号
@@ -61,7 +62,7 @@ public final class RedisUtil {
       释放jedis资源
       @param jedis
     */
-    @SuppressWarnings("deprecation")
+
 	public static void returnResource(final Jedis jedis) {
         if (jedis != null) {
             jedisPool.returnResource(jedis);

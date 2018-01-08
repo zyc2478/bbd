@@ -6,6 +6,7 @@ import com.autobid.util.ConfBean;
 
 import java.util.HashMap;
 
+@SuppressWarnings("deprecation")
 public class LoanAmountCriteria implements Criteria, Constants {
 
     private boolean criteriaAf, criteriaAm, criteriaBm, criteriaBf, criteriaCm, criteriaCf, criteriaD, criteriaE;

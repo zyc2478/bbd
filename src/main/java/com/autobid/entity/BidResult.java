@@ -1,5 +1,6 @@
 package com.autobid.entity;
 
+@SuppressWarnings("deprecation")
 public class BidResult {
     private Integer bidId;
     private Integer bidAmount;

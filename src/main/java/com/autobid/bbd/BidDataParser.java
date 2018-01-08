@@ -17,6 +17,7 @@ import java.util.List;
  * @Date 2017年10月13日 下午5:11:12
  */
 
+@SuppressWarnings("deprecation")
 public class BidDataParser {
 
     private static Logger logger = Logger.getLogger(BidDataParser.class);

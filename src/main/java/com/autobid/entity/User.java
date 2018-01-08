@@ -4,6 +4,8 @@ package com.autobid.entity;
  * @author gacl
  * users表所对应的实体类
  */
+
+@SuppressWarnings("unused")
 public class User {
 
     //实体类的属性和表的字段名称一一对应

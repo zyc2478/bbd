@@ -12,6 +12,7 @@ import java.util.HashMap;
  * @Description: 最基础的策略，需要通过该策略才可以投标
  * @Date 2017年10月13日 下午5:16:24
  */
+
 public class BasicCriteria implements Criteria, Constants {
 
     private boolean eduBasicCriteria;

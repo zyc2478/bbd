@@ -11,8 +11,10 @@ import java.util.Date;
 import java.util.UUID;
 
 /**
- * Created by xuzhishen on 2016/3/16.
+ * Created by Richard Zeng on 2017/10/16
  */
+
+@SuppressWarnings("deprecation,unused")
 public class BizTest {
 
     /************ Ó¦ÓÃ£É£Ä **************/
@@ -111,7 +113,7 @@ public class BizTest {
                 new PropertyObject("Int64Property", 12365478958745487L, ValueTypeEnum.Int64),
                 new PropertyObject("IsVIP", false, ValueTypeEnum.Boolean),
                 new PropertyObject("Message", "hello world", ValueTypeEnum.String),
-                new PropertyObject("SByetProperty", Byte.parseByte("3"), ValueTypeEnum.SByte),
+                new PropertyObject("SByteProperty", Byte.parseByte("3"), ValueTypeEnum.SByte),
                 new PropertyObject("SingleProperty", 25.5687F, ValueTypeEnum.Single),
                 new PropertyObject("UInt16Property", 15, ValueTypeEnum.UInt16),
                 new PropertyObject("UInt32Property", 256, ValueTypeEnum.UInt32),
@@ -123,6 +125,7 @@ public class BizTest {
     }
 
     @Test
+    @SuppressWarnings("unchecked")
     public void InterfaceTest() throws Exception {
         String gwurl = "http://gw.open.ppdai.com";
         String token = "c6f91679-3477-4671-814e-2f53d0cc4641";
@@ -238,40 +241,4 @@ public class BizTest {
         //boolean isSign = rsaCryptoHelper.verify(txt, sign);
     }
 
-    @Test
-    public void pkcs8Test() {
-
-/*        String pubKey = "-----BEGIN PUBLIC KEY-----\n" +
-                "MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDk/B01fncBoYj83jQnR3kAAftP\n" +
-                "7U7hVX62K+pKZY8sx6nGyskjoxJXT/kFaCmB/gQKi0n9/F5NFNbuY73gMGTlOU4B\n" +
-                "jAuhT0n/WiiSi8UA1FqQ5b6Sz7Mr2qhlg83qTyedUzyk+y+SyiRuewWTQ2FHw9v9\n" +
-                "A/XF+mstJbLgqRL+ywIDAQAB\n" +
-                "-----END PUBLIC KEY-----\n";
-        String privKey = "-----BEGIN PRIVATE KEY-----\n" +
-                "MIICdwIBADANBgkqhkiG9w0BAQEFAASCAmEwggJdAgEAAoGBAOT8HTV+dwGhiPze\n" +
-                "NCdHeQAB+0/tTuFVfrYr6kpljyzHqcbKySOjEldP+QVoKYH+BAqLSf38Xk0U1u5j\n" +
-                "veAwZOU5TgGMC6FPSf9aKJKLxQDUWpDlvpLPsyvaqGWDzepPJ51TPKT7L5LKJG57\n" +
-                "BZNDYUfD2/0D9cX6ay0lsuCpEv7LAgMBAAECgYA9AiLyHrisWZJ69OTmVjeZ1e1U\n" +
-                "VUC/7pxtAvRQUBC+eI/2ZA8FDKyVULxjQWZVuQzwlj3nirbBSL0fFLoBIkOvAcfi\n" +
-                "nd7DcdO51lKC6k4V64nl9YvYXFgEEOtUfrnq9VzehJ6QQTvWQRfURFuXppx5+x9X\n" +
-                "c+oFCil3Mr+PjTHGiQJBAP/no5063IqFKlgK1c14pDB4vtRZeqN1x0zY9PpMtTP3\n" +
-                "fif66sCyPgWansHIvyMXE8UsAIqZllL9M/PlHnrLzecCQQDlEemONP0AITetgEHi\n" +
-                "gvUBXWhW1Vtgj25c/0mvGtFkFhIKPQmmwvNBvn+n4Xlp/XUcgPHMA2X4pT20Eotw\n" +
-                "dEN9AkBo35tT0k2TjyNdVYNtY2WWX8WE7O6vkpMM0VUERu9zzpeq9s/CDMoSLd2l\n" +
-                "+Qkr7kcx5OiL5ImQlSf3agxlsqQ9AkEAy2d2bnIa3gyg9g1Xc505lXat+b0GoN17\n" +
-                "8FQ3x6cWm7sFVdYRReUCQDS6Agay2yzW2vKcwr2ZxIpmGgoFi1uRuQJBAMWgRVMa\n" +
-                "aaE2JBriRkxkOUiEYieE7U3bDNZP4BpFmUD6iqkQUeNl9YvIUxE/2tKsMMsR4crI\n" +
-                "G/7xG0sUQFNKD9o=\n" +
-                "-----END PRIVATE KEY-----";*/
-        //String txt = "abc";
-
-        //RsaCryptoHelper rsaCryptoHelper = new RsaCryptoHelper(RsaCryptoHelper.PKCSType.PKCS8, pubKey, privKey);
-
-
-        //String txt2 = rsaCryptoHelper.encryptByPublicKey(txt);
-        //String txt3 = rsaCryptoHelper.decryptByPrivateKey(txt2);
-
-        //String sign = rsaCryptoHelper.sign(txt);
-        //boolean isSign = rsaCryptoHelper.verify(txt, sign);
-    }
 }

@@ -19,6 +19,8 @@ import java.util.HashMap;
  * @Description: 判断标的金额的程序
  * @Date 2017年10月13日 下午5:10:43
  */
+
+@SuppressWarnings({"unused","deprecation"})
 public class BidDetermine implements Constants {
 
     private static int MIN_BID_AMOUNT;
@@ -43,12 +45,8 @@ public class BidDetermine implements Constants {
     }
     //private static Logger logger = Logger.getLogger(BidDetermine.class);  
 
-    public static boolean determineBalance(double queryBalance) throws Exception {
-        if (queryBalance > MIN_BID_AMOUNT) {
-            return false;
-        } else {
-            return true;
-        }
+    public static boolean determineBalance(double queryBalance) {
+        return !(queryBalance > MIN_BID_AMOUNT);
     }
 
     public static boolean determineDuplicateId(int listingId, Jedis jedis) {

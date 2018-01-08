@@ -12,6 +12,7 @@ import java.util.List;
  * @Description: 债权数据处理程序
  * @Date 2017年12月22日 下午10:47:12
  */
+@SuppressWarnings("deprecation")
 public class DebtDataParser {
 
     //private static Logger logger = Logger.getLogger(DebtDataParser.class);

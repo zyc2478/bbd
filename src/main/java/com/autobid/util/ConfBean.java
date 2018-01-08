@@ -1,5 +1,6 @@
 package com.autobid.util;
 
+@SuppressWarnings("deprecation,unused")
 public class ConfBean {
 
     private String bidMode,

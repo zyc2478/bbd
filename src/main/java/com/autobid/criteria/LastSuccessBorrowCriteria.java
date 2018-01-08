@@ -10,6 +10,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.HashMap;
 
+@SuppressWarnings("deprecation")
 public class LastSuccessBorrowCriteria implements Criteria, Constants {
 
     private boolean criteriaMShort, criteriaMLong, criteriaFShort, criteriaFLong;

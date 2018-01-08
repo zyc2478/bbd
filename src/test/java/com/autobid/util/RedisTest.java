@@ -9,6 +9,8 @@ import org.junit.Before;
 
 import redis.clients.jedis.Jedis;
 
+
+@SuppressWarnings("deprecation,unused")
 public class RedisTest {
     private Jedis jedis;
     private static Logger logger = Logger.getLogger(RedisTest.class);

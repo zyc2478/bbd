@@ -12,6 +12,7 @@ import org.quartz.JobExecutionContext;
  * @Description: 定时处理的任务，任务需要实现Job接口
  * @Date 2017-9-20
  */
+@SuppressWarnings("deprecation")
 public class AutoBidJob implements Job {
 
     public void execute(JobExecutionContext context) {

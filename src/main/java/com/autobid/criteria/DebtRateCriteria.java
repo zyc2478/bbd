@@ -14,7 +14,7 @@ public class DebtRateCriteria implements Criteria, Constants {
     private int gender;
     private int loanAmountLevel;
 
-    @SuppressWarnings("unknown")
+    @SuppressWarnings("deprecation")
     public void calc(HashMap<String, Object> loanInfoMap, ConfBean cb) {
 
         double totalPrincipal = Double.parseDouble(loanInfoMap.get("TotalPrincipal").toString());

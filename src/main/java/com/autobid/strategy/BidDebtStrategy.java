@@ -5,6 +5,7 @@ package com.autobid.strategy;
 import com.autobid.util.ConfBean;
 import net.sf.json.JSONObject;
 
+@SuppressWarnings("deprecation")
 public class BidDebtStrategy implements DebtStrategy {
 
     //private static Logger logger = Logger.getLogger(BidDebtStrategy.class);

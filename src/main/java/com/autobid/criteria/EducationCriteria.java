@@ -7,6 +7,7 @@ import com.autobid.util.JsonUtil;
 
 import java.util.HashMap;
 
+
 public class EducationCriteria implements Criteria, Constants {
 
     private boolean criteriaCertificate, criteriaBachelor, criteriaMaster;

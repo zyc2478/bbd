@@ -6,6 +6,7 @@ import com.autobid.util.ConfBean;
 
 import java.util.HashMap;
 
+@SuppressWarnings("deprecation")
 public class OverdueProCriteria implements Criteria, Constants {
 
     private int gender;

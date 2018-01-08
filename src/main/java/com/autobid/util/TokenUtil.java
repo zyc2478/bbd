@@ -12,7 +12,7 @@ import java.util.Date;
 
 //import org.apache.log4j.Logger;
 //import org.junit.Test;
-
+@SuppressWarnings("deprecation")
 public class TokenUtil {
 
     private final static String openId;

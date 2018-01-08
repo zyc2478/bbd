@@ -13,6 +13,8 @@ import org.quartz.impl.StdSchedulerFactory;
  * @Description: 定时运行服务，在这里配置定时任务
  * @Date 2017年10月13日 下午5:04:40
  */
+
+@SuppressWarnings("deprecation")
 public class AutoBidRun {
 
     //private static Logger logger = Logger.getLogger(AutoBidRun.class);

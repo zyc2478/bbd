@@ -7,6 +7,7 @@ import com.autobid.util.ConfUtil;
 
 import java.util.HashMap;
 
+@SuppressWarnings("deprecation")
 public class OverdueCriteria implements Criteria, Constants {
 
     private int gender;

@@ -16,6 +16,8 @@ import java.util.List;
  * @Description: 与拍拍贷的各投标API调用服务
  * @Date 2017年10月13日 下午5:15:21
  */
+
+@SuppressWarnings("deprecation")
 public class DebtService {
 
     private static Logger logger = Logger.getLogger(DebtService.class);

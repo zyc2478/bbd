@@ -25,6 +25,8 @@ import java.util.*;
  * @Description: 自动投标的主程序
  * @Date 2017年10月13日 下午5:14:02
  */
+
+@SuppressWarnings("deprecation")
 public class BidManager implements Constants {
 
     //private static final int NONE = 0;

@@ -6,6 +6,7 @@ import com.autobid.util.ConfBean;
 
 import java.util.HashMap;
 
+
 public class LoanAmountProCriteria implements Criteria, Constants {
 
     public void calc(HashMap<String, Object> loanInfoMap, ConfBean cb) {

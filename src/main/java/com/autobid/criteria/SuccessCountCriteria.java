@@ -6,6 +6,7 @@ import com.autobid.util.ConfBean;
 
 import java.util.HashMap;
 
+@SuppressWarnings("deprecation")
 public class SuccessCountCriteria implements Criteria, Constants {
 
     private boolean criteriaSuccessCount, criteriaNormalCount, criteriaBeginCount, criteriaNsRate;
