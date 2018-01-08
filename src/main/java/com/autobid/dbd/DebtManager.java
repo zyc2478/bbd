@@ -119,6 +119,8 @@ public class DebtManager implements Constants {
     private void execute() throws Exception {
         double balance = BidDataParser.getBalance(BidService.queryBalanceService(token));
         if (BidDetermine.determineBalance(balance)) {
+            logger.error("余额不足，程序退出，1分钟后将再次尝试");
+            Thread.sleep(60000);
             return;
         }
         int indexNum = 1;
@@ -134,6 +136,7 @@ public class DebtManager implements Constants {
             balance = BidDataParser.getBalance(BidService.queryBalanceService(token));
             if(BidDetermine.determineBalance(balance)) {
                 logger.error("余额不足，程序退出，1分钟后将再次尝试");
+                Thread.sleep(60000);
                 return;
             }
             JSONArray debtListArray = DebtService.debtListService(indexNum);

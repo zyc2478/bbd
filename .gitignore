@@ -1,18 +1,21 @@
 ##ignore this file##
-/target/ 
+/target/
+/src/db.properties
+/logs/
+/.idea/
 .classpath
 .project
 .settings      
 ##filter databfile、sln file##
 *.mdb  
 *.ldb  
-*.sln    
+*.sln
 ##class file##
 *.com
 *.dll  
 *.exe  
 *.o  
-*.so  
+*.so
 # compression file
 *.7z  
 *.dmg  
@@ -33,5 +36,6 @@
 Icon?  
 ehthumbs.db  
 Thumbs.db
-/src/db.properties
-/logs/
+
+
+
