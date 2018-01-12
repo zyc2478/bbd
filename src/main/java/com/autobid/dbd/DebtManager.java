@@ -5,6 +5,7 @@ import com.autobid.bbd.BidDataParser;
 import com.autobid.bbd.BidDetermine;
 import com.autobid.bbd.BidService;
 import com.autobid.entity.Constants;
+import com.autobid.entity.DebtInfo;
 import com.autobid.entity.DebtResult;
 import com.autobid.filter.BidInfosFilter;
 import com.autobid.filter.DebtInfosListFilter;
@@ -206,6 +207,7 @@ public class DebtManager implements Constants {
                             successDebtList.add(debtResult);
                         }
                         jedis.setex(String.valueOf(di.getInt("DebtId")), 172800, String.valueOf(di.getInt("ListingId")));
+
                         logger.info(indexNum + ": " + di);
                         //System.out.println("已投债权标 DebtId:"+ di.getInt("DebtId") + ", ListingId:" + di.getInt("ListingId") + ", Price:" + di.getDouble("PriceForSale"));
                     }

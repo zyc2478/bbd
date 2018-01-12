@@ -37,7 +37,6 @@ public class TokenInit {
         */
     public static void initToken() throws Exception {
         AuthInit.init();
-        initFlag = true;
         System.out.println("code is:" + code);
         //authInfo = OpenApiClient.authorize("9ca3fb6357b04c5385fd51d1e6db9922");
         AuthInfo authInfo = OpenApiClient.authorize(code);
@@ -53,7 +52,7 @@ public class TokenInit {
         ConfUtil.setProperty("init_date", nowDate);
         TokenUtil.setTokenInit(token);
         TokenUtil.setRefreshTokenInit(refreshToken);
-
+        initFlag = true;
     }
 
     public static boolean getInitFlag() {

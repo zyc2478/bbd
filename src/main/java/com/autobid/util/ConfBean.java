@@ -3,62 +3,63 @@ package com.autobid.util;
 @SuppressWarnings("deprecation,unused")
 public class ConfBean {
 
-    private String bidMode,
-            redisHost,
-            redisPort,
-            debtMix,
-            debtOverdueSwitch,
-            debtSaleRate,
-            debtMinPrice,
-            debtPriceLimit,
-            debtPreferLimit,
-            debtOverdueLimit,
-            debtCreditLimit,
-            debtMaxGroups,
-            debtMinGroups,
-            minBidAmount,
-            bidLevelAmount,
-            multiple,
-            moreMultiple,
-            miniMultiple,
-            mediumMultiple,
-            creditLimit,
-            amountBegin,
-            amountEnd,
-            amountMrate,
-            amountFrate,
-            totalLimit,
-            owingLimit,
-            owingMrate,
-            owingFrate,
-            debtMrate,
-            debtFrate,
-            overdueRate,
-            overdueMrate,
-            overdueFrate,
-            shortMdays,
-            longMdays,
-            shortFdays,
-            longFdays,
-            minMage,
-            maxMage,
-            minFage,
-            maxFage,
-            beginLimit,
-            successLimit,
-            normalLimit,
-            nscountMrate,
-            nscountFrate,
-            runInterval,
-            code,
-            openId,
-            token,
-            refreshToken,
-            expireDays,
-            refreshTokenExpired,
-            initDate,
-            tokenInit,
-            refreshTokenInit;
+    private String bidMode;
+    private String redisHost;
+    private String redisPort;
+    private String debtMix;
+    private String debtOverdueSwitch;
+    private String debtSaleRate;
+    private String debtMinPrice;
+    private String debtPriceLimit;
+    private String debtPreferLimit;
+    private String debtOverdueLimit;
+    private String debtCreditLimit;
+    private String debtMaxGroups;
+    private String debtMinGroups;
+    private String logToDb;
+    private String minBidAmount;
+    private String bidLevelAmount;
+    private String multiple;
+    private String moreMultiple;
+    private String miniMultiple;
+    private String mediumMultiple;
+    private String creditLimit;
+    private String amountBegin;
+    private String amountEnd;
+    private String amountMrate;
+    private String amountFrate;
+    private String totalLimit;
+    private String owingLimit;
+    private String owingMrate;
+    private String owingFrate;
+    private String debtMrate;
+    private String debtFrate;
+    private String overdueRate;
+    private String overdueMrate;
+    private String overdueFrate;
+    private String shortMdays;
+    private String longMdays;
+    private String shortFdays;
+    private String longFdays;
+    private String minMage;
+    private String maxMage;
+    private String minFage;
+    private String maxFage;
+    private String beginLimit;
+    private String successLimit;
+    private String normalLimit;
+    private String nscountMrate;
+    private String nscountFrate;
+    private String runInterval;
+    private String code;
+    private String openId;
+    private String token;
+    private String refreshToken;
+    private String expireDays;
+    private String refreshTokenExpired;
+    private String initDate;
+    private String tokenInit;
+    private String refreshTokenInit;
 
     public ConfBean() {
     }
@@ -162,6 +163,10 @@ public class ConfBean {
     public void setDebtCreditLimit(String debtCreditLimit) {
         this.debtCreditLimit = debtCreditLimit;
     }
+
+    public String getLogToDb() { return logToDb; }
+
+    public void setLogToDb(String logToDb) { this.logToDb = logToDb; }
 
     public String getMinBidAmount() {
         return minBidAmount;

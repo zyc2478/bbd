@@ -38,8 +38,8 @@ public class BidService {
             //System.out.println(TokenInit.getInitFlag());
             if (!TokenInit.getInitFlag()) {
                 TokenInit.initToken();
+                logger.info("已重置最新令牌");
             }
-            logger.info("已重置最新令牌");
         }
         return result.getContext();
     }
