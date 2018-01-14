@@ -23,7 +23,7 @@ public class TokenInit {
         }
     }
 
-    /*	private volatile static TokenInit instance;
+/*   private volatile static TokenInit instance;
         public static TokenInit getInstance(){
             if(instance == null){
                 synchronized (TokenInit.class){
