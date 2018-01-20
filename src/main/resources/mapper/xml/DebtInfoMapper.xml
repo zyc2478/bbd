@@ -27,7 +27,7 @@
     <result column="listing_rate" jdbcType="INTEGER" property="listingRate" />
     <result column="past_due_number" jdbcType="INTEGER" property="pastDueNumber" />
     <result column="allowance_radio" jdbcType="DECIMAL" property="allowanceRadio" />
-    <result column="PastDueDay" jdbcType="INTEGER" property="pastdueday" />
+    <result column="past_due_day" jdbcType="INTEGER" property="pastDueDay" />
   </resultMap>
   <delete id="deleteByPrimaryKey" parameterType="map">
     <!--
@@ -50,7 +50,7 @@
       preference_degree, listing_id, credit_code, 
       listing_amount, listing_mouths, listing_time, 
       listing_rate, past_due_number, allowance_radio, 
-      PastDueDay)
+      past_due_day)
     values (#{debtId,jdbcType=INTEGER}, #{currentCreditCode,jdbcType=VARCHAR}, #{seller,jdbcType=VARCHAR}, 
       #{statusId,jdbcType=INTEGER}, #{lender,jdbcType=VARCHAR}, #{bidDateTime,jdbcType=VARCHAR}, 
       #{owingNumber,jdbcType=INTEGER}, #{owingPrincipal,jdbcType=DECIMAL}, #{owingInterest,jdbcType=VARCHAR}, 
@@ -58,7 +58,7 @@
       #{preferenceDegree,jdbcType=DECIMAL}, #{listingId,jdbcType=INTEGER}, #{creditCode,jdbcType=VARCHAR}, 
       #{listingAmount,jdbcType=DECIMAL}, #{listingMouths,jdbcType=INTEGER}, #{listingTime,jdbcType=TIMESTAMP}, 
       #{listingRate,jdbcType=INTEGER}, #{pastDueNumber,jdbcType=INTEGER}, #{allowanceRadio,jdbcType=DECIMAL}, 
-      #{pastdueday,jdbcType=INTEGER})
+      #{pastDueDay,jdbcType=INTEGER})
   </insert>
   <update id="updateByPrimaryKey" parameterType="com.autobid.model.DebtInfo">
     <!--
@@ -85,7 +85,7 @@
       listing_rate = #{listingRate,jdbcType=INTEGER},
       past_due_number = #{pastDueNumber,jdbcType=INTEGER},
       allowance_radio = #{allowanceRadio,jdbcType=DECIMAL},
-      PastDueDay = #{pastdueday,jdbcType=INTEGER}
+      past_due_day = #{pastDueDay,jdbcType=INTEGER}
     where debt_id = #{debtId,jdbcType=INTEGER}
       and current_credit_code = #{currentCreditCode,jdbcType=VARCHAR}
   </update>
@@ -97,7 +97,7 @@
     select debt_id, current_credit_code, seller, status_id, lender, bid_date_time, owing_number, 
     owing_principal, owing_interest, days, price_for_sale_rate, price_for_sale, preference_degree, 
     listing_id, credit_code, listing_amount, listing_mouths, listing_time, listing_rate, 
-    past_due_number, allowance_radio, PastDueDay
+    past_due_number, allowance_radio, past_due_day
     from debt_info
     where debt_id = #{debtId,jdbcType=INTEGER}
       and current_credit_code = #{currentCreditCode,jdbcType=VARCHAR}
@@ -110,7 +110,7 @@
     select debt_id, current_credit_code, seller, status_id, lender, bid_date_time, owing_number, 
     owing_principal, owing_interest, days, price_for_sale_rate, price_for_sale, preference_degree, 
     listing_id, credit_code, listing_amount, listing_mouths, listing_time, listing_rate, 
-    past_due_number, allowance_radio, PastDueDay
+    past_due_number, allowance_radio, past_due_day
     from debt_info
   </select>
 </mapper>

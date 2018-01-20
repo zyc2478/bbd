@@ -3,7 +3,6 @@ package com.autobid.bbd;
 import com.autobid.entity.BidResult;
 import com.autobid.entity.LoanListResult;
 import com.autobid.util.JsonUtil;
-import com.autobid.util.TokenInit;
 import com.ppdai.open.core.*;
 import net.sf.json.JSONArray;
 import net.sf.json.JSONObject;
