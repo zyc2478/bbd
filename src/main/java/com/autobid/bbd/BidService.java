@@ -35,7 +35,7 @@ public class BidService {
         } else if (JsonUtil.decodeUnicode(result.getContext()).contains("用户无效或令牌已过有效期")) {
             logger.info("Error!用户无效或令牌已过有效期");
             //System.out.println(TokenInit.getInitFlag());
-            TokenInit.getInitFlag();
+            TokenInit.initToken();
             logger.info("已重置最新令牌");
 /*            if (!TokenInit.getInitFlag()) {
                 TokenInit.initToken();
