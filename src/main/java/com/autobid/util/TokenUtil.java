@@ -16,7 +16,6 @@ import java.util.Date;
 public class TokenUtil {
 
     private final static String openId;
-    private static String token;
     private static int expireDays;
     private static String initDate;
     private static Jedis jedis;
@@ -85,14 +84,15 @@ public class TokenUtil {
     }*/
 
     public static String getToken() {
-        token = jedis.get("token");
-        return token;
+        return jedis.get("token");
     }
 
+/*
     public static void setToken(String newToken) {
         TokenUtil.token = newToken;
         jedis.setex("token", 691200, token);
     }
+*/
 
 /*    public static String getRefreshToken() {
         refreshToken = jedis.get("refreshToken");
