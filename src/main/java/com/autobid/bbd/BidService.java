@@ -7,7 +7,7 @@ import com.ppdai.open.core.*;
 import net.sf.json.JSONArray;
 import net.sf.json.JSONObject;
 import org.apache.log4j.Logger;
-
+import com.autobid.util.TokenInit;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -35,10 +35,12 @@ public class BidService {
         } else if (JsonUtil.decodeUnicode(result.getContext()).contains("用户无效或令牌已过有效期")) {
             logger.info("Error!用户无效或令牌已过有效期");
             //System.out.println(TokenInit.getInitFlag());
-            if (!TokenInit.getInitFlag()) {
+            TokenInit.getInitFlag();
+            logger.info("已重置最新令牌");
+/*            if (!TokenInit.getInitFlag()) {
                 TokenInit.initToken();
                 logger.info("已重置最新令牌");
-            }
+            }*/
         }
         return result.getContext();
     }
