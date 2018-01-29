@@ -5,7 +5,6 @@ import com.autobid.bbd.BidDataParser;
 import com.autobid.bbd.BidDetermine;
 import com.autobid.bbd.BidService;
 import com.autobid.entity.Constants;
-import com.autobid.entity.DebtInfo;
 import com.autobid.entity.DebtResult;
 import com.autobid.filter.BidInfosFilter;
 import com.autobid.filter.DebtInfosListFilter;
@@ -199,7 +198,8 @@ public class DebtManager implements Constants {
                 for (int j = 0; j < dbFiltered.size(); j++) {
                     JSONObject di = dbFiltered.getJSONObject(j);
                     DebtResult debtResult = null;
-                    if (!DebtDetermine.determineDuplicateId(di.getInt("DebtId"), jedis)) {
+                    if (!(DebtDetermine.determineDuplicateDebtId(di.getInt("DebtId"), jedis)) &&
+                            !(DebtDetermine.determineDuplicateDebtId(di.getInt("ListingId"), jedis))) {
                         debtResult = DebtService.buyDebtService(token, openId, di);
                     }
                     if (debtResult != null) {
@@ -207,23 +207,20 @@ public class DebtManager implements Constants {
                             successDebtList.add(debtResult);
                         }
                         jedis.setex(String.valueOf(di.getInt("DebtId")), 172800, String.valueOf(di.getInt("ListingId")));
-
+                        jedis.setex(String.valueOf(di.getInt("ListingId")), 172800, String.valueOf(di.getInt("PriceforSale")));
                         logger.info(indexNum + ": " + di);
                         //System.out.println("已投债权标 DebtId:"+ di.getInt("DebtId") + ", ListingId:" + di.getInt("ListingId") + ", Price:" + di.getDouble("PriceForSale"));
                     }
                 }
                 Thread.sleep(200);
             }
-
             if (indexNum == 1) {
                 debtGroups = Integer.parseInt(confBean.getDebtMaxGroups());
             } else {
                 debtGroups = Integer.parseInt(confBean.getDebtMinGroups());
             }
-
             indexNum++;
             //logger.info(indexNum);
-
         } while (debtCount == 50 && indexNum <= debtGroups); //每页50个元素
 
         logger.info("Total Debt Count is :" + totalDebtCount);

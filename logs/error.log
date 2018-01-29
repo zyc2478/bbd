@@ -1,4 +1,2 @@
-[2018-01-07 13:54:05][com.autobid.bbd.BidDetermine]余额不足，程序退出
-[2018-01-07 22:10:41][com.autobid.bbd.BidDetermine]余额不足，程序退出
-[2018-01-07 22:15:42][com.autobid.bbd.BidDetermine]余额不足，程序退出
-[2018-01-07 22:20:42][com.autobid.bbd.BidDetermine]余额不足，程序退出
+[2018-01-29 23:08:56][com.autobid.dbd.DebtManager]余额不足，程序退出，1分钟后将再次尝试
+[2018-01-29 23:10:07][com.autobid.dbd.DebtManager]余额不足，程序退出，1分钟后将再次尝试

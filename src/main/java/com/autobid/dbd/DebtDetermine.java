@@ -11,8 +11,10 @@ import redis.clients.jedis.Jedis;
  */
 public class DebtDetermine implements Constants {
 
-    public static boolean determineDuplicateId(int debtId, Jedis jedis) {
+    public static boolean determineDuplicateDebtId(int debtId, Jedis jedis) {
         return jedis.exists(String.valueOf(debtId));
     }
-
+    public static boolean determineDuplicateListingId(int listingId, Jedis jedis) {
+        return jedis.exists(String.valueOf(listingId));
+    }
 }
