@@ -55,17 +55,17 @@ public class BidManager implements Constants {
             jedis = new Jedis(redisHost, redisPort);
 
             //如果TokenInit配置项不存在，则初始化Token，存储在Redis中--需要新code，没有意义
-            if (TokenUtil.determineTokenInitExists()) {
+            if (ConfUtil.getProperty("init_flag").equals("0")) {
                 TokenInit.initToken();
             }
             //每次运行获取一个新Token
-            TokenUtil.genNewToken();
+            //TokenUtil.genNewToken();
 /*            //如果Token快到期，则获取一个新Token
             if (TokenUtil.determineRefreshDate()) {
                 TokenUtil.genNewToken();
             }*/
             //获取Token，配置文件有则优先，没有则获取Redis
-            token = TokenUtil.getToken();
+
             //logger.info("token:" + token);
             //String balanceJson = BidService.queryBalanceService(token);
 
@@ -93,6 +93,9 @@ public class BidManager implements Constants {
 
     @Test
     public void bidExecute() throws Exception {
+        //每次运行获取一个新Token
+        TokenUtil.genNewToken();
+        token = TokenUtil.getToken();
         logger.info("bidExecute");
         double balance = BidDataParser.getBalance(BidService.queryBalanceService(token));
 

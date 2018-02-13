@@ -25,10 +25,10 @@ import java.util.List;
 
 /**
  * @Author Richard Zeng
- * @Version 1.0
+ * @Version 2.4
  * @ClassName: DebtManager
- * @Description: 自动投标的主程序
- * @Date 2017年1月3日 下午5:14:02
+ * @Description: 自动投债权标的主程序
+ * @Date 2018年2月14日 上午0:37:15
  */
 
 @SuppressWarnings("deprecation")
@@ -53,16 +53,17 @@ public class DebtManager implements Constants {
 
             jedis = new Jedis(redisHost, redisPort);
 
-            //如果TokenInit配置项不存在，则初始化Token，存储在Redis中
-            if (TokenUtil.determineTokenInitExists()) {
+            //如果init_flag配置项不存在，则初始化Token，存储在Redis中
+            if (ConfUtil.getProperty("init_flag").equals("0")) {
                 TokenInit.initToken();
             }
             //如果Token快到期，则获取一个新Token
-            if (TokenUtil.determineRefreshDate()) {
+/*            if (TokenUtil.determineRefreshDate()) {
                 TokenUtil.genNewToken();
-            }
+            }*/
+/*            TokenUtil.genNewToken();
             //获取Token，配置文件有则优先，没有则获取Redis
-            token = TokenUtil.getToken();
+            token = TokenUtil.getToken();*/
             //logger.info("token:" + token);
             //String balanceJson = BidService.queryBalanceService(token);
 
@@ -90,6 +91,9 @@ public class DebtManager implements Constants {
 
     @Test
     public void debtExcecute() throws Exception {
+        TokenUtil.genNewToken();
+        //获取Token，配置文件有则优先，没有则获取Redis
+        token = TokenUtil.getToken();
         logger.info("debtExcecute");
         int overdueSwitch = Integer.parseInt(confBean.getDebtOverdueSwitch());
         int debtMix = Integer.parseInt(confBean.getDebtMix());

@@ -57,6 +57,7 @@ public class ConfBean {
     private String refreshToken;
     private String expireDays;
     private String refreshTokenExpired;
+    private String initFlag;
     private String initDate;
     private String tokenInit;
     private String refreshTokenInit;
@@ -487,6 +488,10 @@ public class ConfBean {
     public void setRefreshTokenExpired(String refreshTokenExpired) {
         this.refreshTokenExpired = refreshTokenExpired;
     }
+
+    public String getInitFlag() { return initFlag; }
+
+    public void setInitFlag(String initFlag) {  this.initFlag = initFlag; }
 
     public String getInitDate() {
         return initDate;
