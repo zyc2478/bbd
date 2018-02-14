@@ -1,7 +1,7 @@
 package com.autobid.util;
 
 
-public class JsonUtil {
+public class JSONUtil {
 
     public static int parseInt(Object o) {
         int result;
@@ -19,7 +19,7 @@ public class JsonUtil {
             if (aChar == '\\') {
                 aChar = theString.charAt(x++);
                 if (aChar == 'u') {
-                    // Read the xxxx    
+                    // Read the xxxx
                     int value = 0;
                     for (int i = 0; i < 4; i++) {
                         aChar = theString.charAt(x++);
