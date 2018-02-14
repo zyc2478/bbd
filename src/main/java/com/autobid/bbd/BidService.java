@@ -2,8 +2,10 @@ package com.autobid.bbd;
 
 import com.autobid.entity.BidResult;
 import com.autobid.entity.LoanListResult;
-import com.autobid.util.JsonUtil;
+import com.autobid.util.JSONUtil;
+import com.autobid.util.StringUtil;
 import com.ppdai.open.core.*;
+import net.sf.json.JSON;
 import net.sf.json.JSONArray;
 import net.sf.json.JSONObject;
 import org.apache.log4j.Logger;
@@ -29,19 +31,19 @@ public class BidService {
 
         Result result = OpenApiClient.send(url, token);
         System.out.println(result.getContext());
-        if (JsonUtil.decodeUnicode(result.getContext()).contains("您的操作太频繁啦")) {
+
+        String resultJSON = StringUtil.filterStrToJSON(result.getContext());
+       // String resultJSON = StringUtil.toJSON(result.getContext());
+
+        if (JSONUtil.decodeUnicode(resultJSON).contains("您的操作太频繁啦")) {
             System.out.println("您的操作太频繁啦！先喝杯茶吧，歇一分钟~~");
             Thread.sleep(60000);
-        } else if (JsonUtil.decodeUnicode(result.getContext()).contains("用户无效或令牌已过有效期")) {
+        }/* else if (JSONUtil.decodeUnicode(resultJSON).contains("用户无效或令牌已过有效期")) {
             logger.info("Error!用户无效或令牌已过有效期");
             //System.out.println(TokenInit.getInitFlag());
             TokenInit.initToken();
             logger.info("已重置最新令牌");
-/*            if (!TokenInit.getInitFlag()) {
-                TokenInit.initToken();
-                logger.info("已重置最新令牌");
-            }*/
-        }
+        }*/
         return result.getContext();
     }
 
@@ -52,14 +54,17 @@ public class BidService {
         Result result;
         String creditCode;
         result = OpenApiClient.send(url, new PropertyObject("PageIndex", indexNum, ValueTypeEnum.Int32));
-        if (JsonUtil.decodeUnicode(result.getContext()).contains("您的操作太频繁啦")) {
+
+        String resultJSON = StringUtil.filterStrToJSON(result.getContext());
+
+        if (JSONUtil.decodeUnicode(resultJSON).contains("您的操作太频繁啦")) {
             logger.info("您的操作太频繁啦！先喝杯茶吧，歇一分钟~~");
             logger.error("您的操作太频繁啦！先喝杯茶吧，歇一分钟~~");
             Thread.sleep(60000);
         }
         JSONArray loanInfosResultArray = new JSONArray();
         if (result.isSucess()) {
-            String loanListResult = result.getContext();
+            String loanListResult = resultJSON;
             //logger.info("loanListResult is :" + loanListResult);
             JSONObject loanListJson = JSONObject.fromObject(loanListResult);
             JSONArray loanInfosArray = loanListJson.getJSONArray("LoanInfos");
@@ -105,12 +110,15 @@ public class BidService {
             //System.out.println("listingIds size is " + listingIds.size());
             //System.out.println(listingIds);
             Result result = OpenApiClient.send(url, token, new PropertyObject("ListingIds", listingIds, ValueTypeEnum.Other));
-            if (JsonUtil.decodeUnicode(result.getContext()).contains("您的操作太频繁啦")) {
+
+            String resultJSON = StringUtil.filterStrToJSON(result.getContext());
+
+            if (JSONUtil.decodeUnicode(resultJSON).contains("您的操作太频繁啦")) {
                 logger.error("您的操作太频繁啦！先喝杯茶吧，歇一分钟~~");
                 Thread.sleep(60000);
             }
             //System.out.println("result.context: " + result.getContext());
-            batchListInfosCollector.add(result.getContext());
+            batchListInfosCollector.add(resultJSON);
         }
         return batchListInfosCollector;
     }
@@ -123,18 +131,19 @@ public class BidService {
                 new PropertyObject("ListingId", listingId, ValueTypeEnum.Int32),
                 new PropertyObject("Amount", bidAmount, ValueTypeEnum.Double),
                 new PropertyObject("UseCoupon", useCoupon, ValueTypeEnum.String));
-        String bidResult = result.getContext();
 
-        if (JsonUtil.decodeUnicode(bidResult).contains("您的操作太频繁啦")) {
+        String resultJSON = StringUtil.filterStrToJSON(result.getContext());
+
+        if (JSONUtil.decodeUnicode(resultJSON).contains("您的操作太频繁啦")) {
             logger.error("xxxxxx 您的操作太频繁啦！先喝杯茶吧，歇一分钟吧 ~~~xxxxxx");
             Thread.sleep(60000);
         }
         BidResult successBidResult = null;
         //System.out.println("Success? "+ bidResult.isSuccess());
         //System.out.println(String.format("返回结果:%s", result.isSuccess() ? bidResult : result.getErrorMessage()));
-        if (JsonUtil.decodeUnicode(bidResult).contains("令牌校验失败")) {
+        if (JSONUtil.decodeUnicode(resultJSON).contains("令牌校验失败")) {
             logger.error("xxxxxx Error！令牌校验失败！xxxxxx");
-        } else if (JsonUtil.decodeUnicode(bidResult).contains("访问令牌不存在")) {
+        } else if (JSONUtil.decodeUnicode(resultJSON).contains("访问令牌不存在")) {
             logger.error("xxxxxx 访问令牌不存在！xxxxxx");
             AuthInfo authInfo = OpenApiClient.refreshToken(openId, token);
             token = authInfo.getRefreshToken();
@@ -144,19 +153,19 @@ public class BidService {
                     new PropertyObject("Amount", bidAmount, ValueTypeEnum.Double),
                     new PropertyObject("UseCoupon", useCoupon, ValueTypeEnum.String));
             System.out.println(String.format("返回结果:%s", retryResult.isSucess() ? retryResult.getContext() : retryResult.getErrorMessage()));
-        } else if (JsonUtil.decodeUnicode(bidResult).contains("不允许重复投标")) {
+        } else if (JSONUtil.decodeUnicode(resultJSON).contains("不允许重复投标")) {
             logger.error("xxxxxx Error！" + listingId + "不允许重复投标！ xxxxxx");
             //logger.error("xxxxxx Error！" + listingId + "不允许重复投标！ xxxxxx");
-        } else if (JsonUtil.decodeUnicode(bidResult).contains("请先充值")) {
+        } else if (JSONUtil.decodeUnicode(resultJSON).contains("请先充值")) {
             logger.error("Error！账户余额不足，请先充值！");
             Thread.sleep(300000);
-        } else if (JsonUtil.decodeUnicode(bidResult).contains("已满标")) {
+        } else if (JSONUtil.decodeUnicode(resultJSON).contains("已满标")) {
             logger.error("xxxxxx Error！" + listingId + "已满标！xxxxxx");
-        } else if (JsonUtil.decodeUnicode(bidResult).contains("标的不存在")) {
+        } else if (JSONUtil.decodeUnicode(resultJSON).contains("标的不存在")) {
             logger.error("xxxxxx Error！" + listingId + "标的不存在！xxxxxx");
-        } else if (bidResult.contains("\"Result\":0,\"ResultMessage\":null")) {
+        } else if (resultJSON.contains("\"Result\":0,\"ResultMessage\":null")) {
             successBidResult = new BidResult(listingId, bidAmount);
-            logger.info(bidResult);
+            logger.info(resultJSON);
         }
         return successBidResult;
     }
@@ -167,7 +176,10 @@ public class BidService {
 
         JSONArray bidInfos = new JSONArray();
         if (result.isSucess()) {
-            JSONObject resultObject = JSONObject.fromObject(result.getContext());
+
+            String resultJSON = StringUtil.filterStrToJSON(result.getContext());
+
+            JSONObject resultObject = JSONObject.fromObject(resultJSON);
             bidInfos = resultObject.getJSONArray("LoanInfos");
         }
         return bidInfos;

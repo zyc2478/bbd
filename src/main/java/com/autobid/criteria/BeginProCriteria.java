@@ -3,7 +3,7 @@ package com.autobid.criteria;
 import com.autobid.entity.Constants;
 import com.autobid.entity.Criteria;
 import com.autobid.util.ConfBean;
-import com.autobid.util.JsonUtil;
+import com.autobid.util.JSONUtil;
 
 import java.util.HashMap;
 
@@ -26,15 +26,15 @@ public class BeginProCriteria implements Criteria, Constants {
 
         boolean criteriaCertificate = certificateValidate > 0;
 
-        criteriaBachelor = JsonUtil.decodeUnicode(educationDegree).equals("本科") &&
-                (JsonUtil.decodeUnicode(studyStyle).equals("普通") ||
-                        JsonUtil.decodeUnicode(studyStyle).equals("普通全日制"));
+        criteriaBachelor = JSONUtil.decodeUnicode(educationDegree).equals("本科") &&
+                (JSONUtil.decodeUnicode(studyStyle).equals("普通") ||
+                        JSONUtil.decodeUnicode(studyStyle).equals("普通全日制"));
 
-        criteriaMaster = (JsonUtil.decodeUnicode(educationDegree).equals("硕士") ||
-                JsonUtil.decodeUnicode(educationDegree).equals("研究生")) &&
-                (JsonUtil.decodeUnicode(studyStyle).equals("普通") ||
-                        JsonUtil.decodeUnicode(studyStyle).equals("普通全日制") ||
-                        JsonUtil.decodeUnicode(studyStyle).equals("脱产"));
+        criteriaMaster = (JSONUtil.decodeUnicode(educationDegree).equals("硕士") ||
+                JSONUtil.decodeUnicode(educationDegree).equals("研究生")) &&
+                (JSONUtil.decodeUnicode(studyStyle).equals("普通") ||
+                        JSONUtil.decodeUnicode(studyStyle).equals("普通全日制") ||
+                        JSONUtil.decodeUnicode(studyStyle).equals("脱产"));
         Integer loanAmount = (Integer) loanInfoMap.get("Amount");
         Integer highestPrincipal = (Integer) loanInfoMap.get("HighestPrincipal");
         Integer owingAmount = (Integer) loanInfoMap.get("OwingAmount");

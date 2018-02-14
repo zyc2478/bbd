@@ -1,6 +1,6 @@
 package com.autobid.bbd;
 
-import com.autobid.util.JsonUtil;
+import com.autobid.util.JSONUtil;
 import net.sf.json.JSONArray;
 import net.sf.json.JSONObject;
 import org.apache.log4j.Logger;
@@ -33,7 +33,7 @@ public class BidDataParser {
         for (int i = 0; i < balanceArray.size(); i++) {
             JSONObject balanceObject = balanceArray.getJSONObject(i);
             String accountCategory = balanceObject.getString("AccountCategory");
-            if (JsonUtil.decodeUnicode(accountCategory).contains("用户现金余额")) {
+            if (JSONUtil.decodeUnicode(accountCategory).contains("用户现金余额")) {
                 canUseBalance = balanceObject.getDouble("Balance");
             }
         }
@@ -153,8 +153,8 @@ public class BidDataParser {
         loanInfoMap.put("OverdueMoreCount", loanInfoObj.getInt("OverdueMoreCount"));        //逾期(15天以上)还清次数
         loanInfoMap.put("OwingAmount", loanInfoObj.getInt("OwingAmount"));                //待还金额
         loanInfoMap.put("HighestDebt", loanInfoObj.getInt("HighestDebt"));                //历史最高负债
-        loanInfoMap.put("HighestPrincipal", JsonUtil.parseInt(loanInfoObj.get("HighestPrincipal"))); //单笔最高借款金额
-        loanInfoMap.put("TotalPrincipal", JsonUtil.parseInt(loanInfoObj.get("TotalPrincipal")));    //累计借款金额
+        loanInfoMap.put("HighestPrincipal", JSONUtil.parseInt(loanInfoObj.get("HighestPrincipal"))); //单笔最高借款金额
+        loanInfoMap.put("TotalPrincipal", JSONUtil.parseInt(loanInfoObj.get("TotalPrincipal")));    //累计借款金额
         loanInfoMap.put("LastSuccessBorrowTime", loanInfoObj.getString("LastSuccessBorrowTime"));    //上次成功借款时间
         loanInfoMap.put("CertificateValidate", loanInfoObj.getInt("CertificateValidate"));            //学历认证0 未认证 1已认证
         loanInfoMap.put("NciicIdentityCheck", loanInfoObj.getInt("NciicIdentityCheck"));    //户籍认证0 未认证 1已认证
