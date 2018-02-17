@@ -67,17 +67,22 @@ public class AutoBidRun {
                 .startNow()
                 .build();
         //logger.info("设置定时任务");
-        // 设置定时任务
-        sched1.scheduleJob(job1, trigger1);
 
-        // 启动定时任务
-        sched1.start();
-
-        // 设置定时任务
-        sched2.scheduleJob(job2, trigger2);
-
-        // 启动定时任务
-        sched2.start();
+        int bidMode = Integer.parseInt(ConfUtil.getProperty("bid_mode"));
+        if(bidMode==3){
+            sched1.scheduleJob(job1, trigger1);
+            sched1.start();
+            sched2.scheduleJob(job2, trigger2);
+            sched2.start();
+        }else if(bidMode==1){
+            // 设置定时任务
+            sched1.scheduleJob(job1, trigger1);
+            // 启动定时任务
+            sched1.start();
+        }else if(bidMode==2){
+            sched2.scheduleJob(job2, trigger2);
+            sched2.start();
+        }
 /*
         try {
             Thread.sleep(300000L);
@@ -86,6 +91,5 @@ public class AutoBidRun {
 
         // 停止
         sched.shutdown(true);  */
-
     }
 } 
