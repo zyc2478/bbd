@@ -95,11 +95,18 @@ public class TokenUtil {
     private static String getRefreshToken() throws IOException {
         String refreshToken = jedis.get("refreshToken");
         String refreshTokenConf = ConfUtil.getProperty("refresh_token");
-        if(refreshToken.equals("") && !refreshTokenConf.equals("")){
+        int init_flag = Integer.parseInt(ConfUtil.getProperty("init_flag"));
+        if(!refreshTokenConf.equals("") &&  init_flag==1){
             setRefreshToken(refreshTokenConf);
         }else if(!refreshToken.equals("") && refreshTokenConf.equals("")){
             ConfUtil.setProperty("refresh_token",refreshToken);
         }
+
+/*        if(refreshToken.equals("") && !refreshTokenConf.equals("")){
+            setRefreshToken(refreshTokenConf);
+        }else if(!refreshToken.equals("") && refreshTokenConf.equals("")){
+            ConfUtil.setProperty("refresh_token",refreshToken);
+        }*/
         return jedis.get("refreshToken");
     }
 

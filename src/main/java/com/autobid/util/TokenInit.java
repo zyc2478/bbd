@@ -64,7 +64,7 @@ public class TokenInit {
         return initFlag;
     }
 
-    private static void refreshToken() throws Exception {
+/*    private static void refreshToken() throws Exception {
         String refreshToken = ConfUtil.getProperty("refresh_token");
         System.out.println("refreshToken is:" + refreshToken);
         String open_id = ConfUtil.getProperty("open_id");
@@ -77,16 +77,16 @@ public class TokenInit {
         System.out.println("After refresh, refresh token is:" + rt );
         System.out.println("After refresh, openIdn is:" + authInfo.getOpenID()) ;
         System.out.println("After refresh, expired in:" + expiresIn);
-    }
+    }*/
     @Test
     public void testInitToken() throws Exception {
         TokenInit.initToken();
         Thread.sleep(3000);
-        TokenInit.refreshToken();
-        //TokenUtil.genNewToken();
+        //TokenInit.refreshToken();
+        TokenUtil.genNewToken();
         Thread.sleep(3000);
-        TokenInit.refreshToken();
-        //TokenUtil.genNewToken();
+        //TokenInit.refreshToken();
+        TokenUtil.genNewToken();
         //System.out.println("TokenUtil.getToken() is :" + TokenUtil.getToken());
     }
 }
