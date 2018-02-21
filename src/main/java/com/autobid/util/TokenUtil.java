@@ -48,6 +48,7 @@ public class TokenUtil {
 
         String refreshToken = getRefreshToken();
         String openId = getOpenId();
+        System.out.println("refreshToken:"+refreshToken+",openId:"+openId);
         AuthInfo authInfo = OpenApiClient.refreshToken(openId,refreshToken);
         String token = authInfo.getAccessToken();
         refreshToken = authInfo.getRefreshToken();
@@ -107,10 +108,12 @@ public class TokenUtil {
         String refreshToken = jedis.get("refreshToken");
         String refreshTokenConf = ConfUtil.getProperty("refresh_token");
         if(localHost!=confHost){
+            System.out.println("refreshTokenConf:" + refreshTokenConf);
             return refreshTokenConf;
         }else{
             setRefreshToken(refreshToken);
-            return jedis.get("refresh_token");
+            System.out.println("jedis.get(\"refreshToken\"):" + jedis.get("refreshToken"));
+            return jedis.get("refreshToken");
         }
 /*        int init_flag = Integer.parseInt(ConfUtil.getProperty("init_flag"));
         if(!refreshTokenConf.equals("") &&  init_flag==1){
@@ -128,7 +131,7 @@ public class TokenUtil {
             return openIdConf;
         }else{
             setOpenId(openId);
-            return jedis.get("open_id");
+            return jedis.get("openId");
         }
 /*        if(openId.equals("") && !openIdConf.equals("")){
             setOpenId(openId);

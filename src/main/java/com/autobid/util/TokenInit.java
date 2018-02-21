@@ -80,13 +80,13 @@ public class TokenInit {
     }*/
     @Test
     public void testInitToken() throws Exception {
-        TokenInit.initToken();
+        //TokenInit.initToken();
         Thread.sleep(3000);
         //TokenInit.refreshToken();
         TokenUtil.genNewToken();
         Thread.sleep(3000);
         //TokenInit.refreshToken();
-        TokenUtil.genNewToken();
+        //TokenUtil.genNewToken();
         //System.out.println("TokenUtil.getToken() is :" + TokenUtil.getToken());
     }
 }
