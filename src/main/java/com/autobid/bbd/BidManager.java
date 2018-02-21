@@ -54,9 +54,9 @@ public class BidManager implements Constants {
             //每次运行获取一个新Token
             //TokenUtil.genNewToken();
             //如果Token快到期，则获取一个新Token
-/*            if (TokenUtil.determineRefreshDate()) {
+            if (TokenUtil.determineRefreshDate()) {
                 TokenUtil.genNewToken();
-            }*/
+            }
             localHost = HostUtil.getLocalHost();
             confHost = HostUtil.getConfHost();
             //获取Token，配置文件有则优先，没有则获取Redis
@@ -89,10 +89,10 @@ public class BidManager implements Constants {
     @Test
     public void bidExecute() throws Exception {
 
-        if(localHost==confHost && ConfUtil.getProperty("init_flag").equals("1")) {
+/*        if(localHost==confHost && ConfUtil.getProperty("init_flag").equals("1")) {
             //如果不是在本机第一次运行，则直接获取一个新Token
             TokenUtil.genNewToken();
-        }
+        }*/
         token = TokenUtil.getToken();
         ConfUtil.setProperty("host_name",localHost);
 //        token = TokenUtil.getToken();
