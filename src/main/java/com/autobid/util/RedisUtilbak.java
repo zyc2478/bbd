@@ -5,7 +5,7 @@ import redis.clients.jedis.JedisPool;
 import redis.clients.jedis.JedisPoolConfig;
 
 @SuppressWarnings("deprecation,unused")
-public final class RedisUtil {
+public final class RedisUtilbak {
 
     //RedisµÄ¶Ë¿ÚºÅ
     private static int PORT = 6379;
@@ -34,9 +34,8 @@ public final class RedisUtil {
             config.setTestOnBorrow(true);
             //jedisPool = new JedisPool(config, ADDR, PORT, TIMEOUT, AUTH);
             String ADDR = "localhost";
-//            jedisPool = new JedisPool(config, ADDR);
+            jedisPool = new JedisPool(config, ADDR);
 //            jedisPool = new JedisPool(config,ADDR,PORT,100000);
-            jedisPool = new JedisPool(new JedisPoolConfig(), "localhost");
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -47,17 +46,17 @@ public final class RedisUtil {
      *
      */
     public synchronized static Jedis getJedis() {
-
-        Jedis jedis = null;
         try {
-            jedis = jedisPool.getResource();
-            /// ... do stuff here ... for example
-        } finally {
-            if (jedis != null) {
-                jedis.close();
+            if (jedisPool != null) {
+                return jedisPool.getResource();
+            } else {
+                return null;
+                //return jedisPool;
             }
+        } catch (Exception e) {
+            e.printStackTrace();
+            return null;
         }
-        return jedis;
     }
     /*
      *

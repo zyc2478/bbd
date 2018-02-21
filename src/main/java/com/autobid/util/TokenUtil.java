@@ -30,11 +30,14 @@ public class TokenUtil {
             initDate = ConfUtil.getProperty("init_date");
             String redisHost = ConfUtil.getProperty("redis_host");
             int redisPort = Integer.parseInt(ConfUtil.getProperty("redis_port"));
-            jedis = new Jedis(redisHost, redisPort);
+//            jedis = new Jedis(redisHost, redisPort);
+            jedis = RedisUtil.getJedis();
         } catch (Exception e) {
             e.printStackTrace();
         }
     }
+
+
 
 
 

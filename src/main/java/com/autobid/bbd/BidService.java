@@ -31,7 +31,7 @@ public class BidService {
 
         Result result = OpenApiClient.send(url, token);
         System.out.println(result.getContext());
-
+        
         String resultJSON = StringUtil.filterStrToJSON(result.getContext());
        // String resultJSON = StringUtil.toJSON(result.getContext());
 

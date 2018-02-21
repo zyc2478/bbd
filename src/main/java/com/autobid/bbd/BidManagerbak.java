@@ -12,7 +12,10 @@ import org.apache.log4j.Logger;
 import org.junit.Test;
 import redis.clients.jedis.Jedis;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Objects;
 
 
 /**
@@ -24,20 +27,20 @@ import java.util.*;
  */
 
 @SuppressWarnings("deprecation")
-public class BidManager implements Constants {
+public class BidManagerbak implements Constants {
 
     //private static final int NONE = 0;
     private static int MIN_BID_AMOUNT;
 
     private static String token = "";
     private static String openId;
-    Jedis jedis = null;
+    private static Jedis jedis;
     private static ConfBean confBean;
 
-    private static Logger logger = Logger.getLogger(BidManager.class);
+    private static Logger logger = Logger.getLogger(BidManagerbak.class);
 
     //单例
-    private volatile static BidManager instance;
+    private volatile static BidManagerbak instance;
 
     //static double balance;
     static {
@@ -46,6 +49,11 @@ public class BidManager implements Constants {
             confBean = ConfUtil.readAllToBean();
             MIN_BID_AMOUNT = Integer.parseInt(confBean.getMinBidAmount());
             openId = confBean.getOpenId();
+            String redisHost = confBean.getRedisHost();
+            int redisPort = Integer.parseInt(confBean.getRedisPort());
+
+//            jedis = new Jedis(redisHost, redisPort);
+            jedis = RedisUtil.getJedis();
             //如果TokenInit配置项不存在，则初始化Token，存储在Redis中--需要新code，没有意义
             if (ConfUtil.getProperty("init_flag").equals("0")) {
                 TokenInit.initToken();
@@ -67,16 +75,16 @@ public class BidManager implements Constants {
     }
 
     //private BidByDebt(){}
-    public BidManager() {
+    public BidManagerbak() {
     }
     //HashMap<Integer,String> bidResultMap = new HashMap<Integer,String>();
     //int bidAmount = 0;
 
-    public static BidManager getInstance() {
+    public static BidManagerbak getInstance() {
         if (instance == null) {
-            synchronized (BidManager.class) {
+            synchronized (BidManagerbak.class) {
                 if (instance == null) {
-                    instance = new BidManager();
+                    instance = new BidManagerbak();
                 }
             }
         }

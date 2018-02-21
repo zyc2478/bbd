@@ -9,10 +9,7 @@ import com.autobid.entity.DebtResult;
 import com.autobid.filter.BidInfosFilter;
 import com.autobid.filter.DebtInfosListFilter;
 import com.autobid.filter.DebtListFilter;
-import com.autobid.util.ConfBean;
-import com.autobid.util.ConfUtil;
-import com.autobid.util.TokenInit;
-import com.autobid.util.TokenUtil;
+import com.autobid.util.*;
 import net.sf.json.JSONArray;
 import net.sf.json.JSONObject;
 import org.apache.log4j.Logger;
@@ -51,7 +48,8 @@ public class DebtManager implements Constants {
             String redisHost = confBean.getRedisHost();
             int redisPort = Integer.parseInt(confBean.getRedisPort());
 
-            jedis = new Jedis(redisHost, redisPort);
+//            jedis = new Jedis(redisHost, redisPort);
+            jedis = RedisUtil.getJedis();
 
             //如果init_flag配置项不存在，则初始化Token，存储在Redis中
             if (ConfUtil.getProperty("init_flag").equals("0")) {
@@ -91,7 +89,7 @@ public class DebtManager implements Constants {
 
     @Test
     public void debtExcecute() throws Exception {
-        TokenUtil.genNewToken();
+//        TokenUtil.genNewToken();
         //获取Token，配置文件有则优先，没有则获取Redis
         token = TokenUtil.getToken();
         logger.info("debtExcecute");
@@ -216,7 +214,7 @@ public class DebtManager implements Constants {
                         //System.out.println("已投债权标 DebtId:"+ di.getInt("DebtId") + ", ListingId:" + di.getInt("ListingId") + ", Price:" + di.getDouble("PriceForSale"));
                     }
                 }
-                Thread.sleep(200);
+                Thread.sleep(100);
             }
             if (indexNum == 1) {
                 debtGroups = Integer.parseInt(confBean.getDebtMaxGroups());
