@@ -15,7 +15,10 @@ import net.sf.json.JSONObject;
 import org.apache.log4j.Logger;
 import org.junit.Test;
 import redis.clients.jedis.Jedis;
+import redis.clients.jedis.JedisPool;
+import redis.clients.jedis.JedisPoolConfig;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -33,10 +36,10 @@ public class DebtManager implements Constants {
 
     private static String token = "";
     private static String openId;
-    private static Jedis jedis;
     private static ConfBean confBean;
     private static String localHost,confHost;
     private static Logger logger = Logger.getLogger(DebtManager.class);
+    private DebtDetermine debtDetermine = new DebtDetermine();
     //单例
     private volatile static DebtManager instance;
 
@@ -46,19 +49,15 @@ public class DebtManager implements Constants {
             AuthInit.init();
             confBean = ConfUtil.readAllToBean();
             openId = confBean.getOpenId();
-            String redisHost = confBean.getRedisHost();
-            int redisPort = Integer.parseInt(confBean.getRedisPort());
-
-//            jedis = new Jedis(redisHost, redisPort);
-            jedis = RedisUtil.getJedis();
 
             //如果init_flag配置项不存在，则初始化Token，存储在Redis中
             if (ConfUtil.getProperty("init_flag").equals("0")) {
                 TokenInit.initToken();
             }
             //如果Token快到期，则获取一个新Token
-            if (TokenUtil.determineRefreshDate()) {
-                TokenUtil.genNewToken();
+            TokenUtil tokenUtil = new TokenUtil();
+            if (tokenUtil.determineRefreshDate()) {
+                tokenUtil.genNewToken();
             }
             localHost = HostUtil.getLocalHost();
             confHost = HostUtil.getConfHost();
@@ -72,7 +71,15 @@ public class DebtManager implements Constants {
             e.printStackTrace();
         }
     }
-
+    private String host;
+    {
+        try {
+            host = ConfUtil.getProperty("redis_host");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+    JedisPool pool = new JedisPool(new JedisPoolConfig(), host);
     private ArrayList<DebtResult> successDebtList = new ArrayList<>();
     public DebtManager() {
     }
@@ -96,7 +103,8 @@ public class DebtManager implements Constants {
             //如果不是在本机第一次运行，则直接获取一个新Token
             TokenUtil.genNewToken();
         }*/
-        token = TokenUtil.getToken();
+        TokenUtil tokenUtil = new TokenUtil();
+        token = tokenUtil.getToken();
         ConfUtil.setProperty("host_name",localHost);
 /*        TokenUtil.genNewToken();
         //获取Token，配置文件有则优先，没有则获取Redis
@@ -209,21 +217,23 @@ public class DebtManager implements Constants {
                 for (int j = 0; j < dbFiltered.size(); j++) {
                     JSONObject di = dbFiltered.getJSONObject(j);
                     DebtResult debtResult = null;
-                    if (!(DebtDetermine.determineDuplicateDebtId(di.getInt("DebtId"), jedis)) &&
-                            !(DebtDetermine.determineDuplicateDebtId(di.getInt("ListingId"), jedis))) {
+                    if (!(debtDetermine.determineDuplicateDebtId(di.getInt("DebtId"))) &&
+                            !(debtDetermine.determineDuplicateDebtId(di.getInt("ListingId")))) {
                         debtResult = DebtService.buyDebtService(token, openId, di);
                     }
                     if (debtResult != null) {
                         if (!successDebtList.contains(debtResult)) {
                             successDebtList.add(debtResult);
                         }
-                        jedis.setex(String.valueOf(di.getInt("DebtId")), 172800, String.valueOf(di.getInt("ListingId")));
-                        jedis.setex(String.valueOf(di.getInt("ListingId")), 172800, String.valueOf(di.getInt("PriceforSale")));
+                        try (Jedis jedis = pool.getResource()) {
+                            jedis.setex(String.valueOf(di.getInt("DebtId")), 172800, String.valueOf(di.getInt("ListingId")));
+                            jedis.setex(String.valueOf(di.getInt("ListingId")), 172800, String.valueOf(di.getInt("PriceforSale")));
+                        }
                         logger.info(indexNum + ": " + di);
                         //System.out.println("已投债权标 DebtId:"+ di.getInt("DebtId") + ", ListingId:" + di.getInt("ListingId") + ", Price:" + di.getDouble("PriceForSale"));
                     }
                 }
-                Thread.sleep(100);
+                Thread.sleep(500);
             }
             if (indexNum == 1) {
                 debtGroups = Integer.parseInt(confBean.getDebtMaxGroups());
@@ -232,6 +242,7 @@ public class DebtManager implements Constants {
             }
             indexNum++;
             //logger.info(indexNum);
+            Thread.sleep(500);
         } while (debtCount == 50 && indexNum <= debtGroups); //每页50个元素
 
         logger.info("Total Debt Count is :" + totalDebtCount);

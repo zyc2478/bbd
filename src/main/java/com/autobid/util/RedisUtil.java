@@ -46,7 +46,7 @@ public final class RedisUtil {
      * »ñÈ¡JedisÊµÀý
      *
      */
-    public synchronized static Jedis getJedis() {
+    public static synchronized Jedis getJedis() {
 
         Jedis jedis = null;
         try {

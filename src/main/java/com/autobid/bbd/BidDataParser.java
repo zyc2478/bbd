@@ -26,7 +26,10 @@ public class BidDataParser {
 
         JSONObject balanceJson = JSONObject.fromObject(queryBalanceJson);
         //logger.info(balanceJson);
-
+        if(JSONUtil.decodeUnicode(queryBalanceJson).contains("¡Ó≈∆–£—È ß∞‹")){
+            logger.info("getBalance: ¡Ó≈∆–£—È ß∞‹");
+            return 0;
+        }
         JSONArray balanceArray = balanceJson.getJSONArray("Balance");
 
         double canUseBalance = 0;

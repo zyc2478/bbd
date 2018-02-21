@@ -37,6 +37,7 @@ public class TokenInit {
         }
         */
     public static void initToken() throws Exception {
+        TokenUtil tokenUtil = new TokenUtil();
         System.out.println("code is:" + code);
         //authInfo = OpenApiClient.authorize("9ca3fb6357b04c5385fd51d1e6db9922");
         AuthInfo authInfo = OpenApiClient.authorize(code);
@@ -53,9 +54,9 @@ public class TokenInit {
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm");
         String nowDate = sdf.format(new Date());
         ConfUtil.setProperty("init_date", nowDate);
-        TokenUtil.setToken(token);
-        TokenUtil.setRefreshToken(refreshToken);
-        TokenUtil.setOpenId(openId);
+        tokenUtil.setToken(token);
+        tokenUtil.setRefreshToken(refreshToken);
+        tokenUtil.setOpenId(openId);
         initFlag = true;
         ConfUtil.setProperty("init_flag","1");
     }
@@ -80,10 +81,11 @@ public class TokenInit {
     }*/
     @Test
     public void testInitToken() throws Exception {
+        TokenUtil tokenUtil = new TokenUtil();
         //TokenInit.initToken();
         Thread.sleep(3000);
         //TokenInit.refreshToken();
-        TokenUtil.genNewToken();
+        tokenUtil.genNewToken();
         Thread.sleep(3000);
         //TokenInit.refreshToken();
         //TokenUtil.genNewToken();

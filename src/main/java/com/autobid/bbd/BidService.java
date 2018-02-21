@@ -36,7 +36,7 @@ public class BidService {
        // String resultJSON = StringUtil.toJSON(result.getContext());
 
         if (JSONUtil.decodeUnicode(resultJSON).contains("您的操作太频繁啦")) {
-            System.out.println("您的操作太频繁啦！先喝杯茶吧，歇一分钟~~");
+            System.out.println("queryBalanceService:您的操作太频繁啦！先喝杯茶吧，歇一分钟~~");
             Thread.sleep(60000);
         }/* else if (JSONUtil.decodeUnicode(resultJSON).contains("用户无效或令牌已过有效期")) {
             logger.info("Error!用户无效或令牌已过有效期");
@@ -58,7 +58,7 @@ public class BidService {
         String resultJSON = StringUtil.filterStrToJSON(result.getContext());
 
         if (JSONUtil.decodeUnicode(resultJSON).contains("您的操作太频繁啦")) {
-            logger.info("您的操作太频繁啦！先喝杯茶吧，歇一分钟~~");
+            logger.info("loanListService:您的操作太频繁啦！先喝杯茶吧，歇一分钟~~");
             logger.error("您的操作太频繁啦！先喝杯茶吧，歇一分钟~~");
             Thread.sleep(60000);
         }
@@ -114,7 +114,7 @@ public class BidService {
             String resultJSON = StringUtil.filterStrToJSON(result.getContext());
 
             if (JSONUtil.decodeUnicode(resultJSON).contains("您的操作太频繁啦")) {
-                logger.error("您的操作太频繁啦！先喝杯茶吧，歇一分钟~~");
+                logger.error("batchListInfosCollectorService:您的操作太频繁啦！先喝杯茶吧，歇一分钟~~");
                 Thread.sleep(60000);
             }
             //System.out.println("result.context: " + result.getContext());
@@ -135,7 +135,7 @@ public class BidService {
         String resultJSON = StringUtil.filterStrToJSON(result.getContext());
 
         if (JSONUtil.decodeUnicode(resultJSON).contains("您的操作太频繁啦")) {
-            logger.error("xxxxxx 您的操作太频繁啦！先喝杯茶吧，歇一分钟吧 ~~~xxxxxx");
+            logger.error("xxxxxx biddingService 您的操作太频繁啦！先喝杯茶吧，歇一分钟吧 ~~~xxxxxx");
             Thread.sleep(60000);
         }
         BidResult successBidResult = null;

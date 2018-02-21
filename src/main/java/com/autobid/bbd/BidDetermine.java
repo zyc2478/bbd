@@ -8,7 +8,10 @@ import com.autobid.util.ConfBean;
 import com.autobid.util.ConfUtil;
 import org.apache.log4j.Logger;
 import redis.clients.jedis.Jedis;
+import redis.clients.jedis.JedisPool;
+import redis.clients.jedis.JedisPoolConfig;
 
+import java.io.IOException;
 import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -29,7 +32,15 @@ public class BidDetermine implements Constants {
     private static int MORE_MULTIPLE;
     private static float MINI_MULTIPLE, MEDIUM_MULTIPLE;
     private static Logger logger = Logger.getLogger(BidDetermine.class);
-
+    private String host;
+    {
+        try {
+            host = ConfUtil.getProperty("redis_host");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+    JedisPool pool = new JedisPool(new JedisPoolConfig(), host);
     static {
         try {
             ConfBean cb = ConfUtil.readAllToBean();
@@ -49,8 +60,10 @@ public class BidDetermine implements Constants {
         return !(queryBalance > MIN_BID_AMOUNT);
     }
 
-    public static boolean determineDuplicateId(int listingId, Jedis jedis) {
-        return jedis.exists(String.valueOf(listingId));
+    public boolean determineDuplicateId(int listingId) {
+        try (Jedis jedis = pool.getResource()) {
+            return jedis.exists(String.valueOf(listingId));
+        }
     }
 
     @SuppressWarnings("unused")

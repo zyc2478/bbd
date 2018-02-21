@@ -32,8 +32,8 @@ public class DebtService {
 
         if (JSONUtil.decodeUnicode(resultJSON).contains("您的操作太频繁啦")) {
             //logger.info("您的操作太频繁啦！先喝杯茶吧，歇一分钟~~");
-            System.out.println("您的操作太频繁啦！先喝杯茶吧，歇一分钟~~");
-            logger.error("您的操作太频繁啦！先喝杯茶吧，歇一分钟~~");
+            System.out.println("debtListService:您的操作太频繁啦！先喝杯茶吧，歇一分钟~~");
+            logger.error("debtListService:您的操作太频繁啦！先喝杯茶吧，歇一分钟~~");
             Thread.sleep(60000);
         }
         JSONArray debtListArray = null;
@@ -60,11 +60,12 @@ public class DebtService {
         }
         Result result = OpenApiClient.send(url, new PropertyObject("DebtIds", debtIds, ValueTypeEnum.Other));
 
+        System.out.println(result.getContext());
         String resultJSON = StringUtil.filterStrToJSON(result.getContext());
 
         JSONArray debtInfosArray = null;
         if (JSONUtil.decodeUnicode(resultJSON).contains("您的操作太频繁啦")) {
-            logger.info("您的操作太频繁啦！先喝杯茶吧，歇一分钟~~");
+            logger.info("batchDebtInfosService: 您的操作太频繁啦！先喝杯茶吧，歇一分钟~~");
             logger.error("您的操作太频繁啦！先喝杯茶吧，歇一分钟~~");
             System.out.println("result.getContext()" + result.getContext());
             Thread.sleep(60000);
@@ -96,7 +97,7 @@ public class DebtService {
         logger.info(resultJSON);
 
         if (JSONUtil.decodeUnicode(resultJSON).contains("您的操作太频繁啦")) {
-            logger.error("xxxxxx 您的操作太频繁啦！先喝杯茶吧，歇一分钟吧 ~~~xxxxxx");
+            logger.error("xxxxxx buyDebtService:您的操作太频繁啦！先喝杯茶吧，歇一分钟吧 ~~~xxxxxx");
             Thread.sleep(60000);
         }
         DebtResult successBidResult = null;

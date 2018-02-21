@@ -5,13 +5,17 @@ import com.autobid.entity.BidResult;
 import com.autobid.entity.Constants;
 import com.autobid.entity.CriteriaGroup;
 import com.autobid.entity.LoanListResult;
+import com.autobid.strategy.BidDebtStrategy;
 import com.autobid.util.*;
 import net.sf.json.JSONArray;
 import net.sf.json.JSONObject;
 import org.apache.log4j.Logger;
 import org.junit.Test;
 import redis.clients.jedis.Jedis;
+import redis.clients.jedis.JedisPool;
+import redis.clients.jedis.JedisPoolConfig;
 
+import java.io.IOException;
 import java.util.*;
 
 
@@ -31,11 +35,12 @@ public class BidManager implements Constants {
 
     private static String token = "";
     private static String openId;
-    Jedis jedis = null;
     private static ConfBean confBean;
     private static String localHost,confHost;
 
     private static Logger logger = Logger.getLogger(BidManager.class);
+
+    BidDetermine bidDetermine = new BidDetermine();
 
     //单例
     private volatile static BidManager instance;
@@ -54,8 +59,9 @@ public class BidManager implements Constants {
             //每次运行获取一个新Token
             //TokenUtil.genNewToken();
             //如果Token快到期，则获取一个新Token
-            if (TokenUtil.determineRefreshDate()) {
-                TokenUtil.genNewToken();
+            TokenUtil tokenUtil = new TokenUtil();
+            if (tokenUtil.determineRefreshDate()) {
+                tokenUtil.genNewToken();
             }
             localHost = HostUtil.getLocalHost();
             confHost = HostUtil.getConfHost();
@@ -68,7 +74,15 @@ public class BidManager implements Constants {
             e.printStackTrace();
         }
     }
-
+    private String host;
+    {
+        try {
+            host = ConfUtil.getProperty("redis_host");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+    JedisPool pool = new JedisPool(new JedisPoolConfig(), host);
     //private BidByDebt(){}
     public BidManager() {
     }
@@ -93,7 +107,8 @@ public class BidManager implements Constants {
             //如果不是在本机第一次运行，则直接获取一个新Token
             TokenUtil.genNewToken();
         }*/
-        token = TokenUtil.getToken();
+        TokenUtil tokenUtil = new TokenUtil();
+        token = tokenUtil.getToken();
         ConfUtil.setProperty("host_name",localHost);
 //        token = TokenUtil.getToken();
         logger.info("bidExecute");
@@ -187,12 +202,12 @@ public class BidManager implements Constants {
 
                         //先判定是否在Redis中重复，即已投过该标的
                         //bidAmount = new BidDetermine().determineCriteriaGroup(criteriaGroup, loanInfoMap);
-                        if (!BidDetermine.determineDuplicateId(listingId, jedis)) {
+                        if (!bidDetermine.determineDuplicateId(listingId)) {
                             System.out.println("====== listingId: " + listingId + ", Start bidding ====== ");
                             //logger.info("listingId: " + listingId + ", JSON is: " + loanInfoMap);
                             //bidAmount = new BidDetermine().determineCriteriaGroup(criteriaGroup, loanInfoMap);
                             assert criteriaGroup != null;
-                            bidAmount = BidDetermine.determineCriteriaGroup(Objects.requireNonNull(criteriaGroup), confBean, loanInfoMap);
+                            bidAmount = bidDetermine.determineCriteriaGroup(Objects.requireNonNull(criteriaGroup), confBean, loanInfoMap);
                             System.out.println("****** listingId: " + listingId + ", total Amount is: " + bidAmount + " ******");
                         } /*else {//logger.error("xxxxxx " + listingId + "在Redis中重复！ xxxxxx");}*/
                     }
@@ -213,7 +228,9 @@ public class BidManager implements Constants {
                         if (!successBidList.contains(successBidResult)) {
                             successBidList.add(successBidResult);
                         }
-                        jedis.setex(String.valueOf(listingId), 172800, String.valueOf(bidAmount));
+                        try (Jedis jedis = pool.getResource()) {
+                            jedis.setex(String.valueOf(listingId), 172800, String.valueOf(bidAmount));
+                        }
                     }
                 }
             }

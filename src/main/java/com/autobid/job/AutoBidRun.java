@@ -34,55 +34,32 @@ public class AutoBidRun {
         int runInterval = Integer.parseInt(ConfUtil.getProperty("run_interval"));
 
         // 从工厂中，获取一个任务调度实体
-        Scheduler sched1 = sf.getScheduler();
-        Scheduler sched2 = sf.getScheduler();
+        Scheduler sched = sf.getScheduler();
 /*
         // 定义任务运行时间，这里的话，你需要改成你想要任务在什么时候执行
         Date runTime = DateUtil.buildDate(18, 30, 30);
         System.out.println("任务将在：" + DateUtil.fromDate2String(runTime) + "执行");  */
 
         // 初始化任务实体
-        JobDetail job1 = JobBuilder
-                .newJob(BidJob.class)
-                .withIdentity("job1", "group1")
+        JobDetail job = JobBuilder
+                .newJob(AutoBidJob.class)
+                .withIdentity("job", "group")
                 .build();
 
-        JobDetail job2 = JobBuilder
-                .newJob(DebtJob.class)
-                .withIdentity("job2", "group2")
-                .build();
         // 初始化触发器
 /*        Trigger trigger = TriggerBuilder
                             .newTrigger()
                             .withIdentity("trigger1", "group1")
                             .startAt(runTime)
                             .build();  */
-        Trigger trigger1 = TriggerBuilder.newTrigger().withIdentity("simple1", "group1")
+        Trigger trigger = TriggerBuilder.newTrigger().withIdentity("simple", "group")
                 .withSchedule(CronScheduleBuilder.cronSchedule("*/" + runInterval + " * * * * ?"))
                 .startNow()
                 .build();
 
-        Trigger trigger2 = TriggerBuilder.newTrigger().withIdentity("simple1", "group2")
-                .withSchedule(CronScheduleBuilder.cronSchedule("*/" + runInterval + " * * * * ?"))
-                .startNow()
-                .build();
         //logger.info("设置定时任务");
-
-        int bidMode = Integer.parseInt(ConfUtil.getProperty("bid_mode"));
-        if(bidMode==3){
-            sched1.scheduleJob(job1, trigger1);
-            sched1.start();
-            sched2.scheduleJob(job2, trigger2);
-            sched2.start();
-        }else if(bidMode==1){
-            // 设置定时任务
-            sched1.scheduleJob(job1, trigger1);
-            // 启动定时任务
-            sched1.start();
-        }else if(bidMode==2){
-            sched2.scheduleJob(job2, trigger2);
-            sched2.start();
-        }
+        sched.scheduleJob(job, trigger);
+        sched.start();
 /*
         try {
             Thread.sleep(300000L);
