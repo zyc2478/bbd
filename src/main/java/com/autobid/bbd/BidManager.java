@@ -101,7 +101,7 @@ public class BidManager implements Constants {
     }
 
     @Test
-    public void bidExecute() throws Exception {
+    public synchronized void bidExecute() throws Exception {
 
 /*        if(localHost==confHost && ConfUtil.getProperty("init_flag").equals("1")) {
             //如果不是在本机第一次运行，则直接获取一个新Token
@@ -248,6 +248,8 @@ public class BidManager implements Constants {
 /*		logger = null;
 		instance = null;*/
         ConfUtil.setProperty("host_name",localHost);
+        pool.close();
+
     }
 
     private void bidResultsPrint(ArrayList<BidResult> successBidList, int listingIdsSize) {
@@ -256,7 +258,6 @@ public class BidManager implements Constants {
         } else if (successBidList.isEmpty()) {
             System.out.println("*~~~~~~~~~~~~~~~~~~~很抱歉，没有找到合适标的~~~~~~~~~~~~~~~~~~~~~~~*");
         } else {
-
             for (BidResult successResult : successBidList) {
                 System.out.println("*~~~~~~~~~~~ BidId:" + successResult.getBidId() + ",BidAmount:" +
                         successResult.getBidAmount() + "~~~~~~~~~~~*");

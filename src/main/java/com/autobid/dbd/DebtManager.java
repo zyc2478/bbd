@@ -98,7 +98,7 @@ public class DebtManager implements Constants {
     }
 
     @Test
-    public void debtExcecute() throws Exception {
+    public synchronized void debtExcecute() throws Exception {
 /*        if(localHost==confHost && ConfUtil.getProperty("init_flag").equals("1")) {
             //如果不是在本机第一次运行，则直接获取一个新Token
             TokenUtil.genNewToken();
@@ -233,7 +233,7 @@ public class DebtManager implements Constants {
                         //System.out.println("已投债权标 DebtId:"+ di.getInt("DebtId") + ", ListingId:" + di.getInt("ListingId") + ", Price:" + di.getDouble("PriceForSale"));
                     }
                 }
-                Thread.sleep(500);
+                Thread.sleep(100);
             }
             if (indexNum == 1) {
                 debtGroups = Integer.parseInt(confBean.getDebtMaxGroups());
@@ -242,12 +242,14 @@ public class DebtManager implements Constants {
             }
             indexNum++;
             //logger.info(indexNum);
-            Thread.sleep(500);
+//            Thread.sleep(100);
         } while (debtCount == 50 && indexNum <= debtGroups); //每页50个元素
 
         logger.info("Total Debt Count is :" + totalDebtCount);
 
         debtResultsPrint(successDebtList, totalDebtCount);
+        ConfUtil.setProperty("host_name",localHost);
+        pool.close();
     }
 
 

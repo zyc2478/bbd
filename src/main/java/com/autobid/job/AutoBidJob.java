@@ -3,8 +3,10 @@ package com.autobid.job;
 import com.autobid.bbd.BidManager;
 import com.autobid.dbd.DebtManager;
 import com.autobid.util.ConfUtil;
+import org.quartz.DisallowConcurrentExecution;
 import org.quartz.Job;
 import org.quartz.JobExecutionContext;
+import org.quartz.StatefulJob;
 
 import java.io.IOException;
 
@@ -14,14 +16,20 @@ import java.io.IOException;
  * @Description: 定时处理的任务，任务需要实现Job接口
  * @Date 2017-9-20
  */
-@SuppressWarnings("deprecation")
+
 public class AutoBidJob implements Job {
 
     public void execute(JobExecutionContext context) {
+        try {
+            runAutoBid();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 
+    private void runAutoBid() throws IOException {
         BidManager bid = BidManager.getInstance();
-        DebtManager debt;
-        debt = DebtManager.getInstance();
+        DebtManager debt = DebtManager.getInstance();
 /*        try {
             bidMode = Integer.parseInt(ConfUtil.getProperty("bid_mode"));
             if (bidMode == 1) {
@@ -47,7 +55,7 @@ public class AutoBidJob implements Job {
         }
         if(bidMode==3){
             final BidManager finalBid = bid;
-            Thread threadOne = new Thread(new Runnable() {
+            final Thread threadOne = new Thread(new Runnable() {
                 public void run() {
                     try {
                         finalBid.bidExecute();
@@ -66,6 +74,7 @@ public class AutoBidJob implements Job {
                     }
                 }
             });
+//            ConfUtil.setProperty("is_running","1");
             // 执行线程
             threadOne.start();
             try {
@@ -99,5 +108,10 @@ public class AutoBidJob implements Job {
             });
             threadTwo.start();
         }
+//        ConfUtil.setProperty("is_running","0");
+    }
+    public static void main(String[] args) throws IOException {
+        AutoBidJob autoBidJob =new AutoBidJob();
+        autoBidJob.runAutoBid();
     }
 }

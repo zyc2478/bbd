@@ -60,7 +60,7 @@ public class DebtService {
         }
         Result result = OpenApiClient.send(url, new PropertyObject("DebtIds", debtIds, ValueTypeEnum.Other));
 
-        System.out.println(result.getContext());
+//        System.out.println(result.getContext());
         String resultJSON = StringUtil.filterStrToJSON(result.getContext());
 
         JSONArray debtInfosArray = null;

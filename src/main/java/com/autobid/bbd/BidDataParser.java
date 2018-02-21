@@ -40,7 +40,7 @@ public class BidDataParser {
                 canUseBalance = balanceObject.getDouble("Balance");
             }
         }
-        logger.info("可用余额为：" + canUseBalance);
+        //logger.info("可用余额为：" + canUseBalance);
         return canUseBalance;
     }
 
