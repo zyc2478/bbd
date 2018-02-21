@@ -35,6 +35,7 @@ public class DebtManager implements Constants {
     private static String openId;
     private static Jedis jedis;
     private static ConfBean confBean;
+    private static String localHost,confHost;
     private static Logger logger = Logger.getLogger(DebtManager.class);
     //单例
     private volatile static DebtManager instance;
@@ -59,6 +60,8 @@ public class DebtManager implements Constants {
 /*            if (TokenUtil.determineRefreshDate()) {
                 TokenUtil.genNewToken();
             }*/
+            localHost = HostUtil.getLocalHost();
+            confHost = HostUtil.getConfHost();
 /*            TokenUtil.genNewToken();
             //获取Token，配置文件有则优先，没有则获取Redis
             token = TokenUtil.getToken();*/
@@ -89,9 +92,15 @@ public class DebtManager implements Constants {
 
     @Test
     public void debtExcecute() throws Exception {
-//        TokenUtil.genNewToken();
-        //获取Token，配置文件有则优先，没有则获取Redis
+        if(localHost==confHost && ConfUtil.getProperty("init_flag").equals("1")) {
+            //如果不是在本机第一次运行，则直接获取一个新Token
+            TokenUtil.genNewToken();
+        }
         token = TokenUtil.getToken();
+        ConfUtil.setProperty("host_name",localHost);
+/*        TokenUtil.genNewToken();
+        //获取Token，配置文件有则优先，没有则获取Redis
+        token = TokenUtil.getToken();*/
         logger.info("debtExcecute");
         int overdueSwitch = Integer.parseInt(confBean.getDebtOverdueSwitch());
         int debtMix = Integer.parseInt(confBean.getDebtMix());

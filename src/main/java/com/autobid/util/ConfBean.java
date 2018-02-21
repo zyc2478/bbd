@@ -6,6 +6,7 @@ public class ConfBean {
     private String bidMode;
     private String redisHost;
     private String redisPort;
+    private String hostName;
     private String debtMix;
     private String debtOverdueSwitch;
     private String debtSaleRate;
@@ -62,8 +63,10 @@ public class ConfBean {
     private String tokenInit;
     private String refreshTokenInit;
 
-    public ConfBean() {
-    }
+    public ConfBean() {}
+    public String getHostName() { return hostName; }
+
+    public void setHostName(String hostName) { this.hostName = hostName; }
 
     public String getDebtMaxGroups() {
         return debtMaxGroups;

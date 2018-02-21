@@ -21,6 +21,7 @@ public class TokenUtil {
     private static int expireDays;
     private static String initDate;
     private static Jedis jedis;
+    private static String localHost,confHost;
 
     static {
         //openId = "7344c77f9a7f4f249bd9df04115171e6";
@@ -32,16 +33,16 @@ public class TokenUtil {
             int redisPort = Integer.parseInt(ConfUtil.getProperty("redis_port"));
 //            jedis = new Jedis(redisHost, redisPort);
             jedis = RedisUtil.getJedis();
+            String localHost = HostUtil.getLocalHost();
+            String confHost = HostUtil.getConfHost();
+
         } catch (Exception e) {
             e.printStackTrace();
         }
     }
 
-
-
-
-
     //private static Logger logger = Logger.getLogger(TokenUtil.class);
+
 
     public static void genNewToken() throws Exception {
 
@@ -50,6 +51,7 @@ public class TokenUtil {
         AuthInfo authInfo = OpenApiClient.refreshToken(openId,refreshToken);
         String token = authInfo.getAccessToken();
         refreshToken = authInfo.getRefreshToken();
+        System.out.println("authInfo.getAccessToken():"+token);
         setToken(token);
         setOpenId(openId);
         setRefreshToken(refreshToken);
@@ -86,42 +88,54 @@ public class TokenUtil {
     public static String getToken() throws IOException {
         String token = jedis.get("token");
         String tokenConf = ConfUtil.getProperty("token");
-        if(token.equals("") && !tokenConf.equals("")){
+        if(localHost!=confHost){
+            return tokenConf;
+        }else{
+            setToken(token);
+            return jedis.get("token");
+        }
+/*        if(token.equals("") && !tokenConf.equals("")){
             setToken(token);
         }else if(!token.equals("") && tokenConf.equals("")){
             System.out.println("Try to modify the token value in conf file!");
             ConfUtil.setProperty("token",token);
         }
-        return jedis.get("token");
+        return jedis.get("token");*/
     }
 
     private static String getRefreshToken() throws IOException {
         String refreshToken = jedis.get("refreshToken");
         String refreshTokenConf = ConfUtil.getProperty("refresh_token");
-        int init_flag = Integer.parseInt(ConfUtil.getProperty("init_flag"));
+        if(localHost!=confHost){
+            return refreshTokenConf;
+        }else{
+            setRefreshToken(refreshToken);
+            return jedis.get("refresh_token");
+        }
+/*        int init_flag = Integer.parseInt(ConfUtil.getProperty("init_flag"));
         if(!refreshTokenConf.equals("") &&  init_flag==1){
             setRefreshToken(refreshTokenConf);
         }else if(!refreshToken.equals("") && refreshTokenConf.equals("")){
             ConfUtil.setProperty("refresh_token",refreshToken);
         }
-
-/*        if(refreshToken.equals("") && !refreshTokenConf.equals("")){
-            setRefreshToken(refreshTokenConf);
-        }else if(!refreshToken.equals("") && refreshTokenConf.equals("")){
-            ConfUtil.setProperty("refresh_token",refreshToken);
-        }*/
-        return jedis.get("refreshToken");
+        return jedis.get("refreshToken");*/
     }
 
     private static String getOpenId() throws IOException {
         String openId = jedis.get("openId");
         String openIdConf = ConfUtil.getProperty("open_id");
-        if(openId.equals("") && !openIdConf.equals("")){
+        if(localHost!=confHost){
+            return openIdConf;
+        }else{
+            setOpenId(openId);
+            return jedis.get("open_id");
+        }
+/*        if(openId.equals("") && !openIdConf.equals("")){
             setOpenId(openId);
         }else if(!openId.equals("") && openIdConf.equals("")){
             ConfUtil.setProperty("open_id",openId);
         }
-        return jedis.get("openId");
+        return jedis.get("openId");*/
     }
 
 
@@ -151,6 +165,7 @@ public class TokenUtil {
 
     public static void setToken(String token) throws IOException {
         //String initToken =  ConfUtil.getProperty("token_init");
+        System.out.println("setToken token:"+token);
         jedis.setex("token", 604800, token); //7天后过期
         ConfUtil.setProperty("token",token);
     }
