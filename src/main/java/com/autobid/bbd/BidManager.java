@@ -82,7 +82,7 @@ public class BidManager implements Constants {
             e.printStackTrace();
         }
     }
-    JedisPool pool = new JedisPool(new JedisPoolConfig(), host);
+    JedisPool pool = new JedisPool(RedisUtil.getPoolConfig(), host);
     //private BidByDebt(){}
     public BidManager() {
     }

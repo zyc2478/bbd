@@ -6,6 +6,7 @@ import com.autobid.entity.CriteriaBid;
 import com.autobid.entity.CriteriaGroup;
 import com.autobid.util.ConfBean;
 import com.autobid.util.ConfUtil;
+import com.autobid.util.RedisUtil;
 import org.apache.log4j.Logger;
 import redis.clients.jedis.Jedis;
 import redis.clients.jedis.JedisPool;
@@ -40,7 +41,7 @@ public class BidDetermine implements Constants {
             e.printStackTrace();
         }
     }
-    JedisPool pool = new JedisPool(new JedisPoolConfig(), host);
+    JedisPool pool = new JedisPool(RedisUtil.getPoolConfig(), host);
     static {
         try {
             ConfBean cb = ConfUtil.readAllToBean();

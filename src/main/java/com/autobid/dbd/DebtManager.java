@@ -79,7 +79,7 @@ public class DebtManager implements Constants {
             e.printStackTrace();
         }
     }
-    JedisPool pool = new JedisPool(new JedisPoolConfig(), host);
+    JedisPool pool = new JedisPool(RedisUtil.getPoolConfig(), host);
     private ArrayList<DebtResult> successDebtList = new ArrayList<>();
     public DebtManager() {
     }
@@ -242,7 +242,7 @@ public class DebtManager implements Constants {
             }
             indexNum++;
             //logger.info(indexNum);
-//            Thread.sleep(100);
+          Thread.sleep(100);
         } while (debtCount == 50 && indexNum <= debtGroups); //Ã¿Ò³50¸öÔªËØ
 
         logger.info("Total Debt Count is :" + totalDebtCount);

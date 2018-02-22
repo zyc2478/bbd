@@ -13,36 +13,38 @@ public class CreditCodeCriteria implements Criteria, Constants {
     private boolean criteriaCredit;
 
     public void calc(HashMap<String, Object> loanInfoMap, ConfBean cb) {
+        String creditCodeLimit = cb.getCreditLimit();
         String creditCode = (String) loanInfoMap.get("CreditCode");
-        credit = switchCredit(credit,creditCode);
-        creditLimit = switchCredit(creditLimit,creditCode);
+        credit = switchCredit(creditCode);
+        creditLimit = switchCredit(creditCodeLimit);
         criteriaCredit = credit >= creditLimit;
     }
-   public int switchCredit(int credit, String creditCode){
+   public int switchCredit(String creditCode){
+        int codeNum = 0;
         switch (creditCode) {
             case "AA":
-                credit = 0;
+                codeNum = 0;
                 break;
             case "A":
-                credit = 1;
+                codeNum = 1;
                 break;
             case "B":
-                credit = 2;
+                codeNum = 2;
                 break;
             case "C":
-                credit = 3;
+                codeNum = 3;
                 break;
             case "D":
-                credit = 4;
+                codeNum = 4;
                 break;
             case "E":
-                credit = 5;
+                codeNum = 5;
                 break;
             case "F":
-                credit = 6;
+                codeNum = 6;
                 break;
         }
-        return credit;
+        return codeNum;
     }
 
     public int getLevel(HashMap<String, Object> loanInfoMap, ConfBean cb) {

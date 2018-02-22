@@ -2,6 +2,7 @@ package com.autobid.dbd;
 
 import com.autobid.entity.Constants;
 import com.autobid.util.ConfUtil;
+import com.autobid.util.RedisUtil;
 import redis.clients.jedis.Jedis;
 import redis.clients.jedis.JedisPool;
 import redis.clients.jedis.JedisPoolConfig;
@@ -23,7 +24,7 @@ public class DebtDetermine implements Constants {
             e.printStackTrace();
         }
     }
-    JedisPool pool = new JedisPool(new JedisPoolConfig(), host);
+    JedisPool pool = new JedisPool(RedisUtil.getPoolConfig(), host);
     public boolean determineDuplicateDebtId(int debtId) {
         try (Jedis jedis = pool.getResource()) {
             return jedis.exists(String.valueOf(debtId));

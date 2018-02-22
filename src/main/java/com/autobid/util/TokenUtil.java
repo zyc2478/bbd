@@ -25,7 +25,7 @@ public class TokenUtil {
 //    private static Jedis jedis;
     private static String localHost,confHost;
     private String host = ConfUtil.getProperty("redis_host");
-    JedisPool pool = new JedisPool(new JedisPoolConfig(), host);
+    JedisPool pool = new JedisPool(RedisUtil.getPoolConfig(), host);
 
     static {
         //openId = "7344c77f9a7f4f249bd9df04115171e6";

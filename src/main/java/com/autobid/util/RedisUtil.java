@@ -20,7 +20,7 @@ public final class RedisUtil {
     /*
       初始化Redis连接池
      */
-    static {
+/*    static {
         try {
             JedisPoolConfig config = new JedisPoolConfig();
             config.setEvictionPolicyClassName("org.apache.commons.pool2.impl.DefaultEvictionPolicy");
@@ -40,7 +40,21 @@ public final class RedisUtil {
         } catch (Exception e) {
             e.printStackTrace();
         }
+    }*/
+
+    public static JedisPoolConfig getPoolConfig(){
+        JedisPoolConfig config = new JedisPoolConfig();
+        config.setEvictionPolicyClassName("org.apache.commons.pool2.impl.DefaultEvictionPolicy");
+        int MAX_TOTAL = 1024;
+        config.setMaxTotal(MAX_TOTAL);
+        int MAX_IDLE = 200;
+        config.setMaxIdle(MAX_IDLE);
+        int MAX_WAIT = 10000;
+        config.setMaxWaitMillis(MAX_WAIT);
+        config.setTestOnBorrow(true);
+        return config;
     }
+
 
     /**
      * 获取Jedis实例

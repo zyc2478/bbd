@@ -156,7 +156,8 @@ public class BidDataParser {
         loanInfoMap.put("OverdueMoreCount", loanInfoObj.getInt("OverdueMoreCount"));        //逾期(15天以上)还清次数
         loanInfoMap.put("OwingAmount", loanInfoObj.getInt("OwingAmount"));                //待还金额
         loanInfoMap.put("HighestDebt", loanInfoObj.getInt("HighestDebt"));                //历史最高负债
-        loanInfoMap.put("HighestPrincipal", JSONUtil.parseInt(loanInfoObj.get("HighestPrincipal"))); //单笔最高借款金额
+        if(loanInfoObj.get("HighestPrincipal").equals(null)){loanInfoMap.put("HighestPrincipal",0);}else{
+            loanInfoMap.put("HighestPrincipal", JSONUtil.parseInt(loanInfoObj.get("HighestPrincipal")));} //单笔最高借款金额
         loanInfoMap.put("TotalPrincipal", JSONUtil.parseInt(loanInfoObj.get("TotalPrincipal")));    //累计借款金额
         loanInfoMap.put("LastSuccessBorrowTime", loanInfoObj.getString("LastSuccessBorrowTime"));    //上次成功借款时间
         loanInfoMap.put("CertificateValidate", loanInfoObj.getInt("CertificateValidate"));            //学历认证0 未认证 1已认证

@@ -40,14 +40,13 @@ public class BasicDebtStrategy implements DebtStrategy {
         return pd <= Double.parseDouble(cb.getDebtPreferLimit());
     }
 
-    @SuppressWarnings("unused")
     private boolean determineCreditCode(JSONObject debtInfos, ConfBean cb) {
+        int currentCredit,creditLimit;
         CreditCodeCriteria ccc = new CreditCodeCriteria();
-        int currentCredit = 0;
-        int creditLimit = 0;
+        String creditCodeLimit = cb.getCreditLimit();
         String currentCode = debtInfos.getString("CurrentCreditCode");
-        currentCredit = ccc.switchCredit(currentCredit,currentCode);
-        creditLimit = ccc.switchCredit(creditLimit,currentCode);
+        currentCredit = ccc.switchCredit(currentCode);
+        creditLimit = ccc.switchCredit(creditCodeLimit);
         return currentCredit >= creditLimit;
     }
 
