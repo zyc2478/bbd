@@ -19,6 +19,5 @@ public class JSONUtilTest {
             System.out.println("strCn°üº¬£º" + "×¨¿Æ");
         }
         System.out.println(JSONUtil.decodeUnicode("\u60a8\u7684\u64cd\u4f5c\u592a\u9891\u7e41\u5566\uff0c\u8bf7\u559d\u676f\u8336\u540e\uff0c\u518d\u6765\u8bd5\u8bd5\u5427"));
-
     }
 }
