@@ -3,22 +3,21 @@ package com.autobid.criteria;
 import com.autobid.entity.Constants;
 import com.autobid.entity.Criteria;
 import com.autobid.util.ConfBean;
-
-import java.util.HashMap;
+import net.sf.json.JSONObject;
 
 @SuppressWarnings("deprecation")
 public class LoanAmountCriteria implements Criteria, Constants {
 
     private boolean criteriaAf, criteriaAm, criteriaBm, criteriaBf, criteriaCm, criteriaCf, criteriaD, criteriaE;
 
-    public void calc(HashMap<String, Object> loanInfoMap, ConfBean cb) {
+    public void calc(JSONObject loanInfos, ConfBean cb) {
 
-        Integer loanAmount = (Integer) loanInfoMap.get("Amount");
-        Integer highestPrincipal = (Integer) loanInfoMap.get("HighestPrincipal");
-        Integer owingAmount = (Integer) loanInfoMap.get("OwingAmount");
-        Integer highestDebt = (Integer) loanInfoMap.get("HighestDebt");
-        Integer totalPrincipal = (Integer) loanInfoMap.get("TotalPrincipal");
-        int gender = Integer.parseInt(loanInfoMap.get("Gender").toString());
+        double loanAmount = Double.parseDouble(loanInfos.get("Amount").toString());
+        double highestPrincipal = Double.parseDouble(loanInfos.get("HighestPrincipal").toString());
+        double owingAmount =  Double.parseDouble(loanInfos.get("OwingAmount").toString());
+        double highestDebt = Double.parseDouble(loanInfos.get("HighestDebt").toString());
+        double totalPrincipal = Double.parseDouble(loanInfos.get("TotalPrincipal").toString());
+        int gender = Integer.parseInt(loanInfos.get("Gender").toString());
         int total_limit = Integer.parseInt(cb.getTotalLimit());
         double owing_mrate = Double.parseDouble(cb.getOwingMrate());
         double owing_frate = Double.parseDouble(cb.getOwingFrate());
@@ -48,8 +47,8 @@ public class LoanAmountCriteria implements Criteria, Constants {
          */
     }
 
-    public int getLevel(HashMap<String, Object> loanInfoMap, ConfBean cb) {
-        calc(loanInfoMap, cb);
+    public int getLevel(JSONObject loanInfos, ConfBean cb) {
+        calc(loanInfos, cb);
 /*		System.out.println("LoanAmount: criteriaAm:"+criteriaAm+",criteriaBm:"+criteriaBm + ",criteriaCm:"+criteriaCm+
 				",criteriaD:"+criteriaD+",criteriaE:"+criteriaE);*/
 /*		System.out.println("criteriaAf:"+criteriaAf+",criteriaBf:"+criteriaBf + ",criteriaCf:"+criteriaCf+

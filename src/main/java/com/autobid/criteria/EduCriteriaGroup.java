@@ -33,5 +33,4 @@ public class EduCriteriaGroup extends CriteriaGroup {
         System.out.println("size is " + criteriaList.size());
 
     }
-
 }

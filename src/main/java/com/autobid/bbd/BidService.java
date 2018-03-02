@@ -2,14 +2,13 @@ package com.autobid.bbd;
 
 import com.autobid.entity.BidResult;
 import com.autobid.entity.LoanListResult;
+import com.autobid.util.FormatUtil;
 import com.autobid.util.JSONUtil;
-import com.autobid.util.StringUtil;
 import com.ppdai.open.core.*;
-import net.sf.json.JSON;
 import net.sf.json.JSONArray;
 import net.sf.json.JSONObject;
 import org.apache.log4j.Logger;
-import com.autobid.util.TokenInit;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -32,8 +31,8 @@ public class BidService {
         Result result = OpenApiClient.send(url, token);
         //System.out.println(result.getContext());
         
-        String resultJSON = StringUtil.filterStrToJSON(result.getContext());
-       // String resultJSON = StringUtil.toJSON(result.getContext());
+        String resultJSON = FormatUtil.filterStrToJSON(result.getContext());
+       // String resultJSON = FormatUtil.toJSON(result.getContext());
 
         if (JSONUtil.decodeUnicode(resultJSON).contains("ÄúµÄ²Ù×÷Ì«Æµ·±À²")) {
             System.out.println("queryBalanceService:ÄúµÄ²Ù×÷Ì«Æµ·±À²£¡ÏÈºÈ±­²è°É£¬ÐªÒ»·ÖÖÓ~~");
@@ -55,7 +54,7 @@ public class BidService {
         String creditCode;
         result = OpenApiClient.send(url, new PropertyObject("PageIndex", indexNum, ValueTypeEnum.Int32));
 
-        String resultJSON = StringUtil.filterStrToJSON(result.getContext());
+        String resultJSON = FormatUtil.filterStrToJSON(result.getContext());
 
         if (JSONUtil.decodeUnicode(resultJSON).contains("ÄúµÄ²Ù×÷Ì«Æµ·±À²")) {
             logger.info("loanListService:ÄúµÄ²Ù×÷Ì«Æµ·±À²£¡ÏÈºÈ±­²è°É£¬ÐªÒ»·ÖÖÓ~~");
@@ -111,7 +110,7 @@ public class BidService {
             //System.out.println(listingIds);
             Result result = OpenApiClient.send(url, token, new PropertyObject("ListingIds", listingIds, ValueTypeEnum.Other));
 
-            String resultJSON = StringUtil.filterStrToJSON(result.getContext());
+            String resultJSON = FormatUtil.filterStrToJSON(result.getContext());
 
             if (JSONUtil.decodeUnicode(resultJSON).contains("ÄúµÄ²Ù×÷Ì«Æµ·±À²")) {
                 logger.error("batchListInfosCollectorService:ÄúµÄ²Ù×÷Ì«Æµ·±À²£¡ÏÈºÈ±­²è°É£¬ÐªÒ»·ÖÖÓ~~");
@@ -132,7 +131,7 @@ public class BidService {
                 new PropertyObject("Amount", bidAmount, ValueTypeEnum.Double),
                 new PropertyObject("UseCoupon", useCoupon, ValueTypeEnum.String));
 
-        String resultJSON = StringUtil.filterStrToJSON(result.getContext());
+        String resultJSON = FormatUtil.filterStrToJSON(result.getContext());
 
         if (JSONUtil.decodeUnicode(resultJSON).contains("ÄúµÄ²Ù×÷Ì«Æµ·±À²")) {
             logger.error("xxxxxx biddingService ÄúµÄ²Ù×÷Ì«Æµ·±À²£¡ÏÈºÈ±­²è°É£¬ÐªÒ»·ÖÖÓ°É ~~~xxxxxx");
@@ -177,7 +176,7 @@ public class BidService {
         JSONArray bidInfos = new JSONArray();
         if (result.isSucess()) {
 
-            String resultJSON = StringUtil.filterStrToJSON(result.getContext());
+            String resultJSON = FormatUtil.filterStrToJSON(result.getContext());
 
             JSONObject resultObject = JSONObject.fromObject(resultJSON);
             bidInfos = resultObject.getJSONArray("LoanInfos");

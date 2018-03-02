@@ -3,18 +3,17 @@ package com.autobid.criteria;
 import com.autobid.entity.Constants;
 import com.autobid.entity.Criteria;
 import com.autobid.util.ConfBean;
-
-import java.util.HashMap;
+import net.sf.json.JSONObject;
 
 @SuppressWarnings("deprecation")
 public class SuccessCountCriteria implements Criteria, Constants {
 
     private boolean criteriaSuccessCount, criteriaNormalCount, criteriaBeginCount, criteriaNsRate;
 
-    public void calc(HashMap<String, Object> loanInfoMap, ConfBean cb) throws NumberFormatException {
-        int successCount = (int) loanInfoMap.get("SuccessCount");
-        int normalCount = (int) loanInfoMap.get("NormalCount");
-        int gender = Integer.parseInt(loanInfoMap.get("Gender").toString());
+    public void calc(JSONObject loanInfos, ConfBean cb) throws NumberFormatException {
+        int successCount = (int) loanInfos.get("SuccessCount");
+        int normalCount = (int) loanInfos.get("NormalCount");
+        int gender = Integer.parseInt(loanInfos.get("Gender").toString());
         double nscount_mrate = Double.parseDouble(cb.getNscountMrate());
 
         double nscount_frate = Double.parseDouble(cb.getNscountFrate());
@@ -33,8 +32,8 @@ public class SuccessCountCriteria implements Criteria, Constants {
 
     }
 
-    public int getLevel(HashMap<String, Object> loanInfoMap, ConfBean cb) throws NumberFormatException {
-        calc(loanInfoMap, cb);
+    public int getLevel(JSONObject loanInfos, ConfBean cb) throws NumberFormatException {
+        calc(loanInfos, cb);
         if (criteriaSuccessCount && criteriaNormalCount && criteriaNsRate) {
             return GOOD;
         } else if (criteriaSuccessCount && criteriaNsRate) {

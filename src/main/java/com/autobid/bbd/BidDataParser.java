@@ -140,7 +140,7 @@ public class BidDataParser {
         return loanInfosCollector;
     }
 
-    public static HashMap<String, Object> getLoanInfoMap(JSONObject loanInfoObj) {
+/*    public static HashMap<String, Object> getLoanInfoMap(JSONObject loanInfoObj) {
 
         HashMap<String, Object> loanInfoMap = new HashMap<>();
         loanInfoMap.put("Amount", loanInfoObj.getInt("Amount"));                            //借款金额
@@ -158,6 +158,8 @@ public class BidDataParser {
         loanInfoMap.put("HighestDebt", loanInfoObj.getInt("HighestDebt"));                //历史最高负债
         if(loanInfoObj.get("HighestPrincipal").equals(null)){loanInfoMap.put("HighestPrincipal",0);}else{
             loanInfoMap.put("HighestPrincipal", JSONUtil.parseInt(loanInfoObj.get("HighestPrincipal")));} //单笔最高借款金额
+        if(loanInfoObj.get("TotalPrincipal").equals(null)){loanInfoMap.put("TotalPrincipal",0);}else{
+            loanInfoMap.put("TotalPrincipal", JSONUtil.parseInt(loanInfoObj.get("TotalPrincipal")));} //单笔最高借款金额
         loanInfoMap.put("TotalPrincipal", JSONUtil.parseInt(loanInfoObj.get("TotalPrincipal")));    //累计借款金额
         loanInfoMap.put("LastSuccessBorrowTime", loanInfoObj.getString("LastSuccessBorrowTime"));    //上次成功借款时间
         loanInfoMap.put("CertificateValidate", loanInfoObj.getInt("CertificateValidate"));            //学历认证0 未认证 1已认证
@@ -166,7 +168,7 @@ public class BidDataParser {
         loanInfoMap.put("CreditValidate", loanInfoObj.getInt("CreditValidate"));            //征信认证0 未认证 1已认证
         loanInfoMap.put("EducateValidate", loanInfoObj.getInt("EducateValidate"));        //学籍认证0 未认证 1已认证
         return loanInfoMap;
-    }
+    }*/
 
     public static ArrayList<List<Integer>> getListingIdsCollector(List<Integer> listingIds) {
         ArrayList<List<Integer>> dll = new ArrayList<>();

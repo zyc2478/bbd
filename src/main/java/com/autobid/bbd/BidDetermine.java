@@ -7,6 +7,7 @@ import com.autobid.entity.CriteriaGroup;
 import com.autobid.util.ConfBean;
 import com.autobid.util.ConfUtil;
 import com.autobid.util.RedisUtil;
+import net.sf.json.JSONObject;
 import org.apache.log4j.Logger;
 import redis.clients.jedis.Jedis;
 import redis.clients.jedis.JedisPool;
@@ -205,7 +206,7 @@ public class BidDetermine implements Constants {
         }
     }
 
-    public static int determineCriteriaGroup(CriteriaGroup criteriaGroup, ConfBean cb, HashMap<String, Object> loanInfoMap)
+    public static int determineCriteriaGroup(CriteriaGroup criteriaGroup, ConfBean cb, JSONObject loanInfos)
             throws Exception {
         //System.out.println("eduCriteriaGroup's size " + eduCriteriaGroup.getCriteriaList().size());
         int totalAmount = 0;
@@ -214,7 +215,7 @@ public class BidDetermine implements Constants {
         for (Criteria c : criteriaList) {
             String criteriaName = c.getCriteriaName();
             String methodName = "determine" + criteriaName;
-            int criteriaLevel = c.getLevel(loanInfoMap, cb);
+            int criteriaLevel = c.getLevel(loanInfos, cb);
 
             //注意，static方法不能使用this.getClass(),getDeclaredMethod(name, parameterTypes)
             //int本身不是对象，只能用如下方法调用 new Class[]{int.class}

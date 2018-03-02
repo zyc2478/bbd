@@ -57,7 +57,7 @@ public class JSONTest {
         StringBuffer resultBuffer = new StringBuffer();
         resultBuffer.append(htmlStr);
         resultBuffer.append(jsonStr);
-        resultJSON = StringUtil.filterStrToJSON(resultBuffer.toString());
+        resultJSON = FormatUtil.filterStrToJSON(resultBuffer.toString());
         System.out.println(resultJSON);
 
         JSONObject jo = JSONObject.fromObject(resultJSON);

@@ -1,8 +1,7 @@
 package com.autobid.entity;
 
 import com.autobid.util.ConfBean;
-
-import java.util.HashMap;
+import net.sf.json.JSONObject;
 
 /**
  * @Author Richard Zeng
@@ -11,9 +10,9 @@ import java.util.HashMap;
  * @Date 2017年10月13日 下午5:17:00
  */
 public interface Criteria {
-    void calc(HashMap<String, Object> loanInfoMap, ConfBean cb) throws Exception;
+    void calc(JSONObject loanInfos, ConfBean cb) throws Exception;
 
-    int getLevel(HashMap<String, Object> loanInfoMap, ConfBean cb) throws Exception;
+    int getLevel(JSONObject loanInfos, ConfBean cb) throws Exception;
 
     String getCriteriaName();
 }

@@ -3,6 +3,7 @@ package com.autobid.criteria;
 import com.autobid.entity.Constants;
 import com.autobid.entity.Criteria;
 import com.autobid.util.ConfBean;
+import net.sf.json.JSONObject;
 
 import java.util.HashMap;
 
@@ -27,16 +28,16 @@ public class BasicCriteria implements Criteria, Constants {
     private AgeCriteria ageCriteria = new AgeCriteria();
     private LastSuccessBorrowCriteria lastSuccessBorrowCriteria = new LastSuccessBorrowCriteria();
 
-    public void calc(HashMap<String, Object> loanInfoMap, ConfBean cb) throws Exception {
+    public void calc(JSONObject loanInfos, ConfBean cb) throws Exception {
 
-        int creditCodeLevel = creditCodeCriteria.getLevel(loanInfoMap, cb);
-        int debtRateLevel = debtRateCriteria.getLevel(loanInfoMap, cb);
-        int educationLevel = educationCriteria.getLevel(loanInfoMap, cb);
-        int successCountLevel = successCountCriteria.getLevel(loanInfoMap, cb);
-        int loanAmountLevel = loanAmountCriteria.getLevel(loanInfoMap, cb);
-        int overdueLevel = overdueCriteria.getLevel(loanInfoMap, cb);
-        int ageLevel = ageCriteria.getLevel(loanInfoMap, cb);
-        int lastSuccessBorrowLevel = lastSuccessBorrowCriteria.getLevel(loanInfoMap, cb);
+        int creditCodeLevel = creditCodeCriteria.getLevel(loanInfos, cb);
+        int debtRateLevel = debtRateCriteria.getLevel(loanInfos, cb);
+        int educationLevel = educationCriteria.getLevel(loanInfos, cb);
+        int successCountLevel = successCountCriteria.getLevel(loanInfos, cb);
+        int loanAmountLevel = loanAmountCriteria.getLevel(loanInfos, cb);
+        int overdueLevel = overdueCriteria.getLevel(loanInfos, cb);
+        int ageLevel = ageCriteria.getLevel(loanInfos, cb);
+        int lastSuccessBorrowLevel = lastSuccessBorrowCriteria.getLevel(loanInfos, cb);
 
 
         //学历认证优先的策略集合
@@ -68,8 +69,8 @@ public class BasicCriteria implements Criteria, Constants {
         //System.out.println("eduBasicCriteria:"+eduBasicCriteria);
     }
 
-    public int getLevel(HashMap<String, Object> loanInfoMap, ConfBean cb) throws Exception {
-        calc(loanInfoMap, cb);
+    public int getLevel(JSONObject loanInfos, ConfBean cb) throws Exception {
+        calc(loanInfos, cb);
         //printCriteria(loanInfoMap,cb);
         if (eduBasicCriteria && debtBasicCriteria) {
             //System.out.println("PERFECT");
@@ -91,7 +92,7 @@ public class BasicCriteria implements Criteria, Constants {
         return "Basic";
     }
 
-    @SuppressWarnings("unused")
+/*    @SuppressWarnings("unused")
     public void printCriteria(HashMap<String, Object> loanInfoMap, ConfBean cb) throws Exception {
         int creditCodeLevel = creditCodeCriteria.getLevel(loanInfoMap, cb);
         int debtRateLevel = debtRateCriteria.getLevel(loanInfoMap, cb);
@@ -105,5 +106,5 @@ public class BasicCriteria implements Criteria, Constants {
                 ",educationLevel:" + educationLevel + ",successCountLevel:" + successCountLevel +
                 ",loanAmountLevel:" + loanAmountLevel + ",overdueLevel:" + overdueLevel +
                 ",ageLevel:" + ageLevel + ",lastSuccessBorrowLevel:" + lastSuccessBorrowLevel);
-    }
+    }*/
 }

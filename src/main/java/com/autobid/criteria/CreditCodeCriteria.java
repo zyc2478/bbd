@@ -3,8 +3,7 @@ package com.autobid.criteria;
 import com.autobid.entity.Constants;
 import com.autobid.entity.Criteria;
 import com.autobid.util.ConfBean;
-
-import java.util.HashMap;
+import net.sf.json.JSONObject;
 
 public class CreditCodeCriteria implements Criteria, Constants {
 
@@ -12,9 +11,9 @@ public class CreditCodeCriteria implements Criteria, Constants {
     private int creditLimit;
     private boolean criteriaCredit;
 
-    public void calc(HashMap<String, Object> loanInfoMap, ConfBean cb) {
+    public void calc(JSONObject loanInfos, ConfBean cb) {
         String creditCodeLimit = cb.getCreditLimit();
-        String creditCode = (String) loanInfoMap.get("CreditCode");
+        String creditCode = (String) loanInfos.get("CreditCode");
         credit = switchCredit(creditCode);
         creditLimit = switchCredit(creditCodeLimit);
         criteriaCredit = credit >= creditLimit;
@@ -47,8 +46,8 @@ public class CreditCodeCriteria implements Criteria, Constants {
         return codeNum;
     }
 
-    public int getLevel(HashMap<String, Object> loanInfoMap, ConfBean cb) {
-        calc(loanInfoMap, cb);
+    public int getLevel(JSONObject loanInfos, ConfBean cb) {
+        calc(loanInfos, cb);
         if (criteriaCredit) {
             return OK;
         } else {

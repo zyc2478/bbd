@@ -1,8 +1,8 @@
 package com.autobid.dbd;
 
 import com.autobid.entity.DebtResult;
+import com.autobid.util.FormatUtil;
 import com.autobid.util.JSONUtil;
-import com.autobid.util.StringUtil;
 import com.ppdai.open.core.*;
 import net.sf.json.JSONArray;
 import net.sf.json.JSONObject;
@@ -28,7 +28,7 @@ public class DebtService {
         String url = "http://gw.open.ppdai.com/invest/LLoanInfoService/DebtListNew";
         Result result = OpenApiClient.send(url, new PropertyObject("PageIndex", indexNum, ValueTypeEnum.Int32));
 
-        String resultJSON = StringUtil.filterStrToJSON(result.getContext());
+        String resultJSON = FormatUtil.filterStrToJSON(result.getContext());
 
         if (JSONUtil.decodeUnicode(resultJSON).contains("ÄúµÄ²Ù×÷Ì«Æµ·±À²")) {
             //logger.info("ÄúµÄ²Ù×÷Ì«Æµ·±À²£¡ÏÈºÈ±­²è°É£¬ÐªÒ»·ÖÖÓ~~");
@@ -61,7 +61,7 @@ public class DebtService {
         Result result = OpenApiClient.send(url, new PropertyObject("DebtIds", debtIds, ValueTypeEnum.Other));
 
 //        System.out.println(result.getContext());
-        String resultJSON = StringUtil.filterStrToJSON(result.getContext());
+        String resultJSON = FormatUtil.filterStrToJSON(result.getContext());
 
         JSONArray debtInfosArray = null;
         if (JSONUtil.decodeUnicode(resultJSON).contains("ÄúµÄ²Ù×÷Ì«Æµ·±À²")) {
@@ -72,8 +72,7 @@ public class DebtService {
         }
         if (result.isSucess()) {
             String batchDebtInfosResult = resultJSON;
-            JSONObject batchDebtInfosJson = JSONObject.fromObject(batchDebtInfosResult);
-
+            JSONObject batchDebtInfosJson = JSONObject.fromObject(FormatUtil.filterStrToJSON(batchDebtInfosResult));
             //logger.info(batchDebtInfosJson);
 
             debtInfosArray = batchDebtInfosJson.getJSONArray("DebtInfos");
@@ -92,7 +91,7 @@ public class DebtService {
         Result result = OpenApiClient.send(url, token,
                 new PropertyObject("debtDealId", debtId, ValueTypeEnum.Int32));
 
-        String resultJSON = StringUtil.filterStrToJSON(result.getContext());
+        String resultJSON = FormatUtil.filterStrToJSON(result.getContext());
 
         logger.info(resultJSON);
 

@@ -3,8 +3,7 @@ package com.autobid.criteria;
 import com.autobid.entity.Constants;
 import com.autobid.entity.Criteria;
 import com.autobid.util.ConfBean;
-
-import java.util.HashMap;
+import net.sf.json.JSONObject;
 
 @SuppressWarnings("deprecation")
 public class OverdueProCriteria implements Criteria, Constants {
@@ -14,19 +13,19 @@ public class OverdueProCriteria implements Criteria, Constants {
     private boolean criteriaLess;
     private boolean criteriaNormal;
 
-    public void calc(HashMap<String, Object> loanInfoMap, ConfBean cb) {
+    public void calc(JSONObject loanInfos, ConfBean cb) {
 
-        int overdueLessCount = (int) loanInfoMap.get("OverdueLessCount");
-        int overdueMoreCount = (int) loanInfoMap.get("OverdueMoreCount");
-        int normalCount = (int) loanInfoMap.get("NormalCount");
-        gender = Integer.parseInt(loanInfoMap.get("Gender").toString());
+        int overdueLessCount = (int) loanInfos.get("OverdueLessCount");
+        int overdueMoreCount = (int) loanInfos.get("OverdueMoreCount");
+        int normalCount = (int) loanInfos.get("NormalCount");
+        gender = Integer.parseInt(loanInfos.get("Gender").toString());
         criteriaMore = overdueMoreCount == 0;
         criteriaLess = overdueLessCount == 0;
         criteriaNormal = normalCount >= Integer.parseInt(cb.getNormalLimit());
     }
 
-    public int getLevel(HashMap<String, Object> loanInfoMap, ConfBean cb) {
-        calc(loanInfoMap, cb);
+    public int getLevel(JSONObject loanInfos, ConfBean cb) {
+        calc(loanInfos, cb);
         if (criteriaMore && criteriaLess && criteriaNormal) {
             return GOOD;
         } else if (criteriaMore && criteriaLess && gender == 2) {

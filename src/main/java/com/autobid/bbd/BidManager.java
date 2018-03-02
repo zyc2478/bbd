@@ -160,16 +160,16 @@ public class BidManager implements Constants {
 
             for (JSONArray loanInfosArray : loanInfosCollector) {
                 for (int i = 0; i < loanInfosArray.size(); i++) {
-                    JSONObject loanInfoObj = loanInfosArray.getJSONObject(i);
+                    JSONObject loanInfos = loanInfosArray.getJSONObject(i);
 
                     //System.out.println(loanInfoObj);
 
                     //将得到的每个标的loanInfo解析为每个字段，将结果合并为HashMap
-                    HashMap<String, Object> loanInfoMap = BidDataParser.getLoanInfoMap(loanInfoObj);
+//                    HashMap<String, Object> loanInfoMap = BidDataParser.getLoanInfoMap(loanInfoObj);
 
-                    int listingId = loanInfoObj.getInt("ListingId");
+                    int listingId = loanInfos.getInt("ListingId");
                     //运行初始策略判断
-                    int basicCriteriaLevel = basicCriteria.getLevel(loanInfoMap, confBean);
+                    int basicCriteriaLevel = basicCriteria.getLevel(loanInfos, confBean);
                     //new BasicCriteria().printCriteria(loanInfoMap);
                     //System.out.println("basicCriteriaLevel is :" + basicCriteriaLevel);
 
@@ -205,7 +205,7 @@ public class BidManager implements Constants {
                             //logger.info("listingId: " + listingId + ", JSON is: " + loanInfoMap);
                             //bidAmount = new BidDetermine().determineCriteriaGroup(criteriaGroup, loanInfoMap);
                             assert criteriaGroup != null;
-                            bidAmount = bidDetermine.determineCriteriaGroup(Objects.requireNonNull(criteriaGroup), confBean, loanInfoMap);
+                            bidAmount = bidDetermine.determineCriteriaGroup(Objects.requireNonNull(criteriaGroup), confBean, loanInfos);
                             System.out.println("****** listingId: " + listingId + ", total Amount is: " + bidAmount + " ******");
                         } /*else {//logger.error("xxxxxx " + listingId + "在Redis中重复！ xxxxxx");}*/
                     }
