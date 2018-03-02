@@ -147,9 +147,9 @@ public class RedisTest {
         System.out.println(jedis.lrange("a",0,-1));  
     }  
     */
-    public void testRedisPool() {
+/*    public void testRedisPool() {
         logger.debug("----testRedisPool----");
         Objects.requireNonNull(RedisUtil.getJedis()).set("newname", "÷–Œƒ≤‚ ‘");
         System.out.println(Objects.requireNonNull(RedisUtil.getJedis()).get("newname"));
-    }
+    }*/
 }

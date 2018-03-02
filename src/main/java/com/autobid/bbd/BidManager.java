@@ -82,8 +82,6 @@ public class BidManager implements Constants {
             e.printStackTrace();
         }
     }
-    JedisPool pool = new JedisPool(RedisUtil.getPoolConfig(), host);
-    //private BidByDebt(){}
     public BidManager() {
     }
     //HashMap<Integer,String> bidResultMap = new HashMap<Integer,String>();
@@ -228,8 +226,11 @@ public class BidManager implements Constants {
                         if (!successBidList.contains(successBidResult)) {
                             successBidList.add(successBidResult);
                         }
-                        try (Jedis jedis = pool.getResource()) {
+                        Jedis jedis = RedisUtil.getJedis();
+                        try {
                             jedis.setex(String.valueOf(listingId), 172800, String.valueOf(bidAmount));
+                        }finally {
+                            jedis.close();
                         }
                     }
                 }
@@ -248,8 +249,7 @@ public class BidManager implements Constants {
 /*		logger = null;
 		instance = null;*/
         ConfUtil.setProperty("host_name",localHost);
-        pool.close();
-
+//        pool.close();
     }
 
     private void bidResultsPrint(ArrayList<BidResult> successBidList, int listingIdsSize) {

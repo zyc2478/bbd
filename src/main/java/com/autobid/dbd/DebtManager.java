@@ -79,7 +79,7 @@ public class DebtManager implements Constants {
             e.printStackTrace();
         }
     }
-    JedisPool pool = new JedisPool(RedisUtil.getPoolConfig(), host);
+//    JedisPool pool = new JedisPool(RedisUtil.getPoolConfig(), host);
     private ArrayList<DebtResult> successDebtList = new ArrayList<>();
     public DebtManager() {
     }
@@ -225,9 +225,12 @@ public class DebtManager implements Constants {
                         if (!successDebtList.contains(debtResult)) {
                             successDebtList.add(debtResult);
                         }
-                        try (Jedis jedis = pool.getResource()) {
+                        Jedis jedis = RedisUtil.getJedis();
+                        try {
                             jedis.setex(String.valueOf(di.getInt("DebtId")), 172800, String.valueOf(di.getInt("ListingId")));
                             jedis.setex(String.valueOf(di.getInt("ListingId")), 172800, String.valueOf(di.getInt("PriceforSale")));
+                        }finally {
+                            jedis.close();
                         }
                         logger.info(indexNum + ": " + di);
                         //System.out.println("已投债权标 DebtId:"+ di.getInt("DebtId") + ", ListingId:" + di.getInt("ListingId") + ", Price:" + di.getDouble("PriceForSale"));
@@ -249,7 +252,7 @@ public class DebtManager implements Constants {
 
         debtResultsPrint(successDebtList, totalDebtCount);
         ConfUtil.setProperty("host_name",localHost);
-        pool.close();
+//        pool.close();
     }
 
 

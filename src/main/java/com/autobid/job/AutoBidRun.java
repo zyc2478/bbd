@@ -3,6 +3,7 @@ package com.autobid.job;
 //import org.apache.log4j.Logger;
 
 import com.autobid.util.ConfUtil;
+import com.autobid.util.RedisUtil;
 import org.quartz.*;
 import org.quartz.impl.StdSchedulerFactory;
 
@@ -22,6 +23,7 @@ public class AutoBidRun {
     public static void main(String[] args) throws Exception {
         //BasicConfigurator.configure();
         //System.out.println("test");
+        RedisUtil.poolInit();
         AutoBidRun example = new AutoBidRun();
         example.run();
     }

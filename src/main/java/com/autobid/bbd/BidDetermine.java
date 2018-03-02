@@ -41,7 +41,6 @@ public class BidDetermine implements Constants {
             e.printStackTrace();
         }
     }
-    JedisPool pool = new JedisPool(RedisUtil.getPoolConfig(), host);
     static {
         try {
             ConfBean cb = ConfUtil.readAllToBean();
@@ -61,8 +60,8 @@ public class BidDetermine implements Constants {
         return !(queryBalance > MIN_BID_AMOUNT);
     }
 
-    public boolean determineDuplicateId(int listingId) {
-        try (Jedis jedis = pool.getResource()) {
+    public boolean determineDuplicateId(int listingId) throws IOException {
+        try (Jedis jedis = RedisUtil.getJedis()) {
             return jedis.exists(String.valueOf(listingId));
         }
     }

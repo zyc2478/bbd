@@ -24,15 +24,21 @@ public class DebtDetermine implements Constants {
             e.printStackTrace();
         }
     }
-    JedisPool pool = new JedisPool(RedisUtil.getPoolConfig(), host);
-    public boolean determineDuplicateDebtId(int debtId) {
-        try (Jedis jedis = pool.getResource()) {
+//    JedisPool pool = new JedisPool(RedisUtil.getPoolConfig(), host);
+    public boolean determineDuplicateDebtId(int debtId) throws IOException {
+        Jedis jedis = RedisUtil.getJedis();
+        try {
             return jedis.exists(String.valueOf(debtId));
+        }finally {
+            jedis.close();
         }
     }
-    public boolean determineDuplicateListingId(int listingId) {
-        try (Jedis jedis = pool.getResource()) {
+    public boolean determineDuplicateListingId(int listingId) throws IOException {
+        Jedis jedis = RedisUtil.getJedis();
+        try {
             return jedis.exists(String.valueOf(listingId));
+        }finally {
+            jedis.close();
         }
     }
 }

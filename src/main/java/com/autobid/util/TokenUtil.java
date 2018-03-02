@@ -25,7 +25,7 @@ public class TokenUtil {
 //    private static Jedis jedis;
     private static String localHost,confHost;
     private String host = ConfUtil.getProperty("redis_host");
-    JedisPool pool = new JedisPool(RedisUtil.getPoolConfig(), host);
+//    JedisPool pool = new JedisPool(RedisUtil.getPoolConfig(), host);
 
     static {
         //openId = "7344c77f9a7f4f249bd9df04115171e6";
@@ -94,7 +94,9 @@ public class TokenUtil {
 
     public String getToken() throws IOException {
         /// Jedis implements Closeable. Hence, the jedis instance will be auto-closed after the last statement.
-        try (Jedis jedis = pool.getResource()) {
+
+        Jedis jedis = RedisUtil.getJedis();
+        try {
             String token = jedis.get("token");
             String tokenConf = ConfUtil.getProperty("token");
             if(localHost!=confHost){
@@ -103,12 +105,15 @@ public class TokenUtil {
                 setToken(token);
                 return jedis.get("token");
             }
+        }finally {
+            jedis.close();
         }
     }
 
     private String getRefreshToken() throws IOException {
 
-        try (Jedis jedis = pool.getResource()) {
+        Jedis jedis = RedisUtil.getJedis();
+        try {
             String refreshToken = jedis.get("refreshToken");
             String refreshTokenConf = ConfUtil.getProperty("refresh_token");
             if(localHost!=confHost){
@@ -119,11 +124,15 @@ public class TokenUtil {
                 System.out.println("jedis.get(\"refreshToken\"):" + jedis.get("refreshToken"));
                 return jedis.get("refreshToken");
             }
+        }finally {
+            jedis.close();
         }
+
     }
 
     private String getOpenId() throws IOException {
-        try (Jedis jedis = pool.getResource()) {
+        Jedis jedis = RedisUtil.getJedis();
+        try {
             String openId = jedis.get("openId");
             String openIdConf = ConfUtil.getProperty("open_id");
             if(localHost!=confHost){
@@ -132,26 +141,42 @@ public class TokenUtil {
                 setOpenId(openId);
                 return jedis.get("openId");
             }
+        }finally {
+            jedis.close();
         }
     }
     public void setRefreshToken(String refreshToken) throws IOException {
-        try (Jedis jedis = pool.getResource()) {
+
+        Jedis jedis = RedisUtil.getJedis();
+        try{
             //String initRefreshToken = ConfUtil.getProperty("refresh_token_init");
             jedis.setex("refreshToken", 7776000, refreshToken); //90天后过期
             ConfUtil.setProperty("refresh_token",refreshToken);
+        }finally {
+            jedis.close();
         }
     }
+
     public void setToken(String token) throws IOException {
-        try (Jedis jedis = pool.getResource()) {
+
+        Jedis jedis = RedisUtil.getJedis();
+        try {
             System.out.println("setToken token:"+token);
             jedis.setex("token", 604800, token); //7天后过期
             ConfUtil.setProperty("token",token);
+        }finally {
+            jedis.close();
         }
     }
+
     public void setOpenId(String openId) throws IOException {
-        try (Jedis jedis = pool.getResource()) {
+        Jedis jedis = RedisUtil.getJedis();
+        try{
             jedis.setex("openId",691200,openId);
             ConfUtil.setProperty("open_id",openId);
+        }finally {
+            jedis.close();
         }
+
     }
 }
