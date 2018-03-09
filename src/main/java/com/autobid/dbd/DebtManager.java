@@ -109,7 +109,7 @@ public class DebtManager implements Constants {
 /*        TokenUtil.genNewToken();
         //获取Token，配置文件有则优先，没有则获取Redis
         token = TokenUtil.getToken();*/
-        logger.info("debtExcecute");
+//        logger.info("debtExcecute");
         int overdueSwitch = Integer.parseInt(confBean.getDebtOverdueSwitch());
         int debtMix = Integer.parseInt(confBean.getDebtMix());
 
@@ -172,7 +172,7 @@ public class DebtManager implements Constants {
 			*/
             JSONArray dlFiltered = dlf.filter(debtListArray, confBean);
 
-            logger.info("第" + indexNum + "轮 初步过滤后，dlFiltered数量：" + dlFiltered.size());
+//            logger.info("第" + indexNum + "轮 初步过滤后，dlFiltered数量：" + dlFiltered.size());
             //debtFCount += dlFiltered.size();
 
             //System.out.println("debtFCount "+ indexNum + " is: "+ debtFCount);
@@ -185,6 +185,10 @@ public class DebtManager implements Constants {
                 //logger.info(daList.get(i));
 
                 JSONArray debtInfosList = DebtService.batchDebtInfosService(aDaList);
+
+                if(debtInfosList.equals(null)){
+                    continue;
+                }
 				
 /*				System.out.println(debtInfosList.size());
 				for(int m=0;m<debtInfosList.size();m++) {
@@ -232,7 +236,7 @@ public class DebtManager implements Constants {
                         }finally {
                             jedis.close();
                         }
-                        logger.info(indexNum + ": " + di);
+                        //logger.info(indexNum + ": " + di);
                         //System.out.println("已投债权标 DebtId:"+ di.getInt("DebtId") + ", ListingId:" + di.getInt("ListingId") + ", Price:" + di.getDouble("PriceForSale"));
                     }
                 }
@@ -248,7 +252,7 @@ public class DebtManager implements Constants {
           Thread.sleep(100);
         } while (debtCount == 50 && indexNum <= debtGroups); //每页50个元素
 
-        logger.info("Total Debt Count is :" + totalDebtCount);
+//        logger.info("Total Debt Count is :" + totalDebtCount);
 
         debtResultsPrint(successDebtList, totalDebtCount);
         ConfUtil.setProperty("host_name",localHost);

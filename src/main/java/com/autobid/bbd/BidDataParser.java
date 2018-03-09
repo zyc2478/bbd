@@ -1,5 +1,6 @@
 package com.autobid.bbd;
 
+import com.autobid.util.FormatUtil;
 import com.autobid.util.JSONUtil;
 import net.sf.json.JSONArray;
 import net.sf.json.JSONObject;
@@ -30,7 +31,12 @@ public class BidDataParser {
             logger.info("getBalance: ¡Ó≈∆–£—È ß∞‹");
             return 0;
         }
-        JSONArray balanceArray = balanceJson.getJSONArray("Balance");
+        JSONArray balanceArray = new JSONArray();
+        if(queryBalanceJson.contains("Balance")){
+           balanceArray = balanceJson.getJSONArray("Balance");
+        }else{
+            logger.error("Œ¥≥…π¶≤È—Ø”‡∂Ó£°" + queryBalanceJson);
+        }
 
         double canUseBalance = 0;
         for (int i = 0; i < balanceArray.size(); i++) {
@@ -121,6 +127,7 @@ public class BidDataParser {
     }*/
 
     private static JSONArray getLoanInfos(String batchListInfos) {
+        batchListInfos = FormatUtil.filterStrToJSON(batchListInfos);
         JSONObject batchListInfosObject = JSONObject.fromObject(batchListInfos);
         //System.out.println(batchListInfosObject);
     	/*if(JsonUtil.decodeUnicode(batchListInfos).contains("ƒ˙µƒ≤Ÿ◊˜Ã´∆µ∑±¿≤")) {

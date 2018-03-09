@@ -9,11 +9,10 @@ import java.util.ArrayList;
 
 public class EduCriteriaGroup extends CriteriaGroup {
 
-    private ArrayList<Criteria> criteriaList;
+    private ArrayList<Criteria> criteriaList = new  ArrayList<>();;
 
     public EduCriteriaGroup() {
         initCriteria();
-        criteriaList = new ArrayList<>();
     }
 
     @Before

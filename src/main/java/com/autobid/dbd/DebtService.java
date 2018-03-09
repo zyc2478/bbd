@@ -93,7 +93,7 @@ public class DebtService {
 
         String resultJSON = FormatUtil.filterStrToJSON(result.getContext());
 
-        logger.info(resultJSON);
+        //logger.info(resultJSON);
 
         if (JSONUtil.decodeUnicode(resultJSON).contains("您的操作太频繁啦")) {
             logger.error("xxxxxx buyDebtService:您的操作太频繁啦！先喝杯茶吧，歇一分钟吧 ~~~xxxxxx");
@@ -101,9 +101,16 @@ public class DebtService {
         }
         DebtResult successBidResult = null;
         //System.out.println("Success? "+ bidResult.isSuccess());
+
         //System.out.println(String.format("返回结果:%s", result.isSuccess() ? bidResult : result.getErrorMessage()));
         if (JSONUtil.decodeUnicode(resultJSON).contains("令牌校验失败")) {
             logger.error("xxxxxx Error！令牌校验失败！xxxxxx");
+        } else if (resultJSON.contains("手慢了")){
+            logger.error("xxxxxx 手慢了，标已被别人抢走！xxxxxx");
+        } else if (resultJSON.contains("购买失败")){
+            logger.error("xxxxxx 购买债转标失败 xxxxxx");
+        } else if (resultJSON.contains("债权已失效")){
+            logger.error("xxxxx 债权信息发生变动，债权已失效！xxxxxx");
         } else if (resultJSON.contains("\"Result\":0,\"ResultMessage\":恭喜您")) {
             successBidResult = new DebtResult(debtId, debtInfo.getInt("ListingId"), debtInfo.getDouble("PriceforSale"));
             logger.info(resultJSON);
@@ -119,6 +126,8 @@ public class DebtService {
             logger.error("xxxxxx Error！" + debtId + "已满标！xxxxxx");
         } else if (JSONUtil.decodeUnicode(resultJSON).contains("标的不存在")) {
             logger.error("xxxxxx Error！" + debtId + "标的不存在！xxxxxx");
+        } else{
+            logger.info(resultJSON);
         }
         return successBidResult;
     }

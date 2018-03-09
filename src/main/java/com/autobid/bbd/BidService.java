@@ -175,9 +175,10 @@ public class BidService {
 
         JSONArray bidInfos = new JSONArray();
         if (result.isSucess()) {
-
             String resultJSON = FormatUtil.filterStrToJSON(result.getContext());
-
+            if(resultJSON.equals(null)){
+                return null;
+            }
             JSONObject resultObject = JSONObject.fromObject(resultJSON);
             bidInfos = resultObject.getJSONArray("LoanInfos");
         }

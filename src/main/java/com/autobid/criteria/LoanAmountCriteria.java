@@ -3,6 +3,7 @@ package com.autobid.criteria;
 import com.autobid.entity.Constants;
 import com.autobid.entity.Criteria;
 import com.autobid.util.ConfBean;
+import com.autobid.util.FormatUtil;
 import net.sf.json.JSONObject;
 
 @SuppressWarnings("deprecation")
@@ -13,10 +14,10 @@ public class LoanAmountCriteria implements Criteria, Constants {
     public void calc(JSONObject loanInfos, ConfBean cb) {
 
         double loanAmount = Double.parseDouble(loanInfos.get("Amount").toString());
-        double highestPrincipal = Double.parseDouble(loanInfos.get("HighestPrincipal").toString());
+        double highestPrincipal = Double.parseDouble(FormatUtil.nullToStr(loanInfos.get("HighestPrincipal")));
         double owingAmount =  Double.parseDouble(loanInfos.get("OwingAmount").toString());
         double highestDebt = Double.parseDouble(loanInfos.get("HighestDebt").toString());
-        double totalPrincipal = Double.parseDouble(loanInfos.get("TotalPrincipal").toString());
+        double totalPrincipal = Double.parseDouble(FormatUtil.nullToStr(loanInfos.get("TotalPrincipal")));
         int gender = Integer.parseInt(loanInfos.get("Gender").toString());
         int total_limit = Integer.parseInt(cb.getTotalLimit());
         double owing_mrate = Double.parseDouble(cb.getOwingMrate());
