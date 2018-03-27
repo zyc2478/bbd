@@ -1,5 +1,2 @@
-[2018-02-28 18:32:08][com.autobid.bbd.BidService]xxxxxx Error！100989317已满标！xxxxxx
-[2018-02-28 18:38:46][com.autobid.bbd.BidService]xxxxxx Error！100990704已满标！xxxxxx
-[2018-02-28 18:38:46][com.autobid.bbd.BidService]xxxxxx Error！100990676已满标！xxxxxx
-[2018-02-28 18:38:48][com.autobid.bbd.BidService]xxxxxx Error！100991557已满标！xxxxxx
-[2018-02-28 18:38:56][com.autobid.bbd.BidService]xxxxxx Error！100991647已满标！xxxxxx
+[2018-03-28 01:01:46][com.autobid.bbd.BidManager]余额不足，程序退出，1分钟后将再次尝试
+[2018-03-28 01:01:50][com.autobid.dbd.DebtManager]余额不足，程序退出，1分钟后将再次尝试

@@ -37,8 +37,8 @@ public class TokenUtil {
             int redisPort = Integer.parseInt(ConfUtil.getProperty("redis_port"));
 //            jedis = new Jedis(redisHost, redisPort);
 //            jedis = RedisUtil.getJedis();
-            String localHost = HostUtil.getLocalHost();
-            String confHost = HostUtil.getConfHost();
+            localHost = HostUtil.getLocalHost();
+            confHost = HostUtil.getConfHost();
 
         } catch (Exception e) {
             e.printStackTrace();
@@ -99,6 +99,7 @@ public class TokenUtil {
         try {
             String token = jedis.get("token");
             String tokenConf = ConfUtil.getProperty("token");
+            //System.out.println("localhost:"+localHost+",confHost;"+confHost);
             if(localHost!=confHost){
                 return tokenConf;
             }else{
@@ -116,6 +117,7 @@ public class TokenUtil {
         try {
             String refreshToken = jedis.get("refreshToken");
             String refreshTokenConf = ConfUtil.getProperty("refresh_token");
+            //System.out.println("localhost:"+localHost+",confHost;"+confHost);
             if(localHost!=confHost){
                 System.out.println("refreshTokenConf:" + refreshTokenConf);
                 return refreshTokenConf;

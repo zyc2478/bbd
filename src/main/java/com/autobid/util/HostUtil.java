@@ -9,6 +9,7 @@ public class HostUtil {
         InetAddress addr = InetAddress.getLocalHost();
 //        String ip=addr.getHostAddress().toString(); //获取本机ip
         String hostName=addr.getHostName().toString(); //获取本机计算机名称
+        //System.out.println("hostname:" + hostName);
         return hostName;
     }
     public static String getConfHost() throws IOException {
