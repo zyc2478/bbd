@@ -228,7 +228,7 @@ public class BidManager implements Constants {
                         }
                         Jedis jedis = RedisUtil.getJedis();
                         try {
-                            jedis.setex(String.valueOf(listingId), 172800, String.valueOf(bidAmount));
+                            jedis.setex(String.valueOf(listingId), 864000, String.valueOf(bidAmount));
                         }finally {
                             jedis.close();
                         }
