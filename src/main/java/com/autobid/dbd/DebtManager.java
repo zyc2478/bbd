@@ -161,7 +161,11 @@ public class DebtManager implements Constants {
                 return;
             }
             JSONArray debtListArray = DebtService.debtListService(indexNum);
-            debtCount = debtListArray.size();
+            if(debtListArray.equals(null)){
+                debtCount = 0;
+            }else{
+                debtCount = debtListArray.size();
+            }
             totalDebtCount += debtCount;
             //将获取的debtList按照DebtListFilter中定义的规则过滤
             //logger.info("第"+indexNum+"轮 有以下标的：");

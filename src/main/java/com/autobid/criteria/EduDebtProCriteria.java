@@ -20,7 +20,12 @@ public class EduDebtProCriteria implements Criteria, Constants {
         debtTotalRate = totalPrincipal != 0 ? (owingAmount + loanAmount) / totalPrincipal : 1;
 
         //educationDegree 包括：本科、专科、硕士、研究生、专升本、专科（高职）
-        String educationDegree = (String) loanInfos.get("EducationDegree");
+        String educationDegree;
+        if(!loanInfos.get("EducationDegree").equals(null)) {
+            educationDegree = loanInfos.get("EducationDegree").toString();
+        }else{
+            educationDegree = "";
+        }
 
         //studyStyle 包括：函授、开放教育、成人、普通、普通全日制、研究生、网络教育、脱产、自学考试、自考
         String studyStyle = (String) loanInfos.get("StudyStyle");

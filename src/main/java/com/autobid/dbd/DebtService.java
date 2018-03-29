@@ -25,7 +25,7 @@ public class DebtService {
 
     public static JSONArray debtListService(int indexNum) throws Exception {
 
-        String url = "http://gw.open.ppdai.com/invest/LLoanInfoService/DebtListNew";
+        String url = "https://openapi.ppdai.com/invest/LLoanInfoService/DebtListNew";
         Result result = OpenApiClient.send(url, new PropertyObject("PageIndex", indexNum, ValueTypeEnum.Int32));
 
         String resultJSON = FormatUtil.filterStrToJSON(result.getContext());

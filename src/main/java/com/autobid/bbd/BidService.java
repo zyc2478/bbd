@@ -26,7 +26,7 @@ public class BidService {
 
     public static String queryBalanceService(String token) throws Exception {
         //«Î«Ûurl
-        String url = "http://gw.open.ppdai.com/balance/balanceService/QueryBalance";
+        String url = "https://openapi.ppdai.com/balance/balanceService/QueryBalance";
 
         Result result = OpenApiClient.send(url, token);
         //System.out.println(result.getContext());
@@ -49,7 +49,7 @@ public class BidService {
     public static LoanListResult loanListService(int indexNum) throws Exception {
         int[] loanIds = null;
         //ArrayList<String> loanInfosList = new ArrayList<>();
-        String url = "http://gw.open.ppdai.com/invest/LLoanInfoService/LoanList";
+        String url = "https://openapi.ppdai.com/invest/LLoanInfoService/LoanList";
         Result result;
         String creditCode;
         result = OpenApiClient.send(url, new PropertyObject("PageIndex", indexNum, ValueTypeEnum.Int32));
@@ -100,7 +100,7 @@ public class BidService {
 
     public static ArrayList<String> batchListInfosCollectorService(String token, ArrayList<List<Integer>> listingIdsCollector) throws Exception {
         //System.out.println("--------batchListInfosCollectorService---------");
-        String url = "http://gw.open.ppdai.com/invest/LLoanInfoService/BatchListingInfos";
+        String url = "https://openapi.ppdai.com/invest/LLoanInfoService/BatchListingInfos";
         ArrayList<String> batchListInfosCollector = new ArrayList<>();
         //List<Integer> listingIds = new ArrayList<Integer>();
         //int num=0;
@@ -125,7 +125,7 @@ public class BidService {
     public static BidResult biddingService(String token, String openId, int listingId, int bidAmount) throws Exception {
         System.out.println("-------------------biddingService----------------------------");
         String useCoupon = "true";
-        String url = "http://gw.open.ppdai.com/invest/BidService/Bidding";
+        String url = "https://openapi.ppdai.com/invest/BidService/Bidding";
         Result result = OpenApiClient.send(url, token,
                 new PropertyObject("ListingId", listingId, ValueTypeEnum.Int32),
                 new PropertyObject("Amount", bidAmount, ValueTypeEnum.Double),
@@ -170,7 +170,7 @@ public class BidService {
     }
 
     public static JSONArray batchListingInfosService(String token, List<Integer> listingIds) throws Exception {
-        String url = "http://gw.open.ppdai.com/invest/LLoanInfoService/BatchListingInfos";
+        String url = "https://openapi.ppdai.com/invest/LLoanInfoService/BatchListingInfos";
         Result result = OpenApiClient.send(url, token, new PropertyObject("ListingIds", listingIds, ValueTypeEnum.Other));
 
         JSONArray bidInfos = new JSONArray();
