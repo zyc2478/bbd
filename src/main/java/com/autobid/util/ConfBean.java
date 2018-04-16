@@ -15,11 +15,11 @@ public class ConfBean {
     private String debtPreferLimit;
     private String debtOverdueLimit;
     private String debtCreditLimit;
-    private String debtMaxGroups;
-    private String debtMinGroups;
+    private String debtGroups;
     private String logToDb;
     private String minBidAmount;
     private String bidLevelAmount;
+    private String bbdGroups;
     private String multiple;
     private String moreMultiple;
     private String miniMultiple;
@@ -68,17 +68,11 @@ public class ConfBean {
 
     public void setHostName(String hostName) { this.hostName = hostName; }
 
-    public String getDebtMaxGroups() {
-        return debtMaxGroups;
+    public String getDebtGroups() {
+        return debtGroups;
     }
 
-    public void setDebtMaxGroups(String debtMaxGroups) { this.debtMaxGroups = debtMaxGroups; }
-
-    public String getDebtMinGroups() {
-        return debtMinGroups;
-    }
-
-    public void setDebtMinGroups(String debtMinGroups) { this.debtMinGroups = debtMinGroups; }
+    public void setDebtGroups(String debtGroups) { this.debtGroups = debtGroups; }
 
     public String getDebtPreferLimit() {
         return debtPreferLimit;
@@ -187,6 +181,10 @@ public class ConfBean {
     public void setBidLevelAmount(String bidLevelAmount) {
         this.bidLevelAmount = bidLevelAmount;
     }
+
+    public String getBbdGroups() { return bbdGroups; }
+
+    public void setBbdGroups(String bbdGroups) { this.bbdGroups = bbdGroups; }
 
     public String getMultiple() {
         return multiple;

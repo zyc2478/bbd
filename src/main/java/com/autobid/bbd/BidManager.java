@@ -122,6 +122,7 @@ public class BidManager implements Constants {
         int loanIdCount;
         List<Integer> listingIds;
         BasicCriteria basicCriteria = new BasicCriteria();
+        int bbdGroups = Integer.parseInt(confBean.getBbdGroups());
         do {
             balance = BidDataParser.getBalance(BidService.queryBalanceService(token));
             if (BidDetermine.determineBalance(balance)) {
@@ -237,7 +238,7 @@ public class BidManager implements Constants {
             }
             //System.out.println(indexNum);
             indexNum++;
-        } while (loanIdCount == 200);
+        } while (loanIdCount == 200 && indexNum <= bbdGroups);
         System.out.println("*~~~~~~~~~~~~~~~~~~~~标的执行完毕，投标结果如下：~~~~~~~~~~~~~~~~~~~*");
 
         bidResultsPrint(successBidList, listingIds.size());

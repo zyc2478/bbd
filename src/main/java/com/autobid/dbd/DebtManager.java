@@ -15,8 +15,6 @@ import net.sf.json.JSONObject;
 import org.apache.log4j.Logger;
 import org.junit.Test;
 import redis.clients.jedis.Jedis;
-import redis.clients.jedis.JedisPool;
-import redis.clients.jedis.JedisPoolConfig;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -151,8 +149,7 @@ public class DebtManager implements Constants {
         DebtListFilter dlf = new DebtListFilter();
         DebtInfosListFilter dilf = new DebtInfosListFilter();
         BidInfosFilter bif = new BidInfosFilter();
-        int debtGroups;
-
+        int debtGroups = Integer.parseInt(confBean.getDebtGroups());
         do {
             balance = BidDataParser.getBalance(BidService.queryBalanceService(token));
             if(BidDetermine.determineBalance(balance)) {
@@ -246,11 +243,7 @@ public class DebtManager implements Constants {
                 }
                 Thread.sleep(100);
             }
-            if (indexNum == 1) {
-                debtGroups = Integer.parseInt(confBean.getDebtMaxGroups());
-            } else {
-                debtGroups = Integer.parseInt(confBean.getDebtMinGroups());
-            }
+
             indexNum++;
             //logger.info(indexNum);
           Thread.sleep(100);

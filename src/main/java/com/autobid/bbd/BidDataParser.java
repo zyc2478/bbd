@@ -64,7 +64,6 @@ public class BidDataParser {
                 j++;
             }
         }
-        logger.info("标的总数为：" + loanListArray.size() + "，中风险标的数为：" + j);
         return listingIds;
     }
 

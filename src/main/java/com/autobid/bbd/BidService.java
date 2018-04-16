@@ -84,7 +84,8 @@ public class BidService {
                     j++;
                 }
             }
-            System.out.println("第" + indexNum + "组标的总数为：" + loanIds.length + "，中风险标的数为：" + j);
+            //System.out.println("第" + indexNum + "组标的总数为：" + loanIds.length + "，中风险标的数为：" + j);
+            logger.info("第" + indexNum + "组标的总数为：" + loanIds.length + "，中风险标的数为：" + j);
             //loanInfosList.add(loanInfosArray.toString());
             //logger.info(loanInfosList);
         } else {
