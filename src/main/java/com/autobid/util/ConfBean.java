@@ -4,6 +4,8 @@ package com.autobid.util;
 public class ConfBean {
 
     private String bidMode;
+    private String bidByTime;
+    private String timeInterval;
     private String redisHost;
     private String redisPort;
     private String hostName;
@@ -64,6 +66,15 @@ public class ConfBean {
     private String refreshTokenInit;
 
     public ConfBean() {}
+
+    public String getBidByTime() { return bidByTime;}
+
+    public void setBidByTime(String bidByTime) { this.bidByTime = bidByTime; }
+
+    public String getTimeInterval() { return timeInterval; }
+
+    public void setTimeInterval(String timeInterval) { this.timeInterval = timeInterval; }
+
     public String getHostName() { return hostName; }
 
     public void setHostName(String hostName) { this.hostName = hostName; }

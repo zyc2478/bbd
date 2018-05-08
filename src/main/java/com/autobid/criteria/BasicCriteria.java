@@ -71,7 +71,7 @@ public class BasicCriteria implements Criteria, Constants {
 
     public int getLevel(JSONObject loanInfos, ConfBean cb) throws Exception {
         calc(loanInfos, cb);
-        printCriteria(loanInfos,cb);
+        //printCriteria(loanInfos,cb);
         if (eduBasicCriteria && debtBasicCriteria) {
             //System.out.println("PERFECT");
             return PERFECT;

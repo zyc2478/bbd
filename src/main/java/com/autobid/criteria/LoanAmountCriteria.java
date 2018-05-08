@@ -52,8 +52,8 @@ public class LoanAmountCriteria implements Criteria, Constants {
 
     public int getLevel(JSONObject loanInfos, ConfBean cb) {
         calc(loanInfos, cb);
-		System.out.println("LoanAmount: criteriaAm:"+criteriaAm+",criteriaBm:"+criteriaBm + ",criteriaCm:"+criteriaCm+
-				",criteriaD:"+criteriaD+",criteriaE:"+criteriaE);
+/*		System.out.println("LoanAmount: criteriaAm:"+criteriaAm+",criteriaBm:"+criteriaBm + ",criteriaCm:"+criteriaCm+
+				",criteriaD:"+criteriaD+",criteriaE:"+criteriaE);*/
 /*		System.out.println("criteriaAf:"+criteriaAf+",criteriaBf:"+criteriaBf + ",criteriaCf:"+criteriaCf+
 				",criteriaD:"+criteriaD+",criteriaE:"+criteriaE);*/
         if (criteriaAm && criteriaBm && criteriaCm && criteriaE || (criteriaAf && criteriaBf && criteriaCf && criteriaE)) {

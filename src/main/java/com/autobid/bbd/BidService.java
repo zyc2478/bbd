@@ -9,7 +9,9 @@ import net.sf.json.JSONArray;
 import net.sf.json.JSONObject;
 import org.apache.log4j.Logger;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -47,21 +49,23 @@ public class BidService {
     }
 
     public static LoanListResult loanListService(int indexNum) throws Exception {
-        int[] loanIds = null;
         //ArrayList<String> loanInfosList = new ArrayList<>();
         String url = "https://openapi.ppdai.com/invest/LLoanInfoService/LoanList";
         Result result;
-        String creditCode;
         result = OpenApiClient.send(url, new PropertyObject("PageIndex", indexNum, ValueTypeEnum.Int32));
+        return loanListProcess(result,indexNum);
+    }
+
+    public static LoanListResult loanListProcess(Result result,int indexNum) throws InterruptedException {
 
         String resultJSON = FormatUtil.filterStrToJSON(result.getContext());
-
         if (JSONUtil.decodeUnicode(resultJSON).contains("ÄúµÄ²Ù×÷Ì«Æµ·±À²")) {
             logger.info("loanListService:ÄúµÄ²Ù×÷Ì«Æµ·±À²£¡ÏÈºÈ±­²è°É£¬ÐªÒ»·ÖÖÓ~~");
             logger.error("ÄúµÄ²Ù×÷Ì«Æµ·±À²£¡ÏÈºÈ±­²è°É£¬ÐªÒ»·ÖÖÓ~~");
             Thread.sleep(60000);
         }
         JSONArray loanInfosResultArray = new JSONArray();
+        int[] loanIds = null;
         if (result.isSucess()) {
             String loanListResult = resultJSON;
             //logger.info("loanListResult is :" + loanListResult);
@@ -73,6 +77,7 @@ public class BidService {
             int size = loanInfosArray.size();
             loanIds = new int[size];
             int j = 0;
+            String creditCode;
             for (int i = 0; i < size; i++) {
                 JSONObject loanInfoObj = loanInfosArray.getJSONObject(i);
                 int listingId = loanInfoObj.getInt("ListingId");
@@ -98,6 +103,20 @@ public class BidService {
         llr.setLoanIdCount(loanIds.length);
         return llr;
     }
+
+    public static LoanListResult loanListServiceByTime(int indexNum,String startDate) throws Exception {
+        int[] loanIds = null;
+        System.out.println("loanListServiceByTime");
+        //ArrayList<String> loanInfosList = new ArrayList<>();
+        String url = "https://openapi.ppdai.com/invest/LLoanInfoService/LoanList";
+        Result result;
+        result = OpenApiClient.send(url,
+            new PropertyObject("PageIndex", indexNum, ValueTypeEnum.Int32),
+            new PropertyObject("StartDateTime", "2018-05-08 18:58:00:000", ValueTypeEnum.DateTime));
+        return loanListProcess(result,indexNum);
+    }
+
+
 
     public static ArrayList<String> batchListInfosCollectorService(String token, ArrayList<List<Integer>> listingIdsCollector) throws Exception {
         //System.out.println("--------batchListInfosCollectorService---------");
@@ -185,4 +204,6 @@ public class BidService {
         }
         return bidInfos;
     }
+
+
 }

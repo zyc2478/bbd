@@ -16,6 +16,7 @@ import redis.clients.jedis.JedisPool;
 import redis.clients.jedis.JedisPoolConfig;
 
 import java.io.IOException;
+import java.text.SimpleDateFormat;
 import java.util.*;
 
 
@@ -123,6 +124,59 @@ public class BidManager implements Constants {
         List<Integer> listingIds;
         BasicCriteria basicCriteria = new BasicCriteria();
         int bbdGroups = Integer.parseInt(confBean.getBbdGroups());
+        int bidByTime = Integer.parseInt(confBean.getBidByTime());
+        String timeInterval = confBean.getTimeInterval();
+
+        String startDate = "";
+        String endDate = "";
+
+        if(timeInterval.equals("h")){
+            SimpleDateFormat sdf =  new SimpleDateFormat("yyyy-MM-dd HH:mm:ss:SSS");
+            Date nowDate = new Date();
+            Calendar calendar = Calendar.getInstance(); //得到日历
+            calendar.setTime(nowDate);//把当前时间赋给日历
+            int year = calendar.get(Calendar.YEAR);//获取年份
+            int month=calendar.get(Calendar.MONTH);//获取月份
+            int date=calendar.get(Calendar.DATE);//获取日
+            int hour=calendar.get(Calendar.HOUR);//小时
+            calendar.set(year, month, date,hour,0,0);
+            calendar.set(Calendar.MILLISECOND, 0);
+            Date startTime = calendar.getTime();
+            startDate = sdf.format(startTime);
+
+        }else if(timeInterval.equals("d")){
+            SimpleDateFormat sdf  = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss:SSS");
+            Date today = new Date();
+            Calendar calendar = Calendar.getInstance(); //得到日历
+            calendar.setTime(today);//把当前时间赋给日历
+            int year = calendar.get(Calendar.YEAR);//获取年份
+            int month=calendar.get(Calendar.MONTH);//获取月份
+            int date=calendar.get(Calendar.DATE);//获取日
+            calendar.set(year, month, date,0,0,0);
+            calendar.set(Calendar.MILLISECOND, 0);
+            Date startTime = calendar.getTime();
+            startDate = sdf.format(startTime);
+
+        }else if(timeInterval.equals("m")){
+            SimpleDateFormat sdf  = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss:SSS");
+            Date today = new Date();
+            Calendar calendar = Calendar.getInstance(); //得到日历
+            calendar.setTime(today);//把当前时间赋给日历
+            int year = calendar.get(Calendar.YEAR);//获取年份
+            int month=calendar.get(Calendar.MONTH);//获取月份
+            int date=calendar.get(Calendar.DATE);//获取日
+            int hour=calendar.get(Calendar.HOUR);//小时
+            int minute=calendar.get(Calendar.MINUTE);//分钟
+            calendar.set(year, month, date,hour,minute,0);
+            calendar.set(Calendar.MILLISECOND, 0);
+            Date startTime = calendar.getTime();
+            startDate = sdf.format(startTime);
+        }else{
+            logger.error("非法的time_interval参数");
+            return;
+        }
+        System.out.println("StartDate = " + startDate);
+
         do {
             balance = BidDataParser.getBalance(BidService.queryBalanceService(token));
             if (BidDetermine.determineBalance(balance)) {
@@ -130,12 +184,20 @@ public class BidManager implements Constants {
                 Thread.sleep(60000);
                 return;
             }
-/*            LoanListResult loanListResult = BidService.loanListService(indexNum);
-            loanIdCount = loanListResult.getLoanIdCount();*/
+            LoanListResult loanListResult;
+            if(bidByTime==1){
+                loanListResult = BidService.loanListServiceByTime(indexNum,startDate);
+            }else if(bidByTime==0){
+                loanListResult = BidService.loanListService(indexNum);
+            }else{
+                logger.error("非法的bid_by_time参数");
+                return;
+            }
+            loanIdCount = loanListResult.getLoanIdCount();
             //请求服务获取ListingIds
-/*            listingIds = BidDataParser.getListingIds(loanListResult.getLoanList());*/
-    		listingIds = new ArrayList<Integer>();
-    		listingIds.add(111205234);
+            listingIds = BidDataParser.getListingIds(loanListResult.getLoanList());
+/*    		listingIds = new ArrayList<Integer>();
+    		listingIds.add(111205234);*/
             /*System.out.println(listingIds);*/
 
             //将ListingIds切分成10个一组，再拼接成一个Collector
@@ -232,7 +294,7 @@ public class BidManager implements Constants {
             }
             //System.out.println(indexNum);
             indexNum++;
-        } while ( indexNum ==1/* loanIdCount == 200 && indexNum <= bbdGroups*/);
+        } while ( /*indexNum ==1*/ loanIdCount == 200 && indexNum <= bbdGroups);
         System.out.println("*~~~~~~~~~~~~~~~~~~~~标的执行完毕，投标结果如下：~~~~~~~~~~~~~~~~~~~*");
 
         bidResultsPrint(successBidList, listingIds.size());
