@@ -130,13 +130,13 @@ public class BidManager implements Constants {
                 Thread.sleep(60000);
                 return;
             }
-            LoanListResult loanListResult = BidService.loanListService(indexNum);
-            loanIdCount = loanListResult.getLoanIdCount();
+/*            LoanListResult loanListResult = BidService.loanListService(indexNum);
+            loanIdCount = loanListResult.getLoanIdCount();*/
             //请求服务获取ListingIds
-            listingIds = BidDataParser.getListingIds(loanListResult.getLoanList());
-/*    		listingIds = new ArrayList<Integer>();
-    		listingIds.add(86084296);*/
-            //System.out.println(listingIds);
+/*            listingIds = BidDataParser.getListingIds(loanListResult.getLoanList());*/
+    		listingIds = new ArrayList<Integer>();
+    		listingIds.add(111205234);
+            /*System.out.println(listingIds);*/
 
             //将ListingIds切分成10个一组，再拼接成一个Collector
             //Integer[][] listingIdsParted = BidDataParser.getListingIdsParted(listingIds);
@@ -144,18 +144,12 @@ public class BidManager implements Constants {
 
             ArrayList<List<Integer>> listingIdsCollector = BidDataParser.getListingIdsCollector(listingIds);
 
-            //System.out.println(listingIdsCollector);
-
             //循环遍历，每组传入接口 BatchListingInfos,并将结果合并到Collector
             ArrayList<String> batchListInfosCollector = BidService.batchListInfosCollectorService(
                     token, listingIdsCollector);
-            //System.out.println(batchListInfosCollector);
-
 
             //将合并后的Collector处理成JSONArray数组，并再合并为新的Collector
             ArrayList<JSONArray> loanInfosCollector = BidDataParser.getLoanInfosCollector(batchListInfosCollector);
-
-            //System.out.println(loanInfosCollector);
 
             //循环遍历得出JSONArray，将每个JSONArray再分拆为多个标的JSONObject
 
@@ -238,7 +232,7 @@ public class BidManager implements Constants {
             }
             //System.out.println(indexNum);
             indexNum++;
-        } while (loanIdCount == 200 && indexNum <= bbdGroups);
+        } while ( indexNum ==1/* loanIdCount == 200 && indexNum <= bbdGroups*/);
         System.out.println("*~~~~~~~~~~~~~~~~~~~~标的执行完毕，投标结果如下：~~~~~~~~~~~~~~~~~~~*");
 
         bidResultsPrint(successBidList, listingIds.size());

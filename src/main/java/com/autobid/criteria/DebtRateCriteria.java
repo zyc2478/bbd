@@ -25,11 +25,11 @@ public class DebtRateCriteria implements Criteria, Constants {
         debt_frate = Double.parseDouble(cb.getDebtFrate());
         debtTotalRate = totalPrincipal != 0 ? (owingAmount + loanAmount) / totalPrincipal : 1;
         loanAmountLevel = new LoanAmountCriteria().getLevel(loanInfos, cb);
-/*		System.out.println("debtTotalRate:"+debtTotalRate);
+//		System.out.println("debtTotalRate:"+debtTotalRate);
 		//System.out.println(debtTotalRate < 0.5 * female_multiple);
-		System.out.println(gender == 2 && debtTotalRate < 0.5 * debt_frate);
+/*		System.out.println(gender == 2 && debtTotalRate < 0.5 * debt_frate);*/
 		//int successCountLevel = successCountCriteria.getLevel(loanInfoMap);
-		System.out.println((gender == 1 && debtTotalRate < 0.5 * debt_mrate) || 
+/*		System.out.println((gender == 1 && debtTotalRate < 0.5 * debt_mrate) ||
 				(gender == 2 && debtTotalRate < 0.5 * debt_frate));*/
     }
 

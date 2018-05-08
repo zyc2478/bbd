@@ -195,10 +195,13 @@ public class BidDataParser {
              * 情况2：比如对于30个元素（m==0)最后一轮，m==0,partCount=3,fromIndex为20，toindex为30
              * 情况3：比如对于35个元素第二轮，i=1,fromIndex=10,toindex=20
              */
-            if (m != 0 && i == partCount - 1) {
+            if(m!=0 && partCount==1 && size <= partSize){
+                List<Integer> subDebtList = listingIds;
+                dll.add(subDebtList);
+            }else if (m != 0 && i == partCount - 1) {
                 List<Integer> subDebtList = listingIds.subList(i * partSize, size - 1);
                 dll.add(subDebtList);
-            } else {
+            }else {
                 List<Integer> subDebtList = listingIds.subList(i * partSize, (i + 1) * partSize);
                 dll.add(subDebtList);
             }

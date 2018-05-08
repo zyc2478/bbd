@@ -35,6 +35,8 @@ public class LoanAmountCriteria implements Criteria, Constants {
                 totalPrincipal >= total_limit && owingAmount < highestDebt * owing_frate && gender == 2;
 /*		System.out.println("amount_begin /amount_frate:"+ (double)((double)amount_begin /(double)amount_frate) + ",amount_end * amount_frate:"+
 				amount_end * amount_frate);*/
+/*        System.out.println(" owingAmount < highestDebt * owing_frate:" + (owingAmount < highestDebt * owing_frate) );
+        System.out.println("highestDebt * owing_frate:"+ highestDebt * owing_frate );*/
         criteriaBm = owingAmount + loanAmount < highestDebt * amount_mrate && gender == 1;
         criteriaBf = owingAmount + loanAmount < highestDebt * amount_frate && gender == 2;
         //System.out.println("highestPrincipal:"+highestPrincipal+",highestPrincipal * amount_mrate£º" + highestPrincipal * amount_mrate);
@@ -50,8 +52,8 @@ public class LoanAmountCriteria implements Criteria, Constants {
 
     public int getLevel(JSONObject loanInfos, ConfBean cb) {
         calc(loanInfos, cb);
-/*		System.out.println("LoanAmount: criteriaAm:"+criteriaAm+",criteriaBm:"+criteriaBm + ",criteriaCm:"+criteriaCm+
-				",criteriaD:"+criteriaD+",criteriaE:"+criteriaE);*/
+		System.out.println("LoanAmount: criteriaAm:"+criteriaAm+",criteriaBm:"+criteriaBm + ",criteriaCm:"+criteriaCm+
+				",criteriaD:"+criteriaD+",criteriaE:"+criteriaE);
 /*		System.out.println("criteriaAf:"+criteriaAf+",criteriaBf:"+criteriaBf + ",criteriaCf:"+criteriaCf+
 				",criteriaD:"+criteriaD+",criteriaE:"+criteriaE);*/
         if (criteriaAm && criteriaBm && criteriaCm && criteriaE || (criteriaAf && criteriaBf && criteriaCf && criteriaE)) {

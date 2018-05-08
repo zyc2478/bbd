@@ -29,6 +29,9 @@ public class OverdueCriteria implements Criteria, Constants {
         criteriaLessFRate = normalCount != 0 && new Integer(overdueLessCount).doubleValue() / normalCount <
                 Double.parseDouble(cb.getOverdueRate()) * Double.parseDouble(cb.getOverdueFrate());
 
+/*        System.out.println("criteriaLessFRate:"+criteriaLessFRate);*/
+/*        System.out.println("new Integer(overdueLessCount).doubleValue() / normalCount = " + new Integer(overdueLessCount).doubleValue() / normalCount);
+        System.out.println("Double.parseDouble(cb.getOverdueRate()) * Double.parseDouble(cb.getOverdueFrate())"+Double.parseDouble(cb.getOverdueRate()) * Double.parseDouble(cb.getOverdueFrate()));*/
 /*		System.out.println(new Integer(overdueLessCount).doubleValue()/normalCount);
 		System.out.println(	Double.parseDouble(ConfUtil.getProperty("overdue_rate")) * 
 				Double.parseDouble(ConfUtil.getProperty("overdue_multiple")));*/

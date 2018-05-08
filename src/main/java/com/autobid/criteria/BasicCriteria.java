@@ -71,7 +71,7 @@ public class BasicCriteria implements Criteria, Constants {
 
     public int getLevel(JSONObject loanInfos, ConfBean cb) throws Exception {
         calc(loanInfos, cb);
-        //printCriteria(loanInfoMap,cb);
+        printCriteria(loanInfos,cb);
         if (eduBasicCriteria && debtBasicCriteria) {
             //System.out.println("PERFECT");
             return PERFECT;
@@ -92,19 +92,19 @@ public class BasicCriteria implements Criteria, Constants {
         return "Basic";
     }
 
-/*    @SuppressWarnings("unused")
-    public void printCriteria(HashMap<String, Object> loanInfoMap, ConfBean cb) throws Exception {
-        int creditCodeLevel = creditCodeCriteria.getLevel(loanInfoMap, cb);
-        int debtRateLevel = debtRateCriteria.getLevel(loanInfoMap, cb);
-        int educationLevel = educationCriteria.getLevel(loanInfoMap, cb);
-        int successCountLevel = successCountCriteria.getLevel(loanInfoMap, cb);
-        int loanAmountLevel = loanAmountCriteria.getLevel(loanInfoMap, cb);
-        int overdueLevel = overdueCriteria.getLevel(loanInfoMap, cb);
-        int ageLevel = ageCriteria.getLevel(loanInfoMap, cb);
-        int lastSuccessBorrowLevel = lastSuccessBorrowCriteria.getLevel(loanInfoMap, cb);
+    @SuppressWarnings("unused")
+    public void printCriteria(JSONObject loanInfos, ConfBean cb) throws Exception {
+        int creditCodeLevel = creditCodeCriteria.getLevel(loanInfos, cb);
+        int debtRateLevel = debtRateCriteria.getLevel(loanInfos, cb);
+        int educationLevel = educationCriteria.getLevel(loanInfos, cb);
+        int successCountLevel = successCountCriteria.getLevel(loanInfos, cb);
+        int loanAmountLevel = loanAmountCriteria.getLevel(loanInfos, cb);
+        int overdueLevel = overdueCriteria.getLevel(loanInfos, cb);
+        int ageLevel = ageCriteria.getLevel(loanInfos, cb);
+        int lastSuccessBorrowLevel = lastSuccessBorrowCriteria.getLevel(loanInfos, cb);
         System.out.println("creditCodeLevel:" + creditCodeLevel + ",debtRateLevel:" + debtRateLevel +
                 ",educationLevel:" + educationLevel + ",successCountLevel:" + successCountLevel +
                 ",loanAmountLevel:" + loanAmountLevel + ",overdueLevel:" + overdueLevel +
                 ",ageLevel:" + ageLevel + ",lastSuccessBorrowLevel:" + lastSuccessBorrowLevel);
-    }*/
+    }
 }
