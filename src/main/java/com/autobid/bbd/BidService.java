@@ -109,7 +109,7 @@ public class BidService {
 
     public static LoanListResult loanListServiceByTime(int indexNum,String startDateTime) throws Exception {
         int[] loanIds = null;
-        System.out.println("loanListServiceByTime");
+        //System.out.println("loanListServiceByTime");
         //ArrayList<String> loanInfosList = new ArrayList<>();
         String url = "https://openapi.ppdai.com/invest/LLoanInfoService/LoanList";
         Result result;
@@ -121,7 +121,7 @@ public class BidService {
             Jedis jedis = RedisUtil.getJedis();
             try {
                 jedis.setex("startDateTime", 864000, startDateTime);
-                System.out.println("jedis startDateTime:"+jedis.get("startDateTime"));
+                //System.out.println("jedis startDateTime:"+jedis.get("startDateTime"));
             }finally {
                 jedis.close();
             }
