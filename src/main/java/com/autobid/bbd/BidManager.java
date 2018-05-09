@@ -127,11 +127,11 @@ public class BidManager implements Constants {
         int bidByTime = Integer.parseInt(confBean.getBidByTime());
         String timeInterval = confBean.getTimeInterval();
 
-        String startDate = "";
+        String startDateTime = "";
         String endDate = "";
 
         if(timeInterval.equals("h")){
-            SimpleDateFormat sdf =  new SimpleDateFormat("yyyy-MM-dd HH:mm:ss:SSS");
+            SimpleDateFormat sdf =  new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS");
             Date nowDate = new Date();
             Calendar calendar = Calendar.getInstance(); //得到日历
             calendar.setTime(nowDate);//把当前时间赋给日历
@@ -142,10 +142,10 @@ public class BidManager implements Constants {
             calendar.set(year, month, date,hour,0,0);
             calendar.set(Calendar.MILLISECOND, 0);
             Date startTime = calendar.getTime();
-            startDate = sdf.format(startTime);
+            startDateTime = sdf.format(startTime);
 
         }else if(timeInterval.equals("d")){
-            SimpleDateFormat sdf  = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss:SSS");
+            SimpleDateFormat sdf  = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS");
             Date today = new Date();
             Calendar calendar = Calendar.getInstance(); //得到日历
             calendar.setTime(today);//把当前时间赋给日历
@@ -155,10 +155,10 @@ public class BidManager implements Constants {
             calendar.set(year, month, date,0,0,0);
             calendar.set(Calendar.MILLISECOND, 0);
             Date startTime = calendar.getTime();
-            startDate = sdf.format(startTime);
+            startDateTime = sdf.format(startTime);
 
         }else if(timeInterval.equals("m")){
-            SimpleDateFormat sdf  = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss:SSS");
+            SimpleDateFormat sdf  = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS");
             Date today = new Date();
             Calendar calendar = Calendar.getInstance(); //得到日历
             calendar.setTime(today);//把当前时间赋给日历
@@ -170,12 +170,30 @@ public class BidManager implements Constants {
             calendar.set(year, month, date,hour,minute,0);
             calendar.set(Calendar.MILLISECOND, 0);
             Date startTime = calendar.getTime();
-            startDate = sdf.format(startTime);
+            startDateTime = sdf.format(startTime);
+        }else if(timeInterval.equals("p")) {
+            SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS");
+            Jedis jedis = RedisUtil.getJedis();
+            String lastRunTime = jedis.get("startDateTime");
+            System.out.println("lastRunTime:"+lastRunTime);
+            Date lastRunDate = sdf.parse(lastRunTime);
+            Calendar calendar = Calendar.getInstance(); //得到日历
+            calendar.setTime(lastRunDate);//把当前时间赋给日历
+            int year = calendar.get(Calendar.YEAR);//获取年份
+            int month=calendar.get(Calendar.MONTH);//获取月份
+            int date=calendar.get(Calendar.DATE);//获取日
+            int hour=calendar.get(Calendar.HOUR);//小时
+            int minute=calendar.get(Calendar.MINUTE);//分钟
+            int second=calendar.get(Calendar.SECOND)+1; //取上次运行的下一秒
+            calendar.set(year, month, date,hour,minute,second);
+            calendar.set(Calendar.MILLISECOND, 0);
+            Date startTime = calendar.getTime();
+            startDateTime = sdf.format(startTime);
         }else{
             logger.error("非法的time_interval参数");
             return;
         }
-        System.out.println("StartDate = " + startDate);
+        System.out.println("StartDate = " + startDateTime);
 
         do {
             balance = BidDataParser.getBalance(BidService.queryBalanceService(token));
@@ -186,7 +204,7 @@ public class BidManager implements Constants {
             }
             LoanListResult loanListResult;
             if(bidByTime==1){
-                loanListResult = BidService.loanListServiceByTime(indexNum,startDate);
+                loanListResult = BidService.loanListServiceByTime(indexNum,startDateTime);
             }else if(bidByTime==0){
                 loanListResult = BidService.loanListService(indexNum);
             }else{

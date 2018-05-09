@@ -4,11 +4,14 @@ import com.autobid.entity.BidResult;
 import com.autobid.entity.LoanListResult;
 import com.autobid.util.FormatUtil;
 import com.autobid.util.JSONUtil;
+import com.autobid.util.RedisUtil;
 import com.ppdai.open.core.*;
 import net.sf.json.JSONArray;
 import net.sf.json.JSONObject;
 import org.apache.log4j.Logger;
+import redis.clients.jedis.Jedis;
 
+import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
@@ -56,7 +59,7 @@ public class BidService {
         return loanListProcess(result,indexNum);
     }
 
-    public static LoanListResult loanListProcess(Result result,int indexNum) throws InterruptedException {
+    public static LoanListResult loanListProcess(Result result,int indexNum) throws InterruptedException, IOException {
 
         String resultJSON = FormatUtil.filterStrToJSON(result.getContext());
         if (JSONUtil.decodeUnicode(resultJSON).contains("ÄúµÄ²Ù×÷Ì«Æµ·±À²")) {
@@ -104,7 +107,7 @@ public class BidService {
         return llr;
     }
 
-    public static LoanListResult loanListServiceByTime(int indexNum,String startDate) throws Exception {
+    public static LoanListResult loanListServiceByTime(int indexNum,String startDateTime) throws Exception {
         int[] loanIds = null;
         System.out.println("loanListServiceByTime");
         //ArrayList<String> loanInfosList = new ArrayList<>();
@@ -112,7 +115,17 @@ public class BidService {
         Result result;
         result = OpenApiClient.send(url,
             new PropertyObject("PageIndex", indexNum, ValueTypeEnum.Int32),
-            new PropertyObject("StartDateTime", "2018-05-08 18:58:00:000", ValueTypeEnum.DateTime));
+            new PropertyObject("StartDateTime", startDateTime, ValueTypeEnum.DateTime));
+
+        if(result.isSucess()){
+            Jedis jedis = RedisUtil.getJedis();
+            try {
+                jedis.setex("startDateTime", 864000, startDateTime);
+                System.out.println("jedis startDateTime:"+jedis.get("startDateTime"));
+            }finally {
+                jedis.close();
+            }
+        }
         return loanListProcess(result,indexNum);
     }
 
