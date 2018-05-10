@@ -120,7 +120,9 @@ public class BidService {
         if(result.isSucess()){
             Jedis jedis = RedisUtil.getJedis();
             try {
-                jedis.setex("startDateTime", 864000, startDateTime);
+                if(!startDateTime.equals(null)){
+                    jedis.setex("startDateTime", 864000, startDateTime);
+                }
                 //System.out.println("jedis startDateTime:"+jedis.get("startDateTime"));
             }finally {
                 jedis.close();
