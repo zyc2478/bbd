@@ -175,7 +175,7 @@ public class BidManager implements Constants {
             SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS");
             Jedis jedis = RedisUtil.getJedis();
             String lastRunTime = jedis.get("startDateTime");
-            System.out.println("lastRunTime:"+lastRunTime);
+            //System.out.println("lastRunTime:"+lastRunTime);
             Date lastRunDate = sdf.parse(lastRunTime);
             Calendar calendar = Calendar.getInstance(); //得到日历
             calendar.setTime(lastRunDate);//把当前时间赋给日历
@@ -193,7 +193,7 @@ public class BidManager implements Constants {
             logger.error("非法的time_interval参数");
             return;
         }
-        System.out.println("StartDate = " + startDateTime);
+        //System.out.println("StartDate = " + startDateTime);
 
         do {
             balance = BidDataParser.getBalance(BidService.queryBalanceService(token));
