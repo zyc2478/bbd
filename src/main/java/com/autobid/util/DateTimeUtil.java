@@ -25,7 +25,7 @@ public class DateTimeUtil {
             int year = calendar.get(Calendar.YEAR);//获取年份
             int month=calendar.get(Calendar.MONTH);//获取月份
             int date=calendar.get(Calendar.DATE);//获取日
-            int hour=calendar.get(Calendar.HOUR);//小时
+            int hour=calendar.get(Calendar.HOUR_OF_DAY);//小时
             calendar.set(year, month, date,hour,0,0);
             calendar.set(Calendar.MILLISECOND, 0);
             Date startTime = calendar.getTime();
@@ -48,7 +48,7 @@ public class DateTimeUtil {
             int year = calendar.get(Calendar.YEAR);//获取年份
             int month=calendar.get(Calendar.MONTH);//获取月份
             int date=calendar.get(Calendar.DATE);//获取日
-            int hour=calendar.get(Calendar.HOUR);//小时
+            int hour=calendar.get(Calendar.HOUR_OF_DAY);//小时
             int minute=calendar.get(Calendar.MINUTE);//分钟
             calendar.set(year, month, date,hour,minute,0);
             calendar.set(Calendar.MILLISECOND, 0);
@@ -65,7 +65,6 @@ public class DateTimeUtil {
             String defaultDateTime = sdf.format(defaultDate);   //取前年第一天为默认值
 
             Jedis jedis = RedisUtil.getJedis();
-            jedis.set("startDateTime","");
             String lastRunTime = jedis.get("startDateTime");
             if(lastRunTime.equals(null) || lastRunTime.equals("")){
                 lastRunTime = defaultDateTime;
@@ -76,7 +75,7 @@ public class DateTimeUtil {
             year = calendar.get(Calendar.YEAR);//获取年份
             int month=calendar.get(Calendar.MONTH);//获取月份
             int date=calendar.get(Calendar.DATE);//获取日
-            int hour=calendar.get(Calendar.HOUR);//小时
+            int hour=calendar.get(Calendar.HOUR_OF_DAY);//小时
             int minute=calendar.get(Calendar.MINUTE);//分钟
             int second=calendar.get(Calendar.SECOND)+1; //取上次运行的下一秒
             calendar.set(year, month, date,hour,minute,second);

@@ -1,2 +1,5 @@
 [2018-05-11 10:48:59][com.autobid.bbd.BidManager]余额不足，程序退出，1分钟后将再次尝试
 [2018-05-11 10:52:06][com.autobid.util.FormatUtil]不合法的JSON：<!DOCTYPE html><html><head><meta http-equiv="refresh" content="5" /></head><body></body></html>
+[2018-05-11 14:40:10][com.autobid.bbd.BidService]xxxxxx Error！111905195不允许重复投标！ xxxxxx
+[2018-05-11 14:44:13][com.autobid.bbd.BidService]xxxxxx Error！111905195不允许重复投标！ xxxxxx
+[2018-05-11 14:48:25][com.autobid.bbd.BidService]xxxxxx Error！111905195不允许重复投标！ xxxxxx

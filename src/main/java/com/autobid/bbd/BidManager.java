@@ -126,6 +126,7 @@ public class BidManager implements Constants {
         int bbdGroups = Integer.parseInt(confBean.getBbdGroups());
         int bidByTime = Integer.parseInt(confBean.getBidByTime());
         String timeInterval = confBean.getTimeInterval();
+        System.out.println("timeInterval: " + timeInterval);
         String startDateTime = DateTimeUtil.calcStartDateTime(timeInterval);
         //System.out.println("StartDate = " + startDateTime);
 
