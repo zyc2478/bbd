@@ -55,7 +55,18 @@ public class BidService {
         //ArrayList<String> loanInfosList = new ArrayList<>();
         String url = "https://openapi.ppdai.com/invest/LLoanInfoService/LoanList";
         Result result;
+        SimpleDateFormat sdf  = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS");
+        String startDateTime = sdf.format(new Date());
         result = OpenApiClient.send(url, new PropertyObject("PageIndex", indexNum, ValueTypeEnum.Int32));
+        Jedis jedis = new Jedis();
+        if(result.isSucess()){
+            try{
+                jedis = RedisUtil.getJedis();
+                jedis.setex("startDateTime", 864000, startDateTime);
+            }finally{
+                jedis.close();
+            }
+        }
         return loanListProcess(result,indexNum);
     }
 
