@@ -129,7 +129,7 @@ public class BidManager implements Constants {
         System.out.println("timeInterval: " + timeInterval);
         String startDateTime = DateTimeUtil.calcStartDateTime(timeInterval);
         //System.out.println("StartDate = " + startDateTime);
-
+        String loanListFetchTime = "";
         do {
             balance = BidDataParser.getBalance(BidService.queryBalanceService(token));
             if (BidDetermine.determineBalance(balance)) {
@@ -145,6 +145,10 @@ public class BidManager implements Constants {
             }else{
                 logger.error("非法的bid_by_time参数");
                 return;
+            }
+            if(indexNum==1){
+                SimpleDateFormat sdf =  new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS");
+                loanListFetchTime = sdf.format(new Date());
             }
             loanIdCount = loanListResult.getLoanIdCount();
             //请求服务获取ListingIds
@@ -250,6 +254,15 @@ public class BidManager implements Constants {
         } while ( /*indexNum ==1*/ loanIdCount == 200 && indexNum <= bbdGroups);
         System.out.println("*~~~~~~~~~~~~~~~~~~~~标的执行完毕，投标结果如下：~~~~~~~~~~~~~~~~~~~*");
 
+        if(!loanListFetchTime.equals("") && successBidList.isEmpty()){
+            //System.out.println("loanListFetchTime; " + loanListFetchTime);
+            Jedis jedis = RedisUtil.getJedis();
+            try {
+                jedis.setex("startDateTime", 864000,loanListFetchTime);
+            }finally {
+                jedis.close();
+            }
+        }
         bidResultsPrint(successBidList, listingIds.size());
     	
 /*    	if(Integer.parseInt(confBean.getBidMode())==2) {

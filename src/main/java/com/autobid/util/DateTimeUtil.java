@@ -66,6 +66,7 @@ public class DateTimeUtil {
 
             Jedis jedis = RedisUtil.getJedis();
             String lastRunTime = jedis.get("startDateTime");
+            //System.out.println("redis startDateTime: " + lastRunTime);
             if(lastRunTime.equals(null) || lastRunTime.equals("")){
                 lastRunTime = defaultDateTime;
             }
@@ -86,7 +87,7 @@ public class DateTimeUtil {
             logger.error("非法的time_interval参数");
         }
 
-        System.out.println("DateTimeUtil startDateTime："+ startDateTime);
+        System.out.println("startDateTime："+ startDateTime);
         return startDateTime;
     }
 

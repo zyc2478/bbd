@@ -28,8 +28,12 @@ public class EduDebtProCriteria implements Criteria, Constants {
         }
 
         //studyStyle 包括：函授、开放教育、成人、普通、普通全日制、研究生、网络教育、脱产、自学考试、自考
-        String studyStyle = (String) loanInfos.get("StudyStyle");
-
+        String studyStyle;
+        if(!loanInfos.get("StudyStyle").equals(null)) {
+            studyStyle = loanInfos.get("StudyStyle").toString();
+        }else{
+            studyStyle = "";
+        }
         criteriaBachelor = JSONUtil.decodeUnicode(educationDegree).equals("本科") &&
                 (JSONUtil.decodeUnicode(studyStyle).equals("普通") ||
                         JSONUtil.decodeUnicode(studyStyle).equals("普通全日制"));
