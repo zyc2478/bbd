@@ -82,10 +82,10 @@ public class TokenInit {
     @Test
     public void testInitToken() throws Exception {
         TokenUtil tokenUtil = new TokenUtil();
-        //TokenInit.initToken();
+        TokenInit.initToken();
         Thread.sleep(3000);
         //TokenInit.refreshToken();
-        tokenUtil.genNewToken();
+        //tokenUtil.genNewToken();
         Thread.sleep(3000);
         //TokenInit.refreshToken();
         //TokenUtil.genNewToken();
