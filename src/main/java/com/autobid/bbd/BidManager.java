@@ -37,6 +37,7 @@ public class BidManager implements Constants {
     private static String token = "";
     private static String openId;
     private static ConfBean confBean;
+    private static LocalConfBean localConfBean;
     private static String localHost,confHost;
 
     private static Logger logger = Logger.getLogger(BidManager.class);
@@ -51,6 +52,7 @@ public class BidManager implements Constants {
         try {
             AuthInit.init();
             confBean = ConfUtil.readAllToBean();
+            localConfBean = ConfUtil.readAllToLocalBean();
             MIN_BID_AMOUNT = Integer.parseInt(confBean.getMinBidAmount());
             openId = confBean.getOpenId();
             //如果TokenInit配置项不存在，则初始化Token，存储在Redis中--需要新code，没有意义
@@ -108,7 +110,7 @@ public class BidManager implements Constants {
         }*/
         TokenUtil tokenUtil = new TokenUtil();
         token = tokenUtil.getToken();
-        ConfUtil.setProperty("host_name",localHost);
+        ConfUtil.setLocalProperty("host_name",localHost);
 //        token = TokenUtil.getToken();
         logger.info("bidExecute");
         double balance = BidDataParser.getBalance(BidService.queryBalanceService(token));

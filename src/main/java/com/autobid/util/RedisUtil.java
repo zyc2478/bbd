@@ -42,8 +42,14 @@ public class RedisUtil {
         config.setTestOnReturn(true);
         //自动测试池中的空闲连接是否都是可用连接
         config.setTestWhileIdle(true);
+
+
         //创建连接池
-        pool = new JedisPool(config,ConfUtil.getProperty("redis_host"));
+        //pool = new JedisPool(config,ConfUtil.getLocalProperty("redis_host"));
+        System.out.println("redis_host:" +ConfUtil.getLocalProperty("redis_host") );
+
+
+        pool = new JedisPool(ConfUtil.getLocalProperty("redis_host"));
         //pool = new JedisPool(config, ConfUtil.getProperty("redis_host"), ConfUtil.getProperty("redis_port"));
     }
 

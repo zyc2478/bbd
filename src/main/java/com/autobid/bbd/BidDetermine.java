@@ -37,7 +37,7 @@ public class BidDetermine implements Constants {
     private String host;
     {
         try {
-            host = ConfUtil.getProperty("redis_host");
+            host = ConfUtil.getLocalProperty("redis_host");
         } catch (IOException e) {
             e.printStackTrace();
         }

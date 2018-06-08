@@ -13,7 +13,7 @@ public class HostUtil {
         return hostName;
     }
     public static String getConfHost() throws IOException {
-        String confHost = ConfUtil.getProperty("host_name");
+        String confHost = ConfUtil.getLocalProperty("host_name");
         return confHost;
     }
 }

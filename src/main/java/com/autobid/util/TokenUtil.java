@@ -24,7 +24,7 @@ public class TokenUtil {
     private static String initDate;
 //    private static Jedis jedis;
     private static String localHost,confHost;
-    private String host = ConfUtil.getProperty("redis_host");
+    private String host = ConfUtil.getLocalProperty("redis_host");
 //    JedisPool pool = new JedisPool(RedisUtil.getPoolConfig(), host);
 
     static {
@@ -33,8 +33,8 @@ public class TokenUtil {
             expireDays = Integer.parseInt(ConfUtil.getProperty("expire_days"));
 //            int refreshTokenExpired = Integer.parseInt(ConfUtil.getProperty("refresh_token_expired"));
             initDate = ConfUtil.getProperty("init_date");
-            String redisHost = ConfUtil.getProperty("redis_host");
-            int redisPort = Integer.parseInt(ConfUtil.getProperty("redis_port"));
+            String redisHost = ConfUtil.getLocalProperty("redis_host");
+            int redisPort = Integer.parseInt(ConfUtil.getLocalProperty("redis_port"));
 //            jedis = new Jedis(redisHost, redisPort);
 //            jedis = RedisUtil.getJedis();
             localHost = HostUtil.getLocalHost();
