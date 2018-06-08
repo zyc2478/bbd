@@ -14,9 +14,14 @@ public class CreditCodeCriteria implements Criteria, Constants {
     public void calc(JSONObject loanInfos, ConfBean cb) {
         String creditCodeLimit = cb.getCreditLimit();
         String creditCode = (String) loanInfos.get("CreditCode");
+        int creditRange = Integer.parseInt(cb.getCreditRange());
         credit = switchCredit(creditCode);
         creditLimit = switchCredit(creditCodeLimit);
-        criteriaCredit = credit >= creditLimit;
+        if(creditRange==1){
+            criteriaCredit = credit >= creditLimit;
+        }else{
+            criteriaCredit = credit == creditLimit;
+        }
     }
    public int switchCredit(String creditCode){
         int codeNum = 0;

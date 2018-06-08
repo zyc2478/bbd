@@ -82,10 +82,10 @@ public class TokenInit {
     @Test
     public void testInitToken() throws Exception {
         TokenUtil tokenUtil = new TokenUtil();
-        TokenInit.initToken();
+        //TokenInit.initToken();   // 如果genNewToken(）不能用了就用这个方法，但是要用一个新的code来生成（取自AuthInit)
         Thread.sleep(3000);
         //TokenInit.refreshToken();
-        //tokenUtil.genNewToken();
+        tokenUtil.genNewToken();    //genNewToken()无需重新获取code，可以用refreshToken定期获取最新的token，比较方便，优选方法
         Thread.sleep(3000);
         //TokenInit.refreshToken();
         //TokenUtil.genNewToken();

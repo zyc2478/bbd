@@ -26,7 +26,9 @@ public class ConfBean {
     private String moreMultiple;
     private String miniMultiple;
     private String mediumMultiple;
+    private String creditRange;
     private String creditLimit;
+    private String gender;
     private String amountBegin;
     private String amountEnd;
     private String amountMrate;
@@ -37,6 +39,8 @@ public class ConfBean {
     private String owingFrate;
     private String debtMrate;
     private String debtFrate;
+    private String certificateValidate;
+    private String overdueShortLimit;
     private String overdueRate;
     private String overdueMrate;
     private String overdueFrate;
@@ -229,6 +233,10 @@ public class ConfBean {
         this.mediumMultiple = mediumMultiple;
     }
 
+    public String getCreditRange() { return creditRange; }
+
+    public void setCreditRange(String creditRange) { this.creditRange = creditRange; }
+
     public String getCreditLimit() {
         return creditLimit;
     }
@@ -236,6 +244,14 @@ public class ConfBean {
     public void setCreditLimit(String creditLimit) {
         this.creditLimit = creditLimit;
     }
+
+    public String getGender() { return gender; }
+
+    public void setGender(String gender) { this.gender = gender; }
+
+    public String getCertificateValidate() {  return certificateValidate; }
+
+    public void setCertificateValidate(String certificateValidate) {  this.certificateValidate = certificateValidate; }
 
     public String getAmountBegin() {
         return amountBegin;
@@ -316,6 +332,10 @@ public class ConfBean {
     public void setDebtFrate(String debtFrate) {
         this.debtFrate = debtFrate;
     }
+
+    public String getOverdueShortLimit() { return overdueShortLimit; }
+
+    public void setOverdueShortLimit(String overdueShortLimit) { this.overdueShortLimit = overdueShortLimit; }
 
     public String getOverdueRate() {
         return overdueRate;

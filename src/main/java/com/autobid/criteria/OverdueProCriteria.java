@@ -12,12 +12,16 @@ public class OverdueProCriteria implements Criteria, Constants {
     private boolean criteriaMore;
     private boolean criteriaLess;
     private boolean criteriaNormal;
+    private boolean criteriaShortLimit;
 
     public void calc(JSONObject loanInfos, ConfBean cb) {
 
         int overdueLessCount = (int) loanInfos.get("OverdueLessCount");
         int overdueMoreCount = (int) loanInfos.get("OverdueMoreCount");
         int normalCount = (int) loanInfos.get("NormalCount");
+        int overdueShortLimit = Integer.parseInt(cb.getOverdueShortLimit());
+        criteriaShortLimit = overdueLessCount <= overdueShortLimit;
+
         gender = Integer.parseInt(loanInfos.get("Gender").toString());
         criteriaMore = overdueMoreCount == 0;
         criteriaLess = overdueLessCount == 0;
@@ -26,9 +30,9 @@ public class OverdueProCriteria implements Criteria, Constants {
 
     public int getLevel(JSONObject loanInfos, ConfBean cb) {
         calc(loanInfos, cb);
-        if (criteriaMore && criteriaLess && criteriaNormal) {
+        if (criteriaMore && criteriaLess && criteriaNormal && criteriaShortLimit) {
             return GOOD;
-        } else if (criteriaMore && criteriaLess && gender == 2) {
+        } else if (criteriaMore && criteriaLess && criteriaShortLimit && gender == 2) {
             return GOOD;
         } else {
             return NONE;

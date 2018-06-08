@@ -154,8 +154,8 @@ public class BidManager implements Constants {
             //请求服务获取ListingIds
             listingIds = BidDataParser.getListingIds(loanListResult.getLoanList());
 /*    		listingIds = new ArrayList<Integer>();
-    		listingIds.add(111205234);*/
-            /*System.out.println(listingIds);*/
+    		listingIds.add(115223032);
+            System.out.println(listingIds);*/
 
             //将ListingIds切分成10个一组，再拼接成一个Collector
             //Integer[][] listingIdsParted = BidDataParser.getListingIdsParted(listingIds);
@@ -176,7 +176,7 @@ public class BidManager implements Constants {
                 for (int i = 0; i < loanInfosArray.size(); i++) {
                     JSONObject loanInfos = loanInfosArray.getJSONObject(i);
 
-                    //System.out.println(loanInfoObj);
+                    //System.out.println(loanInfos);
 
                     //将得到的每个标的loanInfo解析为每个字段，将结果合并为HashMap
 //                    HashMap<String, Object> loanInfoMap = BidDataParser.getLoanInfoMap(loanInfoObj);
@@ -218,6 +218,7 @@ public class BidManager implements Constants {
                             System.out.println("====== listingId: " + listingId + ", Start bidding ====== ");
                             //logger.info("listingId: " + listingId + ", JSON is: " + loanInfoMap);
                             //bidAmount = new BidDetermine().determineCriteriaGroup(criteriaGroup, loanInfoMap);
+                            basicCriteria.printCriteria(loanInfos,confBean);
                             assert criteriaGroup != null;
                             bidAmount = bidDetermine.determineCriteriaGroup(Objects.requireNonNull(criteriaGroup), confBean, loanInfos);
                             System.out.println("****** listingId: " + listingId + ", total Amount is: " + bidAmount + " ******");

@@ -10,6 +10,15 @@ public class JSONUtil {
         return result;
     }
 
+    public static boolean determineJsonHead(String jsonString){
+        String headStr = jsonString.substring(0,1);
+        //System.out.println("headStr:"+ headStr);
+        if(headStr.equals("{") || headStr.equals("[")){
+            return true;
+        }else{
+            return false;
+        }
+    }
     public static String decodeUnicode(String theString) {
         char aChar;
         int len = theString.length();

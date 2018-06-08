@@ -126,7 +126,8 @@ public class BidDataParser {
     }*/
 
     private static JSONArray getLoanInfos(String batchListInfos) {
-        batchListInfos = FormatUtil.filterStrToJSON(batchListInfos);
+        //batchListInfos = FormatUtil.filterStrToJSON(batchListInfos);
+        //传进来的JSON都是经过判定的，可以保障，所以无需再格式化
         JSONObject batchListInfosObject = JSONObject.fromObject(batchListInfos);
         //System.out.println(batchListInfosObject);
     	/*if(JsonUtil.decodeUnicode(batchListInfos).contains("您的操作太频繁啦")) {
@@ -140,8 +141,10 @@ public class BidDataParser {
         ArrayList<JSONArray> loanInfosCollector = new ArrayList<>();
         //System.out.println("batchListInfosCollector size :" + batchListInfosCollector);
         for (String aBatchListInfosCollector : batchListInfosCollector) {
-            JSONArray loanInfosArray = getLoanInfos(aBatchListInfosCollector);
-            loanInfosCollector.add(loanInfosArray);
+            if(JSONUtil.determineJsonHead(aBatchListInfosCollector)){
+                JSONArray loanInfosArray = getLoanInfos(aBatchListInfosCollector);//如果是合法的JSON，才可以获取其中的loanInfos
+                loanInfosCollector.add(loanInfosArray);
+            }
         }
         return loanInfosCollector;
     }

@@ -80,12 +80,12 @@ public class BidService {
         }
         JSONArray loanInfosResultArray = new JSONArray();
         int[] loanIds = null;
-        if (result.isSucess()) {
+        if (result.isSucess()) success:{
             String loanListResult = resultJSON;
             //logger.info("loanListResult is :" + loanListResult);
+            if(!JSONUtil.determineJsonHead(loanListResult)) break success;  //如果不是合法的JSON，直接跳出这个success段if逻辑
             JSONObject loanListJson = JSONObject.fromObject(loanListResult);
             JSONArray loanInfosArray = loanListJson.getJSONArray("LoanInfos");
-
             //String loanListJson = loanAllList.substring(13);
             //logger.info("loanListArray is :" + loanInfosArray);   //Modified
             int size = loanInfosArray.size();

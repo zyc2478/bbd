@@ -15,6 +15,7 @@ public class OverdueCriteria implements Criteria, Constants {
     private boolean criteriaLessRate;
     private boolean criteriaLessFRate;
     private boolean criteriaNormal;
+    private boolean criteriaShortLimit;
 
     public void calc(JSONObject loanInfos, ConfBean cb) throws Exception {
 
@@ -22,6 +23,8 @@ public class OverdueCriteria implements Criteria, Constants {
         int overdueMoreCount = (int) loanInfos.get("OverdueMoreCount");
         int normalCount = (int) loanInfos.get("NormalCount");
         gender = Integer.parseInt(loanInfos.get("Gender").toString());
+        int overdueShortLimit = Integer.parseInt(cb.getOverdueShortLimit());
+        criteriaShortLimit = overdueLessCount <= overdueShortLimit;
         criteriaMore = overdueMoreCount == 0;
         criteriaLess = overdueLessCount == 0;
         criteriaLessRate = (normalCount != 0) && ((new Integer(overdueLessCount).doubleValue() / normalCount) <
@@ -40,13 +43,13 @@ public class OverdueCriteria implements Criteria, Constants {
 
     public int getLevel(JSONObject loanInfos, ConfBean cb) throws Exception {
         calc(loanInfos, cb);
-        if (criteriaMore && criteriaLess && criteriaNormal) {
+        if (criteriaMore && criteriaLess && criteriaNormal && criteriaShortLimit) {
             return GOOD;
-        } else if (criteriaMore && criteriaLess && gender == 2) {
+        } else if (criteriaMore && criteriaLess && criteriaShortLimit && gender == 2 ) {
             return GOOD;
-        } else if (criteriaMore && criteriaLessRate && gender == 1) {
+        } else if (criteriaMore && criteriaLessRate && criteriaShortLimit && gender == 1) {
             return OK;
-        } else if (criteriaMore && criteriaLessFRate && gender == 2) {
+        } else if (criteriaMore && criteriaLessFRate && criteriaShortLimit && gender == 2) {
             return OK;
         } else {
             return NONE;
