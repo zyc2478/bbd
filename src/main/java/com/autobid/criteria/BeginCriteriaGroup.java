@@ -21,6 +21,7 @@ public class BeginCriteriaGroup extends CriteriaGroup {
         addCriteria(new BasicCriteria());
         //addCriteria(new CreditCodeCriteria());
         addCriteria(new DebtRateCriteria());
+        addCriteria(new OwingRateCriteria());
         addCriteria(new CertificateCriteria());
         addCriteria(new OverdueProCriteria());
         addCriteria(new EducationProCriteria());

@@ -21,6 +21,7 @@ public class DebtRateCriteriaGroup extends CriteriaGroup {
         this.setCriteriaList(criteriaList);
         addCriteria(new BasicCriteria());
         //addCriteria(new CreditCodeCriteria());
+        addCriteria(new OwingRateCriteria());
         addCriteria(new CertificateCriteria());
         addCriteria(new OverdueProCriteria());
         addCriteria(new EducationCriteria());

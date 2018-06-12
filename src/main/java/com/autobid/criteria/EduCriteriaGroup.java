@@ -24,6 +24,7 @@ public class EduCriteriaGroup extends CriteriaGroup {
         addCriteria(new CertificateCriteria());
         addCriteria(new OverdueProCriteria());
         addCriteria(new EducationProCriteria());
+        addCriteria(new OwingRateCriteria());
     }
 
     @Test
