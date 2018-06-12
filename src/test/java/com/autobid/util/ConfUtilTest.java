@@ -14,7 +14,6 @@ public class ConfUtilTest {
     public void testGetFuncValueFromBean() throws Exception {
         ConfBean cb = ConfUtil.readAllToBean();
         System.out.println("cb.getAmountBegin():" + cb.getAmountBegin());
-        System.out.println("cb.getAmountMrate():" + cb.getAmountMrate());
     }
     
 /*    @Test

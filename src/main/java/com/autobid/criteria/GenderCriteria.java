@@ -13,7 +13,7 @@ public class GenderCriteria implements Criteria, Constants {
     public void calc(JSONObject loanInfos, ConfBean confBean) {
         int gender_config = Integer.parseInt(confBean.getGender());
         int gender = Integer.parseInt(loanInfos.get("Gender").toString());
-        if(gender == gender_config || gender_config == 3){
+        if(gender == gender_config || gender_config == 3){  //性别配置为3，代表不检查性别，0是未知，1是男性，2是女性
             criteriaGender = true;
         }else{
             criteriaGender = false;

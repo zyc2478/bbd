@@ -206,6 +206,15 @@ public class BidDetermine implements Constants {
         }
     }
 
+    public static int determineOwingRate(int owingRateLevel){
+        switch(owingRateLevel){
+            case PERFECT:
+                return BID_LEVEL_AMOUNT * MORE_MULTIPLE;
+            default:
+                return NONE;
+        }
+    }
+
     public static int determineCriteriaGroup(CriteriaGroup criteriaGroup, ConfBean cb, JSONObject loanInfos)
             throws Exception {
         //System.out.println("eduCriteriaGroup's size " + eduCriteriaGroup.getCriteriaList().size());

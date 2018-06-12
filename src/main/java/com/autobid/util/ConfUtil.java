@@ -154,9 +154,7 @@ public class ConfUtil {
     }
 
     public static void setLocalProperty(String key, String value) throws IOException {
-
         String localFileName = System.getProperty("user.dir") + "/local.properties" ;
-
         InputStreamReader inputStreamReader;
         InputStream inputStream = new BufferedInputStream(new FileInputStream(localFileName));
         //prop.load(in);//直接这么写，如果properties文件中有汉字，则汉字会乱码。因为未设置编码格式。

@@ -23,8 +23,6 @@ public class BeginCriteriaGroup extends CriteriaGroup {
         addCriteria(new DebtRateCriteria());
         addCriteria(new CertificateCriteria());
         addCriteria(new OverdueProCriteria());
-        addCriteria(new LoanAmountProCriteria());
         addCriteria(new EducationProCriteria());
-        addCriteria(new LoanAmountProCriteria());
     }
 }

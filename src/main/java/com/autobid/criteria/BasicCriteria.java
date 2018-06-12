@@ -5,8 +5,6 @@ import com.autobid.entity.Criteria;
 import com.autobid.util.ConfBean;
 import net.sf.json.JSONObject;
 
-import java.util.HashMap;
-
 /**
  * @Author Richard Zeng
  * @ClassName: BasicCriteria
@@ -28,7 +26,8 @@ public class BasicCriteria implements Criteria, Constants {
     private AgeCriteria ageCriteria = new AgeCriteria();
     private LastSuccessBorrowCriteria lastSuccessBorrowCriteria = new LastSuccessBorrowCriteria();
     private GenderCriteria genderCriteria = new GenderCriteria();
-    private CertificateValidateCriteria certificateValidateCriteria = new CertificateValidateCriteria();
+    private CertificateCheckCriteria certificateValidateCriteria = new CertificateCheckCriteria();
+    private OwingRateCriteria owingRateCriteria = new OwingRateCriteria();
 
     public void calc(JSONObject loanInfos, ConfBean cb) throws Exception {
 
@@ -42,6 +41,7 @@ public class BasicCriteria implements Criteria, Constants {
         int genderLevel = genderCriteria.getLevel(loanInfos,cb);
         int lastSuccessBorrowLevel = lastSuccessBorrowCriteria.getLevel(loanInfos, cb);
         int certifcateValidateLevel = certificateValidateCriteria.getLevel(loanInfos,cb);
+        int owingRateLevel = owingRateCriteria.getLevel(loanInfos,cb);
 
 
         //学历认证优先的策略集合
@@ -54,6 +54,7 @@ public class BasicCriteria implements Criteria, Constants {
                 ageLevel > NONE &&
                 genderLevel > NONE &&
                 certifcateValidateLevel > NONE &&
+                owingRateLevel > NONE &&
                 lastSuccessBorrowLevel > NONE;
         //负债策略优先的策略集合
         debtBasicCriteria = debtRateLevel > SOSO &&
@@ -64,6 +65,7 @@ public class BasicCriteria implements Criteria, Constants {
                 ageLevel > NONE &&
                 certifcateValidateLevel > NONE &&
                 genderLevel > NONE &&
+                owingRateLevel > NONE &&
                 lastSuccessBorrowLevel > NONE;
         //信用好的文化菜鸟的策略集合
         beginBasicCriteria = educationLevel > NONE &&
@@ -74,6 +76,7 @@ public class BasicCriteria implements Criteria, Constants {
                 ageLevel > NONE &&
                 genderLevel > NONE &&
                 certifcateValidateLevel > NONE &&
+                owingRateLevel > NONE &&
                 lastSuccessBorrowLevel > NONE;
 
         //System.out.println("eduBasicCriteria:"+eduBasicCriteria);
@@ -113,11 +116,13 @@ public class BasicCriteria implements Criteria, Constants {
         int ageLevel = ageCriteria.getLevel(loanInfos, cb);
         int genderLevel = genderCriteria.getLevel(loanInfos,cb);
         int certificateLevel = certificateValidateCriteria.getLevel(loanInfos,cb);
+        int owingRateLevel = owingRateCriteria.getLevel(loanInfos,cb);
         int lastSuccessBorrowLevel = lastSuccessBorrowCriteria.getLevel(loanInfos, cb);
         System.out.println("creditCodeLevel:" + creditCodeLevel + ",debtRateLevel:" + debtRateLevel +
                 ",educationLevel:" + educationLevel + ",successCountLevel:" + successCountLevel +
                 ",loanAmountLevel:" + loanAmountLevel + ",overdueLevel:" + overdueLevel +
                 ",ageLevel:" + ageLevel + ",lastSuccessBorrowLevel:" + lastSuccessBorrowLevel +
-                ",genderLevel:" + genderLevel + ",certificateLevel:" + certificateLevel);
+                ",genderLevel:" + genderLevel + ",certificateLevel:" + certificateLevel +
+                ",owingRateLevel: " + owingRateLevel);
     }
 }

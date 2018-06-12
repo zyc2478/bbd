@@ -7,21 +7,16 @@ import net.sf.json.JSONObject;
 
 public class CreditCodeCriteria implements Criteria, Constants {
 
-    private int credit;
-    private int creditLimit;
+    private int credit,creditLimit,creditRange;
     private boolean criteriaCredit;
 
     public void calc(JSONObject loanInfos, ConfBean cb) {
         String creditCodeLimit = cb.getCreditLimit();
         String creditCode = (String) loanInfos.get("CreditCode");
-        int creditRange = Integer.parseInt(cb.getCreditRange());
+        creditRange = Integer.parseInt(cb.getCreditRange());
         credit = switchCredit(creditCode);
         creditLimit = switchCredit(creditCodeLimit);
-        if(creditRange==1){
-            criteriaCredit = credit >= creditLimit;
-        }else{
-            criteriaCredit = credit == creditLimit;
-        }
+
     }
    public int switchCredit(String creditCode){
         int codeNum = 0;
@@ -53,9 +48,11 @@ public class CreditCodeCriteria implements Criteria, Constants {
 
     public int getLevel(JSONObject loanInfos, ConfBean cb) {
         calc(loanInfos, cb);
-        if (criteriaCredit) {
+        if(creditRange==1 && credit > creditLimit){
             return OK;
-        } else {
+        }else if(creditRange==0 && credit == creditLimit){
+            return OK;
+        }else{
             return NONE;
         }
     }

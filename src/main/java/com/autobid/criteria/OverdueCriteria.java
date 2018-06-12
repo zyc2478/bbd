@@ -15,7 +15,7 @@ public class OverdueCriteria implements Criteria, Constants {
     private boolean criteriaLessRate;
     private boolean criteriaLessFRate;
     private boolean criteriaNormal;
-    private boolean criteriaShortLimit;
+    private boolean criteriaLessLimit;
 
     public void calc(JSONObject loanInfos, ConfBean cb) throws Exception {
 
@@ -23,8 +23,8 @@ public class OverdueCriteria implements Criteria, Constants {
         int overdueMoreCount = (int) loanInfos.get("OverdueMoreCount");
         int normalCount = (int) loanInfos.get("NormalCount");
         gender = Integer.parseInt(loanInfos.get("Gender").toString());
-        int overdueShortLimit = Integer.parseInt(cb.getOverdueShortLimit());
-        criteriaShortLimit = overdueLessCount <= overdueShortLimit;
+        int overdueLessLimit = Integer.parseInt(cb.getOverdueLessLimit());
+        criteriaLessLimit = overdueLessCount <= overdueLessLimit;
         criteriaMore = overdueMoreCount == 0;
         criteriaLess = overdueLessCount == 0;
         criteriaLessRate = (normalCount != 0) && ((new Integer(overdueLessCount).doubleValue() / normalCount) <
@@ -32,24 +32,18 @@ public class OverdueCriteria implements Criteria, Constants {
         criteriaLessFRate = normalCount != 0 && new Integer(overdueLessCount).doubleValue() / normalCount <
                 Double.parseDouble(cb.getOverdueRate()) * Double.parseDouble(cb.getOverdueFrate());
 
-/*        System.out.println("criteriaLessFRate:"+criteriaLessFRate);*/
-/*        System.out.println("new Integer(overdueLessCount).doubleValue() / normalCount = " + new Integer(overdueLessCount).doubleValue() / normalCount);
-        System.out.println("Double.parseDouble(cb.getOverdueRate()) * Double.parseDouble(cb.getOverdueFrate())"+Double.parseDouble(cb.getOverdueRate()) * Double.parseDouble(cb.getOverdueFrate()));*/
-/*		System.out.println(new Integer(overdueLessCount).doubleValue()/normalCount);
-		System.out.println(	Double.parseDouble(ConfUtil.getProperty("overdue_rate")) * 
-				Double.parseDouble(ConfUtil.getProperty("overdue_multiple")));*/
         criteriaNormal = normalCount >= Integer.parseInt(ConfUtil.getProperty("normal_limit"));
     }
 
     public int getLevel(JSONObject loanInfos, ConfBean cb) throws Exception {
         calc(loanInfos, cb);
-        if (criteriaMore && criteriaLess && criteriaNormal && criteriaShortLimit) {
+        if (criteriaMore && criteriaLess && criteriaNormal && criteriaLessLimit) {
             return GOOD;
-        } else if (criteriaMore && criteriaLess && criteriaShortLimit && gender == 2 ) {
+        } else if (criteriaMore && criteriaLess && criteriaLessLimit && gender == 2 ) {
             return GOOD;
-        } else if (criteriaMore && criteriaLessRate && criteriaShortLimit && gender == 1) {
+        } else if (criteriaMore && criteriaLessRate && criteriaLessLimit && gender == 1) {
             return OK;
-        } else if (criteriaMore && criteriaLessFRate && criteriaShortLimit && gender == 2) {
+        } else if (criteriaMore && criteriaLessFRate && criteriaLessLimit && gender == 2) {
             return OK;
         } else {
             return NONE;

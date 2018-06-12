@@ -87,10 +87,9 @@ public class BidDebtStrategy implements DebtStrategy {
         int gender = loanInfo.getInt("Gender");
         double owingAmount = loanInfo.getDouble("OwingAmount");
         double highestDebt = loanInfo.getDouble("HighestDebt");
-        double oh_rate = owingAmount / highestDebt;
-        double owing_mrate = Double.parseDouble(cb.getOwingMrate());
-        double owing_frate = Double.parseDouble(cb.getOwingFrate());
-        return gender == 1 && oh_rate <= owing_mrate || gender == 2 && oh_rate <= owing_frate;
+        double owing_rate = owingAmount / highestDebt;
+        double owingRateConf = Double.parseDouble(cb.getOwingRate());
+        return owing_rate <= owingRateConf;
     }
 	
 	

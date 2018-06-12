@@ -24,16 +24,28 @@ public class DebtRateCriteria implements Criteria, Constants {
         debt_mrate = Double.parseDouble(cb.getDebtMrate());
         debt_frate = Double.parseDouble(cb.getDebtFrate());
         debtTotalRate = totalPrincipal != 0 ? (owingAmount + loanAmount) / totalPrincipal : 1;
-        loanAmountLevel = new LoanAmountCriteria().getLevel(loanInfos, cb);
 //		System.out.println("debtTotalRate:"+debtTotalRate);
-		//System.out.println(debtTotalRate < 0.5 * female_multiple);
-/*		System.out.println(gender == 2 && debtTotalRate < 0.5 * debt_frate);*/
-		//int successCountLevel = successCountCriteria.getLevel(loanInfoMap);
+        //System.out.println(debtTotalRate < 0.5 * female_multiple);
+        /*		System.out.println(gender == 2 && debtTotalRate < 0.5 * debt_frate);*/
+        //int successCountLevel = successCountCriteria.getLevel(loanInfoMap);
 /*		System.out.println((gender == 1 && debtTotalRate < 0.5 * debt_mrate) ||
 				(gender == 2 && debtTotalRate < 0.5 * debt_frate));*/
     }
 
     public int getLevel(JSONObject loanInfos, ConfBean cb) {
+        calc(loanInfos, cb);
+        if (gender == 2) {                            //针对女性的策略，如果比要求的比率还低一倍，加投
+            if (debtTotalRate < debt_frate/2 ) {
+                return PERFECT;
+            } else if (debtTotalRate < debt_frate)
+                return OK;
+        }else if(gender ==1 && debtTotalRate < debt_mrate){    //针对男性的策略，没有加投考虑
+                return OK;
+        }
+        return NONE;
+    }
+
+/*    public int getLevel(JSONObject loanInfos, ConfBean cb) {
         calc(loanInfos, cb);
         if ((gender == 1 && debtTotalRate < 0.15) || (gender == 2 && debtTotalRate < 0.25)) {
             return PERFECT;
@@ -49,8 +61,7 @@ public class DebtRateCriteria implements Criteria, Constants {
         } else {
             return NONE;
         }
-    }
-
+    }*/
     public String getCriteriaName() {
         return "DebtRate";
     }

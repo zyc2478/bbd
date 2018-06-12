@@ -22,10 +22,8 @@ public class EduDebtCriteriaGroup extends CriteriaGroup {
         addCriteria(new BasicCriteria());
         addCriteria(new EduDebtProCriteria());
         //addCriteria(new CreditCodeCriteria());
-        addCriteria(new DebtRateProCriteria());
         addCriteria(new CertificateCriteria());
         addCriteria(new OverdueProCriteria());
-        addCriteria(new LoanAmountProCriteria());
         //addCriteria(new EducationProCriteria());
     }
 

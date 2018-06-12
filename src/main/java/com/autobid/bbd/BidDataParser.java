@@ -141,7 +141,7 @@ public class BidDataParser {
         ArrayList<JSONArray> loanInfosCollector = new ArrayList<>();
         //System.out.println("batchListInfosCollector size :" + batchListInfosCollector);
         for (String aBatchListInfosCollector : batchListInfosCollector) {
-            if(JSONUtil.determineJsonHead(aBatchListInfosCollector)){
+            if( JSONUtil.determineJsonHead(aBatchListInfosCollector) && aBatchListInfosCollector.indexOf("LoanInfos")!=-1){
                 JSONArray loanInfosArray = getLoanInfos(aBatchListInfosCollector);//如果是合法的JSON，才可以获取其中的loanInfos
                 loanInfosCollector.add(loanInfosArray);
             }

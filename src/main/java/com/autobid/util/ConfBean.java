@@ -28,16 +28,13 @@ public class ConfBean {
     private String gender;
     private String amountBegin;
     private String amountEnd;
-    private String amountMrate;
-    private String amountFrate;
     private String totalLimit;
     private String owingLimit;
-    private String owingMrate;
-    private String owingFrate;
+    private String owingRate;
     private String debtMrate;
     private String debtFrate;
-    private String certificateValidate;
-    private String overdueShortLimit;
+    private String certificateCheck;
+    private String overdueLessLimit;
     private String overdueRate;
     private String overdueMrate;
     private String overdueFrate;
@@ -226,10 +223,6 @@ public class ConfBean {
 
     public void setGender(String gender) { this.gender = gender; }
 
-    public String getCertificateValidate() {  return certificateValidate; }
-
-    public void setCertificateValidate(String certificateValidate) {  this.certificateValidate = certificateValidate; }
-
     public String getAmountBegin() {
         return amountBegin;
     }
@@ -246,22 +239,6 @@ public class ConfBean {
         this.amountEnd = amountEnd;
     }
 
-    public String getAmountMrate() {
-        return amountMrate;
-    }
-
-    public void setAmountMrate(String amountMrate) {
-        this.amountMrate = amountMrate;
-    }
-
-    public String getAmountFrate() {
-        return amountFrate;
-    }
-
-    public void setAmountFrate(String amountFrate) {
-        this.amountFrate = amountFrate;
-    }
-
     public String getTotalLimit() {
         return totalLimit;
     }
@@ -270,29 +247,13 @@ public class ConfBean {
         this.totalLimit = totalLimit;
     }
 
-    public String getOwingLimit() {
-        return owingLimit;
-    }
+    public String getOwingLimit() { return owingLimit; }
 
-    public void setOwingLimit(String owingLimit) {
-        this.owingLimit = owingLimit;
-    }
+    public void setOwingLimit(String owingLimit) { this.owingLimit = owingLimit; }
 
-    public String getOwingMrate() {
-        return owingMrate;
-    }
+    public String getOwingRate() { return owingRate; }
 
-    public void setOwingMrate(String owingMrate) {
-        this.owingMrate = owingMrate;
-    }
-
-    public String getOwingFrate() {
-        return owingFrate;
-    }
-
-    public void setOwingFrate(String owingFrate) {
-        this.owingFrate = owingFrate;
-    }
+    public void setOwingRate(String owingRate) { this.owingRate = owingRate; }
 
     public String getDebtMrate() {
         return debtMrate;
@@ -310,9 +271,13 @@ public class ConfBean {
         this.debtFrate = debtFrate;
     }
 
-    public String getOverdueShortLimit() { return overdueShortLimit; }
+    public String getCertificateCheck() { return certificateCheck; }
 
-    public void setOverdueShortLimit(String overdueShortLimit) { this.overdueShortLimit = overdueShortLimit; }
+    public void setCertificateCheck(String certificateCheck) { this.certificateCheck = certificateCheck; }
+
+    public String getOverdueLessLimit() { return overdueLessLimit; }
+
+    public void setOverdueLessLimit(String overdueLessLimit) { this.overdueLessLimit = overdueLessLimit; }
 
     public String getOverdueRate() {
         return overdueRate;
