@@ -48,7 +48,7 @@ public class CreditCodeCriteria implements Criteria, Constants {
 
     public int getLevel(JSONObject loanInfos, ConfBean cb) {
         calc(loanInfos, cb);
-        if(creditRange==1 && credit > creditLimit){
+        if(creditRange==1 && credit >= creditLimit){
             return OK;
         }else if(creditRange==0 && credit == creditLimit){
             return OK;

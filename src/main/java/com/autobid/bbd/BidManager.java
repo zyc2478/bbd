@@ -110,7 +110,7 @@ public class BidManager implements Constants {
         }*/
         TokenUtil tokenUtil = new TokenUtil();
         token = tokenUtil.getToken();
-        ConfUtil.setLocalProperty("host_name",localHost);
+        //ConfUtil.setLocalProperty("host_name",localHost);
 //        token = TokenUtil.getToken();
         logger.info("bidExecute");
         double balance = BidDataParser.getBalance(BidService.queryBalanceService(token));
@@ -156,7 +156,7 @@ public class BidManager implements Constants {
             //请求服务获取ListingIds
             listingIds = BidDataParser.getListingIds(loanListResult.getLoanList());
 /*    		listingIds = new ArrayList<Integer>();
-    		listingIds.add(116626052);
+    		listingIds.add(116172058);
             System.out.println(listingIds);*/
 
             //将ListingIds切分成10个一组，再拼接成一个Collector
@@ -213,14 +213,13 @@ public class BidManager implements Constants {
                     int bidAmount = 0;
                     //如果基础策略不匹配，则将判定策略组应投金额
                     if (basicCriteriaLevel > 0) {
-
                         //先判定是否在Redis中重复，即已投过该标的
                         //bidAmount = new BidDetermine().determineCriteriaGroup(criteriaGroup, loanInfoMap);
                         if (!bidDetermine.determineDuplicateId(listingId)) {
                             System.out.println("====== listingId: " + listingId + ", Start bidding ====== ");
                             //logger.info("listingId: " + listingId + ", JSON is: " + loanInfoMap);
                             //bidAmount = new BidDetermine().determineCriteriaGroup(criteriaGroup, loanInfoMap);
-                            basicCriteria.printCriteria(loanInfos,confBean);
+                            //basicCriteria.printCriteria(loanInfos,confBean);              //调试入口，投过的标查看详细条件
                             assert criteriaGroup != null;
                             bidAmount = bidDetermine.determineCriteriaGroup(Objects.requireNonNull(criteriaGroup), confBean, loanInfos);
                             System.out.println("****** listingId: " + listingId + ", total Amount is: " + bidAmount + " ******");
