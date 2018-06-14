@@ -5,15 +5,12 @@ import com.autobid.entity.BidResult;
 import com.autobid.entity.Constants;
 import com.autobid.entity.CriteriaGroup;
 import com.autobid.entity.LoanListResult;
-import com.autobid.strategy.BidDebtStrategy;
 import com.autobid.util.*;
 import net.sf.json.JSONArray;
 import net.sf.json.JSONObject;
 import org.apache.log4j.Logger;
 import org.junit.Test;
 import redis.clients.jedis.Jedis;
-import redis.clients.jedis.JedisPool;
-import redis.clients.jedis.JedisPoolConfig;
 
 import java.io.IOException;
 import java.text.SimpleDateFormat;
@@ -66,8 +63,8 @@ public class BidManager implements Constants {
             if (tokenUtil.determineRefreshDate()) {
                 tokenUtil.genNewToken();
             }
-            localHost = HostUtil.getLocalHost();
-            confHost = HostUtil.getConfHost();
+/*            localHost = HostUtil.getLocalHost();
+            confHost = HostUtil.getConfHost();*/
             //获取Token，配置文件有则优先，没有则获取Redis
 
             //logger.info("token:" + token);
@@ -77,10 +74,10 @@ public class BidManager implements Constants {
             e.printStackTrace();
         }
     }
-    private String host;
+    private String redisHost;
     {
         try {
-            host = ConfUtil.getProperty("redis_host");
+            redisHost = ConfUtil.getProperty("redis_host");
         } catch (IOException e) {
             e.printStackTrace();
         }

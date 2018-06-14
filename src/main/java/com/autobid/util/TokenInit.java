@@ -48,9 +48,9 @@ public class TokenInit {
         logger.info("token is: " + token);
         logger.info("refresh token is: " + refreshToken);
         logger.info("openId is:" + openId );
-        ConfUtil.setProperty("token", token);
+/*        ConfUtil.setProperty("token", token);
         ConfUtil.setProperty("refresh_token", refreshToken);
-        ConfUtil.setProperty("open_id",openId);
+        ConfUtil.setProperty("open_id",openId);*/
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm");
         String nowDate = sdf.format(new Date());
         ConfUtil.setProperty("init_date", nowDate);
