@@ -29,7 +29,7 @@ public class AutoBidJob implements Job {
 
     private void runAutoBid() throws IOException {
         BidManager bid = BidManager.getInstance();
-//        DebtManager debt = DebtManager.getInstance();
+        DebtManager debt = DebtManager.getInstance();
 /*        try {
             bidMode = Integer.parseInt(ConfUtil.getProperty("bid_mode"));
             if (bidMode == 1) {
@@ -54,7 +54,7 @@ public class AutoBidJob implements Job {
             e.printStackTrace();
         }
         if(bidMode==3){
-/*            final BidManager finalBid = bid;
+            final BidManager finalBid = bid;
             final Thread threadOne = new Thread(new Runnable() {
                 public void run() {
                     try {
@@ -82,7 +82,7 @@ public class AutoBidJob implements Job {
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
-            threadTwo.start();*/
+            threadTwo.start();
         }else if(bidMode==1){
             final BidManager finalBid = bid;
             Thread threadOne = new Thread(new Runnable() {
@@ -96,7 +96,7 @@ public class AutoBidJob implements Job {
             });
             threadOne.start();
         }else if(bidMode==2){
-/*            final DebtManager finalDebt = debt;
+            final DebtManager finalDebt = debt;
             final Thread threadTwo = new Thread(new Runnable() {
                 public void run() {
                     try {
@@ -106,7 +106,7 @@ public class AutoBidJob implements Job {
                     }
                 }
             });
-            threadTwo.start();*/
+            threadTwo.start();
         }
 //        ConfUtil.setProperty("is_running","0");
     }
