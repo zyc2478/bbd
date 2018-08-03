@@ -270,7 +270,7 @@ public class BidManager implements Constants {
     	
 /*		logger = null;
 		instance = null;*/
-        ConfUtil.setProperty("host_name",localHost);
+        //ConfUtil.setProperty("host_name",localHost);
 //        pool.close();
     }
 
