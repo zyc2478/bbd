@@ -103,7 +103,7 @@ public class DebtManager implements Constants {
         }*/
         TokenUtil tokenUtil = new TokenUtil();
         token = tokenUtil.getToken();
-        ConfUtil.setProperty("host_name",localHost);
+        //ConfUtil.setProperty("host_name",localHost);
 /*        TokenUtil.genNewToken();
         //获取Token，配置文件有则优先，没有则获取Redis
         token = TokenUtil.getToken();*/
@@ -151,6 +151,7 @@ public class DebtManager implements Constants {
         BidInfosFilter bif = new BidInfosFilter();
         int debtGroups = Integer.parseInt(confBean.getDebtGroups());
         do {
+            System.out.println("debtOverdueExecute do cycle");
             balance = BidDataParser.getBalance(BidService.queryBalanceService(token));
             if(BidDetermine.determineBalance(balance)) {
                 logger.error("余额不足，程序退出，1分钟后将再次尝试");
@@ -163,6 +164,7 @@ public class DebtManager implements Constants {
             }else{
                 debtCount = debtListArray.size();
             }
+            System.out.println("debtCount：" + debtCount);
             totalDebtCount += debtCount;
             //将获取的debtList按照DebtListFilter中定义的规则过滤
             //logger.info("第"+indexNum+"轮 有以下标的：");
@@ -252,7 +254,7 @@ public class DebtManager implements Constants {
 //        logger.info("Total Debt Count is :" + totalDebtCount);
 
         debtResultsPrint(successDebtList, totalDebtCount);
-        ConfUtil.setProperty("host_name",localHost);
+        //ConfUtil.setProperty("host_name",localHost);
 //        pool.close();
     }
 

@@ -119,9 +119,7 @@ public class ConfBean {
         this.debtMinPrice = debtMinPrice;
     }
 
-    public String getDebtOverdueSwitch() {
-        return debtOverdueSwitch;
-    }
+    public String getDebtOverdueSwitch() { return debtOverdueSwitch; }
 
     public void setDebtOverdueSwitch(String debtOverdueSwitch) {
         this.debtOverdueSwitch = debtOverdueSwitch;

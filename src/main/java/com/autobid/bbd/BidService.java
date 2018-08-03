@@ -53,11 +53,12 @@ public class BidService {
 
     public static LoanListResult loanListService(int indexNum) throws Exception {
         //ArrayList<String> loanInfosList = new ArrayList<>();
-        String url = "https://openapi.ppdai.com/invest/LLoanInfoService/LoanList";
+        String url = "https://openapi.ppdai.com/listing/openapiNoAuth/loanList";
         Result result;
         SimpleDateFormat sdf  = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS");
         String startDateTime = sdf.format(new Date());
         result = OpenApiClient.send(url, new PropertyObject("PageIndex", indexNum, ValueTypeEnum.Int32));
+        System.out.println(result.getContext());
         Jedis jedis = new Jedis();
         if(result.isSucess()){
             try{
@@ -122,7 +123,8 @@ public class BidService {
         int[] loanIds = null;
         //System.out.println("loanListServiceByTime");
         //ArrayList<String> loanInfosList = new ArrayList<>();
-        String url = "https://openapi.ppdai.com/invest/LLoanInfoService/LoanList";
+        //String url = "https://openapi.ppdai.com/invest/LLoanInfoService/LoanList";
+        String url = "https://openapi.ppdai.com/listing/openapiNoAuth/loanList";
         Result result;
         result = OpenApiClient.send(url,
             new PropertyObject("PageIndex", indexNum, ValueTypeEnum.Int32),
@@ -146,7 +148,8 @@ public class BidService {
 
     public static ArrayList<String> batchListInfosCollectorService(String token, ArrayList<List<Integer>> listingIdsCollector) throws Exception {
         //System.out.println("--------batchListInfosCollectorService---------");
-        String url = "https://openapi.ppdai.com/invest/LLoanInfoService/BatchListingInfos";
+        //String url = "https://openapi.ppdai.com/invest/LLoanInfoService/BatchListingInfos";
+        String url = "https://openapi.ppdai.com/listing/openapiNoAuth/batchListingInfo";
         ArrayList<String> batchListInfosCollector = new ArrayList<>();
         //List<Integer> listingIds = new ArrayList<Integer>();
         //int num=0;

@@ -150,6 +150,7 @@ public class BidManager implements Constants {
                 loanListFetchTime = sdf.format(new Date());
             }
             loanIdCount = loanListResult.getLoanIdCount();
+            System.out.println("loanIdCount：" + loanIdCount);
             //请求服务获取ListingIds
             listingIds = BidDataParser.getListingIds(loanListResult.getLoanList());
 /*    		listingIds = new ArrayList<Integer>();

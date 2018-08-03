@@ -25,10 +25,17 @@ public class DebtService {
 
     public static JSONArray debtListService(int indexNum) throws Exception {
 
-        String url = "https://openapi.ppdai.com/invest/LLoanInfoService/DebtListNew";
+        //String url = "https://openapi.ppdai.com/invest/LLoanInfoService/DebtListNew";
+
+        String url = "https://openapi.ppdai.com/debt/openapiNoAuth/buyList";
+
         Result result = OpenApiClient.send(url, new PropertyObject("PageIndex", indexNum, ValueTypeEnum.Int32));
 
+        System.out.println("debtListService resultJSON £º" + result.getContext());
+
         String resultJSON = FormatUtil.filterStrToJSON(result.getContext());
+
+
 
         if (JSONUtil.decodeUnicode(resultJSON).contains("ÄúµÄ²Ù×÷Ì«Æµ·±À²")) {
             //logger.info("ÄúµÄ²Ù×÷Ì«Æµ·±À²£¡ÏÈºÈ±­²è°É£¬ÐªÒ»·ÖÖÓ~~");
@@ -51,7 +58,8 @@ public class DebtService {
     }
 
     public static JSONArray batchDebtInfosService(JSONArray diArray) throws Exception {
-        String url = "https://openapi.ppdai.com/invest/LLoanInfoService/BatchDebtInfos";
+//        String url = "https://openapi.ppdai.com/invest/LLoanInfoService/BatchDebtInfos";
+        String url = "https://openapi.ppdai.com/debt/openapiNoAuth/batchDebtInfo";
         List<Integer> debtIds = new ArrayList<>();
         //System.out.println(diArray);
         for (Object aDiArray : diArray) {
@@ -85,7 +93,8 @@ public class DebtService {
 
     public static DebtResult buyDebtService(String token, String openId, JSONObject debtInfo) throws Exception {
         System.out.println("-------------------buyDebtService----------------------------");
-        String url = "https://openapi.ppdai.com/invest/BidService/BuyDebt";
+        //String url = "https://openapi.ppdai.com/invest/BidService/BuyDebt";
+        String url = "https://openapi.ppdai.com/debt/openapi/buy";
         int debtId = debtInfo.getInt("DebtId");
         System.out.println("=====================¿ªÊ¼Í¶±ê " + debtId + "======================");
         Result result = OpenApiClient.send(url, token,
