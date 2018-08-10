@@ -180,14 +180,24 @@ public class BidService {
                 new PropertyObject("Amount", bidAmount, ValueTypeEnum.Double),
                 new PropertyObject("UseCoupon", useCoupon, ValueTypeEnum.String));
 
-        System.out.println("投标结果：" + result.getContext());
+        //System.out.println("投标结果：" + result.getContext());
         String resultJSON = FormatUtil.filterStrToJSON(result.getContext());
 
+        BidResult successBidResult = null;
+
+        if (resultJSON.contains("\"Result\":0,\"ResultMessage\":null")) {
+            successBidResult = new BidResult(listingId, bidAmount);
+            logger.info(resultJSON);
+        }else{
+            logger.error("投标失败：" + result.getContext());
+        }
+
+        /*
         if (JSONUtil.decodeUnicode(resultJSON).contains("您的操作太频繁啦")) {
             logger.error("xxxxxx biddingService 您的操作太频繁啦！先喝杯茶吧，歇一分钟吧 ~~~xxxxxx");
             Thread.sleep(60000);
         }
-        BidResult successBidResult = null;
+
         //System.out.println("Success? "+ bidResult.isSuccess());
         //System.out.println(String.format("返回结果:%s", result.isSuccess() ? bidResult : result.getErrorMessage()));
         if (JSONUtil.decodeUnicode(resultJSON).contains("令牌校验失败")) {
@@ -215,7 +225,7 @@ public class BidService {
         } else if (resultJSON.contains("\"Result\":0,\"ResultMessage\":null")) {
             successBidResult = new BidResult(listingId, bidAmount);
             logger.info(resultJSON);
-        }
+        }*/
         return successBidResult;
     }
 
