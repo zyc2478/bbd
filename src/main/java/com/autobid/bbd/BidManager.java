@@ -263,6 +263,8 @@ public class BidManager implements Constants {
                 jedis.close();
             }
         }
+        //System.out.println("listingIds.size():" + listingIds.size());
+
         bidResultsPrint(successBidList, listingIds.size());
     	
 /*    	if(Integer.parseInt(confBean.getBidMode())==2) {

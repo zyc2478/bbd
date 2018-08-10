@@ -58,7 +58,7 @@ public class BidService {
         SimpleDateFormat sdf  = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS");
         String startDateTime = sdf.format(new Date());
         result = OpenApiClient.send(url, new PropertyObject("PageIndex", indexNum, ValueTypeEnum.Int32));
-        System.out.println(result.getContext());
+        //System.out.println(result.getContext());
         Jedis jedis = new Jedis();
         if(result.isSucess()){
             try{
@@ -180,6 +180,7 @@ public class BidService {
                 new PropertyObject("Amount", bidAmount, ValueTypeEnum.Double),
                 new PropertyObject("UseCoupon", useCoupon, ValueTypeEnum.String));
 
+        System.out.println("投标结果：" + result.getContext());
         String resultJSON = FormatUtil.filterStrToJSON(result.getContext());
 
         if (JSONUtil.decodeUnicode(resultJSON).contains("您的操作太频繁啦")) {
