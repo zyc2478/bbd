@@ -114,8 +114,13 @@ public class BidService {
         LoanListResult llr = new LoanListResult();
         llr.setIndexNum(indexNum);
         llr.setLoanList(loanInfosResultArray);
-        assert loanIds != null;
-        llr.setLoanIdCount(loanIds.length);
+        //assert loanIds != null;
+        if(!loanIds.equals(null)){
+            llr.setLoanIdCount(loanIds.length);
+        }else{
+            llr.setLoanIdCount(0);
+        }
+
         return llr;
     }
 
