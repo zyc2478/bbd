@@ -164,6 +164,8 @@ public class BidService {
             //System.out.println(listingIds);
             Result result = OpenApiClient.send(url, token, new PropertyObject("ListingIds", listingIds, ValueTypeEnum.Other));
 
+            //System.out.println(result.getContext());
+
             String resultJSON = FormatUtil.filterStrToJSON(result.getContext());
 
             if (JSONUtil.decodeUnicode(resultJSON).contains("您的操作太频繁啦")) {
@@ -179,13 +181,14 @@ public class BidService {
     public static BidResult biddingService(String token, String openId, int listingId, int bidAmount) throws Exception {
         System.out.println("-------------------biddingService----------------------------");
         String useCoupon = "true";
-        String url = "https://openapi.ppdai.com/invest/BidService/Bidding";
+        //String url = "https://openapi.ppdai.com/invest/BidService/Bidding";
+        String url = "https://openapi.ppdai.com/listing/openapi/bid";
         Result result = OpenApiClient.send(url, token,
                 new PropertyObject("ListingId", listingId, ValueTypeEnum.Int32),
                 new PropertyObject("Amount", bidAmount, ValueTypeEnum.Double),
                 new PropertyObject("UseCoupon", useCoupon, ValueTypeEnum.String));
 
-        //System.out.println("投标结果：" + result.getContext());
+        System.out.println("投标结果：" + result.getContext());
         String resultJSON = FormatUtil.filterStrToJSON(result.getContext());
 
         BidResult successBidResult = null;
